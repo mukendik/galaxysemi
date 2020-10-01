@@ -1,0 +1,5 @@
+<external_files>
+  <promis format="vishay-lvm" type="final">./input/ATM/GCORE-17179/externalfiles/promis_data_FT.txt</promis> 
+  <binmap format="vishay-lvm" type="final" category="final_tests">./input/ATM/GCORE-17179/externalfiles/CSVFinalTestsFile20181112.csv</binmap>
+  <binmap format="vishay-lvm" type="final" category="sort_entries">./input/ATM/GCORE-17179/externalfiles/CSVSortEntriesFile20181102.csv</binmap>
+</external_files>

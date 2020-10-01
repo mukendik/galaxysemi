@@ -1,0 +1,522 @@
+
+** File Attributes Record (FAR) **
+FAR.rec_len   = 2
+FAR.rec_typ   = 0
+FAR.rec_sub   = 10
+FAR.cpu_type  = 1
+FAR.stdf_ver  = 4
+
+** Audit Trail Record (ATR) **
+ATR.rec_len   = 22
+ATR.rec_typ   = 0
+ATR.rec_sub   = 20
+ATR.mod_tim   = 715478580
+ATR.cmd_line  = bin_filter 7,9-12
+
+** Master Information Record (MIR) **
+MIR.rec_len   = 150
+MIR.rec_typ   = 1
+MIR.rec_sub   = 10
+MIR.setup_t   = Thu 23 Jul 1992 8:14:59 (0x2a6e6a83)
+MIR.start_t   = Thu 23 Jul 1992 8:23:02 (0x2a6e6c66)
+MIR.stat_num  = 1
+MIR.mode_cod  = P
+MIR.rtst_cod  = N
+MIR.prot_cod  = <not valid> ( )
+MIR.burn_tim  = 300
+MIR.cmod_cod  = <not valid> ( )
+MIR.lot_id    = A3002B
+MIR.part_typ  = 80386
+MIR.node_nam  = akbar
+MIR.tstr_typ  = J971
+MIR.job_nam   = 80386HOT
+MIR.job_rev   = 3.1.2
+MIR.sblot_id  = 2B
+MIR.oper_nam  = Sandy
+MIR.exec_typ  = IG900
+MIR.exec_ver  = 2.4
+MIR.test_cod  = HOT
+MIR.tst_temp  = 100
+MIR.user_txt  = <not valid> ()
+MIR.aux_file  = 386_data.txt
+MIR.pkg_typ   = ceramic
+MIR.famly_id  = 386
+MIR.date_cod  = wk23
+MIR.facil_id  = <not valid> ()
+MIR.floor_id  = MPU2
+MIR.proc_id   = <not valid> ()
+MIR.oper_frq  = <not valid> ()
+MIR.spec_nam  = <not valid> ()
+MIR.spec_ver  = <not valid> ()
+MIR.flow_id   = <not valid> ()
+MIR.setup_id  = 386HOT
+MIR.dsgn_rev  = 3S
+MIR.eng_id    = <not valid> ()
+MIR.rom_cod   = <not valid> ()
+MIR.serl_num  = A42136S
+MIR.supr_nam  = JOAN_S
+
+** Retest Data Record (RDR) **
+RDR.rec_len   = 8
+RDR.rec_typ   = 1
+RDR.rec_sub   = 70
+RDR.num_bins  = 3
+RDR.rtst_bin  = 
+        [000] = 4
+        [001] = 5
+        [002] = 7
+
+** Site Description Record (SDR) **
+SDR.rec_len   = 32
+SDR.rec_typ   = 1
+SDR.rec_sub   = 80
+SDR.head_num  = 2
+SDR.site_grp  = 4
+SDR.site_cnt  = 4
+SDR.site_num  = 
+        [000] = 5
+        [001] = 6
+        [002] = 7
+        [003] = 8
+SDR.hand_typ  = Delta Flex
+SDR.hand_id   = D511
+SDR.card_typ  = <not valid> ()
+SDR.card_id   = B101
+SDR.load_typ  = 17
+
+** Begin Program Section Record (BPS) **
+BPS.rec_len   = 9
+BPS.rec_typ   = 20
+BPS.rec_sub   = 10
+BPS.seq_name  = DC_TESTS
+
+** End Program Section Record (EPS) **
+EPS.rec_len   = 0
+EPS.rec_typ   = 20
+EPS.rec_sub   = 20
+
+** Datalog Text Record (DTR) **
+DTR.rec_len   = 37
+DTR.rec_typ   = 50
+DTR.rec_sub   = 30
+DTR.text_dat  = Datalog sampling rate is now 1 in 10
+
+** Pin Map Record (PMR) **
+PMR.rec_len   = 26
+PMR.rec_typ   = 1
+PMR.rec_sub   = 60
+PMR.pmr_indx  = 2
+PMR.chan_typ  = 10
+PMR.chan_nam  = 1-7
+PMR.phy_nam   = GND
+PMR.log_nam   = MAIN GROUND
+PMR.head_num  = 2
+PMR.site_num  = 1
+
+** Pin Group Record (PGR) **
+PGR.rec_len   = 29
+PGR.rec_typ   = 1
+PGR.rec_sub   = 62
+PGR.grp_indx  = 12
+PGR.grp_nam   = Data Out
+PGR.indx_cnt  = 8
+PGR.pmr_indx  = 
+        [000] = 5
+        [001] = 6
+        [002] = 7
+        [003] = 8
+        [004] = 9
+        [005] = 10
+        [006] = 11
+        [007] = 12
+
+** Pin List Record (PLR) **
+PLR.rec_len   = 56
+PLR.rec_typ   = 1
+PLR.rec_sub   = 63
+PLR.grp_cnt   = 3
+PLR.grp_indx  = 
+        [000] = 2
+        [001] = 3
+        [002] = 6
+PLR.grp_mode  = 
+        [000] = 20
+        [001] = 20
+        [002] = 21
+PLR.grp_radx  = 
+        [000] = 16
+        [001] = 16
+        [002] = 16
+PLR.pgm_char  = 
+        [000] = RRR
+        [001] = RRR
+        [002] = RRR
+PLR.rtn_char  = 
+        [000] = 10M
+        [001] = 10H
+        [002] = MLH
+PLR.pgm_chal  = 
+        [000] = LLL
+        [001] = LLL
+        [002] = LLL
+PLR.rtn_chal  = 
+        [000] = 
+        [001] = 
+        [002] = 
+
+** Pin List Record (PLR) **
+PLR.rec_len   = 47
+PLR.rec_typ   = 1
+PLR.rec_sub   = 63
+PLR.grp_cnt   = 3
+PLR.grp_indx  = 
+        [000] = 2
+        [001] = 3
+        [002] = 6
+PLR.grp_mode  = 
+        [000] = 20
+        [001] = 20
+        [002] = 21
+PLR.grp_radx  = 
+        [000] = 16
+        [001] = 16
+        [002] = 16
+PLR.pgm_char  = 
+        [000] = RRR
+        [001] = RRR
+        [002] = RRR
+PLR.rtn_char  = 
+        [000] = 10M
+        [001] = 10H
+        [002] = MLH
+PLR.pgm_chal  = 
+        [000] = 
+        [001] = 
+        [002] = 
+PLR.rtn_chal  = 
+        [000] = 
+        [001] = 
+        [002] = 
+
+** Pin List Record (PLR) **
+PLR.rec_len   = 47
+PLR.rec_typ   = 1
+PLR.rec_sub   = 63
+PLR.grp_cnt   = 3
+PLR.grp_indx  = 
+        [000] = 2
+        [001] = 3
+        [002] = 6
+PLR.grp_mode  = 
+        [000] = 20
+        [001] = 20
+        [002] = 21
+PLR.grp_radx  = 
+        [000] = 16
+        [001] = 16
+        [002] = 16
+PLR.pgm_char  = 
+        [000] = HLL
+        [001] = HHH
+        [002] = LLL
+PLR.rtn_char  = 
+        [000] = 10M
+        [001] = 10H
+        [002] = MLH
+PLR.pgm_chal  = 
+        [000] = 
+        [001] = 
+        [002] = 
+PLR.rtn_chal  = 
+        [000] = 
+        [001] = 
+        [002] = 
+
+** Wafer Configuration Record (WCR) **
+WCR.rec_len   = 20
+WCR.rec_typ   = 2
+WCR.rec_sub   = 30
+WCR.wafr_siz  = 5
+WCR.die_ht    = 0.3
+WCR.die_wid   = 0.25
+WCR.wf_units  = 1
+WCR.wf_flat   = D
+WCR.center_x  = 23
+WCR.center_y  = 19
+WCR.pos_x     = R
+WCR.pos_y     = D
+
+** Wafer Information Record (WIR) **
+WIR.rec_len   = 6
+WIR.rec_typ   = 2
+WIR.rec_sub   = 10
+WIR.head_num  = 1
+WIR.site_grp  = 2
+WIR.start_t   = Thu 23 Jul 1992 8:23:02 (0x2a6e6c66)
+
+** Part Information Record (PIR) **
+PIR.rec_len   = 2
+PIR.rec_typ   = 5
+PIR.rec_sub   = 10
+PIR.head_num  = 2
+PIR.site_num  = 1
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 69
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 23
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x0c
+PTR.result    = 997.299988
+PTR.test_txt  = Check 2nd layer
+PTR.alarm_id  = <not valid> ()
+PTR.opt_flag  = 0x02
+PTR.res_scal  = 3
+PTR.llm_scal  = 3
+PTR.hlm_scal  = 4
+PTR.lo_limit  = -1.7
+PTR.hi_limit  = 45.2
+PTR.units     = A
+PTR.c_resfmt  = %9.4f
+PTR.c_llmfmt  = %7.2f
+PTR.c_hlmfmt  = %7.2f
+PTR.lo_spec   = -1.75
+PTR.hi_spec   = 45.25
+
+** Multiple-Result Parametric Record (MPR) **
+MPR.rec_len   = 85
+MPR.rec_typ   = 15
+MPR.rec_sub   = 15
+MPR.test_num  = 143
+MPR.head_num  = 2
+MPR.site_num  = 4
+MPR.test_flg  = 0x80
+MPR.parm_flg  = 0xc2
+MPR.rtn_icnt  = 3
+MPR.rslt_cnt  = 3
+MPR.rtn_stat  = 
+        [000] = 0x0
+        [001] = 0xa
+        [002] = 0x6
+MPR.rtn_rslt  = 
+        [000] = 1.3
+        [001] = 9.6
+        [002] = 1.5
+MPR.test_txt  = <not valid> ()
+MPR.alarm_id  = <not valid> ()
+MPR.opt_flag  = 0x00
+MPR.res_scal  = 0
+MPR.llm_scal  = 0
+MPR.hlm_scal  = 0
+MPR.lo_limit  = 1
+MPR.hi_limit  = 2.1
+MPR.start_in  = 4.5
+MPR.incr_in   = 0.1
+MPR.rtn_indx  = 
+        [000] = 3
+        [001] = 4
+        [002] = 5
+MPR.units     = mA
+MPR.units_in  = V
+MPR.c_resfmt  = %6.1f
+MPR.c_llmfmt  = %6.1f
+MPR.c_hlmfmt  = %6.1f
+MPR.lo_spec   = 9.75
+MPR.hi_spec   = 2.25
+
+** Functional Test Record (FTR) **
+FTR.rec_len   = 102
+FTR.rec_typ   = 15
+FTR.rec_sub   = 20
+FTR.test_num  = 27
+FTR.head_num  = 2
+FTR.site_num  = 1
+FTR.test_flg  = 0x00
+FTR.opt_flag  = 0xc0
+FTR.cycl_cnt  = 5
+FTR.rel_vadr  = 22
+FTR.rept_cnt  = 2
+FTR.num_fail  = 3
+FTR.xfail_ad  = 6
+FTR.yfail_ad  = 3
+FTR.vect_off  = 0
+FTR.rtn_icnt  = 4
+FTR.pgm_icnt  = 4
+FTR.rtn_indx  = 
+        [000] = 10
+        [001] = 2
+        [002] = 8
+        [003] = 12
+FTR.rtn_stat  = 
+        [000] = 0x0
+        [001] = 0x1
+        [002] = 0x1
+        [003] = 0x4
+FTR.pgm_indx  = 
+        [000] = 4
+        [001] = 5
+        [002] = 6
+        [003] = 7
+FTR.pgm_stat  = 
+        [000] = 0x0
+        [001] = 0x0
+        [002] = 0x0
+        [003] = 0x0
+FTR.fail_pin  = 0x0100
+FTR.vect_nam  = CHECKERBOARD
+FTR.time_set  = A1
+FTR.op_code   = DRV
+FTR.test_txt  = Check Driver
+FTR.alarm_id  = <not valid> ()
+FTR.prog_txt  = <not valid> ()
+FTR.rslt_txt  = <not valid> ()
+FTR.patg_num  = 2
+FTR.spin_map  = 0x5c
+
+** Part Results Record (PRR) **
+PRR.rec_len   = 48
+PRR.rec_typ   = 5
+PRR.rec_sub   = 20
+PRR.head_num  = 2
+PRR.site_num  = 1
+PRR.part_flg  = 0x08
+PRR.num_test  = 78
+PRR.hard_bin  = 0
+PRR.soft_bin  = 17
+PRR.x_coord   = -2
+PRR.y_coord   = 7
+PRR.test_t    = 644
+PRR.part_id   = 13
+PRR.part_txt  = Device at edge of wafer
+PRR.part_fix  = 0xf13c20
+
+** Wafer Results Record (WRR) **
+WRR.rec_len   = 94
+WRR.rec_typ   = 2
+WRR.rec_sub   = 20
+WRR.head_num  = 1
+WRR.site_grp  = 3
+WRR.finish_t  = Thu 23 Jul 1992 11:02:42 (0x2a6e91d2)
+WRR.part_cnt  = 492
+WRR.rtst_cnt  = 102
+WRR.abrt_cnt  = 214
+WRR.good_cnt  = 2
+WRR.func_cnt  = 131
+WRR.wafer_id  = W01
+WRR.fabwf_id  = MOS-4
+WRR.frame_id  = F54
+WRR.mask_id   = S3-1
+WRR.usr_desc  = Glass buildup on prober
+WRR.exc_desc  = Yield alarm on wafer W01
+
+** Generic Data Record (GDR) **
+GDR.rec_len   = 34
+GDR.rec_typ   = 50
+GDR.rec_sub   = 10
+GDR.fld_cnt   = 5
+GDR.gen_data  = This is text
+GDR.gen_data  = -435
+GDR.gen_data  = 255
+GDR.gen_data  = 645.711
+GDR.gen_data  = 0xffe0014c
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 58
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.head_num  = 2
+TSR.site_num  = 2
+TSR.test_typ  = P
+TSR.test_num  = 600
+TSR.exec_cnt  = 413
+TSR.fail_cnt  = 92
+TSR.alrm_cnt  = 3
+TSR.test_nam  = Leakage
+TSR.seq_name  = <not valid> ()
+TSR.test_lbl  = DC_TESTS
+TSR.opt_flag  = 0x00
+TSR.test_tim  = 0.005
+TSR.test_min  = 0.1
+TSR.test_max  = 7.2
+TSR.tst_sums  = 1280.3
+TSR.tst_sqrs  = 4329.5
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 15
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.head_num  = 2
+HBR.site_num  = 1
+HBR.hbin_num  = 6
+HBR.hbin_cnt  = 212
+HBR.hbin_pf   = F
+HBR.hbin_nam  = SHORT
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 16
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.head_num  = 255
+HBR.site_num  = 1
+HBR.hbin_num  = 1
+HBR.hbin_cnt  = 1346
+HBR.hbin_pf   = P
+HBR.hbin_nam  = PASSED
+
+** Software Bin Record (SBR) **
+SBR.rec_len   = 28
+SBR.rec_typ   = 1
+SBR.rec_sub   = 50
+SBR.head_num  = 1
+SBR.site_num  = 2
+SBR.sbin_num  = 74
+SBR.sbin_cnt  = 14
+SBR.sbin_pf   = F
+SBR.sbin_nam  = NOTIFY PRODUCT ENG
+
+** Software Bin Record (SBR) **
+SBR.rec_len   = 16
+SBR.rec_typ   = 1
+SBR.rec_sub   = 50
+SBR.head_num  = 255
+SBR.site_num  = 1
+SBR.sbin_num  = 1
+SBR.sbin_cnt  = 1346
+SBR.sbin_pf   = P
+SBR.sbin_nam  = PASSED
+
+** Part Count Record (PCR) **
+PCR.rec_len   = 22
+PCR.rec_typ   = 1
+PCR.rec_sub   = 30
+PCR.head_num  = 2
+PCR.site_num  = 1
+PCR.part_cnt  = 497
+PCR.rtst_cnt  = 5
+PCR.abrt_cnt  = 11
+PCR.good_cnt  = 212
+PCR.func_cnt  = 481
+
+** Part Count Record (PCR) **
+PCR.rec_len   = 22
+PCR.rec_typ   = 1
+PCR.rec_sub   = 30
+PCR.head_num  = 255
+PCR.site_num  = 1
+PCR.part_cnt  = 3976
+PCR.rtst_cnt  = 54
+PCR.abrt_cnt  = 76
+PCR.good_cnt  = 2311
+PCR.func_cnt  = 3809
+
+** Master Results Record (MRR) **
+MRR.rec_len   = 34
+MRR.rec_typ   = 1
+MRR.rec_sub   = 20
+MRR.finish_t  = Thu 23 Jul 1992 12:17:12 (0x2a6ea348)
+MRR.disp_cod  = H
+MRR.usr_desc  = Handler problems
+MRR.exc_desc  = Yield Alarm

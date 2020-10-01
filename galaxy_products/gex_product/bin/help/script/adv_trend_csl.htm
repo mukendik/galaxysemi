@@ -1,0 +1,74 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: adv_trend.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This script generates the trend report
+      in the Advanced report section. When executed, you are prompted to enter
+      the file to process. The script uses the function <a href="gex6.htm">gexReportType('advanced')</a>
+      to display the&nbsp;advanced report&nbsp; page directly, instead of the
+      standard home page. This saves you one mouse click!</p>
+          <p align="left">Additional information can be found in the scripting 
+          language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">reviewing</a> the other sample scripts.
+          <p align="left"><b>Important note</b>: this script doesn't overwrite 
+          your options and assumes your report type output is set to HTML. If 
+          you want the script to have full control of the options, merge it with 
+          the <a href="options_csl.htm">options.csl</a>
+          script.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: adv_trend.csl
+//////////////////////////////////////////
+
+// Function to setup the Trend report section
+SetTrendReport()
+{
+  sysLog('*** This script creates a Trend chart! ***');
+
+  // Select file name to process
+  var vFile = sysPrompt('Select the data file to process...');
+
+  // Enter Test# to plot
+  var vTest = sysPrompt('Test# to plot:');
+
+  // Creates a group to hold the file to process!
+  var group_id = gexGroup('insert','Group1');
+
+  // Add selected file into that group.
+  gexFile(group_id,'insert',vFile,'all','all');
+
+  // Set options to all defaults
+  gexOptions('reset','all','default');
+
+  // Set Histogram  report section: all tests
+  gexReportType('adv_trend','test_over_range',vTest);
+
+  // Get report created+show report at Trend page!
+  gexBuildReport('advanced');
+}
+
+// Script entry point
+main()
+{
+  // Call function to setup the Trend report
+  SetTrendReport();
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

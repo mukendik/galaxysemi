@@ -1,0 +1,10 @@
+Package: graphics
+Version: 3.0.1
+Priority: base
+Title: The R Graphics Package
+Author: R Core Team and contributors worldwide
+Maintainer: R Core Team <R-core@r-project.org>
+Description: R functions for base graphics
+Imports: grDevices
+License: Part of R 3.0.1
+Built: R 3.0.1; i686-pc-linux-gnu; 2015-04-29 15:37:58 UTC; unix

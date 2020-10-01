@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <includes>
+                <include>galaxy_libraries/galaxy_qt_libraries/lib/${distName}/*gqtl_ws*</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>  
+    </fileSets>
+</assembly>

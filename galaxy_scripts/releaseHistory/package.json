@@ -1,0 +1,27 @@
+{
+    "name": "releaseHistory",
+    "description": "",
+    "version": "0.0.1",
+    "dependencies": {
+        "node-getopt": "",
+        "sync-request": "",
+        "escape-html": "",
+        "netrc": ""
+    },
+    "main": "./releaseHistory.js",
+    "author": {
+        "name": "Clement IGONET",
+        "email": "clement.igonet@galaxysemi.com"
+    },
+    "keywords": [],
+    "licenses": {
+        "type": "galaxysemi"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": "https://galaxysemi.atlassian.net"
+    }
+}

@@ -1,0 +1,28 @@
+GTM TODO:
+
+* Use Grid layout.
+* Verify full multi-site support.
+* Add tester env. information (tester name, operator...).
+* Make sure no Gex-Lm timeout when running GTM (what if the Gex-Lm is closed?)
+* Check why GTM doesn't remember last connection mode (client/server)
+* Use special startup CSL file when running GTM.
+* Display Yield limit line in GTM histo.
+* Should yield be checked globally, or on a per site basis?
+
+* Recipe loading convention.
+* Check results between post-processing, and real-time with baseline = all parts
+* Specs: 
+	o Specific binning in recipe file for PASS parts during baseline.
+	o Keep dynamic PAT limits from previous lot when changing lot.
+	o Dump PAT limits, be able to reload saved PAT limits (with eventual filter on tester...).
+
+GTM DONE:
+* Remove expiration check in Gtm_TesterWindow::clientInit(). Check GTM expiration date at each tester connection.
+* Disable Drag&Drop
+* Disable -S <script>
+* Disable STDF file passed as arguments
+* Check how to generate STDF file on ASL/Mac
+* Change 'GTM widget is NULL' to 'GTM widget is not initialized.'
+* Do not load Options Center when running GTM.
+* Enable configuration of multiple GTM servers.
+* Check purpose of spooling folder, and OnCheckSpool();	(Callback called every minute to send local spool files to server)

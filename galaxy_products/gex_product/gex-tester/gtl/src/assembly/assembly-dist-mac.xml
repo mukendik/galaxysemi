@@ -1,0 +1,32 @@
+<assembly>
+    <id>assembly-gtl-core-dist-linux</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <baseDirectory>${project.artifactId}-dist-${distNameLong}</baseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/lib/${distName}</directory>
+            <outputDirectory>gtl/lib/${gtlGroup}</outputDirectory>
+            <includes>
+                <include>*.a</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_libraries/galaxy_std_libraries/lib/${distName}</directory>
+            <outputDirectory>gtl/lib/${gtlGroup}</outputDirectory>
+            <includes>
+                <include>*.a</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <files>
+        <file>
+            <source>${project.build.directory}/${basepath}/lib/${distName}/libgtl.1.0.0.dylib</source>
+            <outputDirectory>gtl/lib/${gtlGroup}</outputDirectory>
+            <destName>libgtl.dylib</destName>
+        </file>
+    </files>
+</assembly>

@@ -1,0 +1,16 @@
+<assembly>
+    <id>assembly-bin</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${qtPrefix}</directory>
+            <outputDirectory>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</outputDirectory>
+            <excludes/>
+        </fileSet>  
+    </fileSets>
+</assembly>
+                            

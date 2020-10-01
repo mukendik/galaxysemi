@@ -1,0 +1,85 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>sysLoadScript<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library<br>
+      </a>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>sysLoadScript(
+  const filename) // name of script file
+</pre>
+      <p>Compiles and loads a script file at runtime. The script is searched in
+      the current working directory and all<br>
+      directories listed in environment variable <i>CSLPATH</i>. To access any
+      functions or identifiers in the script they<br>
+      have to be forward declared.</p>
+      <p>Example:</p>
+      <pre>// Myscript.scl
+&nbsp;
+extern var foovar[]; // implemented in foo.csl
+foo(var xy);         // implemented in foo.csl
+&nbsp;
+main()
+{
+   sysLoadScript('foo'); // load foo.csl
+   foovar[1] = 1234;
+   foo('hello');
+}
+</pre>
+      <p>CSL won't load the same script more than once; any attempts to do so
+      will be silently ignored.</p>
+      <p>You may want to put the forward declarations into a file <b>foo.csl</b>
+      and include that file at compile time. It is<br>
+      recommended that you do this using <a href="direct5.htm">#loadScript</a> rather than <a href="direct2.htm">#include</a>,
+      because it will avoid multiple loading.</p>
+      <p>Example:</p>
+      <pre>// Myscript2.scl
+#loadScript 'foo.csl'  // forward declarations
+&nbsp;
+main()
+{
+   sysLoadScript('foo'); // load foo.csl at runtime
+   sysLoadScript(&quot;scripts\\foo.csl&quot;); // will be ignored since already loaded
+   foovar[1] = 1234;
+   foo('hello');
+}
+</pre>
+      <pre></pre>
+      <pre></pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

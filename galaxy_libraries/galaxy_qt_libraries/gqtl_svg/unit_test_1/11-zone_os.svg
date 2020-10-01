@@ -1,0 +1,115 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="10cm" height="10cm" viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink/"
+    baseProfile="tiny" version="1.2">
+	
+  <title>waferzones</title>
+
+	<desc>Description...
+	</desc>
+
+	<defs>
+      <!-- Define a shadow for each sphere. -->
+      <circle id="shadow" fill="red" cx="0" cy="0" r="100" />
+	  <fill id="blue" fill="blue" />
+	  <!-- fill id="red" fill="red" / -->
+	  <gradient id="red" fill="red" />
+	</defs>
+
+	<!-- g fill="#ffee99" stroke="none" >
+		<rect x="0" y="0" width="400" height="400" />
+	</g -->
+
+	<g fill="black" stroke="none" >
+     <rect x="0" y="0" width="100" height="100" />
+	</g>
+
+	<!-- g transform="translate(200,200)">
+     <use xlink:href="#shadow" transform="translate(0,0) scale(1.0,1.0)" />
+     <circle fill="url(#blueSphere)" cx="0" cy="0" r="100" />
+	</g -->
+
+	<!-- M = move	a = arc relative :  rx ry  rotAxeX DAL DB		xend yend 
+		rx ry : radius x and y
+		rotationAxeX : 0
+		DAL DB : could be 0 0
+		xend yend : ending point coordinates
+
+Color	HTML/CSS Name	Hex Code
+#RRGGBB
+Decimal Code
+(R,G,B)
+ 	Black	#000000	(0,0,0)
+ 	White	#FFFFFF	(255,255,255)
+ 	Red	#FF0000	(255,0,0)
+ 	Lime	#00FF00	(0,255,0)
+ 	Blue	#0000FF	(0,0,255)
+ 	Yellow	#FFFF00	(255,255,0)
+ 	Cyan / Aqua	#00FFFF	(0,255,255)
+ 	Magenta / Fuchsia	#FF00FF	(255,0,255)
+ 	Silver	#C0C0C0	(192,192,192)
+ 	Gray	#808080	(128,128,128)
+ 	Maroon	#800000	(128,0,0)
+ 	Olive	#808000	(128,128,0)
+ 	Green	#008000	(0,128,0)
+ 	Purple	#800080	(128,0,128)
+ 	Teal	#008080	(0,128,128)
+ 	Navy	#000080	(0,0,128)
+ 	
+	Outer Ring
+	===========
+	zoneid=1 	spring green	#00FF7F
+	zoneid=7 	brown		#A52A2A
+	zoneid=10 	magenta 	#FF00FF
+	zoneid=11	med slate blue	#7B68EE
+	zoneid=5	aqua		#00FFFF
+	zoneid=2	dark violet	#9400D3
+
+	Inner Ring
+	===========
+	zoneid=4	dark orange	#FF8C00
+	zoneid=9	Yellow		#FFFF00
+	zoneid=8	Green		#008000
+	zoneid=3	dodger blue	#1E90FF
+	zoneid=6	Red		#FF0000
+
+
+
+	-->
+	
+	<g transform="translate(50 50) ">
+		<!-- outer ring start with upper left yellow and go clockwise -->
+		<path zoneid="1" d="M 0,0 L -100,0 A 100,100 0 0,1 -50,-86.6 z" fill="#00FF7F" />
+		<path zoneid="7" d="M 0,0 L -50,-86.6 A 100,100 0 0,1 50,-86.6 z" fill="#A52A2A" />
+		<path zoneid="10" d="M 0,0 L 50,-86.6 A 100,100 0 0,1 100,0 z" fill="#FF00FF" />
+		<path zoneid="11" d="M 0,0 L 100,0 A 100,100 0 0,1 50,86.6 z" fill="#7B68EE" />
+		<path zoneid="5" d="M 0,0 L 50,86.6 A 100,100 0 0,1 -50,86.6 z" fill="#00FFFF" />
+		<path zoneid="2" d="M 0,0 L -50,86.6 A 100,100 0 0,1 -100,0 z" fill="#9400D3" />
+		<!-- inner ring start with upper left orange and go clockwise -->
+		<path zoneid="4" d="M 0,0 L -25,0 A 25,25 0 0,1 0,-25 z" fill="#FF8C00" />
+		<path zoneid="9" d="M 0,0 L 0,-25 A 25,25 0 0,1 25,0 z" fill="#FFFF00" />
+		<path zoneid="8" d="M 0,0 L 25,0 A 25,25 0 0,1 0,25 z" fill="#008000" />
+		<path zoneid="3" d="M 0,0 L 0,25 A 25,25 0 0,1 -25,0 z" fill="#1E90FF" />
+
+		<circle zoneid="6" fill="#FF0000" cx="0" cy="0" r="9" />
+	</g>
+
+	<g transform="translate(50 50)" decoration="true">
+		<circle  cx="0" cy="0" r="50" style="stroke:black; fill:none; fill-opacity:.5; stroke-opacity:.5;" />
+		<text x="-40" y="-15" style="font-size:20; fill:white">1</text> 
+		<text x="0" y="-30" style="font-size:20; fill:white">7</text> 
+		<text x="25" y="-15" style="font-size:20; fill:white">10</text> 
+		<text x="25" y="20" style="font-size:20; fill:white">11</text> 
+		<text x="0" y="40" style="font-size:20; fill:white">5</text> 
+		<text x="-40" y="20" style="font-size:20; fill:white">2</text> 
+
+		<text x="-15" y="-5" style="font-size:20; fill:white">4</text> 
+		<text x="10" y="-5" style="font-size:20; fill:white">9</text> 
+		<text x="10" y="15" style="font-size:20; fill:white">8</text> 
+		<text x="-23" y="15" style="font-size:20; fill:white">3</text> 
+
+		<text x="-5" y="5" style="font-size:20; fill:white">6</text> 
+	</g>
+
+</svg>

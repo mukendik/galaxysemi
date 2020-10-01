@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <!--cf http://www.codeproject.com/Articles/629935/MSI-wrapper-for-any-installer-using-Wix-->
+    <Product Id="*" UpgradeCode="PUT-GUID-HERE" Version="1.0.0.0" Language="1033" Name="My Application Name" Manufacturer="My Manufacturer Name">
+        <Package InstallerVersion="300" Compressed="yes"/>
+        <Media Id="1" Cabinet="myapplication.cab" EmbedCab="yes" />
+        <Directory Id='TARGETDIR' Name='SourceDir'>
+            <!-- temp folder -->
+            <Directory Id='TempFolder'>
+                <Component Id='my_setup' 
+                           Guid='{YOUR-GUID-HERE-8148-2F82D9E7B4AE}'>
+                    <File Id="mysetup_exe" Source="mysetup.exe" /> 
+                </Component>
+            </Directory>
+        </Directory>
+        <Feature Id="MainApplication" Title="Main Application" Level="1">
+            <ComponentRef Id="my_setup" />
+        </Feature>
+        <!-- PF folder -->
+        <Directory Id="ProgramFilesFolder">
+            <Directory Id="INSTALLLOCATION" Name="MyApp" />
+        </Directory>
+        <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" ></Property>
+        <UIRef Id="WixUI_InstallDir" />
+        <UI>
+            <UIRef Id="WixUI_InstallDir" />
+            <!-- skip licence dialog -->
+            <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" 
+                     Value="InstallDirDlg" Order="2">1</Publish>
+            <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" 
+                     Value="WelcomeDlg" Order="2">1</Publish>
+        </UI>
+        <!-- Define "run_setup" action: launch our installation silently -->
+        <CustomAction Id="run_setup" 
+                      FileKey="mysetup_exe"
+                      ExeCommand="/SP- /SILENT /SUPPRESSMSGBOXES /LANG=English /NOCANCEL /DIR=&quot;[INSTALLLOCATION]&quot;" 
+                      Execute="deferred"
+                      Impersonate="no"
+                      Return="check" />
+        <!-- Call our "run_setup" customized action -->
+        <InstallExecuteSequence>
+            <Custom Action="run_setup" Sequence='5401'>NOT Installed</Custom>
+        </InstallExecuteSequence>
+    </Product>
+</Wix>

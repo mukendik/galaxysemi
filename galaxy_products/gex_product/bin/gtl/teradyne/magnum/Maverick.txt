@@ -1,0 +1,4 @@
+For Maverick type testers:
+- if using Borland C Builder 5, use the script/template in /gtl/bcb5
+- if using Borland C Builder 6, use the script/template in /gtl/bcb6
+- if using VusualStudio, use regular gtl win32 or 64

@@ -1,0 +1,120 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="150" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>Dynamic reallocation<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang2.htm">Comments</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="lang3.htm">Numbers</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang4.htm">Literals</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang5.htm">Var
+      and const<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang51.htm">Arrays<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang52.htm">Initialization</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang53.htm">Static
+      and extern<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang54.htm">Dynamic
+      reallocation</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang6.htm">Operators</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang7.htm">Statements
+      and&nbsp; blocks</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang8.htm">Program
+      flow</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang9.htm">Trace
+      facility</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang10.htm">Exception
+      handling</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang11.htm">Functions</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang12.htm">Predefined
+      identifiers</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">One smart feature of CSL is its
+      ability to dynamically reallocate variables using the <b>resize</b>
+      statement:
+      <pre>var adr = {
+  { 1, 'john' },
+  { 2, 'fred' }
+};
+...
+// now we need some more adr rows:
+resize adr[10][2];
+...
+</pre>
+      <p>The array is reallocated dynamically so you can insert another 8
+      addresses. There are some things you must<br>
+      be aware of when resizing arrays:</p>
+      <p><font size="+2"><b>Alignment</b></font></p>
+      <p>Depending on your data, increasing an index may cause the row/column 
+      relationship of your data to become misaligned. The following example 
+      increases the column index of the previous adr variable:</p>
+      <pre>resize adr[2][3];
+</pre>
+      <p>Will change the table to:</p>
+      <pre>  1       'john'    2
+  'fred'  ''        ''
+</pre>
+      <p><font size="+2"><b>Dimensions</b></font></p>
+      <p>The number of dimensions cannot be changed. All the following resizes
+      are <b>invalid</b>:</p>
+      <pre>resize adr[2][3][4];
+resize adr[7];
+resize adr;
+</pre>
+      <p><font size="+2"><b>Performance</b></font></p>
+      <p>Resizing is not a cheap operation. When the total size of the array grows,
+      a new array is allocated internally
+      and the values have to be copied. To avoid performance problems, stay away 
+      from using a lot of&nbsp; small resize reallocations and instead use a 
+      larger allocation once.</p>
+      <p><font size="+2"><b>Arguments</b></font></p>
+      <p>Resizing references is possible when the referenced variable is
+      un-indexed:</p>
+      <pre>foo(var &amp;x[])
+{
+   sysLog('resizing from '+sizeof(x)+' to 7');
+   resize x[7];
+}
+&nbsp;
+main()
+{
+   var a[3], b[5][4];
+   foo(a);    // ok, because un-indexed.
+   foo(b[2]); // runtime error thrown in foo!
+}
+</pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

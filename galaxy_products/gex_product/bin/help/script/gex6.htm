@@ -1,0 +1,867 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>gexReportType<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library
+      </a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>gexReportType(
+  const section,      // section entry name
+  const type,         // report type
+  const value,        // field value
+  const customvalue)  // custom value used in some report types</pre>
+      <p>Sets the type of report to generate (wafer map, histogram, etc...). Fields are not case sensitive.
+      </p>
+      <p>For a complete example, take a look at the <a href="samples.htm">ready-to-use
+      scripts</a> templates:</p>
+      <p><b>Note</b>: Advanced reports always display one report per page except
+      when the chart size is set to <b>auto</b>; in<br>
+      this case a mosaic of small charts are displayed on a same page (see <a href="gex5.htm">gexOptions</a>
+      for more details)</p>
+      <p>Example:</p>
+      <pre>// Create a wafer map of Hardware bins, 
+gexReportType('wafer','hard_bin');
+// Because parameters are not case sensitive, it is the same as: 
+gexReportType('Wafer','hard_bin');
+// or even the same as...
+gexReportType('wafer','HARD_BIN');</pre>
+      <p>Here is the list of report sections you can configure using this script
+      function:</p>
+      <table border="1" width="646" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="137"><font color="#ffffff"><b>Section</b></font></td>
+          <td bgColor="#0034aa" width="485"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#stats">stats</a></b></td>
+          <td width="485">Define the type of Test Statistics table to generate</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#wafer">wafer</a></b></td>
+          <td width="485">Define the type of wafer map to generate</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#histogram">histogram</a></b></td>
+          <td width="485">Define the type of histogram to generate</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#advhistogram">adv_histogram</a></b></td>
+          <td width="485">Define the advanced report section to be a histogram
+            bar chart</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#advtrend">adv_trend</a></b></td>
+          <td width="485">Define the advanced report section to be a trend
+            control chart</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#advcorrelation">adv_correlation</a></b></td>
+          <td width="485">Define the advanced report section to be a correlation
+            (XY-scatter) chart</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#advprodyield">adv_production_yield</a></b></td>
+          <td width="485">Define the advanced report section to be Production 
+          Yield charts</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#advboxplot">adv_boxplot</a></b></td>
+          <td width="485">Define the advanced report section to be a <b>Gage R&amp;R
+          </b>- box plot
+            chart</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#advdatalog">adv_datalog</a></b></td>
+          <td width="485">Define the advanced report section to be a datalog
+            listing</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#advpearson">adv_pearson</a></b></td>
+          <td width="485">Define the advanced report section to be the list of 
+          tests that highly correlate (based on Pearson's correlation formula)</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#adv_pat">adv_pat</a></b></td>
+          <td width="485">Define the advanced report section to display the PAT 
+		  history report created into the test data file by Quantix PAT-Man or
+          Examinator-PAT (post-processing PAT). Allows to review all outliers detected, their value, partID, etc...</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#adv_my_report">adv_my_report</a></b></td>
+          <td width="485">Define path to a template file (for creating custom 
+          reports &amp; sections).</td>
+        </tr>
+        <tr>
+          <td width="137"><b><a href="#adv_global_options">adv_global_options</a></b></td>
+          <td width="485">Defines global options that can be used by any of the 
+          advanced reports</td>
+        </tr>
+      </table>
+      <table border="1" width="100%">
+        <tr>
+          <td width="100%" bgcolor="#FFCC99">Note: <font color="#FF0000"><b>Only
+            one advanced section can be selected per report generation</b></font>.
+            If more than one advanced
+            section is set using multiple calls to the gexReportType function, <font color="#FF0000"><b>only
+            the last call takes effect</b></font>, previous
+            calls are simply ignored.</td>
+        </tr>
+      </table>
+      <p>&nbsp;
+      </p>
+      <h1>Section: <a name="stats">stats</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>disabled</b></td>
+          <td width="507">Specifies not to create the test statistics report section. 
+          No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>all</b></td>
+          <td width="507">Test statistics table includes all tests. No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>fails</b></td>
+          <td width="507">Test statistics table only includes tests that failed
+            at least once. No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>outliers</b></td>
+          <td width="507">Test statistics table only includes tests that have
+            outliers, result depends of the <a href="gex5.htm">outlier removal</a>
+            definition you've made. No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>tests</b></td>
+          <td width="507">Test statistics table includes a test or a range of
+            tests. The <b>value</b> 
+          parameter must set to the test number to process, for example: <b>1045
+            to 1055.<br>
+          </b>Alternatively, the <b>value</b> parameter can be a file name that 
+          holds your test list (see file format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cp</b></td>
+          <td width="507">Test statistics table includes all tests with a Cp
+            lower or equal to a given value. The <b>value</b> 
+          parameter must be set to the Cp limit you want, for example: <b>3.0</b></td>
+        </tr>
+        <tr>
+          <td width="116"><b>cpk</b></td>
+          <td width="507">Test statistics table includes all tests with a Cpk
+            lower or equal to a given value. The <b>value</b> 
+          parameter must be set to the Cpk limit you want, for example: <b>1.33</b></td>
+        </tr>
+      </table>
+      <p>Example1:</p>
+      <pre>// Create a test statistics table of failing tests only 
+gexReportType('stats','fails');</pre>
+      <p>Example2:</p>
+      <pre>// Create a test statistics table of tests with a Cpk &lt;= 1.33
+gexReportType('stats','cpk','1.33');</pre>
+      <p>Example3:</p>
+      <pre>// Create a test statistics table of tests specified in a configuration file
+gexReportType('stats','tests','c:/scripts/tests.txt');</pre>
+      <p>See&nbsp;also the ready-to-use script: <a href="statistics_csl.htm">statistics.csl</a></p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="wafer">wafer</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>disabled</b></td>
+          <td width="507">Specifies not to create the wafer map report section. 
+          No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>soft_bin</b></td>
+          <td width="507">Create a wafer map using the software binning 
+          information. No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>hard_bin</b></td>
+          <td width="507">Create a wafer map using the hardware binning 
+          information. No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>param_over_limits</b></td>
+          <td width="507">Create a wafer map using parametric test results, and 
+          using the test limits range for the color spectrum. The <b>value</b> 
+          parameter must be set to the test number to process, for example: <b>1045</b></td>
+        </tr>
+        <tr>
+          <td width="116"><b>param_over_range</b></td>
+          <td width="507">Create a wafer map using parametric test results, and 
+          using the test results range for the color spectrum. The <b>value</b> 
+          parameter must be set to the test number to process, for example: <b>1045</b></td>
+        </tr>
+        <tr>
+          <td width="116"><b>stack_soft_bin</b></td>
+          <td width="507">Create a stacked wafer map combining all wafers in the 
+          group. The <b>value</b> 
+          parameter must be set to the list of bins to merge, for example: <b>1-10,12</b></td>
+        </tr>
+        <tr>
+          <td width="116"><b>stack_hard_bin</b></td>
+          <td width="507">Create a stacked wafer map combining all wafers in the 
+          group. The <b>value</b> 
+          parameter must be set to the list of bins to merge, for example: <b>1-10,12</b></td>
+        </tr>
+        <tr>
+          <td width="116"><b>stack_param_over_limits</b></td>
+          <td width="507">Create a stacked wafer map using parametric test results 
+          of all wafers in the group, and 
+          using the test limits range for the color spectrum. The <b>value</b> 
+          parameter must be set to the test number to process, for example: <b>1045</b></td>
+        </tr>
+        <tr>
+          <td width="116"><b>stack_param_over_range</b></td>
+          <td width="507">Create a stacked wafer map using parametric test results 
+          of all wafers in the group, and 
+          using the test results range for the color spectrum. The <b>value</b> 
+          parameter must be set to the test number to process, for example: <b>1045</b></td>
+        </tr>
+      </table>
+      <p>Example1:</p>
+      <pre>// Create a wafer map using software binning, 
+gexReportType('wafer','soft_bin');</pre>
+      <p>Example2:</p>
+      <pre>// Create a gradient wafer map of parametric test 1045 over its limits
+gexReportType('wafer','param_over_limits','1045');</pre>
+      <p>Example3:</p>
+      <pre>// Create a Stacked wafer map of software binning: Bin1, 
+gexReportType('wafer','stack_soft_bin','1');</pre>
+      <pre>&nbsp;</pre>
+      <p>See&nbsp;also the ready-to-use script: <a href="wafermap_csl.htm">wafermap.csl</a></p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="histogram">histogram</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>disabled</b></td>
+          <td width="507">Specifies not to create the histogram report section. 
+          No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>advanced</b></td>
+          <td width="507">Forces the standard histogram section to use the 
+          advanced histogram plotting engine instead of plotting the standard 3D 
+          predefined histogram bars. This mode is more resource intensive and 
+          slower as each histogram image has to be fully built then saved to 
+          disk as an individual image. The benefit of using this mode is that 
+          markers and all the other options relative to the advanced histogram 
+          section can be leveraged. No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_over_limits</b></td>
+          <td width="507">Create the histogram report section showing charting
+            test results over the test limits space. The value parameter can be one of:<br>
+          &nbsp;<b>all</b> to have all tests histogram charts created<br>
+          &nbsp;<b>XX</b> where <b>XX</b> is the specific test histogram to create<br>
+          &nbsp;<b>XX</b> <b>to</b> <b>YY</b> to create the histograms of the tests 
+          XX to YY, e.g.: <b>1040 to 1060</b><p>Alternatively, the <b>value</b> 
+          parameter can be a file name that holds your test list (see file 
+          format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cumul_over_limits</b></td>
+          <td width="507">Same as above, except it creates cumulative 
+          histograms.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_over_range</b></td>
+          <td width="507">Same as above, except it creates histograms over test 
+          results range instead of test limits.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cumul_over_range</b></td>
+          <td width="507">Same as above, except it creates cumulative 
+          histograms.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>adaptive</b></td>
+          <td width="507">Adjust the charting dimensions to make all data points 
+          and test limits visible</td>
+        </tr>
+      </table>
+      <p>Example 1:</p>
+      <pre>// Create the histogram of ALL tests. Chart over test results
+gexReportType('histogram','test_over_range','all');</pre>
+      <p>Example 2:</p>
+      <pre>// Create histograms for tests 1040 to 1060, Chart over test limits
+gexReportType('histogram','test_over_limits','1040 to 1060');</pre>
+      <p>Example 3:</p>
+      <pre>// Create histograms for tests defined in a configuration file
+gexReportType('histogram','test_over_limits','c:/scripts/tests.txt');</pre>
+      <p>See&nbsp;also the ready-to-use script: <a href="histogram_csl.htm">histogram.csl</a>
+</p>
+      <pre>&nbsp;</pre>
+      <h1>Section: <a name="advhistogram">adv_histogram</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>disabled</b></td>
+          <td width="507">Specifies not to create the advanced report section. 
+          No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_over_limits</b></td>
+          <td width="507">Same as for histogram (test list or file name that 
+          holds the test list)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cumul_over_limits</b></td>
+          <td width="507">Same as for histogram (test list or file name that 
+          holds the test list)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_over_range</b></td>
+          <td width="507">Same as for histogram (test list or file name that 
+          holds the test list)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cumul_over_range</b></td>
+          <td width="507">Same as for histogram (test list or file name that 
+          holds the test list)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>adaptive</b></td>
+          <td width="507">Adjust the charting dimensions to make all data points 
+          and test limits visible</td>
+        </tr>
+      </table>
+      <p>Example 1:</p>
+      <pre>// Create advanced histograms for ALL tests, chart over test results
+gexReportType('adv_histogram','test_over_range','all');</pre>
+      <p>Example 2:</p>
+      <pre>// Create advanced histograms for tests 1040 to 1060, Chart over test limits
+gexReportType('adv_histogram','test_over_limits','1040 to 1060');</pre>
+      <p>Example 3:</p>
+      <pre>// Create advanced histograms for tests defined in a configuration file
+gexReportType('adv_histogram','test_over_limits','c:/scripts/tests.txt');</pre>
+      <pre>&nbsp;</pre>
+      <p>
+
+See&nbsp;also the ready-to-use script: <a href="adv_histogram_csl.htm">adv_histogram.csl</a></p>
+      <p>
+
+&nbsp;</p>
+      <h1>Section: <a name="advtrend">adv_trend</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>disabled</b></td>
+          <td width="507">Specifies not to create the advanced report section. 
+          No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_over_limits</b></td>
+          <td width="507">Same as for histogram (test list or file name that 
+          holds the test list)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_over_range</b></td>
+          <td width="507">Same as for histogram (test list or file name that 
+          holds the test list)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>adaptive</b></td>
+          <td width="507">Adjust the charting dimensions to make all data points 
+          and test limits visible</td>
+        </tr>
+        <tr>
+          <td width="116"><b>difference</b></td>
+          <td width="507">Build the trend chart resulting from the difference
+            between two test values.<br>
+ The <b>value</b> 
+          parameter must be the two tests to compare with a coma
+            separator.&nbsp;<br>
+            E.g.: <b>1040,1060</b>&nbsp;&nbsp;&nbsp; will create the trend chart
+            of Test 1040 - Test 1080</td>
+        </tr>
+        <tr>
+          <td width="116"><b>mean</b></td>
+          <td width="507">Creates the trend chart plotting the <b>mean</b> value 
+          for all given tests (one point per sub-lot). The value parameter can be one of:<br>
+          &nbsp;<b>all</b> to have all tests histogram charts created<br>
+          &nbsp;<b>XX</b> where <b>XX</b> is the specific test histogram to create<br>
+          &nbsp;<b>XX</b> <b>to</b> <b>YY</b> to create the histograms of the tests 
+          XX to YY, e.g.: <b>1040 to 1060</b><p>Alternatively, the <b>value</b> 
+          parameter can be a file name that holds your test list (see file 
+          format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>sigma</b></td>
+          <td width="507">Creates the trend chart plotting the <b>sigma</b> 
+          value for all given tests (same syntax as for the <b>mean</b>)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cp</b></td>
+          <td width="507">Creates the trend chart plotting the <b>cp</b> value 
+          for all given tests (same syntax as for the <b>mean</b>)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cpk</b></td>
+          <td width="507">Creates the trend chart plotting the <b>cpk</b> value 
+          for all given tests (same syntax as for the <b>mean</b>)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>soft_bin_sublots</b></td>
+          <td width="507">Build the trend chart of the software binning list
+            specified in the <b>value</b> parameter. Each plot is the sub-lot
+            yield level for the given binning selected.<br>
+ The <b>value</b> parameter must be the bin list (or file name that holds the 
+          bin list)<br>
+            E.g.: <b>2 to 7,9</b>&nbsp;&nbsp;&nbsp; will create the trend chart
+            of combined bin 2 to 7 and 9.<p>Alternatively, the <b>value</b> 
+          parameter can be a file name that holds your test list (see file 
+          format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>soft_bin_parts</b></td>
+          <td width="507">Build the trend chart of the software binning list
+            specified in the <b>value</b> parameter. There is one plot per part
+            tested (unless data file was generated with sampling...). The curve
+            shows the evolution of the instant yield level over all the samples.
+            It always starts from 0, then each point is the resulting current
+            yield level considering all previous point. Therefore, the last
+            point on the curve shows the exact yield level reached at the end of
+            the test batch<br>
+ The <b>value</b> parameter must be the bin list (or file name that holds the 
+          bin list)<br>
+            E.g.: <b>2 -7, 9-12</b>&nbsp;&nbsp;&nbsp; will create the trend chart
+            of combined bin 2 to 7 and 9 to 12.<p>Alternatively, the <b>value</b> 
+          parameter can be a file name that holds your test list (see file 
+          format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>hard_bin_sublots</b></td>
+          <td width="507">Same as above soft_bin_sublots but applies to Hardware
+            binning instead.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>soft_bin_parts</b></td>
+          <td width="507">Same as above soft_bin_parts but applies to Hardware
+            binning instead.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>soft_bin_rolling</b></td>
+          <td width="507">Plots two yield charts at once: the first chart 
+          plotted in the software binning yield level after each device tested; 
+          the other chart plotted shows the rolling yield level computed over 
+          200 consecutive parts (you can change this number with the function
+          <a href="gex5.htm#advtrend">gexOptions</a>). As the rolling yield is computed over windows 
+          of 200 consecutive parts, it is very reactive to yield change and can 
+          drop or increase much faster than the overall yield. </td>
+        </tr>
+        <tr>
+          <td width="116"><b>hard_bin_rolling</b></td>
+          <td width="507">Same as above soft_bin_rolling but applies to Hardware
+            binning instead.</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Create Trend charts for tests 1040 to 1080, chart over test limits
+gexReportType('adv_trend','test_over_limits','1040 to 1080');</pre>
+      <pre>// Create a Trend chart for Test 1040 - Test 1080 
+// (difference between T1040 and T1080)
+gexReportType('adv_trend','difference','1040,1080');</pre>
+      <pre>// Create a Trend chart for Binning 1 over all parts tested
+gexReportType('adv_trend','soft_bin_parts','1');</pre>
+      <pre>// Create a Trend chart for Bins specified in a configuration file
+// See file format in the <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 1</a> 
+gexReportType('adv_trend','soft_bin_parts','c:/scripts/binlist.txt');</pre>
+      <p>See&nbsp;also the ready-to-use script: <a href="adv_trend_csl.htm">adv_trend.csl</a></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advcorrelation">adv_correlation</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>disabled</b></td>
+          <td width="507">Specifies not to create the advanced report section. 
+          No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_over_limits</b></td>
+          <td width="507">That <b>value</b> lists 
+          the pairs of tests to plot on the scatter chart over a windows using 
+          the tests limits (first test is for the X axis, next test test is )Y.
+          <p>Alternatively, the <b>value</b> parameter can be a file name that 
+          holds your test list (see file format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_over_range</b></td>
+          <td width="507">Same as above, but charting over the window of data 
+          samples (Min &amp; Max)</td>
+        </tr>
+      </table>
+      <p>Example1:</p>
+      <pre>// Correlation (XY-Scatter) between test 1040 and test 1080, using test results
+gexReportType('adv_correlation','test_over_range','1040 1080');</pre>
+      <p><br>
+      Example2:</p>
+      <pre>// Correlation (XY-Scatter) between test 10.45 and test 10.57, using test limits
+gexReportType('adv_correlation','test_over_limits','10.45 10.57');</pre>
+      <p><br>
+      Example3: Two Scatter plots (two pairs of tests)</p>
+      <pre>// Scatter tests 1000 vs 1020 and test 2000 vs 2050
+gexReportType('adv_correlation','test_over_limits','1000 1020 2000 2050');</pre>
+      <p><br>
+      Example4: Scatter plots from a list of tests pairs defined in a file (see
+      <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">file format 
+      specs</a>)</p>
+      <pre>// Scatter tests defined in a file
+gexReportType('adv_correlation','test_over_limits','c:/scripts/filelist.txt');</pre>
+      <pre>&nbsp;</pre>
+      <p>See&nbsp;also the ready-to-use script: <a href="adv_correlation_csl.htm">adv_correlation.csl</a>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advprodyield">adv_production_yield</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116">&nbsp;</td>
+          <td bgColor="#0034aa" width="507">&nbsp;</td>
+        </tr>
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>title</b></td>
+          <td width="507">Specifies the chart title</td>
+        </tr>
+        <tr>
+          <td width="116"><b>sublot</b></td>
+          <td width="507">Tells to create a Yield/Volume chart where each plot 
+          is a sublot (or wafer). The value field specifies the Bin# or Bin list 
+          to focus on (typically Bin1)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>lot</b></td>
+          <td width="507">Tells to create a Yield/Volume chart where each plot 
+          represents a full lot. The value field specifies the Bin# or Bin list 
+          to focus on (typically Bin1)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>group</b></td>
+          <td width="507">Tells to create a Yield/Volume chart where each bar 
+          represents a group (or query). Typically used when comparing lots / 
+          datasets. The value field specifies the Bin# or Bin list 
+          to focus on (typically Bin1)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>daily</b></td>
+          <td width="507">Tells to create a Yield/Volume chart where each plot 
+          represents all lots and sublots tested the same day. The value field 
+          specifies the Bin# or Bin list to focus on (typically Bin1)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>weekly</b></td>
+          <td width="507">Tells to create a Yield/Volume chart where each plot 
+          represents all lots and sublots tested the same week. The value field 
+          specifies the Bin# or Bin list to focus on (typically Bin1)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>monthly</b></td>
+          <td width="507">Tells to create a Yield/Volume chart where each plot 
+          represents all lots and sublots tested the same month. The value field 
+          specifies the Bin# or Bin list to focus on (typically Bin1)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>yield_axis</b></td>
+          <td width="507">Specifies the view port to be used for the Yield axis.
+            Possible values are:<br>
+            '0-100' (default): view port is from 0% to 100%<br>
+            '0-max': view port is from 0% to max yield<br>
+            'min-100': view port is from min yield to 100%<br>
+            'min-max': view port is from min yield to max yield</td>
+        </tr>
+        <tr>
+          <td width="116"><b>volume_axis</b></td>
+          <td width="507">Specifies the view port to be used for the Volume
+            axis. Possible values are:<br>
+            '0-max' (default): view port is from 0% to max volume<br>
+            '0-customvalue': view port is from 0% to volume specified in <b>customvalue</b>
+            arg<br>
+            'min-max': view port is from min volume to max volume<br>
+            'min-customvalue': view port is from min volume to volume specified
+            in <b>customvalue</b> arg</td>
+        </tr>
+        <tr>
+          <td width="116"><b>yield_marker</b></td>
+          <td width="507">Specifies the yield position at which a red marker
+            should be set on the graph. possible values are between 0 and 100,
+            default is 0 (no marker).</td>
+        </tr>
+        </table>      
+      <p>Example:</p>
+      <pre>// Sets the title of the Yield/Volume chart
+gexReportType('adv_production_yield','title','Weekly Yield/Volume Chart');</pre>
+      <pre>// Display the Weekly Bin1 yield over the query period
+gexReportType('adv_production_yield','weekly','1');
+
+// Set Yield axis view port to be min-100
+gexReportType('adv_production_yield','yield_axis','min-100');
+
+// Set Volume axis view port to be 0-20000
+gexReportType('adv_production_yield','volume_axis','0-custom','20000');
+
+// Set Yield marker at 80%
+gexReportType('adv_production_yield','yield_marker','80');</pre>
+      <p><b><br>
+      Tip</b>: for accurate yield value when retest is involved, make sure the 
+      binning is computed over the wafermap/stripmap and not from samples or 
+      summary. </p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advboxplot">adv_boxplot</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>disabled</b></td>
+          <td width="507">Specifies not to create the advanced report section. 
+          No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>tests</b></td>
+          <td width="507">Create the Gage R&amp;R - box-plot report section . The
+          <b>value</b> parameter can be one of:<br>
+            <b>all</b> to have all tests boxplot charts created<br>
+            <b>XX</b> where <b>XX</b> is the specific test boxplot to create<br>
+            <b>XX</b> <b>to</b> <b>YY</b> to create the boxplots for tests
+            XX to YY (e.g. <b>1040 to 1060</b>)<p>Alternatively, the <b>value</b> 
+          parameter can be a file name that holds your test list (see file 
+          format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Includes all tests in the Gage R&amp;R - box-plot report
+gexReportType('adv_boxplot','tests','all');</pre>
+      <pre>// Gage R&amp;R - box-plot report for the tests listed in the configuration file
+gexReportType('adv_boxplot','tests','c:/scripts/testlist.txt');</pre>
+      <p>See&nbsp;also the ready-to-use script: <a href="adv_boxplot_csl.htm">adv_boxplot.csl</a></p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advdatalog">adv_datalog</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>disabled</b></td>
+          <td width="507">Specifies not to create the advanced report section. 
+          No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>all</b></td>
+          <td width="507">
+          <p class="MsoNormal">Advanced report section will include datalog of 
+          ALL tests. No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>fails</b></td>
+          <td width="507">
+          <p class="MsoNormal">Advanced report section will include datalog of 
+          failing tests only. No <b>value</b> parameter required.&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>outliers</b></td>
+          <td width="507">
+          <p class="MsoNormal">Advanced report section will include datalog of
+          outliers for the given tests in the <b>value</b> parameter.<p class="MsoNormal">
+          Alternatively, the <b>value</b> parameter can be a file name that 
+          holds your test list (see file format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>tests</b></td>
+          <td width="507">
+          <p class="MsoNormal">Advanced report section will include datalog of 
+          the specified test list given in the <b>value</b> parameter. Test 
+          results, part ID, and BIN results are reported.<p class="MsoNormal">
+          Alternatively, the <b>value</b> parameter can be a file name that 
+          holds your test list (see file format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>tests_only</b></td>
+          <td width="507">
+          <p class="MsoNormal">Advanced report section will include datalog of 
+          the specified test list given in the <b>value</b> parameter; only test 
+          values are reported (no part ID, nor BIN result).<p class="MsoNormal">
+          Alternatively, the <b>value</b> parameter can be a file name that 
+          holds your test list (see file format in the
+          <a href="../pages/_gexstd_manual_report_types.htm#Appendix1">Appendix 
+          1</a> of the visual tour help page)</td>
+        </tr>
+      </table>
+      <p>Example 1:</p>
+      <pre>// Generate datalog of all failing tests
+gexReportType('adv_datalog','fails');</pre>
+      <p>Example 2:</p>
+      <pre>// Generate datalog of test results for test 10 to 50
+gexReportType('adv_datalog','tests','10 to 50');</pre>
+      <p>Example 3:</p>
+      <pre>// Generate datalog for a test list defined in a configuration file
+gexReportType('adv_datalog','tests','c:/scripts/testlist.txt');</pre>
+      <p>See&nbsp;also the ready-to-use script: <a href="adv_datalog.csl_htm">adv_datalog.csl</a></p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advpearson">adv_pearson</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p>The report created lists all tests that strongly correlate (the 
+      correlation threshold over which tests are listed can be configured using 
+      the <a href="gex5.htm">gexOptions</a> function).<br>
+&nbsp;</p>
+      <p>Example:</p>
+      <pre>// Create the list of tests that highly correlate
+gexReportType('adv_pearson','','');</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="adv_pat">adv_pat</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p>The report created displays the complete PAT history report created into the 
+	  test data file by Quantix PAT-Man or Examinator-PAT (post-processing PAT) . Allows to review all
+      outliers detected, their value, partID, etc...</p>
+      <p>Example:</p>
+      <pre>// Display the PAT Outlier report summary.
+gexReportType('adv_pat','','');</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="adv_my_report">adv_my_report</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p>This function lets you define the report template file (.grt) to use 
+      for creating a custom report. This report template file must be created 
+      using the Examinator Wizard available from the Examinator Settings page, 
+      when selecting More reports = My Report. Such file includes the list of 
+      report sections to create (eg: Histograms, Statistics, Scatter plots,) as 
+      well as the layout (overlay charts, split charts, etc). This is the 
+      ultimate flexibility for tailored reports.</p>
+      <p>Example:</p>
+      <pre>// Display the PAT Outlier report summary.
+gexReportType('adv_my_report','template','c:/templates/my_report.grt');</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="adv_global_options">adv_global_options</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p>This function lets you define global options that can be used by any of 
+      the advanced reports.</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>binning</b></td>
+          <td width="507">Can be <b>hard_bin</b> or <b>soft_bin </b>: allows to 
+          define over which binning type the advanced report must be generated.<br>
+          <u><b>Note</b></u>: This scripting function is currently only 
+          supported by the Production yield report. All other advanced reports 
+          ignore this selection.</td>
+        </tr>
+        </table>      
+      <p>Example:</p>
+      <pre>// Production report to focus on hard-bin only.
+gexReportType('adv_global_options','binning','hard_bin');</pre>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<assembly>
+    <id>assembly-src</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory>${basepath}</outputDirectory>
+            <includes>
+                <include>sources/*.h</include>
+                <include>sources/*.cpp</include>
+                <include>sources/fnp_proxy*.xml</include>
+            </includes>
+        </fileSet>          
+    </fileSets>
+</assembly>

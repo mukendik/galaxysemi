@@ -1,0 +1,27 @@
+#!/bin/sh
+
+installdir=__RPM_PREFIX__
+
+# Symlinks
+cd $installdir
+if [ -f symlinks.tar.gz ]; then
+  tar -zxf symlinks.tar.gz
+fi
+chown -R quantixUser:quantixUser $installdir
+
+# Licence file
+mkdir -p ${installdir}/fnp_utils/galaxylm
+galaxylmLic=${installdir}/fnp_utils/galaxylm/galaxylm.lic
+echo "SERVER this_host ANY" > ${galaxylmLic}
+echo "VENDOR galaxylm \"${installdir}/fnp_utils/galaxylm/galaxylm\"" >> ${galaxylmLic}
+echo "#This increment is only for vendor deamon initialization" >> ${galaxylmLic}
+echo "INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \\" >> ${galaxylmLic}
+echo "VENDOR_STRING=\"Galaxy Semiconductor\" HOSTID=ANY TZ=SERVERTZ \\" >> ${galaxylmLic}
+echo "ISSUER=\"Galaxy Semiconductor\" SIGN=\"1050 62C9 CD0F 71DE B52A \\" >> ${galaxylmLic}
+echo "6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \\" >> ${galaxylmLic}
+echo "23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \\" >> ${galaxylmLic}
+echo "F8A9\"" >> ${galaxylmLic}
+
+cd ${installdir}/fnp_utils
+#LD_LIBRARY_PATH=${installdir}/fnp_utils ./install_fnp.sh ./FNPLicensingService
+LD_LIBRARY_PATH=${installdir}/fnp_utils ./install_fnp.sh

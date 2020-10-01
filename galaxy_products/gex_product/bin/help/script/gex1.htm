@@ -1,0 +1,132 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>GEX Report Library<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <font size="+2"><b>Overview</b></font>
+      <p>Gex Report Library functions let you <b>fully control</b> the reports 
+      you generate. You can use any of&nbsp;these functions without any prior 
+      declaration in your script. Because all libraries listed in the manual 
+      are&nbsp;embedded in the Examinator, you just use them as-is!<br>
+      Commonly used functions include:</p>
+      <ul>
+        <li>Define the files to process and compare</li>
+        <li>Define all the <a href="gex5.htm"> options</a> (report type, fields 
+        to display, charts sizes, etc.)</li>
+        <li>Define the <a href="gex6.htm">report pages to create</a> (wafer map, 
+        trend chart, etc.)</li>
+        <li>Define which tests and parts to consider</li>
+        <li>and much more!</li>
+      </ul>
+      <p align="left">Looking for a shortcut? Use the <a href="samples.htm">ready-to-use
+      scripts</a> to see how easy it is to control the GEX application!</p>
+      <p><font size="+2"><b>Functions</b></font></p>
+      <table border="1" width="100%">
+        <tr>
+            <td bgcolor="#0034AA"><font color="#ffffff"><b>Function</b></font></td>
+            <td bgColor="#0034aa"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex2.htm">gexBuildReport</a></td>
+          <td width="72%">Analyze data files, and generate report</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex7.htm">gexFavoriteScripts</a></td>
+          <td width="72%">Set the list of 'Favorite Scripts' in the GEX 
+          Scripting center page</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex3.htm">gexFile</a></td>
+          <td width="72%">Add a file to a group</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex11.htm">gexFileInfo</a></td>
+          <td width="72%">Returns information about a&nbsp; file (eg: LotID, 
+          Tester name, etc...)</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex4.htm">gexGroup</a></td>
+          <td width="72%">Create/remove groups of files</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex8.htm">gexInteractive</a></td>
+          <td width="72%">Allows to build and display interactive charts</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex5.htm">gexOptions</a></td>
+          <td width="72%">Set ALL the GEX report Options!</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex9.htm">gexParameter</a></td>
+          <td width="72%">Customize parameters <b>Test Limits</b>, add your own
+          <b>Markers</b>, etc...</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex6.htm">gexReportType</a></td>
+          <td width="72%">Define the type of report to generate
+            (tables, charts, wafer map...)</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex12.htm">gexPromptQuery</a></td>
+          <td width="72%">Prompts user to pick valid values for a given database 
+          key (eg: LotIDs...)</td>
+        </tr>
+        <tr>
+          <td width="28%"><a href="gex10.htm">gexToolbox</a></td>
+          <td width="72%">Automate some of the Examinator toolbox functions</td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p><font size="+2"><b>Globals</b></font></p>
+      <table border="1" width="449" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="162" bgcolor="#0044AA" align="center"><font color="#ffffff"><b>Identifier</b></font></td>
+          <td width="281" bgcolor="#0044AA"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="162" align="center" bgcolor="#C0E0FF">gexVersion</td>
+          <td width="281" bgcolor="#B0D0FF">Current version of the library</td>
+        </tr>
+        <tr>
+          <td width="162" align="center" bgcolor="#C0E0FF">gexBuilt</td>
+          <td width="281" bgcolor="#B0D0FF">Date and time when the library was compiled</td>
+        </tr>
+      </table>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

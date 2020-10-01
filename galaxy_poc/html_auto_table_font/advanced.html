@@ -1,0 +1,456 @@
+<html>
+<body>
+
+<a href="#anchor">Go to buttom</a>
+<h1 align="left"><font color="#006699">More Reports: Advanced Characterization Report</font></h1>
+<h1 style="color:#006699;text-align:center">Characterization Box-whisker</h1>
+<br>
+
+Test HTML 4 font size:  <br>
+<table border=1 cellpadding=0 cellspacing=0 align=center width="100%%">
+	<tr>
+		<td><font size="8">size 8</font></td>
+		<td><font size="7">size 7</font></td>
+		<td><font size="6">size 6</font></td>
+		<td><font size="5">size 5</font></td>
+		<td><font size="4">size 4</font></td>
+		<td><font size="3">size 3</font></td>
+		<td><font size="2">size 2</font></td>
+		<td><font size="1">size 1</font></td>
+		<td><font size="0">size 0</font></td>
+		<td><font size="-1">size -1</font></td>
+	</tr>
+</table>
+Bad news: HTML4 font accepts a number between 0 and 7, but not with units.<br>
+
+
+<br>
+Test: Result: a table with font size 0 should accept 14 columns when printed in portrait with htmldoc without any cutoff
+<font size="0">
+<table border=1 cellpadding=0 cellspacing=0 align=center width="100%%" style="font-size:0.11cm">
+	<tr>
+	<td align="center" > size 0 </td>
+	<td align="center" > -1.5270e+01 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+07 </td>
+	<td align="center" > -1.5270e+13 </td>
+	<td align="center" > -1.5270e+14 </td>
+	<td align="center" > -1.5270e+15 </td>
+	</tr>
+</table>
+</font>
+
+
+<br>
+Test: a table with font size 1 should accept 9 columns when printed in portrait with htmldoc without any cutoff
+<font size="1">
+<table border=1 cellpadding=0 cellspacing=0 align=center width="100%%" style="font-size:0.11cm">
+	<tr>
+	<td align="center"  > size 1 </td>
+	<td align="center"  > -1.5270e+07 </td>
+	<td align="center"  > -1.5270e+07 </td>
+	<td align="center"  > -1.5270e+07 </td>
+	<td align="center"  > -1.5270e+07 </td>
+	<td align="center"  > -1.5270e+07 </td>
+	<td align="center"  > -1.5270e+07 </td>
+	<td align="center"  > -1.5270e+07 </td>
+	<td align="center"  > -1.5270e+07 </td>
+	</tr>
+</table>
+</font>
+
+
+<!-- Table with 31 cols with max 10 characters per cell : ie max 300 chars : ie font size has to be not more than 0.3 percent of viewport size
+vw: minimalist font size: does not enlarge when browser enlarge -->
+<!-- vh : no way -->
+<!-- vmax : minimalist font size: does not enlarge when browser enlarge -->
+<!-- vmin : no way -->
+Percent viewport is CSS3 only, ie not compatible with htmldoc.<br>
+Test font size in cm:<br>
+- 0.3cm is too much<br>
+- 0.2cm is ok<br>
+- 0.12cm a little bit too big<br>
+- 0.11cm too small<br>
+- 0.1cm too small<br>
+A4 is 210 × 297 : let s consider we have 20cm for total text width:<br>
+Best font size should be = 20cm/(31cols*6charspercol)= ?<br>
+I have read that : One inch is 2.54 centimeters. Therefore, in CSS, one centimeter is 37.79 pixels.<br>
+
+
+<br>
+
+
+
+
+Test CSS style font-size in cm
+<table border=1 cellpadding=0 cellspacing=0 align=center width="100%%" style="font-size:0.12cm">
+	<td align="center"  >0.12cm</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.52700e+07</td>
+</table>
+Bad news: htmldoc fully ignore CSS style
+
+
+<br>
+
+<table border=1 cellpadding=0 cellspacing=0 align=center width="100%%" style="font-size:0.11cm">
+<tr>
+	<td align="center" ><b>Fab_Split</b></td>
+	<td align="center" colspan="6" ><b>TT</b></td>
+	<td align="center" colspan="6" ><b>SS</b></td>
+	<td align="center" colspan="6" ><b>SF</b></td>
+	<td align="center" colspan="6" ><b>FS</b></td>
+	<td align="center" colspan="6" ><b>FF</b></td>
+</tr>
+<tr>
+	<td align="center" ><b>Temp</b></td>
+	<td align="center" colspan="2" ><b>25</b></td>
+	<td align="center" colspan="2" ><b>85</b></td>
+	<td align="center" colspan="2" ><b>n40</b></td>
+	<td align="center" colspan="2" ><b>25</b></td>
+	<td align="center" colspan="2" ><b>85</b></td>
+	<td align="center" colspan="2" ><b>n40</b></td>
+	<td align="center" colspan="2" ><b>25</b></td>
+	<td align="center" colspan="2" ><b>85</b></td>
+	<td align="center" colspan="2" ><b>n40</b></td>
+	<td align="center" colspan="2" ><b>25</b></td>
+	<td align="center" colspan="2" ><b>85</b></td>
+	<td align="center" colspan="2" ><b>n40</b></td>
+	<td align="center"  colspan="2" ><b>25</b></td>
+	<td align="center"  colspan="2" ><b>85</b></td>
+	<td align="center"  colspan="2" ><b>n40</b></td>
+</tr>
+<tr>
+	<td align="center" ><b>Gain</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+	<td align="center"  colspan="1" ><b>g8</b></td>
+</tr>
+<tr>
+<a name="mean"></a> <a href=" "></a>	
+	<td align="center" >mean</td>
+	<td align="center"  >-1.52700e+07</td>
+	<td align="center"  >-1.531e+07</td>
+	<td align="center"  >-1.642e+07</td>
+	<td align="center"  >-1.541e+07</td>
+	<td align="center"  >-1.541e+07</td>
+	<td align="center"  >-1.579e+07</td>
+	<td align="center"  >-1.571e+07</td>
+	<td align="center"  >-1.654e+07</td>
+	<td align="center"  >-1.737e+07</td>
+	<td align="center"  >-1.656e+07</td>
+	<td align="center"  >-1.579e+07</td>
+	<td align="center"  >-1.732e+07</td>
+	<td align="center"  >-1.523e+07</td>
+	<td align="center"  >-1.529e+07</td>
+	<td align="center"  >-1.66e+07</td>
+	<td align="center"  >-1.575e+07</td>
+	<td align="center"  >-1.564e+07</td>
+	<td align="center"  >-1.594e+07</td>
+	<td align="center"  >-1.519e+07</td>
+	<td align="center"  >-1.52e+07</td>
+	<td align="center"  >-1.587e+07</td>
+	<td align="center"  >-1.524e+07</td>
+	<td align="center"  >-1.537e+07</td>
+	<td align="center"  >-1.533e+07</td>
+	<td align="center"  >-1.525e+07</td>
+	<td align="center"  >-1.546e+07</td>
+	<td align="center"  >-1.555e+07</td>
+	<td align="center"  >-1.501e+07</td>
+	<td align="center"  >-1.415e+07</td>
+	<td align="center"  >-1.216e+07</td>
+</tr>
+<tr>
+<a name="min"></a> <a href=" "></a>	<td align="center" >min</td>
+	<td align="center" >-2.408e+07</td>
+	<td align="center" >-2.49e+07</td>
+	<td align="center" >-2.5e+07</td>
+	<td align="center" >-2.455e+07</td>
+	<td align="center" >-1.795e+07</td>
+	<td align="center" >-2.4e+07</td>
+	<td align="center" >-2.489e+07</td>
+	<td align="center" >-2.5e+07</td>
+	<td align="center" >-2.5e+07</td>
+	<td align="center" >-2.5e+07</td>
+	<td align="center" >-2.042e+07</td>
+	<td align="center" >-2.485e+07</td>
+	<td align="center" >-2.489e+07</td>
+	<td align="center" >-2.497e+07</td>
+	<td align="center" >-2.5e+07</td>
+	<td align="center" >-2.494e+07</td>
+	<td align="center" >-1.845e+07</td>
+	<td align="center" >-2.487e+07</td>
+	<td align="center" >-2.471e+07</td>
+	<td align="center" >-2.333e+07</td>
+	<td align="center" >-2.497e+07</td>
+	<td align="center" >-2.211e+07</td>
+	<td align="center" >-1.831e+07</td>
+	<td align="center" >-2.002e+07</td>
+	<td align="center" >-1.912e+07</td>
+	<td align="center" >-2.284e+07</td>
+	<td align="center" >-2.461e+07</td>
+	<td align="center" >-1.87e+07</td>
+	<td align="center" >-2.480e+07</td>
+	<td align="center" >-1.965e+07</td>
+</tr>
+<tr>
+<a name="max"></a> <a href=" "></a>	<td align="center" >max</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-3.445e+06</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-4.78e+06</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-5.879e+06</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-3e+06</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-3.459e+06</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-6.379e+06</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-5.767e+06</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-1.4e+07</td>
+	<td align="center"  >-3e+06</td>
+	<td align="center"  >-3e+06</td>
+</tr>
+<tr>
+<a name="sigma"></a> <a href=" "></a>	<td align="center" >sigma</td>
+	<td align="center" >1.347e+06</td>
+	<td align="center" >1.515e+06</td>
+	<td align="center" >2.668e+06</td>
+	<td align="center"  >1.832e+06</td>
+	<td align="center"  >9.527e+05</td>
+	<td align="center"  >1.938e+06</td>
+	<td align="center"  >1.874e+06</td>
+	<td align="center"  >2.902e+06</td>
+	<td align="center"  >3.16e+06</td>
+	<td align="center"  >3.136e+06</td>
+	<td align="center"  >1.164e+06</td>
+	<td align="center"  >2.987e+06</td>
+	<td align="center"  >1.189e+06</td>
+	<td align="center"  >1.654e+06</td>
+	<td align="center"  >2.71e+06</td>
+	<td align="center"  >2.679e+06</td>
+	<td align="center"  >1.094e+06</td>
+	<td align="center"  >2.089e+06</td>
+	<td align="center"  >1.406e+06</td>
+	<td align="center"  >1.609e+06</td>
+	<td align="center"  >2.166e+06</td>
+	<td align="center"  >1.434e+06</td>
+	<td align="center"  >1.075e+06</td>
+	<td align="center"  >1.5e+06</td>
+	<td align="center"  >1.121e+06</td>
+	<td align="center"  >1.353e+06</td>
+	<td align="center"  >1.868e+06</td>
+	<td align="center"  >1.033e+06</td>
+	<td align="center"  >3.833e+06</td>
+	<td align="center"  >5.035e+06</td>
+</tr>
+<tr>
+<a name="ul"></a> <a href=" "></a>	<td align="center" >ul</td>
+	<td align="center" >n/a</td>
+	<td align="center" >n/a</td>
+	<td align="center" >n/a</td>
+	<td align="center" >n/a</td>
+	<td align="center" >n/a</td>
+	<td align="center" >n/a</td>
+	<td align="center"  >n/a</td>
+	<td align="center"  >n/a</td>
+	<td align="center" >n/a</td>
+	<td align="center"  >n/a</td>
+	<td align="center"  >n/a</td>
+	<td align="center"  >n/a</td>
+	<td align="center"  >n/a</td>
+	<td align="center"  >n/a</td>
+	<td align="center"  >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+</tr>
+<tr>
+<a name="ll"></a> <a href=" "></a>	<td align="center" >ll</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+	<td align="center"   >n/a</td>
+</tr>
+</table>
+
+<br>
+Table with font size 1vw:
+<table border=1 cellpadding=0 cellspacing=0 align=center width="100%%" style="font-size:1vw">
+<tr>
+	<td align="center" ><b>Fab_Split</b></td>
+	<td align="center" colspan="6" ><b>TT</b></td>
+	<td align="center" colspan="6" ><b>SS</b></td>
+	<td align="center" colspan="6" ><b>SF</b></td>
+	<td align="center" colspan="6" ><b>FS</b></td>
+	<td align="center" colspan="6" ><b>FF</b></td>
+</tr>
+<tr>
+	<td align="center" ><b>Temp</b></td>
+	<td align="center" colspan="2" ><b>25</b></td>
+	<td align="center" colspan="2" ><b>85</b></td>
+	<td align="center" colspan="2" ><b>n40</b></td>
+	<td align="center" colspan="2" ><b>25</b></td>
+	<td align="center" colspan="2" ><b>85</b></td>
+</tr>
+<tr>
+	<td align="center" ><b>Gain</b></td>
+	<td align="center"  colspan="1" ><b>g9</b></td>
+</tr>
+<tr>
+<a name="mean"></a> <a href=" "></a>	
+	<td align="center" >mean</td>
+	<td align="center"  >-1.527e+07</td>
+</tr>
+<tr>
+<a name="min"></a> <a href=" "></a>	
+	<td align="center" >min</td>
+	<td align="center" >-2.408e+07</td>
+</tr>
+<tr>
+<a name="max"></a> <a href=" "></a>	
+	<td align="center" >max</td>
+	<td align="center"  >-1.4e+07</td>
+</tr>
+<tr>
+<a name="sigma"></a> <a href=" "></a>	
+	<td align="center" >sigma</td>
+	<td align="center" >1.347e+06</td>
+</tr>
+<tr>
+<a name="ul"></a> <a href=" "></a>	
+	<td align="center" >ul</td>
+	<td align="center" >n/a</td>
+</tr>
+<tr>
+<a name="ll"></a> <a href=" "></a>	
+	<td align="center" >ll</td>
+	<td align="center"   >n/a</td>
+</tr>
+</table>
+
+Let s add some br to test the anchor...
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="anchor">Link to bottom</a>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

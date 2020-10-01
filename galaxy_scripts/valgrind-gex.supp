@@ -1,0 +1,181 @@
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   obj:*/libc.so.6*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   obj:*/libc.so.6*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr8
+   obj:*/libc.so.6*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   sendto(len)
+   ...
+   obj:*/libc.so.6*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   sendto(msg)
+   ...
+   obj:*/libc.so.6*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   socketcall.sendto(msg)
+   ...
+   obj:*/libc.so.6*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   lstat(file_name)
+   ...
+   obj:*/libc.so.6*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   ...
+   obj:*/libQt*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value4
+   ...
+   obj:*/libQt*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   ...
+   obj:*/libQt*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr8
+   ...
+   obj:*/libQt*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   obj:*/libQt*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Overlap
+   ...
+   obj:*/libQt*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   ...
+   obj:*/libchartdir*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   ...
+   obj:*/libchartdir*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr8
+   ...
+   obj:*libchartdir*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   obj:*/libchartdir*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Overlap
+   ...
+   obj:*/libchartdir*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr4
+   ...
+   obj:*/libfontconfig*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   obj:*/libfontconfig*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   obj:*/libdbus*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Overlap
+   ...
+   obj:*/libdbus*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   obj:*/libX11*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   ...
+   obj:*/libfreetype*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   obj:*/ld-*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr4
+   ...
+   obj:*/i965_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr1
+   ...
+   obj:*/i965_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   obj:*/i965_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   ioctl(generic)
+   ...
+   obj:*/i965_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_Z12getEnvStringRK7QString
+}

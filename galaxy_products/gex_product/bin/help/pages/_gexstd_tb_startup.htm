@@ -1,0 +1,161 @@
+<html>
+<head>
+<title></title>
+</head>
+<body topmargin="6">
+<table border="0" width="100%" cellspacing="0" cellpadding="10"  BGCOLOR="#1F84CA">
+  <tr>
+    <td align="left" valign="top"><img border="0" src="../../html/images/galaxy_si_white.png"></td>
+    <td align="center" valign="bottom">
+      <h2><font color="white">Examinator ToolBox<br>License Activation</h2>
+    </td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td width="68%">
+      <p align="left">
+      Examinator ToolBox supports the following running modes:
+<ul>
+
+  <li>
+    <p align="left"><a href="#Standalone">Standalone</a>: uses local CPU license</li>
+  <li>
+    <p align="left"><a href="#Client">Client/Server</a>: uses floating license</li>
+</ul>
+    <p align="left">Few words / tips about the:
+<ul>
+  <li>
+    <p align="left"><a href="#GEX arguments at launch time">Arguments at
+    launch time</a></li>
+  <li>
+    <p align="left"><a href="#GEX-LM License manager">GEX-LM License manager</a></li>
+  <li>
+    <p align="left"><a href="#GEX-LS License status">GEX-LS License status</a></li>
+</ul>
+      <p>&nbsp;</td>
+    <td width="32%" valign="top" align="center"><b><a href="#laptop"><img border="0" src="../images/laptop.png" width="102" height="102"></a><br>
+      Attention:<br>
+ </b><a href="#laptop">Laptop Users...</a></td>
+  </tr>
+</table>
+<p align="left"><b><a name="Evaluation">Evaluation mode</a><br>
+</b><img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+Select the 'Evaluation' running mode and get 10 days of full access to the 
+Examinator ToolBox
+application. Then click the 'Next' button to start. After 10 days, you'll need
+to have placed an order to quantix_sales@mentor.com and have received your license file
+to continue using the software.<br>
+</p>
+<p align="left"><br>
+<b><a name="Standalone">Standalone mode</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+Select the 'Standalone' running mode to start the process of activating the
+release for this specific computer. You'll then have to:</p>
+<ol>
+  <li>
+    <p align="left">Enter your full name</li>
+  <li>
+    <p align="left">Enter the Product Key (given to you when you placed your
+    P.O.)</li>
+  <li>
+    <p align="left">Click the 'Next' button</li>
+  <li>
+    <p align="left">Email the file <b>gex_request.txt</b> created to <a href="mailto:gex.license@galaxysemi.com">
+    gex.license@galaxysemi.com</a></li>
+  <li>
+    <p align="left">Within few minutes, you will receive your license file and
+    activation instructions (email auto-reply)</li>
+</ol>
+<p align="left"><br>
+<b><a name="Client">Client/Server mode</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+Select the 'Connect to server' running mode to start the software and have it
+request a floating license from the Examinator ToolBox license server. You'll have to:</p>
+<ol>
+  <li>
+    <p align="left">Enter the license server name or IP address</li>
+  <li>
+    <p align="left">Enter the communication port # (Socket port#)</li>
+  <li>
+    <p align="left">Click the 'Next' button</li>
+</ol>
+    <p align="left"><a name="GEX arguments at launch time"><b>A</b></a><b><a name="GEX arguments at launch time">rguments 
+    at launch time</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+    The Examinator ToolBox application supports launch time arguments that can be very
+    convenient:
+<table border="1" width="100%">
+  <tr>
+    <td width="24%" bgcolor="#FFFFCC"><b>Line</b></td>
+    <td width="76%" bgcolor="#FFFFCC"><b>Description</b></td>
+  </tr>
+  <tr>
+    <td width="24%">gex -WTB</td>
+    <td width="76%">Displays the Examinator ToolBox Welcome page. Lets you reset the running mode
+      and/or server name+port number.</td>
+  </tr>
+  </table>
+    <p align="left">eg: <b>gex -WTB</b> will let you display the  Examinator 
+    ToolBox welcome page
+    and allows to select any running mode available.<p align="left">
+<b><br>
+<a name="GEX-LM License manager">GEX-LM License manager</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+The gex-lm application handles all the floating license management and authorization
+mechanisms. It must be running on the server prior to running any client application
+(Examinator ToolBox or GEX-LS). This application communicates with the other software using
+the TCP/IP protocol. The only setting you may want/need to change is the socket
+port number used for the communication channel. If GEX-LM is launched without
+any argument, the default socket port 4242 is used. To force the application to
+use a different port, simply launch the application as follows:<p align="left">
+gex-lm
+-port &lt;PortNumber&gt;&nbsp;&nbsp;&nbsp;&nbsp; where &lt;PortNumber&gt; is the
+decimal Socket port number to use.<p align="left">eg: gex-lm -port 4243<p align="left"><b><a name="GEX-LS License status">
+GEX-LS
+License status</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+You can see the current license usage at any time launching the client
+application gex-ls. When executed, simply specify the server name (or IP
+address) that is running the gex-lm application, and the socket port number used
+to establish the communication (default is 4242 unless you have specified a
+custom number when launching the gex-lm application on the server).
+    <p align="left">&nbsp;
+<p align="left"><b><a name="laptop">Laptop users: installation prerequisites</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+When running  Examinator ToolBox software for the first time, a license request file with the
+computer hardware identification profile is created (except if running in Server
+mode). If your laptop sometimes connects to a docking station, or if you have set
+different hardware profiles on your computer, it may happen that  Examinator 
+ToolBox refuses to
+run if you do not follow the correct license activation process. Here is the
+process you MUST follow to ensure a smooth  Examinator ToolBox Standalone or Evaluation license activation on
+your laptop:</p>
+<ol>
+  <li>
+    <p align="left">Have the  Examinator ToolBox software installed on your notebook (you can be
+    using a docking station at this stage, it's not a problem)</li>
+  <li>
+    <p align="left">Disconnect your laptop from its docking station</li>
+  <li>
+    <p align="left">Log to your laptop and activate your off-line profile if you
+    have one (so as to have your computer in the exact same situation as when working
+    disconnected from your network)</li>
+  <li>
+    <p align="left">Run  Examinator ToolBox , select the Standalone (or Evaluation) running mode and enter your
+    Product Key ID then press the&nbsp; Next button.</li>
+  <li>
+    <p align="left">Examinator ToolBox will create the gex_request.txt license request file
+    with the correct hardware profile information</li>
+</ol>
+<p align="left">Note: If you didn't follow the above steps, simply restart from
+step one, so your previous gex_request.txt gets updated.</p>
+</body>
+</html>

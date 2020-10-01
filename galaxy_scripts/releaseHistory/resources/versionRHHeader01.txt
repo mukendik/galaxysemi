@@ -1,0 +1,5 @@
+        <!--------------------------------------------------------------------->
+        <table cellspacing="0" cols="3" border="0">
+            <colgroup width="144"></colgroup>
+            <colgroup width="384"></colgroup>
+            <colgroup width="768"></colgroup>

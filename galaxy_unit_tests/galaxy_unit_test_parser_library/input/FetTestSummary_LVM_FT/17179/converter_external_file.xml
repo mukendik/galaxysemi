@@ -1,0 +1,5 @@
+<external_files>
+  <promis format="vishay-lvm" type="final">./input/FetTestSummary_LVM_FT/17179/PROMIS_DATA_FT.TXT</promis>
+  <binmap format="vishay-lvm" type="final" category="final_tests">./input/FetTestSummary_LVM_FT/17179/CSVFinalTestsFile.csv</binmap>
+  <binmap format="vishay-lvm" type="final" category="sort_entries">./input/FetTestSummary_LVM_FT/17179/CSVSortEntriesFile.csv</binmap>
+</external_files>

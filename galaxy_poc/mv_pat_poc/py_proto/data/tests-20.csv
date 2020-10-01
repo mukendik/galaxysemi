@@ -1,0 +1,3 @@
+Isup@5.5V,Isup@4.5V,FailModeLow,ADCDAVref@5V,VptatToff@4.5V,Vs_Hall@4.5V,DUT_TJ,VDD@5V,VRefReset@5V,DAW1_8*VDD/16,DAW1_Diff_NL,DAW2_F*VDD/16,DAW3_0*VDD/16,X_Voq(0mT),DAad_AbsDigit16,TCADJ_0000,Vdd-Break,ROUTd(_7%_1mA),ROUTd(50%_1mA),ROUTd(93%_1mA)
+102,101,273,350,355,365,380,384,390,408,417,445,460,580,616,700,3002,4410,4415,4420
+normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal,normal

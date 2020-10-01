@@ -1,0 +1,24 @@
+FAR:A|4|2|
+MIR:G35K282|PBRL60D6XTS|||WTSOP04|13:42:42 1-NOV-2017|13:42:42 1-NOV-2017||P|1|G35K282.8||N||||||||||1S||W7ZAD|SM||SC3459BDV||||||||TSOP6||
+SDR:||||FET-36||||ITC-22||RG-142||||||||
+TSR:||4|4/104|P|45760|2|||||||||
+TSR:||50|15/115|P|45760|4|||||||||
+TSR:||51|21/121|P|45760|3|||||||||
+TSR:||398|98/198|P|45760|1|||||||||
+TSR:||1000|GDS sh|P|45760|1|||||||||
+TSR:||1003|G-open|P|45760|38|||||||||
+TSR:||1007|Ass'y Rejects|P|45760|191|||||||||
+TSR:||1011|Vision Rej|P|45760|52|||||||||
+TSR:||1013|Unknown|P|45760|151|||||||||
+SBR:||1|45317|P|
+SBR:||7|2|F|IGSS @ - 120% VGS
+SBR:||27|4|F|belong to Ibev sort
+SBR:||14|3|F|IDSX @ 100%Vds
+SBR:||398|1|F|O_UISL
+SBR:||1000|1|F|GDS sh
+SBR:||1003|38|F|G-open
+SBR:||1007|191|F|Ass'y Rejects
+SBR:||1011|52|F|Vision Rej
+SBR:||1013|151|F|Unknown
+DTR:<cmd> die-tracking die=1;wafer_product=PBRL60D6XTS;wafer_lot=G35K282;wafer_sublot=G35K282.8
+MRR:13:42:42 1-NOV-2017|||

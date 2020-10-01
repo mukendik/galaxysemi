@@ -1,0 +1,3285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>monitor_rdb_sylsbl_editor_basedialog</class>
+ <widget class="QDialog" name="monitor_rdb_sylsbl_editor_basedialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1033</width>
+    <height>779</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>204</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>204</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>204</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>204</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>SPM editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <item>
+    <widget class="QLabel" name="TextLabelTitle">
+     <property name="font">
+      <font>
+       <family>Ms Sans Serif</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ms Sans Serif'; font-size:12pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Compute, Simulate, Update your SPM limits&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEditDatabase">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>gexdb_sya</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLineEdit" name="lineEditSyaN2_factor">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;N factor for N*Sigma or N*IQR rule (enter -1 to disable the N-factor)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>6</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="lineEditSyaN1_factor">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;N factor for N*Sigma or N*IQR rule (enter -1 to disable the N-factor)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>4</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEditProduct">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>ANBAD40BCAA,ANBAD60BDAA</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLineEdit" name="lineEditRuleName">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>ANBAD</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label3_2">
+       <property name="text">
+        <string>Products:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="lineEditAlgo">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Mean +- N*Sigma</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label3_3_1">
+       <property name="text">
+        <string>Rule Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label3_3">
+       <property name="text">
+        <string>Default Algorithm:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label2">
+       <property name="text">
+        <string>Testing stage:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLabel" name="labelN1">
+       <property name="toolTip">
+        <string>Enter N factor for standard notification</string>
+       </property>
+       <property name="text">
+        <string>Default N1 (standard) =</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label1">
+       <property name="text">
+        <string>Database:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEditTestingStage">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Wafer sort</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLabel" name="labelN2">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="toolTip">
+        <string>Enter N factor for critical notification</string>
+       </property>
+       <property name="text">
+        <string>Default N2 (critical) =</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label3_4">
+       <property name="text">
+        <string>Parameters:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEditProduct_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>1-3,51-52</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget_ComputeView">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::West</enum>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="tabCompute">
+      <attribute name="title">
+       <string>Compute</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QPushButton" name="pushButtonCompute">
+           <property name="text">
+            <string>Compute</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelSimulate_From_2">
+           <property name="text">
+            <string>From:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="dateEditSimulate_From_2">
+           <property name="dateTime">
+            <datetime>
+             <hour>0</hour>
+             <minute>0</minute>
+             <second>0</second>
+             <year>2015</year>
+             <month>5</month>
+             <day>5</day>
+            </datetime>
+           </property>
+           <property name="displayFormat">
+            <string>MM/dd/yy</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonSimulate_From_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Select Starting date using calendar</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../gex.qrc">
+             <normaloff>:/gex/icons/calendar_icon.png</normaloff>:/gex/icons/calendar_icon.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelSimulate_To_2">
+           <property name="text">
+            <string>To:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="dateEditSimulate_To_2">
+           <property name="dateTime">
+            <datetime>
+             <hour>0</hour>
+             <minute>0</minute>
+             <second>0</second>
+             <year>2015</year>
+             <month>11</month>
+             <day>5</day>
+            </datetime>
+           </property>
+           <property name="displayFormat">
+            <string>MM/dd/yy</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonSimulate_To_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Select Starting date using calendar</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../gex.qrc">
+             <normaloff>:/gex/icons/calendar_icon.png</normaloff>:/gex/icons/calendar_icon.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mSimulationToClipboardButton_2">
+           <property name="text">
+            <string>To clipboard</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mSimulationSaveToButton_2">
+           <property name="text">
+            <string>Save to...</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>18</width>
+             <height>22</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="labelItemsTotalLots">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Total lots:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="editItemsTotalLots">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>475</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelItemsTotalWafers">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Total sublots/wafers:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="editItemsTotalWafers">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>10500</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTabWidget" name="tabWidgetCompute">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tabResults">
+          <attribute name="title">
+           <string>Results</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QTreeWidget" name="treeWidgetComputeResults">
+             <attribute name="headerDefaultSectionSize">
+              <number>100</number>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>Test number</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Test Name</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Variable</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Site#</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Mean</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Median</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Sigma</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Robust Sigma</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>LL2 (N2)</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>LL1 (N1)</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>HL1 (N1)</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>HL2 (N2)</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Algorithm</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>N1</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>N2</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Outliers</string>
+              </property>
+             </column>
+             <item>
+              <property name="text">
+               <string>1</string>
+              </property>
+              <property name="text">
+               <string>Test1</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string>Mean</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>1</string>
+                </property>
+                <property name="text">
+                 <string>4.9</string>
+                </property>
+                <property name="text">
+                 <string>4.72</string>
+                </property>
+                <property name="text">
+                 <string>0.5</string>
+                </property>
+                <property name="text">
+                 <string>0.46</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>26</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>2</string>
+                </property>
+                <property name="text">
+                 <string>5.1</string>
+                </property>
+                <property name="text">
+                 <string>5.25</string>
+                </property>
+                <property name="text">
+                 <string>0.3</string>
+                </property>
+                <property name="text">
+                 <string>0.32</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>All</string>
+                </property>
+                <property name="text">
+                 <string>5.0</string>
+                </property>
+                <property name="text">
+                 <string>4.97</string>
+                </property>
+                <property name="text">
+                 <string>0.4</string>
+                </property>
+                <property name="text">
+                 <string>0.45</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>10</string>
+                </property>
+               </item>
+              </item>
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string>Sigma</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>1</string>
+                </property>
+                <property name="text">
+                 <string>1.4</string>
+                </property>
+                <property name="text">
+                 <string>1.45</string>
+                </property>
+                <property name="text">
+                 <string>0.04</string>
+                </property>
+                <property name="text">
+                 <string>0.035</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>2</string>
+                </property>
+                <property name="text">
+                 <string>1.9</string>
+                </property>
+                <property name="text">
+                 <string>1.78</string>
+                </property>
+                <property name="text">
+                 <string>0.07</string>
+                </property>
+                <property name="text">
+                 <string>0.06</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>All</string>
+                </property>
+                <property name="text">
+                 <string>1.6</string>
+                </property>
+                <property name="text">
+                 <string>1.64</string>
+                </property>
+                <property name="text">
+                 <string>0.06</string>
+                </property>
+                <property name="text">
+                 <string>0.054</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </item>
+              </item>
+             </item>
+             <item>
+              <property name="text">
+               <string>2</string>
+              </property>
+              <property name="text">
+               <string>Test2</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string>Mean</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>1</string>
+                </property>
+                <property name="text">
+                 <string>-24.5</string>
+                </property>
+                <property name="text">
+                 <string>-22.6</string>
+                </property>
+                <property name="text">
+                 <string>0.2</string>
+                </property>
+                <property name="text">
+                 <string>0.1</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>2</string>
+                </property>
+                <property name="text">
+                 <string>-12.6</string>
+                </property>
+                <property name="text">
+                 <string>-10.4</string>
+                </property>
+                <property name="text">
+                 <string>1.4</string>
+                </property>
+                <property name="text">
+                 <string>1.2</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>All</string>
+                </property>
+                <property name="text">
+                 <string>-18.0</string>
+                </property>
+                <property name="text">
+                 <string>-16.7</string>
+                </property>
+                <property name="text">
+                 <string>0.8</string>
+                </property>
+                <property name="text">
+                 <string>0.65</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>3</string>
+                </property>
+               </item>
+              </item>
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string>Sigma</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>1</string>
+                </property>
+                <property name="text">
+                 <string>4.6</string>
+                </property>
+                <property name="text">
+                 <string>4.76</string>
+                </property>
+                <property name="text">
+                 <string>0.6</string>
+                </property>
+                <property name="text">
+                 <string>0.62</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>98</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>2</string>
+                </property>
+                <property name="text">
+                 <string>5.4</string>
+                </property>
+                <property name="text">
+                 <string>5.34</string>
+                </property>
+                <property name="text">
+                 <string>0.5</string>
+                </property>
+                <property name="text">
+                 <string>0.54</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Default</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>7</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>All</string>
+                </property>
+                <property name="text">
+                 <string>5.1</string>
+                </property>
+                <property name="text">
+                 <string>5.12</string>
+                </property>
+                <property name="text">
+                 <string>0.5</string>
+                </property>
+                <property name="text">
+                 <string>0.58</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>Median +- N*IQR</string>
+                </property>
+                <property name="text">
+                 <string>2</string>
+                </property>
+                <property name="text">
+                 <string>3</string>
+                </property>
+                <property name="text">
+                 <string>66</string>
+                </property>
+               </item>
+              </item>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabOptions">
+          <attribute name="title">
+           <string>Options</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QTableWidget" name="tableWidget">
+             <attribute name="verticalHeaderVisible">
+              <bool>false</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>New Row</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>New Row</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>New Row</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Property</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+             <item row="0" column="0">
+              <property name="text">
+               <string>Minimum data points to compute limits</string>
+              </property>
+             </item>
+             <item row="0" column="1">
+              <property name="text">
+               <string>30</string>
+              </property>
+             </item>
+             <item row="1" column="0">
+              <property name="text">
+               <string>Ignore data points with sigma=0</string>
+              </property>
+             </item>
+             <item row="1" column="1">
+              <property name="text">
+               <string>true</string>
+              </property>
+             </item>
+             <item row="2" column="0">
+              <property name="text">
+               <string>Ignore outliers when computing limits</string>
+              </property>
+             </item>
+             <item row="2" column="1">
+              <property name="text">
+               <string>true</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>168</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabSimulate">
+      <attribute name="title">
+       <string>Simulate</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="pushButtonSimulate">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Simulate</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelSimulate_From">
+           <property name="text">
+            <string>From:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="dateEditSimulate_From">
+           <property name="dateTime">
+            <datetime>
+             <hour>0</hour>
+             <minute>0</minute>
+             <second>0</second>
+             <year>2015</year>
+             <month>1</month>
+             <day>1</day>
+            </datetime>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonSimulate_From">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Select Starting date using calendar</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../gex.qrc">
+             <normaloff>:/gex/icons/calendar_icon.png</normaloff>:/gex/icons/calendar_icon.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelSimulate_To">
+           <property name="text">
+            <string>To:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="dateEditSimulate_To">
+           <property name="dateTime">
+            <datetime>
+             <hour>0</hour>
+             <minute>0</minute>
+             <second>0</second>
+             <year>2015</year>
+             <month>11</month>
+             <day>5</day>
+            </datetime>
+           </property>
+           <property name="displayFormat">
+            <string>MM/dd/yy</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonSimulate_To">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Select Starting date using calendar</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../gex.qrc">
+             <normaloff>:/gex/icons/calendar_icon.png</normaloff>:/gex/icons/calendar_icon.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mSimulationToClipboardButton">
+           <property name="text">
+            <string>To clipboard</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mSimulationSaveToButton">
+           <property name="text">
+            <string>Save to...</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>18</width>
+             <height>22</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_Simulate">
+         <item>
+          <widget class="QLabel" name="labelItemsProcessed">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Items processed</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line_Simulate">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="editItemsProcessed">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>10500</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelItemsRejected">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Alarms</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelItemsRejected_Standard">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Standard:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="editItemsRejected_Standard">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>52 (0.5 %)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelItemsRejected_Critical">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Critical:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="editItemsRejected_Critical">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>84 (0.8 %)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelItemsRejected_Total">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Total:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="editItemsRejected_Total">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>136(1.3 %)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>28</width>
+             <height>33</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTreeWidget" name="treeWidgetSimulationResults">
+         <column>
+          <property name="text">
+           <string>Lot</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Sublot/wafer</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>TotalParts</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Test number</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Test name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Variable</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Site</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>LL2 (N2)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>LL1 (N1)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Value</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>HL1 (N1)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>HL2 (N2)</string>
+          </property>
+         </column>
+         <item>
+          <property name="text">
+           <string>x22778</string>
+          </property>
+          <property name="text">
+           <string>07</string>
+          </property>
+          <property name="text">
+           <string>565</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>1</string>
+           </property>
+           <property name="text">
+            <string>Test1</string>
+           </property>
+           <property name="text">
+            <string>Mean</string>
+           </property>
+           <property name="text">
+            <string>1</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>12.5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>1</string>
+           </property>
+           <property name="text">
+            <string>Test1</string>
+           </property>
+           <property name="text">
+            <string>Sigma</string>
+           </property>
+           <property name="text">
+            <string>2</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>8.4</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>X40127</string>
+          </property>
+          <property name="text">
+           <string>04</string>
+          </property>
+          <property name="text">
+           <string>576</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>1</string>
+           </property>
+           <property name="text">
+            <string>Test1</string>
+           </property>
+           <property name="text">
+            <string>Sigma</string>
+           </property>
+           <property name="text">
+            <string>All</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>12.6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>2</string>
+           </property>
+           <property name="text">
+            <string>Test2</string>
+           </property>
+           <property name="text">
+            <string>Mean</string>
+           </property>
+           <property name="text">
+            <string>1</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>-62.7</string>
+           </property>
+          </item>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabHistory">
+      <attribute name="title">
+       <string>History</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTableWidget" name="tableWidgetSyaSets">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Select any SYA set to view it's SYL/SBL limits</string>
+         </property>
+         <property name="showDropIndicator" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="dragDropOverwriteMode">
+          <bool>false</bool>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ExtendedSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <row>
+          <property name="text">
+           <string>New Row</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>New Row</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>New Row</string>
+          </property>
+         </row>
+         <column>
+          <property name="text">
+           <string>Limits set name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Creation date</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Computation period</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Start date</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Expiration date</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Default Algorithm</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>N1 (standard)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>N2 (critical)</string>
+          </property>
+         </column>
+         <item row="0" column="0">
+          <property name="text">
+           <string>ANBAD - 2015-05-11</string>
+          </property>
+         </item>
+         <item row="0" column="1">
+          <property name="text">
+           <string>2015-05-11T16:00:00</string>
+          </property>
+         </item>
+         <item row="0" column="2">
+          <property name="text">
+           <string>2014-12-11 to 2015-05-11</string>
+          </property>
+         </item>
+         <item row="0" column="3">
+          <property name="text">
+           <string>2015-05-11T16:00:00</string>
+          </property>
+         </item>
+         <item row="0" column="4">
+          <property name="text">
+           <string>2015-08-11T16:00:00</string>
+          </property>
+         </item>
+         <item row="0" column="5">
+          <property name="text">
+           <string>Mean +- N*Sigma</string>
+          </property>
+         </item>
+         <item row="0" column="6">
+          <property name="text">
+           <string>4</string>
+          </property>
+         </item>
+         <item row="0" column="7">
+          <property name="text">
+           <string>6</string>
+          </property>
+         </item>
+         <item row="1" column="0">
+          <property name="text">
+           <string>ANBAD - 2015-08-04</string>
+          </property>
+         </item>
+         <item row="1" column="1">
+          <property name="text">
+           <string>2015-08-04T16:00:00</string>
+          </property>
+         </item>
+         <item row="1" column="2">
+          <property name="text">
+           <string>2015-02-04 to 2015-08-04</string>
+          </property>
+         </item>
+         <item row="1" column="3">
+          <property name="text">
+           <string>2015-08-11T16:00:00</string>
+          </property>
+         </item>
+         <item row="1" column="4">
+          <property name="text">
+           <string>2015-11-11T16:00:00</string>
+          </property>
+         </item>
+         <item row="1" column="5">
+          <property name="text">
+           <string>Mean +- N*Sigma</string>
+          </property>
+         </item>
+         <item row="1" column="6">
+          <property name="text">
+           <string>4</string>
+          </property>
+         </item>
+         <item row="1" column="7">
+          <property name="text">
+           <string>6</string>
+          </property>
+         </item>
+         <item row="2" column="0">
+          <property name="text">
+           <string>ANBAD - 2015-11-04</string>
+          </property>
+         </item>
+         <item row="2" column="1">
+          <property name="text">
+           <string>2015-05-04T16:00:00</string>
+          </property>
+         </item>
+         <item row="2" column="2">
+          <property name="text">
+           <string>2015-02-04 to 2015-11-04</string>
+          </property>
+         </item>
+         <item row="2" column="3">
+          <property name="text">
+           <string>2015-11-11T16:00:00</string>
+          </property>
+         </item>
+         <item row="2" column="4">
+          <property name="text">
+           <string>2016-05-11T16:00:00</string>
+          </property>
+         </item>
+         <item row="2" column="5">
+          <property name="text">
+           <string>Mean +- N*Sigma</string>
+          </property>
+         </item>
+         <item row="2" column="6">
+          <property name="text">
+           <string>4</string>
+          </property>
+         </item>
+         <item row="2" column="7">
+          <property name="text">
+           <string>6</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="labelSyaSet">
+           <property name="text">
+            <string>Limits set name:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditSyaSet">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>ANBAD - 2015-11-04</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTreeWidget" name="treeWidgetComputeResults_2">
+         <attribute name="headerDefaultSectionSize">
+          <number>100</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Test number</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Test Name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Variable</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Site#</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>LL2 (N2)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>LL1 (N1)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>HL1 (N1)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>HL2 (N2)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Algorithm</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>N1</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>N2</string>
+          </property>
+         </column>
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+          <property name="text">
+           <string>Test1</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>Mean</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>1</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>2</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>All</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+          </item>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>Sigma</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>1</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>2</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>All</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>2</string>
+          </property>
+          <property name="text">
+           <string>Test2</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>Mean</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>1</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>2</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>All</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+          </item>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string>Sigma</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>1</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>2</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Default</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>All</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Median +- N*IQR</string>
+            </property>
+            <property name="text">
+             <string>2</string>
+            </property>
+            <property name="text">
+             <string>3</string>
+            </property>
+           </item>
+          </item>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Limits set name:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="editUserComment">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="toolTip">
+        <string>You can modify the user comment (label) for your SYA set</string>
+       </property>
+       <property name="text">
+        <string>ANBAD - 2015-11-05</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>208</width>
+         <height>22</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonValidate">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonCancel">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

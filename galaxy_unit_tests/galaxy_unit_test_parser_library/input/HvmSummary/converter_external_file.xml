@@ -1,0 +1,4 @@
+<external_files>
+	<promis format="vishay-hvm" type="final" mode="prod">./input/HvmSummary/HVM_PROMIS_DATA_FT.txt</promis>
+	<binmap format="vishay-hvm" type="final">./input/HvmSummary/BinMapping.csv</binmap>
+</external_files>

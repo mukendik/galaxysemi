@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/gex_email/images" >
+        <file>resources/galaxy_icon.png</file>
+        <file>resources/galaxy_logo.png</file>
+    </qresource>
+</RCC>

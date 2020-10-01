@@ -1,0 +1,121 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40"> 
+    </td>
+    <td width="650"><b>
+      Runtime options<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9"> 
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="run2.htm">Jump start<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="run4.htm">Runtime options</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="run3.htm">Command line param.</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">When calling the GEX Quantix Examinator program
+      with a script as an argument, you can specify runtime<br>
+      options. Runtime options let you decide how GEX must behave while
+      processing the script.
+      <p>Syntax to launch a script with options:</p>
+      <pre><b>gex -options scriptfile</b></pre>
+      <p>The <b> scriptfile</b> extension may be omitted if it is <b>.csl</b>, the additional
+      parameters depend on your script file.<br>
+      The <b>-options</b> parameter&nbsp; (case sensitive, order of options
+      doesn't matter) lets you provide run time options to
+      the Examinator such as:</p>
+      <ul>
+        <li>Specify a <b>S</b>cript to be executed at launch time of the
+          application</li>
+        <li><b>H</b>ide application (minimize in icon) while running the script</li>
+        <li><b>C</b>lose the application once script execution is completed</li>
+      </ul>
+      <p><b>Important notice: </b>If you plan to have the Examinator run script
+      in hidden mode...ensure your script is not requesting any information to
+      input (i.e.: do NOT include calls to <a href="sysd.htm">sysPrompt</a> !).
+      Failing to do so would make the GEX run forever, until you kill the
+      process!</p>
+      <p>You can combine any of the following non-case sensitive options:</p>
+      <table border="1" width="646" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="56" align="center"><font color="#ffffff"><b>option</b></font></td>
+          <td bgColor="#0034aa" width="566"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="56" align="center"><b>W</b></td>
+          <td width="566">Forces GEX Welcome page to display, allows you to
+            change the running mode and/or change the server name/Socket port#.
+            Depending of your license, you may then run some or any of the
+            following modes:
+            <ul>
+              <li>Evaluation</li>
+              <li>Client/Server</li>
+              <li>Standalone</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="56" align="center"><b>S</b></td>
+          <td width="566">Examinator has to run a script at launch time.</td>
+        </tr>
+        <tr>
+          <td width="56" align="center"><b>H</b></td>
+          <td width="566">Examinator is <b>Hidden</b> (minimized) when running
+            script. If this option is not specified, the Examinator application
+            is visible during the script execution.<br>
+            Note: This option requires the <b>S</b> option to be set</td>
+        </tr>
+        <tr>
+          <td width="56" align="center"><b>C</b></td>
+          <td width="566">Examinator is <b>Closed</b> once script execution is completed.
+            Useful when you want a script<br>
+            to be executed periodically and have the Examinator launched every X
+            minutes using a<br>
+            timer application (e.g. crontab, task windows, etc.).<br>
+            Note: This option requires the <b>S</b> option to be set</td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p><b>Example1:</b> A script launched with GEX hidden, and closed once script is
+      completed:
+</p>
+      <pre>gex -HCS /export/home/myscripts/hello.csl
+</pre>
+      <p><b>Example2: </b>A script launched with GEX. Application is visible and
+      report is shown once script is completed:
+</p>
+      <pre>gex -S /export/home/myscripts/hello.csl</pre>
+      <pre>
+<b>Note</b>: If the script created a report, only HTML and CSV formats will be accepted.
+To have reports created in PDF, Word or PowerPoint format you need to run this
+script from the Yield-Man scheduler instead (contact Quantix to learn more about Yield-Man)</pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

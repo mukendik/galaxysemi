@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NewDatabaseDialogBase</class>
+ <widget class="QDialog" name="NewDatabaseDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>396</width>
+    <height>234</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Create a new database and database link</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetMinimumSize</enum>
+   </property>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QLabel" name="TextLabelDatabaseName">
+       <property name="minimumSize">
+        <size>
+         <width>65</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>65</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Name:</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="LineEditDatabaseName">
+       <property name="toolTip">
+        <string>Enter the database name to create</string>
+       </property>
+       <property name="maxLength">
+        <number>80</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="TextLabelDatabaseLocation">
+       <property name="minimumSize">
+        <size>
+         <width>65</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>65</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Location:</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBoxDatabaseLocation">
+       <property name="toolTip">
+        <string>Where to create the database link...</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Local (create a Private Database locally)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Server (create a Shared Database on the server)</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="TextLabelDatabaseCopyMode">
+       <property name="minimumSize">
+        <size>
+         <width>65</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>65</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Data storage:</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="comboBoxDatabaseCopyMode">
+       <property name="toolTip">
+        <string>Define what goes into the database: all data or links to data files only.</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Compressed (Zip mode)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Make a full Copy of the data files (Copy mode)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Only hold Links to the data files (Link mode)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Only hold Summary data (Summary mode)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>No storage (Black Hold mode!)</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="TextLabelDatabaseDescription">
+       <property name="minimumSize">
+        <size>
+         <width>65</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>65</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Description:</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="LineEditDatabaseDescription">
+       <property name="toolTip">
+        <string>Enter a brief description line...</string>
+       </property>
+       <property name="maxLength">
+        <number>80</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="stackedWidgetCoorp">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="comboPluginList"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelPlugins">
+         <property name="minimumSize">
+          <size>
+           <width>65</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>65</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Plugin:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="buttonConfigurePlugin">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>75</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Setup...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="stackedWidgetProtect">
+      <layout class="QVBoxLayout">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBoxProtect">
+         <property name="title">
+          <string>Actions to password protect:</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="checkBoxPasswordImportFile">
+            <property name="toolTip">
+             <string>Enable/disable password protection</string>
+            </property>
+            <property name="text">
+             <string>Import files</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="LineEditImportPassword">
+            <property name="toolTip">
+             <string>Enter password required when importing files to the database</string>
+            </property>
+            <property name="maxLength">
+             <number>80</number>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="checkBoxDeleteDatabase">
+            <property name="toolTip">
+             <string>Enable/disable password protection</string>
+            </property>
+            <property name="text">
+             <string>Delete database</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="LineEditDeletePassword">
+            <property name="toolTip">
+             <string>Enter password required when deleting the database</string>
+            </property>
+            <property name="maxLength">
+             <number>80</number>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>248</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="PushButtonCancel">
+       <property name="minimumSize">
+        <size>
+         <width>75</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>75</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="PushButtonCreate">
+       <property name="minimumSize">
+        <size>
+         <width>75</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>75</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>LineEditDatabaseName</tabstop>
+  <tabstop>comboBoxDatabaseCopyMode</tabstop>
+  <tabstop>stackedWidget</tabstop>
+  <tabstop>comboPluginList</tabstop>
+  <tabstop>PushButtonCancel</tabstop>
+  <tabstop>PushButtonCreate</tabstop>
+  <tabstop>LineEditImportPassword</tabstop>
+  <tabstop>LineEditDeletePassword</tabstop>
+  <tabstop>LineEditDatabaseDescription</tabstop>
+  <tabstop>checkBoxDeleteDatabase</tabstop>
+  <tabstop>checkBoxPasswordImportFile</tabstop>
+ </tabstops>
+ <resources>
+  <include location="gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

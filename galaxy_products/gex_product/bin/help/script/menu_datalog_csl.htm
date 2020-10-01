@@ -1,0 +1,105 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: menu_datalog.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This script  generates the datalog report of your choice. Follow the instructions displayed by the script and generate the datalog of your choice! 
+      For additional information, see the scripting language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">review</a> the other sample scripts.</p>
+          <p align="left"><b>Important note</b>: this script doesn't overwrite
+          your options and assumes your report type output is set to HTML. If
+          you want the script to have  full control of the options, merge it with the <a href="options_csl.htm">options.csl</a>
+          script.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: menu_datalog.csl
+//////////////////////////////////////////
+
+// Function to setup the datalog report section
+SetDatalogReport()
+{
+  var vFile;		// STDF file to process
+  var vDatalogType;	// Datalog type: all tests, fails only, etc...
+  var vTestRange;	// test range to datalog
+
+
+  sysLog('*** This script creates the wafermap you want! ***');
+
+  // Select type of datalog data to report
+  sysLog('What datalog data do you want?');
+  sysLog('1. Datalog of all data');
+  sysLog('2. Datalog of failing results');
+  sysLog('3. Datalog of range of tests (data+binning...)');
+  sysLog('4. Datalog of range of tests (results only)');
+  var vChoice = sysPrompt('Your choice (1,2,3 or 4)?: ');
+
+  switch(vChoice)
+  {
+    case 1:
+	  // All data
+	  vDatalogType = 'all';
+	  break;
+    case 2:
+	  // Failing tests
+	  vDatalogType = 'fails';
+	  break;
+    case 3:
+	  // Range of Tests
+	  vDatalogType = 'tests';
+	  break;
+    case 4:
+	  // Raw tests
+	  vDatalogType = 'tests_only';
+	  break;
+
+   }
+
+  // Select file name to process
+  vFile = sysPrompt('Select the STDF file to process...');
+
+  // If test list, ask for it
+  if((vChoice == 3) || (vChoice == 4))
+  {
+	  vTestRange = sysPrompt('Test range to datalog:');
+  }
+
+  // Creates a group to hold the file to process!
+  var group_id = gexGroup('insert','Group1');
+
+  // Add selected file into that group.
+  gexFile(group_id,'insert',vFile,'all','all');
+
+  // Set options to all defaults
+  gexOptions('reset','all','default');
+
+  // Set datalog report section
+  gexReportType('adv_datalog',vDatalogType,vTestRange);
+
+  // Get report created+show it!
+  gexBuildReport('advanced');
+}
+
+// Script entry point
+main()
+{
+  // Call function to setup the datalog report
+  SetDatalogReport();
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

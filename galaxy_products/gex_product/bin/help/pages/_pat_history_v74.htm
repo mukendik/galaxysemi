@@ -1,0 +1,971 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>PAT V7.4 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">PAT family : V7.4 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Examinator-PAT, PAT-Man)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_pat_history.htm">Back to main releases history page</a><br><br>
+<!-- toc -->
+      <a href="#V7.4.0">V7.4.0 (1 July 2015)</a><br>
+      <a href="#V7.4.RC1">V7.4.RC1 (2 June 2015)</a><br>
+      <a href="#V7.4.E">V7.4.E (10 May 2015)</a><br>
+      <a href="#V7.4.D">V7.4.D (3 April 2015)</a><br>
+      <a href="#V7.4.G">V7.4.G (27 February 2015)</a><br>
+      <a href="#V7.4.B">V7.4.B (30 January 2015)</a><br>
+      <a href="#V7.4.A">V7.4.A (20 November 2014)</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- contents -->
+
+<!-- Table with V7.4.0 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.4.0">V7.4.0 (1 July 2015)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-4250" SDNUM="1036;"><font face="Verdana">GCORE-4250</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Changing the hard bin in a PAT recipe does not change the hard bin for NNR, IDDQ, GDBN, and Clustering</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Changing a soft bin in a PAT recipe changes the soft bin for NNR to match the PAT recipe, but changing a hard bin in a PAT recipe does not change the hard bin for NNR.  The hard bin also does not change for IDDQ, GDBN, and Clustering.  </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-4184" SDNUM="1036;"><font face="Verdana">GCORE-4184</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The deviceid and part_id from the IFF data parser do not match</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">From run 1, part_id = 0 and devid = 1. Expected result is part_id = devid.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-4167" SDNUM="1036;"><font face="Verdana">GCORE-4167</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Probe data merged with AVI map cannot be inserted into Yield-Man TDR</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When a user merges probe data with an AVI map, Yield-Man rejects it because the output STDF contains some TSR records before the PIR/PRR records from the AVI map. This only affects the Functional TSR. PCR record may also not be correctly located in the STDF.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-4158" SDNUM="1036;"><font face="Verdana">GCORE-4158</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Some JaveScript API calls do not work properly via HTTP requests</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The following JavaScript API calls accept file paths as method argument but fail when they are called from an HTTP request:
+<br/>
+* GSEngine.RemoveFileFromDisk(&lt;filepath&gt;)
+<br/>
+* GSFile.Remove(&lt;filepath&gt;)
+<br/>
+* GSFile.Copy(&lt;filesrc&gt;,&lt;filedest&gt;)</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-4144" SDNUM="1036;"><font face="Verdana">GCORE-4144</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">PAT-Man outputs an invalid (empty) CSV map when it detects an error during processing</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">If PAT-Man detects an error during PAT processing (e.g. no hard bin for a tested die), it should never output an invalid CSV map.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-4010" SDNUM="1036;"><font face="Verdana">GCORE-4010</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When a user deletes an option from the admin options window, it is no longer visible in options list</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When a user deletes an option, the option is no longer visible in the list of options.  To make the deleted optoion re-appear in the list of options, the user must close the window and re-open it.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3868" SDNUM="1036;"><font face="Verdana">GCORE-3868</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Missing parts from wafermap</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">After PAT processing a wafer sort file, a section of the wafer map is missing in the generated report. When performing single file analysis on the same file, this section is not missing.
+<br/>
+</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2934" SDNUM="1036;"><font face="Verdana">GCORE-2934</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Enabled tests are are not appearing in a PAT recipe</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">In Examinator-PAT, the user selected a few enabled tests and selected &quot;Keep Selected tests in PAT recipe.&quot;  The selected tests were listed under Tests PAT-Ready tab. The user then generated the PAT recipe, but the recipe was blank, and the enabled tests were not visible in the display. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-910" SDNUM="1036;"><font face="Verdana">GCORE-910</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">It takes too long to open the filter pick list from the interactive tables</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">In the interactive tables, there is a funnel icon that is used to filter tests which are displayed. When a user clicks on the funnel icon there is an unacceptable delay before the test list window appears. Users expect to immediately see the test list window after clicking on the funnel icon.</font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.4.RC1 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.4.RC1">V7.4.RC1 (2 June 2015)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3845" SDNUM="1036;"><font face="Verdana">GCORE-3845</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">IFF data parser is extracting the wrong wafer ID</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The IFF parser assigns WAFER_NUMBER to the wafer_id field in the Test Data Repository (TDR), which is wrong. The IFF parser should assign WAFER_ID to the wafer_id field in the TDR, and WAFER_NUMBER can be ignored by the IFF parser.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3780" SDNUM="1036;"><font face="Verdana">GCORE-3780</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Final test PAT simulator generates a gtl_init error</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When using the final test PAT simulator in GEX-PAT, the user receives a gtl_init error.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3721" SDNUM="1036;"><font face="Verdana">GCORE-3721</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Insertion of EDF file causes Examinator and Yield-Man to crash</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">This EDF file causes many crashes.  For instance, making a default Examinator report causes Examinator to crash.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3687" SDNUM="1036;"><font face="Verdana">GCORE-3687</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Final Test LVM FETTEST data is incorrectly processed as wafer sort data</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">In Examinator, Final Test (FT) LVM FETTEST data is processed as final test data, as expected. But when Examinator parses FT LVM FETTEST data in a PROMIS data file, it rejects this data with the error message &quot;wafer not found in PROMIS info file.&quot; </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3686" SDNUM="1036;"><font face="Verdana">GCORE-3686</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Tests are in different order when saving a JSON recipe making it not compliant with diff and versioning tools</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The test list in Examinator-PAT is expected to be ordered in a consistent way so that users can use a diff tool or versioning tool to compare two versions of a recipe and identify whether there are changes. Currently, this is not possible because the list of tests is reordered each time it is saved with or without modifications.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3644" SDNUM="1036;"><font face="Verdana">GCORE-3644</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">NNR PAT algorithm failed all good die on a wafer (100% fallout)</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">This 100% fallout event is likely caused by a large cluster event in the center of the wafer, but 100% fallout is excessive.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3628" SDNUM="1036;"><font face="Verdana">GCORE-3628</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The masking function in GDBN or other PAT clustering algorithms does not work</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The masking function in the reticle PAT algorithm works, as expected. But the masking function is not working in GDBN (Good Die in a Bad Neighborhood) and other clustering algorithms.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3618" SDNUM="1036;"><font face="Verdana">GCORE-3618</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">GDBN identifies die next to PCM die (not on the map) as edge die</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The GEX-PAT Good Die in a Bad Neighborhood (GDBN) algorithm currently identifies neighboring die around a wafermap location with a missing die as edge die. For example, a wafermap could have a PCM die in the middle of the wafer. This PCM die would be missing in the wafermap, and the GDBN algorithm would identify the neighboring die surrounding the PCM die as edge die. The GDBN algorithm would be more useful if it treated die next to empty PCM die as normal, non-edge die.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2862" SDNUM="1036;"><font face="Verdana">GCORE-2862</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When “PAT limits built from” is set to “All data / parts (any bin)”, TSR record has wrong value</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">If user sets the option &quot;PAT limits built from&quot; to &quot;All data / parts (any bin)&quot;, the TSR record in the post PAT STDF contains an incorrect value of 0 fails for a test that is known to have 2 fails.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1315" SDNUM="1036;"><font face="Verdana">GCORE-1315</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Examinator does not generate the wafer map on an &quot;inline&quot; G85 XML map</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The user could not generate a wafer map for a particular.XML file. This is likely due to the file containing inline data, which prevents Examinator from parsing it correctly. Inserting line breaks to separate the lines in the file allows the wafer map file to be generated.</font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.4.E changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.4.E">V7.4.E (10 May 2015)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Enhancements</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3629" SDNUM="1036;"><font face="Verdana">GCORE-3629</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Allow final test PAT to use test name as key instead of test number</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Not all testers support both test numbers and test names. For testers that support test names only, PAT recipes must be able to use test names as keys instead of test numbers.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3176" SDNUM="1036;"><font face="Verdana">GCORE-3176</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When merging two datalogs containing different tests, show all test results of a die XY in the interactive part results table</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">After merging two datalogs containing different sets of test, show all test results for a die XY in the same interactive part results table. In previous versions when datalogs were merged, the interactive table showed different entries for the same die XY making it harder to interpret the results.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3084" SDNUM="1036;"><font face="Verdana">GCORE-3084</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Enhance PAT recipe editor to activate/deactivate tail management per test when using Smart and Adaptive algorithm</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The enhancement to the Smart &amp; Adaptive algorithm is as follows:
+<br/>
+If the DPAT rule selected *is not* &quot;smart &amp; adaptive&quot;, then the option is disabled. If the DPAT rule selected *is* &quot;smart &amp; adaptive&quot;, then the user can choose between: Disabled / Conservative / Medium / Liberal. For compatibility with previous versions, the *default* value is &quot;Liberal&quot;.
+<br/>
+
+<br/>
+If *Disabled* is selected: no tail management will be applied
+<br/>
+If *Conservative* is selected: a hole of more than 1*IQR will be searched
+<br/>
+If *Medium* is selected: a hole of more than 2*IQR will be searched
+<br/>
+If *Liberal* is selected: a hole of more than 3*IQR will be searched</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-205" SDNUM="1036;"><font face="Verdana">GCORE-205</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Grey out the GUI area for the js hooks when ym_admin_db is not in use</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">If a user is not using ym_admin_db, the js hooks entered in the GUI will not be saved in the .gexmo_tasks.xml for use/reload later.  In this case, the hooks will be lost when Yield-Man is restarted. To prevent users from losing their work, grey out the GUI area for the js hooks when ym_admin_db is not in use.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-35" SDNUM="1036;"><font face="Verdana">GCORE-35</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Remove ZPAT 3D GDBN option shown in GUI</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">This option was not implemented and should be removed from the GUI.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3558" SDNUM="1036;"><font face="Verdana">GCORE-3558</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Geographic PAT rules are not reloaded when disabled</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When a user disables a Geographic PAT (GPAT) algorithm, the rules for this algorithm are saved into the recipe file. But when Examinator-PAT later reads this recipe, it does not reload the rules for the disabled GPAT algorithm.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3346" SDNUM="1036;"><font face="Verdana">GCORE-3346</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Geographical PAT always ignores Parametric PAT even when it should not ignore it</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Geographical PAT (GPAT) always ignores Dynamic PAT (DPAT) failures even when the GPAT option to ignore Parametric PAT (PPAT) failures is not checked. PPAT comprises the following algorithms: Static PAT (SPAT), Dynamic PAT (DPAT), and MultiVariate PAT (MVPAT).  
+<br/>
+
+<br/>
+GPAT does ignore DPAT fallout.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3191" SDNUM="1036;"><font face="Verdana">GCORE-3191</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">If ATDF file is missing an MRR, the toolbox should not try to convert the last record</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The toolbox expects the last record in an ATDF file to be an MRR record. When an ATDF file is missing an MRR, the toolbox should ignore the last record in the file instead of converting it, which will cause problems.</font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.4.D changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.4.D">V7.4.D (3 April 2015)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Enhancements</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3042" SDNUM="1036;"><font face="Verdana">GCORE-3042</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Custom parser supports test limits in RF data format</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">This is an enhancement to a custom parser purchased by a customer.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3041" SDNUM="1036;"><font face="Verdana">GCORE-3041</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Custom parser supports test limits in DC data format</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">This is an enhancement to a custom parser purchased by a customer.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2996" SDNUM="1036;"><font face="Verdana">GCORE-2996</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Modification for csv conversion with v1.0</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Limit the ability to remove channel names from test names only when those channels have been declared in STDF PMR records.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2953" SDNUM="1036;"><font face="Verdana">GCORE-2953</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Ability to turn on/off the removal of channel names in test names in CSV 1.0</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Customer has test names that include channel names and wants the ability to remove the channel names.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2923" SDNUM="1036;"><font face="Verdana">GCORE-2923</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Show more information in PAT &quot;Summary: Tests Failing NNR&quot; report</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Show each NNR rule that failed and include its name, algorithm, factor, and number of fails for this test and each rule.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2046" SDNUM="1036;"><font face="Verdana">GCORE-2046</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Custom parser for IFF data files</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">This is a custom parser purchased by a customer.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1395" SDNUM="1036;"><font face="Verdana">GCORE-1395</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Perform enhanced shift analysis of sample units compared to control units</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Produce a measurement shift report that compares known control units (Controls) to unknown production units (Samples). This comparison report identifies data sets (Samples verses Controls) with the greatest normalized measurement shifts.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3432" SDNUM="1036;"><font face="Verdana">GCORE-3432</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">An exception was discovered in a PAT traceability file</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">For PAT at final test, the baseline distribution shape used to identify outliers is normally correctly written into a traceability file and displayed in a PAT report. A customer discovered an abnormal traceability file from which the wrong baseline distribution shape was reported.
+<br/>
+
+<br/>
+In some cases, distribution shapes written into a PAT traceability file and displayed in a final test PAT report are wrongly reported.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3377" SDNUM="1036;"><font face="Verdana">GCORE-3377</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">False Map Merge Error in Auto-alignment</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">For Linux platforms, auto-alignment can fail after merge of test and retest.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3080" SDNUM="1036;"><font face="Verdana">GCORE-3080</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Shape distribution classification is incorrect</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When doing an Examinator analysis on filtered parts, the distribution shape reported is incorrect.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3057" SDNUM="1036;"><font face="Verdana">GCORE-3057</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Unexpected close of Examinator when doing an FT PAT analysis</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When performing an FT PAT simulation, the 32-bit process closes unexpectedly.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2498" SDNUM="1036;"><font face="Verdana">GCORE-2498</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When recipe is wrong or missing in the trigger file, there is no PAT error</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">PAT-Man should give an error when the trigger file specifies a recipe that does not exist or when the trigger file does not specify a recipe.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2443" SDNUM="1036;"><font face="Verdana">GCORE-2443</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The JS API is not functioning properly</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When doing PAT processing from a js, the result of the processing is not properly passed.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1108" SDNUM="1036;"><font face="Verdana">GCORE-1108</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">NNR is disabled in recipe editor while it is activated in the PAT global settings</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The recipe editor indicates that all tests are disabled in the recipe editor by default even after the global NNR setting is changed to enabled.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-669" SDNUM="1036;"><font face="Verdana">GCORE-669</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">ETS log file converter writes the same value in soft and hard bin fields</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When parsing an ETS log file, the converter populates both soft and hard bin fields in the converted file with the soft bin read from the ETS log file, despite the log file containing both soft and hard bin information.</font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.4.G changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.4.G">V7.4.G (27 February 2015)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Enhancements</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2865" SDNUM="1036;"><font face="Verdana">GCORE-2865</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Allow for doing PAT based on good Hbin</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">An option is provided for the user to specify whether to do PAT on good Sbin or good Hbin in the recipe editor.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2863" SDNUM="1036;"><font face="Verdana">GCORE-2863</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Customer-Specific output file</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Created a new output file type for post PAT output.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2837" SDNUM="1036;"><font face="Verdana">GCORE-2837</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Allow the use of a mask for the reticle algorithm in PAT</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When applying the reticle algorithm, the user can now use a mask so that portions of the wafer can be ignored.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2806" SDNUM="1036;"><font face="Verdana">GCORE-2806</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Custom parser update</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Zip archive data format for specific customer is now supported.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2252" SDNUM="1036;"><font face="Verdana">GCORE-2252</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Customer-Specific Parser</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">DC data format for specific customer is now supported.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2251" SDNUM="1036;"><font face="Verdana">GCORE-2251</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Customer-specific data format</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">RF data format for specific customer is now supported.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3010" SDNUM="1036;"><font face="Verdana">GCORE-3010</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Legacy csv recipes can be misread in PAT versions that default to json recipe formats</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When v7.2 or newer reads a deprecated csv PAT recipe, the SPAT global setting is not properly read.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3006" SDNUM="1036;"><font face="Verdana">GCORE-3006</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Mask Selection in the PAT Recipe is Missing</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The ability to select a mask for the geographical PAT recipes was absent from the PAT recipe gui. It is now displayed again.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2918" SDNUM="1036;"><font face="Verdana">GCORE-2918</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Test name error in CSV converter version 1.0</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">With CSV 1.0, channel names are removed from test names for Flex datalogs. However, some digits which are not channel names are unexpectedly removed from the test names. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2868" SDNUM="1036;"><font face="Verdana">GCORE-2868</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">PAT Reticle Rule is not Functioning Properly</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The reticle rule was not calculating the percent fallout for each location in the defined reticle field correctly.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2861" SDNUM="1036;"><font face="Verdana">GCORE-2861</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Not found</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Not found</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2757" SDNUM="1036;"><font face="Verdana">GCORE-2757</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The NNR Report Incorrectly States the N-Factor</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The NNR Report in Examinator-PAT does not correctly report the N-factor from the NNR recipe.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1482" SDNUM="1036;"><font face="Verdana">GCORE-1482</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Cannot stop the GTM (Quantix Tester Monitor) daemon from a command line</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Once the GTM daemon is installed, there is a convention to type &quot;sudo service gs-gtmd start|stop|status&quot; at a command line. The &quot;sudo service gs-gtmd stop&quot; command does not work.</font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.4.B changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.4.B">V7.4.B (30 January 2015)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Enhancements</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2532" SDNUM="1036;"><font face="Verdana">GCORE-2532</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Include parametric results in a new custom ASCII parser for a customer</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">This is an enhancement to the original parser that extracted test summary data from the customer&#39;s ASCII test data files.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2440" SDNUM="1036;"><font face="Verdana">GCORE-2440</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Development of a custom ASCII test data parser</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">As specified by customer.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2439" SDNUM="1036;"><font face="Verdana">GCORE-2439</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Support the capability to merge all test sites for PAT processing</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Massive parallel testing of memory parts is feasible such that an entire wafer can be tested in a single touchdown. In such cases, customers may prefer to merge all test sites in a PAT recipe. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2268" SDNUM="1036;"><font face="Verdana">GCORE-2268</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Increase the number of log file parameters that can be accessed in a JavaScript trigger</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">PAT-Man users want access to a greater number of log file parameters in their JavaScript triggers. This release supports a much larger set of parameters.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2004" SDNUM="1036;"><font face="Verdana">GCORE-2004</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Gtrigger update to accomodate JSON recipes</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The task of converting many PAT recipes from the old CSV format to the JSON format is easier when trigger files can be created from either CSV or JSON recipes.  With this feature, a PAT administrator can perform the CSV to JSON conversion over time in smaller groups rather than being forced to convert all recipes at one time.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-555" SDNUM="1036;"><font face="Verdana">GCORE-555</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Data extraction support for tests with multiple test limits</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Multiple test limits are used for quality or speed grading good parts. When a user is analyzing tests with multiple test limits, s/he will want to extract all test limits from the Test Data Repository so that all limits are available for analysis in Examinator. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-554" SDNUM="1036;"><font face="Verdana">GCORE-554</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Examinator-Pro support for tests with multiple test limits for quality grading parts</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Display multiple test limits in statistics tables (static and interactive mode) and in interactive charts.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2831" SDNUM="1036;"><font face="Verdana">GCORE-2831</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Wrong-side tail PAT limits</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">For gaussian tailed distributions, the tail rule is applied to the wrong side of the distribution when computing PAT limits.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2796" SDNUM="1036;"><font face="Verdana">GCORE-2796</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Examinator tabs stop responding</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The Examinator tabs no longer respond after viewing Interactive Wafer Map.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2698" SDNUM="1036;"><font face="Verdana">GCORE-2698</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Converting STDF files to CSV produces test names with pin names</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The customer reporting this problem was expecting pin names to be removed from test names.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2664" SDNUM="1036;"><font face="Verdana">GCORE-2664</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The P/T Ratio in the Gage study shows incorrect value due to scaling</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">For a test with a P/T ratio over 100%, the gage study results are incorrectly scaled and represented in a strange scientific notation. For example, for a P/T ratio of 124.395%, the P/T ratio appears as 1.2e+002%.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2638" SDNUM="1036;"><font face="Verdana">GCORE-2638</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Error with SkyNP CSV parser when empty line at the end of the file</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When there is an empty line at the end of a SkyNP CSV file, the finish_t info is badly written in the MRR record.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2621" SDNUM="1036;"><font face="Verdana">GCORE-2621</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Stats panel in interactive charts is not working in compare mode</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Interactive charts include a stats tab where a user can alternate between views of chart layers such as distributions of individual test sites, but the stats panel is stuck on only one layer. For example, when viewing each test site layer for a quad site test, the stats for site 3 are displayed in the site panel for site 0, 1, 2, and 3.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2531" SDNUM="1036;"><font face="Verdana">GCORE-2531</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Using the &#39;+&#39; operator to add a test to a PAT recipe causes Examinator-PAT to crash</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When there already is at least one test in a PAT recipe, the &#39;+&#39; operator can be used to add another test to the PAT recipe. However, use of the &#39;+&#39; operator when there are no tests in a PAT recipe will cause Examinator-PAT to crash. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2408" SDNUM="1036;"><font face="Verdana">GCORE-2408</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">GEX-PAT recipe creator does not work with FAST CSV data files with dual site</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">For dual site test programs, PRR records for dual site test data are faulty causing long delays in the processing of FAST data files. There are no problems processing single site data files.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2391" SDNUM="1036;"><font face="Verdana">GCORE-2391</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Custom parser for customer does not extract all information required by customer</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Custom parser must insert all required data identified in customer spec including facility ID and other parameters available in Promis.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2357" SDNUM="1036;"><font face="Verdana">GCORE-2357</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Multivariate (MV) PAT custom threshold is broken</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When using the custom threshold in a  MV PAT group, the PAT report identifies all dies as outliers as if the threshold was set to 0. This prevents the use of the custom threshold feature.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2334" SDNUM="1036;"><font face="Verdana">GCORE-2334</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Examinator crashes while comparing files when MRP is set to Do Not Merge</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Examinator crashes when comparing two STDF files with the Multi-Results Parameteric Tests (MRP) option set to Do Not Merge. MRP is one of the Data Processing Options.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2312" SDNUM="1036;"><font face="Verdana">GCORE-2312</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Parser for processing data files in Yokogawa format is broken</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">In v7.1, this parser produces the expected report without errors. But in v7.2 and v7.3, the parser produces an incorrect report (wrong test names, test results, limits, etc...) or crashes.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2262" SDNUM="1036;"><font face="Verdana">GCORE-2262</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">PAT Batch Reports has links in More Reports that do not lead to the expected reports</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When PAT processing a batch of wafers in Examinator-PAT, the Batch Reports has links to PAT reports, but these links do not lead to the appropriate reports.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2228" SDNUM="1036;"><font face="Verdana">GCORE-2228</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">ATDF data file is causing Examinator to crash</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Examinator is crashing when processing the ATDF data file.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2136" SDNUM="1036;"><font face="Verdana">GCORE-2136</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Cannot convert an ATDF file to STDF </font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The STDF converter utility that was working well in v7.2 is not able to convert an ATDF file to STDF in v7.3. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2135" SDNUM="1036;"><font face="Verdana">GCORE-2135</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Toolbox STDF converter cannot handle ATDF data files generated from STDF V4-2007 binary files</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">To edit an STDF file, a user will sometimes need to convert an STDF binary file to ATDF for editing and then re-convert the edited ATDF file back into an new STDF binary file. This process will not work for conversion of STDF V4-2007 data files because an unknown VUR record is inserted during the conversion process. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2133" SDNUM="1036;"><font face="Verdana">GCORE-2133</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Format issue in the AL2000 wafermap output file: CENTER_DISTANCE_X/Y in &lt;COORDINATE_DATA&gt;</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When CENTER_DISTANCE_X and CENTER_DISTANCE_Y is set in DTR record, Examinator-PAT does not output CENTER_DISTANCE_X/Y in &lt;COORDINATE_DATA&gt;. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2132" SDNUM="1036;"><font face="Verdana">GCORE-2132</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Format issue in AL2000 wafermap output file: B record of &lt;WAFER_DATA&gt;</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Trim extra spaces between LOT_ID and WAFER_ID.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2131" SDNUM="1036;"><font face="Verdana">GCORE-2131</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Format issues in the AL2000 wafer map output file: filename and lot ID.</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Trim the extra spaces in the wafer map filename and lot ID.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2129" SDNUM="1036;"><font face="Verdana">GCORE-2129</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">File naming of saved PAT recipes is incorrect</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When a new PAT recipe is created, the GUI shows a job_nam and shows the specified value on the MIsc tab. But when the PAT recipe is saved, the file name does not use this specified value. This bug behavior is not limited to job_nam.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1823" SDNUM="1036;"><font face="Verdana">GCORE-1823</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Hiding one layer in the Interactive Charts hides all layers</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Hiding a single layer in Interactive Charts should not affect all the other layers. 
+<br/>
+</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1781" SDNUM="1036;"><font face="Verdana">GCORE-1781</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When PAT-Man cannot get a license, it overwrites .galaxy_patman.csl file with default values</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The .galaxy_patman.csl file contains a user&#39;s PAT-Man option settings. If PAT-Man cannot get a license, it will overwrite the contents of this file with default values and destroy the user&#39;s PAT-Man option settings.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1780" SDNUM="1036;"><font face="Verdana">GCORE-1780</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Data extraction from .DAT test data files is incomplete</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The data from some tests in the test program is missing when analyzing test data extracted from .dat test files. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1736" SDNUM="1036;"><font face="Verdana">GCORE-1736</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Layout of Statistics tab in Interactive Chart is broken</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Each field in the Statistics tab does not take the full available area of the pane. Also the fields High Limit and Low Limit have disappeared and only their values are shown.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1716" SDNUM="1036;"><font face="Verdana">GCORE-1716</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The Quantix-LA GUI cannot be used behind a proxy</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Activating or returning a license with the Quantix-LA tool on a server that is behind a proxy generates errors even when the correct proxy information is entered in the GUI. However, using a Flexera command line to activate and return a license works correctly without errors. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1676" SDNUM="1036;"><font face="Verdana">GCORE-1676</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Parameter values are removed in 3D chart overlays</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Parameter values are removed in 3D chart overlays when the &quot;Handling duplicated test number and test name&quot; option is set to &quot;never merge&quot;.  This is an unexpected side effect from this option.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1013" SDNUM="1036;"><font face="Verdana">GCORE-1013</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When exiting, Examinator attempts to overwrite the contents of user_profile.csl </font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When an Examinator user exits Examinator, a pop-up appears informing the user that it cannot write to the user profile (user_profile.csl).  Do not automatically modify options in the csl file when Examinator exits. </font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.4.A changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.4.A">V7.4.A (20 November 2014)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Enhancements</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2078" SDNUM="1036;"><font face="Verdana">GCORE-2078</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Custom rule to merge STDF and extermal wafer maps</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">PAT-Man users want the capability to merge the data in STDF files and external wafer maps.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2028" SDNUM="1036;"><font face="Verdana">GCORE-2028</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Data Processing: Update SkyNP CSV maps with PAT outliers</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">PAT-Man updates and outputs SkyNP CSV maps with PAT-Man results.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1993" SDNUM="1036;"><font face="Verdana">GCORE-1993</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Data Processing: SkyNP CSV test data parser</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Development of new SkyNP CSV test data parser.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1646" SDNUM="1036;"><font face="Verdana">GCORE-1646</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Multiple limits support for the FAST test data parser</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Quantix created a new parser for FAST testers. This parser now supports multiple test limits for quality or speed grading good parts.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1645" SDNUM="1036;"><font face="Verdana">GCORE-1645</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Multiple limits support in STDF files</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Multiple test limits can be included in STDF files using a Quantix ML (Multiple Limits) Generic Data Record (GDR).</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-993" SDNUM="1036;"><font face="Verdana">GCORE-993</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Do not display tests without result in the interactive part results table</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">In the interactive part results table, it is not useful to display tests that have no test result for selected die. This will also improve the sorting of test data in columns so that tests without results are not clustered at the top of the results table.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-175" SDNUM="1036;"><font face="Verdana">GCORE-175</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Allow the user to deselect a die in interactive charts</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Examinator users want the ability to deselect a highlighted die value in a distribution so that it is removed from view in an interactive chart.
+<br/>
+</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-27" SDNUM="1036;"><font face="Verdana">GCORE-27</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Only show DPAT limits which were applied in the histograms</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Give users the option to hide or show the following test limits in a histogram:
+<br/>
+* Spec limits in the test program
+<br/>
+* N (near), M, and F (far) PAT test limits</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2149" SDNUM="1036;"><font face="Verdana">GCORE-2149</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">PAT N and T values don&#39;t change when user selects a different PAT algorithm</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When a user selects a different algorithm in the Smart &amp; Adaptive window, the N and T values don&#39;t change as they should.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2126" SDNUM="1036;"><font face="Verdana">GCORE-2126</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Input file deletion by PAT-Man</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Under certain rare conditions, PAT-Man is deleting incoming STDF files from /pat/stdf_in.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-2043" SDNUM="1036;"><font face="Verdana">GCORE-2043</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">GDF data file includes new syntax that is creating data parsing issues</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The GDF parser is producing an STDF file with some MPR/PTR/FTR records that are outside PIR/PRR records, which does not conform to the STDF standard.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1765" SDNUM="1036;"><font face="Verdana">GCORE-1765</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When creating a PAT recipe, if it is aborted, the tool does not abort</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When aborting a PAT recipe creation, the tool will not abort and must be killed from the task manager.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1763" SDNUM="1036;"><font face="Verdana">GCORE-1763</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Without proper settings, Final Test PAT Recipe Generation Never ends</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">If the user generates an FTPAT recipe and does not have the proper settings, the FTPAT recipe generation can take hours. If a setting is required for FTPAT recipe generation, this setting should be automatically set by the tool at the time of recipe creation.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1738" SDNUM="1036;"><font face="Verdana">GCORE-1738</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Post PAT STDF data contains wrong TSR values when the related test is a functional test</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The STDF Test Synopsis Record (TSR) for functional tests contains wrong values. The value in the TSR.fail_cnt field is wrong, and the value in the TSR.test_typ field is Parametric when it should be Functional. </font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+

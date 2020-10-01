@@ -1,0 +1,18 @@
+<assembly>
+    <id>assembly-examinator-mac-dist</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <!-- galaxy-la binary --><!-- mac specific -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/galaxy-la.app</directory>
+            <outputDirectory>bin/galaxy-la.app</outputDirectory>
+            <excludes/>
+        </fileSet>
+        <fileSet>
+            <directory>${env.QTSRCDIR}/qtbase/src/plugins/platforms/cocoa/qt_menu.nib</directory>
+            <outputDirectory>bin/galaxy-la.app/Contents/Resources/qt_menu.nib</outputDirectory>
+            <excludes/>
+        </fileSet>
+    </fileSets>
+</assembly>

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/gqtl_datakeys">
+        <file>xml/gexdbkeys_definition.xml</file>
+    </qresource>
+</RCC>

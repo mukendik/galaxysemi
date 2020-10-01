@@ -1,0 +1,42 @@
+FAR:A|4|2|
+MIR:C33D713|NDZM100D8XIZ|||WPSO809|14:22:56 1-NOV-2017|14:22:56 1-NOV-2017||P|1|C33D713.1||N||||||||||1S||W78CAA|SM||SI7456CDP||||||||PPAKSO8BWL||
+SDR:||||FET-30||||ITC-62||RG-102||||||||
+TSR:||1|1/101|P|21059|1|||||||||
+TSR:||2|2/102|P|21059|4|||||||||
+TSR:||3|3/103|P|21059|21|||||||||
+TSR:||50|15/115|P|21059|97|||||||||
+TSR:||319|19/119|P|21059|54|||||||||
+TSR:||51|21/121|P|21059|942|||||||||
+TSR:||76|41/141|P|21059|2|||||||||
+TSR:||346|46/146|P|21059|1|||||||||
+TSR:||347|47/147|P|21059|1|||||||||
+TSR:||136|57/157|P|21059|1|||||||||
+TSR:||398|98/198|P|21059|2|||||||||
+TSR:||1000|GDS sh|P|21059|13|||||||||
+TSR:||1003|G-open|P|21059|34|||||||||
+TSR:||1009|SPU|P|21059|13|||||||||
+TSR:||1010|UIS|P|21059|1746|||||||||
+TSR:||1007|Ass'y Rejects|P|21059|20|||||||||
+TSR:||1011|Vision Rej|P|21059|127|||||||||
+TSR:||1013|Unknown|P|21059|20|||||||||
+SBR:||1|17960|P|
+SBR:||10|1|F|IGSS @ + 100%VGS
+SBR:||11|4|F|IGSS @ - 100%VGS
+SBR:||6|21|F|IGSS @ + High Voltage
+SBR:||27|97|F|Ibev
+SBR:||319|54|F|KELVIN
+SBR:||14|942|F|IDSX @ 100%VDS
+SBR:||41|2|F|BVDSX @ 250uA
+SBR:||346|1|F|BVDSX @ 5mA
+SBR:||347|1|F|BVDSX @ 10mA
+SBR:||34|1|F|rDSon @ VGS= 8V
+SBR:||398|2|F|UIS
+SBR:||1000|13|F|G-D-S (Short)
+SBR:||1003|34|F|Gate (Open)
+SBR:||1009|13|F|SPU
+SBR:||1010|1746|F|WRONG_BIN_NAME
+SBR:||1007|20|F|S-open
+SBR:||1011|127|F|Vision Rej
+SBR:||1013|20|F|Unknown
+DTR:<cmd> die-tracking die=1;wafer_product=NDZM100D8XIZ;wafer_lot=C33D713;wafer_sublot=C33D713.1
+MRR:14:22:56 1-NOV-2017|||

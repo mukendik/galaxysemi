@@ -1,0 +1,4 @@
+license.dat
+should work when:
+MAC = 08:00:27:82:25:CD
+hostname = localhost.localdomain

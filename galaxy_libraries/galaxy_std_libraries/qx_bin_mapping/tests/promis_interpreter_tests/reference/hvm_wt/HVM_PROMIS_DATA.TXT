@@ -1,0 +1,1 @@
+geometry name:HVNFAKCD6T|site location:MN|wafer count:25|gross die per wafer:233|die width:3.51|die height:3.55|flat orientation:90|fab location:TOWER|die part:566209TS|

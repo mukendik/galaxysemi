@@ -1,0 +1,9 @@
+        <!-- Table with hr -->
+        <table width="800"><tbody>
+                <tr>
+                    <td valign="top"><hr color="#afc22a"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+75
+      LOTIDY33M1234           05/18/03  09:14:00                          1
+
+TESTS REFERENCED IN THE SORTS OF THE RUN FILE.
+
+TEST  TEST  ---------- FORCING CONDITIONS -----------      --- TEST LIMITS --- A              AUTO MEAS.
+NO.   TYPE     BIAS#1        BIAS#2        BIAS#3           MINIMUM   MAXIMUM  S PLC  COP COF RNG? RANGE      TEST TIMES (MS)
+---- ------ ------------- ------------- -------------      --------- --------- - ---  --- --- ---- ----- --------------------------
+  1  IGSS   VGS= 20.000V  V4S= OPEN                                   50.000NA A  10Q         NO   100NA 2,10,25,175,1500
+  2  IGSS   VGS=-20.000V  V4S= OPEN                                  -50.000NA A  10Q         NO   100NA 2,10,25,175,1500
+  4  IGSS   VGS=-24.000V  V4S= OPEN                                  -300.00NA A  10Q         NO   1UA   2,10,25,175,1500
+  5  IGSS   VGS=-100.00MV V4S= OPEN                                  -100.00NA A 0.1          NO   100NA 2,10,25,175,1500
+ 26  VTH1   ID =-250.00UA V4S= OPEN                                  -7.0000V  A 0.1          NO         2
+            CMP= 12.000V  
+ 27  VTH1   ID =-250.00UA V4S= OPEN                        -1.2000V  -2.8000V  A 0.1          NO         2
+            CMP= 12.000V  
+ 51  IDSX   VDS=-30.000V  VGS= 0.0000V  V4S= OPEN                    -100.00NA A 0.1          NO   100NA 2,2,25,175,1500
+ 52  IDSX   VDS=-15.000V  VGS= 0.0000V  V4S= OPEN                    -100.00NA A 0.1          NO   100NA 2,2,25,175,1500
+ 53  IDSX   VDS=-100.00MV VGS= 0.0000V  V4S= OPEN                    -100.00NA A 0.1          NO   100NA 2,10,25,175,1500
+ 76  BVDSX  ID =-250.00UA VGS= 0.0000V  V4S= OPEN          -30.500V  -60.000V  A 0.1          NO         5
+            CMP= 70.000V                
+100  VDSP   ID =-2.0000MA VGS=-10.000V  V4S= OPEN          -5.0000V            A 0.1          NO         600US
+            CMP= 20.000V  CMP= 2.0000MA                                                       [OPTIONS=19]
+102  VDSP   ID =-5.0000A  VGS=-10.000V  V4S= OPEN          -10.000MV -5.0000V  A 0.1          NO         400US
+            CMP= 10.000V  CMP= 300.00MA                                                       [OPTIONS=19]
+103  IDSX   VDS=-5.0000V  VGS= 0.0000V  V4S= OPEN                    -100.00NA A 0.1          NO   100NA 2,10,25,175,1500
+104  IDSX   VDS=-30.000V  VGS= 0.0000V  V4S= OPEN                    -100.00NA A 0.1          NO   100NA 2,10,25,175,1500
+126  RDSP   ID =-5.0000A  VGS=-10.000V  V4S= OPEN           1.5000MO  5.8000MO A 0.1          NO         300US
+            CMP= 12.000V  CMP= 300.00MA 
+127  RDSP   ID =-5.0000A  VGS=-4.5000V  V4S= OPEN           1.5000MO  9.3000MO A 0.1          NO         300US
+            CMP= 12.000V  CMP= 300.00MA 
+201  VSDP   IS =-2.0000A  VGS= 0.0000V  V4S= OPEN                    -1.1000V  A 0.1          NO         300US
+            CMP= 12.000V  CMP= 300.00MA 
+
+457
+      LOTIDY33M1234           05/18/03  09:14:00                          2
+SELECTED WAFER NAMES=05,06
+SELECTED WAFER COUNT=2  
+                                                  WAFER PROBE FAIL COUNTER REPORT
+                                                  -------------------------------
+ WAFER#  T#  1   T#  2   T#  4   T#  5   T# 26   T# 27   T# 51   T# 52   T# 53   T# 76   T#100   T#102    PASS   PASS%   TOTAL
+         T#103   T#104   T#126   T#127   T#201  
+------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- 
+ 05           0       0       3      22      18       0      52      20       8       0       0       8    1054  69.48%    1517
+              0       1     260      71       0 
+ 06           0       1       3      17      23       0      36       8       2       0       0       2    1110  73.56%    1509
+              0       1     248      58       0 
+SUMMARY  T#  1   T#  2   T#  4   T#  5   T# 26   T# 27   T# 51   T# 52   T# 53   T# 76   T#100   T#102    PASS   PASS%   TOTAL
+         T#103   T#104   T#126   T#127   T#201  
+------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- 
+TOT=  2       0       1       6      39      41       0      88      28      10       0       0      10    2164  71.51%    3026
+              0       2     508     129       0 
+
+                                                  WAFER PROBE LOT SUMMARY REPORT
+                                                  ------------------------------
+SORT#     NAME      SORT#     NAME      SORT#     NAME      SORT#     NAME      SORT#     NAME      SORT#     NAME
+----- ------------  ----- ------------  ----- ------------  ----- ------------  ----- ------------  ----- ------------
+   1  4960          
+ WAFER#  S#  1                                                                                  REJECT    PASS   PASS%   TOTAL
+------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- 
+  05       1054                                                                                     463    1054  69.48%    1517
+  06       1110                                                                                     399    1110  73.56%    1509
+SUMMARY  S#  1                                                                                  REJECT    PASS   PASS%   TOTAL
+------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- 
+TOT=  2    2164                                                                                     862    2164  71.51%    3026
+
+4
+ 2164                      

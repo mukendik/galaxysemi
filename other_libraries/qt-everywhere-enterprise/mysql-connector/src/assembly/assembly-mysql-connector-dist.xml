@@ -1,0 +1,13 @@
+<assembly>
+    <id>assembly-linux-dist</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/mysql-connector-c-build</directory>
+            <outputDirectory>mysql-connector-c-dist</outputDirectory>
+            <excludes/>
+        </fileSet>        
+    </fileSets>
+</assembly>
+

@@ -1,0 +1,138 @@
+# Outlier Configuration file
+# Date: mer. 23 oct. 2013 12:01:26
+# Examinator PAT - V7.2 preview(20130916)
+# www.mentor.com
+ 
+<Outlier_Options Version="1.0" TestingStage="Final Test">
+Product,  FT_ROOM
+GoodBinList,1,
+GoodHardBinList,1,
+TestKey,0,
+PatLimitsFromBin,goodbins,,
+MinimumSamples,50,
+MinimumOutliersToFail,1,
+ScanGoodPartsOnly,1,
+StickWithinSpecLimits,0,
+StopOnFirstFail,0,
+IgnoreHighCpk,-1,
+AssumeIntegerCategory,1,
+CategoryValueCount,5,
+RecipeVersion,-1,0,
+StaticFailColor,255 0 0,
+DynamicFailColor,255 0 0,
+EWS_Flow_Names,EWS1,
+EWS_Flow_Comments,EWS flow 1,
+EWS_Flow_Kill_STDF_SBIN,,
+EWS_Flow_Kill_STDF_HBIN,,
+EWS_Flow_Kill_MAP_BIN,,
+EWS_Rules_Precedence,NNR,IDDQ-Delta,GDBN,Clustering,Reticle,
+GPAT_IgnorePPatBins,1,
+BadClusterBin,1541,
+BadClusterColor,255 202 181,
+BadClusterCustomLib,0,
+NNR_Enabled,0,
+NRR_ClusterBin,1522,
+NNR_Color,255 202 181,
+IDDQ_Delta_Enabled,0,
+IDDQ_Delta_Bin,1523,
+IDDQ_Delta_Color,255 202 181,
+ReticleEnabled,0,
+ReticleWafermapSource,0,
+ReticleYieldThreshold,50,
+ReticleSizeX,3,
+ReticleSizeY,3,
+BadBinReticle,0;2-65535,
+ReticleBin,1543,
+ReticleColor,255 0 255,
+StaticPatRule,0,
+StaticPatBin,11,
+DynamicPatRule,1,
+DynamicPatBin,10,
+CustomAlgorithmLibEnabled,0,
+BadClusterRule,0,
+BadBinZPAT,0;2-65535,
+ZPAT_OnSoftBin,1,
+CompositeExclusionZoneYield,0,
+CompositeZoneBin,1561,
+3DNeighbourhoodEnabled,0,
+3DNeighbourhoodBin,147,
+MergeEtestStdf,0,
+MergeEtestStdfBin,146,
+ZPAT_GDBN_Enabled,0,
+ZPAT_Reticle_Enabled,0,
+ZPAT_Clustering_Enabled,0,
+ZPAT_Color,255 0 255,
+ClusteringPotatoEnabled,1,
+BadBinClusteringPotato,1542,
+BadClusteringPotatoColor,183 0 255,
+FT_BaseLineAlgo,1,
+FT_BaseLine,59,
+FT_SubsequentBaseLine,100,
+FT_MinSamplesPerSite,10,
+FT_BaseLineMaxOutliers,5,
+FT_Tuning,1,
+FT_TuningType,1,
+FT_TuningSamples,500,
+# Recipe version 2013 April 22th : 0=Critical 1=Warning 2=Notice 3=Ignore (case 7103)
+FT_Alarm_Severity_Outliers,1,
+FT_RunsPerPacket,1,
+FT_Traceability,1,
+Report_Stats,1,
+Report_Histo,1,
+Report_Wafermap,1,
+Report_WafermapType,0,
+Report_Pareto,1,
+Report_Binning,1,
+Report_SPAT_Limits,1,
+Report_DPAT_Limits_Outliers,1,
+Report_DPAT_Limits_NoOutliers,1,
+GaussianShape,6,6,9,9,12,12,
+GaussianTailedShape,6,7,9,10,12,14,
+GaussianDoubleTailedShape,7,7,10,10,14,14,
+LogNormalShape,3,7,4,10,6,14,
+MultiModalShape,6,6,9,9,12,12,
+ClampedShape,3,6,4,9,6,12,
+DoubleClampedShape,3,3,4,4,6,6,
+CategoryShape,6,6,9,9,12,12,
+UnknownShape,6,6,9,9,12,12,
+GaussianAlgo,0
+GaussianTailedAlgo,0
+GaussianDoubleTailedAlgo,0
+LogNormalAlgo,0
+MultiModalAlgo,0
+ClampedAlgo,0
+DoubleClampedAlgo,0
+CategoryAlgo,0
+UnknownAlgo,0
+GaussianPAT,1
+GaussianTailedPAT,1
+GaussianDoubleTailedPAT,1
+LogNormalPAT,1
+MultiModalPAT,1
+ClampedPAT,1
+DoubleClampedPAT,1
+CategoryPAT,1
+UnknownPAT,1
+IgnoreIQR0,1,
+IgnoreH_Category,0,
+IgnoreH_Cpk,-1,
+</Outlier_Options>
+ 
+<Outlier_Rules>
+# Static Bin ,Dynamic Bin ,Test#,TestName,Low Limit,High Limit,Shape,Cpk,Robust Mean,Robust Sigma,Mean,Sigma,Range,Samples to Ignore,Outliers to Keep,Outlier Limits set,Outlier Rule,N factor (or Head),T factor (Tail),PAT-Median Drift alarm,Drift units,Test Mean drift alarm, Drift  units,Cpk alarm,LL scale,HL scale,SPAT Rule,N factor (or Head),T factor (Tail),DPAT Notes,SPAT Notes,NNR Rule,Test Type,PinIndex
+-1,10,170000001,Input Impedance (Ri)/hs41__inp,89.6500015258789 Ohm,115 Ohm,Gaussian,4.2,105.638500213623,0.60741283275463,105.678926862152,0.735935932488073,7.92900085449219,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,P,-1
+-1,10,171000001,VDDA/hs41__vdda,0.000999999931082129 A,0.200000002980232 A,Gaussian,27,0.102520994842052,0.00121259027057224,0.102544773016229,0.00118328808644729,0.00805579909202246,none,none,Near,smart,,,,,,,,3,3,AEC,6,6,,,Enabled,P,-1
+-1,10,171000003,VDD0/hs41__vddo,0.000999999931082129 A,0.0399999991059303 A,Gaussian,7.2,0.0297457985579967,0.000479629746189824,0.0297092547869133,0.000473326268335802,0.0029229988801041,none,none,Near,smart,,,,,,,,3,3,AEC,6,6,,,Enabled,P,-1
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,Gaussian,3.7,-0.899544477462769,0.0131340821584066,-0.899933267239086,0.0134122454039041,0.0738851463125482,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,0
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,Unknown,3.8,-0.882799506187439,0.0195940335591634,-0.883684190458426,0.0146856324907486,0.070185962672796,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,1
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,Unknown,4,-0.863312542438507,0.0235176969457556,-0.8669062663057,0.0152069217554499,0.0523429537839168,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,2
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,Gaussian_L,4.1,-0.894955992698669,0.0117245426884404,-0.89646603142083,0.0123691542346595,0.0571159747549468,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,3
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,Log_L,4.3,-0.877036929130554,0.0130939925158465,-0.879454628215822,0.0132360550813561,0.084852043844251,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,4
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,M_Modal,3.7,-0.883988976478577,0.0197029555285418,-0.883785883807603,0.0149930393315027,0.0676609309862435,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,5
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,M_Modal,2.8,-0.900782018899918,0.0222163288681595,-0.897833700453103,0.0180604340887571,0.114145940003398,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,6
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,Unknown,3.9,-0.888023018836975,0.0198392514829282,-0.882816587413489,0.0142810981930875,0.052650990602747,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,7
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,Gaussian_L,3.7,-0.895004004240036,0.0115770322305185,-0.896038618833659,0.0137065986751003,0.0837679545135847,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,8
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,M_Modal,4.1,-0.87576299905777,0.0139081036603009,-0.877998497566031,0.0140364933058182,0.0739550029595429,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,9
+-1,10,172000001,VCL__3V6,-1.04999995231628 V,0 V,Gaussian_L,4.1,-0.885888993740082,0.0151918552539967,-0.888041068055776,0.0132661194508173,0.0611150889814547,none,none,Near,smart,,,,,,,,0,0,AEC,6,6,,,Enabled,M,10
+</Outlier_Rules>
+

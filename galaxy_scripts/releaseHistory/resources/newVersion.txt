@@ -1,0 +1,6 @@
+        <!-- ___MINOR___ -->
+        <tr>
+          <td class="main-table-text" bgcolor="#F7F5F4" align="center" valign="top" width="300"><a href="___PREFIX___history_v___SHORTMINOR___.htm">___MINOR___</a></td>
+          <td class="main-table-text" bgcolor="#F7F5F4" align="center" valign="top" width="300">___RELEASEDATE___</td>
+        </tr>
+      </tbody></table>

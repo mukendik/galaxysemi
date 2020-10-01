@@ -1,0 +1,29 @@
+#!/bin/bash
+
+usage()
+{
+    echo "Usage: `basename $0` [-W|-GEX|-WPRO|-GEXPRO]"
+}
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    usage
+    exit 0
+fi
+
+for i in $*; do
+    if  [ $i = "-WYM" ] ||
+        [ $i = "-GYM" ] ||
+        [ $i = "-WPM" ] ||
+        [ $i = "-GPM" ]; then
+        echo
+        echo "'$i' argument is not allowed for Examinator"
+        usage
+        echo
+        exit 1
+    fi
+done
+
+cd `dirname $0`; source `pwd`/bin/common.sh
+run gex -style fusion -GEXPRO $*
+
+exit $?

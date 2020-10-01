@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/getent passwd quantixUser || usr/sbin/useradd -r -s /sbin/nologin quantixUser

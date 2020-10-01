@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-gtl-core-dynlib-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>galaxy_products/gex_product/bin/*gex-ls*</include>
+            </includes>
+        </fileSet>  
+    </fileSets>
+</assembly>

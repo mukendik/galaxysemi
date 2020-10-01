@@ -1,0 +1,1 @@
+dlltool.exe gtl-igxl.dll -z gtl-igxl.def --export-all-symbols

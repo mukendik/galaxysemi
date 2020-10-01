@@ -1,0 +1,14 @@
+<assembly>
+    <id>assembly-linux-dist</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/plugins/lib/win32</directory>
+            <outputDirectory>plugins/lp</outputDirectory>
+            <includes>
+                <include>ter_lp.dll</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

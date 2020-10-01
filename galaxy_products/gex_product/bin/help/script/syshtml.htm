@@ -1,0 +1,140 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>sysHtml<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library<br>
+      </a>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>sysHtml(
+  const action,      	// action on the script console HTML window
+  [const path])    	// path parameter if needed
+</pre>
+      <p>Lets you show/hide the HTML window located at the right  side of
+      the script console. Also, lets you load and display a specific HTML page
+      into it. <b> At launch time,</b> the Quantix Examinator <b> hides</b> the HTML window, so
+      to display pages, you ALWAYS need to call this function with the 'show'
+      action.</p>
+      <p><b>Note to Windows 95/98 users</b>: you may experience compatibility
+      issues when using this command as the latest Microsoft patches are
+      required.</p>
+      <p>This command lets you leverage the power of the HTML language and
+      insert images/links to bring a more professional style to your scripts!</p>
+      <p>Note: Loading a page does not force the HTML window to be visible if it
+      is currently hidden.</p>
+      <p>Example:</p>
+      <pre>// Hide the HTML console window
+sysHtml('hide');
+// Show the HTML console
+sysHtml('show');
+// Load a HTML page
+sysHtml('load','c:\\temp\\index.htm');</pre>
+      <p>Here is the list of actions you can conduct on a file using this script
+      function:</p>
+      <table border="1" width="646" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="108"><font color="#ffffff"><b>action</b></font></td>
+          <td bgColor="#0034aa" width="514"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="108"><b>hide</b></td>
+          <td width="514">Hides the HTML console window</td>
+        </tr>
+        <tr>
+          <td width="108"><b>show</b></td>
+          <td width="514">Shows the HTML console window</td>
+        </tr>
+        <tr>
+          <td width="108"><b>load</b></td>
+          <td width="514">Lets you load a specific HTML page into the HTML
+            window</td>
+        </tr>
+      </table>
+      <pre>&nbsp;</pre>
+      <h1>Section: hide<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Fields</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>path</b></td>
+          <td width="507">Ignored, and not needed</td>
+        </tr>
+      </table>
+      <p>In this mode, the HTML window is hidden and the Examinator resizes
+      the script console window to use all the freed space.</p>
+      <h1>Section: show<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Fields</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>path</b></td>
+          <td width="507">Ignored, and not needed</td>
+        </tr>
+      </table>
+      <p>In this mode, the HTML window is displayed and the Examinator
+      resizes the script console window to a smaller size so both windows can be
+      seen side by side.</p>
+      <p>&nbsp;</p>
+      <h1>Section: load<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Fields</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>path</b></td>
+          <td width="507">The full path to the HTML page to load</td>
+        </tr>
+      </table>
+      <p>This function loads the HTML page into the HTML window, but is only
+      visible if you  made the HTML window visible using the command line <b>sysHtml('show')</b>.</p>
+      <p>Example:</p>
+      <pre>// Load a specific HTML page
+sysHtml('load','/export/home/demo/hangman1.htm');
+// Now show it!
+sysHtml('show');</pre>
+      <pre></pre>
+      <pre></pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

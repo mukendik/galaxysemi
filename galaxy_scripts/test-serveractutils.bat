@@ -1,0 +1,1 @@
+serveractutil.exe -served -comm soap -commServer https://galaxysemi.flexnetoperations.com/control/glxy/ActivationService -entitlementID EB19-464B-CDCF-BBC5 hybrid 1

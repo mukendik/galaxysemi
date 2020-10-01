@@ -1,0 +1,5748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<galaxy_tables_dependencies version="1.0">
+	<table_list>
+		<table name="global_info"> <!-- NO LINK -->
+			<testing_stage></testing_stage>
+			<dependency_list>
+			</dependency_list>
+		</table>
+		<table name="global_options"> <!-- NO LINK -->
+			<testing_stage></testing_stage>
+			<dependency_list>
+			</dependency_list>
+		</table>
+		<table name="wt_ftest_info">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="101"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="102"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="103"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="104"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="131"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="174"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_ptest_results">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="201"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="202"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="203"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="202"/>
+						<table_link id="203"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_ptest_limits">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="21"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="34"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_sya_set">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="105"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="113"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_lot_sbin">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="213"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="214"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_lot_hbin">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="49"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="50"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_sbl">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="204"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_splitlot">
+			<testing_stage>w-sort</testing_stage>
+			<primary_key>
+				<field name="splitlot_id"/>
+			</primary_key>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="101"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="105"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="107"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="108"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="109"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="115"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="117"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="119"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="121"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="122"/>
+                                        </table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="125"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="128"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="133"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="135"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="136"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="137"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="138"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="141"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="142"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="146"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="150"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="151"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="156"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="158"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="159"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="160"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="163"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="167"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="171"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="175"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="176"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="177"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="178"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="179"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="180"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="181"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="182"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="183"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_ftest_stats_samples">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="24"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="35"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_mptest_stats_summary">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="106"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="107"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_product_hbin">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="51"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="52"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_ptest_info">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="203"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="205"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="208"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="230"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_ftest_stats_samples">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="103"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="108"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_run">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="202"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="207"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="212"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="232"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_prod_alarm">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="142"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_wafer_hbin_inter">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="143"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="144"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="145"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+                                        <is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="146"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+                <table name="ft_sublot_hbin_inter">
+                        <testing_stage>f-test</testing_stage>
+                        <dependency_list>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="79"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="80"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="81"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="82"/>
+                                        </table_link_id_list>
+                                </dependency>
+                        </dependency_list>
+                </table>
+		<table name="et_wafer_hbin">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="215"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="216"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="217"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_run">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="110"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="123"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="126"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="130"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="139"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="180"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_lot_sbin">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="151"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="152"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_die_tracking"> <!-- Custom TODO-->
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="66"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="gexdb_log"> <!-- NO LINK -->
+			<testing_stage></testing_stage>
+			<dependency_list>
+			</dependency_list>
+		</table>
+		<table name="wt_hbin">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="109"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="110"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="111"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="112"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_mptest_limits">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="31"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="36"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_wafer_consolidation_inter">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="143"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="153"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="164"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+                                        <is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="178"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+                <table name="ft_sublot_consolidation_inter">
+                        <testing_stage>f-test</testing_stage>
+                        <dependency_list>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="82"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="86"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="87"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="88"/>
+                                        </table_link_id_list>
+                                </dependency>
+                        </dependency_list>
+                </table>
+		<table name="wt_sbl">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="113"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_splitlot">
+			<testing_stage>e-test</testing_stage>
+			<primary_key>
+				<field name="splitlot_id"/>
+			</primary_key>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="201"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="205"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="206"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="209"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="210"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="211"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="213"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="217"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="219"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="221"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="222"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="224"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="226"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="229"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="231"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="232"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="233"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_sbin_stats_summary">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="114"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="115"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_wafer_info">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="215"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="227"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_wafer_info">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="144"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="148"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="165"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="169"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="179"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+                <table name="ft_sublot_info">
+                        <testing_stage>f-test</testing_stage>
+                        <dependency_list>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="79"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="68"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="83"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="71"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="74"/>
+                                        </table_link_id_list>
+                                </dependency>
+                        </dependency_list>
+                </table>
+		<table name="wt_mptest_stats_samples">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="116"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="117"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_hbin_stats_samples">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="17"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="37"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_sbin_stats_samples">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="15"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="38"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_sbin_stats_summary">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="16"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="39"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_sbin_stats_samples">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="118"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="119"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_mptest_stats_samples">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="30"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="40"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_wafer_consolidation">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="147"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="154"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="168"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="177"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+                <table name="ft_sublot_consolidation">
+                        <testing_stage>f-test</testing_stage>
+                        <dependency_list>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="75"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="76"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="77"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="78"/>
+                                        </table_link_id_list>
+                                </dependency>
+                        </dependency_list>
+                </table>
+		<table name="et_hbin">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="206"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="207"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_ptest_stats_samples">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="20"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="41"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_ftest_stats_summary">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="23"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="42"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_lot">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="3"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="50"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="61"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="66"/>
+					</table_link_id_list>
+				</dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="69"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="72"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="80"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="84"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="90"/>
+                                        </table_link_id_list>
+                                </dependency>
+			</dependency_list>
+		</table>
+		<table name="incremental_update"> <!-- NO LINK -->
+			<testing_stage></testing_stage>
+			<dependency_list>
+			</dependency_list>
+		</table>
+		<table name="ft_sbl">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="43"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_ptest_limits">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="120"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="121"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_ftest_results">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="47"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="26"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="27"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="26"/>
+						<table_link id="27"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_run">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="1"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="7"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="8"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="12"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="14"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="26"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="32"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_run_dietrace">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="6"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="7"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="10"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="6"/>
+						<table_link id="7"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_dietrace_config">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="2"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="6"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_lot">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="122"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="145"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="149"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="152"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="161"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="166"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="170"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="184"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list> 
+		</table>
+		<table name="wt_mptest_results">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="129"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="123"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="124"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="123"/>
+						<table_link id="124"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_ptest_stats">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="208"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="209"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_sya_set">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="43"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_wyr">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="155"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_hbin_stats_summary">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="18"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="44"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_dtr">
+		<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="54"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_ptest_results">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="125"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="126"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="127"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="126"/>
+						<table_link id="127"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_ptest_stats_summary">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="19"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="45"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_wyr_format">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="218"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="product">
+			<testing_stage></testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="51"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="55"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="220"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="157"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="225"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="162"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_parts_stats_samples">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="58"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_hbin_stats_summary">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="112"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="128"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_lot_hbin">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="160"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="161"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_mptest_info">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="28"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="29"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="30"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="31"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="33"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="63"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_wafer_sbin_inter">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="164"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="165"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="166"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+                                        <is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="167"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+                <table name="ft_sublot_sbin_inter">
+                        <testing_stage>f-test</testing_stage>
+                        <dependency_list>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="83"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="84"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="85"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="86"/>
+                                        </table_link_id_list>
+                                </dependency>
+                        </dependency_list>
+                </table>
+		<table name="ft_ftest_info">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="22"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="23"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="24"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="27"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="64"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_sbin">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="13"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="14"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="15"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="16"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_parts_stats_samples">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="176"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_lot_sbin">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="60"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="61"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_ftest_results">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="104"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="130"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="131"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="130"/>
+						<table_link id="131"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_ptest_info">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="120"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="127"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="134"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="140"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="172"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="181"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="file_host"> <!-- NO LINK -->
+			<testing_stage></testing_stage>
+			<dependency_list>
+			</dependency_list>
+		</table>
+		<table name="wt_product_sbin">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="157"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="158"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_dtr">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="156"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_mptest_limits">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="132"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="133"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_ptest_results">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="5"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="8"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="9"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="8"/>
+						<table_link id="9"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_product_hbin">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="225"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="226"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_ptest_stats_summary">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="134"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="135"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_mptest_stats_summary">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="29"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="48"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_prod_alarm">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="59"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_wyr">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="218"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_hbin_stats_samples">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="111"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="136"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_lot">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="210"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="214"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="216"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="223"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="228"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="234"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_wyr_format">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="155"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_product_hbin">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="162"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="163"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_ptest_info">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="4"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="9"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="19"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="20"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="21"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="62"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_wyr">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="53"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_wafer_hbin">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="147"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="148"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="149"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="150"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+                <table name="ft_sublot_hbin">
+                        <testing_stage>f-test</testing_stage>
+                        <dependency_list>
+                                <!--dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="147"/>
+                                        </table_link_id_list>
+                                </dependency-->
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="68"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="69"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="70"/>
+                                        </table_link_id_list>
+                                </dependency>
+                        </dependency_list>
+                </table>
+		<table name="et_lot_hbin">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="222"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="223"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_splitlot">
+			<testing_stage>f-test</testing_stage>
+			<primary_key>
+				<field name="splitlot_id"/>
+			</primary_key>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="1"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="2"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="3"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="4"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="5"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="10"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="11"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="13"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="22"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="28"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="34"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="35"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="36"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="37"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="38"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="39"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="40"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="41"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="42"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="44"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="45"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="46"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="47"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="48"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="49"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="52"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="54"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="56"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="57"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="58"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="59"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="60"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="65"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="67"/>
+					</table_link_id_list>
+				</dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="70"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="73"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="74"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="81"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="85"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="88"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="89"/>
+                                        </table_link_id_list>
+                                </dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_mptest_results">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="46"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="32"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="33"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="32"/>
+						<table_link id="33"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_wafer_sbin">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="168"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="169"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="170"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="171"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+                <table name="ft_sublot_sbin">
+                        <testing_stage>f_test</testing_stage>
+                        <dependency_list>
+                                <!--dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="168"/>
+                                        </table_link_id_list>
+                                </dependency-->
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="71"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="72"/>
+                                        </table_link_id_list>
+                                </dependency>
+                                <dependency>
+                                        <is_functional>0</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="73"/>
+                                        </table_link_id_list>
+                                </dependency>
+                        </dependency_list>
+                </table>
+		<table name="wt_ftest_stats_summary">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="102"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="137"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_wyr_format">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="53"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_product_sbin">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="55"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="56"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_sbin">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="114"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="118"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="138"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="139"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_sbin">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="211"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="212"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_mptest_info">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="106"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="116"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="124"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="132"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="173"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_parts_stats_summary">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="159"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_prod_alarm">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="224"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_hbin"> 
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="11"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="12"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="17"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="18"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_ptest_stats_samples">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="140"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="141"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_sya_set">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="204"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_dtr">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="219"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_product_sbin">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="220"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="221"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="global_files"> <!-- NO LINK -->
+			<testing_stage></testing_stage>
+			<dependency_list>
+			</dependency_list>
+		</table>
+		<table name="ft_parts_stats_summary">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="57"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_wafer_sbin">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="227"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="228"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="229"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_test_conditions">
+			<testing_stage>e-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="230"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="231"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_test_conditions">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="62"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="63"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="64"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="65"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_test_conditions">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="172"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="173"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="174"/>
+					</table_link_id_list>
+				</dependency>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="175"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_consolidated_wafer_inter">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="153"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_consolidated_wafer">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>1</is_functional>
+					<table_link_id_list>
+						<table_link id="154"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+                <table name="ft_consolidated_sublot">
+                        <testing_stage>f-test</testing_stage>
+                        <dependency_list>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="75"/>
+                                        </table_link_id_list>
+                                </dependency>
+                        </dependency_list>
+                </table>
+                <table name="ft_consolidated_sublot_inter">
+                        <testing_stage>f-test</testing_stage>
+                        <dependency_list>
+                                <dependency>
+                                        <is_functional>1</is_functional>
+                                        <table_link_id_list>
+                                                <table_link id="87"/>
+                                        </table_link_id_list>
+                                </dependency>
+                        </dependency_list>
+                </table>
+		<table name="ft_pin_map">
+			<testing_stage>f-test</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="67"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_pin_map">
+			<testing_stage>w-sort</testing_stage>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="182"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>		
+		<table name="et_splitlot_metadata">
+			<testing_stage>e-test</testing_stage>
+			<primary_key>
+				<field name="splitlot_id"/>
+			</primary_key>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="233"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_splitlot_metadata">
+			<testing_stage>f-test</testing_stage>
+			<primary_key>
+				<field name="splitlot_id"/>
+			</primary_key>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="89"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_splitlot_metadata">
+			<testing_stage>w-sort</testing_stage>
+			<primary_key>
+				<field name="splitlot_id"/>
+			</primary_key>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="183"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="et_lot_metadata">
+			<testing_stage>e-test</testing_stage>
+			<primary_key>
+				<field name="lot_id"/>
+				<field name="product_name"/>
+			</primary_key>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="234"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="ft_lot_metadata">
+			<testing_stage>f-test</testing_stage>
+			<primary_key>
+				<field name="lot_id"/>
+				<field name="product_name"/>
+			</primary_key>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="90"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+		<table name="wt_lot_metadata">
+			<testing_stage>w-sort</testing_stage>
+			<primary_key>
+				<field name="lot_id"/>
+				<field name="product_name"/>
+			</primary_key>
+			<dependency_list>
+				<dependency>
+					<is_functional>0</is_functional>
+					<table_link_id_list>
+						<table_link id="184"/>
+					</table_link_id_list>
+				</dependency>
+			</dependency_list>
+		</table>
+	</table_list>
+	<table_link_list>
+		<!-- FT LINKS -->
+		<table_link id="1">
+			<table1>ft_splitlot</table1>
+			<table2>ft_run</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="2">
+			<table1>ft_splitlot</table1>
+			<table2>ft_dietrace_config</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="3">
+			<table1>ft_splitlot</table1>
+			<table2>ft_lot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="4">
+			<table1>ft_splitlot</table1>
+			<table2>ft_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="5">
+			<table1>ft_splitlot</table1>
+			<table2>ft_ptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="6">
+			<table1>ft_dietrace_config</table1>
+			<table2>ft_run_dietrace</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">die_config_id</table1_key>
+					<table2_key type="field">die_config_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="7">
+			<table1>ft_run</table1>
+			<table2>ft_run_dietrace</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">run_id</table1_key>
+					<table2_key type="field">run_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="8">
+			<table1>ft_run</table1>
+			<table2>ft_ptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">run_id</table1_key>
+					<table2_key type="field">run_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="9">
+			<table1>ft_ptest_info</table1>
+			<table2>ft_ptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="10">
+			<table1>ft_splitlot</table1>
+			<table2>ft_run_dietrace</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="11">
+			<table1>ft_splitlot</table1>
+			<table2>ft_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="12">
+			<table1>ft_run</table1>
+			<table2>ft_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">hbin_no</table1_key>
+					<table2_key type="field">hbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="13">
+			<table1>ft_splitlot</table1>
+			<table2>ft_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="14">
+			<table1>ft_run</table1>
+			<table2>ft_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sbin_no</table1_key>
+					<table2_key type="field">sbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="15">
+			<table1>ft_sbin</table1>
+			<table2>ft_sbin_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sbin_no</table1_key>
+					<table2_key type="field">sbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="16">
+			<table1>ft_sbin</table1>
+			<table2>ft_sbin_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sbin_no</table1_key>
+					<table2_key type="field">sbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="17">
+			<table1>ft_hbin</table1>
+			<table2>ft_hbin_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">hbin_no</table1_key>
+					<table2_key type="field">hbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="18">
+			<table1>ft_hbin</table1>
+			<table2>ft_hbin_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">hbin_no</table1_key>
+					<table2_key type="field">hbin_no</table2_key>
+				</key_link>
+			</key_link_list>
+			<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+		</table_link>
+		<table_link id="19">
+			<table1>ft_ptest_stats_summary</table1>
+			<table2>ft_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="20">
+			<table1>ft_ptest_stats_samples</table1>
+			<table2>ft_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="21">
+			<table1>ft_ptest_limits</table1>
+			<table2>ft_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="22">
+			<table1>ft_splitlot</table1>
+			<table2>ft_ftest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="23">
+			<table1>ft_ftest_stats_summary</table1>
+			<table2>ft_ftest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ftest_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="24">
+			<table1>ft_ftest_stats_samples</table1>
+			<table2>ft_ftest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ftest_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<!-- DO NOT EXISTS IGNORE THIS RECORD
+		<table_link id="25">
+			<table1>ft_ftest_limits</table1>
+			<table2>ft_ftest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ftest_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link> 
+		-->
+		<table_link id="26">
+			<table1>ft_run</table1>
+			<table2>ft_ftest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">run_id</table1_key>
+					<table2_key type="field">run_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="27">
+			<table1>ft_ftest_info</table1>
+			<table2>ft_ftest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">ftest_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="28">
+			<table1>ft_splitlot</table1>
+			<table2>ft_mptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="29">
+			<table1>ft_mptest_stats_summary</table1>
+			<table2>ft_mptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">mptest_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="30">
+			<table1>ft_mptest_stats_samples</table1>
+			<table2>ft_mptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">mptest_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="31">
+			<table1>ft_mptest_limits</table1>
+			<table2>ft_mptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">mptest_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="32">
+			<table1>ft_run</table1>
+			<table2>ft_mptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">run_id</table1_key>
+					<table2_key type="field">run_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="33">
+			<table1>ft_mptest_info</table1>
+			<table2>ft_mptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">mptest_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="34">
+			<table1>ft_splitlot</table1>
+			<table2>ft_ptest_limits</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="35">
+			<table1>ft_splitlot</table1>
+			<table2>ft_ftest_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="36">
+			<table1>ft_splitlot</table1>
+			<table2>ft_mptest_limits</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="37">
+			<table1>ft_splitlot</table1>
+			<table2>ft_hbin_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="38">
+			<table1>ft_splitlot</table1>
+			<table2>ft_sbin_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="39">
+			<table1>ft_splitlot</table1>
+			<table2>ft_sbin_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="40">
+			<table1>ft_splitlot</table1>
+			<table2>ft_mptest_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="41">
+			<table1>ft_splitlot</table1>
+			<table2>ft_ptest_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="42">
+			<table1>ft_splitlot</table1>
+			<table2>ft_ftest_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="43">
+			<table1>ft_sya_set</table1>
+			<table2>ft_sbl</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sya_id</table1_key>
+					<table2_key type="field">sya_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="44">
+			<table1>ft_splitlot</table1>
+			<table2>ft_hbin_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="45">
+			<table1>ft_splitlot</table1>
+			<table2>ft_ptest_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="46">
+			<table1>ft_splitlot</table1>
+			<table2>ft_mptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="47">
+			<table1>ft_splitlot</table1>
+			<table2>ft_ftest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="48">
+			<table1>ft_mptest_stats_summary</table1>
+			<table2>ft_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="49">
+			<table1>ft_splitlot</table1>
+			<table2>ft_lot_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="50">
+			<table1>ft_lot</table1>
+			<table2>ft_lot_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="51">
+			<table1>ft_product_hbin</table1>
+			<table2>product</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">product_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="52">
+			<table1>ft_product_hbin</table1>
+			<table2>ft_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">part_typ</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="53">
+			<table1>ft_wyr</table1>
+			<table2>ft_wyr_format</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">site_name</table1_key>
+					<table2_key type="field">site_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="54">
+			<table1>ft_dtr</table1>
+			<table2>ft_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="55">
+			<table1>ft_product_sbin</table1>
+			<table2>product</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">product_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="56">
+			<table1>ft_product_sbin</table1>
+			<table2>ft_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">part_typ</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="57">
+			<table1>ft_parts_stats_summary</table1>
+			<table2>ft_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="58">
+			<table1>ft_parts_stats_samples</table1>
+			<table2>ft_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="59">
+			<table1>ft_splitlot</table1>
+			<table2>ft_prod_alarm</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="60">
+			<table1>ft_splitlot</table1>
+			<table2>ft_lot_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="61">
+			<table1>ft_lot</table1>
+			<table2>ft_lot_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="62">
+			<table1>ft_test_conditions</table1>
+			<table2>ft_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_type</table1_key>
+					<table2_key type="string">P</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="63">
+			<table1>ft_test_conditions</table1>
+			<table2>ft_mptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_type</table1_key>
+					<table2_key type="string">M</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="64">
+			<table1>ft_test_conditions</table1>
+			<table2>ft_ftest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_type</table1_key>
+					<table2_key type="string">F</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="65">
+			<table1>ft_test_conditions</table1>
+			<table2>ft_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="66">
+			<table1>ft_lot</table1>
+			<table2>ft_die_tracking</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">tracking_lot_id</table1_key>
+					<table2_key type="field">ft_tracking_lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="67">
+			<table1>ft_splitlot</table1>
+			<table2>ft_pin_map</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+                <table_link id="68">
+                        <table1>ft_sublot_hbin</table1>
+                        <table2>ft_sublot_info</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="69">
+                        <table1>ft_sublot_hbin</table1>
+                        <table2>ft_lot</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="70">
+                        <table1>ft_sublot_hbin</table1>
+                        <table2>ft_splitlot</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="71">
+                        <table1>ft_sublot_sbin</table1>
+                        <table2>ft_sublot_info</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="72">
+                        <table1>ft_sublot_sbin</table1>
+                        <table2>ft_lot</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="73">
+                        <table1>ft_sublot_sbin</table1>
+                        <table2>ft_splitlot</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="74">
+                        <table1>ft_splitlot</table1>
+                        <table2>ft_sublot_info</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="75">
+                        <table1>ft_consolidated_sublot</table1>
+                        <table2>ft_sublot_consolidation</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">consolidation_name</table1_key>
+                                        <table2_key type="field">consolidation_name</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="76">
+                        <table1>ft_sublot_hbin</table1>
+                        <table2>ft_sublot_consolidation</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="77">
+                        <table1>ft_sublot_sbin</table1>
+                        <table2>ft_sublot_consolidation</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="78">
+                        <table1>ft_splitlot</table1>
+                        <table2>ft_sublot_consolidation</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="79">
+                        <table1>ft_sublot_hbin_inter</table1>
+                        <table2>ft_sublot_info</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="80">
+                        <table1>ft_sublot_hbin_inter</table1>
+                        <table2>ft_lot</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="81">
+                        <table1>ft_sublot_hbin_inter</table1>
+                        <table2>ft_splitlot</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="82">
+                        <table1>ft_sublot_hbin_inter</table1>
+                        <table2>ft_sublot_consolidation_inter</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">consolidation_name</table1_key>
+                                        <table2_key type="field">consolidation_name</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="83">
+                        <table1>ft_sublot_sbin_inter</table1>
+                        <table2>ft_sublot_info</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="84">
+                        <table1>ft_sublot_sbin_inter</table1>
+                        <table2>ft_lot</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="85">
+                        <table1>ft_sublot_sbin_inter</table1>
+                        <table2>ft_splitlot</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="86">
+                        <table1>ft_sublot_sbin_inter</table1>
+                        <table2>ft_sublot_consolidation_inter</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">consolidation_name</table1_key>
+                                        <table2_key type="field">consolidation_name</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="87">
+                        <table1>ft_consolidated_sublot_inter</table1>
+                        <table2>ft_sublot_consolidation_inter</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">consolidation_name</table1_key>
+                                        <table2_key type="field">consolidation_name</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+                <table_link id="88">
+                        <table1>ft_splitlot</table1>
+                        <table2>ft_sublot_consolidation_inter</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">sublot_id</table1_key>
+                                        <table2_key type="field">sublot_id</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+		<table_link id="89">
+			<table1>ft_splitlot</table1>
+			<table2>ft_splitlot_metadata</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+                <table_link id="90">
+                        <table1>ft_lot</table1>
+                        <table2>ft_lot_metadata</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">product_name</table1_key>
+                                        <table2_key type="field">product_name</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+		<!-- WT LINKS -->
+		<table_link id="101">
+			<table1>wt_splitlot</table1>
+			<table2>wt_ftest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="102">
+			<table1>wt_ftest_stats_summary</table1>
+			<table2>wt_ftest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ftest_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="103">
+			<table1>wt_ftest_stats_samples</table1>
+			<table2>wt_ftest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ftest_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="104">
+			<table1>wt_ftest_info</table1>
+			<table2>wt_ftest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">ftest_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="105">
+			<table1>wt_splitlot</table1>
+			<table2>wt_sya_set</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sya_id</table1_key>
+					<table2_key type="field">sya_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="106">
+			<table1>wt_mptest_stats_summary</table1>
+			<table2>wt_mptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">mptest_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="107">
+			<table1>wt_mptest_stats_summary</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="108">
+			<table1>wt_ftest_stats_samples</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="109">
+			<table1>wt_splitlot</table1>
+			<table2>wt_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="110">
+			<table1>wt_run</table1>
+			<table2>wt_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">hbin_no</table1_key>
+					<table2_key type="field">hbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="111">
+			<table1>wt_hbin</table1>
+			<table2>wt_hbin_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">hbin_no</table1_key>
+					<table2_key type="field">hbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="112">
+			<table1>wt_hbin</table1>
+			<table2>wt_hbin_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">hbin_no</table1_key>
+					<table2_key type="field">hbin_no</table2_key>
+				</key_link>
+			</key_link_list>
+			<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+		</table_link>
+		<table_link id="113">
+			<table1>wt_sya_set</table1>
+			<table2>wt_sbl</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sya_id</table1_key>
+					<table2_key type="field">sya_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="114">
+			<table1>wt_sbin</table1>
+			<table2>wt_sbin_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sbin_no</table1_key>
+					<table2_key type="field">sbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="115">
+			<table1>wt_splitlot</table1>
+			<table2>wt_sbin_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="116">
+			<table1>wt_mptest_stats_samples</table1>
+			<table2>wt_mptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">mptest_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="117">
+			<table1>wt_splitlot</table1>
+			<table2>wt_mptest_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="118">
+			<table1>wt_sbin</table1>
+			<table2>wt_sbin_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sbin_no</table1_key>
+					<table2_key type="field">sbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="119">
+			<table1>wt_splitlot</table1>
+			<table2>wt_sbin_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="120">
+			<table1>wt_ptest_limits</table1>
+			<table2>wt_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="121">
+			<table1>wt_splitlot</table1>
+			<table2>wt_ptest_limits</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="122">
+			<table1>wt_splitlot</table1>
+			<table2>wt_lot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="123">
+			<table1>wt_run</table1>
+			<table2>wt_mptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">run_id</table1_key>
+					<table2_key type="field">run_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="124">
+			<table1>wt_mptest_info</table1>
+			<table2>wt_mptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">mptest_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="125">
+			<table1>wt_splitlot</table1>
+			<table2>wt_ptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="126">
+			<table1>wt_run</table1>
+			<table2>wt_ptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">run_id</table1_key>
+					<table2_key type="field">run_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="127">
+			<table1>wt_ptest_info</table1>
+			<table2>wt_ptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="128">
+			<table1>wt_splitlot</table1>
+			<table2>wt_hbin_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="129">
+			<table1>wt_splitlot</table1>
+			<table2>wt_mptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="130">
+			<table1>wt_run</table1>
+			<table2>wt_ftest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">run_id</table1_key>
+					<table2_key type="field">run_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="131">
+			<table1>wt_ftest_info</table1>
+			<table2>wt_ftest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">ftest_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="132">
+			<table1>wt_mptest_limits</table1>
+			<table2>wt_mptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">mptest_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="133">
+			<table1>wt_splitlot</table1>
+			<table2>wt_mptest_limits</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="134">
+			<table1>wt_ptest_stats_summary</table1>
+			<table2>wt_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="135">
+			<table1>wt_splitlot</table1>
+			<table2>wt_ptest_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="136">
+			<table1>wt_splitlot</table1>
+			<table2>wt_hbin_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="137">
+			<table1>wt_splitlot</table1>
+			<table2>wt_ftest_stats_summary</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="138">
+			<table1>wt_splitlot</table1>
+			<table2>wt_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="139">
+			<table1>wt_run</table1>
+			<table2>wt_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sbin_no</table1_key>
+					<table2_key type="field">sbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="140">
+			<table1>wt_ptest_stats_samples</table1>
+			<table2>wt_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="141">
+			<table1>wt_splitlot</table1>
+			<table2>wt_ptest_stats_samples</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="142">
+			<table1>wt_splitlot</table1>
+			<table2>wt_prod_alarm</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="143">
+			<table1>wt_wafer_hbin_inter</table1>
+			<table2>wt_wafer_consolidation_inter</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">consolidation_name</table1_key>
+					<table2_key type="field">consolidation_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="144">
+			<table1>wt_wafer_hbin_inter</table1>
+			<table2>wt_wafer_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="145">
+			<table1>wt_wafer_hbin_inter</table1>
+			<table2>wt_lot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+                <table_link id="146">
+			<table1>wt_wafer_hbin_inter</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="147">
+			<table1>wt_wafer_hbin</table1>
+			<table2>wt_wafer_consolidation</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="148">
+			<table1>wt_wafer_hbin</table1>
+			<table2>wt_wafer_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="149">
+			<table1>wt_wafer_hbin</table1>
+			<table2>wt_lot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="150">
+			<table1>wt_wafer_hbin</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="151">
+			<table1>wt_splitlot</table1>
+			<table2>wt_lot_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="152">
+			<table1>wt_lot</table1>
+			<table2>wt_lot_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="153">
+			<table1>wt_consolidated_wafer_inter</table1>
+			<table2>wt_wafer_consolidation_inter</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">consolidation_name</table1_key>
+					<table2_key type="field">consolidation_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="154">
+			<table1>wt_consolidated_wafer</table1>
+			<table2>wt_wafer_consolidation</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">consolidation_name</table1_key>
+					<table2_key type="field">consolidation_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="155">
+			<table1>wt_wyr</table1>
+			<table2>wt_wyr_format</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">site_name</table1_key>
+					<table2_key type="field">site_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="156">
+			<table1>wt_dtr</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="157">
+			<table1>wt_product_sbin</table1>
+			<table2>product</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">product_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="158">
+			<table1>wt_product_sbin</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">part_typ</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="159">
+			<table1>wt_parts_stats_summary</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="160">
+			<table1>wt_splitlot</table1>
+			<table2>wt_lot_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="161">
+			<table1>wt_lot</table1>
+			<table2>wt_lot_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="162">
+			<table1>wt_product_hbin</table1>
+			<table2>product</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">product_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="163">
+			<table1>wt_product_hbin</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">part_typ</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="164">
+			<table1>wt_wafer_sbin_inter</table1>
+			<table2>wt_wafer_consolidation_inter</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">consolidation_name</table1_key>
+					<table2_key type="field">consolidation_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="165">
+			<table1>wt_wafer_sbin_inter</table1>
+			<table2>wt_wafer_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="166">
+			<table1>wt_wafer_sbin_inter</table1>
+			<table2>wt_lot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="167">
+			<table1>wt_wafer_sbin_inter</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="168">
+			<table1>wt_wafer_sbin</table1>
+			<table2>wt_wafer_consolidation</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="169">
+			<table1>wt_wafer_sbin</table1>
+			<table2>wt_wafer_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="170">
+			<table1>wt_wafer_sbin</table1>
+			<table2>wt_lot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="171">
+			<table1>wt_wafer_sbin</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="172">
+			<table1>wt_test_conditions</table1>
+			<table2>wt_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_type</table1_key>
+					<table2_key type="string">P</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="173">
+			<table1>wt_test_conditions</table1>
+			<table2>wt_mptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_info_id</table1_key>
+					<table2_key type="field">mptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_type</table1_key>
+					<table2_key type="string">M</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="174">
+			<table1>wt_test_conditions</table1>
+			<table2>wt_ftest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_info_id</table1_key>
+					<table2_key type="field">ftest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_type</table1_key>
+					<table2_key type="string">F</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="175">
+			<table1>wt_test_conditions</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="176">
+			<table1>wt_parts_stats_samples</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="177">
+			<table1>wt_splitlot</table1>
+			<table2>wt_wafer_consolidation</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="178">
+			<table1>wt_splitlot</table1>
+			<table2>wt_wafer_consolidation_inter</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="179">
+			<table1>wt_splitlot</table1>
+			<table2>wt_wafer_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="180">
+			<table1>wt_splitlot</table1>
+			<table2>wt_run</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="181">
+			<table1>wt_ptest_info</table1>
+			<table2>wt_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="182">
+			<table1>wt_splitlot</table1>
+			<table2>wt_pin_map</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="183">
+			<table1>wt_splitlot</table1>
+			<table2>wt_splitlot_metadata</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+                <table_link id="184">
+                        <table1>wt_lot</table1>
+                        <table2>wt_lot_metadata</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">product_name</table1_key>
+                                        <table2_key type="field">product_name</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+		<!-- ET LINKS -->
+		<table_link id="201">
+			<table1>et_splitlot</table1>
+			<table2>et_ptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="202">
+			<table1>et_run</table1>
+			<table2>et_ptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">run_id</table1_key>
+					<table2_key type="field">run_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="203">
+			<table1>et_ptest_info</table1>
+			<table2>et_ptest_results</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="204">
+			<table1>et_sya_set</table1>
+			<table2>et_sbl</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sya_id</table1_key>
+					<table2_key type="field">sya_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="205">
+			<table1>et_ptest_info</table1>
+			<table2>et_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="206">
+			<table1>et_splitlot</table1>
+			<table2>et_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="207">
+			<table1>et_run</table1>
+			<table2>et_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">hbin_no</table1_key>
+					<table2_key type="field">hbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="208">
+			<table1>et_ptest_stats</table1>
+			<table2>et_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">ptest_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="209">
+			<table1>et_splitlot</table1>
+			<table2>et_ptest_stats</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="210">
+			<table1>et_splitlot</table1>
+			<table2>et_lot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="211">
+			<table1>et_splitlot</table1>
+			<table2>et_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="212">
+			<table1>et_run</table1>
+			<table2>et_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">sbin_no</table1_key>
+					<table2_key type="field">sbin_no</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="213">
+			<table1>et_splitlot</table1>
+			<table2>et_lot_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="214">
+			<table1>et_lot</table1>
+			<table2>et_lot_sbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="215">
+			<table1>et_wafer_hbin</table1>
+			<table2>et_wafer_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="216">
+			<table1>et_wafer_hbin</table1>
+			<table2>et_lot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="217">
+			<table1>et_wafer_hbin</table1>
+			<table2>et_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="218">
+			<table1>et_wyr</table1>
+			<table2>et_wyr_format</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">site_name</table1_key>
+					<table2_key type="field">site_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="219">
+			<table1>et_dtr</table1>
+			<table2>et_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="220">
+			<table1>et_product_sbin</table1>
+			<table2>product</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">product_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="221">
+			<table1>et_product_sbin</table1>
+			<table2>et_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">part_typ</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="222">
+			<table1>et_splitlot</table1>
+			<table2>et_lot_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="223">
+			<table1>et_lot</table1>
+			<table2>et_lot_hbin</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="224">
+			<table1>et_splitlot</table1>
+			<table2>et_prod_alarm</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="225">
+			<table1>et_product_hbin</table1>
+			<table2>product</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">product_name</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="226">
+			<table1>et_product_hbin</table1>
+			<table2>et_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">product_name</table1_key>
+					<table2_key type="field">part_typ</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="227">
+			<table1>et_wafer_sbin</table1>
+			<table2>et_wafer_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="228">
+			<table1>et_wafer_sbin</table1>
+			<table2>et_lot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="229">
+			<table1>et_wafer_sbin</table1>
+			<table2>et_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">lot_id</table1_key>
+					<table2_key type="field">lot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">wafer_id</table1_key>
+					<table2_key type="field">wafer_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="230">
+			<table1>et_test_conditions</table1>
+			<table2>et_ptest_info</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_info_id</table1_key>
+					<table2_key type="field">ptest_info_id</table2_key>
+				</key_link>
+				<key_link>
+					<table1_key type="field">test_type</table1_key>
+					<table2_key type="string">P</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="231">
+			<table1>et_test_conditions</table1>
+			<table2>et_splitlot</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="232">
+			<table1>et_splitlot</table1>
+			<table2>et_run</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+		<table_link id="233">
+			<table1>et_splitlot</table1>
+			<table2>et_splitlot_metadata</table2>
+			<key_link_list>
+				<key_link>
+					<table1_key type="field">splitlot_id</table1_key>
+					<table2_key type="field">splitlot_id</table2_key>
+				</key_link>
+			</key_link_list>
+		</table_link>
+                <table_link id="234">
+                        <table1>et_lot</table1>
+                        <table2>et_lot_metadata</table2>
+                        <key_link_list>
+                                <key_link>
+                                        <table1_key type="field">lot_id</table1_key>
+                                        <table2_key type="field">lot_id</table2_key>
+                                </key_link>
+                                <key_link>
+                                        <table1_key type="field">product_name</table1_key>
+                                        <table2_key type="field">product_name</table2_key>
+                                </key_link>
+                        </key_link_list>
+                </table_link>
+	</table_link_list>
+</galaxy_tables_dependencies>

@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>Spec Monitoring</title>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../../html/images/assistant.png" width="120" height="114" ></a>Parameter 
+      Specs. Monitoring<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p align="left">This task lets you monitor a parameter value (mean, Cp, 
+      Cpk, etc). Create as 
+      many tasks of this type as parameters values you want to monitor. This task is 
+      triggered each time a DataPump task is executed. As such, each time a data 
+      file is inserted into the database, the specified parameters are checked and 
+      an email notification is triggered in case of an alarm condition. Multiple 
+      emails and mailing list are supported (<a href="#Mailing list">see below</a>).</p>
+      <p align="left">This task allows to monitor one or multiple parameters at 
+      once for one or  multiple products. All 
+      you need is to enter the regular expression for the Product's name that 
+      matches your needs.</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="35%" bgcolor="#FFFF99"><b>Product name string</b></td>
+          <td width="65%" bgcolor="#FFFF99"><b>Comment</b></td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">RFIC03</font></td>
+          <td width="65%">Monitor specs for one specific product (<b>RFIC03</b> 
+          in this example)</td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">RFIC03,RFIC04<br>
+          or<br>
+          RFIC03 | RFIC04</font></td>
+          <td width="65%">Using the <b>|</b> (pipe character) or comma ','&nbsp; you can list 
+          multiple products. In this case, Monitoring will check this monitoring rule 
+          on all the products listed (<b>RFIC03</b> and <b>RFIC04</b> in this 
+          example)</td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">RFIC??</font></td>
+          <td width="65%">Use the <b>?</b> character for wildcard selection. In 
+          this example, the current monitoring rule will apply to any product name 
+          starting with the string <b>RFIC</b> and followed by two characters.</td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">RFIC*</font></td>
+          <td width="65%">Use the <b>*</b> character for wildcard selection. In 
+          this example, the current monitroing rule will apply to any product name 
+          starting with the string <b>RFIC</b>.</td>
+        </tr>
+        </table>
+      <p align="left"><br>
+      The same apply to the Parameter number: you can monitor 
+      specifications from one or more parameters at once. All you need is to 
+      enter is the parameter / test# list:</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="35%" bgcolor="#FFFF99"><b>Parameter/Test number string</b></td>
+          <td width="65%" bgcolor="#FFFF99"><b>Comment</b></td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">1000</font></td>
+          <td width="65%">Monitor specs for one specific parameter / test number 
+          (test# 1000 
+          in this example)</td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">1000,1010,1020<br>
+          or<br>
+          1000 | 1010 | 1020</font></td>
+          <td width="65%">Using the <b>|</b> (pipe character) or comma ',' you can list 
+          multiple parameters. In this case, Monitoring will check this 
+          monitoring rule 
+          on all the tests listed (<b>1000, 1010 and 1020</b> in this 
+          example)</td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">*</font></td>
+          <td width="65%">Use the <b>*</b> character for selecting ALL 
+          parameters/tests.</td>
+        </tr>
+        </table>
+      <p align="left">&nbsp;</p>
+      <h1 align="left"><a name="Mailing list">Mailing list</a><b><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p align="left">The email notification is sent to the email addresses or 
+      mailing list file you define. If you specify email addresses, use the 
+      semi-colon separator (e.g: <a href="mailto:user1@galaxysemi.com">
+      user1@galaxysemi.com</a> ; <a href="mailto:user2@galaxysemi.com">
+      user2@galaxysemi.com</a>)</p>
+      <p align="left">If you click the Mailing list icon to specify a mailing 
+      list file, make sure the file selected complies with the following format:</p>
+      <ul>
+        <li>
+      <p align="left">File is in ASCII format</p>
+        </li>
+        <li>
+      <p align="left">Each line includes one email address in format <b>
+      name@domain</b></p>
+        </li>
+        <li>
+      <p align="left">If multiple addresses appear on one line, use the 
+      semi-colon separator <b>;</b></p>
+        </li>
+      </ul>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="100%" bgcolor="#FFFF99"><b>Example of mailing list ASCII 
+          file:</b></td>
+        </tr>
+      </table>
+      <blockquote>
+      <p align="left"><b><font face="Courier">
+      <a href="mailto:user1@galaxysemi.com">user1@galaxysemi.com</a><br>
+      <a href="mailto:user2@galaxysemi.com">user2@galaxysemi.com</a><br>
+      <a href="mailto:user3@galaxysemi.com">user3@galaxysemi.com</a> ;
+      <a href="mailto:user4@galaxysemi.com">user4@galaxysemi.com</a><br>
+      <a href="mailto:user5@galaxysemi.com">user5@galaxysemi.com</a></font><br>
+&nbsp;</b></p>
+      </blockquote>
+      <p align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">&nbsp;
+      You have other questions? <a href="#_gex_wizard_assistant.htm">Click here!</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

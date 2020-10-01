@@ -1,0 +1,18 @@
+<assembly>
+    <id>assembly-bin</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${commonBuildDir}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>qt-everywhere-enterprise-src-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}/**/*</include>
+            </includes>
+        </fileSet>  
+    </fileSets>
+</assembly>
+                            

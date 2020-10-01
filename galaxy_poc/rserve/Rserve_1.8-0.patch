@@ -1,0 +1,39 @@
+--- Rserve/src/client/cxx/Rconnection.cc	2014-09-03 21:15:25.000000000 +0200
++++ Rserve/src/client/cxx/Rconnection.cc	2015-03-31 14:45:21.191706925 +0200
+@@ -171,20 +171,7 @@
+     }
+     Rsize_t i=len=head.len=ptoi(head.len);        
+     head.cmd=ptoi(head.cmd);
+-    head.dof=ptoi(head.dof);
+     head.res=ptoi(head.res);
+-    if (head.dof>0) { // skip past DOF if present
+-            char sb[256];
+-        int k=head.dof;
+-        while (k>0) {
+-            n=recv(s,(char*)sb,(k>256)?256:k,0);
+-            if (n<1) {
+-                closesocket(s); s=-1;
+-                return -8; // malformed packet
+-            }
+-            k-=n;
+-        }
+-    }
+     if (i>0) {
+         data=(char*) malloc(i);
+         if (!data) {
+@@ -235,7 +222,6 @@
+     int failed=0;
+     head.cmd=itop(head.cmd);
+     head.len=itop(head.len);
+-    head.dof=itop(head.dof);
+     head.res=itop(head.res);
+     if (::send(s,(char*)&head,sizeof(head),0)!=sizeof(head))
+         failed=-1;
+@@ -243,7 +229,6 @@
+         failed=-1;
+     head.cmd=ptoi(head.cmd);
+     head.len=ptoi(head.len);
+-    head.dof=ptoi(head.dof);
+     head.res=ptoi(head.res);
+     return failed;
+ }

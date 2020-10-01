@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <includes>
+                <include>other_libraries/quazip-0.4.4/lib/${distName}/*quazip*</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>  
+    </fileSets>
+</assembly>

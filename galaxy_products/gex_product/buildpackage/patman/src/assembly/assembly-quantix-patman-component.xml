@@ -1,0 +1,68 @@
+<assembly>
+    <id>assembly-patman-dist</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <!-- scripts -->
+        <!-- unix specific -->
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/${scriptPackageFolder}</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>patman${exeExt}</include>
+                <include>gs-pmd${exeExt}</include>
+                <include>gs-pmed${exeExt}</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/readme</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>readme.txt</include>
+            </includes>
+        </fileSet>
+        <!-- plugins -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/plugins/lib/${distName}</directory>
+            <outputDirectory>plugins/db</outputDirectory>
+            <includes>
+                <include>${libSuffix}gexdb_plugin_galaxy${libPostfix}</include>
+                <include>${libSuffix}gexdb_plugin_medtronic${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <!-- Copyrights -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/help/images</directory>
+            <outputDirectory>bin/help/images</outputDirectory>
+            <includes>
+                <include>CopyrightAndLegalNotices.pdf</include>
+                <include>qntx_exam_gs.pdf</include>
+                <include>qntx_exam_install.pdf</include>
+                <include>qntx_exam_lic_user.pdf</include>
+                <include>qntx_rh.pdf</include>
+                <include>qntx_ter_install.pdf</include>
+                <include>qntx_ter_rh.pdf</include>
+                <include>qntx_third_party.pdf</include>
+                <include>qntx_ym_gs.pdf</include>
+                <include>qntx_ym_install.pdf</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <!-- gslog -->
+    <files>
+        <!-- gslog -->
+        <file>
+            <source>${project.build.directory}/galaxy_products/gex_product/bin/pm_gslog.xml</source>
+            <outputDirectory>samples</outputDirectory>
+            <destName>gslog.xml</destName>
+        </file>
+        <!-- executables -->
+        <file>
+            <source>${project.build.directory}/galaxy_products/gex_product/bin/gsd${appExt}</source>
+            <outputDirectory>${binDir}</outputDirectory>
+            <destName>gs-pmd${appExt}</destName>
+            <fileMode>0755</fileMode>
+        </file>
+    </files>
+</assembly>

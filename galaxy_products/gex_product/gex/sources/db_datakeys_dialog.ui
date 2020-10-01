@@ -1,0 +1,1200 @@
+<ui version="4.0">
+ <class>db_datakeys_basedialog</class>
+ <widget class="QDialog" name="db_datakeys_basedialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>616</width>
+    <height>449</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Edit/Modify keys for this dataset...</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <widget class="QLabel" name="textLabel1">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>54</y>
+     <width>40</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>File:</string>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TextLabel">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>14</y>
+     <width>479</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit/Modify key's values to be used when importing this dataset into the Examinator database.&#xd;&#xd;&#xd;&#xd;
+&#xd;&#xd;&#xd;&#xd;
+&#xd;&#xd;&#xd;&#xd;
+&#xd;&#xd;&#xd;&#xd;
+&#xd;&#xd;&#xd;&#xd;
+Note: Yield-Man can fully automate this step (see its 'Help' HTML page).</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignTop</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textLabelDataFile">
+   <property name="geometry">
+    <rect>
+     <x>57</x>
+     <y>51</y>
+     <width>470</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>textLabel2</string>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonReloadDefault">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>90</y>
+     <width>178</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Reload original values as found in data file</string>
+   </property>
+   <property name="text">
+    <string>Reload Default</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PushButtonCancel">
+   <property name="geometry">
+    <rect>
+     <x>536</x>
+     <y>37</y>
+     <width>62</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Exit, Ignore changes</string>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonLoadFromConfigFile">
+   <property name="geometry">
+    <rect>
+     <x>425</x>
+     <y>138</y>
+     <width>178</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Initialize keys fields reading a configuration file</string>
+   </property>
+   <property name="text">
+    <string>Load values from config file...</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PushButtonOk">
+   <property name="geometry">
+    <rect>
+     <x>538</x>
+     <y>9</y>
+     <width>59</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Close and Save edits</string>
+   </property>
+   <property name="text">
+    <string>OK</string>
+   </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxGlobal">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>84</y>
+     <width>390</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>General Info</string>
+   </property>
+   <widget class="QLineEdit" name="lineEditDataOrigin">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>20</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Data origin, e.g: Manufacturing or Testing Data origin place or subcontractor name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelDataOrigin_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>43</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Lot:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditLotID">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>40</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>LotID string</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditFamilyID">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>20</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>FamilyID (e.g: Product family name)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditProductID">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>40</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Product ID name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelDataOrigin">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>22</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Data origin:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelFamilyID">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>23</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Family ID:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditSublotID">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>60</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>SubLotID string</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelProduct">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>43</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Product:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelDataOrigin_2_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>63</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Sublot:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxManufacturing">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>183</y>
+     <width>390</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Manufacturing/Test Info</string>
+   </property>
+   <widget class="QLineEdit" name="lineEditFacilityID">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>20</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>FacilityID (e.g: Fab name or Test factory name)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditProcessID">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>60</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Manufacturing or Test Process ID</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelFreqStepID">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>42</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Freq/Step :</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelFloorID">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>22</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Floor ID:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelPackage">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>42</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Package type:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditPackage">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>40</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Package type (e.g: QFP)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelFacilityID">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>22</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Facility ID:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditFreqStepID">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>40</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Operation frequency or Step</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelProcessID">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>62</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Process ID:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditFloorID">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>20</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Manufacturing or Test floor ID</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxTest">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>284</y>
+     <width>390</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Test Info</string>
+   </property>
+   <widget class="QLineEdit" name="lineEditLoadBoardID">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>20</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Load Board ID / name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelTestCode">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>82</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Testing code:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelProberType">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>42</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Prober type:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelLoadBoardID">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>22</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Load board:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBoxRetestNumber">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>120</y>
+      <width>100</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Define if lot was previously tested (and if so, how many times)</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>no</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1st Retest</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2nd Retest</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3rd Retest</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4th Retest</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5th Retest</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>6th Retest</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>7th Retest</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>8th Retest</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>9th Retest</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="textLabelWaferID">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>123</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>WaferID:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelTester">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>102</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Tester:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditLoadBoardType">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>20</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Type of loadboard  / brand</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditProberType">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>40</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Type of prober / brand</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditProberID">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>40</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Handler or Prober ID / name</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditTester">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>100</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Tester name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelTesterType_2">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>122</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Retest data:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelProgramRevision">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>62</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Program rev.:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelLoadBoardType">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>22</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Board type:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditTesterType">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>100</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Tester type / Brand. Eg: HP93000, LTX Fusion, etc...</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditProgramRevision">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>60</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Test program revision (e.g: 1.03.54)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelTemperature">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>82</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Temperature:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelProberID">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>42</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Prober ID:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditTestingCode">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>80</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Test code. E.g: "Final" or "Wafer", etc...</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditProgram">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>60</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Test program name</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditTemperature">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>80</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Testing Temperature (e.g: 75 or 75C).</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelTesterType">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>101</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Tester type:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelProgram">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>62</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string>Program:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditWaferID">
+    <property name="geometry">
+     <rect>
+      <x>88</x>
+      <y>120</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Wafer ID string/name</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>413</x>
+     <y>220</y>
+     <width>196</width>
+     <height>215</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Misc.</string>
+   </property>
+   <widget class="QLineEdit" name="lineEditUser1">
+    <property name="geometry">
+     <rect>
+      <x>109</x>
+      <y>90</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>User defined custom Key#1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelOperator">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>47</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Operator:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditOperator">
+    <property name="geometry">
+     <rect>
+      <x>89</x>
+      <y>45</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Operator name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelUser4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>151</y>
+      <width>95</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>User4:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelUser3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>132</y>
+      <width>95</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>User3:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelBurnin">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>27</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Burn-in time:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditUser2">
+    <property name="geometry">
+     <rect>
+      <x>109</x>
+      <y>110</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>User defined custom Key#2</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditUser3">
+    <property name="geometry">
+     <rect>
+      <x>109</x>
+      <y>130</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>User defined custom Key#3</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditBurnin">
+    <property name="geometry">
+     <rect>
+      <x>89</x>
+      <y>25</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Burn-in time (in seconds)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelUser1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>92</y>
+      <width>95</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>User1:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditUser5">
+    <property name="geometry">
+     <rect>
+      <x>109</x>
+      <y>170</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>User defined custom Key#5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelUser2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>112</y>
+      <width>95</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>User2:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelUser5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>172</y>
+      <width>95</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>User5:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditUser4">
+    <property name="geometry">
+     <rect>
+      <x>109</x>
+      <y>150</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>User defined custom Key#4</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <tabstops>
+  <tabstop>lineEditDataOrigin</tabstop>
+  <tabstop>lineEditFamilyID</tabstop>
+  <tabstop>lineEditLotID</tabstop>
+  <tabstop>lineEditProductID</tabstop>
+  <tabstop>lineEditSublotID</tabstop>
+  <tabstop>lineEditFacilityID</tabstop>
+  <tabstop>lineEditFloorID</tabstop>
+  <tabstop>lineEditFreqStepID</tabstop>
+  <tabstop>lineEditPackage</tabstop>
+  <tabstop>lineEditProcessID</tabstop>
+  <tabstop>lineEditLoadBoardID</tabstop>
+  <tabstop>lineEditLoadBoardType</tabstop>
+  <tabstop>lineEditProberID</tabstop>
+  <tabstop>lineEditProberType</tabstop>
+  <tabstop>lineEditProgram</tabstop>
+  <tabstop>lineEditProgramRevision</tabstop>
+  <tabstop>lineEditTemperature</tabstop>
+  <tabstop>lineEditTestingCode</tabstop>
+  <tabstop>lineEditTester</tabstop>
+  <tabstop>lineEditTesterType</tabstop>
+  <tabstop>lineEditWaferID</tabstop>
+  <tabstop>lineEditBurnin</tabstop>
+  <tabstop>lineEditOperator</tabstop>
+  <tabstop>lineEditUser1</tabstop>
+  <tabstop>lineEditUser2</tabstop>
+  <tabstop>lineEditUser3</tabstop>
+  <tabstop>lineEditUser4</tabstop>
+  <tabstop>lineEditUser5</tabstop>
+  <tabstop>pushButtonReloadDefault</tabstop>
+  <tabstop>pushButtonLoadFromConfigFile</tabstop>
+  <tabstop>PushButtonOk</tabstop>
+ </tabstops>
+ <resources>
+  <include location="gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

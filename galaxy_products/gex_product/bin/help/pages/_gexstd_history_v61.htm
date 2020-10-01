@@ -1,0 +1,955 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Examinator V6.1 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">Examinator family : V6.1 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Examinator-Characterization, Examinator-Production, Examinator-PAT)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_gexstd_history.htm">Back to main releases history page</a><br><br>
+<!--      <a href="_gexstd_history_v61_major.htm">V6.1 major enhancements</a><br> -->
+      <a href="#V6.1B156">V6.1 B156 release history</a><br>
+      <a href="#V6.1B155">V6.1 B155 release history</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.1 B156 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.1B156">V6.1 B156.06 (16 June 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+			<li><b>Case 3235 - Problem parsing CSM E-Test files:</b>
+							   CSM E-Test parser rejecting files because of new foundry id on the first line.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B156">V6.1 B156.05 (11 June 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 2856 - Wrong date after merging test and re-test file causing confusion:</b>
+                               Two files were merged using the toolbox merge test and retest feature. After the merge, Global Info displayed an 
+                               end test date of Sat 21 Dec 1985 0:11:29. This date does not exist in either file and only appears after the merge.</li>
+            <li><b>Case 2595 - Addition of the X and Y positive direction in the .csv header when exporting to CSV:</b>
+                               Update the csv format to add the X and Y positive direction in the .csv header when exporting a wafer STDF file
+                               to CSV. It is mentioned as WCR.POS_X and WCR.POS_Y in STDF specification.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B156">V6.1 B156.04 (04 June 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3186 - Using default options the more reports scatter plot doesn't show the spots:</b>
+                               Using default options the more reports scatter plot doesn't show the spots. You have to go to interactive mode, 
+                               scatter plots, click the spots box, then re-run the report to get the spots to show up in the more reports section.</li>
+            <li><b>Case 3186 - Query cannot run when selecting from last 7 days:</b>
+                               In some circumstances, the report will fail when using 'Analyze a Dataset', and selecting the 'Consolidated Data' 
+                               option in the 'Data' tab.</li>
+            <li><b>Case 3029 - Quantix Crashes on Multiple STDF to CSV Conversion:</b>
+                               There seems to be an issue with converting multiple stdf files to csv files. If I have a group of stdf's to convert, 
+                               Quantix will crash. I am using V6.1 B156.01. Previous version of (&lt;V6) did not have this issue.</li>
+            <li><b>Case 2892 - Refresh issue causes options, and wafermaps to not update:</b>
+                               B156 preview does not refresh the report files html files. 
+                               This causes reports to be incorrect unless you specifically refresh the web page within Examinator.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B156">V6.1 B156.03 (27 May 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3130 - GEX crashes when doing R&R (on XP only):</b>
+                               GEX crashes when doing R&R. The user loads his files, turns on the R&R feature and GEX crashes. The crash is due
+							   to tests with a different nb. of samples in the different groups.</li>
+            <li><b>Case 3121 - Wafermap export to file does not work:</b>
+                               The "export to file" link on the wafer map output screen does not work.</li>
+            <li><b>Case 3069 - Stats table in B156 and later not easy to read like in B155:</b>
+                               When comparing files the stats table each of the same tests are now separated by an additional header row. 
+                               This makes it much tougher to scroll through quickly and see differences.</li>
+            <li><b>Case 3033 - Save wafer map to file does not work:</b>
+                               Click save button on the wafer map page. no file is created and no info from gex.</li>
+            <li><b>Case 2806 - XML code for wafer map stacking is not working in V6.1B155 but works in B153:</b>
+                               User used xml code for wafer map stacking in V6.0B152. User is unable to use this feature in current version of GEX.</li>
+            <li><b>Case 2801 - Wafer map export to file doesn't work in 6.1B156:</b>
+                               Process a file, go to wafer map, click the export to file link. nothing happens. works in 6.1B155.</li>
+            <li><b>Case 2675 - Wafermap formatting issue on ppt report:</b>
+                               The ppt report format cuts off the wafer map since it adds too many stats above it.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B156">V6.1 B156.02 (18 May 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+			<li><b>Case 2831 - Change The default options in the final B156 Packages:</b>
+							   Change The default options in the final B156 Packages that have caused many problems.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.1 B156 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B156">V6.1 B156 (29 April 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 2907 - ACCO parser support, mainly for Asian market:</b>
+                               Implemented new parser for AMIDA files.</li>
+            <li><b>Case 2906 - AMIDA Parser support, mainly for Taiwan market:</b>
+                               Implemented new parser for AMIDA files.</li>
+            <li><b>Case 2839 - Wafermap section still appears in report when it's 'disabled':</b>
+                               When disabling 'Wafer Map', it still shows a Wafermap section in the report with Wafermap = disabled. The Wafermap section should be completely discarded.</li>
+            <li><b>Case 2575 - Run GEX from the command line with multiple files in a zip file:</b>
+                               Goal is to be able to run Examinator from the command line using multiple files inside a zip file.  When opening Examinator from the command line, a dialog box should pop up asking to compare or merge the files.  Also, there should be an argument available from the command line that will specify Merge or Compare so that the dialog box is not necessary.  If there is no argument, then the dialog box should pop up asking to Merge or Compare.</li>
+            <li><b>Case 2250 - Allow a filter of 'top N failures' to be used in the 'settings' tab for stats, histos and wafermaps:</b>
+                               Allow a filter of 'top N failures' to be used in the 'settings' tab for : statistics, histograms, wafermaps.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 3001 - CSV conversion in B156 is not working properly for every file:</b>
+                               CSV conversion/export is not handling the MPRs properly when not merging pins and data file contains pin map information (ie STDF PMR records).</li>
+            <li><b>Case 2979 - Microlupi Parser Incorrect. X and Y backwards:</b>
+                               The Microlupi parser for Tessera writes X and Y backwards. The Row value should be assigned to Die_Y, and the Column value should be assigned to Die_X.</li>
+            <li><b>Case 2933 - Only two tests appear in the file:</b>
+                               File contains 57,000 some odd tests, and 52,000 of them are number zero. All are MPR tests. Customer would like to be able to convert to CSV, but only tests not numbered zero display.</li>
+            <li><b>Case 2870 - Images in the html report are not reloaded by the WebBrowser:</b>
+                               When you run a report twice with few changes, images are not reloaded y the Web browser if the filename didn't change.</li>
+            <li><b>Case 2855 - Tests with same test name and number are in one file and Quantix is only reporting the last test:</b>
+                               User created a test file where the same test repeats over and over at different voltages, and in the report, only the last test result is reported.</li>
+            <li><b>Case 2850 - Yield Wizard on FT database doesn't work when specifying a specific bin:</b>
+                               In Enterprise Report -> Yield Wizard on FT database. At step 3 of 5, adding series of Bin type = 'PASS bins only' works fine, but when bin type = 'Specific Bin' it doesn't work anymore (even BIN1 only!).</li>
+            <li><b>Case 2831 - Change The default options in the final B156 Packages:</b>
+                               Change The default options in the final B156 Packages that have caused many problems.</li>
+            <li><b>Case 2828 - 'Adobe does not recognize a font' error:</b>
+                               When opening a PDF file generated by Examinator, the reader displays a 'Adobe does not recognize a font' error on some platforms. An option was added to disable font embedding in the PDF file (Options->Report output->About fonts in PDF).</li>
+            <li><b>Case 2769 - Geneaology reports crashing:</b>
+                               Examinator crashes when a parameter vs yield report is attempted. This happens in B155.10 and B156preview.</li>
+            <li><b>Case 2760 - Right clicking on a specific trend dot does not bring up the higlighted die anymore:</b>
+                               When right clicking a trend dot in the interactive graph, it should bring up the soft bin wafermap with that die highlighted in white. In B156 Preview it only brings up a parametric wafer map of that test with no white highlighting.</li>
+            <li><b>Case 2754 - V6.1 B156 _ preview 20100217 version breaks working xml feature in V6.1 B155:</b>
+                               When using an xml file to create a test, the test is created but doesn't process any units. The data is NULL. Feature is functional in the released B155 version.</li>
+            <li><b>Case 2712 - Histograms Y Axis option is not correct in some reports:</b>
+                               When setting the histogram Y axis option to 'frequency count/hits' That setting does not show up in the 2-D histograms in the html report, or in the excel report format.</li>
+            <li><b>Case 2687 - The Interactive wafer soft bin map is all one color in B155, B156:</b>
+                               The Interactive wafer soft bin map is all one color in B155, B156 when you have the wafermap report setting to 'paramteric test (over test limits)'.</li>
+            <li><b>Case 2681 - Using the Split dataset interactive feature not working in B156 preview:</b>
+                               In the preview B155 20100205 when you right click and split the dataset interactively on a test, the new report has both datasets as green in the chart.</li>
+            <li><b>Case 2620 - Die from wafer map not showing correct results:</b>
+                               When you look at the wafer map, die (1,1) ahows the wrong results vs the 'part results' table.</li>
+            <li><b>Case 2370 - Incorrect calculation when merging tests:</b>
+                               Merging tests using the XML template sometimes does not give the expected results.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B156">V6.1 B156 (preview 20100217)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+
+            </ul>
+          </td>
+        </tr>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 2704 - Enterprise Reports on summary data:</b>
+			                   When generating an Enterprise Report with the Yield Wizard, and checking the option to generate a Binning pareto for low yield items, Examinator would not generate the pareto for any alarming item if this item has only summary data available.</li>
+            <li><b>Case 2701 - KLA INF not reading fine:</b>
+			                   KLA INF (.sinf and .DAT) not parsed correctly if Hex Bin# in map appears coded over 3 digits or more (eg: 1FF).</li>
+            <li><b>Case 2696 - Bug in reading limits in B156 20100205:</b>
+			                   Limits were not corrctly populated from the data file: any valid LL > 0 would result in LL = 0, and any valid HL < 0 would result in HL = 0.</li>
+            <li><b>Case 2685 - Slow report generation:</b>
+			                   The report generation was optimized in the case of a single dataset analysis with a very high number of tests (> 10000).</li>
+            <li><b>Case 2671 - Create report from interactive window doesn't work for trend graphs:</b>
+			                   When you interactively 'keep viewport' while you have a trend on the screen then try to right click and 'create pdf report' there is an 'error creating pdf report'.</li>
+            <li><b>Case 2628 - Quantix Limits Issues:</b>
+			                   The problem here is that Examinator gives different results in the statistics table > test limits field depending on if the file is loaded or if the query is made from the database.</li>
+            <li><b>Case 2517 - Static PAT limits report table shows incorrect T factor:</b>
+			                   When T Factor has been deleted for Relax rule tests in Recipe file, it correctly shows blank in Recipe editor but '= 6' in Static-PAT Test Limits table report when table exported to .CSV</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B156">V6.1 B156 (preview 20100205)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>            
+            <li><b>Case 2633 - SQL error when creating yield wizard report (Final Test):</b>
+                               When creating a yield wizard report we get an SQL error.</li>
+            <li><b>Case 2625 - License activation with a standalone license:</b>
+                               If using the 'Switch GEX running mode' link (or starting the application with any of the -W arguments), and the application directory contains a valid 
+							   standalone license, and the .gex_localconfig.conf either doesn't exist, or dosn't contain a '[Standalone]' section, or the fields in this section are 
+							   empty, the edit boxes in the license activation dialog box would be empty, but greyed, so that the license cannot be used, and the application not started.</li>
+            <li><b>Case 2618 - Propability plot mouse-over is incorrect in B155:</b>
+                               When mousing over a prob plot set to cumulative probability for the Y scale, the flyover box that pops up still shows the Y value in sigma, and not in 
+							   percentile.  The Mouse-over should show the same units as the Y-axis.</li>
+            <li><b>Case 2616 - Help not working in B155 Characterization:</b>
+                               When you push F1 to get to the help file in the final B155 Characterization version you get an error "could not load sqlite database driver".</li>
+            <li><b>Case 2608 - Ignoring test names, merging tests with same # not working correctly:</b>
+                               &lt;description&gt;</li>
+            <li><b>Case 2596 - Enterprise report script errors:</b>
+                               Enterprise report shows some errors when running a specific script.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B156">V6.1 B156 (preview 20100126)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 2590 - Modifications to Image Master File Parser:</b>
+                               The Imagemaster parser was modified to exclude all but the first measurement for each test.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>            
+            <li><b>Case 2549 - Quantix freezing up under some particular conditions:</b>
+                               When you copy an interactive chart to the clip board using the right-click method then paste to Word, the left and right blue arrows to change tests no longer work.</li>
+            <li><b>Case 2532 - Enterprise yield report only showing 2 pages on PPT format:</b>
+                               If you create a normal yield wizard report under Enterprise Reports it works fine with the web report, or a pdf report. If you use the PPT format, it only shows the first 2 pages.</li>
+            <li><b>Case 2429 - Merging tests using XML file:</b>
+                               When using the XML test mapping file to merge tests, the execution count is incorrect (not summed up when merging).</li>
+            <li><b>Case 2399 - Using XML test mapping file does not Merge test data:</b>
+                               When merging tests using the XML test mapping file, the execution count is not correct (not actually merged).</li>
+            <li><b>Case 2301 - Value for any specific die are different in csv output, wafermap, and tables:</b>
+                               For multi-results parametric tests, the measurement result for a specific die/test are different in the data editor, the parametric wafermap, and the interactive test result table.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.1 B155 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B155">V6.1 B155.13 (27 May 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 2991 - Data shifted in CSV output. Numbers do not align with headers:</b>
+                               Under the new Examinator, there seems to be a problem with columns that should be empty. When the data contains 
+                               blank columns, v6.1 B155 seems to suffer from 'shifted' data.</li>
+            <li><b>Case 2652 - Result in excel conversion, but not in part result table:</b>
+                               There is a problem when Examinator converts the stdf file to a csv file. It seems to add values that aren;t supposed to be there.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B155">V6.1 B155.12 (17 May 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3044 - LGE files crash GEX:</b>
+                               3 files: typeA.stm, typeB.DSTIM, nd1_14.datalog. typeA and typeB crash B155, B156. nd1_14 does not crash but says that it's an 
+							   unrecognized format. B153 processes the typeA and typeB files as well as converts them to csv. Will not convert to another 
+							   format like stdf. The nd1_14 file appears to be a datalog and opens with a text editor.</li>
+            <li><b>Case 2933 - Only two tests appear in the file:</b>
+                               File contains 57,000 some odd tests, and 52,000 of them are number zero. All are MPR tests. Customer would like to be able to convert to CSV, but only tests not numbered zero display.</li>
+            <li><b>Case 2911 - File causing crash:</b>
+                               File with .dat extension does cause a crash. It's a binary format of some sort, not supported by Examinator.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B155">V6.1 B155.11 (19 March 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            
+            <li><b>Case 2818 - CSV parser: date/time converted to local time:</b>
+                               When converting a file from CSV to STDF, the date/time read in the CSV file (start date, setup date...) was converted to local timezone, 
+							   resulting in a time difference when dumping the resulting STDF file.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B155">V6.1 B155.09 (12 February 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>            
+            <li><b>Case 2638 - E-test file not being parsed correctly:</b>
+			                   A bug was fixed where when converting PCM-X-Fab files in which each line is not terminated by a ',', the last parameter is being left out in the converted file.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B155">V6.1 B155.07 (20 January 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 2584 - Gex-Lm generating a corrupted gex_request.txt file:</b>
+                               On some systems, Gex-Lm was generating a gex_request.txt file with empty system identifiers (HostName, ...). 
+							   The corresponding gex_license.txt file was successfully activated, but when loading it, Gex-Lm would compare 
+							   these empty system identifiers with the real ones, and thus fail to validate the license file.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B155">V6.1 B155.06 (15 January 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            
+            <li><b>Case 2554 - Quantix Crashing when pressing the Excel button in the interactive charts:</b>
+                               Fixed a bug where when comparing datasets (files or queries), in the 'Table' tab of the 'Interactive Charts', 
+							   if the datasets don't have the same number of results for any given test, and the user clicks the 'Save dataset to Excel/CSV file' 
+							   or the 'Save dataset to clipboard...' button, the application would crash.</li>
+            <li><b>Case 2535 - Quantix Crashes when "examinator toolbox" is selected:</b>
+                               Using any data (file, query...), build an "interactive only" report type. 
+							   Then click on the "Toolbox" link under "Quick links".</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B155">V6.1 B155.04 (12 January 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <!-- New Stuff goes in here.   -->
+            <li><b>Case 2528 - Enterprise Report binning pareto filters implemented:</b>
+                               In the Enterprise Report 'Style' settings, under the 'Binning pareto' tab, the 'Binnings' filter has been implemenetd.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 2552 - Individual wafer binning percentages based on Gross Die count are wrong (when report on multiple wafers):</b>
+                               When creating a report on multiple wafers, all global yield and binning percentage computations based on the Gross Die count 
+							   are correct (using total parts=NxGross Die count), but the individual per wafer yield and binning pecentage computations are 
+							   wrong because using this same nb. of parts instead of 1xGross Die count.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.1B155">V6.1 B155 (22 December 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <!-- New Stuff goes in here.   -->
+            
+            <li><b>Case 2456 - Enhanced Histograms and Box Plots:</b>
+                               Added new functionality to enhance visual appeal and functionality.  Limit colors match group colors on histograms and box plots.</li>
+            <li><b>Case 2441 - Virtual Test Creator:</b> 
+                               Quantix now offers the ability to create 'virtual' tests on the fly using data from existing tests.  For example, it is now
+                               possible to perform a mathmatical operation on two or more existing measurement results, and report those results in Quantix
+                               using all of the available analysis tools such as statistical summaries, charts, and wafermaps.</li>
+            <li><b>Case 2362 - TEL Prober Files:</b> 
+                               Added the capability parse and analyze TEL wafer probe files.</li>
+            <li><b>Case 2037 - Multiple partial data files:</b> 
+                               Added a capability to accept multiple files from the same wafer, and stich them together into a coherent gouping for logical
+                               analysis.  This capability is useful when partial wafer files are typical, as might be the case for test programs with very long 
+                               test times.</li>
+            <li><b>Case 2395 - Revised Database Administration Page:</b> 
+                               The Database Administration page has been updated to include additional valuable information 
+                               such as 'Connected', 'Db version', and 'Update Status.' </li>
+            <li><b>Case 2306 - Grace Semiconductor Parser:</b> 
+                               New capabilities for parsing and mangement of files from Grace Semiconductor</li>
+            <li><b>Case 2295 - Silan Fab Parser:</b> 
+                               New capabilities for parsing and mangement of files from Hangzhou Silan Microelectronics. </li>
+            <li><b>Case 2260 - Enhanced capabilities for dealing with consolidated or re-tested data:</b> 
+                               Added a "Consolidated" drop down box to the Data tab.  When set to Consolidated data, Quantix
+                               will automatically filter die that are retested from first pass results.  Quantix will also filter 
+                               data from subsequently re-tested die.  The new capability allows for analysis of yield exclusive of 
+                               re-tested die.</li>
+            <li><b>Case 2255 - New Command Line Capability:</b> 
+                               Added the capability to launch Quantix from the command line while calling multiple files.  This 
+                               new capability expands the flexibility of Quantix to work seamlessley with other programs & scripts that may call 
+                               on Quantix for analysis capabilities.</li>
+            <li><b>Case 2236 - Modified Default Configuration:</b> 
+                               Modified and enhanced the default user configuration to more closely align with user expectations.</li>
+            <li><b>Case 2233 - Sipex Parser:</b> 
+                               Added a parser for Sipex test data.</li>
+            <li><b>Case 2196 - Enhanced Global Info Report Tab:</b> 
+                               Added an option to the �Options� tab called �Global Info�, which allows user to choose a summary or a detailed 
+                               Global Info report when merging or comparing groups of files (the default value is �Summary�).</li>
+            <li><b>Case 2179 - New What-If Analysis:</b>
+                               Added a column to the What-if table to display Failing Bin number.</li> 							
+            <li><b>Case 2178 - Improved Options Menu Navigation:</b>
+                               Added context menu to the �Options� tab to expand/collapse all submenus or just a selected submenu.</li>
+            <li><b>Case 2177 - Enhanced 3D Interactive Wafermap 'Find' Utility:</b>
+                               Added a feature to the 3D Interactive Wafermap that maintains a Find criteria ("Find part(PART_ID)",
+                               "Find Die: X,Y") so that once called, the criteria are persistent until changed for an analysis session.</li>
+            <li><b>Case 2163 - Improved Multi-Wafer Wafermap Analysis:</b>
+                               Added a feature to the Bin Wafermap analysis tool that will maintin contstant color codes across wafermaps 
+                               during an alalysis session.  This allows for quick comparison of bin wafermaps.</li>
+            <li><b>Case 2162 - Improved wafer flat detection and alarms:</b> 
+                               Quantix will now give an alarm if the software detects that the flat represented by the data is different from 
+                               what is specified in the data file. When this happens, Quantix will now highlight the line in RED if either the 
+                               detected flat location is different from the one specified in the STDF file or there is no flat location specified 
+                               in the STDF file.</li>
+            <li><b>Case 2158, 1778, & 1625 - Automatic STDF repair utility:</b> 
+                               Quantix will now, at the users option, offer to attempt a repair of a corrupt STDF fiile.  If successful, the file can 
+                               be analyzed as if the file were not corrupted.</li>
+            <li><b>Case 2146 - Interactive Window Statistics Tab:</b>
+                               Added additional functionality to the Interactive Window Statistics Tab.  Min/Max and Specification limits.</li>
+            <li><b>Case 2117 - Enhanced FTR pass fail reporting:</b> 
+                               Added the option to specify how Quantix will handle multiple FTR results.  The new option will specify if Quantix 
+                               should fail if any runs fail, or fail the die only if all runs fail.</li>
+            <li><b>Case 1991 - Wavemaster Parser:</b> 
+                               Added the capability to parse and manage Wavemaster test data.</li>
+            <li><b>Case 1985 - Optical parsers:</b> 
+                               added the capability to parse and manage a suite of optical test data formats, including ImageMaster, Diffractive Test, 
+                               Micrulupi, & QV302 testers.</li>                    
+            <li><b>Case 1570 - Die to Die Mismatch Wafermap:</b>
+                               Added a new wafermap comparison tool.  This new tool displays color codes correspoding to software or
+                               hardware bin values for two wafermaps.  Identical bins are not colored.  Changed bins are identified with 
+                               two colors for 'before' and 'after.'</li>					       
+            </ul>
+          </td>
+        </tr>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            
+            <li><b>Case 2498 - Optical file format:</b>
+                               Fixed a bug in reading Row and Column for optical devices.  In some cases, X and Y coordinates would be reversed.  
+                               Added logic to prevent this from occurring.</li>
+            <li><b>Case 2493 - Data not showing up for tests not included with reference dataset:</b>
+                               Added the capability to display test data from tests that are not part of the reference data set.  For some types of
+                               analysis, particularly comparing files are datasets, Examinator would not display data from subordinate datasets if 
+                               the test numbers or test names were not part of the reference dataset.</li>
+            <li><b>Case 2475 - What if not calculating delta yields correctly with trial and error approach:</b>
+                               Fixed a problem that would cause the Delta Yield column on the What-If yield analysis to recalculate improperly
+                               under certain conditions.</li>
+            <li><b>Case 2440 - Test limits do not display when comparing datasets:</b>
+                               Fixed a problem with interactive charting that caused test limits to display improperly, or to not display at all, 
+                               under certain conditions.</li>
+            <li><b>Case 2414 - Program Crashing:</b>
+                               Fixed a problem that would cause Quantix Examinator to crash under very specific circumstances with a particular
+                               data set.  </li>
+            <li><b>Case 2430 - First page of a Quantix Characterization report:</b>
+                               Fixed the report generation tool so that it once again accepts html tags and text for the report first page.  
+                               This capability applies to static reports, such as PDF, PPT, and Word Docs.</li>
+            <li><b>Case 2222 - Custom home page content not correctly displaying:</b>
+                               Enhanced the software's capability to detect and properly display html pages.</li>
+            <li><b>Case 2442 - Save button for Enterprise report script does not actually save files:</b>
+                               Fixed a bug that prevented the 'Save Script' button from properly saving a script.</li>
+            <li><b>Case 2320 - Enterprise report query optimized:</b>
+                               In certain circumstances, an Enterprise report query agains the relational database may take a very long time.  
+                               This is due to a sub-optimal query.  Quantix has modified the query creation algorithm to take full advantage of 
+                               avilable primary key indeces in the database.</li>
+            <li><b>Case 2392 - Probability Plot:</b>
+                               Changed the labeling on the interactive probability plot to more closely match accepted statistical practices.</li>
+            <li><b>Case 2407 - Crash due to missing data:</b>
+                               Fixed a bug that would cause Quantix to crash under certain circumstances if there was no data in a file.</li>          
+            <li><b>Case 2369 - GZ Decompression:</b>
+                               Fixed a problem with decompressing some GZ files.</li>
+            <li><b>Case 2334 - Crash:</b>
+                               Fixed a problem that would cause Examinator to crash under certain conditions immediately after opening.</li>
+            <li><b>Case 2331 - Discrepancy between HTML and PDF versions of Scatterplots:</b>
+                               Brought the PDF and HTML formats into alignment on the scatterplot.  Previously, the two output formats
+                               were not consistent.</li>
+            <li><b>Case 2329, & 2319 - CSV Export:</b>
+                               Fixed a bug in the CSV export utility to prevented the tests to sort improperly when set to sort by 
+                               test flow ID.  Also enabled the CSV exported to work properly with WAT data.</li>
+            <li><b>Case 2326 - Online Help malfuntion:</b>
+                               Fixed a bug in the online help that prevented the help window from opening properly.</li>
+            <li><b>Case 2322 - Crash when opening multiple AWW files:</b>
+                               Fixed a bug that caused Quantix to crash under certain conditions when working with multiple AWW files.</li>
+            <li><b>Case 2309 - Incorrect bin results when using bin filters:</b>
+                               Fixed a bug that would cause incorrect bin pareto results under certain conditions when utilizing bin filters
+                               and merging files.</li>
+            <li><b>Case 2307 - Charted PCM data:</b>
+                               Fixed a problem that prevented Chartered E-Test data from importing properly into Quantix Examinator.</li>
+            <li><b>Case 2304, 2219, & 2121 - Scatter Plots:</b>
+                               Repaired a problem groupings of scatter plot colors.</li>
+            <li><b>Case 2297 - Multisite Measurement Statistical Error:</b>
+                               Fixed a bug that caused multi-site measurements to have incorrect summary statistics when the sites are merged.</li>
+            <li><b>Case 2296 - Truncation of Group Names</b>
+                               Repaired a bug that caused the first Group Name in a list of multiple groups to be truncated when using the 
+                               interactive mode to compare groups of files.</li>
+            <li><b>Case 2290 - Jazz PCM Data Format Error:</b>
+                               Made an adjustment in the code to allow for the proper insertion of Jazz PCM data.</li>
+            <li><b>Case 2289 - Last Test Instance Filter:</b>
+                               Fixed a bug that caused unexpected results when performing a wafermap analysis and utilizing the Last
+                               Test Instance filter.</li>
+            <li><b>Case 2275 - Parametric Wafermap:</b>
+                               Fixed a problem with the merging of parametric wafermaps that would cause the maps to appear not as 
+                               a single entity, but as a series of partial entities.</li>
+            <li><b>Case 2274 - Pearson Correlation Report Sorting:</b>
+                               Changed the sorting key for the Pearson Correlation report from R to R^2.</li>
+            <li><b>Case 2273 - What-if Virtual Retest:</b>
+                               Fixed a bug in the Virtual Retest Utility that would cause more than one mean column to appear under
+                               certain circumstances.</li>
+            <li><b>Case 2257 - Gage Study Error:</b>
+                               Repaired a problem with the Gage R&R utility that manifested as the mean and sigma shifts using the wrong file 
+                               as the reference.</li>
+            <li><b>Case 2238 - STDF File Creation with no Data:</b>
+                               Modified the FETTest conversion utility so that if no data is present, no file is created.</li>
+            <li><b>Case 2226 - Trend Chart Display:</b>
+                               Fixed a problem that caused the trend chart in the interactive mode to display Run ID rather than the 
+                               expected Part ID.</li>
+            <li><b>Case 2225 - Spelling Error:</b>
+                               Fixed a hard-coded spelling error in the Pre-pat checker output.</li>
+            <li><b>Case 2216 - Merging of Tester Qualification Data Files:</b>
+                               Fixed a bug that caused Quantix to crash under specific conditions involving the merge utility of 
+                               tester qualification data.</li>
+            <li><b>Case 2208 - Interactive Chart Zoom:</b>
+                               Fixed a bug in the interactive histogram that would cause the Y axis zoom feature to reset to default under 
+                               certain conditions.</li>
+            <li><b>Case 2191 - Virtual Re-test of merged files:</b>
+                               Fixed a problem that would cause the bin pareto to give incorrect results after running a Virtul Retest and 
+                               manually entering new limits.  This would occur only when merging files prior to running the Virtual Retest utility.</li>
+            <li><b>Case 2171 - Inconsistency between CSV output and interactive mode:</b>
+                               Modified the code to prevent certain data formats from creating inconsistent results.  A particular data format
+                               caused inconsistent measurement results when viewing the same die on a wafermap, on the interacitve tables
+                               or in the exported CSV format.  This was the result of an unexpected anomoly in the data file.</li>
+            <li><b>Case 2134 - Unit of measurement reporting:</b>
+                               Fixed a bug that caused results initially repoted in microns to display incorrectly in meters instead of the expected
+                               microns.</li>
+            <li><b>Case 2227 - Multisite data display on Trend charts:</b>
+                               Modified the interactive trend chart to display multisite data even if data are not aligned.  Previously
+                               Quantix would only display one dataset if the user chose to display the Part Id on the X axis of an 
+                               interactive trend chart.  Now, all Parts will display.</li> 
+            <li><b>Case 2180 - Parametric Wafermap Display Values:</b>
+                               Fixed a bug that would cause the value displayed within a die on a parametric wafermap to be incorrect.  Modofied
+                               the parametric wafermap in-die display to accept integers without decimals.</li>    
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+</body></html>

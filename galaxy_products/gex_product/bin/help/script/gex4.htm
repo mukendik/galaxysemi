@@ -1,0 +1,119 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>gexGroup<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library
+      </a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>gexGroup(
+  const action,       // action on Group
+  const value)        // field value</pre>
+      <p>Lets you manage groups of data files to process. You can erase all
+      current groups structures, and/or<br>
+      create new empty groups.&nbsp;<br>
+      When analyzing one data file or merging multiple files, only one group is
+      needed. When performing<br>
+      correlation over multiple files, as many groups as&nbsp;clusters of data
+      to compare must be created.<br>
+      Note: Fields are not case sensitive.<br>
+      </p>
+      <p>Example:</p>
+      <pre>// Reset all groups
+gexGroup('reset','all');
+// Because parameters are not case sensitive, it is the same as: 
+gexGroup('Reset','ALL');</pre>
+      <p>Here is the list of actions you can conduct on a group using this script
+      function:</p>
+      <table border="1" width="646" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="108"><font color="#ffffff"><b>action</b></font></td>
+          <td bgColor="#0034aa" width="514"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="108"><b>reset</b></td>
+          <td width="514">Erases all existing groups if any</td>
+        </tr>
+        <tr>
+          <td width="108"><b>insert</b></td>
+          <td width="514">Insert a new empty group in your list</td>
+        </tr>
+      </table>
+      <h1>Section: reset<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Value</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>all</b></td>
+          <td width="507">Resets all groups: erases all existing groups and list
+            of files in groups. This function<br>
+            should be called prior to any other calls to gexGroup and <a href="gex3.htm"> gexFile</a></td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Erases all groups/file lists structures.
+gexGroup('reset','all');
+</pre>
+      <pre>&nbsp;</pre>
+      <h1>Section: insert<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Value</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>group_name</b></td>
+          <td width="507">Where <b>group_name</b> is the name of the empty group
+            to create. Function returns<br>
+            a groupID to be used for inserting files into this group (using <a href="gex3.htm"> gexFile</a>).
+            GroupID is<br>
+            set to -1 if an error occurred during group creation.</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Creates 2 groups for correlation analysis
+gexGroup('reset','all');
+t1 = gexGroup('insert','Group1: files from tester T1');
+t2 = gexGroup('insert','Group2: files from tester T2');
+</pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,101 @@
+SRCDIR = $(FNP_PROVIDER_DIR_M)/sources
+INCFLAGS =\
+ -I$(FNP_TOOLKITDIR_M)/machind\
+ -I$(FNP_PROVIDER_DIR_M)/sources\
+ -I$(DEVDIR)/galaxy_libraries/galaxy_std_libraries/include
+FNP_DIR = $(FNP_TOOLKITDIR_M)/$(FNP_PLATFORM)
+FNP_DEST_DIR = $(FNP_TOOLKITDIR_M)/$(FNP_PLATFORM)
+FNP_SRC_DIR = $(FNP_TOOLKITDIR_M)/machind
+FNP_OBJ_DIR = $(FNP_PROVIDER_DIR_M)/../release/linux32/
+
+PREPXMLDIR = $(MAINSRCDIR)/machind/activation/prep_xml
+
+EXAMPLESDIR=$(MAINSRCDIR)/examples
+EZCALCSRC=$(EXAMPLESDIR)/ezcalc
+ACTIVATIONSRC=$(EXAMPLESDIR)/activation
+AAINCDIR = $(MAINSRCDIR)/machind/activation/include
+AALIBDIR = ./activation/lib
+AALIB = $(AALIBDIR)/libact.a
+ACT_LIBRARY = libFNPload.a
+ACT_LIBRARY_PIC = libFNPload_pic.a
+SDTINCLUDES=$(SRCDIR)/sdt
+
+THREADLIB = -lpthread
+
+XTRACFLAG = -DRELEASE_VERSION -g -Os -m32 -march=pentium -pipe -DARCH_INTEL -DARCH_X86 -DOS_LINUX -pthread -DLM_INTERNAL -DFLEXLM_KITBUILD -DFLEX_STATIC -DRELEASE_VERSION -DGPLATFORM=\\"i86_lsb\\" -DLINUX -DLSB3_0 -D__FD_SETSIZE=65535 -DGLIBC -DX86 -DREDHAT -DREL -DPLATFORM_X86_RHLINUX 
+
+XTRALIB = -ldl
+
+LDSHAREFLAGS = -shared -Wl,--dynamic-linker=/lib/ld-lsb.so.3
+
+MAJORVER = 11
+
+#
+#	Use XTRAOBJS to define your object files for vendor daemon
+#	initialization routines, checkout filter, checkin callback, etc.
+#
+XTRAOBJS = 
+
+LDFLAGS = -Wl,--dynamic-linker=/lib/ld-lsb.so.3
+
+LINTFLAGS = -a -b -h
+
+CFLAGS = -g $(INCFLAGS) $(XTRACFLAG)
+
+SRCS	= $(SRCDIR)/lsvendor.c
+
+STRIP = strip
+
+OBJS =  lmcrypt.o \
+	lsvendor.o 
+    
+PIC = _pic
+
+CFLAGS_PIC = -fPIC -DIS_PIC
+    
+#
+# Activation Stub
+#
+ACTSTUB		= ls_getActivationsStub.o
+
+ifdef DONGLE
+DONGLELIB = liblmgr_dongle.a
+DONGLEPICLIB = liblmgr_dongle_pic.a
+else
+DONGLELIB = liblmgr_dongle_stub.a
+DONGLEPICLIB = liblmgr_dongle_stub_pic.a
+endif
+
+PREPTOOL	= ./preptool
+
+LD=$(CC)
+ACT_LIBRARY = libFNPload.a
+
+DAEMON = galaxy
+
+EXECS = Activation_binaries lmcrypt lmflex appactutil serveractutil comptranutil ezcalc ezcalcsdt liblmsign.a asrgen
+
+
+CLIENTLIB	= liblmgr.a libcrvs.a libsb.a $(BORROWOBJ) ${DONGLELIB}
+LIBS		= liblmgr_as.a liblmgr_s.a $(CLIENTLIB)
+
+LINTLIB =	llib-llmgr.a.ln
+
+UTILS = lmhostid lmdown lminstall lmremove \
+	lmreread  lmswitchr lmstat lmdiag lmver lmpath lmborrow lmswitch lmnewlog
+
+
+fnp.so:	$(LMNEW_OBJ) $(SRCDIR)/fnp_proxy.cpp 
+	$(CC) $(CFLAGS) $(CFLAGS_PIC) $(LDSHAREFLAGS) $(SRCDIR)/fnp_proxy.cpp  \
+	-o $(FNP_DIR)/fnp.so \
+	$(LMNEW_OBJ)  \
+	$(FNP_DIR)/lm_new$(PIC).o \
+	$(FNP_DIR)/liblmgr$(PIC).a \
+	$(FNP_DIR)/$(DONGLEPICLIB) \
+	$(FNP_DIR)/libcrvs$(PIC).a \
+	$(FNP_DIR)/libsb$(PIC).a \
+	$(FNP_DIR)/libFNPload$(PIC).a \
+	$(THREADLIB) \
+	-lc
+	
+	

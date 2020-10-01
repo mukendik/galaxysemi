@@ -1,0 +1,129 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "gtl_core"=".\gtl\gtl-core\gtl_core.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/gex-tester/gtl/gtl-core", PAGAAAAA
+    .\gtl\gtl-core
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name gtl_tester
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "gtl_tester"=".\GTL\GTL-TESTER\gtl_tester.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/gex-tester/gtl/gtl-tester", NDGAAAAA
+    .\gtl\gtl-tester
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "gtm"=".\gtm\gtm.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/gex-tester/gtm", OYFAAAAA
+    .\gtm
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "gts"=".\gts\gts.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/gex-tester/gts", ABGAAAAA
+    .\gts
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name gts_station
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "gts_station"=".\gts-station\gts_station.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/gex-tester/gts-station", MCGAAAAA
+    .\gts-station
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name gtl_core
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name gtl_tester
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "tools"=".\tools\tools.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/gex-tester/tools", CGGAAAAA
+    .\tools
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/gex-tester", UXFAAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

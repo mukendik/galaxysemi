@@ -1,0 +1,93 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="150" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>Arrays<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang2.htm">Comments</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="lang3.htm">Numbers</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang4.htm">Literals</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang5.htm">Var
+      and const<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang51.htm">Arrays<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang52.htm">Initialization</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang53.htm">Static
+      and extern<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang54.htm">Dynamic
+      reallocation</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang6.htm">Operators</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang7.htm">Statements
+      and&nbsp; blocks</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang8.htm">Program
+      flow</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang9.htm">Trace
+      facility</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang10.htm">Exception
+      handling</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang11.htm">Functions</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang12.htm">Predefined
+      identifiers</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <p>Simple array:</p>
+      <pre>const Array[3] = {
+'object[0]', 'object[1]', 'object[2]'
+};</pre>
+      <p><b>Note</b>: <b>First</b> element in Array is <b>Array[0]</b>, <b>last</b>
+      element is <b>Array[2]</b>. So if your have an array of X<br>
+      &nbsp;elements, valid indexes range from 0 to <b>X-1</b>.</p>
+      <p>CSL supports arrays with up to 16 dimensions. Since a <b>var</b> may 
+      hold any text or number, an array can approximate they functionality of structs:</p>
+      <pre>const adr[3][2] = {
+  { 1, 'fred' },
+  { 2, &quot;john&quot; },
+  { 3, 'jane' }
+};
+</pre>
+      <p>Local arrays (i.e. declared within a function) are allocated at runtime
+      and may have variable indexes. This is<br>
+      a unique feature of CSL that you won't find in C/C++:</p>
+      <pre>var x = 12;
+
+var aa[++x];  // aa holds 13 elements
+var bb[x*2];  // bb holds 26 elements
+</pre>
+      <p>Global arrays must be declared with constant indexes. This restriction
+      is imposed since global <b>var's</b> and<br>
+      <b>const's</b> are allocated at compile time.</p>
+      <pre></pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

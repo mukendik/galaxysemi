@@ -1,0 +1,12 @@
+#ifndef GQTL_PATCORE_GLOBAL_H
+#define GQTL_PATCORE_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(GQTL_PATCORE_LIBRARY)
+#  define GQTL_PATCORESHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define GQTL_PATCORESHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // GQTL_PATCORE_GLOBAL_H

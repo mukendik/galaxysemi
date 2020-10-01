@@ -1,0 +1,9 @@
+
+fnp-proxy: lm_new.o $(FNPPROXYDIR)/fnp_proxy.cpp
+	$(MAKE) -f makefile.act lm_new.o
+	$(call CPP_ARCH,$(FNPPROXYDIR)/fnp_proxy.cpp)
+	$(call LD_ARCH_SD,fnp.dylib,$(LDSHAREFLAGS) $(XTRALIB) ../../$(ACT_LIBRARY_PIC) ../../fnp_proxy.o ../../lm_new.o ../../liblmgr.a ../../libcrvs.a ../../libsb.a ../../$(ACT_LIBRARY) $(THREADLIB) ../../liblmgr_as.a ../../liblmgr_s.a ../../liblmgr_dongle_stub.a $(LINKFLAGS) -lc)
+	rm -f fnp_proxy.o
+	rm -f lm_new.o
+	$(PREPTOOL) -v $(FNPPROXYDIR)/fnp_proxy_mac10.xml
+

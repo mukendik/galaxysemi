@@ -1,0 +1,56 @@
+# if defined(UNDER_CE)
+#  include <winbase.h>
+# else
+#  include <winver.h>
+# endif
+
+#include "../include/gtl_core.h"
+
+/* Function of the file. The subtype parameter is zero unless the filetype parameter in the FILETYPE statement is VFT_DRV, VFT_FONT, or VFT_VXD. For a list of file subtype values, see the Remarks section.
+*/
+
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION GTL_VERSION_MAJOR,GTL_VERSION_MINOR,000,0
+    PRODUCTVERSION 7,1,100,0
+	FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+	FILEFLAGS VS_FF_DEBUG
+#else
+	/* FILEFLAGS 0x0L */
+	/* VER_PRIVATEBUILD|VER_PRERELEASE| */
+	FILEFLAGS(0)
+#endif
+	FILEOS VOS__WINDOWS32
+	FILETYPE VFT_DLL
+	/* FILESUBTYPE 0x0L */
+	FILESUBTYPE VFT2_UNKNOWN
+	BEGIN
+		BLOCK "StringFileInfo"
+		BEGIN
+			BLOCK "040904E4"
+			BEGIN
+                VALUE "CompanyName",      "GalaxySemi\0"
+				VALUE "FileDescription",  "FILEDESCRIPTION\0"
+                VALUE "FileVersion",      "GTL_VERSION_MAJOR.GTL_VERSION_MINOR"
+				VALUE "InternalName",     "INTERNALNAME\0"
+				VALUE "LegalCopyright",   "LEGALCOPYRIGHT\0"
+				VALUE "LegalTrademarks1", "LEGALTRADEMARKS1\0"
+				VALUE "LegalTrademarks2", "LEGALTRADEMARKS2\0"
+				VALUE "OriginalFilename", "ORIGINALFILENAME\0"
+				VALUE "ProductName",      "PRODUCTNAME\0"
+                VALUE "ProductVersion",   "7.1\0"
+			END
+			/*
+			BLOCK "040904B0"
+			BEGIN
+				VALUE "CompanyName", "GalaxySemi\0"
+                VALUE "FileDescription", "GalaxySemi GTL library.\0"
+                VALUE "FileVersion", "GTL_VERSION_MAJOR.GTL_VERSION_MAJOR.a\0"
+                VALUE "LegalCopyright", "Copyright (C) 2013 GalaxySemi\0"
+                VALUE "OriginalFilename", "gtl.dll\0"
+                VALUE "ProductName", "GTL\0"
+			END
+			*/
+		END
+	END
+/* End of Version info */

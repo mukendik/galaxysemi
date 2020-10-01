@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>monitor_scheduler_basedialog</class>
+ <widget class="QWidget" name="monitor_scheduler_basedialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1446</width>
+    <height>724</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Schedule: Product Yield Monitoring</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="buttonNewTask">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Add new rule</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../gex.qrc">
+           <normaloff>:/gex/icons/script_new.png</normaloff>:/gex/icons/script_new.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonTaskProperties">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::TabFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Edit selected rule</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../gex.qrc">
+           <normaloff>:/gex/icons/properties.png</normaloff>:/gex/icons/properties.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonDuplicateTask">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="sizeIncrement">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Duplicate selected rule...</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../gex.qrc">
+           <normaloff>:/gex/icons/copy.png</normaloff>:/gex/icons/copy.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonRunTask">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Execute task now!</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../gex.qrc">
+           <normaloff>:/gex/icons/script_run.png</normaloff>:/gex/icons/script_run.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonDeleteTask">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Discard selected rule</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../gex.qrc">
+           <normaloff>:/gex/icons/file_remove.png</normaloff>:/gex/icons/file_remove.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacerTasks">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>808</width>
+           <height>23</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonRunScheduler">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Run Scheduler</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../gex.qrc">
+           <normaloff>:/gex/icons/start_service.png</normaloff>:/gex/icons/start_service.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonPauseScheduler">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Stop Scheduler</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../gex.qrc">
+           <normaloff>:/gex/icons/stop_service.png</normaloff>:/gex/icons/stop_service.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="currentIndex">
+        <number>7</number>
+       </property>
+       <property name="elideMode">
+        <enum>Qt::ElideRight</enum>
+       </property>
+       <widget class="QWidget" name="tabTasksDataPump">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/folder_insertion.png</normaloff>:/gex/icons/folder_insertion.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>DataPump</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create monitoring tasks datapump</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayoutDataPump">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksDataPump">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Tasks DataPump monitoring rules:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListDataPump">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksTriggerSya">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/folder_script.png</normaloff>:/gex/icons/folder_script.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>TriggerPump</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create SYA trigger tasks datapump</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayoutTriggerSya">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksTriggerSya">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Tasks SYA Trigger monitoring rules:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListTriggerSya">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksTriggerPat">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/folder_script.png</normaloff>:/gex/icons/folder_script.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>PatPump</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create Pat trigger tasks datapump</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayoutTriggerPat">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksTriggerPat">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Tasks Pat Trigger monitoring rules:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListTriggerPat">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksConverter">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/folder_convert.png</normaloff>:/gex/icons/folder_convert.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>ConverterPump</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create monitoring tasks Converter</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayoutConverter">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksConverter">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Tasks Converter monitoring rules:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListConverter">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksReporting">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/reporting_task.png</normaloff>:/gex/icons/reporting_task.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>Reporting</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create monitoring tasks Reporting</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayoutReporting">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksReporting">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Tasks Reporting monitoring rules:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListReporting">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksOutlierRemoval">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/options_outlier.png</normaloff>:/gex/icons/options_outlier.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>DataCleaning</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create monitoring tasks Removing Data Points</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayoutOutlierRemoval">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksOutlierRemoval">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Tasks DataCleaning monitoring rules:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListOutlierRemoval">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksYield">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/mo_yield_monitoring.png</normaloff>:/gex/icons/mo_yield_monitoring.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>YieldMonitoring</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create Yield Limits Monitoring on given products</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksYield">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Tasks Yield monitoring rules:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListYieldLimits">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksSya">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/sya_task.png</normaloff>:/gex/icons/sya_task.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>SYA</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create Statistic Yield Monitoring on given products</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksYieldSYA">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Tasks Statistic Yield monitoring rules:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListSYA_2">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksSpm">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/spm_task.png</normaloff>:/gex/icons/spm_task.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>SPM</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create Statistical Parametric Monitoring on given products</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksSpm">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your SPM tasks:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListSPM">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksStatus">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/options_datalog.png</normaloff>:/gex/icons/options_datalog.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>Status</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Create Manufacturing/test Live Status</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayoutStatus">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksStatus">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Tasks Intranet Web site:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListStatus">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabTasksAutoAdmin">
+        <attribute name="icon">
+         <iconset resource="../gex.qrc">
+          <normaloff>:/gex/icons/mo_admin_report.png</normaloff>:/gex/icons/mo_admin_report.png</iconset>
+        </attribute>
+        <attribute name="title">
+         <string>AutoAdmin</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>Define the daily Auto-Admin settings</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayoutAutoAdmin">
+         <item row="0" column="0">
+          <widget class="QLabel" name="textLabelTasksAutoAdmin">
+           <property name="maximumSize">
+            <size>
+             <width>32767</width>
+             <height>32767</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Manage your Auto-Admin tasks:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidgetTasksListAutoAdmin">
+           <property name="styleSheet">
+            <string notr="true">selection-background-color: rgb(222, 222, 222);</string>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Owner</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="textLabelScheduler">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

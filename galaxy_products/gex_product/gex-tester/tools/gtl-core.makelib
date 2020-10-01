@@ -1,0 +1,73 @@
+#!/bin/sh
+
+#
+# Script to make GTL-CORE library.
+# Copyright 2005 by Galaxy
+#
+
+#set -x
+
+# Global defines
+LIB_CREATED=0
+
+# Create gtl_core library
+CreateLib()
+{
+	# Check for library files
+	if [ ! -f library.a ]; then
+		echo "**** ERROR : couldn't find library.a after make completed"
+		exit
+	fi
+
+	# Rename library file
+	mv library.a ${LIBRARY}
+
+	LIB_CREATED=1
+}
+
+# Check syntax
+if [ $# -gt 1 ]; then
+	echo ""
+	echo "Usage : gtl-core.makelib [clean]"
+	echo ""
+	exit
+fi
+
+# Clean ?
+if [ $# = 1 ]; then
+	if [ $1 = "clean" ]; then
+		make -f gtl-core.makefile clean
+		exit
+	fi
+fi
+
+# Check the target OS
+if [ `uname -r | cut -d"." -f1` = 4 ]; then 
+	# For Sunos =========================================
+	TARGETOS=sunos4
+elif [ `uname -r | cut -d"." -f1` = 5 ]; then
+	# For Solaris =======================================
+	TARGETOS=sunos5
+fi
+
+make -f gtl-core.makefile clean
+LIBRARY=gtl_core_image.a
+echo ""
+echo "**** Creating libraries for Teradyne tester ..."
+if [ ${TARGETOS} = "sunos4" ]; then
+	make -f gtl-core.makefile sunos4
+elif [ ${TARGETOS} = "sunos5" ]; then
+	make -f gtl-core.makefile sunos5
+else
+	echo "Bad target OS. You must be on SunOS4.1.x or Solaris2.5.x/Solaris7 to compile the GTL-CORE library."
+	exit
+fi
+CreateLib
+
+if [ ${LIB_CREATED} = "0" ]; then
+	echo "NO LIBRARY CREATED !!!!"
+	echo ""
+	exit
+fi
+
+

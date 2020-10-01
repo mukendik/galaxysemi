@@ -1,0 +1,1 @@
+package type:3S|geometry name:NGWR30DK88AIZ|date code:W55CAA|equipment id:WSO820|product id:SC4814BDY-T1-GE3|site id:SM|package:SOIC8|lot id product 2:F37D910.9|geometry name product 2:NGWS30DK78AIZ|lot id product 3:DS_LOT3|geometry name product 3:DS_GEOM3|lot id product 4:|geometry name product 4:|

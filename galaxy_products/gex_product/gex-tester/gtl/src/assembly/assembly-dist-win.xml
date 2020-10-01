@@ -1,0 +1,44 @@
+<assembly>
+    <id>assembly-gtl-core-dist-linux</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <baseDirectory>${project.artifactId}-dist-${distNameLong}</baseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/lib/${distName}</directory>
+            <outputDirectory>gtl/lib/${gtlGroup}</outputDirectory>
+            <includes>
+                <include>*.a</include>
+                <include>*.lib</include>
+                <include>*.dll</include>
+                <include>*.def</include>
+                <include>*.exp</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_libraries/galaxy_std_libraries/lib/${distName}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>*.a</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/gtl/unit_test</directory>
+            <outputDirectory>gtl/lib/${gtlGroup}</outputDirectory>
+            <includes>
+              <include>compile_with_msvc_2005.bat</include>
+              <include>compile_with_msvc.bat</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${env.MINGWDIR}/bin</directory>
+            <outputDirectory>gtl/lib/${gtlGroup}</outputDirectory>
+            <includes>
+                <include>libwinpthread*-1.dll</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

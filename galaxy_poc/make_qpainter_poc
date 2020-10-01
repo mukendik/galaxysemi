@@ -1,0 +1,174 @@
+#!/bin/bash
+# ---------------------------------------------------------------------------- #
+# make_galaxy
+# ---------------------------------------------------------------------------- #
+if [ "$DEBUG" = 1 ]; then
+    compile_mode=Debug
+    compile_target=debug
+    clean_target=debug-clean
+else
+    compile_mode=Release
+    compile_target=release
+    clean_target=release-clean
+fi
+
+# ---------------------------------------------------------------------------- #
+# Log function (logs to screen and file)
+# ---------------------------------------------------------------------------- #
+Log()
+{
+    echo $1 | tee -a $LogFile
+}
+
+# ---------------------------------------------------------------------------- #
+# Set platform-dependant variables
+# ---------------------------------------------------------------------------- #
+SetPlatformEnv()
+{
+    cd `dirname "$1"`/..
+    export DEVDIR=`pwd -P`
+    cd -
+    if [ $CleanProjects = "true" ]; then
+        LogFile=$DEVDIR/galaxy_scripts/clean_galaxy.txt
+    else
+        LogFile=$DEVDIR/galaxy_scripts/make_galaxy.txt
+    fi
+    mv -f $LogFile $LogFile.bak
+
+    conf=~/.gex-prod-conf.sh
+    if [ -f $conf ]; then
+        source $conf
+    else
+        Log "warning: `basename $0`: cannot find $conf"
+    fi
+
+    if [ $Platform = "Linux" ]; then
+        MakeTool="make --no-print-directory"
+        PlatformPrefix=linux
+    elif [ $Platform = "SunOS" ]; then
+        MakeTool="make --no-print-directory"
+        PlatformPrefix=sol
+    elif [ $Platform = "Darwin" ]; then
+        MakeTool="make --no-print-directory"
+        PlatformPrefix=mac
+    else
+        MakeTool="mingw32-make --no-print-directory"
+        PlatformPrefix=win32
+        cygpath=/usr/bin/cygpath
+        if [ -x $cygpath ]; then
+            export DEVDIR=`$cygpath -m $DEVDIR`
+            export ISSQTDIR=`$cygpath -m $QTDIR`
+        else
+            Log "warning: `basename $0`: cannot find $cygpath"
+        fi
+        if echo $MINGWDIR | grep 64 >/dev/null; then
+            ARCH=wg2-x64
+        else
+            ARCH=wg1-x32
+        fi
+        export PATH=$MINGWDIR:$PATH
+    fi
+
+    export PATH=$QTDIR/bin:$PATH
+
+    Log "==> Environment variables..."
+    Log "devdir=$DEVDIR"
+    Log "qtdir=$QTDIR"
+    Log "qtsrcdir=$QTSRCDIR"
+    Log "makespec=$Makespec"
+    Log ""
+}
+
+# ---------------------------------------------------------------------------- #
+# getdefine
+# ---------------------------------------------------------------------------- #
+getdefine()
+{
+    grep GEX_APP_VERSION_$2 $1 | cut -f3 | tr -d '\15\32'
+}
+
+# ---------------------------------------------------------------------------- #
+# Make function
+# ---------------------------------------------------------------------------- #
+Make_Project()
+{
+    Log "======================================================================"
+    if [ $CleanProjects = "true" ]; then
+        Log " Clean $1"
+    else
+        Log " Project $1"
+    fi
+    Log "======================================================================"
+    cd $2
+    args="-spec $Makespec -o Makefile_$PlatformPrefix $1.pro"
+    Log "pwd = "`pwd`
+    Log "qmake $args"
+    qmake $args 2>&1 | tee -a $LogFile
+
+    if [ $CleanProjects = "true" ]; then
+        args="-f Makefile_$PlatformPrefix $clean_target"
+        Log "$MakeTool $args"
+        $MakeTool $args 2>&1 | tee -a $LogFile
+    else
+        # fix error: 'class Q3Wizard' has no member named 'setCurrentPageText'
+        if [ $1 = gexdb_plugin_galaxy ]; then
+            mfile="sources/ui/ui_gexdb_plugin_galaxy_cfg_wizard.h"
+            if [ -f $mfile ]; then
+                mtime=`stat -c "%y" $mfile`
+            else
+                mtime=0
+            fi
+            args="-f Makefile_$PlatformPrefix.$compile_mode"
+            args="$args $DEVDIR/galaxy_products/gex_product"
+            args="$args/plugins/gexdb_plugin_galaxy/$mfile"
+            $MakeTool $args 2>&1 | tee -a $LogFile
+            if [ "$mtime" = 0 ]; then
+                mtime=`stat -c "%y" $mfile`
+            fi
+            sed -i '/setCurrentPageText/d' $mfile
+            touch -d "$mtime" $mfile
+        fi
+        args="-f Makefile_$PlatformPrefix $compile_target"
+        if [ "$VDEP" = 0 ]; then
+            MAKE="$MakeTool -o $DEVDIR/galaxy_products/gex_product"
+            MAKE="$MAKE/include/gex_version.h"
+            export MAKE
+        fi
+        Log "$MakeTool $args"
+        $MakeTool $args 2>&1 | tee -a $LogFile
+    fi
+}
+# ---------------------------------------------------------------------------- #
+# main
+# ---------------------------------------------------------------------------- #
+Platform="Linux"
+CleanProjects=false
+# Set platform-dependant variables
+SetPlatformEnv "$0"
+
+CleanProjects=true
+dir=$DEVDIR/galaxy_libraries/galaxy_qt_libraries
+Make_Project gqtl_service $dir/gqtl_service
+Make_Project gqtl_svg $dir/gqtl_svg
+
+dir=$DEVDIR/galaxy_poc
+Make_Project qpainter_poc $dir/qpainter_poc
+
+
+CleanProjects=false
+dir=$DEVDIR/galaxy_libraries/galaxy_qt_libraries
+Make_Project gqtl_service $dir/gqtl_service
+Make_Project gqtl_svg $dir/gqtl_svg
+
+dir=$DEVDIR/galaxy_poc
+Make_Project qpainter_poc $dir/qpainter_poc
+
+# Done: check if errors occured
+Log ""
+if [ `grep -c " Error " $LogFile`_ok != "0_ok" ]; then
+    Log "Compilation done WITH ERRORS. Check $LogFile."
+    exit 1
+else
+    Log "Compilation done WITH SUCCESS. Check $LogFile."
+    exit 0
+fi

@@ -1,0 +1,1161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Examinator V6.4 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">Examinator family : V6.4 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Examinator-Characterization, Examinator-Production, Examinator-PAT)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_gexstd_history.htm">Back to main releases history page</a><br><br>
+	  <!--<a href="#V6.4">V6.4 release history</a><br>-->
+	  <a href="#V6.4.16">V6.4.16 (4 May 2012) release history</a><br>
+	  <a href="#V6.4.15">V6.4.15 (2 March 2012) release history</a><br>
+	  <a href="#V6.4.14">V6.4.14 (8 February 2012) release history</a><br>
+	  <a href="#V6.4.13">V6.4.13 (10 January 2012) release history</a><br>
+	  <a href="#V6.4.12">V6.4.12 (22 December 2011) release history</a><br>
+	  <a href="#V6.4.11">V6.4.11 (12 December 2011) release history</a><br>
+	  <a href="#V6.4.10">V6.4.10 (24 November 2011) release history</a><br>
+	  <a href="#V6.4.09">V6.4.09 (22 November 2011) release history</a><br>
+      <a href="#V6.4.08">V6.4.08 (28 October 2011) release history</a><br>
+      <a href="#V6.4.07">V6.4.07 (5 October 2011) release history</a><br>
+	  <a href="#V6.4.06">V6.4.06 (7 September 2011) release history</a><br>
+	  <a href="#V6.4.05">V6.4.05 (30 August 2011) release history</a><br>
+	  <a href="#V6.4.04">V6.4.04 (11 August 2011) release history</a><br>
+	  <a href="#V6.4.03">V6.4.03 (15 July 2011) release history</a><br>
+	  <a href="#V6.4.02">V6.4.02 (7 July 2011) release history</a><br>
+	  <a href="#V6.4.01">V6.4.01 (4 July 2011) release history</a><br>
+	  <a href="#V6.4">V6.4 (28 June 2011) release history</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.16 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.16">V6.4.16 (4 May 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 6132 - G85 ASCII Export contains redundant symbol:</b>
+                               When exporting a map to a G85 ASCII format, we sometimes get the same ASCII symbol for different bins. This prevents the user from identifying the bins on the exported file.</li>
+			<li><b>Case 6127 - GexPAT: No Data Samples for results at first access:</b>
+                               When accessing PAT Report, get No Data Samples for results.</li>
+			<li><b>Case 6094 - Crash in Scatter chart when multi dataset:</b>
+                               Crash in scatter charts when multiple datasets (compre files, compare datasets,...).</li>
+			<li><b>Case 6060 - can't see interactive wafer map / strip map:</b>
+                               user cannot see interactive wafer map / strip map. static map works fine.</li>
+			<li><b>Case 6005 - Crash in interactive chart while picking test list:</b>
+                               after a Pat processing, in interactive chart, crash when trying to pick a test if rebuilt test list.</li>
+			<li><b>Case 5946 - GexPAT: T value in recipe causing different distribution shape results:</b>
+                               GexPAT gives different results - different distribution shapes - for tests when Smart & Adaptive is active and there is a number in the T field.</li>
+			<li><b>Case 5887 - Can't get static Advanced chart in more reports:</b>
+                               When splitting on one parameter, if for the first splitted parameter there are no valid execs, we can get interactive chart, but can't get the same in static reports (More Reports).</li>
+			<li><b>Case 5834 - converting csv file to stdf with custom parser gives run_id =0 when inserted the stdf into db:</b>
+                               take a csv and convert to stdf using a custom parser created with the gex parsing wizard. then insert the resulting stdf into the database and see that xx_run.run_id = 0 for all parts.</li>
+			<li><b>Case 5680 - Can't get the interactive softbin map. Regression over 6.3:</b>
+                               The interactive SoftBin Wafer map of the attached CSV file shows up well in V6.3, while nothing shows up in v6.4.
+							   It's worthy to note that no DIE_X/DIE_Y are filled in the CSV file.</li>
+			<li><b>Case 5289 - interactive wafer map / strip map won't display if there are no x/y coords in the csv:</b>
+                               if the Quantix csv file has no values in the x and y coordinate columns, the strip map will not appear in the interactive section although it will appear in the static section.</li>
+			<li><b>Case 5014 - miscellaneous stats in pat report are reporting non-sense values:</b>
+                               after running a pat report, the misc stats column shows invalid values.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.15 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.15">V6.4.15 (2 March 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5939 - E142 format: Import/Export doesn't give the same x/y coordinates.</b></li>
+			<li><b>Case 5937 - Examinator-PAT freezes when we navigate in 3D wafermap from NNR Failing Parts reports:</b>
+                               When you click on the link to see a 3D wafermap on a NNR failing parts, Examinator-PAT freezes.</li>
+			<li><b>Case 5928 - Updated Recipes are not correctly loaded:</b>
+                               When a recipe is edited with a spreadsheet tool (excel, openoffice) then saved, it is not correclty read with Examinator-PAT due to commas added at the end of each line.</li>
+			<li><b>Case 5906 - Changing algorithm rules to not run pat on unknown distributions doesn't work:</b>
+                               When setting the smart and adaptive rules to not run an algorithm based on a distribution type, the recipe file will not save properly.</li>
+			<li><b>Case 5903 - FT - Different PAT Results from map to report:</b>
+                               Different PAT results from map & bin pareto to PAT report.</li>
+			<li><b>Case 5812 - Different PAT Results from map to report:</b>
+                               PAT shows different results between the wafermap and the PAT report.</li>
+			<li><b>Case 5741 - E142 wafer map output is not built correctly in GEX:</b>
+                               The fields in the E142 wafer map do not appear to reflect all the data from the file head being processed.</li>
+			<li><b>Case 5570 - Truncated stdf file crashes GEX-PAT:</b>
+                               When processing a file with PIR count > PRR count, GEX-PAT crashes.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.14 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.14">V6.4.14 (8 February 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5844 - can't exclude several non-adjacent tests in XML mapping file:</b>
+                               In XML mapping file, we can exclude only one list of tests, but not several lists. This is useful when tests to be excluded have numbers which are not adjacent.</li>
+			<li><b>Case 5831 - SemiG85XML converter does not support a valid SemiG85XML file:</b>
+                               A valid SemiG85XML file is not recognized by the SemiG85XML converter.</li>
+			<li><b>Case 5823 - SPIL-WAFER parser only gets one X,Y coordinate for each wafer map:</b>
+                               When importing a SPIL-WAFER file with the "flexible" mode, Examinator only gets one X,Y coordinate for each wafer map. With the "stringent" mode, the convertion fails.</li>
+			<li><b>Case 5813 - GexPAT: Crash:</b>
+                               Crash when accessing PAT Report.</li>
+			<li><b>Case 5801 - runtime error in compare files mode:</b>
+                               when in the interactive charts on the table tab, if you right click on a line that does NOT have data for all datasets being compared and go to "show in histogram", gex will crash.</li>
+			<li><b>Case 5756 - PowerPoint and Word Reports do not have Scatter Charts from More Reports:</b>
+                               PowerPoint and Word Reports do not contain Scatter Plots from the More Reports section.</li>
+			<li><b>Case 5754 - atdf issue with gex dump to atdf converter:</b>
+                               random hard returns in the atdf file created by gex causing problems. also, a long gdr record was created causing the file to not be processed in gex.</li>
+			<li><b>Case 5753 - Error when creating Powerpoint Report (script error):</b>
+                               When a Powerpoint format report is attempted to be generated an error occurs. "failed to generate slides (script error). Check you have MIcrosoft Powerpoint Office and Powerpoint installed".</li>
+			<li><b>Case 5751 - GexPAT: Trend chart puts PAT fail in the wrong place:</b>
+                               On the Part Failing PAT Limit trend chart shows the PAT fail in the wrong place.</li>
+			<li><b>Case 5747 - GexPAT: no error message when map file contains spaces:</b>
+                               An error message should be displayed when for PAT-processing with Examinator-PAT a map file is selected that contains spaces in the full file name.</li>
+			<li><b>Case 5743 - hard return created in the MIR record in some stdf to atdf dumps:</b>
+                               when dumping an stdf file to atdf, a hard return is created in the middle of the mir record in the atdf file.
+							   this hard return, if not done on a pipe (|) separator for fields will give an error in gex.</li>
+			<li><b>Case 5727 - GexPAT: 6.4 is 4 to 6x slower than 5.7:</b>
+                               When running the same PAt analysis in 5.7 and in 6.4, the processing times are 4 to 6x longer.</li>
+			<li><b>Case 5698 - Flat File Database in link mode, Sum file not created at expected location:</b>
+                               The .sum file of Flat File database in link mode is not created in the Database directory but in the directory of the linked STDF file instead,
+							   which is not expected.</li>
+			<li><b>Case 5689 - Inconsistencies in box plot charts when high limits are missing:</b>
+                               The attached dataset has several tests with either a missing low or high limit. When generating the box plots, the low limits get tied to 0V which is incorrect.</li>
+			<li><b>Case 5688 - Flat File Database - Link mode. Purge command erases STDF files:</b>
+                               When the user purges a flat file based database configured in link mode, the STDF files are deleted, while only the links which point to the STDF files and .sum files should be removed.
+							   Indeed, it is intended that the purge command of a database using links should not affect the original STDF repository from the user.</li>
+			<li><b>Case 5658 - update FETTEST parser:</b>
+                               update the FETTEST parser so that wafer test FETTEST file testing HVM data can use a different bin mapping and / or promis data file than what is specified in today's env variables.</li>
+			<li><b>Case 5648 - PAT Limits Cascade over multiple STDFs:</b>
+                               When merging multiple files in GexPAT>Process Files,
+							   Add an option to use the test limits from the most recent data file, even if some sites do not have limit data in the PTR's.
+							   Option to go in Data Processing > Merge Files Options >
+							   Option 1: Use only available test limits from PTR's (default).
+							   Option 2: Use PTR test limits from most recent file for all sites if the most recent file has limits available for any site.</li>
+			<li><b>Case 5439 - Toolbox : atdf to stdf conversion problem with WCR record:</b>
+                               Gex can't convert a valid ATDF WCR record :WCR:Right|Left|Down|11.5|2.3|2.3|1|8|-10</li>
+			<li><b>Case 5434 - Incorrect summary files generated when inserting files into a file-based GEXDB:</b>
+                               When inserting files into a file-based GEXDB, GEX/YM creates a summary STDF file for each inserted STDF file. This summary STDF files has missing data.</li>
+			<li><b>Case 5189 - [Yokogawa parser] test numbers repeated with different test names:</b>
+                               test numbers are being repeated for tests with different test names creating confusion for the user.</li>
+			<li><b>Case 3985 - Link in PDF file doesn't work:</b>
+                               When click on the test statistics page test number link, the program cannot find the pdf file. It gives an error message.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.13 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.13">V6.4.13 (10 January 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5716 - update spektra summary parser:</b>
+                               the proc_id and extra_id fields in the MIR are not populated properly. additionally,
+							   the file names resulting from the converter should be A04K041.1_W1_Summary.csv.gextb.std instead of A04K041_W1.1_Summary.csv.gextb.std.</li>
+			<li><b>Case 5687 - Recipe editor modifies recipe with no warning:</b>
+                               GexPAT modifies PAT recipes and saves changes without notifying the user.</li>
+			<li><b>Case 5634 - GexPAT: Strange error when there is a space in the map file path:</b>
+                               When there is a space in the file path, GexPAT gives a strange error.
+							   "Some of the seleced map files do not support update" </li>
+			<li><b>Case 5588 - PLR record not converted properly in toolbox from stdf to atdf:</b>
+                               when an stdf is converted to atdf in the toolbox, the PLR record is not completely converted.
+							   as a result, analyzing the resulting atdf file in gex gives an error.</li>
+			<li><b>Case 5587 - Histogram banner mode with more than 3 layers has text into the charts:</b>
+                               When generating histograms in banner mode with a comparison of datasets that have more than 3 layers,
+							   the text falls into the chart, making the chart not clear.</li>
+			<li><b>Case 5560 - Size of Flat File DB is not updated correctly:</b>
+                               If using YM admin DB, when files are added to a DB, the size of the wrong database is updated.
+							   After a refresh the DB size are OK.</li>
+			<li><b>Case 5479 - Stats tab in interactive charts not updated when report output is Excel:</b>
+                               The stats tab in the interactive charts is not updated if the output report is in Excel format.</li>
+			<li><b>Case 5455 - Trend Graph: Settings not being read properly:</b>
+                               The Options > Trend Graph > Drawing Mode option does not appear to be read properly from Options page.</li>
+			<li><b>Case 5433 - PDF, Trend chart, colors incorrect:</b>
+                               The trend graph on a pdf report shows one color dots, but the incorrect color lines.</li>
+			<li><b>Case 5396 - hyperlinks in pdf only active on text underline, not text itself:</b>
+                               When creating a report in pdf format, the hyperlinks are only active when the mouse hovers over the underline,
+							   not the actual test number.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.12 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.12">V6.4.12 (22 December 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5652 - update wt summary data parser (from case 5397):</b>
+                               parser needs to have an associated env var for reading a promis data file and a bin mapping file. use same files and env vars
+							   as case 5625 as these two file types (summary and detailed) will use the same promis data and bin mapping files.</li>
+			<li><b>Case 5649 - Truncation of test names ending with numbers:</b>
+                               When using the toolbox to convert the stdf file to the csv file it leaves numbers off the end of some tests.</li>
+			<li><b>Case 5638 - GEX hangs at 33% on this STDF file - regression over 5.7B141:</b>
+                               The attached STDF file makes GEX hanging at 33%. Version 5.7B141 was not hanging on this file however.
+							   A workaround consists in dumping the STDF into CSV, then analyze the resulting CSV.</li>
+			<li><b>Case 5625 - Parser update for wt Spektra data (from case 5398):</b>
+                               parser needs to have an associated env var for reading a promis data file and a bin mapping file. file attached.
+							   similar to the ft HVM parser in case 5399</li>
+			<li><b>Case 5583 - that data on some parameters were missing when converting STDF file into CSV file using the Toolbox:</b>
+                               user has tests with the same name but different numbers. however, not all tests with this characteristic are
+							   behaving the same way in the csv converter.</li>
+			<li><b>Case 4821 - PAT Output and P8 Wafermap output differ:</b>
+                               The PAT reported results for number of fails differ from the P8 output map for number of fails.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.11 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.11">V6.4.11 (12 December 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5637 - Rendering Bug In Power Point Reports:</b>
+                               The text in many of the pages and the wafermaps are not rendered correctly in powerpoint.</li>
+			<li><b>Case 5620 - GDF for FT is not analyzed in GEX:</b>
+                               A GDF file from FT can't be analyzed in GEX.</li>
+			<li><b>Case 5537 - Crash changing interactive chart:</b>
+                               Crash when changing interactive chart after outliers removal, on stdf with "No merge" multi-sites data.</li>
+			<li><b>Case 5444 - rules for file rejection differ between stdf and atdf:</b>
+                               if you process an stdf file with different # of PIR and PRR records, the file is rejected in GEX but not rejected in YM. If you process an stdf with no MRR,
+							   it is rejected in GEX and YM. If you process an atdf in either GEX or YM with different # of PIR and PRR records or a missing MRR, neither tool rejects the file.</li>
+			<li><b>Case 5430 - Powerpoint global info page is squashed and hard to read:</b>
+                               When using the power point report format the global info page see squashed and is hard to read.</li>
+			<li><b>Case 5347 - Aborting a report build can induce a crash:</b>
+                               Aborting a report build can induce a crash.
+							   Quantix still stores a copy of the data file.</li>
+			<li><b>Case 5332 - Unable to record the database link:</b>
+                               While creating a new database link, if the user goes back to the "SETUP" windows after he has validate that the connection works properly.
+							   He will not be able to clic OK to record his new database link.</li>
+			<li><b>Case 3062 - Store links to files option in database link creation doesn't work:</b>
+                               When creating a database in Quantix Examinator Production, the option to save only the links to the files does not work.
+							   Quantix still stores a copy of the data file.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+
+
+<!-- Table with V6.4.10 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.10">V6.4.10 (24 November 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5581 - Stop on Fail option for Pareto and Failures not correct when using continue on fail data:</b>
+                               When using the stop on fail option on continue on fail data, the Test Failure Pareto and failures in the stats are not correct.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+
+
+<!-- Table with V6.4.09 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.09">V6.4.09 (22 November 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  	<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 5399 - HVM parser - new parser for csv final test summary data:</b>
+                               custom parser for HVM final test data. add a variable where we read a promis data file. suggest: GEX_PROMIS_HVM_DATA_PATH.</li>
+
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5570 - Truncated stdf file crashes GEX-PAT:</b>
+                               when processing a file with PIR count > PRR count, GEX-PAT crashes.</li>
+			<li><b>Case 5546 - Duplicated binnings in reports:</b>
+                               When generating reports with a file having several Soft Bins associated with the same Hard Bin, the report includes duplicated Hard Bins (Binning Pareto, Binning).</li>
+			<li><b>Case 5523 - Size of Flat File DB is not updated correctly:</b>
+                               When files added to the DB are too big in size, the "size" field in the Databases administration window shows up as Empty.</li>
+			<li><b>Case 5515 - When querying a RDB using the same filters, but a different testlist, the data gets overwritten:</b>
+                               When querying a RDB, and using the exact same filters, but a different testlist the same filename is used when generating the data file in the cache, so that it gets overwritten.
+							   This is specially a problem when doing a 'Compare datasets' or a 'Merge datasets' with some datasets using the same filters but a different testlist.</li>
+			<li><b>Case 5513 - Missing tests list from interactive tables in compare datasets:</b>
+                               When doing a genealogy analysis or a compare datasets, the tests list for the 2nd group is missing from the interactive tables.</li>
+			<li><b>Case 5498 - STIF export not working on some files having only failed die:</b>
+                               Exporting a wafermap without good die in STIF format is not working.</li>
+			<li><b>Case 5497 - Some files being processed seem to show tests as MPR in tables when the are PTR:</b>
+                               there are tests that are showing as MPR type instead of PTR type. when the file is dumped, it is clear that the tests should be shown as PTR type.</li>
+			<li><b>Case 5490 - PIR does not match PRR from csv with 5 devices:</b>
+                               When running this in V6.4 the csv file cannot get past the PIR count does not match the PRR count. Even when there is only 5 parts and it is imported using the parsing wizard.</li>
+			<li><b>Case 5482 - when parsing certain bad dl4 files, ym can crash:</b>
+                               certain bad dl4 files are causing YM/GEX to crash.</li>
+			<li><b>Case 5460 - Improve the progress bar used when converting files to CSV:</b>
+                               The progress bar used to progress for each file converted when converting multiple files. When converting 1 big file, it would not move unless the file is completely converted.
+							   The progress bar now progresses for each file, and is reset between each conversion.</li>
+			<li><b>Case 5441 - atdf file causes crash:</b>
+                               this atdf file has a missing PRR record at the end of the file. the mrr was added by a script as all the customer's files do not have mrr records.
+							   The file was received as an stdf->converted to atdf->mrr added by script. the file was then queued to be inserted into ym and ym crashed. upon putting the file into gex, gex crashed.</li>
+			<li><b>Case 5427 - query summary data only returns no results:</b>
+                               when using either the �Advanced->Data Records->Bin data only (Ignore Samples)� on the data tab or the Option to query summary data only, no results are returned.</li>
+			<li><b>Case 5390 - test merge on name or name and number not functioning with PTR / TSR name mismatch:</b>
+                               PTR/TSR mismatch is highlighting a bug in the option to merge on test name or merge on test name and number. merge on test number is working properly.</li>
+			<li><b>Case 5175 - datalog output in ppt is unreadable:</b>
+                               datalog output in ppt is unreadable.</li>
+			<li><b>Case 4750 - Crash if you try to open a big csv file in the data editor:</b>
+                               Crash if you try to open a big csv file in the data editor.</li>
+            <li><b>Case 3311 - Banner mode comparison shows only one layer:</b>
+                               When viewing histograms in banner mode, and displaying statistics fields, only the first layer statistics are displayed.
+							   When comparing datasets it is better to have all layers' statistics displayed.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.08 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.08">V6.4.08 (28 October 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  	<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 5460 - Improve the progress bar used when converting files to CSV:</b>
+                               The progress bar used to progress for each file converted when converting multiple files. When converting 1 big file, it would not move unless the file is completely converted. The progress bar now progresses for each file, and is reset between each conversion.</li>
+            <li><b>Case 5450 - Add a 'Update map' option in the Examinator-PAT GUI for external maps:</b>
+                               Add a 'Update map' option in the Examinator-PAT GUI for external maps. If this option is unchecked, the external map is used as input mask only.</li>
+            <li><b>Case 5397 - Spektra Lot Summary parser:</b>
+                               Parser from the Spektra tester's CSV lot summary output.</li>
+            <li><b>Case 5398 - Spektra samples CSV parser:</b>
+                               Parser to handle the datalog CSV output of a Spektra tester.</li>
+            <li><b>Case 4072 - Export wafermaps in STIF/AVI format:</b>
+                               This case requests the ability to export a wafermap in the STIF/AVI .dat format.</li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 5461 - GEX crashes when going interactive on tests generated through the mapping file:</b>
+                               When going into the interactive charts on tests generated through the mapping file, GEX crashes.</li>
+            <li><b>Case 5448 - STIF export not working on some files:</b>
+                               Exporting a wafermap in STIF format is not working with some STDF files.</li>
+            <li><b>Case 5417 - INF file output by pat has holes in it:</b>
+                               When using pat with an stdf and a recipe and outputing an inf file, there are holes in the inf file where there should be legitimate die.</li>
+            <li><b>Case 5404 - dl4 file causing crash:</b>
+                               There are certain dl4 files that cause crashes in our product line.</li>
+            <li><b>Case 5391 - Incorrect  STDF output when processing a verigy edl file with invalid WaferId:</b>
+                               When the edl file contains wafer data without valid WaferId, Gex generate an incorrect STDF file with one WIR per part PIR/PRR.</li>
+            <li><b>Case 5389 - Adding layer in interactive charts creates a crash:</b>
+                               When adding a layer in interactive charts, gex will crash either when the layer is selected or after the layer properties are defined and the user clicks ok.</li>
+            <li><b>Case 5388 - PCM converter does not support a valid PCM format:</b>
+                               The GEX PCM parser does not support a file in a valid PCM format.</li>
+            <li><b>Case 5383 - GEX stalls when analyzing these files:</b>
+                               When analyzing the attached file, which contain same test name with different test number, GEX stalls and never ends computation.</li>
+            <li><b>Case 5380 - Examinator-PAT cannot handle missing limits:</b>
+                               Examinator-PAT will crash when a limit is specified only for the upper or lower bounds of a test.</li>
+            <li><b>Case 5379 - CSV converter does not convert a v4_2007 stdf file:</b>
+                               Unknown records in the stdf file preventing CSV conversion. The customer has v4 2007 stdf files and is seeing the new fields listed as UNKOWN in the stdf conversions to ascii and CSV from Examinator.</li>
+            <li><b>Case 5365 - Pat Wafers Batch Summary, Missing total die count:</b>
+                               PAT Summary.  Missing total die count & missing part counts.</li>
+            <li><b>Case 5340 - Datalog dump to CSV format contains unexpected results and unscaled units:</b>
+                               A Datalog report is generated using Excel output format. It contains several test (including test T138) which have their values unexpectedly tied to 0. It has also a unit left as second instead of nanosecond which is unexpected as well. The Datalog output format is 'advanced' and the 'Normalize scale' option is set to 're-scale to most appropriate units'.</li>
+            <li><b>Case 5275 - Test Statistics: Sort by %R&R doesn't work:</b>
+                               The sort by utility does not work for the field %R&R.</li>
+            <li><b>Case 5143 - When analyzing some files in stringent mode, GEX crashes after stopping at 33% for a while:</b>
+                               When analyzing some files with invalid HBINs in all PRR records, GEX freezes at 33% in pass 2, and after a while, the application crashes.</li>
+            <li><b>Case 4407 - Test statistisc problems:</b>
+                               Statistics for a particular file do not make sense with respect to the number of good and bad die. especially when processing first or last test.</li>
+            <li><b>Case 3394 - What-if analysis done from a database query doesn't update the wafer map:</b>
+                               Extracting a wafer from a database and doing what if does not update the wafer map after the report is re-computed. (also found that file based analysis doesn't change the wafer map)</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.07 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.07">V6.4.07 (5 October 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5333 - The Mean trend 'More Reports' displays wrong values:</b>
+							   The static mean trend report (Settings->More Reports='Trend (Control chart)'->Chart Mean) gives unexpected results (mean is 0).</li>
+			<li><b>Case 5312 - Extracting consolidated FT data fail:</b>
+							   When querying one lot and one wafer from ft data as consolidated, more splitlots are said to exist then really exist and extraction does not work.</li>
+            <li><b>Case 5305 - Outlier Removal option makes GEX stall:</b>
+                               When the 'outlier removal mode' from data processing options is set to 'N*Sigma', GEX v64.05 and v64.06 stalls and can't build reports. This seems to be a regression as v63.14 allows to build reports with this option.</li>
+			<li><b>Case 5280 - Examinator-PAT needs filtering data to only keep last test instance for each die:</b>
+							   Examinator-PAT takes all good parts, but if somes dies have retest, it does not keep only the last Bin1 part.</li>
+			<li><b>Case 5259 - Unexpected missing dies in wafermap:</b>
+							   Some die are missing when we look at the wafer, although we can find them in the CSV dump.</li>
+			<li><b>Case 5210 - Error when processing a verigy edl file:</b>
+							   Gex must ignore all unknown Event Types and all unknown Attribute Types.</li>
+			<li><b>Case 5206 - Custom text do not work with Enterprise Reports:</b>
+							   Text produced by Options Center (with html markup) isn't displayed correctly in Enterprise Reports.</li>
+            <li><b>Case 5001 - Custom logo and text do not work with enterprise reports:</b>
+                               Running an enterprise report from the scripting center or scheduling it through YM with the csl modified for custom text and logo on the front page produces a report with tiny the logo. running a regular examinator report with the csl file updated for these same items works.</li>
+			<li><b>Case 3569 - When using outlier removal algorithm IQR seems to give wrong mean values:</b>
+							   The mean in the statistics appears to be wrong when using the IRQ algorithm with the default n=1.5.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.06 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.4.06">V6.4.06 (7 September 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  	<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5002 - Implement a parser for SDI format:</b>
+							   Implement a parser for SDI format (Avago custom format).</li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5186 - processing a file results in going to the scripting center:</b>
+							   options setting for custom text on report output is creating a scripting error.</li>
+            <li><b>Case 5088 - Separate by testing site does not work:</b>
+                               Gex won't separate the sites when you go to file properties and choose 'No merge:  chart each site data separately'. But if you go to compare files, load the file 7 times and select each site manually from file properties, it works</li>
+            <li><b>Case 4989 - Original message on options tab doesn't work:</b>
+                               Using the original message next to the logo gives a gex error when the report is generated.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.05 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.4.05">V6.4.05 (30 August 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  <tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4992 - Implement a parser for AVI/STIF inkless format:</b>
+							   Implement a parser for AVI (Automated Visual Inspection) / STIF (ST inkless format) format.</li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5159 - Gex could crashes when merging data files with parts filtering:</b>
+							   Use filters when merging files in Examinator consumes too much memories and could lead Gex to a crash.</li>
+            <li><b>Case 5134 - Memory overflow  when navigate in interactive tables:</b>
+                               Memory overflow  when navigate in interactive tables</li>
+			<li><b>Case 5128 - No run 1 found in run map error:</b>
+							   Error message when querying from RDB. "No run 1 found in run map."</li>
+            <li><b>Case 5115 - Error on database query.  'Missing Run ID':</b>
+                               Error: 'Couldn't find run 1 in run map.  Contact support@mentor.com'</li>
+			<li><b>Case 5072 - Pulling an Analyze dataset with Consolidated data pull down creates Error:</b>
+							   When using the consolidated data pull down box for an analyze dataset we now get an error (when pulling all parameters). "Error while extracting from the database. The dataset will be empty. An error has occurred when extracting consolidated data from FT data.
+							   It could occur when retest indexes chain (0,1,2) is not continuous(0,2,3)</li>
+            <li><b>Case 5027 - GEXPAT crashes when distribution is completely outside the limits but parts still binned good:</b>
+                               Test 560 has a distribution completely outside the limits and the parts are still listed as good parts. if pat is turned on for this test, pat crashes. the .patman.stdf file is still completed but the gui 'requested a runtime error...'</li>
+            <li><b>Case 4996 - Crash in gex when using more reports datalog:</b>
+                               We start from one stdf file. I put one in attachment (agrcatet_1_wbavrel01_2ndfast_wbav_g014338_olt48_sep02_08_27.std_imssrvd_100902095631.Z), but the crash appends with all stdf I tried to use. The settings tab include More Reports = Datalog (the crash appends with any test list selection: All tests, Failing tests only, Test list,.. ); the others analysis (Statistics, Wafermap, Histogram) can be disabled or enabled without  influence. The options file is in attachment.</li>
+            <li><b>Case 4986 - Examinator does not recognize the merge on test name option:</b>
+                               When analysing a file with a particular test name that has multiple test numbers associated with it, it appears once for each test number even when the option to merge tests on test name (ignore test #) is chosen.</li>
+			<li><b>Case 4951 - Gex-Log: make sure each instance writes in a different log file:</b>
+							   add the PID to logfilename.</li>
+			<li><b>Case 4944 - Fixed SYA log file path in alarm script arguments:</b>
+							   When a SYA trigger emits an alarm, the SYA log file path is not passed as argument to the 'Yield alarm' script/batch defined in the 'AutoAdmin' task.</li>
+			<li><b>Case 4804 - error opening gex with unbuntu 11.04:</b>
+							   user gets this error when opening gex: /usr/local/galaxy_examinator/gexapp: /usr/local/galaxy_examinator/linux_libs/lib/tls/libc.so.6: version
+							   `GLIBC_2.11' not found (required by /usr/lib/libGLU.so.1).</li>
+            <li><b>Case 4787 - Fantom outlier pile won't filter away:</b>
+                               When comparing these two files, outlier filtering doesn't seem to work on the interactive chart</li>
+            <li><b>Case 3970 - When using a parsing wizard csl file GEX only shows the first hundred tests:</b>
+                               When importing a file and creating the parsing file it loads all the tests into GEX. However if you load in the file and select the parsing file, it only loads in the first 100 tests.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.04 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.4.04">V6.4.04 (11 August 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  <tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5018 - 3D bars don't show up in PDF report:</b>
+							   The 3-D Bars for histograms show up in V6.3.16 but not in V6.4.02 when using PDF or other static reports..</li>
+			<li><b>Case 5016 - PRR of merged file doesn't reflect original files:</b>
+							   Merging PRR using toolbox is not done in the same way then using the merge feature of the File Analysis.</li>
+			<li><b>Case 4997 - Crash in interactive charts if user enters an invalid test number:</b>
+							   Gex crashes if user enters two or more test numbers and the first one is invalid.</li>
+            <li><b>Case 4981 - Viewport won't adjust for demo data test numbers 1, 2 or 3:</b>
+                               View port won't adjust properly on interactive histogram for extremely small numbers. (i.e. 5e-7)</li>
+            <li><b>Case 4973 - GEXDB Crashes during genealogy report in Enterprise Reports:</b>
+                               Do a yield versus parameter report from final test to etest and see crash.</li>
+			<li><b>Case 4939 - Power point report cutting off wafermaps:</b>
+							   The powerpoint report of Wafer maps gallery is cutting off after only one page.</li>
+			<li><b>Case 4516 - Correlation markers to draw on chart don't work:</b></li>
+            <li><b>Case 3875 - Stats table being truncated on ppt report:</b>
+                               User made a 117 page ppt report and page 2 shows a truncated stats table. attached are reports made by me (labeled KC) with file based and query. also are reports from the customer. the issue only exists when doing a database query.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.03 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.4.03">V6.4.03 (15 July 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  <tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4972 - PAT: Masks inner ring and outer ring are not correctly used in the clustering algorithm:</b>
+							   When the user selects a mask to detect cluster, the algorithm inks die what are not inside the mask.</li>
+			<li><b>Case 4960 - Csv converter does not recognize the merge on test name option:</b>
+							   When converting a file with a particular test name that has multiple test numbers associated with it, it appears once for each test number even when the option to merge tests on test name (ignore test #) is chosen.</li>
+			<li><b>Case 4911 - Specs limits are in graph even though it's un-checked:</b>
+							   When looking at interactive graphs the "specs limits" are on there in addition to the regular limits even when the spec limits are un-checked.</li>
+			<li><b>Case 2348 - Gaussian curve issue:</b>
+							   Gausian Curve on Cumulate mode in interactive viewer does not match cumulative representation of curve. 1 case 50% 1 case 110%.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+<!-- Table with V6.4.02 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.4.02">V6.4.02 (7 July 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  <tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4941 - PDF will not write when pulling data from network drive:</b>
+							   When a stdf file is on a remote drive, then Quantix will not create a pdf file. Quantix will create a Word document and a HTML report with the same conditions.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.01 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.4.01">V6.4.01 (4 July 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  <tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 4935 - Examinator-Pro crashes on 'Analyze a Dataset' after reloading the databases list:</b>
+                               Examinator-Pro crashes on 'Analyze a Dataset' afet reloading the databases list</li>
+            <li><b>Case 4925 - Better support UMC data file format:</b>
+                               GEX did not support a flavor of the UMC E-Test format. Instead of rejecting the file, the parser reads the first line as a wafer id. Therefore we get 26 wafers, one of which has the wafer id 'WF#'. The parser has been modified to support this format.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.4">V6.4 (28 June 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  <tr>
+		  <!-- NEW -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 4899 - ReportsCenter : add feature to enable/disable some GRXML templates:</b>
+                               1) GRXML: add a feature to enable/disable some templates. 2) apply it on Genealogy template.</li>
+			<li><b>Case 4829 - UMC - PCM Parser:</b>
+			                   Modify UMC-PCM parser to handle modifications to PCM format.</li>
+			<li><b>Case 4741 - Added new ET zone configuration DB field:</b>
+			                   Use et_wafer_info.zonal_config field to specify which zonal configuration to use for Genealogy reports.</li>
+            <li><b>Case 4675 - Add more details for digital tests in Datalog:</b>
+			                   Add details such as failing vector/pin for digital tests in the datalog output (More Reports).</li>
+			<li><b>Case 4578 - Change default option for excel output to "scaling factor".</b></li>
+			<li><b>Case 4572 - G85 Header Notch_orientation modifed to match G85 map:</b>
+							  Fixed a problem with the G85 header, FLAT_NOTCH location did not match the actual wafermap.</li>
+			<li><b>Case 4503 - Add "Top N failures" filter to the "MyReports".</b></li>
+            <li><b>Case 4471 - Enable extraction to be limited to a list of parameters:</b>
+			                   During RDB extraction, even if the user specifies to extract no parameters, or a reduced list of parameters,
+							   GEX extracts all parameters with statistics, but raw samples only for the specified list.
+							   As a result, the statistics, pareto, pearson... sections will report on all parameters rather than the ones in the list.
+							   The behavior is now modified to make sure that when a list of parameters is specified,
+							   it acts like a filter, and only these parameters will appear in the reports.</li>
+            <li><b>Case 4438 - Allows the keys file to accept variables in a regular expression:</b>
+			                   Previously, regexp passed a string based on a true results. This is changed so that it can now pass a string or the contents of a variable based on a true result.</li>
+            <li><b>Case 4393 - When using the rdb options tab, allows the user to choose to limit summary data AND samples data:</b>
+			                   New feature on the rdb options limits the samples data pulled from the database to the parameters in the list.
+							   Allows the user to choose to limit only samples data or both summary and samples data.</li>
+            <li><b>Case 4392 - Modfied language to eliminate confusion on database link creation:</b>
+			                   Tool tip on database admin:  change ""create database"" to ""create database link"". in the create database wizard:
+							   changed ""create"" button to ""OK"" in the create database wizard:  changed title of the window from ""create a new database""
+							   to ""create a new database and database link"".</li>
+            <li><b>Case 4349 - Allows to use parametric wafer maps to look at pass / fail ftr data:</b>
+			                   Show ftr data on parametric wafer maps using red and green to show fail and pass information respectively for each die.</li>
+            <li><b>Case 4151 - Parser for DLK test format:</b>
+            <li><b>Case 4107 - Parser for .sum summary file format:</b></li>
+			<li><b>Case 4005 - Added ftr results to part results table and parametric interactive wafer map:</b>
+			                   1. Added ftr results to the part results table in the interactive tables.
+							   2. Added ftr results to the parametric wafer maps such that die that pass a functional test are green and parts that fail the functional test are red.</li>
+            <li><b>Case 3991 - New Parser for Etest WAT file format from GlobalFoundries.</b>
+			                   New parser to support Global Foundries fab 7 WAT format. Old format is still valid for the older fabs but this will be a valid format going forward.</li>
+            <li><b>Case 3921 - Added a dropdown selection for Yield Threshold for the product detail GUI on the Report Center:</b>
+            <li><b>Case 3717 - Parser for Verigy Edf - updated parser to include Passed/Failed transition structure:</b></li>
+            <li><b>Case 3620 - ReportsCenter : added option to show/hide legend in charts:</b></li>
+            <li><b>Case 3517 - Added an option for the Stacked bin chart report center to only show top N bins:</b></li>
+			<li><b>Case 3439 - Allows the colors in the stacked bin trend report center graph to be user defined:</b></li>
+			<li><b>Case 2943 - Add "Top N failures" filter for "More reports".</b></li>
+            <li><b>Case 2636 - X-Bar & R charts:</b>
+			                   Added the capability to display X-Bar (mean) and R (range) charts in Examinator.</li>
+            <li><b>Case 2772 - Fixed a problem where Quantix overwrites existing excel files instead of asking first for verification:</b>
+			                   When building a report in excel, word, or ppt format, Quantix will now ask permission priot to over writing.</li>
+            <li><b>Case 2402 - Pass fail bin map for functional tests:</b>
+			                   Added the ability to have the parametric Pass/Fail wafer maps show the functional tests as well.</li>
+            <li><b>Case 2266 - Ability to bring a layer in the interactive graphs to front, or send to back:</b>
+			                   Even with the transparent histos sometimes its hard to see distributions when you have more than 3. Now able to right click on the layer window and have an option for the layer ""Send to Back"" and "" Bring to Front"".</li>
+			<li><b>Case 1871 - Display Functional tests and parametric tests on the statistics table:</b>
+			                   Displays functional tests and parametric tests on the same statistics table.</li>
+            <li><b>Case 1613 - Parameter vs Parameter Genealogy Report:</b>
+			                   This enhancement will provides a genealogy report across test stages.</li>
+			</ul>
+		  </td>
+		</tr>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4880 - Reports Center leads Gex to crash:</b>
+			                   Gex crashes when option 'Max. Aggregate in Chart' is set to a negative value in some report from the Reports Center.</li>
+            <li><b>Case 4824 - When in interactive wafermap, if 'Print' is executed, the wafermap disappears:</b>
+			                   When viewing the interactive wafermap, if the user prints the wafermap using the 'Print' button, the wafermap will not appear in the printed document, and it disappears from the interactive view. The user has to close and re-open the view to get the interactive wafermap displayed again.</li>
+			<li><b>Case 4831 - Gex can't connect to license server  gex-lm:</b>
+			                   Gex can't connect to license server  gex-lm on linux 32 and linux 64 bits archi.</li>
+            <li><b>Case 4830 - CSL: report output format misinterpreted:</b>
+			                   When the report output format in the CSL is different with those of the options, Gex try to open a report of the wrong format.</li>
+            <li><b>Case 4827 - Gex-Ls: when viewing connection statistics HTML report, some images are missing:</b>
+                               On Windows systems, using the Gex-Ls application, when viewing connection statistics in the 'History->Statistics' tab, the images are missing in the generated HTML file (line separators, and images in the chart columns).</li>
+            <li><b>Case 4825 - GEX crashes if the list of databases is refreshed during manual insertion:</b>
+			                   Running GEXDB without the YM Admin DB, if manually inserting multiple files into a RDB database, and the user tries to refresh the list of databases during the insertion, the application will crash.</li>
+            <li><b>Case 4823 - Connection to DB works only if Servers/Local DB Paths parameters are setted:</b>
+			                   Connection to DB works only if Servers/Local DB Paths parameters are setted</li>
+            <li><b>Case 4819 - Issue On Gex with 'Build report!':</b>
+			                   The 'Build report!'  button is Disabled</li>
+            <li><b>Case 4809 - 7C7 PCM Parser error:</b>
+			                   7C7 file not converted</li>
+            <li><b>Case 4807 - CSV Output of Gage R&R report columns shifted:</b>
+			                   The CSV out put of the gage R&R report has columns shifted for those statistics that are not reported.</li>
+            <li><b>Case 4762 - Formatting issue on table tab of interactive charts:</b>
+			                   Formatting issue on the table tab of interactive charts gives extra columns between good columns of data, displays the unit with the measurement (should be in separate column), and puts a space between the before the unit when there is a scaling factor in the PTR / MPR and no space when there is no scaling factor.</li>
+            <li><b>Case 4759 - PAT Wafermap Orientation incorrect:</b>
+			                   The wafermap output from the Process PAT Wafers page is different from the output wafermap from the Examinator report of a patman.std page.</li>
+			<li><b>Case 4756 - Cannot connect to a remote database in gex:</b>
+			                   Cannot connect to a database that is outside of local network or vpn. use the server name instead of the ip address and connect is successful.</li>
+            <li><b>Case 4737 - File crashes the toolbox data editor:</b>
+			                   file crashes the editor in the toolbox because of too many columns (tests).</li>
+            <li><b>Case 4732 - File cannot be converted by converter:</b>
+			                   A particular file format will convert, but not completely.</li>
+            <li><b>Case 4726 - RDB options to extract all parameters is not working:</b>
+			                   on options tab, the option to extract all parameters does not do what it should on the rdb options portion of the data tab for the query info.</li>
+            <li><b>Case 4715 - PAT Summary Report appears when choosing excel output:</b>
+			                   Still some HTML codes in the CSV report when PAT-processing some files and select CSV output format.</li>
+            <li><b>Case 4691 - Convert to CSV is not functioning properly:</b>
+                               Convert a file to CSV doesn't show up MPR records when Multi-Results Parametric option is set to 'Do NOT merge'</li>
+			<li><b>Case 4664 - E142 Export giving strange results:</b>
+								   When creating a Semi E142 wafermap with soft bins, the results of the map do not match the original wafermap.</li>
+			<li><b>Case 4642 - Generic Quantix Parameters are missing from the pick test dialog boxes:</b>
+							   The Generic Quantix Parameters are not displayed in the pick test dialog boxes even if the option 'Generic Quantix Parameter' is set to 'Show'.</li>
+			<li><b>Case 4632 - Columns in the csv report are shifted when showing drift in compare mode:</b>
+							   If "Mean shift" and/or "Sigma shift" fields are included in the csv output report when comparing files, the statistic table becomes unreadable due to shifted columns.</li>
+			<li><b>Case 4609 - Failure Signature Pareto is incorrect:</b>
+							   The Failure signature pareto report numbers that are inconsistent with the numbers in the database.</li>
+			<li><b>Case 4533 - Column misalignment in CSV output:</b>
+							   CSV output showing column misalignment.</li>
+            <li><b>Case 4519 - Markers options in box plot don't work in MoreReport:</b>
+			                   Markers to draw on chart don't work:  median, +/-1 sigma, +/-1.5 sigma, +/-3 sigma, +/-6 sigma. Same in v6.3.</li>
+            <li><b>Case 4517 - Markers to draw on chart don't work for probability plot:</b>
+			                   Markers to draw on chart don't work:  median, +/-1 sigma, +/-1.5 sigma, +/-6 sigma. Same in v6.3.</li>
+			<li><b>Case 4516 - Correlation markers to draw on chart don't work:</b>
+			                   Correlation->Markers to draw on chart->median, +/-1 sigma, +/-1.5 sigma, +/-3 sigma, +/-6 sigma don't appear on chart.</li>
+            <li><b>Case 4521 - Parameter list always reset:</b>
+			                   The value entered in the 'Parameter list' control ('Data' tab, 'RDB Options' tab) gets reset to the default value specified in the options
+							   (Database options->RDB: default parameters to extract) each time the 'Data' page is activated.</li>
+            <li><b>Case 4514 - When part id differs from run id, trend won't plot by part id:</b>
+            <li><b>Case 4505 - Quantix Decompression tool corrupting some data:</b>
+			                   When some files are decompressed using Quantix, the MRR record goes missing.
+							   	However, when the same file is decompressed using another tool, like 7Zip, the MRR is ok.</li>
+            <li><b>Case 4445 - Pick test from list don't works correctly:</b>
+			                   If the test list is ordered by another field that Test# and the user try a multi select, the picked list is from the first selected Test# to the last selected Test#.</li>
+            <li><b>Case 4432 - Rebuild map with new binning colors doesn't work for hbins:</b>
+			                   editing colors for the binning in the hbin html report does not change the colors in the report.</li>
+			<li><b>Case 4346 - Data in wrong column for failing parts:</b>
+			                   In the data editor, and in the CSV export, data is assigned to the incorrect column when there is a previous device failure in the flow.</li>
+            <li><b>Case 4336 - Remove ""Microsoft SQL Server"" from Create Database Gui:</b>
+			                   Since Quantix does not support SQL server, remove it from the Create Database Gui.</li>
+            <li><b>Case 4230 - T Test value is 0 in latest B158:</b>
+			                   When looking at the t test value in B158 the value is always 0</li>
+			<li><b>Case 4219 - Cannot split WAT file by wafer:</b>
+							   Loaded a file that contains 4 wafers 4 times using compare files. with the properties, selected parts corresponding with 1 wafer per file instance. The graphs and tables only show the data for the first wafer and the other wafers show values of 0 even though there are values in the file.</li>
+            <li><b>Case 4156 - Stdf file causes gex to crash:</b>
+			                   stdf file causes gex to crash, when coordinates range is too large</li>
+            <li><b>Case 4085 - Merge files from toolbox creates incorrect WRR record:</b>
+			                   When merging 3 files from this customer, the WRR record reflects the results from the initial test file while the SBR records show the correctly merged records from all files.</li>
+			<li><b>Case 4010 - Tests with multiple executions on the same part only show the last execution in the tables:</b>
+			                   When a part has a test repeated, only the last value is show in the tables.
+							   The histograms and the stats reflect all the executions.
+							   When the file is inserted into YM, GEX no longer sees all the executions but only sees the last execution.</li>
+            <li><b>Case 4048 - Global Options report for Test# policy  references the wrong setting:</b>
+							   Data Processing options -> Handling duplicated Test Numbers Names -> Ignore test#: Always merge tests with identical name.
+							   GEX use this selection however at the bottom of the Global Options report for Test# policy it says it instead used Never
+							   merge tests with identical test number if test name not matching.
+			<li><b>Case 3984 - Functional tests: mean and sigma computed from samples:</b>
+			                   When option: ""Statistics computed from Samples"", mean and sigma are computed also for functional tests,
+							   but functional tests have not a value as output.</li>
+			<li><b>Case 3935 - WAT file won't work with process list of parts setting:</b>
+							   The process list of parts and all parts except settings in the properties section of the data page doesn't work.</li>
+            <li><b>Case 3916 - Print button from interactive charts doesn't work:</b>
+			                   When printing from the home bar while in an interactive chart, the print feature doesn't work.  Instead, Quantix prints only a small grey rectangle.</li>
+            <li><b>Case 3245 - GEX crashes if txt file created from an stdf is inserted/analyzed:</b>
+                               Converted stdf to txt (STDF Record Dump) and inserted it into GEX and a crash occurs.</li>
+            <li><b>Case 2890 - Test name truncation feature is non-functional:</b>
+			                   Truncation of the test name on the options tab does not work.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+</body></html>

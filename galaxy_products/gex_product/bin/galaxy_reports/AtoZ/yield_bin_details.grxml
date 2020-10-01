@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport 
+	Version="0.66" 
+	Type="AER"
+	GRT="yield_bin_details.grt"	
+	ID="AZ3" 
+	Title="Yield bin details" 
+	Description="Yield bin details from Wafer Test to Final Test...">
+
+	<dataset ID="DS1" label="Main dataset"  
+		stage="A to Z" 
+		binning="H" binning_visible="true" binning_readonly="false" 
+		time_period_visible="false" time_period_readonly="false" time_period_mandatory="false" 
+		time_period_label="Select here the time period"
+		time_period_from="new Date(new Date().getFullYear(),00,01)" 
+		time_period_to="new Date()"
+		time_period_defaultValueExpression="all_dates" 
+		>
+		<!-- time_period_defaultValueExpression can be : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+		<!-- Date objects in javascript example : new Date() returns today. new Date(2006, 00, 01) returns the 1st jan 2006 -->
+
+		<multifield 
+			label="Select here your split params"	
+			role="SPLIT" 
+			time="N"  facts="false" binning="N" 
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="true"  multivalue="true"
+			field_mandatory="false" 
+			value_mandatory="false" value_editable="true"
+			>
+		</multifield>
+
+		<multifield 
+			label="Select here your aggregate params" 
+			role="AGGREGATE" 
+			time="*" facts="false" binning="N" 
+			filterable="false" visible="true"  autorepeat="false" orderable="false"  
+			allow_full_range_choice="false" full_range="false"  
+			multivalue="true"
+			field_mandatory="true" 
+			value_readonly="false" value_mandatory="false" value_editable="true"
+			default_field="Month" field_readonly="true"
+			>
+		</multifield>
+		
+		<multifield 
+			label="Select here your serie params"
+			role="SERIE" 
+			time="*" facts="true" 
+			filterable="false" visible="false"  autorepeat="false" orderable="false"  full_range="false"  
+			multivalue="true"	allow_full_range_choice="false"
+			field_mandatory="true" 
+			value_readonly="false" value_mandatory="false" value_editable="false"
+			default_field="Production Stage" field_readonly="true"
+			>
+		</multifield>
+		
+		<multifield 
+			label="Select here your sub serie params"
+			role="SUBSERIE" 
+			time="*" facts="true" 
+			filterable="false" visible="false"  autorepeat="false" orderable="false"  full_range="false"  
+			multivalue="true"	allow_full_range_choice="false"
+			field_mandatory="true" 
+			value_readonly="false" value_mandatory="false" value_editable="false"
+			default_field="Hbin#" field_readonly="true"
+			>
+			</multifield>
+		
+		<multifield 
+			label="Select here any other filters "
+			role="FILTER" 
+			time="*"  binning="N" facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false" multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="true"
+			indent="false"
+			>
+			<field  default_field="Year" field_mandatory="true" value_mandatory="true" field_readonly="true" value_readonly="false" value_editable="false" multivalue="false"/>
+		</multifield>
+		
+	</dataset>
+	
+	<options>
+		<option ID="P_TITLE" 		type="String" 	hideif="false" 	label="Report title" rawReplace="true" defaultvalue="'AZ Bin Yield Details'" />
+		<option ID="P_YIELD" 		type="String"	hideif="true" 	label="Yield"		rawReplace="true"		defaultvalue="'$FYield'" />
+		<option ID="P_VOLUME" 		type="String"	hideif="true" 	label="Vol"			rawReplace="true"		defaultvalue="'$FVolume'" />
+		<option ID="P_SUMMARY" 		type="String" 	hideif="true"	label="Summary"		rawReplace="true"		defaultvalue="'parts'" />
+		<option ID="P_OVERALL" 		type="Bool" 	hideif="true"	label="Overall"		rawReplace="true"		defaultvalue="false" />
+	</options>
+
+</GalaxyReport>

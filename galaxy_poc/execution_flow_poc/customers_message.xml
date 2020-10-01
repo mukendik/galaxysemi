@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<customer_interaction version="0.1">
+
+    <event source="GexOptionsHandler::SetOption"
+        dialog="Critical"
+        message="try to set invalidated option"
+        />
+
+    <event source="CReportOptions::CreateDefaultRnRRulesFile"
+        dialog="Error"
+        message="default RnR rules file model '%s' does not exist"
+        />
+
+    <event source="CReportOptions::WriteOptionSectionToFile"
+        dialog="Warning"
+        message="Cant write option section ot script file"
+        />
+
+    <event source="CReportOptions::WriteChartStyleToFile"
+        dialog="None"
+        message="....."
+        />
+
+    <event source="GexExternalPat::LoadPlugin"
+        type="Critical"
+        messagebox="Failed loading plugin from plugin directory (%PLUGINDIR):\nFile  = %FILE"
+        />
+
+    <event source="GexDatabaseAdmin::dropEvent"
+        messagebox="Do you confirm to import data files\ninto database: "
+        type="information"
+        />
+
+</customer_interaction>

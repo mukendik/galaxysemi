@@ -1,0 +1,55 @@
+#include "calendar_dialog.h"
+
+///////////////////////////////////////////////////////////
+// Constructor
+///////////////////////////////////////////////////////////
+CalendarDialog::CalendarDialog( QWidget* parent, Qt::WindowFlags f ) 
+	: QDialog( parent, f )
+{
+	// Setup UI
+	setupUi(this);
+
+	connect(calendarWidget, SIGNAL(clicked(const QDate&)), this, SLOT(OnDayClicked(const QDate&)));
+}
+
+///////////////////////////////////////////////////////////
+// Set Calendar to a given date
+///////////////////////////////////////////////////////////
+void CalendarDialog::setDate(const QDate &cDate)
+{
+	// Sets calendar to given date.
+	calendarWidget->setSelectedDate(cDate);
+}
+	
+///////////////////////////////////////////////////////////
+// Set maximum selctable date to a given date
+///////////////////////////////////////////////////////////
+void CalendarDialog::setMaximumDate(const QDate &cDate)
+{
+	calendarWidget->setMaximumDate(cDate);
+}
+	
+///////////////////////////////////////////////////////////
+// Set minimum selctable date to a given date
+///////////////////////////////////////////////////////////
+void CalendarDialog::setMinimumDate(const QDate &cDate)
+{
+	calendarWidget->setMinimumDate(cDate);
+}
+	
+///////////////////////////////////////////////////////////
+// Get Calendar date currently selected
+///////////////////////////////////////////////////////////
+QDate CalendarDialog::getDate(void)
+{
+	return calendarWidget->selectedDate();
+}
+
+///////////////////////////////////////////////////////////
+// A specific day has been clicked...
+///////////////////////////////////////////////////////////
+void CalendarDialog::OnDayClicked(const QDate& /*date*/)
+{
+	// A day has been selected, we close the dialog
+	done(1);
+}

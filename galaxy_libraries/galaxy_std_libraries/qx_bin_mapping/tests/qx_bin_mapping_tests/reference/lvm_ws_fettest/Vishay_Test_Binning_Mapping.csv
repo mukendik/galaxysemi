@@ -1,0 +1,59 @@
+test name:GS SHORT|test number:5|test number alias:0|binning name:GS SHORT|soft bin number:29|
+test name:DS SHORT|test number:53|test number alias:0|binning name:DS SHORT|soft bin number:30|
+test name:Vth(OPEN)|test number:26|test number alias:0|binning name:Vth(OPEN)|soft bin number:31|
+test name:UIS|test number:103|test number alias:0|binning name:UIS|soft bin number:5|
+test name:IGSS @ + 120% VGS|test number:3|test number alias:0|binning name:IGSS @ + 120% VGS|soft bin number:6|
+test name:IGSS @ - 120% VGS|test number:4|test number alias:0|binning name:IGSS @ - 120% VGS|soft bin number:7|
+test name:IGSS @ + High Voltage|test number:31|test number alias:0|binning name:IGSS @ + High Voltage|soft bin number:8|
+test name:IGSS @ - High Volatge|test number:32|test number alias:0|binning name:IGSS @ - High Volatge|soft bin number:9|
+test name:IGSS @ + 100% VGS|test number:1|test number alias:0|binning name:IGSS @ + 100% VGS|soft bin number:10|
+test name:IGSS @ - 100% VGS|test number:2|test number alias:0|binning name:IGSS @ - 100% VGS|soft bin number:11|
+test name:Vth1|test number:27|test number alias:0|binning name:Vth1|soft bin number:12|
+test name:Vth1|test number:28|test number alias:0|binning name:Vth1|soft bin number:12|
+test name:Vth1|test number:29|test number alias:0|binning name:Vth1|soft bin number:12|
+test name:VDSP_UIS|test number:100|test number alias:0|binning name:VDSP_UIS|soft bin number:4|
+test name:VDSP|test number:102|test number alias:0|binning name:VDSP|soft bin number:13|
+test name:IDSX(100%VDS)|test number:51|test number alias:0|binning name:IDSX(100%VDS)|soft bin number:14|
+test name:IDSX(100%VDS after UIS)|test number:104|test number alias:0|binning name:IDSX(100%VDS after UIS)|soft bin number:14|
+test name:IDSX(50%VDS)|test number:52|test number alias:0|binning name:IDSX(50%VDS)|soft bin number:15|
+test name:IDSX  @High Voltage|test number:54|test number alias:0|binning name:IDSX  @High Voltage|soft bin number:16|
+test name:BVDSX|test number:76|test number alias:0|binning name:BVDSX|soft bin number:17|
+test name:BVDSX|test number:77|test number alias:0|binning name:BVDSX|soft bin number:17|
+test name:BVDSX|test number:78|test number alias:0|binning name:BVDSX|soft bin number:17|
+test name:BVDSX|test number:79|test number alias:0|binning name:BVDSX|soft bin number:17|
+test name:BVDSX|test number:80|test number alias:0|binning name:BVDSX|soft bin number:17|
+test name:rDSon #1 @ VGS= 10V|test number:126|test number alias:0|binning name:rDSon #1 @ VGS= 10V|soft bin number:18|
+test name:rDSon #2 @ VGS= 4.5V|test number:127|test number alias:0|binning name:rDSon #2 @ VGS= 4.5V|soft bin number:19|
+test name:rDSon #3 @ VGS= 2.5V|test number:128|test number alias:0|binning name:rDSon #3 @ VGS= 2.5V|soft bin number:20|
+test name:rDSon #4 @ VGS= 1.8V|test number:129|test number alias:0|binning name:rDSon #4 @ VGS= 1.8V|soft bin number:21|
+test name:rDSon #5 @ VGS= 1.5V|test number:130|test number alias:0|binning name:rDSon #5 @ VGS= 1.5V|soft bin number:22|
+test name:rDSon #6 @ VGS= 1.2V|test number:131|test number alias:0|binning name:rDSon #6 @ VGS= 1.2V|soft bin number:23|
+test name:rDSon #7 @ VGS= 2.7V|test number:133|test number alias:0|binning name:rDSon #7 @ VGS= 2.7V|soft bin number:2|
+test name:rDSon #8 @ VGS= 6V|test number:134|test number alias:0|binning name:rDSon #8 @ VGS= 6V|soft bin number:32|
+test name:VSDP|test number:201|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:VSDP|test number:21|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:VSDP|test number:22|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:VSDP|test number:23|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:VSDP|test number:24|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:VSDP|test number:25|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:VSDP|test number:30|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:VSDP|test number:33|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:VSDP|test number:20|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:VSDP|test number:34|test number alias:0|binning name:VSDP|soft bin number:25|
+test name:IBEV|test number:50|test number alias:0|binning name:IBEV|soft bin number:27|
+test name:IGDO|test number:11|test number alias:0|binning name:IGDO|soft bin number:28|
+test name:Dummy|test number:101|test number alias:0|binning name:Dummy|soft bin number:99|
+test name:Dummy|test number:120|test number alias:0|binning name:Dummy|soft bin number:99|
+test name:Dummy|test number:106|test number alias:0|binning name:Dummy|soft bin number:99|
+test name:Dummy|test number:43|test number alias:0|binning name:Dummy|soft bin number:99|
+test name:Dummy|test number:1031|test number alias:0|binning name:Dummy|soft bin number:1|
+test name:Dummy|test number:1026|test number alias:0|binning name:Dummy|soft bin number:26|
+test name:Dummy|test number:1051|test number alias:0|binning name:Dummy|soft bin number:51|
+test name:Dummy|test number:10101|test number alias:0|binning name:Dummy|soft bin number:101|
+test name:Dummy|test number:10102|test number alias:0|binning name:Dummy|soft bin number:102|
+test name:Dummy|test number:10103|test number alias:0|binning name:Dummy|soft bin number:103|
+test name:Dummy|test number:1076|test number alias:0|binning name:Dummy|soft bin number:76|
+test name:Dummy|test number:10126|test number alias:0|binning name:Dummy|soft bin number:126|
+test name:Dummy|test number:10127|test number alias:0|binning name:Dummy|soft bin number:127|
+test name:Dummy|test number:10201|test number alias:0|binning name:Dummy|soft bin number:201|
+test name:Dummy|test number:1052|test number alias:0|binning name:Dummy|soft bin number:52|

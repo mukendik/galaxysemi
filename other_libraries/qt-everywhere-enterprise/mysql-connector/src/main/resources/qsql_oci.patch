@@ -1,0 +1,54 @@
+--- qsql_oci.cpp.old	2011-09-27 15:23:31.000000000 +0200
++++ qsql_oci.cpp	2011-09-27 15:45:57.000000000 +0200
+@@ -2158,6 +2158,18 @@
+ {
+     int r;
+ 
++    // ENABLED CONECTION
++    // SYS AS SYSDBA
++    // OR
++    // STANDARD USER
++    int nSessionUserType = OCI_DEFAULT;
++    QString strUser = user.simplified().toUpper();
++    if (strUser.endsWith(QLatin1String(" SYSDBA")))
++    {
++        strUser = strUser.section(QLatin1String(" "), 0, 0);
++        nSessionUserType = OCI_SYSDBA;
++    }
++
+     if (isOpen())
+         close();
+ 
+@@ -2181,8 +2193,8 @@
+     if (r == OCI_SUCCESS)
+         r = OCIHandleAlloc(d->env, reinterpret_cast<void **>(&d->authp), OCI_HTYPE_SESSION, 0, 0);
+     if (r == OCI_SUCCESS)
+-        r = OCIAttrSet(d->authp, OCI_HTYPE_SESSION, const_cast<ushort *>(user.utf16()),
+-                       user.length() * sizeof(QChar), OCI_ATTR_USERNAME, d->err);
++        r = OCIAttrSet(d->authp, OCI_HTYPE_SESSION, const_cast<ushort *>(strUser.utf16()),
++                       strUser.length() * sizeof(QChar), OCI_ATTR_USERNAME, d->err);
+     if (r == OCI_SUCCESS)
+         r = OCIAttrSet(d->authp, OCI_HTYPE_SESSION, const_cast<ushort *>(password.utf16()),
+                        password.length() * sizeof(QChar), OCI_ATTR_PASSWORD, d->err);
+@@ -2194,10 +2206,10 @@
+         r = OCIAttrSet(d->svc, OCI_HTYPE_SVCCTX, trans, 0, OCI_ATTR_TRANS, d->err);
+ 
+     if (r == OCI_SUCCESS) {
+-        if (user.isEmpty() && password.isEmpty())
++        if (strUser.isEmpty() && password.isEmpty())
+             r = OCISessionBegin(d->svc, d->err, d->authp, OCI_CRED_EXT, OCI_DEFAULT);
+         else
+-            r = OCISessionBegin(d->svc, d->err, d->authp, OCI_CRED_RDBMS, OCI_DEFAULT);
++            r = OCISessionBegin(d->svc, d->err, d->authp, OCI_CRED_RDBMS, nSessionUserType);
+     }
+     if (r == OCI_SUCCESS || r == OCI_SUCCESS_WITH_INFO)
+         r = OCIAttrSet(d->svc, OCI_HTYPE_SVCCTX, d->authp, 0, OCI_ATTR_SESSION, d->err);
+@@ -2235,7 +2247,7 @@
+ 
+     setOpen(true);
+     setOpenError(false);
+-    d->user = user;
++    d->user = strUser;
+ 
+     return true;
+ }

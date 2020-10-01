@@ -1,0 +1,66 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>fileFindNext<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library<br>
+      </a>&nbsp;<br>
+      <br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>fileFindNext()</pre>
+      <p>Finds all files in the given folder that match the extensions. function 
+      to be called after the first file name has been retrieved with the <b>
+      <a href="filek.htm">fileFindFirst</a></b> command </p>
+      <p>Example:</p>
+      <pre>var vPath = '/usr/myfolder';
+vExt = '*.csv;*.txt';
+vFile = fileFindfirst(vPath,vExt);
+
+while(vFile != '')
+{
+  // Do some work on the file
+
+  // Get next file to process
+  vFile = fileFindNext(); 
+  };
+}</pre>
+      <pre>
+</pre>
+      <pre></pre>
+      <pre></pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

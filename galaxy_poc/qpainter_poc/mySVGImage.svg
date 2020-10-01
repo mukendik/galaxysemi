@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="10cm" height="10cm" viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink/"
+    baseProfile="tiny" version="1.2">
+	
+  <title>waferzones</title>
+
+	<desc>Description...
+	</desc>
+
+	<defs>
+      <!-- Define a shadow for each sphere. -->
+      <circle id="shadow" fill="red" cx="0" cy="0" r="100" />
+	  <fill id="blue" fill="blue" />
+	  <!-- fill id="red" fill="red" / -->
+	  <gradient id="red" fill="red" />
+	</defs>
+
+	<!-- g fill="#ffee99" stroke="none" >
+		<rect x="0" y="0" width="400" height="400" />
+	</g -->
+
+	<g fill="black" stroke="none" >
+     <rect x="0" y="0" width="100" height="100" />
+	</g>
+
+	<!-- g transform="translate(200,200)">
+     <use xlink:href="#shadow" transform="translate(0,0) scale(1.0,1.0)" />
+     <circle fill="url(#blueSphere)" cx="0" cy="0" r="100" />
+	</g -->
+
+	<!-- M = move	a = arc relative :  rx ry  rotAxeX DAL DB		xend yend 
+		rx ry : radius x and y
+		rotationAxeX : 0
+		DAL DB : could be 0 0
+		xend yend : ending point coordinates
+	-->
+	
+	<g transform="translate(50 50) rotate(45) ">
+		<!-- use xlink:href="#red" / -->
+		<!-- style="fill:url(#red)" -->
+		
+		<rect zoneid="5" x="-60" y="-60" width="70" height="70" fill="#ffff00" />
+		<rect zoneid="6" x="-13" y="-100" width="100" height="100" fill="#b22222" />
+		<rect zoneid="9" x="-80" y="-15" width="80" height="35" fill="#ff0000" />
+		<rect zoneid="4" x="-60" y="15" width="70" height="70" fill="#FFA800" />	
+		
+		<rect zoneid="2" x="13" y="-60" width="70" height="70" fill="#00ffff" />		
+		<rect zoneid="8" x="-13" y="13" width="100" height="100" fill="#0000FA" />
+		<rect zoneid="7" x="13" y="-15" width="70" height="35" fill="#00A400" />
+		<rect zoneid="3" x="13" y="15" width="70" height="70" fill="#FF00A5" />
+		
+		<circle zoneid="1" fill="#ba20d3" cx="0" cy="0" r="19" />
+		
+	</g>
+
+	<g transform="translate(50 50)" decoration="true">
+		<circle  cx="0" cy="0" r="50" style="stroke:black; fill:none; fill-opacity:.5; stroke-opacity:.5;" />
+		<text x="-32" y="-22" style="font-size:20; fill:white">9</text> 
+		<text x="-43" y="5" style="font-size:20; fill:white">4</text> 
+		<text x="-32" y="32" style="font-size:20; fill:white">8</text> 
+		<text x="-3" y="-33" style="font-size:20; fill:white">5</text> 
+		<text x="-3" y="5" style="font-size:20; fill:white">1</text> 		
+		<text x="-4" y="45" style="font-size:20; fill:white">3</text> 
+		<text x="27" y="-22" style="font-size:20; fill:white">6</text> 
+		<text x="37" y="5" style="font-size:20; fill:white">2</text> 
+		<text x="28" y="32" style="font-size:20; fill:white">7</text>
+		
+	</g>
+	
+</svg>

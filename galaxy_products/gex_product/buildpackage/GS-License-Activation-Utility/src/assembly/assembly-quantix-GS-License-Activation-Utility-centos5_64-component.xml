@@ -1,0 +1,136 @@
+<assembly>
+    <id>assembly-GS-License-Activation-Utility-dist</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <!-- galaxy-la binary -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>galaxy-la${exeExt}</include>
+            </includes>
+        </fileSet>
+        <!-- galaxy-la script -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/GS-License-Activation-Utility</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>galaxy-la</include>
+            </includes>
+        </fileSet>  
+        <!-- galaxy-la icon -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/gex-license-activation/sources</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>gs_act.ico</include>
+            </includes>
+        </fileSet>  
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/unix</directory>
+            <outputDirectory>bin</outputDirectory>
+            <includes>
+                <include>common.sh</include>
+            </includes>
+        </fileSet>   
+        <!-- fnp_utils_all -->
+        <fileSet>
+            <directory>${project.build.directory}/fnp_utils</directory>
+            <outputDirectory>fnp_utils</outputDirectory>
+            <excludes/>
+        </fileSet>
+        <!-- fnp_utils_all --><!-- Hack to create fnp_utils/galaxylm empty directory -->
+        <fileSet>
+            <directory>${project.build.directory}/fnp_utils</directory>
+            <outputDirectory>fnp_utils/galaxylm</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <excludes>
+                <exclude>**/*</exclude>
+            </excludes>
+        </fileSet>
+        <!-- Qt -->
+        <fileSet>
+            <directory>${env.QTDIR}/lib</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <includes>
+                <include>${libSuffix}Qt5DBus${libPostfix}</include>
+                <include>${libSuffix}Qt5Core${libPostfix}</include>
+                <include>${libSuffix}Qt5Gui${libPostfix}</include>
+                <include>${libSuffix}Qt5Network${libPostfix}</include>
+                <include>${libSuffix}Qt5Widgets${libPostfix}</include>
+            </includes>
+        </fileSet> 
+        <!-- libplatforms -->
+        <fileSet>
+            <directory>${env.QTDIR}/plugins</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>platforms/${libSuffix}qminimal${libPostfix}</include>
+                <include>platforms/${libSuffix}qoffscreen${libPostfix}</include>
+                <include>platforms/${libSuffix}qlinuxfb${libPostfix}</include>
+                <include>platforms/${libSuffix}qxcb${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <!-- system -->
+        <fileSet>
+            <directory>/usr/lib</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <excludes>
+                <exclude>**/*</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>/usr/lib</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <includes>
+                <include>${libSuffix}xcb-util${libPostfix}</include>
+                <include>${libSuffix}xcb-icccm${libPostfix}</include>
+                <include>${libSuffix}xcb-xfixes${libPostfix}</include>
+                <include>${libSuffix}xcb-sync${libPostfix}</include>
+                <include>${libSuffix}xcb${libPostfix}</include>
+                <include>${libSuffix}xcb-randr${libPostfix}</include>
+                <include>${libSuffix}xcb-keysyms${libPostfix}</include>
+                <include>${libSuffix}xcb-image${libPostfix}</include>
+                <include>${libSuffix}xcb-dpms${libPostfix}</include>
+                <include>${libSuffix}xcb-render-util${libPostfix}</include>
+                <include>${libSuffix}xcb-render${libPostfix}</include>
+                <include>${libSuffix}xcb-shm${libPostfix}</include>
+                <include>${libSuffix}xcb-shape${libPostfix}</include>
+                <include>${libSuffix}icudata${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <!-- lib-->
+        <fileSet>
+            <directory>/usr/lib</directory>
+            <outputDirectory>lib</outputDirectory>
+            <includes>
+                <include>libicui18n.so.52*</include>
+                <include>libicuuc.so.52*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>/usr/lib64</directory>
+            <outputDirectory>lib</outputDirectory>
+            <includes>
+                <include>libgfortran.so.1*</include>
+                <include>libreadline.so.5*</include>
+                <include>libgomp.so.1*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>/lib64</directory>
+            <outputDirectory>lib</outputDirectory>
+            <includes>
+                <include>libtermcap.so.2*</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <!-- fnp_utils_all --><!-- lmadmin -->
+    <files>
+        <file>
+            <source>${project.build.directory}/lmadmin-${fnp-version}-${fnp-hotfix}-${lmadmin-fnp-platform}.${lmadminArchiveExt}</source>
+            <outputDirectory>fnp_utils/lmadmin</outputDirectory>
+            <destName>lmadmin-${lmadmin-fnp-platform}-${fnp-version_flex}_${fnp-hotfix}.${lmadminArchiveExt}</destName>
+        </file>
+    </files>
+</assembly>

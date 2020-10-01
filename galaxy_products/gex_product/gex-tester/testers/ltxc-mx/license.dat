@@ -1,0 +1,27 @@
+# +-----------------------+-----------------+
+# | LTXC Product Licensing | Automatic Email |
+# +-----------------------+-----------------+
+
+# Unison/enVision Product License - Demo License
+# ============================================
+
+# Sent To:          ian_harrison@ltx.com
+# Expiration Date:  01-jun-2013
+
+# =============
+# LICENSE FILE:
+# =============
+
+SERVER localhost 0800278225cd 1700
+DAEMON LTXD /opt/LTXflexlm/LTXD
+FEATURE Engineering LTXD 1.000 01-jun-2013 5 EB3C10B153EAD3EB93CE ck=83
+FEATURE DeltaST LTXD 1.000 01-jun-2013 5 EB0C603185703274DBC1 ck=225
+FEATURE Test_Method LTXD 1.000 01-jun-2013 5 7B5C00F16DDA71B9D7FE ck=79
+INCREMENT FusionGem LTXD 1.000 01-jun-2013 1 BB3C50B14A75B28337E9 ck=21
+
+#NOTE: You can edit the hostname on the server line (1st arg),
+#      the port address on the server line (3rd arg), the path
+#      to the daemon on the daemon line (2nd arg), or any
+#      right-half of a string (b) of the form a=b where (a) is all
+#      lowercase. (For example, xxx in  vendor_info="xxx" can be
+#      changed).  Any other changes will invalidate this license.

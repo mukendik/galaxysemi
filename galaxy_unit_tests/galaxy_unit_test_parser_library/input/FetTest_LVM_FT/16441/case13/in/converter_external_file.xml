@@ -1,0 +1,8 @@
+<external_files>
+  <promis format="vishay-lvm" type="final">./input/FetTest_LVM_FT/16441/case13/externalfiles/PROMIS_DATA_FT.TXT</promis> 
+  <binmap format="vishay-lvm" type="final" category="final_tests">
+	  <bin_filepath>./input/FetTest_LVM_FT/16441/case13/externalfiles/CSVFinalTestsFile20180402.csv</bin_filepath>
+	  <default_bin_name>Default BIN</default_bin_name>
+	  <default_bin_number>32767</default_bin_number>
+  </binmap>
+</external_files>

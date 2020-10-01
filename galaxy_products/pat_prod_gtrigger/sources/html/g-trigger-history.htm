@@ -1,0 +1,683 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>G-Trigger release history</title>
+</head>
+<body>
+<table>
+<tbody>
+<tr>
+<td valign="top" width="770"><font color="#858585" face="Arial" size="5">G-Trigger
+: <span lang="en-us">Releases History</span></font></td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.12&nbsp; (29 Jul 2016)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-8797:
+Continue processing remainder of split lot if corrupt wafer file is found</b>&nbsp;<br>
+When a split lot is processed and one of the wafer files is corrupted, continue processing of the
+split lot and generate trigger files for all valid wafer files instead of stopping the process with
+no trigger file generated.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.11&nbsp; (03 Feb 2016)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-6732:
+G-Trigger FETTEST Generating Incorrect Summary Logs</b>&nbsp;<br>
+When there is retest with PAT logs created within seconds of each other AND the time stamp order by puts
+the files out of order, the summary log generated is incorrect.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.10&nbsp; (09 Nov 2015)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-5450:
+Update Quantix PAT triggering to handle new yyyyMMdd.hhmmss file format</b>&nbsp;<br>
+The month code in the new yyyyMMdd.hhmmss format is a two-digit code so that files with this time stamp
+can be sorted and organized in chronological time stamp order.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.9&nbsp; (18 Aug 2015)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-4783:
+G-Trigger doesn't generate summary log files anymore</b>&nbsp;<br>
+G-Trigger  does not generate any summary log file anymore.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.8&nbsp; (12 Aug 2015)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-4754:
+G-Trigger is incorrectly generating summary logs</b>&nbsp;<br>
+When determining if the Eagle PAT Log Files have or have not been processed into the summary log,
+G-Trigger uses the time stamp in the file name to ensure the latest data is reflected in the summary log.
+In v3.3 of G-Trigger, the format of that time stamp changed from HHMMSS_YYYYMMDD to YYYYMMDD_HHMMSS.
+This format change is now reflected in the reading of the PAT logs.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.7&nbsp; (03 Jul 2015)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-4290:
+Map merge option in gtf</b>&nbsp;<br>
+G-Trigger should add line "MergeMaps=True" to the gtf file when it generates a gtf file with an optional source.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.6&nbsp; (15 Apr 2015)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-3374:
+G-Trigger update for external map</b>&nbsp;<br>
+G-Trigger is now able to add a line specifying an external map ("OptionalSource" parameter) in the generated GTF file.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.5&nbsp; (22 Dec 2014)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-2004:
+G-Trigger update to accomodate JSON recipes</b>&nbsp;<br>
+G-Trigger now first looks for the JSON version of any recipe. If not found, it looks for the CSV version.<br>
+This enables a smooth transition from the CSV to the JSON recipe format.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.4&nbsp; (02 Aug 2014)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-1301:
+G-Trigger lot summary is incorrect</b>&nbsp;<br>
+The summary file output by the G-Trigger tool is not correct.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.3&nbsp; (23 May 2014)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>GCORE-794:
+Modify the way G-Trigger creates GTF file names for Eagle flow</b>&nbsp;<br>
+G-Trigger used to generate Eagle GTF files using the STDF file name and replacing the<br>
+.std extension with .gtf. The timestamp included in the STDF file name is not appropriate<br>
+for alphabetic file ordering used in GTF trigger pumps. G-Trigger was enhanced to modify the<br>
+timestamp used in the GTF file name (extracted from the STDF file name) so it is more appropriate&nbsp;<br>for file ordering (yyyyMMdd_hhmmss).&nbsp;<br>The codes were also updated to process summary files (FetTest, Eagle, Spektra) oldest to newest.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.2&nbsp; (03 December 2013)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>Case 7791:
+G-Trigger update to support new shell key for HVM flow</b>&nbsp;<br>
+Add a new key for HVM parts called 'Shell_HVM'. If missing in the
+g-trigger.ini, use key 'Shell' instead.
+</font></li>
+<li><font face="Arial"><b>Application
+converted from QT4 to QT5:</b>&nbsp;<br>
+the application has been converted from the old QT environment (QT4) to<br>
+the latest QT environment used in other Quantix products (QT5).
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.1&nbsp; (29 November 2013)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>Case 7783:
+PAT and NoPAT wafer mix</b>&nbsp;<br>
+G-trigger now supports splitlots with mixed PAT and NoPAT wafers.<br>
+If a splitlot has PAT and NoPAT wafers, the GTF files will be created
+accordingly for each wafer.<br>
+For a same wafer, if there are PAT and NoPAT files, only the PAT files
+are considered.<br>
+Also, only PAT files will be used if a composite map is generated.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V3.0&nbsp; (05 November 2013)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>G-Trigger is
+now multi-threaded</b>&nbsp;<br>
+GUI &amp; Engine are running in 2 separate threads.
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V2.5&nbsp; (23 October 2013)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>Case 7409:
+G-Trigger Update for ZPAT</b>&nbsp;<br>
+add the ability for G-Trigger to distinguish the need for ZPAT from the
+PAT recipe and create a composite map<br>
+trigger file and update the current trigger file generator to use the
+composite map where appropriate.<br>
+The following 2 new variables are supported in the g-trigger.ini file:
+<ul>
+<li>
+Section=Options, Field=Output_Pat_Composite_Maps_Subfolder: <br>
+subfolder to be used to generate the commosite map, the COMPOSITE_PAT
+GTF file, and the subfolder <br>
+containing all individual wafer GTF files. If this option is not
+present, 'zpat' will be used as default<br>
+subfolder. The subfolder gets created in the folder where the GTF files
+normally get created.
+</li>
+<li>
+Section=Options, Field=Shell_Post_Composite: <br>
+script to be used as value of the 'Shell' field in the COMPOSITE_PAT
+GTF files, so that it gets called at <br>
+the end of the processing of a COMPOSITE_PAT GTF file.
+</li>
+</ul>
+</font></li>
+<li><font face="Arial"><b>Case 7693:
+Merge test and retest for PAT processing in the GTF files from g-trigger</b>&nbsp;<br>
+when two files are present for one wafer within one lot.sublot, create
+only 1 gtf file with both the initial <br>
+test and retest files included so that pm will do a file merge prior to
+pat processing.<br>
+The following new variable is supported in the g-trigger.ini file:
+<ul>
+<li>
+Section=Options, Field=MergeTestRetest: <br>
+if set to 1, one single GTF will be generated for each wafer, and test
+and retest wafer files for a same<br>
+wafer will be listed in the same GTF, so that they will get merged
+during PAT processing.<br>
+If set to 0, one GTF will be generated for each file, whether test or
+retest.
+</li>
+</ul>
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V2.4&nbsp; (16 November 2012)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>Case 6736:
+G-Trigger update for HVM FETtest NO_PAT flow</b>&nbsp;<br>
+Add a NO_PAT flow for HVM FETtest that is similar to the LVM NO_PAT
+FETtest flow.<br>
+New variables read from g-trigger.ini file: Input_PRN_NO_PAT_HVM (HVM
+FetTest NOPAT spooling folder),<br>
+Shell_Fet_NoPAT_HVM (shell executed after processing of a HVM NOPAT
+.prn file).
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V2.3&nbsp; (28 March 2012)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>Case 6056:
+time delay variable not functioning properly in G-Trigger</b>&nbsp;<br>
+time delay variable not functioning properly in G-Trigger for FETTEST
+noPAT flow.
+</font></li>
+<li><font face="Arial"><b>Case 5988:
+changed the algorithm used to lookup recipe files when generating GTF
+PAT triggers</b>&nbsp;<br>
+the algorithm used to lookup recipe files when generating GTF PAT
+triggers has been changed as follows:
+<ul>
+<li>
+If(flow != HVM_SPEKTRA)<br>
+// Try#1:
+&lt;recipe_folder&gt;/&lt;product&gt;_&lt;program&gt;_&lt;Version*&gt;_patman_config.csv
+(if multiple files exist, use the one with the highest version)
+</li>
+<li>
+If(flow != HVM_FETTEST)<br>
+// Try#2:
+&lt;recipe_folder&gt;/&lt;product&gt;_&lt;Version*&gt;_patman_config.csv
+(if multiple files exist, use the one with the highest version)
+</li>
+<li>
+If(flow != HVM_SPEKTRA)<br>
+// Try#3:
+&lt;recipe_folder&gt;/&lt;product&gt;_&lt;program&gt;_patman_config.csv
+</li>
+<li>
+If(flow != HVM_FETTEST)<br>
+// Try#4: &lt;recipe_folder&gt;/product_patman_config.csv
+</li>
+</ul>
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V2.2&nbsp; (22 February 2012)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>Case 5912:
+broken script argument in G-Trigger</b>&nbsp;<br>
+G-Trigger is passing an incomplete name of the log file to the shell
+script (missing .log extension).
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V2.1&nbsp; (17 February 2012)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>G-trigger
+Bug when generating FETTEST NO_PAT log files</b>&nbsp;<br>
+FETTEST NO_PAT log files where truncated.
+</font></li>
+<li><font face="Arial"><b>Support for
+HVM Spektra flow:</b>&nbsp;<br>
+G-Trigger now supports the HVM Spektra flow. For reading the right
+PROMIS file and format (HVM vs. LVM), a converter_external_file.xml has
+to be present in the .cnt.csv spooling folder spcifying the PROMIS and
+BINMAP files and format. Following new variables have to be added to
+the g-trigger.ini file:
+<ul>
+<li>
+<span style="font-family: Courier New;">[Spektra_Folders]<br>
+Input_Spektra_CNT==&lt;folder&gt; (folder where the Spektra
+.cnt.csv files are posted)<br>
+Input_Spektra_STDF==&lt;folder&gt; (folder where the converted
+Spektra STDF files are located)<br>
+Output_Spektra_PAT_STDF==&lt;folder&gt; (folder where the PAT
+STDF files should be generated)<br>
+</span>
+</li>
+</ul>
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V2.0&nbsp; (23 January 2012)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>Application
+converted from QT3 to QT4:</b>&nbsp;<br>
+the application has been converted from the old QT environment (QT3) to
+the latest
+QT environment used in other Quantix products (QT4).
+</font></li>
+<li><font face="Arial"><b>Case 3993:
+G-trigger Bug for processing FETTEST_NO_PAT</b>&nbsp;<br>
+somehow, the g-trigger hang-up when processing the attached corrupted
+NO_PAT fettest summary file.
+</font></li>
+<li><font face="Arial"><b>Support for
+HVM FetTest flow:</b>&nbsp;<br>
+G-Trigger now supports the HVM FetTest flow. For reading the right
+PROMIS file and format (HVM vs. LVM), a converter_external_file.xml has
+to be present in the .prn spooling folder spcifying the PROMIS and
+BINMAP files and format, instead of the environment variable used in
+previous versions. Following new variable has to be added to the
+g-trigger.ini file:
+<ul>
+<li>
+<span style="font-family: Courier New;">[Folders]<br>
+...<br>
+Input_PRN_HVM==&lt;folder&gt; (folder where the HVM .prn files
+are posted)</span>
+</li>
+</ul>
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V1.21&nbsp; (10 June 2009)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>Rejected and
+delayed files management:</b>&nbsp;<br>
+the way delayed and rejected files are treated has been modified. A
+delayed file
+&lt;file&gt; will be renamed to &lt;file&gt;.delay, and
+a &lt;file&gt;.log file
+is generated with the error message. A rejected file
+&lt;file&gt; will be renamed to &lt;file&gt;.bad, and a
+&lt;file&gt;.log file is generated with the error message.
+Also, the following 2 new .INI variables are supported:
+<ul>
+<li>
+<span style="font-family: Courier New;">[Options]<br>
+...<br>
+Delayed_Files_Subfolder=&lt;folder&gt;</span>
+<br>
+<br>
+if this variable is defined, the delayed file &lt;file&gt; is
+moved to this sub-folder instead of
+being renamed with the .delay extension, and the
+&lt;file&gt;.log file is also created in this sub-folder.
+<br>
+<br>
+</li>
+<li>
+<span style="font-family: Courier New;">[Options]<br>
+...<br>
+Rejected_Files_Subfolder=&lt;folder&gt;</span>
+<br>
+<br>
+if this variable is defined, the rejected file &lt;file&gt; is
+moved to this sub-folder instead of
+being renamed with the .bad extension, and the &lt;file&gt;.log
+file is also created in this sub-folder.
+</li>
+</ul>
+</font></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V1.20&nbsp; (4 March 2009)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>FETTEST_NOPAT
+flow:</b></font>
+<ul>
+<li><font face="Arial">
+added support of a delay between the processing of each wafer (STDF
+file <br>
+generation, LOG file generation, execution of the FETTEST_NOPAT
+script).&nbsp;<br>
+This delay can be specified in the g-trigger.ini file in the [Options]
+section:
+<br>
+<br>
+<span style="font-family: Courier New;">[Options]<br>
+...<br>
+Delay_Fet_NoPAT_LogFiles=2</span>
+<br>
+<span style="font-style: italic;">(the
+specified value is the number of seconds for the delay)</span></font></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td height="14" valign="top"> </td>
+</tr>
+<tr>
+<td height="25"><span lang="en-us"><font color="#006699" face="Arial" size="3"><b>
+V1.19&nbsp; (23 January 2009)</b></font></span></td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><font face="Arial"><b>LotID in
+FETTEST_NOPAT .prn files:</b></font>
+<ul>
+<li><font face="Arial">added support of
+the LotID without the '.' separator between the LotID and the Split#.<br>
+Both conventions are now supported, ie: LOTIDY08145.1, LOTIDY37K0191</font></li>
+<li><font face="Arial">for the
+convention without the '.' separator, the Split# is decoded from base36<br>
+<br>
+</font></li>
+</ul>
+</li>
+<li><font face="Arial"><b>Support of
+the engineering PROMIS data file for FETTEST_NOPAT .prn files:</b>&nbsp;<br>
+when the data related to the SplitLot is not found in
+the&nbsp;production PROMIS data file, the&nbsp;<br>
+g-trigger application tries to find the data in the engineering PROMIS
+file.<br>
+<br>
+</font></li>
+<li><font face="Arial"><b>Generation
+of a production summary log file for each FETTEST_NOPAT .prn file:</b>&nbsp;<br>
+</font><font face="Courier New"># PAT-MAN
+SUMMARY log file<br>
+# Created by: G-Trigger V1.19<br>
+Date&nbsp;&nbsp;&nbsp;&nbsp; : 23 January 2009 01:36:50<br>
+Geometry : NJKF20GFZTS<br>
+Lot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Y37K019.1<br>
+Program&nbsp; : FetTest program<br>
+----------------------------------------------------------------------<br>
+Wafer#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+:&nbsp;&nbsp;&nbsp;&nbsp;
+8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+----------------------------------------------------------------------<br>
+Total Dies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+:&nbsp;&nbsp; 2075&nbsp;&nbsp;
+14345&nbsp;&nbsp;&nbsp; 5012&nbsp;&nbsp;
+14142&nbsp;&nbsp; 14123&nbsp;&nbsp;
+14137&nbsp;&nbsp;&nbsp;<br>
+Gross Die (GPDW) :&nbsp; 13500&nbsp;&nbsp;
+13500&nbsp;&nbsp; 13500&nbsp;&nbsp;
+13500&nbsp;&nbsp; 13500&nbsp;&nbsp;
+13500&nbsp;&nbsp;&nbsp;<br>
+Good
+dies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+:&nbsp;&nbsp; 1928&nbsp;&nbsp;
+12328&nbsp;&nbsp;&nbsp; 4737&nbsp;&nbsp;
+12617&nbsp;&nbsp; 12438&nbsp;&nbsp;
+12117&nbsp;&nbsp;&nbsp;<br>
+Yield level&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+14.28%&nbsp; 91.32%&nbsp; 35.09%&nbsp; 93.46%&nbsp;
+92.13%&nbsp; 89.76%&nbsp;&nbsp;<br>
+----------------------------------------------------------------------<br>
+<br>
+</font></li>
+<li><font face="Arial"><b>Generation
+of a wafer log file for each wafer entry read in the FETTEST_NOPAT .prn
+file:</b><br>
+</font><font face="Courier New">#
+G-Trigger FET_NOPAT wafer log file<br>
+# Created by: G-Trigger V1.19<br>
+#<br>
+# Global info<br>
+Date,23 January 2009 01:36:49<br>
+SetupTime,Tue Jan 06 16:24:51 2009<br>
+Product,NJKF20GFZTS<br>
+Lot,Y37K019<br>
+SubLot,Y37K019.1<br>
+WaferID,08<br>
+#<br>
+# STDF Wafer details<br>
+Stdf_TotalDies,2075<br>
+Stdf_GrossDiesPerWafer,13500<br>
+#<br>
+# Binning info<br>
+BinName,PASS,GS SHORT,Vth1,IDSX(100%VDS),UIS,rDSon #4 @ VGS= 1.8V,<br>
+Bin#,1,29,12,14,5,21,<br>
+BinCount,1928,8,8,3,5,123,<br>
+#<br>
+# Yield details<br>
+GoodParts,1928<br>
+#<br>
+# Promis details<br>
+# GrossDie=13500<br>
+# #Define Gross die ratio to be used to accept a wafer (parts &gt;
+ratio*GrossDie)<br>
+# ValidWaferThreshold_GrossDieRatio=0.5<br>
+</font><br>
+</li>
+<li><font face="Arial"><b>Support of
+the new "Shell_Fet_NoPAT" parameter in the g-trigger.ini file:</b>&nbsp;<br>
+when a shell script is specified, this script is called for each wafer
+with 2 parameters: </font>
+<ul>
+<li><font face="Arial">the status (0 or
+1)</font></li>
+<li><font face="Arial">the full name of
+the generated wafer log file<br>
+<br>
+</font></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

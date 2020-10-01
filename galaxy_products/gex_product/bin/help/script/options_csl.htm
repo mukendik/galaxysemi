@@ -1,0 +1,139 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: options.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This script sets all the Quantix Examinator report options.
+      From it, you will learn the simple but very<br>
+      powerful  GEX library command <a href="gex5.htm">gexOptions</a>
+      that lets you:</p>
+      <ul>
+        <li>
+          <p align="left">Define the report format to generate (HTML or CSV)</li>
+        <li>
+          <p align="left">Define the outlier policy</li>
+        <li>
+          <p align="left">Define the information to list in the test statistics
+          table</li>
+        <li>
+          <p align="left">Define the wafer map chart options</li>
+        <li>
+          <p align="left">Define the histogram chart options</li>
+        <li>
+          <p align="left">Define the trend chart options</li>
+        <li>
+          <p align="left">Define the correlation (XY-Scatter) chart options</li>
+        <li>
+          <p align="left">Define the Gage R&amp;R boxplot chart options</li>
+        <li>
+          <p align="left">Define the datalog chart options</li>
+      </ul>
+          <p align="left">For additional information, see the scripting language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">review</a> the other sample scripts.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: options.csl
+//////////////////////////////////////////
+
+// Function to setup GEX report options
+SetReportOptions()
+{
+  sysLog('*** This script customizes the report options! ***');
+
+  // Disable ALL options, so next lines specify exactly what we want!
+  sysLog('Step 1: Reset all options to disabled...');
+  gexOptions('reset','all','clear');
+
+  // Define the report type: HTML
+  sysLog('Step 2: Set report format to HTML');
+  gexOptions('output','format','html');
+  gexOptions('output','location','./');
+
+  // Define the outlier policy : keep all!
+  sysLog('Step 3: Set outlier policy to keep all data');
+  gexOptions('outlier','removal','none');
+
+  // Define the test statistics
+  sysLog('Step 4: Set test statistics fields to list, and sorting mode');
+  sysLog('        &gt; test_number column always listed');
+  sysLog('        &gt; include test_name column');
+  sysLog('        &gt; include limits columns');
+  sysLog('        &gt; include execution count column');
+  sysLog('        &gt; include failures count column');
+  sysLog('        &gt; include mean value column');
+  sysLog('        &gt; include sigma value column');
+  sysLog('        &gt; include range value column');
+  sysLog('        &gt; include Cp value column');
+  sysLog('        &gt; include Cpk value column');
+  sysLog('        &gt; Sorting on test number');
+  gexOptions('statistics','field','test_name');
+  gexOptions('statistics','field','limits');
+  gexOptions('statistics','field','exec_count');
+  gexOptions('statistics','field','fail_count');
+  gexOptions('statistics','field','mean');
+  gexOptions('statistics','field','sigma');
+  gexOptions('statistics','field','range');
+  gexOptions('statistics','field','cp');
+  gexOptions('statistics','field','cpk');
+  gexOptions('statistics','sorting','test_number');
+
+  // Wafer map options: large chart, show BIN value in each die.
+  sysLog('Step 5: Set wafer map: large chart, show binning in die');
+  gexOptions('wafer','chart_size','large');
+  gexOptions('wafer','marker','bin');
+
+  // Histogram options: large chart, markers: test name,mean
+  sysLog('Step 6: Set Histogram: small charts, show test name and mean');
+  gexOptions('adv_histogram','chart_size','small');
+  gexOptions('adv_histogram','marker','test_name');
+  gexOptions('adv_histogram','marker','mean');
+  
+  // Trend options: large chart, markers: test name,limits
+  sysLog('Step 7: Set Trend: large charts, show test name and limits');
+  gexOptions('adv_trend','chart_size','large');
+  gexOptions('adv_trend','marker','test_name');
+  gexOptions('adv_trend','marker','limits');
+
+  // Correlation (XYscatter) options: large chart, markers: test name
+  sysLog('Step 8: Set correlation (XYscatter): large chart with test name');
+  gexOptions('adv_correlation','chart_size','large');
+  gexOptions('adv_correlation','marker','test_name');
+
+  // Gage R&amp;R - Boxplot options: show mean column, sort on Cpk
+  sysLog('Step 9: Set Gage R&amp;R boxplot: show mean, sort on Cpk');
+  gexOptions('adv_boxplot','field','mean');
+  gexOptions('adv_boxplot','sorting','cpk');
+
+  // Datalog options: show comments and Die XY location
+  sysLog('Step 10: Set datalog: show comments, die location');
+  gexOptions('adv_datalog','field','comment');
+  gexOptions('adv_datalog','field','die_loc');
+
+  sysLog('*** Setup of all options completed! ***');
+
+}
+
+// Script entry point
+main()
+{
+  // Call function to setup GEX report options
+  SetReportOptions();
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

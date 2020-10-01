@@ -1,0 +1,16 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>assembly-galaxy-patman-win-component</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <!-- scripts --><!-- windows specific -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>install_pat_daemon.bat</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

@@ -1,0 +1,23 @@
+{
+    "rules": [
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "580:X_Voq(0mT)"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4325:NB_Uout@0mT"
+                }
+            ], 
+            "name": "rule5", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }
+    ], 
+    "version": "1.0.0"
+}

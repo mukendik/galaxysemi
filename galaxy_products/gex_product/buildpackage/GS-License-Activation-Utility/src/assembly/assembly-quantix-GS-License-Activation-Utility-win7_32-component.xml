@@ -1,0 +1,87 @@
+<assembly>
+    <id>assembly-GS-License-Activation-Utility-dist</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <!-- galaxy-la binary -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>galaxy-la${exeExt}</include>
+            </includes>
+        </fileSet>
+        <!-- galaxy-la icon -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/gex-license-activation/sources</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>gs_act.ico</include>
+            </includes>
+        </fileSet>
+        <!-- fnp_utils_all -->
+        <fileSet>
+            <directory>${project.build.directory}/fnp_utils</directory>
+            <outputDirectory>fnp_utils</outputDirectory>
+            <excludes/>
+        </fileSet>
+        <!-- fnp_utils_all --><!-- Hack to create fnp_utils/galaxylm empty directory -->
+        <fileSet>
+            <directory>${project.build.directory}/fnp_utils</directory>
+            <outputDirectory>fnp_utils/galaxylm</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <excludes>
+                <exclude>**/*</exclude>
+            </excludes>
+        </fileSet>
+        <!-- Qt -->
+        <fileSet>
+            <directory>${env.QTDIR}/lib</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <includes>
+                <include>${libSuffix}Qt5Core${libPostfix}</include>
+                <include>${libSuffix}Qt5Gui${libPostfix}</include>
+                <include>${libSuffix}Qt5Network${libPostfix}</include>
+                <include>${libSuffix}Qt5Widgets${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <!-- libplatforms -->
+        <fileSet>
+            <directory>${env.QTDIR}/plugins</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>platforms/${libSuffix}qminimal${libPostfix}</include>
+                <include>platforms/${libSuffix}qoffscreen${libPostfix}</include>
+                <include>platforms/${libSuffix}qwindows${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <!-- system -->
+        <fileSet>
+            <directory>${mingwDir}/bin</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>mingwm10.dll</include>
+                <include>libgcc_s_dw2-1.dll*</include>
+                <include>libgcc_s_seh-1.dll*</include>
+                <include>libwinpthread-1.dll</include>
+                <include>libstdc++*-6.dll</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>c:/icu/dist/lib</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>icuin52.dll</include>
+                <include>icuuc52.dll</include>
+                <include>icudt52.dll</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <!-- fnp_utils_all --><!-- lmadmin -->
+    <files>
+        <file>
+            <source>${project.build.directory}/lmadmin-${fnp-version}-${lmadmin-fnp-platform}.${lmadminArchiveExt}</source>
+            <outputDirectory>fnp_utils/lmadmin</outputDirectory>
+            <destName>lmadmin-${lmadmin-fnp-platform}-${fnp-version_flex}.${lmadminArchiveExt}</destName>
+        </file>
+    </files>
+</assembly>

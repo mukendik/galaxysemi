@@ -1,0 +1,1 @@
+[2013-04-26 19:04:57 GEXDB_PLUGIN_BASE 7] GexDbPlugin_ER_Parts has now 1 instances.  	in GexDbPlugin_ER_Parts::GexDbPlugin_ER_Parts()  	in sources\gexdb_plugin_er_parts.cpp

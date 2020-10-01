@@ -1,0 +1,148 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="150" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>Trace facility<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang2.htm">Comments</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="lang3.htm">Numbers</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang4.htm">Literals</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang5.htm">Var
+      and const</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang6.htm">Operators</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang7.htm">Statements
+      and&nbsp; blocks</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang8.htm">Program
+      flow</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang9.htm">Trace
+      facility</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang10.htm">Exception
+      handling</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang11.htm">Functions</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang12.htm">Predefined
+      identifiers</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">The trace facility allows tracing
+      of p-code (the interpreted meta-code), function and block entry/exit, and
+      expressions/messages. Trace output is sent to stderr, the Examinator
+      Script console window. Trace facility<br>
+      is made up of a set of
+      elements:
+      <ul>
+        <li>The <b>trace</b> statement is used to monitor expressions and show
+          messages within script code. 
+        <li>The <a href="direct10.htm">#block</a>
+          directive names code blocks for tracing.
+        <li>The <a href="sysk.htm">sysTrace</a>
+          function controls if, and what kind of information is traced.</li>
+      </ul>
+      <p>Example (trace.csl):</p>
+      <pre>// TRACE.CSL Script
+&nbsp;
+test(const &amp;arr[])
+{
+  var evens = 0, odds = 0;
+  for (var i = 0; i &lt; sizeof(arr); i++) {
+    #block 'for block'
+    trace 'value = '|arr[i];
+    if (arr[i] % 2) {
+      #block 'odd branch'
+      odds++;
+      trace 'odds = '|odds;
+    } else {
+      #block 'even branch'
+      evens++;
+      trace 'evens = '|evens;
+    }
+  }
+}
+&nbsp;
+main()
+{
+  sysTrace(sysTraceCode);
+  const vals = { 3, 12, 17 };
+  sysTrace(sysTraceInfo);
+  test(vals);
+  sysTrace(sysTraceNone);
+}
+</pre>
+      <p>Output when run:</p>
+      <pre>#
+#trace.csl: var main()
+#
+#address  opcode parameter            tos                  tos-1
+#-------- ------ -------------------- -------------------- --------------------
+#       3 pop                         1                    &lt;stack bottom&gt;
+#       4 push                        &lt;stack bottom&gt;
+#       5 push   vals[3]                                   &lt;stack bottom&gt;
+#       6 allc                        vals[3]
+#       7 push   3                    &lt;stack bottom&gt;
+#       8 push   vals[0]              3                    &lt;stack bottom&gt;
+#       9 storc                       vals[0]              3
+#      10 push   12                   &lt;stack bottom&gt;
+#      11 push   vals[1]              12                   &lt;stack bottom&gt;
+#      12 storc                       vals[1]              12
+#      13 push   17                   &lt;stack bottom&gt;
+#      14 push   vals[2]              17                   &lt;stack bottom&gt;
+#      15 storc                       vals[2]              17
+#      16 push   14                   &lt;stack bottom&gt;
+#      17 push   1                    14                   &lt;stack bottom&gt;
+#      18 call   sysTrace             1                    14
+-ZcSysLib: var sysTrace([const mode])
++trace.csl: var test(const &amp;arr[])
+ +for block
+  &gt;value = 3
+  +odd branch
+   &gt;odds = 1
+  -odd branch
+ -for block
+ +for block
+  &gt;value = 12
+  +even branch
+   &gt;evens = 1
+  -even branch
+ -for block
+ +for block
+  &gt;value = 17
+  +odd branch
+   &gt;odds = 2
+  -odd branch
+ -for block
+-trace.csl: var test(const &amp;arr[])
++ZcSysLib: var sysTrace([const mode])
+</pre>
+      &nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

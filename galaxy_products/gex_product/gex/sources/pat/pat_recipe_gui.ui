@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PatRecipeGUI</class>
+ <widget class="QWidget" name="PatRecipeGUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>902</width>
+    <height>568</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PAT Recipe Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="mDetach">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Detach / Attach window...</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../gex.qrc">
+         <normaloff>:/gex/icons/pin.png</normaloff>:/gex/icons/pin.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="TextLabel">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ms Sans Serif</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Review &amp; Edit Outlier / PAT Configuration</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="mReadRecipe">
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Select files to convert</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../gex.qrc">
+         <normaloff>:/gex/icons/file_open.png</normaloff>:/gex/icons/file_open.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="mWriteRecipe">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Save edits...</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../gex.qrc">
+         <normaloff>:/gex/icons/file_save.png</normaloff>:/gex/icons/file_save.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="LineBreak_2">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::VLine</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="mEditRecipeOption">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Edit PAT global settings</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../gex.qrc">
+         <normaloff>:/gex/icons/pat_globals.png</normaloff>:/gex/icons/pat_globals.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="mApplyPAT">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Save config file and Process test data file (apply PAT limits)...</string>
+       </property>
+       <property name="text">
+        <string>Apply PAT!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QTabWidget" name="mRecipeData">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="mUnivariate">
+      <attribute name="title">
+       <string>Uni-Variate</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0">
+        <widget class="QTableWidget" name="mUnivariateTree">
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>60</number>
+         </attribute>
+         <attribute name="verticalHeaderDefaultSectionSize">
+          <number>25</number>
+         </attribute>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="mFindTest">
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Find test in recipe</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/find.png</normaloff>:/gex/icons/find.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mAddPatTests">
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Add tests to PAT recipe, Update tests Spec. Limits (LL. HL.)</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/pat_tests.png</normaloff>:/gex/icons/pat_tests.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mExportStaticPatLimits">
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Export Static PAT limits to CSV file</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/csv_spreadsheet.png</normaloff>:/gex/icons/csv_spreadsheet.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="mPATSettings">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Toggle test edits: PAT settings, or SPC settings (applies to Final Test only)</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>SPAT Settings</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>DPAT Settings</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NNR Settings</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SPC Settings</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="mMultivariate">
+      <attribute name="title">
+       <string>Multi-Variate</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QPushButton" name="mNewRule">
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Create new multivariate rule</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/script_new.png</normaloff>:/gex/icons/script_new.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mDuplicateRule">
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Duplicate a multivariate rule</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/clipboard.png</normaloff>:/gex/icons/clipboard.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>22</width>
+             <height>22</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mDeleteRule">
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Remove a multivariate rule</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/file_remove.png</normaloff>:/gex/icons/file_remove.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mEditTestList">
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Edit test list</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/script_edit.png</normaloff>:/gex/icons/script_edit.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mRuleUp">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Move up a multivariate rule</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/arrow_up.png</normaloff>:/gex/icons/arrow_up.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mRuleDown">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Move down a multivariate rule</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/arrow_down.png</normaloff>:/gex/icons/arrow_down.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="mAddMVRule">
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Add tests to PAT recipe, Update tests Spec. Limits (LL. HL.)</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../gex.qrc">
+             <normaloff>:/gex/icons/pat_tests.png</normaloff>:/gex/icons/pat_tests.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTreeWidget" name="mMultivariateTree">
+         <attribute name="headerDefaultSectionSize">
+          <number>70</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string notr="true">1</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

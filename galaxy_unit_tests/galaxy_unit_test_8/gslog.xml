@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gslog version="0.2" threaded="false" http_port="">
+
+	<!-- log type="console"	
+		output_if="$FUNCTION.startsWith('GexDatabaseCenter')" 
+		/-->
+
+	<log type="txt" 
+		outputfile="log.txt"
+		/>
+
+	<!-- log type="rtf" outputfile="$HOME/GalaxySemi/logs/$ISODATE/gexlog_$ISODATE.rtf" / -->
+
+	<!-- log type="csv"	outputfile="$HOME/GalaxySemi/logs/$ISODATE/gexlog_$ISODATE.csv" 	output="$SEVERITY, $TIME, $MSG, $FUNCTION, $FILE" / -->
+
+	<!-- log type="xml" aggregation="file" outputfile="$HOME/GalaxySemi/logs/$ISODATE/gexlog_$ISODATE.xml" / -->
+	
+	<!-- log type="sql" level="6"	target="192.168.6.78" port="3306" user="root" pw="toto" / -->
+
+	<!-- log type="syslog" facility=""	target="127.0.0.1"	port="514" protocol="udp" / -->
+	<!-- log type="syslog" facility="" target="192.168.1.34"	port="514" protocol="udp" / -->
+	
+	<log type="syslog" facility=""	target="127.0.0.1"	port="514" protocol="udp"/>
+	
+	<!-- log type="syslog" facility=""	target="192.168.0.34" port="514" protocol="udp" / -->
+
+</gslog>

@@ -1,0 +1,66 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40"> 
+    </td>
+    <td width="650"><b>Command line parameters&nbsp;<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9"> 
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="run2.htm">Jump start<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="run4.htm">Runtime options<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="run3.htm">Command line param.</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+      <br>
+    </td>
+    <td width="650" valign="top" align="left">CSL first saves all command line
+      parameters into a global array named mainArgVals. Then it loads<br>
+      &nbsp;the script given as parameter 1 and calls the function named <b>main</b>.
+      <p>Check it out by writing a new program args.csl:</p>
+      <pre>// args.csl
+// Main entry of the Script...
+main()
+{
+   for (var i=0; i&lt;sizeof(mainArgVals); i++)
+      sysLog(mainArgVals[i]);
+}
+</pre>
+      <p>Run this sample with the command:</p>
+      <pre><b>gex args my name is Quantix</b>
+</pre>
+      <p>The output will look like:</p>
+      <pre><b>gex
+args
+my
+name
+is
+Quantix</b></pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<service_poc>
+	<task id="0" type="synchronous" duration="2000" />
+	<task id="1" type="asynchronous" duration="2000" />
+	<task id="2" type="synchronous" duration="60000" />
+	<task id="3" type="asynchronous" duration="60000" />
+	<task id="4" type="synchronous" duration="85000" />
+	<task id="5" type="asynchronous" duration="85000" />
+</service_poc>

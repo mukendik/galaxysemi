@@ -1,0 +1,233 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>gexInteractive<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library
+      </a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>gexInteractive(
+  const section,      // section entry name
+  const field,        // field name
+  const value)        // field valu</pre>
+      <p>Lets you build single layer or multi-layers interactive charts within a 
+      script file, then have the Examinator application directly display the 
+      resulting charts. This scripting function is only available under 
+      Examinator-Pro. Examinator and all Standard Editions do not support this advanced function. With this 
+      function, you can:</p>
+      <ul>
+        <li>Create <b>interactive Histogram</b> chart (unlimited layers)</li>
+        <li>Create <b>interactive Trend</b> chart (unlimited layers)</li>
+        <li>Create <b>interactive Scatter</b> plot (unlimited layers)</li>
+      </ul>
+      <p>Note: Fields are not case sensitive.<br>
+      </p>
+      <h1><br>
+      Where to insert these script lines?<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>As these scripting functions are immediate commands and trigger the 
+      Examinator interface to switch to the Interactive page, they should always 
+      appear just after the call to the <font SIZE="2"><b>BuildReport()</b>
+      </font>function call; or just after the scripting command <font SIZE="2">
+      <b>gexBuildReport</b>(....) </font>which is located into the function
+      <font SIZE="2"><b>BuildReport()</b> </font></p>
+      <p>Example: Code in the script 'main()' function...</p>
+      <pre>....
+
+// Analyze data and build the report, do not show report page
+BuildReport();
+
+// Interactive commands start here!
+// Remove any existing layer in the stack: start from a blank page!
+gexInteractive('reset');
+
+// Create Histogram of test 1060
+gexInteractive('setX','1060');
+
+// Insert Layer#1
+gexInteractive('addLayer');
+
+// Draw Histogram chart for all the layers
+gexInteractive('Chart','Histogram');
+
+</pre>
+      <p>&nbsp;</p>
+      <p>Here is the list of Interactive actions you can conduct  using this script
+      function:</p>
+      <table border="1" width="646" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="108"><font color="#ffffff"><b>action</b></font></td>
+          <td bgColor="#0034aa" width="514"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="108"><b><a href="#reset">reset</a></b></td>
+          <td width="514">Erases all existing chart layers in memory</td>
+        </tr>
+        <tr>
+          <td width="108"><b><a href="#setX">setX</a></b></td>
+          <td width="514">Defines the Test / Parameter to plot if Histogram or 
+          Trend chart (or plot on the X axis if Scatter plot)</td>
+        </tr>
+        <tr>
+          <td width="108"><b><a href="#setY">setY</a></b></td>
+          <td width="514">Defines the Test / Parameter to plot on the Y axis 
+          (ignored under Histogram and Trend charts)</td>
+        </tr>
+        <tr>
+          <td width="108"><b><a href="#addLayer">addLayer</a></b></td>
+          <td width="514">Insert layer previously defined using the 
+          <a href="#setX">setX</a> and 
+          <a href="#setY">setY</a> actions</td>
+        </tr>
+        <tr>
+          <td width="108"><b><a href="#Chart">Chart</a></b></td>
+          <td width="514">Triggers Examinator to display the Interactive chart 
+          page and show your layers plotted.</td>
+        </tr>
+      </table>
+      <h1>Section: <a name="reset">reset</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p>Example:</p>
+      <pre>// Remove any existing layer in the stack: start from a blank page!
+gexInteractive('reset');
+</pre>
+      <pre>&nbsp;</pre>
+      <h1>Section: <a name="setX">setX</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Value</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_number</b></td>
+          <td width="507">Where <b>test_number</b> is the test number you want 
+          to chart (if charting a histogram or Trend) or chart on the X axis if 
+          the chart you build is a scatter plot.<br>
+          The test number can be in the format <b>XXX</b> (where XXX is the test 
+          number, eg: 1060), or <b>XXX.YYYY</b> (where XXX is the test number 
+          and YYYY the pinmap index, eg: 1060.17)</td>
+        </tr>
+      </table>
+      <p>Example: Overlay two tests (Interactive trend chart)</p>
+      <pre>// Remove any exiting layer
+gexInteractive('reset');
+
+// Define Parameter ID to plot
+gexInteractive('setX','1060');
+// Insert Layer#1
+gexInteractive('addLayer');
+
+// Define Parameter ID to plot
+gexInteractive('setX','2078');
+// Insert Layer#2
+gexInteractive('addLayer');</pre>
+      <pre> // Display Interactive Trend chart
+gexInteractive('Chart','Trend');</pre>
+      <h1><br>
+      Section: <a name="setY">setY</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+</h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Value</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>test_number</b></td>
+          <td width="507">Where <b>test_number</b> is the test number you want 
+          to chart on the Y axis for a Scatter plot. This function (setY) is 
+          ignored if charting Histogram or Trend charts.<br>
+          The test number can be in the format <b>XXX</b> (where XXX is the test 
+          number, eg: 1060), or <b>XXX.YYYY</b> (where XXX is the test number 
+          and YYYY the pinmap index, eg: 1060.17)</td>
+        </tr>
+      </table>
+&nbsp;<p>Example: Interactive Scatter plot (2 layers)</p>
+      <p><pre>// Remove any exiting layer
+gexInteractive('reset');
+
+// Define Parameter ID to plot in X
+gexInteractive('setX','1060');
+// Define Parameter ID to plot in Y
+gexInteractive('setY','1070');
+// Insert Layer#1
+gexInteractive('addLayer');
+      
+// Define Parameter ID to plot in X
+gexInteractive('setX','1081');
+// Define Parameter ID to plot in Y
+gexInteractive('setY','1082');
+// Insert Layer#2
+gexInteractive('addLayer');
+      
+// Display Interactive scatter plot
+gexInteractive('Chart','Scatter');
+      </pre></p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="addLayer">addLayer</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p>Have Examinator internally fills one layer structure (previously 
+      defined using setX and setY command). No argument for this command.<br>
+      <br>
+      Example:</p>
+      <pre>// Insert layer
+gexInteractive('add_Layer');</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="Chart">Chart</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Value</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_type</b></td>
+          <td width="507">Where <b>chart_type</b> is the type of chart you want 
+          to display. It is one of the following charting types: histogram, 
+          trend, or scatter. This command has an immediate effect and triggers 
+          Examinator to display the Interactive Chart page showing your layers.</td>
+        </tr>
+      </table>      
+      <p>Example:</p>
+      <pre>// Draw Histogram chart for all the layers
+gexInteractive('Chart','Histogram');</pre>
+      <p>&nbsp;</td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

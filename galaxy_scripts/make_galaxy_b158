@@ -1,0 +1,191 @@
+#!/bin/sh
+#set -x
+
+# Set platform-dependant variables
+SetPlatformEnv()
+{
+	Platform=`uname -s`
+	if [ ${Platform} = "SunOS" ]; then
+		DEVDIR=${HOME}/dev/galaxy_dev_b158
+		QTDIR=/usr/local/Trolltech/Qt-4.6.2
+		QTSRCDIR=/opt/qt/src
+		Makespec=solaris-g++
+		PlatformPrefix=sol
+		PlatformDir=solaris
+		OsType=unix
+		MakeTool=make
+	elif [ ${Platform} = "Linux" ]; then
+		DEVDIR=${HOME}/dev/galaxy_dev_b158
+		QTDIR=/usr/local/Trolltech/Qt-4.6.3
+		QTSRCDIR=/opt/qtsdk-2010.02/qt/src
+		Makespec=linux-g++
+		PlatformPrefix=linux
+		PlatformDir=linux
+		OsType=unix
+		MakeTool=make
+	else
+		DEVDIR=/i/galaxy_dev_b158
+		QTDIR=/c/Qt/2010.02.1/qt
+		QTSRCDIR=${QTDIR}/src
+		Makespec=win32-g++
+		PlatformPrefix=win32
+		PlatformDir=win32
+		OsType=win32
+		MakeTool=mingw32-make
+		PATH=${QTDIR}/../mingw/bin:${PATH}
+	fi
+	PATH=${QTDIR}/bin:${PATH}
+	export DEVDIR QTDIR PATH QTSRCDIR
+}
+
+# Log function (logs to screen and file)
+Log()
+{
+	echo `date`: ${1} | tee -a ${LogFile}
+}
+
+# Make function
+Make_Project()
+{
+	Log ""
+	Log "================================================================================"
+	Log " Project ${1}"
+	Log "================================================================================"
+	cd ${2}
+	Log " ==> GENERATING Makefile (qmake)..."
+	qmake -${OsType} -spec ${Makespec} -o Makefile_${PlatformPrefix} CONFIG+=production $1.pro 2>&1 | tee -a ${LogFile}
+	if [ ${CleanProjects} = "true" ]; then
+		Log " ==> CLEANING..."
+		Log ""
+		${MakeTool} -f Makefile_${PlatformPrefix} release-clean 2>&1 | tee -a ${LogFile}
+		Log ""
+	fi
+	Log " ==> COMPILING (make)..."
+	Log ""
+	${MakeTool} -f Makefile_${PlatformPrefix} release 2>&1 | tee -a ${LogFile}
+	Log ""
+}
+
+# Menu to get user choice
+Menu()
+{
+	echo ""
+	echo "Usage: make_galaxy [clean]"
+	echo ""
+	echo "1. Make galaxy_std_libraries"
+	echo "2. Make galaxy_qt_libraries"
+	echo "3. Make other_libraries"
+	echo "4. Make galaxy_products"
+	echo "5. Make all"
+	echo "6. Exit"
+	echo ""
+	printf "Enter your choice: "
+	read MenuChoice
+
+	ValidChoice=OK
+	MakeGalaxyStdLibraries=false
+	MakeGalaxyQtLibraries=false
+	MakeOtherLibraries=false
+	MakeGalaxyProducts=false
+	case ${MenuChoice} in
+		1)	MakeGalaxyStdLibraries=true;;
+		2)	MakeGalaxyQtLibraries=true;;
+		3)	MakeOtherLibraries=true;;
+		4)	MakeGalaxyProducts=true;;
+		5)	MakeGalaxyStdLibraries=true
+			MakeGalaxyQtLibraries=true
+			MakeOtherLibraries=true
+			MakeGalaxyProducts=true;;
+		6)	;;
+		*)	ValidChoice=NOK
+	esac
+}
+
+###########################################################################
+# Script begins here!!
+###########################################################################
+# Display menu and check user choice
+ValidChoice=NOK
+Menu
+while [ ${ValidChoice} = "NOK" ]; do
+	echo ""
+	echo "Invalid choice: ${MenuChoice}"
+	Menu
+done
+
+echo ""
+echo "Your choice: ${MenuChoice}"
+
+# Exit?
+if [ ${MenuChoice} = "6" ]; then
+	exit
+fi
+
+# Set platform-dependant variables.
+SetPlatformEnv
+
+# Check if projects should be cleaned first
+CleanProjects=false
+if [ ${1}_ok = "clean_ok" ]; then
+	CleanProjects=true
+fi
+
+# Make projects
+CurDir=${DEVDIR}/galaxy_scripts
+LogFile=${CurDir}/make_galaxy.txt
+rm ${LogFile} 2> /dev/null
+
+# Galaxy STD libraries ?
+if [ ${MakeGalaxyStdLibraries} = "true" ]; then
+	Log ""
+	Log "######################### COMPILING GALAXY STD LIBRARIES ######################"
+	Make_Project gstdl_utils_c ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_utils_c
+	Make_Project gstdl_utils ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_utils
+	Make_Project gstdl_stdf ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_stdf
+	Make_Project gstdl_jwsmtp ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_jwsmtp
+	Make_Project gstdl_info ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_info
+	Make_Project gstdl_errormgr ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_errormgr
+	Make_Project gstdl_blowfish_c ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_blowfish_c
+	Make_Project gstdl_atdftostdf ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_atdftostdf
+fi
+
+# Galaxy QT libraries ?
+if [ ${MakeGalaxyQtLibraries} = "true" ]; then
+	Log ""
+	Log "######################### COMPILING GALAXY QT LIBRARIES #######################"
+	Make_Project gqtl_ziparchive ${DEVDIR}/galaxy_libraries/galaxy_qt_libraries/gqtl_ziparchive
+	Make_Project gqtl_sysutils ${DEVDIR}/galaxy_libraries/galaxy_qt_libraries/gqtl_sysutils
+	Make_Project gqtl_filelock ${DEVDIR}/galaxy_libraries/galaxy_qt_libraries/gqtl_filelock
+	Make_Project gqtl_service ${DEVDIR}/galaxy_libraries/galaxy_qt_libraries/gqtl_service
+fi
+
+# Other libraries ?
+if [ ${MakeOtherLibraries} = "true" ]; then
+	Log ""
+	Log "######################### COMPILING OTHER LIBRARIES ###########################"
+	Make_Project qglviewer ${DEVDIR}/other_libraries/libqglviewer/qglviewer
+fi
+
+# Galaxy Products ?
+if [ ${MakeGalaxyProducts} = "true" ]; then
+	Log ""
+	Log "######################### COMPILING GALAXY PRODUCTS ###########################"
+	Make_Project gex-ls ${DEVDIR}/galaxy_products/gex_product/gex-ls
+	Make_Project gex-lm ${DEVDIR}/galaxy_products/gex_product/gex-lm
+	Make_Project gex-email ${DEVDIR}/galaxy_products/gex_product/gex-email
+	Make_Project gex-ftp ${DEVDIR}/galaxy_products/gex_product/gex-ftp
+	Make_Project gexdb_plugin_base ${DEVDIR}/galaxy_products/gex_product/plugins/gexdb_plugin_base
+	Make_Project gexdb_plugin_galaxy ${DEVDIR}/galaxy_products/gex_product/plugins/gexdb_plugin_galaxy
+	Make_Project gexdb_plugin_medtronic ${DEVDIR}/galaxy_products/gex_product/plugins/gexdb_plugin_medtronic
+	Make_Project gex ${DEVDIR}/galaxy_products/gex_product/gex
+fi
+
+# Done: check if errors occured
+Log ""
+if [ `grep -c " Error " ${LogFile}`_ok != "0_ok" ]; then
+	Log "Compilation done WITH ERRORS. Check ${LogFile}."
+else
+	Log "Compilation done WITH SUCCESS. Check ${LogFile}."
+fi
+Log ""
+

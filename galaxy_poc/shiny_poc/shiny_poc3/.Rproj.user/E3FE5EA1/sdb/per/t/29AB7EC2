@@ -1,0 +1,16 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n# \n# http://www.rstudio.com/shiny/\n#\n\nlibrary(shiny)\nlibrary(DBI)\nlibrary(RMySQL)\n\n#print(\"UI: Connecting to DB...\")\n\n#res <- dbSendQuery(con, \"select ss.hbin_no, hb.hbin_name, ss.bin_count from wt_hbin_stats_summary ss join wt_hbin hb on ss.hbin_no=hb.hbin_no where ss.bin_count>0 group by ss.hbin_no\")\n#res <- dbSendQuery(con, \"select * from wt_ptest_results where splitlot_id=1011000012 and ptest_info_id=1\")\n\ndistinct_test_info<-dbSendQuery(con, \"select distinct ptest_info_id from wt_ptest_results where splitlot_id=1011000012\")\nout<-NULL\nwhile(!dbHasCompleted( distinct_test_info ))\n{\n  #f<- fetch(res, n=1)\n  #chunk <- fetch(res, n = 10000)\n  #out <- c(out, doit(chunk))\n  #out<-c(out, chunk)\n  out<- fetch(distinct_test_info, n=10000)\n}\n\n\nshinyUI(  \n  fluidPage(\n  )\n    \n#   pageWithSidebar(\n#     # Application title\n#     headerPanel(\"Interactive mode\"),\n#     #headerPanel(con),\n#     # Sidebar with a slider input for number of bins\n#     #sidebarPanel(\n#     #  sliderInput(\"bins\",\"Number of bins:\", min = 1, max = 50, value = 30)\n#     #),\n#     sidebarPanel( \n#       #selectInput(\"dataset\", \"Test info ID:\", choices = c( out  ))\n#       selectInput(\"dataset\", \"Test:\", choices = c( test_infos[,2] )),\n#       selectInput(\"charttype\", \"Chart:\", choices = c( \"histogram\", \"trend\" ))\n#     ),\n#     # Show a plot of the generated distribution\n#     mainPanel(\n#       #textOutput(\"dist\")\n#       plotOutput(\"distPlot\")\n#     )\n#   ) # pageWithSidebar\n  \n) # shinyUI\n\n#dbDisconnect(con)\n#print(\"UI: disconnected.\")",
+    "created" : 1412254862576.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "118241362",
+    "id" : "29AB7EC2",
+    "lastKnownWriteTime" : 1412254946,
+    "path" : "G:/shiny_poc/shiny_poc3/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

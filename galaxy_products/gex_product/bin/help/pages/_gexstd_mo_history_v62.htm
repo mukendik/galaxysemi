@@ -1,0 +1,711 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Yield-Man V6.2 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">Yield-Man family : V6.2 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Yield-Man, PAT-Server)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_gexstd_mo_history.htm">Back to main releases history page</a><br><br>
+<!--       <a href="_gexstd_mo_history_v62_major.htm">V6.2 major enhancements</a><br> -->
+      <a href="#V6.2B157">V6.2 B157 release history</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.13 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.13 (15 December 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4158 - Update to CSV Parser - some tests have no names or data:</b>
+							   When some testName appears more than one time in a same run with a different testNumber, runs are incorrect and some test appears without the good testName.</li>
+			<li><b>Case 4141 - Update to SEMI E142 parser:</b>
+							   SEMI E142 parser now include wafermap origin location.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.11 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.11 (24 November 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4075 - Update to Mcube parser:</b>
+							   Start time is taken from the DTG of the first part in the file. add finish time and take it from the last DTG in the file so that the probe time is no longer 0.</li>
+			<li><b>Case 4040 - Add site # capability to the Amida parser:</b>
+							   Add the column to the parser that allows the site # column.</li>
+			<li><b>Case 3948 - DSTIM file won't process:</b>
+							   Update the Verigy dstim parser such that unknown event types are ignored.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.10 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.10 (10 November 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 3749 - Verigy 93000 parser:</b>
+							   The Verigy 93000 parser was enhanced to support files with data prior the TestFlowStartEventType marker.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.09 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.09 (03 November 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4008 - KLA/INF parser enhancement:</b>
+							   KLA/INF parser has been enhanced so that the setup_t, start_t, and finish_t timestamps are populated with current date/time at time of conversion, rather than with 0.</li>
+			<li><b>Case 4006 - Change MCube parser so that if good bins are not defined in the header, the file is rejected:</b>
+							   If no good bins are defined, do not assume all bins are bad, reject the file instead.</li>
+			<li><b>Case 3973 - GDF files are crashing YM:</b>
+							   Some GDF files are crashing Yield-Man on insertion. Crash only occurs when inserting into an RDB.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.08 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.08 (27 October 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 3974 - Incorrect detection of Adjacent edge die:</b>
+			                   Some adjacent edge die are not correctly detected when applying the GDBN algorithm.</li>
+            <li><b>Case 3966 - Excel converter truncates digits:</b>
+			                   When I convert our stdf datalog files to csv format with the converter, the data in the csv file is truncated to 6 significant figures.
+							   We are datalogging register values, and need the full value (up to ten digits, plus sign). If I do an STDF Records Dump (from the Quantix Toolbox), 
+							   I can see the full number of digits, so I know the data is correct in the stdf file.</li>
+            <li><b>Case 3900 - Update to Mcube Parser:</b>
+			                   Provide parser update per provided documentation."
+            <li><b>Case 3855 - CSV conversion has fewer delimiters than expected:</b>
+			                   When converting stdf to csv, the commas end on each part when the part has no more measurements. Even though there are more parameters. 
+							   So that comma count for parameters is 889 but the comma count for PID-2 for example is 885 & PID-4 is 886. In previous versions, the comma count 
+							   for each part matched that of the parameter count.</li>
+            <li><b>Case 3730 - CSV export doesn't export all the data:</b>
+			                   CSV export exports only the first line of data when tests have no name.</li>
+            <li><b>Case 3722 - Yield-Man and GEX crash if temporary STDF file already exist:</b>
+			                   When converting from a suported format other than STDF, Yield-Man and GEX crash if the target STDF file already exist.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.06 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.06 (03 September 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3698 - Add a File_Out argument to the script called after DataPump insertion:</b>
+                               The script that can be called after Yield-Man inserted a file through a DataPump ('Other' tab, 
+                               'Execute batch on insertion') will be passed an additional 11th argument, which is the destination 
+                               file name (after the inserted file has been moved, renamed...).</li>
+            </ul>
+          </td>
+        </tr>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 3685 - Application crash on ATDF->STDF conversion:</b>
+							   On a specific ATDF file, the application crashes during the ATDF->STDF conversion.
+							   This caused Yield-Man to shut down during execution of the datapump.
+							   Manually analyzing the incriminated file with Examinator also causes a crash.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.05 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.05 (30 August 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 3527 - YM insertions slow down over time:</b>
+                               YM insertions slow down significantly over time, ie going from about 30'' to about 10' in 24 hours of YM execution. Better control
+							   over 'Process events' messages during insertions, and more Trace messages to track the issue.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.04 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.04 (04 August 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 3505 - STDF files generated by PAT-Man are missing parametric data:</b>
+                               A bug was introduced in late B157 previews and final B157 version where the STDF files generated by PAT-Man after PAT processing only contain the test result records (PTR, MPR, FTR) for the first run of each site.</li>
+			<li><b>Case 3500 - YM appears to attempt to insert data file that doesn't exist:</b>
+                               YieldMan writes bogus entries to log file. The entries are written when YieldMan performs an RDB extraction, and then attempts to create the report.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.02 (21 July 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 3440 - Yield-Man daily admin task generates thousands of emails:</b>
+                               Yield-Man mistakenly generates tens of thousands of emails when the system clock is synchronized or changed. Gex-email just sends the emails without checking the dates which can be 100 years in the future.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.01 (13 July 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+			<li><b>Case 3411 - Problem with duplicate FT consolidated Soft bins after B10 update:</b>
+                               The consolidated yield #'s from the enterprise report, and the report center don't match. There are also multiple FT soft bins with the same # and similar names when pulling a product bins details report.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (06 July 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3194 - Bin names disappear when you run a consolidated Gex report on either Wafer or FT data:</b>
+                               Bin names disappear when you run a consolidated Gex report on either FT or Wafer data. They show up fine when running a "raw data" extraction.</li>
+            <li><b>Case 3163 - Add wafer ID to the FT_RUN table:</b>
+                               Add wafer ID to the FT_run table so that wafer maps can be made from final test data.</li>
+            <li><b>Case 2939 - SYL/SBL Line Item recipe editor phase 2. New SYL/SBL algorithms:</b>
+                               This enhancement would allow for individual line items to be edited in the SBL editor. In this phase, please provide for some new algorithms for SBL calculation:
+                               <ul>
+                               <li>Median +/- N* RobustSigma.</li>
+                               <li>Percentile rank. (Fail 0 to 1 percentile and/or 99-100 percentile).</li>
+                               <li>Q1 & Q3 +/- N*IQR.</li>
+                               </ul>
+                               </li>
+            <li><b>Case 2807 - Progress bar while connecting to databases:</b>
+                               A nice item to have would be a progress bar that displays while Quantix is attempting to connect to an external database.  On startup, Quantix sits non-responsive for a 10-15 seconds while it attempts to find its database connections.  A progress bar would prevent frustration in trying to click on items while Quantix is not responding.</li>
+            <li><b>Case 2735 - GEXDB B10 - Database format incremental release:</b>
+                               Quantix database enhancements, required to support new ER reports (originaly planned under JAsper); + other DB enhancements</li>
+            <li><b>Case 2350 - Create a tool, such as trigger file, to run SYL/SBL at the Probe-Lot level:</b>
+                               Provide the ability to run SYL/SBL at the wafer probe lot level. This requires a mechanism for informing Quantix when to run SYL/SBL. A trigger file mechanism has been implemented to support this feature.</li>
+            <li><b>Case 1794 - Check databases only once at startup or when going to database admin:</b>
+                               The database connections should be checked only once at startup and when clicking the 'Reload' button in the 'Database Admin' page.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+		<!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 3299 - Gex-FTP sequence stopped unexpectedly if a timestamp file is in a subfolder:</b>
+                               Gex-FTP sequence stopped unexpectedly if a timestamp file is in a subfolder and the option ""scan subfolder"" is checked. Error message: FTP error: Removing file failed: /Remote_Folder/gex_ftp_timestampfile.temp.txt.gex: The system cannot find the file specified.</li>
+            <li><b>Case 3256 - Wafer consolidation tables in gexdb b10 are not populating correctly:</b>
+                               When a retest of a wafer is inserted before the original test of the wafer, it uses the last inserted (test) instead of the retest die counts in the wt_consolidated_wafer table. Therefore it is not using the testing date, for populating this table.</li>
+            <li><b>Case 3223 - 'LOCKED' gexDB in Quantix plugin:</b>
+                               When an error appear in consolidation/update process, functions are returned WITHOUT unlocking tables. Consequence is that the gexbd is totally locked inside gex until restarting.</li>
+            <li><b>Case 3180 - File wrongly rejected due to unexpected PASS bins:</b>
+                               When the option to reject files with PASS Hard bins not in specific list is activated on Bin 1, Eagle wafer files get rejected, because the first PIR/PRR run is not a real valid run, but only contains statis test info. The binning is 65535, and considered PASS.</li>
+            <li><b>Case 3107 - Errors when updating to Gexdb B10:</b>
+                               When updating to Gexdb_B10 there are errors due to the indexes in all the ptest_info, and mptest_info tables.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (preview 20100611)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3184 - New Parser for MCube ASCII data format</b>
+                               </li>
+            <li><b>Case 3183 - Parser for KVD:</b>
+                               Need parser for KVD tester file format.  We committed to deliver this parser ( based on sample file provided ) if the customer , Digital Imaging Systems in Germany, purchased GEX.  Purchase order received on June 2, 2010.  THis is a new customer who expects to expand to multiple licenses of GEX Production in the future.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+		<!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 3157 - DL4 file causes crash:</b>
+                               A DL4 file caused GEX to crash.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (preview 20100527)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 2248 - Allow the option to change the SYA limits manually:</b>
+                               They would like the option to override an SYA limit. They understand that this would no longer follow the 
+                               automotive SYA spec, but sometimes there are internal reasons in which they would like to set a limit for a 
+                               specific bin in the sya. Everyone one of their engineers asked for this.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+		<!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 2361 - gexdb_mysql_install_b9.sql missing ft_prod_alarm CREATE statement:</b>
+                               I found this when trying to run Purge Invalid Splitlots. MySQL gave an error message that said "Err] 1146 - Table 
+                               'gexdb_csr.ft_prod_alarm' doesn't exist.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (preview 20100517)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3053 - Parser for gdf files enhanced:</b>
+                               For the moment, to be compatible with our converter, the fields supported are the same as STDF format. 
+                               But after looking at a lot of file examples, we could add other GDF fields if it is necessary to enhance 
+                               the GDF to STDF parser.</li>
+            <li><b>Case 3004 - ACCO STS8200 parser support, mainly for Asian market:</b>
+                               Implemented STS8200 parser for ACCO files.</li>
+            <li><b>Case 2000 - Quantix parser for TSMC WPR files:</b>
+                               New parser for TSMC WPR files.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 2607 - Different scaling between file analysis and database:</b>
+                               The scaling in the reports is sometimes different when analyzing the data file, and when inserting this 
+                               data file into the GEXDB, and then using 'Analyze a dataset' on the corresponding data. The same tests, 
+                               with the same Options set up, scales differently.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (preview 20100428)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 2502 - Add Site ID to e-test tables:</b>
+                               Allow the ability to split the dataset by site ID in e-test data.</li>
+            <li><b>Case 3010 - Option added to reject files with PASS Hard bins not in specific list:</b>
+							   An option has been added to the Yield-Man/PAT-Server Datapump task ('Other' tab) to reject files with Hard binnings that are not part of a specified list of binnings.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 2740 - ft_prod_alarm table does not exist in gexdb_mysql_install_b9.sql:</b>
+                               ft_prod_alarm table creation statement does not exist in gexdb_mysql_install_b9.sql. Causes error message when running purge invalid splitlots.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+</body></html>

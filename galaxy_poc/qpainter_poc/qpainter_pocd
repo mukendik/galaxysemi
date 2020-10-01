@@ -1,0 +1,68 @@
+#!/bin/bash
+
+export APP_PATH=/home/simonp/DEV/galaxy_repos/galaxy_dev_master/galaxy_poc/qpainter_poc
+export PATH=/usr/local/bin:/usr/bin:/bin
+export LD_LIBRARY_PATH=$APP_PATH:$APP_PATH/lib:/usr/lib:/usr/local/lib:/home/simonp/DEV/galaxy_repos/galaxy_dev_master/galaxy_libraries/galaxy_qt_libraries/lib/linux64/
+export HOME=/root
+
+procname=./qpainter_poc
+
+# ---------------------------------------------------------------------------- #
+# killproc
+# ---------------------------------------------------------------------------- #
+killproc()
+{
+    pid=`pgrep -f $procname`
+    if [ -n "$pid" ]; then
+        kill $pid >/dev/null 2>&1
+    fi
+
+    sleep 1
+}
+
+# ---------------------------------------------------------------------------- #
+# Check if process is running
+# ---------------------------------------------------------------------------- #
+checkproc()
+{
+    pgrep -f $procname\$ >/dev/null
+    return $?
+}
+
+# ---------------------------------------------------------------------------- #
+# main
+# ---------------------------------------------------------------------------- #
+
+
+case "$1" in
+    start)
+        if checkproc; then
+            echo "[G-INFO] qpainter_poc daemon is already running !"
+            exit 1
+        fi
+        echo "[G-INFO] Starting qpainter_poc daemon"
+        cd $APP_PATH
+        eval $procname -platform minimal
+        ;;
+    stop)
+        if ! checkproc; then
+            echo "[G-INFO] qpainter_poc daemon is not running !"
+            exit 1
+        fi
+        echo "[G-INFO] Stopping qpainter_poc daemon"
+        cd $APP_PATH
+        eval $procname -t
+        ;;
+    status)
+        if checkproc; then
+            echo "[G-INFO] qpainter_poc daemon is running"
+        else
+            echo "[G-INFO] qpainter_poc daemon is not running"
+        fi
+        ;;
+    *)
+        echo "[G-INFO] Usage: $0 {start|stop}"
+        ;;
+esac
+
+exit 0

@@ -1,0 +1,5 @@
+<external_files>
+  <promis format="vishay-lvm" type="final">./input/FetTestSummary_LVM_FT/reject_bad_test_number/PROMIS_DATA_FT.TXT</promis> 
+  <binmap format="vishay-lvm" type="final" category="final_tests">./input/FetTestSummary_LVM_FT/reject_bad_test_number/CSVFinalTestsFile20180402.csv</binmap> 
+  <binmap format="vishay-lvm" type="final" category="sort_entries">./input/FetTestSummary_LVM_FT/reject_bad_test_number/CSVSortEntriesFile20180402.csv</binmap> 
+</external_files>

@@ -1,0 +1,27 @@
+TESEC Spektra Test System,,,
+ 06/14/18 15:02:37,,,
+Station,A,,
+Test by,Branch,,
+Polarity,NPN,,
+Test File,SUD50N04-8M8P_09,,
+Lot Name,K10D565.16,,
+Device Name,SUD50N04_8M8P_4GE3,,
+Opeator,,,
+Comment,,,
+Bin,Sort Name,Count,Percent
+3,19_CONT       ,5,0.10%
+4,1000_GDS SHORT  ,0,0.00%
+4,1001_GS SHORT   ,1,0.00%
+4,0_DS SHORT   ,6,0.00%
+4,1007_S-OPEN     ,0,0.00%
+4,1003_G-OPEN     ,1,0.00%
+5,21_IDSS    ,1,0.00%
+5,56_RDON       ,1,0.00%
+5,3_HV-IGSS    ,0,0.00%
+5,31_VTH     ,0,0.00%
+5,71_VF      ,0,0.00%
+5,36_VDSON   ,0,0.00%
+5,41_BVDSS   ,0,0.00%
+1,SUD50N04-8M8P  ,9553,99.90%
+3,1016_REJ            ,0,0.00%
+Total,,9562,

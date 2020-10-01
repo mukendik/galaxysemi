@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="W2" printOrder="Horizontal" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true">
+	<parameter name="PTIME_IC" class="java.lang.String">
+		<parameterDescription><![CDATA[Time frequency : enter Day, Week, Month or Quarter]]></parameterDescription>
+		<defaultValueExpression><![CDATA["month"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PFROMDATE_IC" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new Date(new Date().getYear(), 0, 1)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PTODATE_IC" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new Date()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PWAFERZPARAMETER_IC" class="java.lang.String">
+		<defaultValueExpression><![CDATA["disabled"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PSHOWTABLES_IC" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[new Boolean("true")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PFILTERSERIES_IC" class="java.lang.String">
+		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PVERSION" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0.8 (2009 Dec 17th, Beta)"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PFILTER1_IC" class="java.lang.String">
+		<defaultValueExpression><![CDATA["disabled"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PFILTER1VALUE_IC" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PFILTER2_IC" class="java.lang.String">
+		<defaultValueExpression><![CDATA["disabled"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PFILTER2VALUE_IC" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PBINNUMBER_IC" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PBINTYPE_IC" class="java.lang.String">
+		<defaultValueExpression><![CDATA["h"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PFILTER3_IC" class="java.lang.String"/>
+	<parameter name="PFILTER3VALUE_IC" class="java.lang.String"/>
+	<parameter name="PYIELDMAX_IC" class="java.lang.Float">
+		<defaultValueExpression><![CDATA[new Float(100)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PYIELDMIN_IC" class="java.lang.Float">
+		<defaultValueExpression><![CDATA[new Float(0)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Documents and Settings\\HerveT\\Local Settings\\Temp\\jstmp\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select
+	T.xparameter as xparameter,
+	T.gross_die as gross_die,
+	T.parts as parts,
+	T.bin_parts as bin_parts,
+	(T.bin_parts / T.gross_die) * 100 as gross_yield,
+	(T.bin_parts / T.parts) * 100 as yield,
+	T.zparameter as zparameter,
+	T.orderparameter as orderparameter
+from
+(
+	select
+		TCW.$P!{PTIME_IC} as xparameter,
+		SUM(TCW.gross_die) AS gross_die,
+		SUM(TCW.parts) AS parts,
+		SUM(case when THB.nb_parts is null then 0 else THB.nb_parts end) AS bin_parts,
+		case('$P!{PWAFERZPARAMETER_IC}') when 'disabled' then concat('Bin ', '$P!{PBINNUMBER_IC}') else TCW.$P!{PWAFERZPARAMETER_IC} end as zparameter,
+		TCW.$P!{PWAFERZPARAMETER_IC} as orderparameter
+	from
+		wt_consolidated_wafer TCW
+	inner join
+	(
+		select distinct TL.$P!{PBINTYPE_IC}bin_no from wt_lot_$P!{PBINTYPE_IC}bin TL where TL.$P!{PBINTYPE_IC}bin_no = SUBSTRING_INDEX('$P!{PBINNUMBER_IC}', ' -', 1)
+	) BINLIST
+	left outer join wt_wafer_$P!{PBINTYPE_IC}bin THB
+	on THB.lot_id=TCW.lot_id AND THB.wafer_id=TCW.wafer_id AND THB.$P!{PBINTYPE_IC}bin_no=BINLIST.$P!{PBINTYPE_IC}bin_no
+
+	where
+		date( from_unixtime(TCW.start_t)) >= date($P{PFROMDATE_IC})
+		and date(from_unixtime(TCW.start_t)) <= date($P{PTODATE_IC})			
+		AND TCW.$P!{PWAFERZPARAMETER_IC} like CASE('$P!{PFILTERSERIES_IC}') WHEN 'null' THEN '%' ELSE '$P!{PFILTERSERIES_IC}' END
+		AND TCW.$P!{PFILTER1_IC} like CASE('$P!{PFILTER1VALUE_IC}') WHEN 'null' THEN '%' ELSE '$P!{PFILTER1VALUE_IC}' END
+		AND TCW.$P!{PFILTER2_IC} like CASE('$P!{PFILTER2VALUE_IC}') WHEN 'null' THEN '%' ELSE '$P!{PFILTER2VALUE_IC}' END
+		AND TCW.$P!{PFILTER3_IC} like CASE('$P!{PFILTER3VALUE_IC}') WHEN 'null' THEN '%' ELSE '$P!{PFILTER3VALUE_IC}' END
+
+	group by xparameter, zparameter, BINLIST.$P!{PBINTYPE_IC}bin_no
+) T
+
+order by xparameter, gross_die, zparameter]]>
+	</queryString>
+	<field name="xparameter" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="parts" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bin_parts" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gross_die" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="yield" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gross_yield" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="zparameter" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="orderparameter" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="XAxis">
+		<groupExpression><![CDATA[$F{xparameter}]]></groupExpression>
+		<groupHeader>
+			<band>
+				<printWhenExpression><![CDATA[new Boolean($P{PSHOWTABLES_IC}.booleanValue())]]></printWhenExpression>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="2">
+				<printWhenExpression><![CDATA[new Boolean($P{PSHOWTABLES_IC}.booleanValue())]]></printWhenExpression>
+				<line>
+					<reportElement isPrintRepeatedValues="false" x="1" y="0" width="400" height="1" printWhenGroupChanges="XAxis"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="668">
+			<textField>
+				<reportElement x="1" y="0" width="555" height="51"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Wafer Test Binning Trend"]]></textFieldExpression>
+			</textField>
+			<multiAxisChart>
+				<chart isShowLegend="true" evaluationTime="Report">
+					<reportElement isPrintRepeatedValues="false" x="0" y="174" width="554" height="447"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend position="Top"/>
+				</chart>
+				<multiAxisPlot>
+					<plot/>
+					<axis>
+						<lineChart>
+							<chart isShowLegend="true">
+								<reportElement x="0" y="0" width="0" height="0" backcolor="#FFFFFF"/>
+								<chartTitle color="#000000"/>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF" position="Top"/>
+							</chart>
+							<categoryDataset>
+								<categorySeries>
+									<seriesExpression><![CDATA[$F{zparameter}+" - Yield"]]></seriesExpression>
+									<categoryExpression><![CDATA[$F{xparameter}]]></categoryExpression>
+									<valueExpression><![CDATA[$F{gross_yield}]]></valueExpression>
+									<itemHyperlink/>
+								</categorySeries>
+							</categoryDataset>
+							<linePlot>
+								<plot labelRotation="-45.0">
+									<seriesColor seriesOrder="0" color="#BA2525"/>
+									<seriesColor seriesOrder="1" color="#9191F7"/>
+									<seriesColor seriesOrder="2" color="#C4C426"/>
+									<seriesColor seriesOrder="3" color="#026323"/>
+									<seriesColor seriesOrder="4" color="#A668A6"/>
+									<seriesColor seriesOrder="5" color="#467474"/>
+									<seriesColor seriesOrder="6" color="#A74504"/>
+									<seriesColor seriesOrder="7" color="#3D7E3D"/>
+									<seriesColor seriesOrder="8" color="#421C42"/>
+									<seriesColor seriesOrder="9" color="#3B3B81"/>
+									<seriesColor seriesOrder="10" color="#00386C"/>
+									<seriesColor seriesOrder="11" color="#3E3E27"/>
+								</plot>
+								<categoryAxisLabelExpression><![CDATA[$P{PTIME_IC}]]></categoryAxisLabelExpression>
+								<categoryAxisFormat>
+									<axisFormat>
+										<labelFont/>
+										<tickLabelFont/>
+									</axisFormat>
+								</categoryAxisFormat>
+								<valueAxisLabelExpression><![CDATA["Yield (%)"]]></valueAxisLabelExpression>
+								<valueAxisFormat>
+									<axisFormat>
+										<labelFont/>
+										<tickLabelFont/>
+									</axisFormat>
+								</valueAxisFormat>
+								<rangeAxisMinValueExpression><![CDATA[$P{PYIELDMIN_IC}]]></rangeAxisMinValueExpression>
+								<rangeAxisMaxValueExpression><![CDATA[$P{PYIELDMAX_IC}]]></rangeAxisMaxValueExpression>
+							</linePlot>
+						</lineChart>
+					</axis>
+					<axis>
+						<barChart>
+							<chart isShowLegend="true">
+								<reportElement x="0" y="0" width="0" height="0" backcolor="#FFFFFF"/>
+								<chartTitle color="#000000"/>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF" position="Top"/>
+							</chart>
+							<categoryDataset>
+								<categorySeries>
+									<seriesExpression><![CDATA[$F{zparameter}+ " - Vol."]]></seriesExpression>
+									<categoryExpression><![CDATA[$F{xparameter}]]></categoryExpression>
+									<valueExpression><![CDATA[$F{bin_parts}]]></valueExpression>
+									<itemHyperlink/>
+								</categorySeries>
+							</categoryDataset>
+							<barPlot>
+								<plot>
+									<seriesColor seriesOrder="0" color="#FF3333"/>
+									<seriesColor seriesOrder="1" color="#3333FF"/>
+									<seriesColor seriesOrder="2" color="#FFFF00"/>
+									<seriesColor seriesOrder="3" color="#009933"/>
+									<seriesColor seriesOrder="4" color="#FF99FF"/>
+									<seriesColor seriesOrder="5" color="#99FFFF"/>
+									<seriesColor seriesOrder="6" color="#FF6600"/>
+									<seriesColor seriesOrder="7" color="#66FF66"/>
+									<seriesColor seriesOrder="8" color="#990099"/>
+									<seriesColor seriesOrder="9" color="#9999FF"/>
+									<seriesColor seriesOrder="10" color="#2B88DE"/>
+									<seriesColor seriesOrder="11" color="#666600"/>
+								</plot>
+								<categoryAxisFormat>
+									<axisFormat>
+										<labelFont/>
+										<tickLabelFont/>
+									</axisFormat>
+								</categoryAxisFormat>
+								<valueAxisLabelExpression><![CDATA["Volume"]]></valueAxisLabelExpression>
+								<valueAxisFormat>
+									<axisFormat>
+										<labelFont/>
+										<tickLabelFont/>
+									</axisFormat>
+								</valueAxisFormat>
+							</barPlot>
+						</barChart>
+					</axis>
+				</multiAxisPlot>
+			</multiAxisChart>
+			<textField>
+				<reportElement x="253" y="61" width="178" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($P{PBINTYPE_IC}.matches("s") ? "Soft bin" : "Hard bin") + " = "+$P{PBINNUMBER_IC}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement x="201" y="61" width="52" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Binning : "]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="false">
+				<reportElement x="201" y="82" width="230" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[new Boolean($P{PWAFERZPARAMETER_IC}.matches("disabled") == false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PFIELD_NAME">
+					<subreportParameterExpression><![CDATA[$P{PWAFERZPARAMETER_IC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PFILTER_LABEL">
+					<subreportParameterExpression><![CDATA["Serie :"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PFIELD_VALUE">
+					<subreportParameterExpression><![CDATA[$P{PFILTERSERIES_IC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["repo:/Resources/PARAMETER_JRXML"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="false">
+				<reportElement x="201" y="102" width="230" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[new Boolean($P{PFILTER1_IC}.matches("disabled") == false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PFIELD_NAME">
+					<subreportParameterExpression><![CDATA[$P{PFILTER1_IC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PFILTER_LABEL">
+					<subreportParameterExpression><![CDATA["Filter 1 :"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PFIELD_VALUE">
+					<subreportParameterExpression><![CDATA[$P{PFILTER1VALUE_IC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["repo:/Resources/PARAMETER_JRXML"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="false">
+				<reportElement x="201" y="122" width="230" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[new Boolean($P{PFILTER2_IC}.matches("disabled") == false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PFIELD_NAME">
+					<subreportParameterExpression><![CDATA[$P{PFILTER2_IC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PFILTER_LABEL">
+					<subreportParameterExpression><![CDATA["Filter 2 :"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PFIELD_VALUE">
+					<subreportParameterExpression><![CDATA[$P{PFILTER2VALUE_IC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["repo:/Resources/PARAMETER_JRXML"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="false">
+				<reportElement x="201" y="142" width="230" height="20" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[new Boolean($P{PFILTER3_IC}.matches("disabled") == false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PFIELD_NAME">
+					<subreportParameterExpression><![CDATA[$P{PFILTER3_IC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PFILTER_LABEL">
+					<subreportParameterExpression><![CDATA["Filter 3 :"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PFIELD_VALUE">
+					<subreportParameterExpression><![CDATA[$P{PFILTER3VALUE_IC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["repo:/Resources/PARAMETER_JRXML"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="29">
+			<printWhenExpression><![CDATA[new Boolean($P{PSHOWTABLES_IC}.booleanValue())]]></printWhenExpression>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<printWhenExpression><![CDATA[new Boolean($P{PSHOWTABLES_IC}.booleanValue())]]></printWhenExpression>
+			<textField>
+				<reportElement x="1" y="0" width="99" height="20" backcolor="#CCCCCC"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PTIME_IC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="0" width="100" height="20" backcolor="#CCCCCC"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Volume"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="0" width="100" height="20" backcolor="#CCCCCC"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Yield"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="101" height="20" backcolor="#CCCCCC"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[new String($P{PWAFERZPARAMETER_IC}.matches( "disabled" ) ? "" : $P{PWAFERZPARAMETER_IC})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23">
+			<printWhenExpression><![CDATA[new Boolean($P{PSHOWTABLES_IC}.booleanValue())]]></printWhenExpression>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="0" y="3" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{xparameter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="3" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{bin_parts}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="3" width="101" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[new String($P{PWAFERZPARAMETER_IC}.matches( "disabled" ) ? "" : $F{zparameter})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="3" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gross_yield}.setScale(2,BigDecimal.ROUND_DOWN).toString()+" %"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="100" y="0" width="301" height="1"/>
+			</line>
+			<line>
+				<reportElement isPrintRepeatedValues="false" x="1" y="0" width="400" height="1" printWhenGroupChanges="XAxis"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band>
+			<printWhenExpression><![CDATA[new Boolean($P{PSHOWTABLES_IC}.booleanValue())]]></printWhenExpression>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="19">
+			<textField>
+				<reportElement x="100" y="0" width="183" height="19"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Version "+$P{PVERSION}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="1" y="0" width="99" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="346" y="0" width="170" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="516" y="0" width="39" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image vAlign="Middle" onErrorType="Icon">
+				<reportElement x="301" y="0" width="45" height="19"/>
+				<imageExpression class="java.lang.String"><![CDATA["repo:/Resources/galaxyb.GIF"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="89">
+			<textField>
+				<reportElement x="1" y="0" width="554" height="89"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Notes :<br> - Total parts measures have been computed using consolidated data. <br> - The Yield measure is computed from the total number of parts with the specified binning(s) and the total gross die.<br>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

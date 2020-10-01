@@ -1,0 +1,20 @@
+FAR:A|4|2|
+MIR:ED47D75|NGGG25F8XIZ|||WSO813|03:09:18 2-NOV-2017|03:09:18 2-NOV-2017||P|1|ED47D75.2||N||||||||||1S||W78CAB|SM||SC4116DY||||||||SOIC8||
+SDR:||||FET-64||||ITC-34||RG-47||||||||
+TSR:||3|3/103|P|8120|1|||||||||
+TSR:||319|19/119|P|8120|3|||||||||
+TSR:||126|56/156|P|8120|6|||||||||
+TSR:||1003|G-open|P|8120|2|||||||||
+TSR:||1007|Ass'y Rejects|P|8120|115|||||||||
+TSR:||1011|Vision Rej|P|8120|30|||||||||
+TSR:||1013|Unknown|P|8120|163|||||||||
+SBR:||1|7800|P|
+SBR:||6|1|F|IGSS @ + 120% VGS
+SBR:||319|3|F|KEL @ 50mA
+SBR:||18|6|F|rDSon #1 @ VGS= 10V
+SBR:||1003|2|F|G-open
+SBR:||1007|115|F|Ass'y Rejects
+SBR:||1011|30|F|Vision Rej
+SBR:||1013|163|F|Unknown
+DTR:<cmd> die-tracking die=1;wafer_product=NGGG25F8XIZ;wafer_lot=ED47D75;wafer_sublot=ED47D75.2
+MRR:03:09:18 2-NOV-2017|||

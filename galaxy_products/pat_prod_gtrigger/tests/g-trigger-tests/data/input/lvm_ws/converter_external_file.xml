@@ -1,0 +1,4 @@
+<external_files>
+	<promis format="vishay-lvm" type="wafer" mode="prod">./promis_data.txt</promis>
+  <binmap format="vishay-lvm" type="wafer">./Vishay_Test_Binning_Mapping.csv</binmap>
+</external_files>

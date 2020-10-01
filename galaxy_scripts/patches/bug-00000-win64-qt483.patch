@@ -1,0 +1,13 @@
+diff -ur qt-everywhere-commercial-src-4.8.3/src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h qt-everywhere-commercial-new-4.8.3/src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h
+--- qt-everywhere-commercial-src-4.8.3/src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	2012-09-12 12:20:50.000000000 +0200
++++ qt-everywhere-commercial-new-4.8.3/src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	2012-10-15 17:04:45.604125737 +0200
+@@ -1044,7 +1044,8 @@
+    On x86-64 we use a single fixed mmap, on other platforms we mmap on demand. */
+ #if ENABLE(ASSEMBLER)
+ #if CPU(X86_64)
+-#define ENABLE_EXECUTABLE_ALLOCATOR_FIXED 1
++//#define ENABLE_EXECUTABLE_ALLOCATOR_FIXED 1
++#define ENABLE_EXECUTABLE_ALLOCATOR_DEMAND 1
+ #else
+ #define ENABLE_EXECUTABLE_ALLOCATOR_DEMAND 1
+ #endif

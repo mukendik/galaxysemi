@@ -1,0 +1,657 @@
+<project>
+    <shortName>la</shortName>
+    <fullName>GS License Activation Utility</fullName>
+    <version>${env(BUILD)}</version>
+    <installerFilename>${project.vendor}-${product_shortname}-${env(VERSION)}-${env(GROUP)}-${env(ARCH)}.${platform_exec_suffix}</installerFilename>
+    <readmeFile>readme/readme.txt</readmeFile>
+    <licenseFile>../bin/help/pages/license.txt</licenseFile>
+    <htmlLicenseFile>../bin/pages/license.htm</htmlLicenseFile>
+    <leftImage>install-logo.png</leftImage>
+    <logoImage>install-icon.png</logoImage>
+    <splashImage>install-splash.png</splashImage>
+    <requireInstallationByRootUser>1</requireInstallationByRootUser>
+    <componentList>
+        <componentGroup>
+            <name>Galaxy_la</name>
+            <description>GS_License_Activation_Utility</description>
+            <canBeEdited>0</canBeEdited>
+            <selected>1</selected>
+            <show>1</show>
+            <componentList>
+                <component>
+                    <name>GSla</name>
+                    <description>License-Activation</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>1</show>
+                    <folderList>
+                        <folder>
+                            <description>root_unix</description>
+                            <destination>${installdir}</destination>
+                            <name>root_unix</name>
+                            <platforms>linux linux-x64 osx</platforms>
+                            <distributionFileList>
+                                <distributionFile>
+                                    <origin>../bin/GS-License-Activation-Utility/galaxy-la</origin>
+                                </distributionFile>
+                            </distributionFileList>
+                        </folder>
+                        <folder>
+                            <description>root_win</description>
+                            <destination>${installdir}</destination>
+                            <name>root_win</name>
+                            <platforms>windows</platforms>
+                            <distributionFileList>
+                                <distributionFile>
+                                    <origin>../bin/GS-License-Activation-Utility/galaxy-la.exe</origin>
+                                </distributionFile>
+                                <distributionFile>
+                                    <origin>../gex-license-activation/sources/gs_act.ico</origin>
+                                </distributionFile>
+                            </distributionFileList>
+                        </folder>
+                    </folderList>
+                    <startMenuShortcutList>
+                        <startMenuShortcut>
+                            <comment></comment>
+                            <name>License-Activation</name>
+                            <runAsAdmin>0</runAsAdmin>
+                            <runInTerminal>0</runInTerminal>
+                            <windowsExec>${installdir}/galaxy-la.exe</windowsExec>
+                            <windowsExecArgs>-style fusion</windowsExecArgs>
+                            <windowsIcon>${installdir}/gs_act.ico</windowsIcon>
+                            <windowsPath>${installdir}</windowsPath>
+                        </startMenuShortcut>
+                    </startMenuShortcutList>
+                </component>
+                <component>
+                    <name>validatorComponent</name>
+                    <description>validator</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>0</show>
+                </component>
+            </componentList>
+            <folderList>
+                <folder>
+                    <description>fnp_utils_all</description>
+                    <destination>${installdir}/</destination>
+                    <name>fnp_utils_all</name>
+                    <platforms>all</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>../bin/GS-License-Activation-Utility/*</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>lib</description>
+                    <destination>${installdir}/lib</destination>
+                    <name>libnix</name>
+                    <platforms>linux linux-x64 osx</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/lib/libQt5DBus.so*</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/lib/libQt5Core.{so*,*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/lib/libQt5Gui.{so*,*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/lib/libQt5Network.{so*,*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/lib/libQt5Widgets.{so*,*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libicudata.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-util.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-icccm.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-xfixes.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-sync.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-randr.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-keysyms.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-image.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-dpms.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-render-util.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-render.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-shm.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libxcb-shape.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-render-util.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-render.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-shm.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-shape.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-util.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-icccm.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-xfixes.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-sync.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-randr.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-keysyms.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-image.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/opt/X11/lib/libxcb-dpms.{*dylib}</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>lib</description>
+                    <destination>${installdir}/lib</destination>
+                    <name>libosx</name>
+                    <platforms>osx</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/lib/libQt5PrintSupport.*dylib</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>lib</description>
+                    <destination>${installdir}/lib</destination>
+                    <name>liblinux32</name>
+                    <platforms>linux</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libgfortran.{so.1*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libreadline.{so.5*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/lib/libtermcap.{so.2*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libicuuc.{so.52*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libicui18n.{so.52*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libgomp.{so.1*}</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>lib</description>
+                    <destination>${installdir}/lib</destination>
+                    <name>liblinux64</name>
+                    <platforms>linux-x64</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib64/libgfortran.{so.1*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib64/libreadline.{so.5*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/lib64/libtermcap.{so.2*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libicuuc.{so.52*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib/libicui18n.{so.52*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>/usr/lib64/libgomp.{so.1*}</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>lib</description>
+                    <destination>${installdir}</destination>
+                    <name>libwin</name>
+                    <platforms>windows</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <origin>${env(QTDIR)}/lib/Qt5Gui.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>${env(QTDIR)}/lib/Qt5Network.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>${env(QTDIR)}/lib/Qt5Core.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>${env(QTDIR)}/lib/Qt5Widgets.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>c:/icu/dist/lib/icuin52.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>c:/icu/dist/lib/icuuc52.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>c:/icu/dist/lib/icudt52.dll</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>libplatformsnix</description>
+                    <destination>${installdir}/platforms</destination>
+                    <name>libplatformsnix</name>
+                    <platforms>linux linux-x64 osx</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/plugins/platforms/libqlinuxfb.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/plugins/platforms/libqxcb.{so*}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/plugins/platforms/libqcocoa.{*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/plugins/platforms/libqminimal.{so*,*dylib}</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>${env(QTDIR)}/plugins/platforms/libqoffscreen.{so*,*dylib}</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>libplatformswin</description>
+                    <destination>${installdir}/platforms</destination>
+                    <name>libplatformswin</name>
+                    <platforms>windows</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <origin>${env(QTDIR)}/plugins/platforms/qminimal.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>${env(QTDIR)}/plugins/platforms/qoffscreen.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>${env(QTDIR)}/plugins/platforms/qwindows.dll</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>libwin32</description>
+                    <destination>${installdir}</destination>
+                    <name>libwin32</name>
+                    <platforms>windows</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>c:/MinGW/bin/mingwm10.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>c:/MinGW/bin/libgcc_s_dw2-1.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>c:/MinGW/bin/libwinpthread*-1.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <allowWildcards>1</allowWildcards>
+                            <origin>c:/MinGW/bin/libstdc++*-6.dll</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                    <shouldPackRuleList>
+                        <compareText logic="equals" text="${arch}" value="x32"/>
+                    </shouldPackRuleList>
+                </folder>
+            </folderList>
+        </componentGroup>
+    </componentList>
+    <preBuildActionList>
+        <setInstallerVariable>
+            <name>project.enableEncryption</name>
+            <value>1</value>
+            <ruleList>
+                <compareText>
+                    <logic>does_not_equal</logic>
+                    <text>${pw}</text>
+                    <value></value>
+                </compareText>
+            </ruleList>
+        </setInstallerVariable>
+        <setInstallerVariable>
+            <name>project.encryptionPassword</name>
+            <value>${pw}</value>
+            <ruleList>
+                <compareText>
+                    <logic>does_not_equal</logic>
+                    <text>${pw}</text>
+                    <value></value>
+                </compareText>
+            </ruleList>
+        </setInstallerVariable>
+    </preBuildActionList>
+    <initializationActionList>
+        <registryGet>
+            <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}-${arch}</key>
+            <name>Location</name>
+            <variable>installdir</variable>
+        </registryGet>
+    </initializationActionList>
+    <postInstallationActionList>
+        <registrySet>
+            <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}-${arch}</key>
+            <name>Location</name>
+            <type>REG_SZ</type>
+            <value>${installdir}</value>
+        </registrySet>
+        <writeFile>
+            <path>${installdir}\fnp_utils\galaxylm\galaxylm.lic</path>
+            <text>SERVER this_host ANY
+                VENDOR galaxylm "${installdir}\fnp_utils\galaxylm\galaxylm.exe"
+                #This increment is only for vendor deamon initialization
+
+                INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \
+                VENDOR_STRING="Galaxy Semiconductor" HOSTID=ANY TZ=SERVERTZ \
+                ISSUER="Galaxy Semiconductor" SIGN="1050 62C9 CD0F 71DE B52A \
+                6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \
+                23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \
+                F8A9"</text>
+            <ruleList>
+                <platformTest type="windows"/>
+            </ruleList>
+        </writeFile>
+        <writeFile>
+            <path>${installdir}\fnp_utils\install_fnp.bat</path>
+            <text>"${installdir}\fnp_utils\installanchorservice.exe" galaxylm gex</text>
+            <ruleList>
+                <platformTest type="windows"/>
+            </ruleList>
+        </writeFile>
+        <writeFile>
+            <path>${installdir}/fnp_utils/galaxylm/galaxylm.lic</path>
+            <text>SERVER this_host ANY
+                VENDOR galaxylm "${installdir}/fnp_utils/galaxylm/galaxylm"
+                #This increment is only for vendor deamon initialization
+
+                INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \
+                VENDOR_STRING="Galaxy Semiconductor" HOSTID=ANY TZ=SERVERTZ \
+                ISSUER="Galaxy Semiconductor" SIGN="1050 62C9 CD0F 71DE B52A \
+                6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \
+                23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \
+                F8A9"</text>
+            <ruleList>
+                <platformTest type="linux"/>
+            </ruleList>
+        </writeFile>
+        <writeFile>
+            <path>${installdir}/fnp_utils/galaxylm/galaxylm.lic</path>
+            <text>SERVER this_host ANY
+                VENDOR galaxylm "${installdir}/fnp_utils/galaxylm/galaxylm"
+                #This increment is only for vendor deamon initialization
+
+                INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \
+                VENDOR_STRING="Galaxy Semiconductor" HOSTID=ANY TZ=SERVERTZ \
+                ISSUER="Galaxy Semiconductor" SIGN="1050 62C9 CD0F 71DE B52A \
+                6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \
+                23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \
+                F8A9"</text>
+            <ruleList>
+                <platformTest type="linux-x64"/>
+            </ruleList>
+        </writeFile>
+        <writeFile>
+            <path>${installdir}/fnp_utils/galaxylm/galaxylm.lic</path>
+            <text>SERVER this_host ANY
+                VENDOR galaxylm "${installdir}/fnp_utils/galaxylm/galaxylm"
+                #This increment is only for vendor deamon initialization
+
+                INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \
+                VENDOR_STRING="Galaxy Semiconductor" HOSTID=ANY TZ=SERVERTZ \
+                ISSUER="Galaxy Semiconductor" SIGN="1050 62C9 CD0F 71DE B52A \
+                6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \
+                23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \
+                F8A9"</text>
+            <ruleList>
+                <platformTest type="osx"/>
+            </ruleList>
+        </writeFile>
+        <changePermissions>
+            <permissions>0755</permissions>
+            <files>${installdir}/galaxy-la;${installdir}/fnp_utils/appactutil;${installdir}/fnp_utils/install_fnp.sh;${installdir}/fnp_utils/serveractutil;${installdir}/fnp_utils/tsreset_app;${installdir}/fnp_utils/tsreset_svr;${installdir}/fnp_utils/galaxylm/galaxylm;${installdir}/fnp_utils/galaxylm/galaxylm.lic;${installdir}/fnp_utils/lmadmin/*</files>
+            <ruleList>
+                <platformTest type="linux"/>
+            </ruleList>
+        </changePermissions>
+        <changePermissions>
+            <permissions>0755</permissions>
+            <files>${installdir}/galaxy-la;${installdir}/fnp_utils/appactutil;${installdir}/fnp_utils/install_fnp.sh;${installdir}/fnp_utils/serveractutil;${installdir}/fnp_utils/tsreset_app;${installdir}/fnp_utils/tsreset_svr;${installdir}/fnp_utils/galaxylm/galaxylm;${installdir}/fnp_utils/galaxylm/galaxylm.lic;${installdir}/fnp_utils/lmadmin/*</files>
+            <ruleList>
+                <platformTest type="linux-x64"/>
+            </ruleList>
+        </changePermissions>
+        <changePermissions>
+            <permissions>0755</permissions>
+            <files>${installdir}/galaxy-la;${installdir}/fnp_utils/appactutil;${installdir}/fnp_utils/install_fnp.sh;${installdir}/fnp_utils/serveractutil;${installdir}/fnp_utils/tsreset_app;${installdir}/fnp_utils/tsreset_svr;${installdir}/fnp_utils/galaxylm/galaxylm;${installdir}/fnp_utils/galaxylm/galaxylm.lic;${installdir}/fnp_utils/lmadmin/*</files>
+            <ruleList>
+                <platformTest type="osx"/>
+            </ruleList>
+        </changePermissions>
+        <runProgram>
+            <program>${installdir}\fnp_utils\install_fnp.bat</program>
+            <programArguments></programArguments>
+            <ruleList>
+                <platformTest type="windows"/>
+            </ruleList>
+        </runProgram>
+        <runProgram>
+            <program>${installdir}/fnp_utils/install_fnp.sh</program>
+            <programArguments></programArguments>
+            <ruleList>
+                <platformTest type="linux"/>
+            </ruleList>
+        </runProgram>
+        <runProgram>
+            <program>${installdir}/fnp_utils/install_fnp.sh</program>
+            <programArguments></programArguments>
+            <ruleList>
+                <platformTest type="linux-x64"/>
+            </ruleList>
+        </runProgram>
+        <runProgram>
+            <program>${installdir}/fnp_utils/install_fnp.sh</program>
+            <programArguments></programArguments>
+            <ruleList>
+                <platformTest type="osx"/>
+            </ruleList>
+        </runProgram>
+    </postInstallationActionList>
+    <enableRollback>0</enableRollback>
+    <enableTimestamp>1</enableTimestamp>
+    <productDisplayIcon>${installdir}/gs_act.ico</productDisplayIcon>
+    <saveRelativePaths>1</saveRelativePaths>
+    <vendor>Mentor Graphics</vendor>
+    <width>622</width>
+    <windows64bitMode>${win64}</windows64bitMode>
+    <windowsExecutableIcon>../gex/sources/gex.ico</windowsExecutableIcon>
+    <customLanguageFileList>
+        <language>
+            <code>en</code>
+            <file>custom-en.lng</file>
+        </language>
+    </customLanguageFileList>
+    <finalPageActionList>
+        <createShortcuts>
+            <destination>${windows_folder_desktopdirectory}</destination>
+            <progressText>Create a License Activation shortcut on the Desktop</progressText>
+            <ruleList>
+                <componentTest logic="selected" name="GSla"/>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+            <shortcutList>
+                <shortcut>
+                    <comment></comment>
+                    <exec></exec>
+                    <icon></icon>
+                    <name>Galaxy License Activation</name>
+                    <path></path>
+                    <platforms>all</platforms>
+                    <runAsAdmin>0</runAsAdmin>
+                    <runInTerminal>0</runInTerminal>
+                    <windowsExec>${installdir}/galaxy-la.exe</windowsExec>
+                    <windowsExecArgs>-style fusion -srvact</windowsExecArgs>
+                    <windowsIcon>${installdir}/gs_act.ico</windowsIcon>
+                    <windowsPath>${installdir}</windowsPath>
+                </shortcut>
+            </shortcutList>
+        </createShortcuts>
+    </finalPageActionList>
+    <parameterList>
+        <directoryParameter>
+            <name>installdir</name>
+            <description>Installer.Parameter.installdir.description</description>
+            <explanation>Installer.Parameter.installdir.explanation</explanation>
+            <value></value>
+            <default>${platform_install_prefix}/${project.vendor}-${product_shortname}</default>
+            <allowEmptyValue>0</allowEmptyValue>
+            <cliOptionName>prefix</cliOptionName>
+            <mustBeWritable>1</mustBeWritable>
+            <mustExist>0</mustExist>
+            <width>40</width>
+            <preShowPageActionList>
+                <setInstallerVariable>
+                    <name>installdir</name>
+                    <value>${platform_install_prefix}/${project.fullName}</value>
+                    <ruleList>
+                        <platformTest>
+                            <type>windows</type>
+                        </platformTest>
+                        <compareText>
+                            <logic>equals</logic>
+                            <text>${platform_install_prefix}/${project.vendor}-${product_shortname}</text>
+                            <value>${installdir}</value>
+                        </compareText>
+                    </ruleList>
+                </setInstallerVariable>
+            </preShowPageActionList>
+        </directoryParameter>
+        <stringParameter name="arch" value="x32" ask="0">
+            <description></description>
+            <explanation></explanation>
+            <default></default>
+            <allowEmptyValue>1</allowEmptyValue>
+            <width>30</width>
+        </stringParameter>
+        <stringParameter name="win64" value="1" ask="0">
+            <description></description>
+            <explanation></explanation>
+            <default></default>
+            <allowEmptyValue>1</allowEmptyValue>
+            <width>30</width>
+        </stringParameter>
+        <stringParameter ask="0">
+            <name>pw</name>
+            <description></description>
+            <explanation></explanation>
+            <value></value>
+            <default></default>
+            <allowEmptyValue>1</allowEmptyValue>
+            <width>30</width>
+        </stringParameter>
+    </parameterList>
+</project>

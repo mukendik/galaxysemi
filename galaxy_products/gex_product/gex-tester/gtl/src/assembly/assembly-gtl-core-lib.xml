@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-gtl-core-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/lib/${distName}</directory>
+            <outputDirectory>${basepath}/lib/${distName}</outputDirectory>
+            <includes>
+                <include>*gtl_core*.a</include>
+            </includes>
+        </fileSet>                      
+    </fileSets>
+</assembly>

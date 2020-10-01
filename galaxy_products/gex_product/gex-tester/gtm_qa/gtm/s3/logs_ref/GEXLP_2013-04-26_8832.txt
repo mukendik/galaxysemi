@@ -1,0 +1,121 @@
+[2013-04-26 19:04:12 GEXLP 7] ReadSystemInfo constructor   	in ReadSystemInfo::ReadSystemInfo()  	in sources\read_system_info.cpp
+[2013-04-26 19:04:12 GEXLP 7] Adapters decoded (iphlpapi.dll) :02-00-4C-4F-4F-50-;00-FF-68-1D-3D-89-;F0-4D-A2-85-31-30-;1C-65-9D-07-F8-FB-;  	in int ReadSystemInfo::ReadNetworkBoardInfo()  	in sources\read_system_info.cpp
+[2013-04-26 19:04:12 GEXLP 7] instanciate ...  	in static GS::LPPlugin::LicenseProviderManager* GS::LPPlugin::LicenseProviderManager::instanciate(GS::LPPlugin::LicenseProvider::GexProducts, GS::LPPlugin::ProductInfo*, const QVariantMap&, int&, QString&, QObject*)  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:12 GEXLP 7] Create ...  	in GS::LPPlugin::LicenseProviderManager::LicenseProviderManager(GS::LPPlugin::LicenseProvider::GexProducts, GS::LPPlugin::ProductInfo*, const QVariantMap&, QObject*)  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:12 GEXLP 7] Create ...  	in GS::LPPlugin::LicenseProviderThread::LicenseProviderThread(GS::LPPlugin::LicenseProviderManager*, GS::LPPlugin::ProductInfo*, QObject*)  	in sources\license_provider_thread.cpp
+[2013-04-26 19:04:12 GEXLP 7] initialize ...  	in int GS::LPPlugin::LicenseProviderManager::initialize()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:12 GEXLP 7] Start  	in static GS::LPPlugin::FNPLicenseProvider* GS::LPPlugin::FNPLicenseProvider::initializeLP(QObject*, GS::LPPlugin::LicenseProvider::GexProducts, const QVariantMap&, int&, QString&)  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Create ...   	in GS::LPPlugin::LicenseProvider::LicenseProvider(QObject*, GS::LPPlugin::LicenseProvider::GexProducts, const QVariantMap&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Create ...   	in GS::LPPlugin::LicenseProviderPrivate::LicenseProviderPrivate(GS::LPPlugin::LicenseProvider::GexProducts, const QVariantMap&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Start  	in GS::LPPlugin::FNPLicenseProvider::FNPLicenseProvider(QObject*, GS::LPPlugin::LicenseProvider::GexProducts, const QVariantMap&)  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Start  	in virtual int GS::LPPlugin::FNPLicenseProvider::initialize()  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Start  	in GS::LPPlugin::FNPLicenseProviderPrivate::FNPLicenseProviderPrivate(const QVariantMap&)  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Finish with error(2) : Cannot load library S:\galaxy_dev_master\galaxy_products\gex_product\bin\plugins\lp\fnp: Le module spécifié est introuvable.  	in GS::LPPlugin::FNPLicenseProviderPrivate::FNPLicenseProviderPrivate(const QVariantMap&)  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Set error   	in virtual void GS::LPPlugin::LicenseProvider::setLastError(int, const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Finish with code (2) message(Cannot load library S:\galaxy_dev_master\galaxy_products\gex_product\bin\plugins\lp\fnp: Le module spécifié est introuvable.)  	in virtual int GS::LPPlugin::FNPLicenseProvider::initialize()  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Finish with initialize return code (2)  	in GS::LPPlugin::FNPLicenseProvider::FNPLicenseProvider(QObject*, GS::LPPlugin::LicenseProvider::GexProducts, const QVariantMap&)  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Error Code   	in virtual int GS::LPPlugin::LicenseProvider::getLastErrorCode()  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Error Code   	in virtual int GS::LPPlugin::LicenseProvider::getLastErrorCode()  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Error message   	in virtual QString GS::LPPlugin::LicenseProvider::getLastError()  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Start  	in virtual GS::LPPlugin::FNPLicenseProvider::~FNPLicenseProvider()  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Start  	in virtual int GS::LPPlugin::FNPLicenseProvider::cleanup()  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Start  	in void GS::LPPlugin::FNPLicenseProvider::release(const QStringList&)  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Finish with releasing Empty List  	in void GS::LPPlugin::FNPLicenseProvider::release(const QStringList&)  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Finish  	in virtual int GS::LPPlugin::FNPLicenseProvider::cleanup()  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Finish with cleanup return code (0)  	in virtual GS::LPPlugin::FNPLicenseProvider::~FNPLicenseProvider()  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Destroy ...  	in virtual GS::LPPlugin::LicenseProvider::~LicenseProvider()  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Destroy ...  	in virtual GS::LPPlugin::LicenseProviderPrivate::~LicenseProviderPrivate()  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Fnish with error(2, Cannot load library S:\galaxy_dev_master\galaxy_products\gex_product\bin\plugins\lp\fnp: Le module spécifié est introuvable.)  	in static GS::LPPlugin::FNPLicenseProvider* GS::LPPlugin::FNPLicenseProvider::initializeLP(QObject*, GS::LPPlugin::LicenseProvider::GexProducts, const QVariantMap&, int&, QString&)  	in sources\fnp_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 4] Plugin (S:/galaxy_dev_master/galaxy_products/gex_product/bin/plugins/lp/fnp_lpd.dll) does not contains any license provider error (2 : Cannot load library S:\galaxy_dev_master\galaxy_products\gex_product\bin\plugins\lp\fnp: Le module spécifié est introuvable.)  	in int GS::LPPlugin::LicenseProviderManager::initialize()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:12 GEXLP 7] Create ...   	in GS::LPPlugin::LicenseProvider::LicenseProvider(QObject*, GS::LPPlugin::LicenseProvider::GexProducts, const QVariantMap&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Create ...   	in GS::LPPlugin::LicenseProviderPrivate::LicenseProviderPrivate(GS::LPPlugin::LicenseProvider::GexProducts, const QVariantMap&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] Start  	in GS::LPPlugin::GexLicenseProvider::GexLicenseProvider(QObject*, GS::LPPlugin::LicenseProvider::GexProducts, const QVariantMap&)  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:12 GEXLP 7] ReadSystemInfo constructor   	in ReadSystemInfo::ReadSystemInfo()  	in sources\read_system_info.cpp
+[2013-04-26 19:04:13 GEXLP 7] Adapters decoded (iphlpapi.dll) :02-00-4C-4F-4F-50-;00-FF-68-1D-3D-89-;F0-4D-A2-85-31-30-;1C-65-9D-07-F8-FB-;  	in int ReadSystemInfo::ReadNetworkBoardInfo()  	in sources\read_system_info.cpp
+[2013-04-26 19:04:13 GEXLP 7] Set error   	in virtual void GS::LPPlugin::LicenseProvider::setLastError(int, const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Error Code   	in virtual int GS::LPPlugin::LicenseProvider::getLastErrorCode()  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] getLastErrorCode ...  	in int GS::LPPlugin::LicenseProviderManager::getLastErrorCode()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] getLastErrorCode ...  	in int GS::LPPlugin::LicenseProviderManager::getLastErrorCode()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] getLastError ...  	in QString GS::LPPlugin::LicenseProviderManager::getLastError()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] getLastErrorCode ...  	in int GS::LPPlugin::LicenseProviderManager::getLastErrorCode()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] receiveGexMessage ... 1(Engine OnStart :OnStart)  	in void GS::LPPlugin::LicenseProviderManager::receiveGexMessage(const GS::LPPlugin::GEXMessage&)  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] running ...  	in virtual void GS::LPPlugin::LicenseProviderThread::run()  	in sources\license_provider_thread.cpp
+[2013-04-26 19:04:13 GEXLP 7] availableLP ...  	in QMap<QString, GS::LPPlugin::LicenseProvider*>& GS::LPPlugin::LicenseProviderManager::availableLP()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] LPMAN :Trying to use LP (gs_lp) ...  	in virtual void GS::LPPlugin::LicenseProviderThread::run()  	in sources\license_provider_thread.cpp
+[2013-04-26 19:04:13 GEXLP 7] Set Current Provider => -gs_lp-  	in void GS::LPPlugin::LicenseProviderManager::setCurrentProvider(const QString&)  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get isDAEMON  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get HiddenMode  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get IniClientSection  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get IniClientSection  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get ApplicationDir  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Set ReleaseDate  	in virtual void GS::LPPlugin::LicenseProvider::setLPData(const QString&, const QVariant&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Set ExpirationDate  	in virtual void GS::LPPlugin::LicenseProvider::setLPData(const QString&, const QVariant&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get ExpirationDate  	in virtual QVariant GS::LPPlugin::LicenseProvider::getLPData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get ReleaseDate  	in virtual QVariant GS::LPPlugin::LicenseProvider::getLPData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Set MaintenanceExpirationDate  	in virtual void GS::LPPlugin::LicenseProvider::setLPData(const QString&, const QVariant&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get IniClientSection  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get IniClientSection  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 6] Start Running Server...  	in bool GS::LPPlugin::GexLicenseProvider::StartRunningServer(GS::LPPlugin::ProductInfo*)  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get IniClientSection  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get IniClientSection  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] On connect to server (LmSocket=NULL  	in void GS::LPPlugin::GexLicenseProvider::OnConnectToServer()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get IniClientSection  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get IniClientSection  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Set ServerIP  	in virtual void GS::LPPlugin::LicenseProvider::setLPData(const QString&, const QVariant&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Set ServerName  	in virtual void GS::LPPlugin::LicenseProvider::setLPData(const QString&, const QVariant&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Set SocketPort  	in virtual void GS::LPPlugin::LicenseProvider::setLPData(const QString&, const QVariant&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 6] Gex-Lm socket: Connecting to: 192.168.1.22[192.168.1.22]:4242           	in void GS::LPPlugin::GexLicenseProvider::OnConnectToServer()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get AppFullName  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get AppFullName  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get ClientApplicationId  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Check License with gs_lp License found from gs_lp  	in virtual void GS::LPPlugin::LicenseProviderThread::run()  	in sources\license_provider_thread.cpp
+[2013-04-26 19:04:13 GEXLP 7] socketConnected (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::socketConnected()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get IniClientSection  	in virtual QVariant GS::LPPlugin::LicenseProvider::getAppConfigData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] socketReadyRead (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::socketReadyRead()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] Set ExpirationDate  	in virtual void GS::LPPlugin::LicenseProvider::setLPData(const QString&, const QVariant&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] getInstance ...  	in static GS::LPPlugin::LicenseProviderManager* GS::LPPlugin::LicenseProviderManager::getInstance()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] getInstance ...  	in static GS::LPPlugin::LicenseProviderManager* GS::LPPlugin::LicenseProviderManager::getInstance()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get ExpirationDate  	in virtual QVariant GS::LPPlugin::LicenseProvider::getLPData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] getInstance ...  	in static GS::LPPlugin::LicenseProviderManager* GS::LPPlugin::LicenseProviderManager::getInstance()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get ExpirationDate  	in virtual QVariant GS::LPPlugin::LicenseProvider::getLPData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] getInstance ...  	in static GS::LPPlugin::LicenseProviderManager* GS::LPPlugin::LicenseProviderManager::getInstance()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get MaintenanceExpirationDate  	in virtual QVariant GS::LPPlugin::LicenseProvider::getLPData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] getInstance ...  	in static GS::LPPlugin::LicenseProviderManager* GS::LPPlugin::LicenseProviderManager::getInstance()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get MaintenanceExpirationDate  	in virtual QVariant GS::LPPlugin::LicenseProvider::getLPData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] getInstance ...  	in static GS::LPPlugin::LicenseProviderManager* GS::LPPlugin::LicenseProviderManager::getInstance()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get ReleaseDate  	in virtual QVariant GS::LPPlugin::LicenseProvider::getLPData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:13 GEXLP 7] getInstance ...  	in static GS::LPPlugin::LicenseProviderManager* GS::LPPlugin::LicenseProviderManager::getInstance()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get Current Provider ...  	in static GS::LPPlugin::LicenseProvider* GS::LPPlugin::LicenseProviderManager::getCurrentProvider()  	in sources\license_provider_manager.cpp
+[2013-04-26 19:04:13 GEXLP 7] Get ReleaseDate  	in virtual QVariant GS::LPPlugin::LicenseProvider::getLPData(const QString&)  	in sources\license_provider.cpp
+[2013-04-26 19:04:17 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:17 GEXLP 7] << 2013-04-26T19:04:17 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:21 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:21 GEXLP 7] << 2013-04-26T19:04:21 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:25 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:25 GEXLP 7] << 2013-04-26T19:04:25 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:29 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:29 GEXLP 7] << 2013-04-26T19:04:29 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:33 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:33 GEXLP 7] << 2013-04-26T19:04:33 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:37 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:37 GEXLP 7] << 2013-04-26T19:04:37 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:41 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:41 GEXLP 7] << 2013-04-26T19:04:41 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:45 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:45 GEXLP 7] << 2013-04-26T19:04:45 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:49 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:49 GEXLP 7] << 2013-04-26T19:04:49 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:53 GEXLP 7] OnCheckSocketStatus (LmSocket=ok  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp
+[2013-04-26 19:04:53 GEXLP 7] << 2013-04-26T19:04:53 >> OnCheckSocketStatus details : 227f8ef8 4  	in void GS::LPPlugin::GexLicenseProvider::OnCheckSocketStatus()  	in sources\gex_license_provider.cpp

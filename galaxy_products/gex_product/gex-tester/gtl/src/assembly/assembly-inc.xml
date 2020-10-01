@@ -1,0 +1,18 @@
+<assembly>
+    <id>assembly</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory>${basepath}</outputDirectory>
+            <includes>
+                <include>gtl-core/gtl_profile.h</include>
+                <include>include/*</include>
+            </includes>
+        </fileSet>          
+    </fileSets>
+</assembly>

@@ -1,0 +1,162 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      'Data' Tab: Select the data files to process<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p align="left">Once you have selected a specific assistant from the home
+      page, the <b>Data</b> page is displayed. Its layout will vary slightly
+      depending on the assistant selected. If you select the assistant to analyze
+      a single file, then the page will only let you select one file. If you
+      select&nbsp; compare or merge files, you will be able to
+      select multiple files and add them to the list. Lastly, if you select
+      the assistant to compare groups of files, you get a dedicated button
+      that lets you create and label groups.</p>
+      <p align="left">On the <b>Data</b> page, you'll find some of the
+      following icons:</p>
+      <table border="1" width="618">
+        <tr>
+          <td bgcolor="#0034AA" align="center" width="127"><font color="#ffffff"><b>Icon</b></font></td>
+          <td bgColor="#0034aa" width="475"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="127" align="center">
+          <img border="0" src="../images/file_opendate.png" width="26" height="25"><br>
+            (Smart Import)</td>
+          <td width="475">Lets you automatically find and select all the files 
+          matching a given criteria (date window, tester name, lot #, sub-lot #, 
+          etc...). Very powerful and easy to use assistant to quickly process 
+          big databases.</td>
+        </tr>
+        <tr>
+          <td width="127" align="center"><img border="0" src="../images/file_open.png" width="26" height="25"><br>
+            (Select files)</td>
+          <td width="475">Lets you select the files to analyze. Unless you're
+            analyzing a single file, you can select multiple files at once after
+            clicking this icon: simply press and hold the CTRL key so each file name
+            clicked remains selected.&nbsp;<br>
+            When files are selected, the examinator assumes you plan to include
+            all data found in the file (any site, any test result). If you want
+            to change this, you have to change the file properties as described
+            hereafter.&nbsp; </td>
+        </tr>
+        <tr>
+          <td width="127" align="center">
+            <p align="center"><img border="0" src="../images/properties.png" width="16" height="15"><br>
+            (File properties)</td>
+          <td width="475">Once you have selected all the file to process, they
+            appear in the list of files to analyze. Select any file in the list,
+            then click the <b>properties</b> icon in order to view the file
+            details (lot id, tester id, etc.), and define which test
+            results to process (all data, good bin only, all sites, site X only,
+            etc.). Double-clicking on a file name in the list also invokes the
+            file properties dialog box.</td>
+        </tr>
+        <tr>
+          <td width="127" align="center"><img border="0" src="../images/group.png" width="16" height="15"><br>
+            (New group)</td>
+          <td width="475">Lets you create a group so you can then add files to
+            merge into it. This icon only appears when using the 
+            compare groups of files assistant.</td>
+        </tr>
+        <tr>
+          <td width="127" align="center"><img border="0" src="../images/file_remove.png" width="26" height="25"><br>
+            (Remove file)</td>
+          <td width="475">Lets you remove a file from a list of files (the
+            file is <b>not</b> erased, it is simply removed from the list!). If
+            you have selected the process a single file assistant, you don't
+            see this function since you don't need it.</td>
+        </tr>
+      </table>
+      <h1 align="left">File properties</h1>
+      <p align="left">When you double click a file from the list (or click the file properties button), Examinator
+      displays the properties dialog box that lets you review file header
+      information such as LotID, tester name, etc., and data filter fields you
+      can modify as described hereafter:</p>
+      <table border="1" width="100%" height="167">
+        <tr>
+          <td bgcolor="#0034AA" height="19"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" height="19"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="28%" height="38"><b>Process</b></td>
+          <td width="72%" height="38">Defines the type of parts (devices) to 
+          process. Default is <b><i>all parts</i></b>; you can change this
+            to process only failing parts, specific parts, specific bins,
+            etc... If your selection relates to a list (eg: list of Bins or 
+          parts), then you must also enter the list in the edit box next to the 
+          drop-down list.
+          <p>The format for your list is:<br>
+            <b>XXX</b> for a single part/bin, or <br>
+            <b>XXX to YYY</b> for a range or parts/bins, or<br>
+            <b>XXX, YYY to ZZZ, WWW</b> . For a list, use ',' as separator </p>
+            <p>e.g: <b>0 to 10, 21, 23, 25 to 29</b></p>
+          </td>
+        </tr>
+        <tr>
+          <td width="28%" height="19"><b>Valid Sites</b></td>
+          <td width="72%" height="19">Default is all test results from <b>all
+            sites</b> will be processed.&nbsp; If you want to filter on one 
+          specific site (eg: site # 2), then simply enter the site ID to filter.</td>
+        </tr>
+        <tr>
+          <td width="28%" height="19"><b>Multi-Sites data</b></td>
+          <td width="72%" height="19">This drop-down list allows you to force 
+          Examinator to either merge all testing site into one dataset and 
+          chart, or split each testing site data so to have as many datasets and 
+          charts to overlay as testing sites.</td>
+        </tr>
+        </table>
+      <p align="left"><br>
+      <b><i>Data file details</i></b> tab:<br>
+      This tab lets you see global information about your data file such as: 
+      Testing date, test program revision, operator name, etc... If no header 
+      information can be extracted from your data file, then this list remains 
+      empty.<br>
+&nbsp;</p>
+      <p><b><i>Advanced</i></b> tab:</p>
+      <table border="1" width="100%" height="167">
+        <tr>
+          <td bgcolor="#0034AA" height="19"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" height="19"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="28%" height="17"><p><b>Map tests</b></td>
+          <td width="72%" height="17">Lets you map some or all the test numbers 
+          in your data file to new numbers. Also allows you to merge multiple 
+          tests under a single test number.<p>You have to select an ASCII file 
+          (.CSV comma separator format) that includes the list of tests to map 
+          to a new test number. For more details about the file format, see the 
+          relevant <a href="../script/gex3.htm#Mapping Test numbers">scripting 
+          section</a></td>
+        </tr>
+        <tr>
+          <td width="28%" height="19"><b>Temperature</b></td>
+          <td width="72%" height="19">Lets you enter the testing temperature (in 
+          °C) for this data file. Leave it empty if you don't know it or if this 
+          information is irrelevant. If you enter a temperature (E.g.: 125.0), 
+          then Examinator will create a Parameter result holding the temperature 
+          value. This allows you to very easily chart Scatter plots to show 
+          Temperature Vs Parameter and is very practical if you compare multiple 
+          files done at different temperature (characterization study)</td>
+        </tr>
+      </table>      
+      <p align="left"><br>
+      <b>Note</b>: You can return to the <b>Data</b> page at
+      any time to edit the list of files to process and/or the files properties.
+      There is no need to start-over from the home page and select all the
+      files again, just click the <b>Data</b> tab!</p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

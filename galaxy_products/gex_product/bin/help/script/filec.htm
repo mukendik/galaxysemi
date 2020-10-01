@@ -1,0 +1,61 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>fileRead<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library<br>
+      </a>&nbsp;
+      <br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>fileRead(
+  const handle,   // file handle
+ [const count])   // # of chars to read. default = 1
+</pre>
+      <p>Read a number of chars from a file. If reading a file sequentially check
+      for eof before each read.</p>
+      <p>Returns the character read.</p>
+      <p>Example:</p>
+      <pre>// copy a file
+var inp = fileOpen('source.dat',
+                   fileOpenRead+fileOpenBinary);
+var out = fileOpen('target.dat',
+                   fileOpenWrite+fileOpenBinary);
+while (!fileEof(inp))
+  fileWrite(out,fileRead(inp,512));
+fileClose(inp);
+fileClose(out);</pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexlog version="0.2" threaded="false" thread_priority="0" logs_center="false" >
+<log type="txt" outputfile="$GEX_SERVER_PROFILE/../gtm/s5/logs/$MODULE_$ISODATE_$PID.txt" />
+</gexlog>

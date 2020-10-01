@@ -1,0 +1,97 @@
+<assembly>
+    <id>assembly-quantix-examinator-dmg</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/src/DMGBUILD</directory>
+            <outputDirectory>.</outputDirectory>
+            <excludes>
+                <exclude>packaging.command</exclude>
+                <exclude>Install/Gexpat.app/Contents/MacOS/gexdmg</exclude>
+            </excludes>
+        </fileSet>
+        <!--copy ${project.basedir}/src/DMGBUILD/Quantix.icns to ${project.build.directory}/Install/Gexpat.app/Contents/MacOS/bin/gex.app/Contents/Resources-->
+        <fileSet>
+            <directory>${project.basedir}/src/DMGBUILD/Install/Gexpat.app/Contents/Resources/</directory>
+            <outputDirectory>./Install/Gexpat.app/Contents/MacOS/bin/gex.app/Contents/Resources</outputDirectory>
+            <includes>
+                <include>Quantix.icns</include>
+            </includes>
+        </fileSet>
+        <!--chmod 755 ${project.build.directory}/packaging.command-->
+        <fileSet>
+            <directory>${project.basedir}/src/DMGBUILD</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>packaging.command</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <!--chmod 755 ${project.build.directory}/Install/Gexpat.app/Contents/MacOS/gex-->
+        <fileSet>
+            <directory>${project.basedir}/src/DMGBUILD</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>Install/Gexpat.app/Contents/MacOS/gexdmg</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+
+        <!-- graphics -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/gex/sources/icons</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>gex_application_48x48.png</include>
+            </includes>
+        </fileSet>
+        <!-- galaxy-la binary --><!-- linux and win -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>galaxy-la${exeExt}</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <!-- galaxy-la binary --><!-- mac specific -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/galaxy-la.app</directory>
+            <outputDirectory>bin/galaxy-la.app</outputDirectory>
+            <excludes/>
+        </fileSet>
+        <fileSet>
+            <directory>${env.QTSRCDIR}/qtbase/src/plugins/platforms/cocoa/qt_menu.nib</directory>
+            <outputDirectory>bin/galaxy-la.app/Contents/Resources/qt_menu.nib</outputDirectory>
+            <excludes/>
+        </fileSet>
+        <!-- galaxy-la script -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/GS-License-Activation-Utility</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>galaxy-la</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <!-- plugins -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/plugins/lib/${distName}</directory>
+            <outputDirectory>plugins/db</outputDirectory>
+            <includes>
+                <include>${libSuffix}gexdb_plugin_galaxy${libPostfix}</include>
+                <include>${libSuffix}gexdb_plugin_medtronic${libPostfix}</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <!-- gslog -->
+    <files>
+        <file>
+            <source>${project.build.directory}/galaxy_products/gex_product/bin/gex_gslog.xml</source>
+            <outputDirectory>samples</outputDirectory>
+            <destName>gslog.xml</destName>
+        </file>
+    </files>
+</assembly>

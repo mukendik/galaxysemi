@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-src</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}</directory> 
+            <outputDirectory>patches</outputDirectory>
+            <includes>
+                <include>*qt521*.patch</include>
+            </includes>
+        </fileSet>          
+    </fileSets>
+</assembly>

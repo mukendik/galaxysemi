@@ -1,0 +1,4 @@
+<external_files>
+  <binmap format="vishay-lvm" type="final" category="final_tests">./input/Atdf/external_file/CSVFinalTestsFile20180402.csv</binmap> 
+  <binmap format="vishay-lvm" type="final" category="sort_entries">./input/Atdf/external_file/CSVSortEntriesFile20180402.csv</binmap> 
+</external_files>

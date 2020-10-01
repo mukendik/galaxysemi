@@ -1,0 +1,645 @@
+<project>
+    <functionDefinitionList>
+        <actionDefinition>
+            <name>unixfnplauncher</name>
+            <actionList>
+                <actionGroup>
+                    <ruleList>
+                        <isFalse value="${installer_is_root_install}"/>
+                    </ruleList>
+                    <actionList>
+                        <if>
+                            <conditionRuleList>
+                                <programTest name="gksu" condition="is_not_in_path"/>
+                                <programTest name="kdesu" condition="is_not_in_path"/>
+                            </conditionRuleList>
+                            <actionList>
+                                <showInfo>
+                                    <title>FNP Components</title>
+                                    <text>FNP won't be installed now. You have to start the following command as admin user: ${installdir}/fnp_utils/install_fnp.sh ${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService</text>
+                                </showInfo>
+                            </actionList>
+                            <elseActionList>
+                                <runProgram program="gksu" programArguments="&quot;${installdir}/fnp_utils/install_fnp.sh&quot; &quot;${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService&quot;">
+                                    <ruleList>
+                                        <programTest name="gksu" condition="is_in_path"/>
+                                    </ruleList>
+                                </runProgram>
+                                <runProgram program="kdesu" programArguments="-c &quot;${installdir}/fnp_utils/install_fnp.sh&quot; &quot;${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService&quot;">
+                                    <ruleList>
+                                        <programTest name="gksu" condition="is_not_in_path"/>
+                                        <programTest name="kdesu" condition="is_in_path"/>
+                                    </ruleList>
+                                </runProgram>
+                            </elseActionList>
+                        </if>
+                    </actionList>
+                </actionGroup>
+                <actionGroup>
+                    <ruleList>
+                        <isTrue value="${installer_is_root_install}"/>
+                    </ruleList>
+                    <actionList>
+                        <runProgram>
+                            <program>"${installdir}/fnp_utils/install_fnp.sh"</program>
+                            <programArguments>&quot;${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService&quot;</programArguments>
+                        </runProgram>
+                    </actionList>
+                </actionGroup>
+            </actionList>
+            <parameterList>
+                <stringParameter name="program" value="" default=""/>
+                <stringParameter name="programArguments" value="" default=""/>
+                <stringParameter name="workingDirectory" value="" default=""/>
+                <stringParameter name="stderr" value="" default="program_stderr"/>
+                <stringParameter name="stdout" value="" default="program_stdout"/>
+            </parameterList>
+        </actionDefinition>
+        <actionDefinition>
+            <name>osxfnplauncher</name>
+            <actionList>
+                <if>
+                    <conditionRuleList>
+                        <isFalse value="${installer_is_root_install}"/>
+                    </conditionRuleList>
+                    <actionList>
+                        <showInfo>
+                            <title>FNP Components</title>
+                            <text>FNP won't be installed now. You have to start the following command as admin user: ${installdir}/fnp_utils/install_fnp.sh ${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService</text>
+                        </showInfo>
+                    </actionList>
+                    <elseActionList>
+                        <runProgram>
+                            <program>${installdir}/fnp_utils/install_fnp.sh</program>
+                            <programArguments>&quot;${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService&quot;</programArguments>
+                        </runProgram>
+                    </elseActionList>
+                </if>
+            </actionList>
+            <parameterList>
+                <stringParameter name="program" value="" default=""/>
+                <stringParameter name="programArguments" value="" default=""/>
+                <stringParameter name="workingDirectory" value="" default=""/>
+                <stringParameter name="stderr" value="" default="program_stderr"/>
+                <stringParameter name="stdout" value="" default="program_stdout"/>
+            </parameterList>
+        </actionDefinition>
+    </functionDefinitionList>
+    <shortName>examinator</shortName>
+    <fullName>Quantix Examinator</fullName>
+    <version>${env(BUILD)}</version>
+    <installerFilename>${env(INSTALLER_FILENAME)}.${platform_exec_suffix}</installerFilename>
+    <readmeFile>readme/readme.txt</readmeFile>
+    <leftImage>install-logo.png</leftImage>
+    <logoImage>install-icon.png</logoImage>
+    <splashImage>install-splash.png</splashImage>
+    <componentList>
+        <componentGroup>
+            <name>quantixexaminator</name>
+            <description>Quantix Examinator</description>
+            <canBeEdited>0</canBeEdited>
+            <selected>1</selected>
+            <show>1</show>
+            <componentList>
+                <component>
+                    <name>examinator</name>
+                    <description>Examinator</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>1</show>
+                    <startMenuShortcutList>
+                        <startMenuShortcut>
+                            <comment></comment>
+                            <name>Examinator</name>
+                            <runAsAdmin>0</runAsAdmin>
+                            <runInTerminal>0</runInTerminal>
+                            <windowsExec>${installdir}/gex.exe</windowsExec>
+                            <windowsExecArgs>-style fusion -GEX</windowsExecArgs>
+                            <windowsIcon>${installdir}/gex.ico</windowsIcon>
+                            <windowsPath>${installdir}</windowsPath>
+                        </startMenuShortcut>
+                    </startMenuShortcutList>
+                    <postInstallationActionList>
+                        <actionGroup>
+                            <ruleList>
+                                <platformTest>
+                                    <type>linux</type>
+                                </platformTest>
+                            </ruleList>
+                            <actionList>
+                                <!-- Icon -->
+                                <iniFileSet>
+                                    <file>${installdir}/unix/examinator.desktop</file>
+                                    <section>Desktop Entry</section>
+                                    <key>Icon</key>
+                                    <value>${installdir}/bin/gex_application_48x48.png</value>
+                                </iniFileSet>
+                                <!-- Path -->
+                                <iniFileSet>
+                                    <file>${installdir}/unix/examinator.desktop</file>
+                                    <section>Desktop Entry</section>
+                                    <key>Exec</key>
+                                    <value>${installdir}/gex -style fusion -GEX</value>
+                                </iniFileSet>
+                                <!-- Exec -->
+                                <iniFileSet>
+                                    <file>${installdir}/unix/examinator.desktop</file>
+                                    <section>Desktop Entry</section>
+                                    <key>Path</key>
+                                    <value>${installdir}</value>
+                                </iniFileSet>
+                                <!-- Version -->
+                                <iniFileSet>
+                                    <file>${installdir}/unix/examinator.desktop</file>
+                                    <section>Desktop Entry</section>
+                                    <key>Version</key>
+                                    <value>${env(BUILD)}</value>
+                                </iniFileSet>
+                                <runProgram>
+                                    <program>${installdir}/unix/xdg-desktop-menu</program>
+                                    <programArguments>install --mode user --novendor ${installdir}/unix/examinator.desktop</programArguments>
+                                </runProgram>
+                            </actionList>
+                        </actionGroup>
+                    </postInstallationActionList>
+                </component>
+                <component>
+                    <name>examinatorpro</name>
+                    <description>Examinator-Pro</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>1</show>
+                    <startMenuShortcutList>
+                        <startMenuShortcut>
+                            <comment></comment>
+                            <name>Examinator-Pro</name>
+                            <runAsAdmin>0</runAsAdmin>
+                            <runInTerminal>0</runInTerminal>
+                            <windowsExec>${installdir}/gex.exe</windowsExec>
+                            <windowsExecArgs>-style fusion -GEXPRO</windowsExecArgs>
+                            <windowsIcon>${installdir}/gex.ico</windowsIcon>
+                            <windowsPath>${installdir}</windowsPath>
+                        </startMenuShortcut>
+                    </startMenuShortcutList>
+                    <postInstallationActionList>
+                        <actionGroup>
+                            <ruleList>
+                                <platformTest>
+                                    <type>linux</type>
+                                </platformTest>
+                            </ruleList>
+                            <actionList>
+                                <!-- Examinator-Pro -->
+                                <!-- Icon -->
+                                <iniFileSet>
+                                    <file>${installdir}/unix/examinatorpro.desktop</file>
+                                    <section>Desktop Entry</section>
+                                    <key>Icon</key>
+                                    <value>${installdir}/bin/gex_application_48x48.png</value>
+                                </iniFileSet>
+                                <!-- Path -->
+                                <iniFileSet>
+                                    <file>${installdir}/unix/examinatorpro.desktop</file>
+                                    <section>Desktop Entry</section>
+                                    <key>Exec</key>
+                                    <value>${installdir}/gex -style fusion -GEXPRO</value>
+                                </iniFileSet>
+                                <!-- Exec -->
+                                <iniFileSet>
+                                    <file>${installdir}/unix/examinatorpro.desktop</file>
+                                    <section>Desktop Entry</section>
+                                    <key>Path</key>
+                                    <value>${installdir}</value>
+                                </iniFileSet>
+                                <runProgram>
+                                    <program>${installdir}/unix/xdg-desktop-menu</program>
+                                    <programArguments>install --mode user --novendor ${installdir}/unix/examinatorpro.desktop</programArguments>
+                                </runProgram>
+
+                            </actionList>
+                        </actionGroup>
+                    </postInstallationActionList>
+                </component>
+                <component>
+                    <name>fnp</name>
+                    <description>FNP</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>1</show>
+                </component>
+                <component>
+                    <name>examinator_shortcut</name>
+                    <description>Create an Examinator shortcut on the Desktop</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>1</show>
+                </component>
+                <component>
+                    <name>examinatorpro_shortcut</name>
+                    <description>Create an Examinator-Pro shortcut on the Desktop</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>1</show>
+                </component>
+                <component>
+                    <name>validatorComponent</name>
+                    <description>validator</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>0</show>
+                    <componentSelectionValidationActionList>
+                        <throwError>
+                            <text>You have to select at least one component.</text>
+                            <ruleList>
+                                <componentTest logic="not_selected" name="examinator"/>
+                                <componentTest logic="not_selected" name="examinatorpro"/>
+                            </ruleList>
+                        </throwError>
+                    </componentSelectionValidationActionList>
+                </component>
+            </componentList>
+            <folderList>
+                <folder>
+                    <name>examinator</name>
+                    <description>Examinator files</description>
+                    <destination>${installdir}/</destination>
+                    <platforms>all</platforms>
+                    <distributionFileList>
+                        <distributionDirectory allowWildcards="1">
+                            <origin>${env(GALAXY_PACKAGE)}/*</origin>
+                        </distributionDirectory>
+                    </distributionFileList>
+                </folder>
+            </folderList>
+        </componentGroup>
+    </componentList>
+    <preBuildActionList>
+        <setInstallerVariable>
+            <name>project.enableEncryption</name>
+            <value>1</value>
+            <ruleList>
+                <compareText>
+                    <logic>does_not_equal</logic>
+                    <text>${pw}</text>
+                    <value></value>
+                </compareText>
+            </ruleList>
+        </setInstallerVariable>
+        <setInstallerVariable>
+            <name>project.encryptionPassword</name>
+            <value>${pw}</value>
+            <ruleList>
+                <compareText>
+                    <logic>does_not_equal</logic>
+                    <text>${pw}</text>
+                    <value></value>
+                </compareText>
+            </ruleList>
+        </setInstallerVariable>
+    </preBuildActionList>
+    <postBuildActionList>
+        <createTimeStamp>
+            <format>%Y%m%d%H%M%S</format>
+            <variable>timestamp</variable>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </createTimeStamp>
+        <setInstallerVariable>
+            <name>tempDir</name>
+            <value>/tmp/.tmpDir${timestamp}</value>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </setInstallerVariable>
+        <setInstallerVariable>
+            <name>dmgName</name>
+            <value>${project.outputDirectory}/${env(INSTALLER_FILENAME)}.dmg</value>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </setInstallerVariable>
+        <setInstallerVariable>
+            <name>tempDmgFile</name>
+            <value>${tempDir}/tmp.dmg</value>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </setInstallerVariable>
+        <deleteFile>
+            <path>${project.outputDirectory}/${env(INSTALLER_FILENAME)}.dmg</path>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </deleteFile>
+        <deleteFile>
+            <path>${tempDir}</path>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </deleteFile>
+        <createDirectory>
+            <path>${tempDir}/output</path>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </createDirectory>
+        <createDirectory>
+            <path>${tempDir}/mnt</path>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </createDirectory>
+        <copyFile>
+            <destination>${tempDir}/output</destination>
+            <origin>${project.outputDirectory}/${project.installerFilename}</origin>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </copyFile>
+        <actionGroup>
+            <actionList>
+                <copyFile>
+                    <destination>${tempDir}/output/.VolumeIcon.icns</destination>
+                    <origin>${build_project_directory}/install-icon.png</origin>
+                </copyFile>
+                <runProgram>
+                    <program>SetFile</program>
+                    <programArguments>-c icnC "${tempDir}/output/.VolumeIcon.icns"</programArguments>
+                </runProgram>
+            </actionList>
+            <ruleList>
+                <fileExists path="${build_project_directory}/install-icon.png"/>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </actionGroup>
+        <runProgram>
+            <program>hdiutil</program>
+            <programArguments>create -srcfolder "${tempDir}/output" -volname "${project.fullName}" -fs HFS+ -fsargs "-c c=64,a=16,e=16" -format UDRW "${tempDmgFile}"</programArguments>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </runProgram>
+        <actionGroup>
+            <actionList>
+                <runProgram>
+                    <program>hdiutil</program>
+                    <programArguments>attach "${tempDmgFile}" -mountpoint "${tempDir}/mnt"</programArguments>
+                </runProgram>
+                <runProgram>
+                    <program>SetFile</program>
+                    <programArguments>-a C "${tempDir}/mnt"</programArguments>
+                </runProgram>
+                <runProgram>
+                    <program>hdiutil</program>
+                    <programArguments>detach "${tempDir}/mnt"</programArguments>
+                </runProgram>
+            </actionList>
+            <ruleList>
+                <fileExists path="${build_project_directory}/install-icon.png"/>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </actionGroup>
+        <runProgram>
+            <program>hdiutil</program>
+            <programArguments>convert "${tempDmgFile}" -format UDZO -imagekey zlib-level=9 -o "${dmgName}"</programArguments>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </runProgram>
+        <deleteFile>
+            <path>${tempDir}</path>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </deleteFile>
+    </postBuildActionList>
+    <initializationActionList>
+        <registryGet>
+            <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}-${arch}</key>
+            <name>Location</name>
+            <variable>installdir</variable>
+        </registryGet>
+    </initializationActionList>
+    <postInstallationActionList>
+        <registrySet>
+            <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}-${arch}</key>
+            <name>Location</name>
+            <type>REG_SZ</type>
+            <value>${installdir}</value>
+        </registrySet>
+        <changePermissions>
+            <files>${installdir}/galaxy-la;${installdir}/fnp_utils/appactutil;${installdir}/fnp_utils/install_fnp.sh;${installdir}/fnp_utils/serveractutil;${installdir}/fnp_utils/tsreset_app;${installdir}/fnp_utils/tsreset_svr</files>
+            <permissions>0755</permissions>
+            <ruleList>
+                <platformTest>
+                    <type>linux</type>
+                </platformTest>
+            </ruleList>
+        </changePermissions>
+        <changePermissions>
+            <files>${installdir}/galaxy-la;${installdir}/fnp_utils/appactutil;${installdir}/fnp_utils/install_fnp.sh;${installdir}/fnp_utils/serveractutil;${installdir}/fnp_utils/tsreset_app;${installdir}/fnp_utils/tsreset_svr</files>
+            <permissions>0755</permissions>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </changePermissions>
+        <writeFile>
+            <path>${installdir}\fnp_utils\install_fnp.bat</path>
+            <text>"${installdir}\fnp_utils\installanchorservice.exe" Quantixlm gex</text>
+            <ruleList>
+                <platformTest type="windows"/>
+            </ruleList>
+        </writeFile>
+    </postInstallationActionList>
+    <allowComponentSelection>0</allowComponentSelection>
+    <enableRollback>0</enableRollback>
+    <enableTimestamp>1</enableTimestamp>
+    <productDisplayIcon>${installdir}/gex.ico</productDisplayIcon>
+    <saveRelativePaths>1</saveRelativePaths>
+    <vendor>Mentor Graphics</vendor>
+    <width>622</width>
+    <windows64bitMode>${win64}</windows64bitMode>
+    <windowsExecutableIcon>../gex/sources/gex.ico</windowsExecutableIcon>
+    <customLanguageFileList>
+        <language>
+            <code>en</code>
+            <file>custom-en.lng</file>
+        </language>
+    </customLanguageFileList>
+    <finalPageActionList>
+        <!-- FNP win -->
+        <actionGroup progressText="Install FNP component (admin privileges required)">
+            <ruleList>
+                <componentTest logic="selected" name="fnp"/>
+                <platformTest type="windows"/>
+            </ruleList>
+            <actionList>
+                <runProgram>
+                    <program>${installdir}\fnp_utils\install_fnp.bat</program>
+                    <programArguments></programArguments>
+                    <ruleList>
+                        <platformTest type="windows"/>
+                    </ruleList>
+                </runProgram>
+            </actionList>
+        </actionGroup>
+        <!-- FNP unix -->
+        <actionGroup progressText="Install FNP Component (admin privileges required)">
+            <ruleList>
+                <componentTest logic="selected" name="fnp"/>
+                <platformTest type="linux"/>
+            </ruleList>
+            <actionList>
+                <unixfnplauncher/>
+            </actionList>
+        </actionGroup>
+        <!-- FNP osx -->
+        <actionGroup progressText="Install FNP Component (admin privileges required)">
+            <ruleList>
+                <componentTest logic="selected" name="fnp"/>
+                <platformTest type="osx"/>
+            </ruleList>
+            <actionList>
+                <osxfnplauncher/>
+            </actionList>
+        </actionGroup>
+
+        <!-- win desktop shortcuts -->
+        <createShortcuts>
+            <destination>${windows_folder_desktopdirectory}</destination>
+            <progressText>Create an Examinator shortcut on the Desktop</progressText>
+            <ruleList>
+                <componentTest logic="selected" name="examinator"/>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+            <shortcutList>
+                <shortcut>
+                    <comment></comment>
+                    <exec></exec>
+                    <icon></icon>
+                    <name>Examinator</name>
+                    <path></path>
+                    <platforms>all</platforms>
+                    <runAsAdmin>0</runAsAdmin>
+                    <runInTerminal>0</runInTerminal>
+                    <windowsExec>${installdir}/gex.exe</windowsExec>
+                    <windowsExecArgs>-style fusion -GEX</windowsExecArgs>
+                    <windowsIcon>${installdir}/gex.ico</windowsIcon>
+                    <windowsPath>${installdir}</windowsPath>
+                </shortcut>
+            </shortcutList>
+        </createShortcuts>
+        <createShortcuts>
+            <destination>${windows_folder_desktopdirectory}</destination>
+            <progressText>Create an Examinator-Pro shortcut on the Desktop</progressText>
+            <ruleList>
+                <componentTest logic="selected" name="examinatorpro"/>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+            <shortcutList>
+                <shortcut>
+                    <comment></comment>
+                    <exec></exec>
+                    <icon></icon>
+                    <name>Examinator-Pro</name>
+                    <path></path>
+                    <platforms>all</platforms>
+                    <runAsAdmin>0</runAsAdmin>
+                    <runInTerminal>0</runInTerminal>
+                    <windowsExec>${installdir}/gex.exe</windowsExec>
+                    <windowsExecArgs>-style fusion -GEXPRO</windowsExecArgs>
+                    <windowsIcon>${installdir}/gex.ico</windowsIcon>
+                    <windowsPath>${installdir}</windowsPath>
+                </shortcut>
+            </shortcutList>
+        </createShortcuts>
+    </finalPageActionList>
+    <parameterList>
+        <directoryParameter>
+            <name>installdir</name>
+            <description>Installer.Parameter.installdir.description</description>
+            <explanation>Installer.Parameter.installdir.explanation</explanation>
+            <value></value>
+            <default>${platform_install_prefix}/${project.vendor}-${product_shortname}</default>
+            <allowEmptyValue>0</allowEmptyValue>
+            <cliOptionName>prefix</cliOptionName>
+            <mustBeWritable>1</mustBeWritable>
+            <mustExist>0</mustExist>
+            <width>40</width>
+            <preShowPageActionList>
+                <setInstallerVariable>
+                    <name>installdir</name>
+                    <value>${platform_install_prefix}/${project.fullName}</value>
+                    <ruleList>
+                        <platformTest>
+                            <type>windows</type>
+                        </platformTest>
+                        <compareText>
+                            <logic>equals</logic>
+                            <text>${platform_install_prefix}/${project.vendor}-${product_shortname}</text>
+                            <value>${installdir}</value>
+                        </compareText>
+                    </ruleList>
+                </setInstallerVariable>
+            </preShowPageActionList>
+        </directoryParameter>
+        <stringParameter name="arch" value="x32" ask="0">
+            <description></description>
+            <explanation></explanation>
+            <default></default>
+            <allowEmptyValue>1</allowEmptyValue>
+            <width>30</width>
+        </stringParameter>
+        <stringParameter name="win64" value="1" ask="0">
+            <description></description>
+            <explanation></explanation>
+            <default></default>
+            <allowEmptyValue>1</allowEmptyValue>
+            <width>30</width>
+        </stringParameter>
+        <stringParameter ask="0">
+            <name>pw</name>
+            <description></description>
+            <explanation></explanation>
+            <value></value>
+            <default></default>
+            <allowEmptyValue>1</allowEmptyValue>
+            <width>30</width>
+        </stringParameter>
+    </parameterList>
+</project>

@@ -1,0 +1,412 @@
+<project>
+    <functionDefinitionList>
+        <actionDefinition>
+            <name>unixfnplauncher</name>
+            <actionList>
+                <actionGroup>
+                    <ruleList>
+                        <isFalse value="${installer_is_root_install}"/>
+                    </ruleList>
+                    <actionList>
+                        <if>
+                            <conditionRuleList>
+                                <programTest name="gksu" condition="is_not_in_path"/>
+                                <programTest name="kdesu" condition="is_not_in_path"/>
+                            </conditionRuleList>
+                            <actionList>
+                                <showInfo>
+                                    <title>FNP Components</title>
+                                    <text>FNP won't be installed now. You have to start the following command as admin user: ${installdir}/fnp_utils/install_fnp.sh ${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService</text>
+                                </showInfo>
+                            </actionList>
+                            <elseActionList>
+                                <runProgram program="gksu" programArguments="&quot;${installdir}/fnp_utils/install_fnp.sh&quot; &quot;${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService&quot;" >
+                                    <ruleList>
+                                        <programTest name="gksu" condition="is_in_path"/>
+                                    </ruleList>
+                                </runProgram>
+                                <runProgram program="kdesu" programArguments="-c &quot;${installdir}/fnp_utils/install_fnp.sh&quot; &quot;${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService&quot;" >
+                                    <ruleList>
+                                        <programTest name="gksu" condition="is_not_in_path"/>
+                                        <programTest name="kdesu" condition="is_in_path"/>
+                                    </ruleList>
+                                </runProgram>
+                            </elseActionList>
+                        </if>
+                    </actionList>
+                </actionGroup>
+                <actionGroup>
+                    <ruleList>
+                        <isTrue value="${installer_is_root_install}"/>
+                    </ruleList>
+                    <actionList>
+                        <runProgram>
+                            <program>"${installdir}/fnp_utils/install_fnp.sh"</program>
+                            <programArguments>&quot;${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService&quot;</programArguments>
+                        </runProgram>
+                    </actionList>
+                </actionGroup>
+            </actionList>
+            <parameterList>
+                <stringParameter name="program" value="" default=""/>
+                <stringParameter name="programArguments" value="" default=""/>
+                <stringParameter name="workingDirectory" value="" default=""/>
+                <stringParameter name="stderr" value="" default="program_stderr"/>
+                <stringParameter name="stdout" value="" default="program_stdout"/>
+            </parameterList>
+        </actionDefinition>
+        <actionDefinition>
+            <name>osxfnplauncher</name>
+            <actionList>
+                <if>
+                    <conditionRuleList>
+                        <isFalse value="${installer_is_root_install}"/>
+                    </conditionRuleList>
+                    <actionList>
+                        <showInfo>
+                            <title>FNP Components</title>
+                            <text>FNP won't be installed now. You have to start the following command as admin user: ${installdir}/fnp_utils/install_fnp.sh ${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService</text>
+                        </showInfo>
+                    </actionList>
+                    <elseActionList>
+                        <runProgram>
+                            <program>${installdir}/fnp_utils/install_fnp.sh</program>
+                            <programArguments>&quot;${installdir}/fnp_utils/FNPLicensingService/FNPLicensingService&quot;</programArguments>
+                        </runProgram>
+                    </elseActionList>
+                </if>
+            </actionList>
+            <parameterList>
+                <stringParameter name="program" value="" default=""/>
+                <stringParameter name="programArguments" value="" default=""/>
+                <stringParameter name="workingDirectory" value="" default=""/>
+                <stringParameter name="stderr" value="" default="program_stderr"/>
+                <stringParameter name="stdout" value="" default="program_stdout"/>
+            </parameterList>
+        </actionDefinition>
+    </functionDefinitionList>
+    <shortName>la</shortName>
+    <fullName>Quantix License Activation Utility</fullName>
+    <version>${env(BUILD)}</version>
+    <installerFilename>${env(INSTALLER_FILENAME)}.${platform_exec_suffix}</installerFilename>
+    <readmeFile>readme/readme.txt</readmeFile>
+    <licenseFile>../bin/help/pages/license.txt</licenseFile>
+    <htmlLicenseFile>../bin/pages/license.htm</htmlLicenseFile>
+    <leftImage>install-logo.png</leftImage>
+    <logoImage>install-icon.png</logoImage>
+    <splashImage>install-splash.png</splashImage>
+    <!--<requireInstallationByRootUser>1</requireInstallationByRootUser>-->
+    <componentList>
+        <componentGroup>
+            <name>Quantix_la</name>
+            <description>Quantix_License_Activation_Utility</description>
+            <canBeEdited>0</canBeEdited>
+            <selected>1</selected>
+            <show>1</show>
+            <componentList>
+                <component>
+                    <name>quantixla</name>
+                    <description>License-Activation</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>1</show>
+                    <startMenuShortcutList>
+                        <startMenuShortcut>
+                            <comment></comment>
+                            <name>License-Activation</name>
+                            <runAsAdmin>0</runAsAdmin>
+                            <runInTerminal>0</runInTerminal>
+                            <windowsExec>${installdir}/galaxy-la.exe</windowsExec>
+                            <windowsExecArgs>-style fusion</windowsExecArgs>
+                            <windowsIcon>${installdir}/gs_act.ico</windowsIcon>
+                            <windowsPath>${installdir}</windowsPath>
+                        </startMenuShortcut>
+                    </startMenuShortcutList>
+                </component>
+                <component>
+                    <name>fnp</name>
+                    <description>FNP</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>1</show>
+                </component>
+                <component>
+                    <name>validatorComponent</name>
+                    <description>validator</description>
+                    <canBeEdited>1</canBeEdited>
+                    <selected>1</selected>
+                    <show>0</show>
+                </component>
+            </componentList>
+            <folderList>
+                <folder>
+                    <name>galaxy_la</name>
+                    <description>Quantix la files</description>
+                    <destination>${installdir}/</destination>
+                    <platforms>all</platforms>
+                    <distributionFileList>
+                        <distributionDirectory allowWildcards="1">
+                            <origin>${env(GALAXY_PACKAGE)}/*</origin>
+                        </distributionDirectory>
+                    </distributionFileList>
+                </folder>
+            </folderList>
+        </componentGroup>
+    </componentList>
+    <preBuildActionList>
+        <setInstallerVariable>
+            <name>project.enableEncryption</name>
+            <value>1</value>
+            <ruleList>
+                <compareText>
+                    <logic>does_not_equal</logic>
+                    <text>${pw}</text>
+                    <value></value>
+                </compareText>
+            </ruleList>
+        </setInstallerVariable>
+        <setInstallerVariable>
+            <name>project.encryptionPassword</name>
+            <value>${pw}</value>
+            <ruleList>
+                <compareText>
+                    <logic>does_not_equal</logic>
+                    <text>${pw}</text>
+                    <value></value>
+                </compareText>
+            </ruleList>
+        </setInstallerVariable>
+    </preBuildActionList>
+    <initializationActionList>
+        <registryGet>
+            <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}-${arch}</key>
+            <name>Location</name>
+            <variable>installdir</variable>
+        </registryGet>
+    </initializationActionList>
+    <postInstallationActionList>
+        <registrySet>
+            <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}-${arch}</key>
+            <name>Location</name>
+            <type>REG_SZ</type>
+            <value>${installdir}</value>
+        </registrySet>
+        <writeFile>
+            <path>${installdir}\fnp_utils\galaxylm\galaxylm.lic</path>
+            <text>SERVER this_host ANY
+                VENDOR galaxylm "${installdir}\fnp_utils\galaxylm\galaxylm.exe"
+                #This increment is only for vendor deamon initialization
+
+                INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \
+                VENDOR_STRING="Galaxy Semiconductor" HOSTID=ANY TZ=SERVERTZ \
+                ISSUER="Galaxy Semiconductor" SIGN="1050 62C9 CD0F 71DE B52A \
+                6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \
+                23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \
+                F8A9"</text>
+            <ruleList>
+                <platformTest type="windows"/>
+            </ruleList>
+        </writeFile>
+        <writeFile>
+            <path>${installdir}\fnp_utils\install_fnp.bat</path>
+            <text>"${installdir}\fnp_utils\installanchorservice.exe" galaxylm gex</text>
+            <ruleList>
+                <platformTest type="windows"/>
+            </ruleList>
+        </writeFile>
+        <writeFile>
+            <path>${installdir}/fnp_utils/galaxylm/galaxylm.lic</path>
+            <text>SERVER this_host ANY
+                VENDOR galaxylm "${installdir}/fnp_utils/galaxylm/galaxylm"
+                #This increment is only for vendor deamon initialization
+
+                INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \
+                VENDOR_STRING="Galaxy Semiconductor" HOSTID=ANY TZ=SERVERTZ \
+                ISSUER="Galaxy Semiconductor" SIGN="1050 62C9 CD0F 71DE B52A \
+                6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \
+                23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \
+                F8A9"</text>
+            <ruleList>
+                <platformTest type="linux"/>
+            </ruleList>
+        </writeFile>
+        <writeFile>
+            <path>${installdir}/fnp_utils/galaxylm/galaxylm.lic</path>
+            <text>SERVER this_host ANY
+                VENDOR galaxylm "${installdir}/fnp_utils/galaxylm/galaxylm"
+                #This increment is only for vendor deamon initialization
+
+                INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \
+                VENDOR_STRING="Galaxy Semiconductor" HOSTID=ANY TZ=SERVERTZ \
+                ISSUER="Galaxy Semiconductor" SIGN="1050 62C9 CD0F 71DE B52A \
+                6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \
+                23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \
+                F8A9"</text>
+            <ruleList>
+                <platformTest type="linux-x64"/>
+            </ruleList>
+        </writeFile>
+        <writeFile>
+            <path>${installdir}/fnp_utils/galaxylm/galaxylm.lic</path>
+            <text>SERVER this_host ANY
+                VENDOR galaxylm "${installdir}/fnp_utils/galaxylm/galaxylm"
+                #This increment is only for vendor deamon initialization
+
+                INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \
+                VENDOR_STRING="Galaxy Semiconductor" HOSTID=ANY TZ=SERVERTZ \
+                ISSUER="Galaxy Semiconductor" SIGN="1050 62C9 CD0F 71DE B52A \
+                6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \
+                23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \
+                F8A9"</text>
+            <ruleList>
+                <platformTest type="osx"/>
+            </ruleList>
+        </writeFile>
+        <changePermissions>
+            <permissions>0755</permissions>
+            <files>${installdir}/galaxy-la;${installdir}/fnp_utils/appactutil;${installdir}/fnp_utils/install_fnp.sh;${installdir}/fnp_utils/serveractutil;${installdir}/fnp_utils/tsreset_app;${installdir}/fnp_utils/tsreset_svr;${installdir}/fnp_utils/galaxylm/galaxylm;${installdir}/fnp_utils/galaxylm/galaxylm.lic;${installdir}/fnp_utils/lmadmin/*</files>
+            <ruleList>
+                <platformTest type="linux"/>
+            </ruleList>
+        </changePermissions>
+        <changePermissions>
+            <permissions>0755</permissions>
+            <files>${installdir}/galaxy-la;${installdir}/fnp_utils/appactutil;${installdir}/fnp_utils/install_fnp.sh;${installdir}/fnp_utils/serveractutil;${installdir}/fnp_utils/tsreset_app;${installdir}/fnp_utils/tsreset_svr;${installdir}/fnp_utils/galaxylm/galaxylm;${installdir}/fnp_utils/galaxylm/galaxylm.lic;${installdir}/fnp_utils/lmadmin/*</files>
+            <ruleList>
+                <platformTest type="osx"/>
+            </ruleList>
+        </changePermissions>
+    </postInstallationActionList>
+    <enableRollback>0</enableRollback>
+    <enableTimestamp>1</enableTimestamp>
+    <productDisplayIcon>${installdir}/gs_act.ico</productDisplayIcon>
+    <saveRelativePaths>1</saveRelativePaths>
+    <vendor>Mentor Graphics</vendor>
+    <width>622</width>
+    <windows64bitMode>${win64}</windows64bitMode>
+    <windowsExecutableIcon>../gex/sources/gex.ico</windowsExecutableIcon>
+    <customLanguageFileList>
+        <language>
+            <code>en</code>
+            <file>custom-en.lng</file>
+        </language>
+    </customLanguageFileList>
+    <finalPageActionList>
+        <!-- FNP win -->
+        <actionGroup progressText="Install FNP component (admin privileges required)">
+            <ruleList>
+                <componentTest logic="selected" name="fnp"/>
+                <platformTest type="windows"/>
+            </ruleList>
+            <actionList>
+                <runProgram>
+                    <program>${installdir}\fnp_utils\install_fnp.bat</program>
+                    <programArguments></programArguments>
+                    <ruleList>
+                        <platformTest type="windows"/>
+                    </ruleList>
+                </runProgram>
+            </actionList>
+        </actionGroup>
+        <!-- FNP unix -->
+        <actionGroup progressText="Install FNP Component (admin privileges required)">
+            <ruleList>
+                <componentTest logic="selected" name="fnp"/>
+                <platformTest type="linux"/>
+            </ruleList>
+            <actionList>
+                <unixfnplauncher/>
+            </actionList>
+        </actionGroup>
+        <!-- FNP osx -->
+        <actionGroup progressText="Install FNP Component (admin privileges required)">
+            <ruleList>
+                <componentTest logic="selected" name="fnp"/>
+                <platformTest type="osx"/>
+            </ruleList>
+            <actionList>
+                <osxfnplauncher/>
+            </actionList>
+        </actionGroup>
+        <!-- win desktop shortcuts -->
+        <createShortcuts>
+            <destination>${windows_folder_desktopdirectory}</destination>
+            <progressText>Create a License Activation shortcut on the Desktop</progressText>
+            <ruleList>
+                <componentTest logic="selected" name="quantixla"/>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+            <shortcutList>
+                <shortcut>
+                    <comment></comment>
+                    <exec></exec>
+                    <icon></icon>
+                    <name>Quantix License Activation</name>
+                    <path></path>
+                    <platforms>all</platforms>
+                    <runAsAdmin>0</runAsAdmin>
+                    <runInTerminal>0</runInTerminal>
+                    <windowsExec>${installdir}/galaxy-la.exe</windowsExec>
+                    <windowsExecArgs>-style fusion -srvact</windowsExecArgs>
+                    <windowsIcon>${installdir}/gs_act.ico</windowsIcon>
+                    <windowsPath>${installdir}</windowsPath>
+                </shortcut>
+            </shortcutList>
+        </createShortcuts>
+    </finalPageActionList>
+    <parameterList>
+        <directoryParameter>
+            <name>installdir</name>
+            <description>Installer.Parameter.installdir.description</description>
+            <explanation>Installer.Parameter.installdir.explanation</explanation>
+            <value></value>
+            <default>${platform_install_prefix}/${project.vendor}-${product_shortname}</default>
+            <allowEmptyValue>0</allowEmptyValue>
+            <cliOptionName>prefix</cliOptionName>
+            <mustBeWritable>1</mustBeWritable>
+            <mustExist>0</mustExist>
+            <width>40</width>
+            <preShowPageActionList>
+                <setInstallerVariable>
+                    <name>installdir</name>
+                    <value>${platform_install_prefix}/${project.fullName}</value>
+                    <ruleList>
+                        <platformTest>
+                            <type>windows</type>
+                        </platformTest>
+                        <compareText>
+                            <logic>equals</logic>
+                            <text>${platform_install_prefix}/${project.vendor}-${product_shortname}</text>
+                            <value>${installdir}</value>
+                        </compareText>
+                    </ruleList>
+                </setInstallerVariable>
+            </preShowPageActionList>
+        </directoryParameter>
+        <stringParameter name="arch" value="x32" ask="0">
+            <description></description>
+            <explanation></explanation>
+            <default></default>
+            <allowEmptyValue>1</allowEmptyValue>
+            <width>30</width>
+        </stringParameter>
+        <stringParameter name="win64" value="1" ask="0">
+            <description></description>
+            <explanation></explanation>
+            <default></default>
+            <allowEmptyValue>1</allowEmptyValue>
+            <width>30</width>
+        </stringParameter>
+        <stringParameter ask="0">
+            <name>pw</name>
+            <description></description>
+            <explanation></explanation>
+            <value></value>
+            <default></default>
+            <allowEmptyValue>1</allowEmptyValue>
+            <width>30</width>
+        </stringParameter>
+    </parameterList>
+</project>

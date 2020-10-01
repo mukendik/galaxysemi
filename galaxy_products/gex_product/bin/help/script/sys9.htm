@@ -1,0 +1,64 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>sysLog<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library
+      </a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>sysLog(
+  [const message, // message to display (default: none)
+   const raw,     // raw mode (default: false)
+   const quiet])  // silent mode: to logfile only (default: false)
+</pre>
+      <p>Displays a message on screen and writes it to the logfile if one was
+      opened. If no argument is passed, an empty line is logged. While the
+      message is displayed on the screen as is, each line in the logfile will
+      start with a timestamp.</p>
+      <p>If <i>raw</i> is <b>true</b>, logging is done in raw mode, e.g. no log
+      level indenting and no timestamp in the logfile.</p>
+      <p>If <b>quiet</b> is <b>true</b>, the message is written to the logfile
+      only, but not displayed on the screen.</p>
+      <p>Examples:</p>
+      <pre>sysLog();               // empty line
+sysLog('message');      // message cooked mode
+sysLog('test', true);   // test in raw mode
+sysLog('hello', 0, 1);  // write to logfile only</pre>
+      <pre>
+</pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

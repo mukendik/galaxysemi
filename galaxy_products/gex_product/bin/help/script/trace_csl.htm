@@ -1,0 +1,65 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: trace.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This script illustrates the use of the <a href="sysk.htm">sysTrace</a>
+      function. This script echoes (traces) its execution flow. This advanced 
+      function is usually used to debug scripts with complex algorithms and function calls where
+      the flow doesn't
+      execute as expected.</p>
+          <p align="left">For more information, see the scripting language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">review</a> the other sample scripts.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: trace.csl
+//////////////////////////////////////////
+
+
+test(const &amp;arr[])
+{
+  var evens = 0, odds = 0;
+  for (var i = 0; i &lt; sizeof(arr); i++) 
+  {
+    #block 'for block'
+    trace 'value = '|arr[i];
+    if (arr[i] % 2) 
+    {
+      #block 'odd branch'
+      odds++;
+      trace 'odds = '|odds;
+    } else 
+    {
+      #block 'even branch'
+      evens++;
+      trace 'evens = '|evens;
+    }
+  }
+}
+
+main()
+{
+  sysTrace(sysTraceCode);
+  const vals = { 3, 12, 17 };
+  sysTrace(sysTraceInfo);
+  test(vals);
+  sysTrace(sysTraceNone);
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

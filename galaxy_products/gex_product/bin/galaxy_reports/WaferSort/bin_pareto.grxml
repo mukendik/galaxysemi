@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport 
+	Version="0.66" 
+	Type="AER"
+	GRT="../bin_pareto.grt" 
+	ID="BinPareto" 
+	Title="Bin pareto" 
+	Description="Binnings pareto for selected product(s) for all or failed bins only...">
+
+	<dataset ID="DS1" label="Main dataset"  
+		stage="Wafer Sort" 
+		binning="H" 
+		binning_visible="true"
+		binning_readonly="false" 
+		time_period_visible="true" 
+		time_period_readonly="false" 
+		time_period_mandatory="false" 
+		time_period_label="Select here the time period"
+		time_period_from="new Date(new Date().getFullYear(),00,01)" 
+		time_period_to="new Date()"
+		time_period_defaultValueExpression="all_dates" 
+		>
+		<!-- time_period_defaultValueExpression can be : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+		<!-- Date objects in javascript example : new Date() returns today. new Date(2006, 00, 01) returns the 1st jan 2006 -->
+
+		<multifield 
+			label="Select here your split params"	
+			role="SPLIT" 
+			time="N" 
+			consolidated="Y"  
+			facts="false"
+			filterable="true" 
+			visible="true"  
+			autorepeat="true" 
+			orderable="false"  
+			full_range="true"  
+			multivalue="true"
+			field_mandatory="false" 
+			value_mandatory="false"
+			value_readonly="false"
+			value_editable="true"
+			>
+		</multifield>
+
+		<multifield 
+			label="Select here your aggregate " 
+			role="AGGREGATE" 
+			time="*" 
+			facts="false" 
+			full_range="false"
+			filterable="true" 
+			visible="true"  
+			autorepeat="false" 
+			orderable="false"  
+			allow_full_range_choice="false" 
+			full_range="true"  
+			multivalue="true"
+			value_readonly="false" 
+			value_mandatory="false" 
+			value_editable="true"
+			default_field="Hbin#" 
+			field_readonly="true" 
+			field_mandatory="true" 
+			>
+		</multifield>
+	
+		<multifield 
+			label="Select here your serie params"
+			role="SERIE" 
+			time="*" 
+			facts="true"
+			filterable="true"
+			visible="false"  
+			autorepeat="true" 
+			orderable="false"  
+			full_range="true"  
+			multivalue="true"
+			field_mandatory="false" 
+			value_readonly="false" 
+			value_mandatory="false" 
+			value_editable="true"
+			>
+		</multifield>
+		
+		<multifield 
+			label="Select here any other filters "
+			role="FILTER" 
+			time="*"  
+			facts="false"
+			filterable="true" 
+			visible="true"  
+			autorepeat="true" 
+			orderable="false"  
+			full_range="false"  
+			multivalue="true"
+			field_mandatory="false" 
+			value_readonly="false" 
+			value_editable="true" 
+			value_mandatory="false"
+			indent="false"
+			>
+			<field  default_field="Product ID" field_readonly="true" field_mandatory="true" value_mandatory="true" value="*" multivalue="true"/>
+			<field  default_field="Hbin#" field_readonly="true" field_mandatory="true" value_mandatory="false" value_readonly="false" value_editable="true" operator="!=" value="1" />
+		</multifield>
+		
+	</dataset>
+	
+	<options>
+		<option ID="P_TOP_BOTTOM" 					
+				type="Enum" 
+				hideif="false" 
+				label="Top or Bottom Pareto" 		
+				rawReplace="true"
+				codingvalues="desc|asc"	
+				displayvalues="Top N|Bottom N" 	
+				defaultvalue="'Top N'"/>
+		<option ID="P_MAX_NUM_AGGREGATES_IN_CHART"	
+				type="Int" 	
+				hideif="false" 
+				label="N values" 	
+				rawReplace="true" 
+				minimum="1" 
+				singleStep="1" 
+				defaultvalue="40" />
+		<option ID="P_MAX_LABEL_SIZE"	type="Int" 	hideif="false" label="Max X label length" rawReplace="true" minimum="4" singleStep="1" defaultvalue="18" />
+		<option ID="P_SHOWCHARTS" 					type="Bool" hideif="false" label="Show charts" 				rawReplace="true" defaultvalue="true" />
+		<option ID="P_SHOWLEGEND" 					type="Bool" hideif="false" label="Show legend in charts" 	rawReplace="true" defaultvalue="true" />
+		<option ID="P_SHOWTABLES" 					type="Bool" hideif="false" label="Show tables" 				rawReplace="true" defaultvalue="true" />
+		<option ID="P_DISPLAY_BINS" 				type="Enum" hideif="false" 	label="Display" 				rawReplace="true" 
+					codingvalues="all_bins|pass_bins|fail_bins"	displayvalues="All|Pass|Fail" 	defaultvalue="'All'"/>
+	</options>
+	
+</GalaxyReport>

@@ -1,0 +1,11 @@
+--- R-3.0.1/src/gnuwin32/embeddedR.c	2012-04-16 00:05:37.000000000 +0200
++++ R-3.0.1/src/gnuwin32/embeddedR.c	2015-10-07 16:38:59.000000000 +0200
+@@ -127,6 +127,8 @@
+ int Rf_initEmbeddedR(int argc, char **argv)
+ {
+     Rf_initialize_R(argc, argv);
++    R_CStackLimit = -1;
++    R_CStackStart = -1;
+     setup_Rmainloop();
+     return(1);
+ }

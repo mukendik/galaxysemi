@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ym_events version="0.0" label="Events Logs" icon=":/gex/icons/db_events_log.png">
+    <log_viewer>
+        <viewer_fields>
+            <creation_time idx="0"/>
+            <category idx="1"/>
+            <type idx="2"/>
+            <duration idx="3"/>
+            <size idx="4"/>
+            <speed idx="5"/>
+            <node_id idx="6"/>
+            <user_id idx="7"/>
+            <task_id idx="8"/>
+            <database_id idx="9"/>
+            <command idx="10"/>
+            <status idx="11"/>
+            <summary idx="12"/>
+            <comment idx="13"/>
+        </viewer_fields>
+    </log_viewer>
+    <basic_filters>
+        <creation_time idx="1" label="Creation Time" var="datetime" color="" icon=":/gex/icons/date_time.png">
+        </creation_time>
+        <event_id idx="2" label="Event" var="integer" color="" icon=":/gex/icons/db_events_log.png">
+        </event_id>
+        <link idx="3" label="Linked to Event" var="integer" color="" icon=":/gex/icons/link.png">
+        </link>
+        <category idx="4" label="Category" var="enum" fetch_from_event_table="false" color="" icon=":/gex/icons/category.png">
+            <UPDATE idx="" label="" color="" icon=""/>
+            <EXECUTION idx="" label="" color="" icon=""/>
+            <APPLICATION idx="" label="" color="" icon=""/>
+            <CONNECTION idx="" label="" color="" icon=""/>
+        </category>
+        <type idx="5" label="Event Type" var="enum" fetch_from_event_table="false" color="" icon=":/gex/icons/type.png">
+            <ADMINISTRATION idx="" label="" color="" icon=""/>
+            <GEX idx="" label="" color="" icon=""/>
+            <YM idx="" label="" color="" icon=""/>
+            <PAT idx="" label="" color="" icon=""/>
+            <DATABASE idx="" label="" color="" icon=""/>
+            <USER idx="" label="" color="" icon=""/>
+            <OLD_DATAPUMP idx="" label="" color="" icon=""/>
+            <DATAPUMP idx="" label="" color="" icon=""/>
+            <YIELDMONITOR idx="" label="" color="" icon=""/>
+            <YIELDMONITOR_RDB idx="" label="" color="" icon=""/>
+            <SPECMONITOR idx="" label="" color="" icon=""/>
+            <REPORTING idx="" label="" color="" icon=""/>
+            <STATUS idx="" label="" color="" icon=""/>
+            <CONVERTER idx="" label="" color="" icon=""/>
+            <OUTLIER_REMOVAL idx="" label="" color="" icon=""/>
+            <AUTOADMIN idx="" label="" color="" icon=""/>
+            <TRIGGERPUMP idx="" label="" color="" icon=""/>
+            <PATPUMP idx="" label="" color="" icon=""/>
+            <INCREMENTAL_UPDATE idx="" label="" color="" icon=""/>
+        </type>
+        <start_time idx="6" label="Starting time" var="datetime" color="" icon=":/gex/icons/date_time.png">
+        </start_time>
+        <duration idx="7" label="Duration" var="double" color="" icon=":/gex/icons/duration.png">
+        </duration>
+        <size idx="8" label="Size" var="double" color="" icon=":/gex/icons/size.png">
+        </size>
+        <speed idx="8" label="Speed" var="double" color="" icon=":/gex/icons/duration.png">
+        </speed>
+        <node_id idx="9" label="Node" var="integer" fetch_from="ym_nodes" friendly_name="name" color="" icon=":/gex/icons/node.png">
+        </node_id>
+        <user_id idx="10" label="User" var="integer" fetch_from="ym_users" friendly_name="login" color="" icon=":/gex/icons/yieldmandb_users.png">
+        </user_id>
+        <task_id idx="11" label="Task" var="integer" fetch_from="ym_tasks" friendly_name="name" color="" icon=":/gex/icons/task.png">
+        </task_id>
+        <database_id idx="12" label="Database" var="integer" fetch_from="ym_databases" friendly_name="name" color="" icon=":/gex/icons/database.png">
+        </database_id>
+        <command idx="13" label="Command" var="text" color="" icon=":/gex/icons/command.png">
+        </command>
+        <status idx="14" label="Status" var="enum" fetch_from_event_table="false" color="" icon=":/gex/icons/status.png">
+            <START idx="" label="" color="" icon=""/>
+            <PASS idx="" label="" color="" icon=""/>
+            <FAIL idx="" label="" color="" icon=""/>
+            <DELAY idx="" label="" color="" icon=""/>
+            <INFO idx="" label="" color="" icon="" />
+            <WARNING idx="" label="" color="" icon="" />
+            <RUNNING idx="" label="" color="" icon="" />
+            <STOP idx="" label="" color="" icon=""/>
+            <LAUNCH idx="" label="" color="" icon=""/>
+            <CLOSE idx="" label="" color="" icon=""/>
+            <UNEXPECTED idx="" label="" color="" icon=""/>
+            <LOGIN idx="" label="" color="" icon=""/>
+            <LOGOUT idx="" label="" color="" icon=""/>
+            <START_REQUESTED idx="" label="" color="" icon=""/>
+            <STOP_REQUESTED idx="" label="" color="" icon=""/>
+        </status>
+        <summary idx="15" label="Summary" var="text" color="" icon=":/gex/icons/summary.png">
+        </summary>
+        <comment idx="16" label="Comment" var="text" icon="" icon=":/gex/icons/comments.png">
+        </comment>
+    </basic_filters>
+
+    <predifined_filters>
+        <filter name="insertion_log" label="Tasks Executions Logs" filter_tree="true" icon="" color=""><!--based on basic filters-->
+            <expression>
+                <elem operator="AND" basic_filter= "category" operand="In" value="EXECUTION"/>
+                <elem operator="AND" basic_filter= "type" operand="In" value="DATAPUMP|YIELDMONITOR|YIELDMONITOR_RDB|SPECMONITOR|REPORTING|CONVERTER|OUTLIER_REMOVAL|TRIGGERPUMP|PATPUMP|INCREMENTAL_UPDATE|AGENT"/>
+                <dynamic_elem operator="AND" basic_filter= "creation_time" operand="Most recent hours" value="1"/>
+            </expression>
+        </filter>
+        <filter name="raw_log" label="Admin Events Logs" filter_tree="true" icon="" color=""><!--based on basic filters-->
+            <expression>
+                <dynamic_elem operator="AND" basic_filter= "creation_time" operand="Most recent hours" value="1"/>
+            </expression>
+        </filter>
+        <!-->
+        <filter name="raw_log" label="Daily events logs" filter_tree="true" icon="" color="">
+            <expression>
+                <elem operator="" basic_filter= "creation_time" operand="Most recent hours" value="24"/>
+                <elem operator="AND" basic_filter= "category" operand="In" value="EXECUTION"/>
+                <elem operator="AND" basic_filter= "" operand="" value=""/>
+                <dynamic_elem operator="" basic_filter= "" operand="" value=""/>
+            </expression>
+        </filter>
+        <-->
+    </predifined_filters>
+    <extension_filter>
+        <xml_files file="" tag=""/>
+    </extension_filter>
+</ym_events>

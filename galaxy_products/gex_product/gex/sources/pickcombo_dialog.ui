@@ -1,0 +1,156 @@
+<ui version="4.0" >
+ <class>PickComboDialogBase</class>
+ <widget class="QDialog" name="PickComboDialogBase" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>398</width>
+    <height>98</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Title</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <property name="autoFillBackground" >
+   <bool>true</bool>
+  </property>
+  <property name="sizeGripEnabled" >
+   <bool>true</bool>
+  </property>
+  <widget class="QPushButton" name="PushButtonOk" >
+   <property name="geometry" >
+    <rect>
+     <x>331</x>
+     <y>10</y>
+     <width>59</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>59</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+   <property name="default" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PushButtonCancel" >
+   <property name="geometry" >
+    <rect>
+     <x>331</x>
+     <y>41</y>
+     <width>59</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>59</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox2" >
+   <property name="geometry" >
+    <rect>
+     <x>149</x>
+     <y>41</y>
+     <width>168</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox1" >
+   <property name="geometry" >
+    <rect>
+     <x>149</x>
+     <y>13</y>
+     <width>168</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TextLabel1" >
+   <property name="geometry" >
+    <rect>
+     <x>11</x>
+     <y>14</y>
+     <width>130</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Text:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignTop</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TextLabel2" >
+   <property name="geometry" >
+    <rect>
+     <x>11</x>
+     <y>42</y>
+     <width>132</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Text:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignTop</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox" >
+   <property name="geometry" >
+    <rect>
+     <x>11</x>
+     <y>68</y>
+     <width>229</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>checkBox1</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources>
+  <include location="gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

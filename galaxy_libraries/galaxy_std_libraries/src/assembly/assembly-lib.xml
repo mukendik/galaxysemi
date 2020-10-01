@@ -1,0 +1,24 @@
+<assembly>
+    <id>assembly-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/lib/${distName}</directory>
+            <outputDirectory>${basepath}/lib/${distName}</outputDirectory>
+            <includes>
+                <include>*gstdl*</include>
+            </includes>
+        </fileSet>  
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/lib/${distName}</directory>
+            <outputDirectory>${basepath}/lib/${distNameLong}</outputDirectory>
+            <includes>
+                <include>*gstdl*</include>
+            </includes>
+        </fileSet>  
+    </fileSets>
+</assembly>

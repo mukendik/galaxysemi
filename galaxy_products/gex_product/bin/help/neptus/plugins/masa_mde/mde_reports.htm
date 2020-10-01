@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>MDE Reports</title>
+</head>
+
+<body>
+
+<p><b>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../../../../html/images/assistant.png" width="120" height="114" ></a><font size="5">MASA MDE Models: MDE Reports</font><br>
+      </b>
+<img border="0" src="../../../../html/images/ruler.png" width="616" height="8"> </p>
+
+<p>&nbsp;</p>
+<p><font size="4"><b>The MDE report page</b></font></p>
+
+<p>From the <b> main report page</b>, the user can access either the standard <b>Examinator
+report page</b> or the <b>MASA MDE report page</b>. However, some links allow to
+navigate between&nbsp; the <b>mutivariate analysis results</b> provided in the <b>MASA
+MDE report page</b> and the <b>univariate analysis results</b> presented in the
+standard <b>Examinator report page</b>.</p>
+
+<p>The <b>MASA MDE Report page</b> has links to two types of reports:</p>
+
+<ul>
+  <li><b>abnormality score reports</b></li>
+  <li><b>wafer result reports</b></li>
+</ul>
+<p>&nbsp;</p>
+<p><b><font size="4">Abnormality score reports</font></b></p>
+<p><b>Abnormality score histogram report</b></p>
+<p>This report displays an histogram of the MDE abnormality score distribution
+over the analysed data set. Normal data have low scores while abnormal data have
+high scores. The histogram bins that contain <b>abnormal data are shown in red</b>.
+If the analyzed dataset is statsitically equivalent to the reference dataset
+used initially to train the MDE model, this histogram will be flat.&nbsp;</p>
+<p>A link to an interactive view of the same data is provided, which allows for
+a closer examination of the distribution. Another way to look at the same data is
+provided by the <b>abnormality score trend</b> report.</p>
+<p><b>Abnormality score trend report</b></p>
+<p>This report displays a trend chart of the MDE abnormality scores over the
+analysed data set. Normal data have low scores while abnormal data have high
+scores. Each x-coordinate corresponds to a wafer. <b>Abnormal wafers have scores
+above the red line</b>.&nbsp;</p>
+<p>A link to an interactive view of the same data is provided, which allows for
+a closer examination of the distribution. Another way to look at the same data is
+provided by the <b>abnormality score histogram</b> report.</p>
+<p>Use the <b>wafer
+result report</b> and <b>wafer summary reports</b> to individually examine the abnormal (and normal) wafers.</p>
+<p>&nbsp;</p>
+<p><b><font size="4">Wafer result reports</font></b></p>
+<p><b>Wafer score report</b></p>
+<p>The <b>wafer score report</b> displays the list of wafers that have been analyzed
+together with their MDE
+abnormality scores. Abnormal scores appear <b>on a red background</b> in the
+report.&nbsp;</p>
+<p>This report provides links to the <b> wafer summary reports</b> of all tested wafers.</p>
+<p><b>Wafer summary reports</b></p>
+<p>A <b>wafer summary report</b> is generated for each tested wafer. The page
+header displays the <b>lot ID</b>, <b>wafer ID</b> and <b>MDE abnormality score</b>
+of the wafer.</p>
+<p>The remaining of the page presents the different tests by descending order of <b>deviation
+to reference</b> (called a Z-Score, a measure of univariate abnormality). Thus, <b>the
+most abnormal tests are presented first</b>. For each test, the following
+information is displayed:</p>
+<ul>
+  <li><b>Test name</b>: current test name</li>
+  <li><b>Min measurement</b>: minimum measurement for the current test (recall
+    that a test can be applied at several locations on the same wafer).</li>
+  <li><b>Max measurement</b>: maximum measurement for the current test (recall
+    that a test can be applied at several locations on the same wafer).</li>
+  <li><b>Z-Score</b>: deviation between the current measurement and the
+    distribution of values for the same test over the reference dataset used
+    initially to train the MDE model. If the test is applied at several
+    locations, then the location with the worst Z-Score is considered.</li>
+  <li><b>Reference mean</b>: mean of the distribution of values for the current
+    test over the reference dataset used initially to train the MDE model. If
+    the test is applied at several locations, then the location with the worst
+    Z-Score is considered.</li>
+  <li><b>Reference standard deviation</b>: standard deviation of the
+    distribution of values for the current test over the reference dataset used
+    initially to train the MDE model. If the test is applied at several
+    locations, then the location with the worst Z-Score is considered.</li>
+</ul>
+<p>This report also provides links to the <b>''histograms of tests'' report</b>
+and from there to the associated <b>univariate analysis results</b>.</p>
+
+<p>&nbsp;</p>
+<p><a href="mde_help.htm"><i>More</i></a><a href="mde_help.htm"><i> questions
+about MASA MDE?</i></a></p>
+
+</body>
+
+</html>

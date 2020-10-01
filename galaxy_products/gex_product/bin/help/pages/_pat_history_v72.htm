@@ -1,0 +1,642 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>PAT V7.2 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">PAT family : V7.2 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Examinator-PAT, PAT-Man)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_pat_history.htm">Back to main releases history page</a><br><br>
+	  <a href="#V7.2">V7.2 (14 February 2014)</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.2 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V7.2">V7.2 (14 February 2014)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!------------------------------------------------------------------------------>
+<TABLE CELLSPACING="0" COLS="3" BORDER="0">
+	<COLGROUP WIDTH="144"></COLGROUP>
+	<COLGROUP WIDTH="384"></COLGROUP>
+	<COLGROUP WIDTH="768"></COLGROUP>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" COLSPAN=3 HEIGHT="25" ALIGN="LEFT" VALIGN=TOP BGCOLOR="#B3B3B3"><B><FONT FACE="Verdana" SIZE=4 COLOR="#0000FF">Enhancements</FONT></B></TD>
+		</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP BGCOLOR="#E6E6E6"><B><FONT FACE="Verdana" SIZE=3>Case Number</FONT></B></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP BGCOLOR="#E6E6E6"><B><FONT FACE="Verdana" SIZE=3>Subject</FONT></B></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP BGCOLOR="#E6E6E6"><B><FONT FACE="Verdana" SIZE=3>Description</FONT></B></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="74" ALIGN="LEFT" VALIGN=TOP SDVAL="6384" SDNUM="1036;"><FONT FACE="Verdana">6384</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Yield-Man active-passive failover mechanism</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Active-passive failover mechanism requires the load balancing, and in addition a master-slave mechanism where the passive node is sleeping until the master node (or one of the master nodes) goes down. If the master node (or one of the master nodes) goes dfown, it becomes activ until the master node (or all master nodes) is back up and running.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="6639" SDNUM="1036;"><FONT FACE="Verdana">6639</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">enhance xml mapping file to work with mpr records</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">user would like to map new tests using the xml mapping function on mpr records such that the new test is created for each pin in the mpr record.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7216" SDNUM="1036;"><FONT FACE="Verdana">7216</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Shift Analysis - Add a Column called 'Polarity' for polarity of shift, Preserve chronology, and sort by Max %</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">The customer would like a column called 'Polarity' so they can sort by worst negative shift and worst positive shift.  Currently it appears the shifts are absolute values, so the user cannot tell which way the shift occurred.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7248" SDNUM="1036;"><FONT FACE="Verdana">7248</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">many native KVD xml files do not support all tags in the spec provided</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">update the kvd xml parser to allow for missing tags that are considered non-essential.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7323" SDNUM="1036;"><FONT FACE="Verdana">7323</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Make the map geometry check optional when merging maps</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Currently we can merge external and STDF maps in memory but we impose to have an external map greater than the STDF map. Make this rule optional.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="92" ALIGN="LEFT" VALIGN=TOP SDVAL="7324" SDNUM="1036;"><FONT FACE="Verdana">7324</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Merge external map with STDF map before PAT, improve merge feature to allow merging external map smaller than STDF map</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Currently the merge feature is such that the STDF map should be contained into the external map. If this is not the case, an error message will be thrown saying that the map geometries don't match. It would be required to allow merging external maps smaller than the STDF map, while keeping the current functionality so that this verification can still be done if the customer needs it.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="74" ALIGN="LEFT" VALIGN=TOP SDVAL="7325" SDNUM="1036;"><FONT FACE="Verdana">7325</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Merge external map with STDF map before PAT, post PAT output wafer map and STDF should both contain bins from external map and STDF sources</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">For the merge feature allowing to merge an external map with a STDF map before the PAT process, it is required to allow the user to output a post PAT stdf and a post PAT wafer map which will contain bins from both sources (external and STDF). Currently only the output wafer map contains the bins from the two sources.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7499" SDNUM="1036;"><FONT FACE="Verdana">7499</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">mpr test numbers under do not merge option display the wrong index value</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when the user analyzes a file with MPR records using the do not merge option, the test_num is appended with the pmr_index rather than the mpr.rtn_index.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7501" SDNUM="1036;"><FONT FACE="Verdana">7501</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Enhance support for test and retest in GTL/GTM/ExaPAT</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">during test, when it is time for retest, the summary is cleared on the tester and a new stdf is started. the sqlite file is not restarted so the sqlite file appears to have more parts than the stdf file(s). we need to support more than one splitlot in the sqlite file.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7539" SDNUM="1036;"><FONT FACE="Verdana">7539</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">create an interface to connect to a daemon and interact with it</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">for all daemons (PM, YM and GTM), have an app or api that can connect to a daemon and stop the scheduler (YM/PM) or prevent new connections (GTM) so that the user can see the status and safely stop the daemon for upgrades and server maintenance.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="92" ALIGN="LEFT" VALIGN=TOP SDVAL="7570" SDNUM="1036;"><FONT FACE="Verdana">7570</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Support MPR in ExaPAT FT recipe generation</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">- For WS recipe generation, always merge MPRs as done today. <BR>- For FT recipe generation, always split MPRs such that we have one test per pin. test name can remain the same as is listed in the MPR.test_txt field today. Test number is maintained as the MPR.test_num field as today. a new column to display MPR.rtn_index is added to differentiate the pins/index element for the mpr.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7634" SDNUM="1036;"><FONT FACE="Verdana">7634</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">update the pat reports for ws and ft so that the mpr pat is reported correctly</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">we need to take into account the mpr splits that are implemented in the pat engine and the recipes</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7640" SDNUM="1036;"><FONT FACE="Verdana">7640</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Add a &quot;Messages&quot; or &quot;Warning&quot; section/page to any report</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Add a &quot;Messages&quot; or &quot;Warning&quot; section/page to any report.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7676" SDNUM="1036;"><FONT FACE="Verdana">7676</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">handle new multi-splitlot sqlite files for ft pat reporting</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the test and retest methodology will create multiple splitlots in the sqlite file indicating the need for multiple stdf files (test and retest)</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7695" SDNUM="1036;"><FONT FACE="Verdana">7695</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">update arguments in the shell call of a gtf file</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">pass a new argument to the shell when one is called from a pat gtf</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7734" SDNUM="1036;"><FONT FACE="Verdana">7734</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Allow KVD xml files without test Pass flags if limits are defined</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">update the kvd xml parser to allow for missing 'result' tags for test measurement if the limits are difined.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7739" SDNUM="1036;"><FONT FACE="Verdana">7739</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">add an argument to the shell call from pat gtf files</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when a pat gtf file calls a script, please add the gtf file path and file name to the list of arguments</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7789" SDNUM="1036;"><FONT FACE="Verdana">7789</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Make the FT PAT report available with CSV output format</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Implement the capability to generate the FT PAT report in csv format</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7821" SDNUM="1036;"><FONT FACE="Verdana">7821</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">embed an option in gexpat to choose the gtm port for ft simulation</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">in gexpat, gtm uses port 5050 for ft simulations resulting in the inability to run multiple simulations at a time even with multiple gexpat instances</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7877" SDNUM="1036;"><FONT FACE="Verdana">7877</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">PAT processing a post PAT file</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When PAT processing a post &uml;PAT file, implement required options to be able to achieve the same PAT results than the original PAT processing.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7917" SDNUM="1036;"><FONT FACE="Verdana">7917</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Automated PAT recipe conversion</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Provide the means for automated PAT recipe conversion. A conversion function will be available through JS.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="5402" SDNUM="1036;"><FONT FACE="Verdana">5402</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">display the physical pin names in the test name of mpr records when not merging the pins.</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">The pins expand OK for multiple pins on parametric testing during STDF file conversion. However, the tester channel is displayed as opposed to the physical pin names. (i.e. PPMU/Continuity/Opens_Shorts - 148)</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" COLSPAN=3 HEIGHT="25" ALIGN="LEFT" BGCOLOR="#B3B3B3"><B><FONT FACE="Verdana" SIZE=4 COLOR="#0000FF">Bug fixes</FONT></B></TD>
+		</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP BGCOLOR="#E6E6E6"><B><FONT FACE="Verdana" SIZE=3>Case Number</FONT></B></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP BGCOLOR="#E6E6E6"><B><FONT FACE="Verdana" SIZE=3>Subject</FONT></B></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP BGCOLOR="#E6E6E6"><B><FONT FACE="Verdana" SIZE=3>Description</FONT></B></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="6373" SDNUM="1036;"><FONT FACE="Verdana">6373</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Unable to handle non stdf file when merging/checking with wafermap files</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When merging wafermap files: Gex Pat shouldn't accept non stdf as it isn't able to convert<BR>When checking wafermap orientation: Gex Pat shouldn't try to convert non stdf as it isn't able to convert</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7214" SDNUM="1036;"><FONT FACE="Verdana">7214</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Shift Analysis - Excel Output Report Columns are Messed Up in Shift Analysis Section</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Customer reported columns messed up in shift analysis section of Excel Output Report.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7479" SDNUM="1036;"><FONT FACE="Verdana">7479</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">stdf checker does not outline issues when PIR and PRR do not match</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the toolbox stdf checker does not check for matching PIR/PRR records as it should.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7494" SDNUM="1036;"><FONT FACE="Verdana">7494</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">A 2x longer run time per wafer in PATMan / PAT Server</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">PATMan V7.0 takes 2X longer than v5.7 per wafer for the same analysis</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7514" SDNUM="1036;"><FONT FACE="Verdana">7514</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Incorrect exec values in Test statistics report for a test created with a XML mapping file and when merging two STDF</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">The user creates three new tests using an XML mapping file and then do a merge analysis of two files which have this mapping. The resulting first created test does not have the appropriate number of executions as if the results from the other file were not taken into account.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="145" ALIGN="LEFT" VALIGN=TOP SDVAL="7526" SDNUM="1036;"><FONT FACE="Verdana">7526</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Missing yield value in the interactive table for a query without parameter results</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When &quot;Extract parameter results&quot; and &quot;Extract parts without any results&quot; in the RDB options tab are unchecked, the part results of tests selected in the &quot;Parameter list&quot; pull down are not extracted (neither the part information like XY, bin value, etc...). This way of configuring the query is very useful to extract the tests statistics like Mean, CpK or Yield in a very fast manner. When doing so in 7.0, it works very well with the static Test Statistics report, but in the interactive table the yield value is missing. The workaround is to check the &quot;Extract parts without any results&quot; to get the yield back into the interactive table, but this can slow down the query since we also extract the part information (specially when dealing with many devices).</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="74" ALIGN="LEFT" VALIGN=TOP SDVAL="7575" SDNUM="1036;"><FONT FACE="Verdana">7575</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">E142 wafer map export regression: bintype incorrectly equal to Integer instead of Hexa</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">The user reported an issue when exporting wafermap to E142 format. With version 6.5, the E142 exported map contains the &quot;BinType&quot; field set to &quot;HexaDecimal&quot; which is expected. With version 7.0 however, the E142 map has the &quot;BinType&quot; fileld set to Integer2 which seems incorrect given the value of bincodes. There is also a missing MapType field.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7588" SDNUM="1036;"><FONT FACE="Verdana">7588</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">there is no progress bar in gex pat for ft simulation</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when running an ft simulation, status messages appear at the bottom left to indicate the tool is working but these messages are not very often so the tool appears to hang to the user. a progress bar is needed to indicate that the tool is running</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7591" SDNUM="1036;"><FONT FACE="Verdana">7591</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the limits for one site are incorrectly calculated</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">one of the sites has pat limits that put the entire distribution for that site outside of the limits.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7592" SDNUM="1036;"><FONT FACE="Verdana">7592</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">output map is correct but updated optional source map is not properly updated</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when specifying an optional source, the update map is not updated for GDBN or NNR fallout</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7593" SDNUM="1036;"><FONT FACE="Verdana">7593</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the limits are incorrectly applied for one of the sites</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the limits for site 4 are much tighter than the rest of the sites but are incorrectly applied to the site 4 distribution</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7595" SDNUM="1036;"><FONT FACE="Verdana">7595</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">pat limits in the interactive charts are omitted</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">in the interactive charts, the pat limits are not displayed</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7596" SDNUM="1036;"><FONT FACE="Verdana">7596</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">temp files are not being properly deleted during PAT</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">PM is leaving behind the _merged.stdf file created during the PAT process</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7599" SDNUM="1036;"><FONT FACE="Verdana">7599</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">recipe creation is not allowing for proper spat update</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when a final test recipe is updated for spat limits, the recipe is converted to wafer sort</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7611" SDNUM="1036;"><FONT FACE="Verdana">7611</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Recipe gui does not read the recipe properly on some settings</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">there are two settings not read properly from the recipe when initiating an edit session</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7616" SDNUM="1036;"><FONT FACE="Verdana">7616</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">patman won't output post pat data</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">cannot output _patman.stdf data or update the external map in lg1</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7621" SDNUM="1036;"><FONT FACE="Verdana">7621</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">E142 wafer map export issue when export in BinType=HexaDecimal</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When examinator-PRO export a WaferMap to SEMI E142 inkless format, SEMI e142 export file is not complete</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7628" SDNUM="1036;"><FONT FACE="Verdana">7628</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">icon change is not reflected in the error message</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when the user tries to close ym or pm without logging into ym_admin_db, there is an error popup that notifies the user to log in. the icon that the error message tells the user to use is the old icon from v7.0.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7631" SDNUM="1036;"><FONT FACE="Verdana">7631</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when running the Quantix tools from command line in linux, a dump appears to occur</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">there is a mass of information dumped into the command shell after running examinator or ym in linux from the command shell</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7644" SDNUM="1036;"><FONT FACE="Verdana">7644</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">The default Analyze dataset screen has incorrect values</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When you open Examinator even with the default options in V7.0.01, and you click &quot;analyze dataset&quot; it defalts to the advanced tab, and it has the samples window filled out even though the filter is not set to n type sampling.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7649" SDNUM="1036;"><FONT FACE="Verdana">7649</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Examinator PAT crashes intermittently on one of the customer files</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Examinator PAT crashes intermittently on one of the customer files</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7654" SDNUM="1036;"><FONT FACE="Verdana">7654</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">GTF file option ValidWaferThreshold_GrossDieRatio not rejecting files</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Customer tried using the option set at 0.9 for 90% die tested as a requirement and run against a wafer with only 35% of the wafer is tested.  After that failed he tried again manually specifying the GDPW but still the file was processed.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7657" SDNUM="1036;"><FONT FACE="Verdana">7657</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Input data file not delete when wafer are incomplete during PAT Processing</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When the number of parts dor a wafer is under a specified threshold, and 'DeleteIncompleteWafers' key is set to true, the input data files are not deleted.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7658" SDNUM="1036;"><FONT FACE="Verdana">7658</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">E142 output map with Hexadecimal bin type don't follow specification</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">E142 output map with Hexadecimal bin type don't follow specification</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7667" SDNUM="1036;"><FONT FACE="Verdana">7667</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">'Invalid run index' level 3 message in GS log file</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When reading E142 input map during PAT processing some level 3  'Invalid run index' and 'ASSERT' messages are logged in the GS log file.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7679" SDNUM="1036;"><FONT FACE="Verdana">7679</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">GexPAT not storing original test limits</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Gex pat should write the original test limits to the Low Spec and High Spec fields.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7688" SDNUM="1036;"><FONT FACE="Verdana">7688</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">banner mode in static histograms has extra white space</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">in v7.1, the banner mode has extra space that is unused just below the x-axis which unnecessarily increases the size of the histograms thus limiting the number that can be displayed per page.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7696" SDNUM="1036;"><FONT FACE="Verdana">7696</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">log file generated when processing a composite pat trigger file is named .tmp</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when processing a composite map trigger file in pm, the log file output has the .tmp file extension</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7733" SDNUM="1036;"><FONT FACE="Verdana">7733</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">What if results are not updating if you adjust the same test more than once</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">If you update a test's limits more than once and compute, the stats don't update.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7738" SDNUM="1036;"><FONT FACE="Verdana">7738</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Wrong wafermap in COMPOSITE-PAT report</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">The report generated after processing a COMPOSITE-PAT GTF file has a wrong count of failing dies, and the wrong die colors.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7740" SDNUM="1036;"><FONT FACE="Verdana">7740</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">processing order in datapump is not functioning properly</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when there are multiple files in the data pump source folder, they are not always processed in the expected order</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="92" ALIGN="LEFT" VALIGN=TOP SDVAL="7741" SDNUM="1036;"><FONT FACE="Verdana">7741</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when merging test and retest in pat, in v6.5 the _merged.stdf file is saved in the output area</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when merging test and retest in pat, in v6.5 the _merged.stdf file is saved in the output area. in v7.1 the _merged.stdf file is saved in he input area. the file is deleted when pat is done in v7.1, but<BR>pm does not always have write access to the input folder. it does always have write access to the output folder.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7746" SDNUM="1036;"><FONT FACE="Verdana">7746</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">e142 optional source update errors</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the e142 optional source is updated with \&gt; instead of /&gt; in the &lt;BinDefinition section for the pat bins</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7747" SDNUM="1036;"><FONT FACE="Verdana">7747</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">pm crash on particular gtf file</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">in linux, pm will crash when encountering a particular test</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7748" SDNUM="1036;"><FONT FACE="Verdana">7748</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the linux start up scripts specify the legacy license manager</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the -uselp=gs_lp is still in all the linux start up scripts. this was supposed to be removed in v7.1.03.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7749" SDNUM="1036;"><FONT FACE="Verdana">7749</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">gtf file renamed to .bad and rejected but files are still output</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when a gtf file is bad because pat processing fails at the end of the processing (ie. cannot create final output map), the _patman.std file and updated optional source are still created even though pat was not complete</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="199" ALIGN="LEFT" VALIGN=TOP SDVAL="7752" SDNUM="1036;"><FONT FACE="Verdana">7752</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">License invalid window does not close after activation</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">During the flex license activation (especially for a standalone license), a user opens Examinator and gets a pop up error that says something about no valid license. However, this error is covered by the welcome screen and then the Quantix-la. After activation, the user closes the Quantix-la and then sees the message. But to the user, he just got a successful activation so this error makes no sense. <BR><BR>Here are possible solutions:<BR>1)I think we need to change this by auto closing after the user closes the Quantix-la on completion of a successful activation. <BR><BR>2) Make that window be the front window so they close it before they begin activation</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7753" SDNUM="1036;"><FONT FACE="Verdana">7753</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Incorrect DPAT failure count produced in the PAT log file</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">DPAT failures count , in Yield details section, is incorrect in the PAT log file when ZPAT outliers are detected.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="74" ALIGN="LEFT" VALIGN=TOP SDVAL="7754" SDNUM="1036;"><FONT FACE="Verdana">7754</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When exporting interactive tables (tests or part results), units which contain spaces are not separated from values</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When units contain some spaces, the export of the interactive tables (test results of part results) does not work as expected. It is expected to separate the unit from the values which works since v7.1.03 and v7.0.16, but when the unit contains a space, values and units are exported into the same Excel cell.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7770" SDNUM="1036;"><FONT FACE="Verdana">7770</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">gex-email will not run as a daemon</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">gex-email will install and run as a windows service but will not run as a linux daemon</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7784" SDNUM="1036;"><FONT FACE="Verdana">7784</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the insertion logs are displayed incorrectly</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">in the insertion logs gui under &quot;Local Insertion Logs&quot;, the display does not align with the contents of the .gexmo_report_xxxx-xx-xx.log</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7794" SDNUM="1036;"><FONT FACE="Verdana">7794</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Extract All Parts / Consolidated Query Pull down Missing at Startup</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When Examinator first launches, the pull down box to select extract all parts, or consolidated query is missing. Once you select any database, it then shows up.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7842" SDNUM="1036;"><FONT FACE="Verdana">7842</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">export to file from a PAT report does not function</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">after creating a PAT report, there is a link in the more reports section that allows the user to output limits and stats and save. when clicking on this link, a pop up prompts the user saying that the feature is not available</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7845" SDNUM="1036;"><FONT FACE="Verdana">7845</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Perpetual license does not work once maintenance is expired</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When the maintenance feature has expired, the associated perpetual license can't be checked out.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7850" SDNUM="1036;"><FONT FACE="Verdana">7850</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">wafer number is incorrect</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">if a file has no wafer number, examinator reports wafer #1 as the wafer id.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="74" ALIGN="LEFT" VALIGN=TOP SDVAL="7858" SDNUM="1036;"><FONT FACE="Verdana">7858</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">License checkout issues</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">This case gathers the following license checkout issues:<BR>1. Evaluation license should be found automatically (without -W switch added in the shortcut)<BR>2. Users of GEX v7.0 or before should be by default redirected to Flex License Provider if Legacy License Provider is down.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7859" SDNUM="1036;"><FONT FACE="Verdana">7859</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">CSV version 1.0 export issued truncated test names</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">This case addresses an issue where the CSV conversion of some STDF datalogs lead to truncated test names. This occurs only with CSV version 1.0.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7860" SDNUM="1036;"><FONT FACE="Verdana">7860</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">GDF format does not handle multi site data</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">The datalog attached is in GDF format and contains multi site data. These data are not parsed well preventing GEX from doing a by site analysis.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7885" SDNUM="1036;"><FONT FACE="Verdana">7885</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">CSV format: when device has no result for a given test, that test does not appear in the report</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">CSV datalog with empty results for a given test is such that we can't see that test in the Examinator report. It is expected to see the test even if devices are not tested on it.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7892" SDNUM="1036;"><FONT FACE="Verdana">7892</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">empty gexlm_config.xml file when generating the ym admin db for the first time, when license provider is Flex</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">This issue prevents the user to connect to the ym admin db with the default Yield-Man argument -GYM. When generating for the first time a YM admin DB, a gexlm_config.xml file is created but contains empty values in it. This was not happening with GEXLM but happens with FLEXLM</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7900" SDNUM="1036;"><FONT FACE="Verdana">7900</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">mp tests are listed as not pat ready on recipe creation</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when a recipe is created from a file with mp tests, the mp tests are listed as not PAT ready</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7908" SDNUM="1036;"><FONT FACE="Verdana">7908</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">a final test file creates a wafer sort recipe</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when using a create new ft recipe with a final test file, a ws recipe is created instead</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7909" SDNUM="1036;"><FONT FACE="Verdana">7909</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">pat is not run</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when running pat in gexpat, it builds a report but does not actually apply pat</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7918" SDNUM="1036;"><FONT FACE="Verdana">7918</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Editing a recipe from the process WS  file menu leads to a crash</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">With an existing JSON recipe, if the user goes to WS process file menu, drags and drops the recipe and edits it, the tool crashes</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7919" SDNUM="1036;"><FONT FACE="Verdana">7919</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Can't switch back to legacy license when -W is provided</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When -W argument is provided and any tool is run, the Welcome screen comes up. From this screen we should be able to hit the &quot;Legacy license&quot; button and provide the GEXLM connection information. This is not working and instead the tool just closes</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7920" SDNUM="1036;"><FONT FACE="Verdana">7920</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When creating a recipe with the same name as an existing recipe, the tool doesn't ask for confirmation to override it</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Sometimes we need to override a recipe but it is expected that the tool will issue a confirmation window in case the file already exists.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7922" SDNUM="1036;"><FONT FACE="Verdana">7922</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Options need two hits to enable or disable them</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">In v7.2 we need to hit twice an option to activate or deactivate it</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7931" SDNUM="1036;"><FONT FACE="Verdana">7931</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">a recipe cannot be loaded on gexpat ft simulator does not work</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when using the ft simulator, a recipe cannot be loaded</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7932" SDNUM="1036;"><FONT FACE="Verdana">7932</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">ft pat simulator does not work</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the ft pat simulator freezes once started. the gtl log file shows that it is trying to open a socket connection on port 5050 and cannot.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7933" SDNUM="1036;"><FONT FACE="Verdana">7933</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">gexpat crashes when editing a recipe</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when editing a wafer sort recipe, the tool can crash</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7934" SDNUM="1036;"><FONT FACE="Verdana">7934</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">more reports does not build a report</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when using more reports, the report is not always generated</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7936" SDNUM="1036;"><FONT FACE="Verdana">7936</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Flex Standalone license does not work on Linux</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Even if we can activate successfully a standalone license on Linux, we can't run Examinator. We instead get an error message saying that the license is missing.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7937" SDNUM="1036;"><FONT FACE="Verdana">7937</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Missing axes names on MVPAT correlation charts</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">It is expected to see the axes names on the MV PAT correlation charts. In the standard case we expect to see the test number and test name for each axis of the correlation charts, and when plotting PCA instead, we expect to see the PC numbers (PC1, PC2, etc...)</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7938" SDNUM="1036;"><FONT FACE="Verdana">7938</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Links in Rules failing MV PAT don't work</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When clicking on a specific rule failing MV PAT doesn't get you to the appropriate report page, for instance clicking on Rule 3 will get you to Rule 1 report.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7939" SDNUM="1036;"><FONT FACE="Verdana">7939</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Report of MV PAT rules are not sorted correctly</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">It would be useful to have the reports showing the MV PAT rules charts sorted in numerical oder (Rule 1, 2, 3 etc...). Currently it is not sorted well</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7942" SDNUM="1036;"><FONT FACE="Verdana">7942</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Cannot change viewport in interactive charts</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When analyzing attached file, it's not possible to change the viewport in the interactive charts for some tests.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7944" SDNUM="1036;"><FONT FACE="Verdana">7944</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">sqlite compatability issues</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">the sqlite file from final test pat in v71 does not appear to be compatible in v72 beta testing</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7945" SDNUM="1036;"><FONT FACE="Verdana">7945</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">SPEKTRA file won't process</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">file won't process and error message is empty</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7949" SDNUM="1036;"><FONT FACE="Verdana">7949</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Choosing another DPAT rule than S&amp;A at recipe creation does not work</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">When user first creates a recipe, choosing something else than Smart and Adaptive algo for DPAT does not work. Instead we stick to Smart and Adaptive</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7950" SDNUM="1036;"><FONT FACE="Verdana">7950</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Can't force factor on multiple tests in PAT recipe</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">In a PAT recipe it was possible to force the N or T factor of multiple tests to a given value when the algorithm allowed it, for instance with the Median +/- RobustSigma.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7951" SDNUM="1036;"><FONT FACE="Verdana">7951</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Tests in DPAT recipes are not anymore sorted numerically</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">It is expected that DPAT recipes contain tests sorted numerically. This is not the case anymore.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="20" ALIGN="LEFT" VALIGN=TOP SDVAL="7953" SDNUM="1036;"><FONT FACE="Verdana">7953</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">gtf files rejected for action wafer_export</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">patman won't process gtf files that are using the action for wafer_export</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7956" SDNUM="1036;"><FONT FACE="Verdana">7956</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Wafermap from home page of reports doesn't work</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">From the home page of the html web report the wafermap! link doesn't work.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="74" ALIGN="LEFT" VALIGN=TOP SDVAL="7961" SDNUM="1036;"><FONT FACE="Verdana">7961</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">if the license manager goes away, the server application delivers a pop-up to the user</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">if the license manager goes away, the server application delivers a pop-up to the user. because the application is running on a server and does not have a specific user, it stops until someone acknowledges the pop-up. the server application should not make a pop-up but should make a log and then try to reconnect every n minutes</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7966" SDNUM="1036;"><FONT FACE="Verdana">7966</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">error message in PM doesn't make sense</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when processing this data, it processes successfully but the detailed logs ask a question to the user</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7972" SDNUM="1036;"><FONT FACE="Verdana">7972</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Toolbox - Database Keys Editor doesn't allow user to close the editor</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">The red 'x' in the upper right corner of the database keys editor is not enabled so the user cannot close the editor.</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="56" ALIGN="LEFT" VALIGN=TOP SDVAL="7979" SDNUM="1036;"><FONT FACE="Verdana">7979</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when user enters wrong credentials, he cannot exit from the welcome screen</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">when opening gex with the welcome scren, if the user enters incorrect ip or port, the welcome screen will reappear after a brief error. if the user then tries to exit the welcome screen without connecting, the welcome screen toggles between flex and legacy license connection</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7980" SDNUM="1036;"><FONT FACE="Verdana">7980</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">Double click on a std file does not automatically launch Examinator</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">To open Examinator the user can double click on a std file. This is not working anymore in some circumstances</FONT></TD>
+	</TR>
+	<TR>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" HEIGHT="38" ALIGN="LEFT" VALIGN=TOP SDVAL="7852" SDNUM="1036;"><FONT FACE="Verdana">7852</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">G85 export does not contain the appropriate DIES count.</FONT></TD>
+		<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN="LEFT" VALIGN=TOP><FONT FACE="Verdana">The DIES count is incorrect when exporting a post PAT wafer map in G85 format.</FONT></TD>
+	</TR>
+</TABLE>
+<!------------------------------------------------------------------------------>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+

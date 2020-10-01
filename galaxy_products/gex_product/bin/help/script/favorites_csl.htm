@@ -1,0 +1,84 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: favorites.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This script loads the Examinator list of Favorite Scripts.
+      Understanding how this scripts works will demonstrate how to use the GEX library
+      command <a href="gex7.htm">gexFavoriteScripts.</a> This command lets you:</p>
+      <ul>
+        <li>
+          <p align="left">Erase the existing list</li>
+        <li>
+          <p align="left">Insert new scripts in the list</li>
+      </ul>
+          <p align="left">Additional information can be found in the scripting language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">reviewing</a> the other sample scripts.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: favorites.csl
+//////////////////////////////////////////
+
+// Function to setup the GEX 'Favorite Scripts' menu list
+SetFavoriteScripts()
+{
+  sysLog('*** This script loads the list of Favorite Scripts! ***');
+
+  // Erase the list in case it is not empty
+  gexFavoriteScripts('clear');
+
+#if sysIsUnixFamily
+  // Insert template scripts to the list (UNIX Platform)
+  sysLog('Inserting favorite script: hello.csl');
+  gexFavoriteScripts('insert','/export/home/galaxy_examinator/samples/hello.csl','Hello demo');
+
+  sysLog('Inserting favorite script: args.csl');
+  gexFavoriteScripts('insert','/export/home/galaxy_examinator/samples/args.csl','ARGS demo');
+  
+  sysLog('Inserting favorite script: trace.csl');
+  gexFavoriteScripts('insert','/export/home/galaxy_examinator/samples/trace.csl','TRACE demo');
+  
+  sysLog('Inserting favorite script: options.csl');
+  gexFavoriteScripts('insert','/export/home/galaxy_examinator/samples/options.csl','OPTIONS demo');
+#else
+  // Insert template scripts to the list (WINDOWS Platform)
+  sysLog('Inserting favorite script: hello.csl');
+  gexFavoriteScripts('insert','c:\\Program Files\\Quantix Examinator\\samples\\hello.csl','Hello demo');
+
+  sysLog('Inserting favorite script: args.csl');
+  gexFavoriteScripts('insert','c:\\Program Files\\Quantix Examinator\\samples\\args.csl','ARGS demo');
+  
+  sysLog('Inserting favorite script: trace.csl');
+  gexFavoriteScripts('insert','c:\\Program Files\\Quantix Examinator\\samples\\trace.csl','TRACE demo');
+  
+  sysLog('Inserting favorite script: options.csl');
+  gexFavoriteScripts('insert','c:\\Program Files\\Quantix Examinator\\samples\\options.csl','OPTIONS demo');
+#endif
+
+  sysLog('List of Favorite Scripts Done!');
+}
+
+// Script entry point
+main()
+{
+  // Call function to setup the GEX 'Favorite Scripts' list
+  SetFavoriteScripts();
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

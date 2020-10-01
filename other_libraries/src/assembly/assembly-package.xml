@@ -1,0 +1,15 @@
+<assembly>
+    <id>assembly-package</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/other_libraries</directory>
+            <outputDirectory>other_libraries</outputDirectory>
+            <excludes/>
+        </fileSet>          
+    </fileSets>
+</assembly>

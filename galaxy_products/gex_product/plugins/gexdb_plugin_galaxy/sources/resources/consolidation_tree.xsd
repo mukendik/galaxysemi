@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- definition of simple type -->
+    <xs:simpleType name="dateConsolidation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="min_start_time"/>
+            <xs:enumeration value="max_start_time"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="consolidationMode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="stacked"/>
+            <xs:enumeration value="linear"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dataType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="intermediate"/>
+            <xs:enumeration value="physical"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="storedResult">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="all"/>
+            <xs:enumeration value="none"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="algorithm">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="first_bin"/>
+            <xs:enumeration value="last_bin"/>
+            <xs:enumeration value="first_fail"/>
+            <xs:enumeration value="last_fail"/>
+            <xs:enumeration value="lowest_bin"/>
+            <xs:enumeration value="highest_bin"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="conditionValues">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([\w\.\-\+\(\)]+\|?)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="groupBy">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([\w\.\-]+\|?)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="conditionName">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([\w\.\-]+)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="products">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([\w\.\-]+\|?)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- definition of complex types -->
+
+    <!-- definition of complex elements -->
+    <xs:element name="rule">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="rule" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" 		type="xs:string" 	use="required"/>
+            <xs:attribute name="group_by" 	type="groupBy"          use="required"/>
+            <xs:attribute name="data_type" 	type="dataType" 	use="required"/>
+            <xs:attribute name="algo" 		type="algorithm"	use="required"/>
+            <xs:attribute name="stored_results" type="storedResult"	use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="set">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="rule" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="mode"       type="consolidationMode"    use="required"/>
+            <xs:attribute name="begin_date" type="xs:date" 		use="optional"/>
+            <xs:attribute name="end_date"   type="xs:date" 		use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="condition">
+        <xs:complexType>
+            <xs:attribute name="condition_name" type="conditionName" 	use="required"/>
+            <xs:attribute name="splitlot_field" type="xs:string" 	use="required"/>
+            <xs:attribute name="allowed_values" type="conditionValues"  use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="test_conditions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="condition" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="consolidation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="test_conditions" 	minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="set" 				minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="begin_date" type="xs:date" 	/>
+            <xs:attribute name="end_date" 	type="xs:date" 	/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="default">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="set" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="group">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="consolidation" 	minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="products_id" 		type="products" 	use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="options">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="date_consolidation" minOccurs="1" maxOccurs="1" type="dateConsolidation"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="wafer_sort">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="options"   minOccurs="1"   maxOccurs="1" />
+                <xs:element ref="default"   minOccurs="1"   maxOccurs="1"/>
+                <xs:element ref="group"     minOccurs="0"   maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="final_test">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="options"   minOccurs="1"   maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="consolidation_tree">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="wafer_sort" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="final_test" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="version"      type="xs:decimal"	fixed="0.3" />
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

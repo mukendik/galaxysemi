@@ -1,0 +1,40 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>assembly-galaxy-testermonitor-core-linux64-component</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/other_libraries/chartdirector/lib/${distName}</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <includes>
+                <include>${libSuffix}chartdir${libPostfix}</include>
+                <include>fonts/*</include>
+            </includes>
+        </fileSet> 
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/plugins/lib/${distName}</directory>
+            <outputDirectory>plugins/lp</outputDirectory>
+            <includes>
+                <include>${libSuffix}fnp_lp${libPostfix}</include>
+                <include>${libSuffix}gs_lp${libPostfix}</include>
+            </includes>
+        </fileSet> 
+        <!-- imageformats -->
+        <fileSet>
+            <directory>${env.QTDIR}/plugins</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>imageformats/*${libPostfix}</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <files>
+        <file>
+            <source>${project.build.directory}/galaxy_products/gex_product/bin/gsd${exeExt}</source>
+            <outputDirectory>${binDir}</outputDirectory>
+            <destName>gs-gtmd${exeExt}</destName>
+            <fileMode>0755</fileMode>
+        </file>
+     </files>    
+</assembly>

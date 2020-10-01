@@ -1,0 +1,1169 @@
+<ui version="4.0" >
+ <class>PickSerieDialogBase</class>
+ <widget class="QDialog" name="PickSerieDialogBase" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>363</width>
+    <height>451</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Define serie...</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <property name="autoFillBackground" >
+   <bool>true</bool>
+  </property>
+  <property name="sizeGripEnabled" >
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <layout class="QGridLayout" name="gridLayout_3" >
+     <item row="0" column="0" >
+      <widget class="QLabel" name="labelSQL_Serie" >
+       <property name="text" >
+        <string>&lt;font face="Arial">&lt;h1>&lt;b>Serie definition sheet&lt;/b>&lt;/h1>&lt;/font></string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignTop</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" >
+      <spacer name="spacer28" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>43</width>
+         <height>11</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="2" >
+      <widget class="QPushButton" name="PushButtonOk" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>59</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>OK</string>
+       </property>
+       <property name="default" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2" >
+      <widget class="QPushButton" name="PushButtonCancel" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>59</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line1" >
+     <property name="frameShape" >
+      <enum>QFrame::HLine</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Sunken</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_4" >
+     <item row="1" column="2" >
+      <widget class="QLineEdit" name="editSQL_Serie_Binlist" >
+       <property name="toolTip" >
+        <string>Bin list selection...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2" >
+      <widget class="QLineEdit" name="editSQL_Serie_Name" >
+       <property name="toolTip" >
+        <string>Enter serie's label</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" >
+      <widget class="QLabel" name="labelSQL_Serie_Name" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>83</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>Serie name:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignTop</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" >
+      <widget class="QComboBox" name="comboSQL_Serie_Binnings" >
+       <property name="toolTip" >
+        <string>Binning list in serie...</string>
+       </property>
+       <item>
+        <property name="text" >
+         <string>ALL Bins</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>PASS Bins only</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>FAIL Bins only</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Specific Bins...</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="3" >
+      <widget class="QToolButton" name="buttonSQL_Serie_PickBinList" >
+       <property name="minimumSize" >
+        <size>
+         <width>26</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>26</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="palette" >
+        <palette>
+         <active>
+          <colorrole role="WindowText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>64</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Button" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Light" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Midlight" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>237</red>
+             <green>228</green>
+             <blue>219</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Dark" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>128</red>
+             <green>128</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Mid" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>144</red>
+             <green>139</green>
+             <blue>133</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="BrightText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Shadow" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>64</red>
+             <green>64</green>
+             <blue>64</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Highlight" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>36</green>
+             <blue>104</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="HighlightedText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Link" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="LinkVisited" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="WindowText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>64</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Button" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Light" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Midlight" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>237</red>
+             <green>228</green>
+             <blue>219</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Dark" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>128</red>
+             <green>128</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Mid" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>144</red>
+             <green>139</green>
+             <blue>133</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="BrightText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Shadow" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>64</red>
+             <green>64</green>
+             <blue>64</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Highlight" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>216</red>
+             <green>208</green>
+             <blue>200</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="HighlightedText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Link" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="LinkVisited" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="WindowText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>64</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Button" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Light" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Midlight" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>235</red>
+             <green>231</green>
+             <blue>227</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Dark" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>128</red>
+             <green>128</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Mid" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>144</red>
+             <green>139</green>
+             <blue>133</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>108</red>
+             <green>104</green>
+             <blue>100</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="BrightText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>108</red>
+             <green>104</green>
+             <blue>100</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Shadow" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Highlight" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>36</green>
+             <blue>104</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="HighlightedText" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Link" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>0</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="LinkVisited" >
+           <brush brushstyle="SolidPattern" >
+            <color alpha="255" >
+             <red>255</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="toolTip" >
+        <string>Pick specific bin values from list</string>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="C:/Work/Dev_QT4/Galaxy_Products/gex_product/gex/sources/gex.qrc" >
+         <normaloff>:/gex/icons/combo.png</normaloff>:/gex/icons/combo.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="autoRaise" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" >
+      <widget class="QLabel" name="labelSQL_Serie_Binlist" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>83</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>Bin list:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignTop</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupSQL_Serie_PlotSerie" >
+     <property name="title" >
+      <string>Plot serie</string>
+     </property>
+     <property name="checkable" >
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2" >
+      <item row="0" column="0" >
+       <widget class="QLabel" name="labelSQL_Serie_Style" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>Style:</string>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QComboBox" name="comboSQL_Serie_Style" >
+        <property name="toolTip" >
+         <string>Charting style for 'Yield'</string>
+        </property>
+        <item>
+         <property name="text" >
+          <string>Bars</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Lines</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="2" >
+       <widget class="GColorPushButton" name="buttonSQL_Serie_Color" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize" >
+         <size>
+          <width>58</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>58</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="toolTip" >
+         <string>Set Binning Pareto color</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="autoDefault" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="labelSQL_Serie_DataLabels" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize" >
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text" >
+         <string>Data labels:</string>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2" >
+       <widget class="QComboBox" name="comboSQL_Serie_DataLabels" >
+        <property name="toolTip" >
+         <string>Define spots style to draw (if any)</string>
+        </property>
+        <item>
+         <property name="text" >
+          <string>No label</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Auto</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Top</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Bottom</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Left</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Right</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="labelSQL_Serie_LineStyle" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>Line style:</string>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2" >
+       <widget class="QComboBox" name="comboSQL_Serie_LineStyle" >
+        <property name="toolTip" >
+         <string>Charting Line style</string>
+        </property>
+        <item>
+         <property name="text" >
+          <string>Line</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Spline line</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Step line</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="2" >
+       <widget class="QComboBox" name="comboSQL_Serie_LineSpots" >
+        <property name="toolTip" >
+         <string>Define spots style to draw (if any)</string>
+        </property>
+        <item>
+         <property name="text" >
+          <string>No spots</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Auto</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Square</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Circle</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Diamonds</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Triangle</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Cross</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="1" colspan="2" >
+       <widget class="QComboBox" name="comboSQL_Serie_LineProperty" >
+        <property name="maximumSize" >
+         <size>
+          <width>16777215</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="iconSize" >
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <item>
+         <property name="text" >
+          <string>SolidLine</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="C:/Work/Dev_QT4/Galaxy_Products/gex_product/gex/sources/gex.qrc" >
+           <normaloff>:/gex/icons/SolidLine.png</normaloff>:/gex/icons/SolidLine.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>DashLine</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="C:/Work/Dev_QT4/Galaxy_Products/gex_product/gex/sources/gex.qrc" >
+           <normaloff>:/gex/icons/DashLine.png</normaloff>:/gex/icons/DashLine.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>DotLine</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="C:/Work/Dev_QT4/Galaxy_Products/gex_product/gex/sources/gex.qrc" >
+           <normaloff>:/gex/icons/DotLine.png</normaloff>:/gex/icons/DotLine.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>DotDashLine</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="C:/Work/Dev_QT4/Galaxy_Products/gex_product/gex/sources/gex.qrc" >
+           <normaloff>:/gex/icons/DashDotLine.png</normaloff>:/gex/icons/DashDotLine.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>AltDashLine</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="C:/Work/Dev_QT4/Galaxy_Products/gex_product/gex/sources/gex.qrc" >
+           <normaloff>:/gex/icons/AltDashLine.PNG</normaloff>:/gex/icons/AltDashLine.PNG</iconset>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupSQL_Serie_ParetoOverException" >
+     <property name="title" >
+      <string>Show Binning pareto for yield-exception lots</string>
+     </property>
+     <property name="checkable" >
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout" >
+      <item row="0" column="0" >
+       <widget class="QLabel" name="labelSQL_Serie_YieldExcdeption" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>83</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="text" >
+         <string>Alarm if ...:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QComboBox" name="comboSQL_Serie_YieldException" >
+        <property name="toolTip" >
+         <string>Yield alarm type</string>
+        </property>
+        <item>
+         <property name="text" >
+          <string>Yield &lt;= </string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Yield >= </string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="2" >
+       <widget class="QLineEdit" name="editSQL_Serie_YieldThreshold" >
+        <property name="toolTip" >
+         <string>enter yield threshold limit (eg: 95.6%)</string>
+        </property>
+        <property name="text" >
+         <string>70.0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3" >
+       <widget class="QLabel" name="textLabel1" >
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4" >
+       <spacer name="spacer31" >
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>53</width>
+          <height>7</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="labelSQL_Serie_TableData" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>83</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>Table data:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignTop</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboSQL_Serie_TableData" >
+       <property name="toolTip" >
+        <string>Define what to include in table...</string>
+       </property>
+       <item>
+        <property name="text" >
+         <string>Yield</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Volume</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Yield &amp; Volume</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>None (disable table)</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <spacer name="spacer30" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>67</width>
+         <height>7</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="spacer32" >
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0" >
+      <size>
+       <width>13</width>
+       <height>178</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <customwidgets>
+  <customwidget>
+   <class>GColorPushButton</class>
+   <extends>QPushButton</extends>
+   <header>gcolorpushbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>editSQL_Serie_Name</tabstop>
+  <tabstop>comboSQL_Serie_Binnings</tabstop>
+  <tabstop>editSQL_Serie_Binlist</tabstop>
+  <tabstop>buttonSQL_Serie_PickBinList</tabstop>
+  <tabstop>groupSQL_Serie_PlotSerie</tabstop>
+  <tabstop>comboSQL_Serie_Style</tabstop>
+  <tabstop>buttonSQL_Serie_Color</tabstop>
+  <tabstop>comboSQL_Serie_DataLabels</tabstop>
+  <tabstop>comboSQL_Serie_LineStyle</tabstop>
+  <tabstop>comboSQL_Serie_LineSpots</tabstop>
+  <tabstop>comboSQL_Serie_LineProperty</tabstop>
+  <tabstop>groupSQL_Serie_ParetoOverException</tabstop>
+  <tabstop>comboSQL_Serie_YieldException</tabstop>
+  <tabstop>editSQL_Serie_YieldThreshold</tabstop>
+  <tabstop>comboSQL_Serie_TableData</tabstop>
+  <tabstop>PushButtonOk</tabstop>
+  <tabstop>PushButtonCancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

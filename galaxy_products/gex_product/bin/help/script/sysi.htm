@@ -1,0 +1,89 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>sysDateFormat<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library<br>
+      </a>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>sysDateFormat(
+  [const format]) // new date format to set
+</pre>
+      <p>Query or change current date format. If no parameter is given, the
+      current date format is queried only.</p>
+      <p>Valid date formats are:</p>
+      <p>&nbsp;
+      <table cellSpacing="0" cellPadding="3" border="0">
+        <tbody>
+          <tr vAlign="top" bgColor="#0044aa">
+            <td><font color="#ffffff"><b>Format</b></font></td>
+            <td bgColor="#0034aa"><font color="#ffffff"><b>Description</b></font></td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>sysDateFormatISO</td>
+            <td bgColor="#b0d0ff">ISO date format as <i>YYYY.MM.DD HH.MM.SS</i></td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>sysDateFormatEuro</td>
+            <td bgColor="#d0e0ff">European date format as <i>DD.MM.YYYY HH:MM:SS</i></td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>sysDateFormatISO</td>
+            <td bgColor="#b0d0ff">US date format as <i>MM/DD/YYYY HH.MM.SS</i></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Returns current date format.</p>
+      <p>Example:</p>
+      <pre>sysDateFormat(sysDateFormatISO);
+sysLog(sysDateTime);
+sysDateFormat(sysDateFormatEuro);
+sysLog(sysDateTime);
+sysDateFormat(sysDateFormatUS);
+sysLog(sysDateTime);
+</pre>
+      <p>Output:</p>
+      <pre>2001.06.20 16.00.23
+20.06.2001 16:00:23
+06/20/2001 16.00.23
+</pre>
+      <pre>
+</pre>
+      <pre>
+</pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

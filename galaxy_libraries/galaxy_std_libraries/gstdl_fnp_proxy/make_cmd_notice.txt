@@ -1,0 +1,24 @@
+win32 : clone/pull "git@codebasehq.com:galaxysemi/fnp_toolkit/fnp-toolkit-win32.git" to your fnp_toolkit_directory 
+%comspec% /k ""C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat"" x86
+cd /D %DEVDIR%\galaxy_libraries\galaxy_std_libraries\gstdl_fnp_proxy
+make_fnp_proxy.win.bat %DEVDIR%\galaxy_products\gex_product\bin fnp_toolkit_directory   i86_n3
+
+win 64: clone/pull "git@codebasehq.com:galaxysemi/fnp_toolkit/fnp-toolkit-win64.git" to fnp_toolkit_directory
+%comspec% /k ""C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat"" amd64
+cd /D %DEVDIR%\galaxy_libraries\galaxy_std_libraries\gstdl_fnp_proxy
+make_fnp_proxy.win.bat %DEVDIR%\galaxy_products\gex_product\bin fnp_toolkit_directory x64_n6
+
+
+linux32 : clone/pull "git@codebasehq.com:galaxysemi/fnp_toolkit/fnp-toolkit-linux32.git" to fnp_toolkit_directory
+cd ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_fnp_proxy
+./make_fnp_proxy.linux.sh ${DEVDIR}/galaxy_products/gex_product/bin fnp_toolkit_directory  i86_lsb
+
+linux64 : clone/pull "git@codebasehq.com:galaxysemi/fnp_toolkit/fnp-toolkit-linux64.git" to fnp_toolkit_directory
+cd ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_fnp_proxy
+./make_fnp_proxy.linux.sh ${DEVDIR}/galaxy_products/gex_product/bin fnp_toolkit_directory x64_lsb
+
+mac :
+clone/pull "git@codebasehq.com:galaxysemi/fnp_toolkit/fnp-toolkit-linux64.git" to fnp_toolkit_directory
+cd ${DEVDIR}/galaxy_libraries/galaxy_std_libraries/gstdl_fnp_proxy
+./make_fnp_proxy.mac.sh  ${DEVDIR}/galaxy_products/gex_product/bin fnp_toolkit_directory universal_mac10
+

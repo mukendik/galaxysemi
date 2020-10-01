@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is an example ! -->
+<!-- If you want to tune logs according to your desires, please copy/paste this one to your UserFolder/GalaxySemi/ or XXXSERVERPROFILE/GalaxySemi
+	and modify your copy which will be then used instead of this one -->
+<!-- For documentation about this file, launch the online help website from the product -->
+<!-- About thread_priority :
+	IdlePriority : 0 : scheduled only when no other threads are running.
+	LowestPriority : 1 : scheduled less often than LowPriority.
+	LowPriority : 2 : scheduled less often than NormalPriority.
+	NormalPriority : 3 : the default priority of the operating system. (default)
+	HighPriority : 4 : scheduled more often than NormalPriority.
+	HighestPriority : 5 : scheduled more often than HighPriority.
+	TimeCriticalPriority : 6 : scheduled as often as possible.
+	InheritPriority : 7 : use the same priority as GEX 
+ -->
+<gslog version="0.2" threaded="false" thread_priority="0" logs_center="true" >
+
+	<log type="console"	 />
+	
+	<log type="txt"  outputfile="/home/gexprod/qpainter_poc/logs/$ISODATE/gslog_$ISODATE_$PID.txt" />
+
+	<!-- log type="rtf"  	outputfile="$DATE/gexlog_$ISODATE.rtf" /-->	
+	
+	<!-- log type="csv"		 /-->
+
+	<!-- log type="xml"  aggregation="file" /-->
+
+	<!-- log type="sql" 	target="192.168.6.78" port="3306" user="root" pw="toto" / -->
+
+	<!-- log type="syslog"	target="192.168.6.76"	port="514" / -->
+	
+</gslog>

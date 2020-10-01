@@ -1,0 +1,65 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>fileLocate<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library<br>
+      </a>&nbsp;<br>
+      <br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>fileLocate(
+  const filename,  // name of file to search for
+  const varname)   // environment variable with path's
+</pre>
+      <p>Searches for a file in all directories listed in a specific environment
+      variable such as <i>PATH</i>, <i>INCLUDE</i>, <i>LIB</i> and so on. Returns
+      a fully qualified pathname of the found file. If the file is not found an empty
+      string is returned.</p>
+      <p>Example:</p>
+      <pre>var webnavigator = fileLocate('netscape', 'path');
+if (webnavigator == '') throw 'netscape not found';
+// Shows 'netscape = &lt;path+name&gt;'
+sysLog('netscape = '|webnavigator ); 
+</pre>
+      <pre>
+</pre>
+      <pre>
+</pre>
+      <pre>
+</pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

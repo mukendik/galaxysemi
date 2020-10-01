@@ -1,0 +1,36 @@
+<assembly>
+    <id>assembly-gtl-core-dist-linux</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <baseDirectory>${project.artifactId}-dist-${distNameLong}</baseDirectory>
+    <!--
+    V7.3-gtm/gtl/teradyne/igxl
+    V7.3-gtm/gtl/teradyne/igxl/bannerFLEX3.gif
+    V7.3-gtm/gtl/teradyne/igxl/gtl-igxl.dll
+    V7.3-gtm/gtl/teradyne/igxl/gtl-igxl_unit_test.xls
+    V7.3-gtm/gtl/teradyne/igxl/readme.txt
+    V7.3-gtm/gtl/teradyne/igxl/register_dll.bat
+    V7.3-gtm/gtl/teradyne/igxl/RegSvr32_on_Win7.jpg
+    V7.3-gtm/gtl/teradyne/igxl/RegSvr32_on_WinServer2007.jpg
+    V7.3-gtm/gtl/teradyne/igxl/RegSvr32_on_winXP.png
+    V7.3-gtm/gtl/teradyne/igxl/unit_test_recipe.csv
+    V7.3-gtm/gtl/teradyne/igxl/VisualBasic_from_Excel2003.png
+  -->
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}</directory>
+            <outputDirectory>gtl/teradyne/igxl</outputDirectory>
+            <includes>
+                <include>gtl-igxl.dll</include>
+                <include>*.a</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/gtl/teradyne/igxl</directory>
+            <outputDirectory>gtl/teradyne/igxl</outputDirectory>
+            <excludes/>
+        </fileSet>
+    </fileSets>
+</assembly>

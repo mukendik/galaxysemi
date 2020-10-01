@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/r_scripts">
+        <file>graphs.R</file>
+        <file>mv_group_builder.R</file>
+        <file>mv_outliers_finder.R</file>
+        <file>shape_analysis.R</file>
+    </qresource>
+</RCC>

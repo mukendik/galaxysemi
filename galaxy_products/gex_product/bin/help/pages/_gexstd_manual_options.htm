@@ -1,0 +1,716 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      Options tab<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p align="left">You may never even need to look at the <b>Options </b>tab! Since all fields are set to a default value that matches the
+      most frequent needs, you will only have to read the following paragraphs
+      if you want to review/edit the report and environment preferences. From this 
+      page, you can change the information listed in the report tables, set new 
+      markers to be added to the charts, etc.</p>
+      <p align="left">Here are the options preferences you can edit:</p>
+      <h1>Section: Databases (Examinator Pro)<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>This section is only available under Examinator Pro and lets your define 
+      Database related options.</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value / 
+          Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>Locations</b></td>
+          <td width="507">
+          <p class="MsoNormal">Lets you define the paths to the <b>local</b> and
+          <b>server</b> databases folders</td>
+        </tr>
+        </table>
+      <h1>&nbsp;</h1>
+      <h1>Section: Report output<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you define whether the report should be HTML format (default, 
+      strongly recommended) or ASCII .CSV (allows easy export to Excel-like 
+      applications). This section also lets you define where reports should be 
+      created (you can provide a fixed custom location if you want).</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>Output format</b></td>
+          <td width="507">
+          <p class="MsoNormal">Lets you determine if the report is to be created 
+          in HTML (default) or .CSV ASCII format. HTML is the most convenient 
+          format for sharing report forms, charts and tables, while .CSV is 
+          convenient for extracting the data used in the charts and tables.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>Home page contents</b></td>
+          <td width="507">
+          <p class="MsoNormal">Lets you customize text and logo to display on 
+          the cover page of your report (only applies to reports in Word, 
+          PowerPoint and PDF formats)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>Paper size</b></td>
+          <td width="507">
+          <p class="MsoNormal">Lets you define how page breaks in reports must 
+          be computed, based on your printer page format: A4 or Letter</td>
+        </tr>
+        <tr>
+          <td width="116"><b>Truncating test names size</b></td>
+          <td width="507">
+          <p class="MsoNormal">Lets you enable test names truncation in reports. 
+          Allows to reduce the table size when test names are very long with 
+          unnecessary mid-strings. Truncation keeps first 32 characters only.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>Output location</b></td>
+          <td width="507">
+          <p class="MsoNormal">Lets you decide where the report files are 
+          created. If the report is HTML format, a folder named 'galaxy_examinator' 
+          will be created in this location (all report pages are visible from 
+          the index.htm page located in this folder). If the report is .CSV 
+          format, a single .csv file will be created in this location.</td>
+        </tr>
+      </table>
+      <h1>&nbsp;</h1>
+      <h1>Section: Speed Optimization<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>This section (only applies to Examinator-Pro) lets you 
+      customize preferences that can improve the report generation speed. </p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="184"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="439"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="184"><b>Data points available under 2D/3D interactive 
+          charting</b></td>
+          <td width="439">
+          <p class="MsoNormal">Lets you define if Examinator collects all data 
+          samples so to allow you interactive charting, or only collect samples 
+          if the dataset selected is not too large (eg: 50 Mbytes). Examinator 
+          will always be able to create the HTML and Excel reports and charts 
+          independently of the selection made here. If you <b>disable</b> the 
+          data points collection, or process a dataset that exceeds the cutoff 
+          limit, then the Interactive charting will only include data samples 
+          for parameters selected in the 'More reports' of Examinator's settings 
+          page.</td>
+        </tr>
+        <tr>
+          <td width="184"><b>Computing advanced statistics</b></td>
+          <td width="439">
+          <p class="MsoNormal">Lets you decide if Examinator computes the 
+          advanced statistics information (Skew, Kurtosis, Quartiles and 
+          Median). These parameters can require significant CPU time to compute, 
+          and are better disabled when you process large datasets (as you 
+          probably don't focus on these information anyway). Note that advanced 
+          statistics are computed form data samples, therefore forcing this 
+          option to '<b>always compute advanced statistics</b>' doesn't have any 
+          effect if the above option (data points available under interactive 
+          mode) is disabled.</td>
+        </tr>
+        <tr>
+          <td width="184"><b>Data queries, use summary records</b></td>
+          <td width="439">
+          <p class="MsoNormal">Only applies to Examinator Pro, lets you 
+          define if Examinator reads all data points or rather uses its internal 
+          summary records when running queries over very large amount of data. 
+          If you enable this option, you can customize the data set size 
+          threshold over which summary records are used instead of data samples. 
+          Processing speed is typically 10 to 100 times faster; ideal when 
+          running bin trend queries over a few months period.</td>
+        </tr>
+      </table>
+      <h1>&nbsp;</h1>
+      <p>&nbsp;</p>
+      <h1>Section: Data Processing / Handling duplicated tests<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you define if Examinator merges tests with same test number and 
+      different test name or keep them separate. Possible selections include:</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>always merge</b></td>
+          <td width="507">
+          Makes tests with same test ID (test number) be merged, even if test 
+          names are different</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>never merge</b></td>
+          <td width="507">
+          Do not merge test with same test number, but not matching in name.</td>
+        </tr>
+      </table>
+      <h1>&nbsp;</h1>
+      <h1>Section: Data Processing / PartID display<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you define if Examinator extracts and displays data based on the 
+      PartIDs or only as samples. Used for characterization missions mostly.</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Hide PartID</b></td>
+          <td width="507">
+          Default mode: Examinator displays samples based on the position. E.g: 
+          First plot on trend chart is first data value from file, etc...</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Show PartID</b></td>
+          <td width="507">
+          Mostly used for characterization when trend charts need to display 
+          data sorted based on the PartID. Allows to display the first PartID 
+          even if it doesn't appear first in the data file. Also allows to 
+          display to which PartID each data point (in trend charts) belongs to.</td>
+        </tr>
+      </table>
+      <h1>&nbsp;</h1>
+      <h1>Section: Data Processing / Sorting mode<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you decide how test data must be processed (processed in the order
+      of files entered, or sorted by testing date). Possible selections include:</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>none</b></td>
+          <td width="507">
+          Data files are processed in the order they have been selected: from
+          the first in list to the last in list.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>By date</b></td>
+          <td width="507">
+          Data files are processed in the order of creation date.&nbsp;</td>
+        </tr>
+      </table>
+      <h1><br>
+&nbsp;</h1>
+      <h1>Section: Data Processing / Failures count mode<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you decide how test failures must be counted. Possible selections include:</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Continue On Fail</b></td>
+          <td width="507">
+          Count ALL tests failures found in the execution flow (default).</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Stop On Fail</b></td>
+          <td width="507">
+          ONLY count the first test that failed in the program execution flow.</td>
+        </tr>
+      </table>
+      <h1><br>
+&nbsp;</h1>
+      <h1>Section: Data Processing / Multi-results parametric tests<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you decide if parametric tests with multiple results should be 
+      merged under one common name, or if each pin should be assigned a 
+      different test number. Possible selections include:</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Merge</b></td>
+          <td width="507">
+          Have all results (pins) of a parametric test merged under a same test 
+          name (default)</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Do not merge</b></td>
+          <td width="507">
+          Have each pin of a multi-results paramteric test have a unique test 
+          number.<br>
+          e.g: 1.101, 1.102, etc.</td>
+        </tr>
+      </table>
+      <h1><br>
+&nbsp;</h1>
+      <h1>Section: Data Processing / Handling STDF compliancy<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you decide how Examinator must behave when processing STDF test 
+      data binary files. Possible selections include:</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Stringent</b></td>
+          <td width="507">
+          Examinator expect the STDF files to be fully compliant with the STDF 
+          specification documents </td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Flexible</b></td>
+          <td width="507">
+          Examinator does its best to smoothly and quietly process STDF data 
+          files (even if not fully compliant with the STDF specifications). This 
+          is the default operating mode.</td>
+        </tr>
+      </table>
+      <h1>&nbsp;</h1>
+      <h1>Section: Data Processing / Intermediate files (STDF &amp; Zip)<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you decide where to  intermediate files are created when uncompressing 
+      files prior to the analysis or when importing non-STDF data files. This 
+      only applies to test data files analyzed under Examinator, not Examinator 
+      queries.</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Same folder...</b></td>
+          <td width="507">
+          Examinator creates intermediate files in the same folder as the 
+          original data file selected (default)</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Other location...</b></td>
+          <td width="507">
+          Examinator creates all intermediate files into the custom folder you 
+          define. Note: Intermediate files are always removed when closing the 
+          Examinator application. Select this mode if your non-STDF data files 
+          to analyze are stored on a folder where you don't have write access.</td>
+        </tr>
+      </table>      
+      <h1>&nbsp;</h1>
+      <h1>Section: Data Processing / Outlier removal<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you select the outlier removal policy: none (default) if all test 
+      results should be processed and computed for Cp, Cpk, Mean, Range, etc. 
+      You can define the outlier policy as a percentage of the test limits Any 
+      test result outside the specified window is ignored when computing the 
+      statistical values, and is classified as an outlier value. Possible 
+      selections include:</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Sub-section</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>none</b></td>
+          <td width="507">
+          No outlier removal enabled. All data are considered valid and are used 
+          to compute statistical results (Cp, Cpk, Mean, etc...)</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>100%</b></td>
+          <td width="507">
+          Only tests within 100% of the test limits are used, tests outside 100%
+          of the test limits are ignored. This selection basically makes you
+          only process good test results.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>150%</b></td>
+          <td width="507">
+          Only tests within 150% of the test limits are processed. This is a +/-
+          75% limit space from the center of the test limits. This makes you
+          compute all good parts and failing parts only up to 25% away from each
+          test limit.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>200%</b></td>
+          <td width="507">
+          Same as above, but for 200%</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>250%</b></td>
+          <td width="507">
+          Same as above, but for 250%</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>300%</b></td>
+          <td width="507">
+          Same as above, but for 300%</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>1 sigma</b></td>
+          <td width="507">
+          Only tests within the 1 sigma space (centered on the mean) are 
+          processed.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>2 sigma</b></td>
+          <td width="507">
+          Only tests within the 2 sigma space (centered on the mean) are 
+          processed.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>3 sigma</b></td>
+          <td width="507">
+          Only tests within the 3 sigma space (centered on the mean) are 
+          processed.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>4 sigma</b></td>
+          <td width="507">
+          Only tests within the 4 sigma space (centered on the mean) are 
+          processed.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>5 sigma</b></td>
+          <td width="507">
+          Only tests within the 5 sigma space (centered on the mean) are 
+          processed.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>6 sigma</b></td>
+          <td width="507">
+          Only tests within the 6 sigma space (centered on the mean) are 
+          processed.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>7 sigma</b></td>
+          <td width="507">
+          Only tests within the 7 sigma space (centered on the mean) are 
+          processed.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>8 sigma</b></td>
+          <td width="507">
+          Only tests within the 8 sigma space (centered on the mean) are 
+          processed.</td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>9 sigma</b></td>
+          <td width="507">
+          Only tests within the 9 sigma space (centered on the mean) are 
+          processed.</td>
+        </tr>
+      </table>
+      <h1>&nbsp;</h1>
+      <p>&nbsp;</p>
+      <pre>&nbsp;</pre>
+      <h1>Section: Test statistics<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Examinator always generates a test statistics table in its report. From 
+      this section, you can detail how statistics must be computed (from the 
+      data samples found in the file, or from the summary section if it exists), which information you want to be displayed, 
+      and how it should be sorted. You can also define alarms that can be 
+      triggered when you compare sets of data. Alarms can apply to any of the 
+      following:</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Alarm type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Mean drift</b></td>
+          <td width="507">Allows setting an alarm level when you compare data 
+          samples and the mean drift exceeds a specified value (a percentage of 
+          the limit space). If the alarm level is reached, the mean shift will 
+          appear on a <b><span style="color:red">red </span></b>background in 
+          the statistics report table for HTML reports, or with an *F* for .CSV 
+          reports. The value specified must be the maximum percentage of drift 
+          allowed, for example: 5%.<p>
+            Formula: <b>MeanDrift = 100*(Mean - ReferenceMean)/LimitSpace</b><br>
+            <b>Note</b>: Any negative number disables the alarm</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Sigma drift</b></td>
+          <td width="507">
+          <p class="MsoNormal">Allows setting an alarm level when you compare 
+          data samples and the sigma drift exceeds a specified value (percentage 
+          of value drift). If the alarm level is reached, the sigma shift will 
+          appear on a <b><span style="color:red">red </span></b>background in 
+          the statistics report table for HTML reports, or with an *F* for .CSV 
+          reports. The value specified must be the maximum percentage of drift 
+          allowed, for example: 1%.</p>
+            <p>
+            Formula: <b>SigmaDrift = 100*((Sigma/ReferenceSigma)-1)<br>
+            Note</b>: Any negative number disables the alarm</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116" align="center"><b>Cpk drift</b></td>
+          <td width="507">Allows setting an alarm level when you compare data 
+          samples and the Cpk drift exceeds a specified value. If the alarm 
+          level is reached, the Cpk shift will appear on a <b>
+          <span style="color:red">red </span></b>background in the statistics 
+          report table for HTML reports, or with an *F* for .CSV reports. The 
+          value specified must be the maximum percentage of drift allowed, for 
+          example: 5%.<p><br>
+            Formula: <b>CpkDrift = 100*((Cpk/ReferenceCpk)-1)</b><br>
+            <b>Note</b>: Any negative number disables the alarm</p>
+          </td>
+        </tr>
+      </table>
+      <h1>&nbsp;</h1>
+      <h1>Section: Wafer map &amp; Packaged map<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>This section lets you customize your wafer maps (wafer sort data) or 
+      packaged map (packaged parts tested) reports.<br>
+      <br>
+      <b>Wafermaps to include: </b>Lets you decide how to deal with reports with 
+      multiple maps. E.g.: only display the stacked / combined wafers, or 
+      display all individual maps as well.</p>
+      <p><b>Chart size: </b>Lets you define the chart size policy:</p>
+      <ul>
+        <li><b>Small:</b> image is 200x200 pixels, allows ultra fast processing. 
+        Right selection for a quick overview.</li>
+        <li><b>Medium</b>: image is 400x400 pixels, allows more resolution but 
+        takes 4 times longer to create than a small image.&nbsp;</li>
+        <li><b>Large</b>: image is 800x800 pixels. allows the highest resolution
+          but takes 16 times longer to create than a small wafer map. To be used
+          only when few wafer maps have to be created (e.g.: 1-10).</li>
+        <li><b>Auto</b>:&nbsp; Lets Examinator decide on the chart size
+          depending of the number of charts to create. This mode is strongly 
+      recommended as it lets the software find the best compromise.&nbsp;</li>
+      </ul>
+      <p><b>Markers:</b> Let you add markers to 
+      the chart. Includes:</p>
+      <ul>
+        <li><b>Outline retest:</b> draws a black outline for all dies that have
+          been tested more than once.</li>
+        <li><b>Write bin:</b> writes the binning value onto each die.</li>
+      </ul>
+      <pre>&nbsp;</pre>
+      <h1>Section: Histogram (advanced histogram only)<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p><b>Chart size: </b>Lets you define the chart size policy:</p>
+      <ul>
+        <li><b>Small:</b> image is 200x100 pixels, allows ultra fast processing.
+          Right selection for a quick overview.</li>
+        <li><b>Medium</b>: image is 400x200 pixels, allows more resolution but
+          takes 4 times longer to create than a small image.&nbsp;</li>
+        <li><b>Large</b>: image is 800x400 pixels. allows the highest resolution
+          but takes 16 times longer to create than a small histogram. To be used
+          only when few histograms have to be created (e.g.: 1-10).</li>
+        <li><b>Auto</b>:&nbsp; Lets Examinator decide of the chart size
+          depending of the number of charts to create. This mode is strongly 
+      recommended as it lets the software find the best compromise.&nbsp;</li>
+      </ul>
+      <p><b>Chart type: </b>Lets you define how to draw the histogram:</p>
+      <ul>
+        <li><b>Bars:</b> this is the classic histogram display mode. Each class
+          is drawn as a vertical bar.</li>
+        <li><b>Fitting curve</b>: this draws a smooth curve that envelops the
+          histogram classes. Very convenient mode when comparing distributions.</li>
+        <li><b>Bars + Fitting curve</b>: above both drawing modes are combined.</li>
+      </ul>
+      <p><b> Markers:</b> Let you add markers to 
+      the chart. Includes:</p>
+      <ul>
+        <li><b>Title: </b>writes a title at the top of the chart.</li>
+        <li><b>Mean:</b> draws a line to show the test mean (if applicable)</li>
+        <li><b>Test limits:</b> draws lines to show the test limits (if
+          applicable)</li>
+        <li><b>2 Sigma:</b> draws 2 lines showing the space at +-1 sigma around
+          the test mean (if applicable)</li>
+        <li><b>3 Sigma:</b> draws 2 lines showing the space at +-1.5 sigma
+          around the test mean (if applicable)</li>
+        <li><b>6 Sigma:</b> draws 2 lines showing the space at +-3 sigma around
+          the test mean (if applicable)</li>
+      </ul>
+      <p>&nbsp;</p>
+      <h1>Section: Trend (Control chart)<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p><b>Chart size: </b>Lets you define the chart size policy:</p>
+      <ul>
+        <li><b>Small:</b> image is 200x100 pixels, allows ultra fast processing.
+          Right selection for a quick overview.</li>
+        <li><b>Medium</b>: image is 400x200 pixels, allows more resolution but
+          takes 4 times longer to create than a small image.&nbsp;</li>
+        <li><b>Large</b>: image is 800x400 pixels. allows the highest resolution
+          but takes 16 times longer to create than a small trend chart. To be
+          used only when few trend charts have to be created (e.g.: 1-10).</li>
+        <li><b>Auto</b>:&nbsp; Lets Examinator decide of the chart size
+          depending of the number of charts to create. This mode is strongly 
+      recommended as it lets the software find the best compromise.&nbsp;</li>
+      </ul>
+      <p><b>Chart type: </b>Lets you define how to draw the trend chart:</p>
+      <ul>
+        <li><b>Lines:</b> this is the classic trend chart display mode. All
+          points are connected with a line.</li>
+        <li><b>Spots</b>: this draws a spot at each point location. Spot size
+          and color varies for each group to ease reading.&nbsp;</li>
+        <li><b>Lines + spots</b>: above both drawing modes are combined.</li>
+      </ul>
+      <p><b> Markers:</b> Let you add markers to 
+      the chart. Includes:</p>
+      <ul>
+        <li><b>Title: </b>writes a title at the top of the chart.</li>
+        <li><b>Mean:</b> draws a line to show the test mean (if applicable)</li>
+        <li><b>Test limits:</b> draws lines to show the test limits (if
+          applicable)</li>
+        <li><b>2 Sigma:</b> draws 2 lines showing the space at +-1 sigma around
+          the test mean (if applicable)</li>
+        <li><b>3 Sigma:</b> draws 2 lines showing the space at +-1.5 sigma
+          around the test mean (if applicable)</li>
+        <li><b>6 Sigma:</b> draws 2 lines showing the space at +-3 sigma around
+          the test mean (if applicable)</li>
+      </ul>
+      <p>&nbsp;</p>
+      <pre>&nbsp;</pre>
+      <h1>Section: Correlation (Scatter chart)<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p><b>Chart size: </b>Lets you define the chart size policy:</p>
+      <ul>
+        <li><b>Small:</b> image is 200x100 pixels, allows ultra fast processing.
+          Right selection for a quick overview.</li>
+        <li><b>Medium</b>: image is 400x200 pixels, allows more resolution but
+          takes 4 times longer to create than a small image.&nbsp;</li>
+        <li><b>Large</b>: image is 800x400 pixels. allows the highest resolution
+          but takes 16 times longer to create than a small image. To be used
+          only when few scatter charts have to be created (e.g.: 1-10).</li>
+        <li><b>Auto</b>:&nbsp; Lets Examinator decide of the chart size
+          depending of the number of charts to create. This mode is strongly 
+      recommended as it lets the software find the best compromise.&nbsp;</li>
+      </ul>
+      <p><b>Chart type: </b>Lets you define how to draw the scatter/bivariate chart:</p>
+      <ul>
+        <li><b>Lines:</b> connect X-Y plots with lines</li>
+        <li><b>Spots</b>: this is the classic scatter chart display mode. </li>
+        <li><b>Lines + spots</b>: above both drawing modes are combined.</li>
+      </ul>
+      <p><b> Markers:</b> Let you add markers to 
+      the chart. Includes:</p>
+      <ul>
+        <li><b>Title: </b>writes a title at the top of the chart.</li>
+        <li><b>Mean:</b> draws a line to show the test mean (if applicable)</li>
+        <li><b>Test limits:</b> draws lines to show the test limits (if
+          applicable)</li>
+        <li><b>2 Sigma:</b> draws 2 lines showing the space at +-1 sigma around
+          the test mean (if applicable)</li>
+        <li><b>3 Sigma:</b> draws 2 lines showing the space at +-1.5 sigma
+          around the test mean (if applicable)</li>
+        <li><b>6 Sigma:</b> draws 2 lines showing the space at +-3 sigma around
+          the test mean (if applicable)</li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <pre>&nbsp;</pre>
+      <h1>Section: Gage R&amp;R / Box plot<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p><b>Fields in chart: </b>Lets you define the fields to list in the table
+      by the box plot images:</p>
+      <ul>
+        <li><b>Limits:</b> shows test limits</li>
+        <li><b>Mean:</b> shows test mean (and mean shift in % when comparing
+          groups of files)</li>
+        <li><b>Sigma:</b> shows test sigma (and sigma shift in % when comparing
+          groups of files)</li>
+        <li><b>Cp:</b> shows test mean (and mean shift in % when comparing
+          groups of files)</li>
+        <li><b>Cpk:</b> shows test mean (and mean shift in % when comparing
+          groups of files)</li>
+        <li><b>Repeatability</b>: Gage R&amp;R <b>EV</b> information</li>
+        <li><b>Reproducibility</b>: Gage R&amp;R <b>AV</b> information</li>
+        <li><b>R&amp;R</b>: Gage study information</li>
+        <li><b>Part variation</b>: Gage R&amp;R <b>PV</b> information</li>
+        <li><b>Total variation</b>: Gage R&amp;R <b>TV</b> information</li>
+      </ul>
+      <p><b>Sorting mode: </b>Lets you decide how the table must be sorted. Can
+      be one of:</p>
+      <ul>
+        <li><b>Test number:</b> Table sorted with increasing test numbers</li>
+        <li><b>Test name:</b> Table sorted with increasing test names</li>
+        <li><b>Mean:</b> Table sorted with increasing mean</li>
+        <li><b>Sigma:</b> Table sorted with increasing sigma</li>
+        <li><b>Cp:</b> Table sorted with increasing Cp</li>
+        <li><b>Cpk:</b> Table sorted with increasing Cpk</li>
+      </ul>
+      <p>&nbsp;</p>
+      <h1>Section: Pareto<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you define cut-off limits so only tests with a Cp and/or Cpk lower 
+      than a given limit are listed.</p>
+      <p>&nbsp;</p>
+      <pre>&nbsp;</pre>
+      <h1>Section: Binning<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p><b>How is binning computed: </b>Lets you define if the binning summary 
+      report is computed using the binning summary information found in the test 
+      data files (default), or is computed from the wafer map report:</p>
+      <ul>
+        <li><b>From summary data (if any), otherwise from samples:</b> 
+        This selection is the <b>default</b>. It works well and should be used in all 
+        situations except for wafer test results that include <b>retest</b> data. In 
+        such a situation, the summary information may be incorrect as it 
+        sometimes counts 
+        all parts tested including retested parts. So if you are in such a situation, 
+        use the option below.</li>
+        <li><b>From wafer map report only:</b> Use this option ONLY if you want 
+        the binning charts created from the wafer map image in your <b>wafermap 
+        report</b>. In this mode, only the last bin of each die retested is counted, 
+        making the binning summary and Yield information always accurate. This requires that you force 
+        the wafer map report to be created (on hard or soft bin).</li>
+      </ul>
+      <p>&nbsp;</p>
+      <pre>&nbsp;</pre>
+      <h1>Section: Datalog<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p><b>Format of the datalog output: </b>Lets you define if the datalog 
+      output organizes data in one or two rows:</p>
+      <ul>
+        <li><b>1 row:</b> Data (test results) are organized in a single row</li>
+        <li><b>2 rows:</b> Data (test results) are organized in two rows</li>
+      </ul>
+      <p>&nbsp;</p>
+      <p><b>Fields to include chart: </b>Lets you define the datalog fields to
+      include with test results:</p>
+      <ul>
+        <li><b>Comments:</b> include all comments section (may sometime create
+          huge reports...)</li>
+        <li><b>Test number:</b> include test numbers</li>
+        <li><b>Test name:</b> include test names</li>
+        <li><b>Test limits:</b> include test limits and units</li>
+        <li><b>Die XY :</b> include XY die location for each part tested.</li>
+      </ul>
+      <h1>&nbsp;</h1>
+      <h1>Section: Environment preferences<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Lets you customize Examinator environment information such as:</p>
+      <ul>
+        <li><b>Text editor</b>: Either use the default editor or select the 
+        custom application to use for text editing</li>
+        <li><b>Spread sheet editor</b>: Either use the default spreadsheet 
+        editor or select the 
+        custom application. Typically: <b><i>wordpad </i></b>&nbsp;under 
+        windows, <b><i>textedit</i></b> under Solaris/HP-UX, and <b><i>gedit</i></b> 
+        under Linux (Open Office suite) to use for spreadsheet editing. 
+        Typically: <i><b>excel</b></i> under windows, and <i><b>oocalc</b></i> 
+        under Unix &amp; Linux (Open Office suite)</li>
+        <li><b>Close application...</b>: Define a timeout period after which the 
+        Examinator application closes (only applies to Examinator client 
+        applications running a floating license).</li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

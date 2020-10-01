@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-gtl-core-dynlib-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/lib/${distName}</directory>
+            <outputDirectory>${basepath}/lib/${distName}</outputDirectory>
+            <excludes>
+                <exclude>*gtl_core*.a</exclude>
+            </excludes>
+        </fileSet>              
+    </fileSets>
+</assembly>

@@ -1,0 +1,30 @@
+* Error on Try catch with -fno-execeptions
+Open galaxy_common.pri
+# win32:QMAKE_CXXFLAGS += -fexceptions
+win32::CONFIG+= exceptions
+
+* Qrc error (no found qrc_blabla.cpp)
+Open galaxy_common.pri
+win32:QMAKE_RCC  = $$(QTDIR)/bin/rcc.exe
+
+* WinMain@16 undefined reference for DLL
+FOR ALL DLL, open .pro and ADD
+win32:CONFIG += dll
+
+* Error on dynamic_cast with -fno-rtti
+Open galaxy_common.pri
+# win32:QMAKE_CXXFLAGS += -fexceptions -frtti
+win32:CONFIG+= exceptions rtti
+
+# Error stdafx.h: No such file or directory
+win32:CONFIG += dll
+
+# Error undefined reference to `gethostbyname@4'
+win32:LIBS += C:\MinGW\lib\libws2_32.a
+
+# Error undefined reference to `GetProcessMemoryInfo@12'
+win32:LIBS += -lpsapi
+
+# qtpropertybrowser:
+# redeclared without dllimport attribute: previous dllimport ignored
+CONFIG += shared

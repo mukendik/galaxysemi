@@ -1,0 +1,33 @@
+FAR:A|4|2|
+MIR:G21D088|NGWE20F8XIZ|||WPSO803|18:19:17 1-NOV-2017|18:19:17 1-NOV-2017||P|1|G21D088.17||N||||||||||2D||W78CAA|SM||SI7236DP||||||||PPAKSO8BWL||
+SDR:||||FET-66||||ITC-47||RG-126||||||RG-79||
+TSR:||3|3/103|P|17450|5|||||||||
+TSR:||51|21/121|P|17450|4|||||||||
+TSR:||102|36/136|P|17450|18|||||||||
+TSR:||127|59/159|P|17450|18|||||||||
+TSR:||128|66/166|P|17450|1|||||||||
+TSR:||398|98/198|P|17450|16|||||||||
+TSR:||1003|G-open|P|17450|46|||||||||
+TSR:||1006|Rg|P|17450|6|||||||||
+TSR:||1009|SPU|P|17450|1|||||||||
+TSR:||1010|UIS|P|17450|40|||||||||
+TSR:||1007|Ass'y Rejects|P|17450|16|||||||||
+TSR:||1011|Vision Rej|P|17450|57|||||||||
+TSR:||1013|Unknown|P|17450|52|||||||||
+SBR:||1|17170|P|
+SBR:||6|5|F|IGSS @ + 120% VGS
+SBR:||14|4|F|IDSX @ 100%Vds
+SBR:||13|18|F|IDON
+SBR:||19|18|F|rDSon #2 @ VGS= 4.5V
+SBR:||20|1|F|rDSon #3 @ VGS= 2.5V
+SBR:||398|16|F|O_UISL
+SBR:||1003|46|F|G-open
+SBR:||1006|6|F|Rg
+SBR:||1009|1|F|SPU
+SBR:||1010|40|F|UIS
+SBR:||1007|16|F|Ass'y Rejects
+SBR:||1011|57|F|Vision Rej
+SBR:||1013|52|F|Unknown
+DTR:<cmd> die-tracking die=1;wafer_product=NGWE20F8XIZ;wafer_lot=G21D088;wafer_sublot=G21D088.17
+DTR:<cmd> die-tracking die=2;wafer_product=NGWE20F8XIZ;wafer_lot=G21D088;wafer_sublot=G21D088.1
+MRR:18:19:17 1-NOV-2017|||

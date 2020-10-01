@@ -1,0 +1,30 @@
+
+        <!-- Table with hr -->
+        <table width="800"><tbody>
+                <tr>
+                    <td valign="top"><hr color="#afc22a"></td>
+                </tr>
+            </tbody></table>
+
+        <!-- contents -->
+
+        <!-- Table with __VERSION__ changes -->
+        <table width="800"><tbody>
+                <tr>
+                    <td halign="center" height="29" valign="middle" width="15">
+                        <img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+                    <td class="main-content-title-blue" align="left" height="29" width="785">
+                        <p align="left">
+                            <a id="__VERSION__">__VERSION__</a>
+                            <a href="#Top">(Top)</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="1" width="15"></td>
+                    <td height="1" width="785"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>

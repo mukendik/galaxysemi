@@ -1,0 +1,5 @@
+LIBRARY         gtl-igxl
+DESCRIPTION     'gtl-igxl in-proc server'
+
+EXPORTS
+            DllRegisterServer   @2  PRIVATE

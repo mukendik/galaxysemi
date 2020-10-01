@@ -1,0 +1,120 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>sysTrace<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library<br>
+      </a>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>sysTrace(
+  [const mode])  // sysTrace...
+</pre>
+      <p>Query or set <a href="lang9.htm">trace</a> mode. Predefined mode
+      constants are:</p>
+      <p>&nbsp;
+      <table cellSpacing="0" cellPadding="3" border="0">
+        <tbody>
+          <tr vAlign="top" bgColor="#0044aa">
+            <td><font color="#ffffff"><b>Mode</b></font></td>
+            <td bgColor="#0034aa"><font color="#ffffff"><b>Description</b></font></td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>sysTraceNone</td>
+            <td bgColor="#b0d0ff">Trace output is turned off (default)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>sysTraceCode</td>
+            <td bgColor="#d0e0ff">Trace P-code instructions together with the 2
+              top stack elements.</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>sysTraceFuncs</td>
+            <td bgColor="#b0d0ff">Trace function entry and exit. Trace output
+              will be indented within the function.</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>sysTraceBlks</td>
+            <td bgColor="#d0e0ff">Trace entry and exit of named blocks. Trace
+              output will be indented within the block. Use <a href="direct10.htm">#block</a>
+              to name blocks.</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>sysTraceMsgs</td>
+            <td bgColor="#b0d0ff">Trace expressions of <a href="lang9.htm">trace</a>
+              statement.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The mode constants above may be combined by adding them. Combined
+      constants are predefined as:</p>
+      <p>&nbsp;
+      <table cellSpacing="0" cellPadding="3" border="0">
+        <tbody>
+          <tr vAlign="top" bgColor="#0044aa">
+            <td><font color="#ffffff"><b>Mode</b></font></td>
+            <td bgColor="#0034aa"><font color="#ffffff"><b>Description</b></font></td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>sysTraceInfo</td>
+            <td bgColor="#b0d0ff">sysTraceFuncs + sysTraceBlks + sysTraceMsgs</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>sysTraceAll</td>
+            <td bgColor="#d0e0ff">sysTraceCode + sysTraceFuncs + sysTraceBlks +
+              sysTraceMsgs</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Returns: current trace mode.</p>
+      <p>Example:</p>
+      <pre>sysTrace(sysTraceCode); // turn tracing on
+</pre>
+      <p>The trace output may look somewhat as:</p>
+      <pre>test.csl: var main()
+&nbsp;
+address opcode parameter       tos             tos-1
+------- ------ --------------- --------------- ---------------
+     19 push   x               &lt;stack bottom&gt;
+     20 incv                   x               &lt;stack bottom&gt;
+     21 jmp    7               &lt;stack bottom&gt;
+      7 push   x               &lt;stack bottom&gt;
+      8 load                   x               &lt;stack bottom&gt;
+      9 push   5               3               &lt;stack bottom&gt;
+     10 lss                    5               3
+     11 jf     22              1               &lt;stack bottom&gt;
+      .  .      .              .               .</pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

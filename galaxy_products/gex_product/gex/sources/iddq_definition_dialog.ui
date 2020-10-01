@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IddqDeltaDefinitionDialogBase</class>
+ <widget class="QDialog" name="IddqDeltaDefinitionDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>741</width>
+    <height>242</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>IDDQ-Delta definition</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" rowspan="3">
+    <widget class="QGroupBox" name="groupBoxIDDQ">
+     <property name="toolTip">
+      <string>Enable/Disable rule</string>
+     </property>
+     <property name="title">
+      <string>IDDQ Rule</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="4" column="0" colspan="5">
+       <widget class="QLabel" name="textLabel2_2_2_2_2_2_9">
+        <property name="maximumSize">
+         <size>
+          <width>32767</width>
+          <height>32767</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Outlier Algorithm:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="5">
+       <widget class="QLineEdit" name="lineEditIDDQ_Delta_PreStress">
+        <property name="toolTip">
+         <string>Define sub-string to use to detect 'pre-stress' IDDQ tests</string>
+        </property>
+        <property name="text">
+         <string>PreStrs</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="6" rowspan="2" colspan="2">
+       <widget class="QCheckBox" name="checkBoxIDDQ_Delta_CaseSensitive">
+        <property name="toolTip">
+         <string>Case sensitive checks over Test names...</string>
+        </property>
+        <property name="text">
+         <string>Case sensitive</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="textLabel2_2_2_2_9">
+        <property name="maximumSize">
+         <size>
+          <width>32767</width>
+          <height>32767</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Fail Bin:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="textLabel2_2_2_2_2_2_2_2_4">
+        <property name="maximumSize">
+         <size>
+          <width>32767</width>
+          <height>32767</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Rule name:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="5">
+       <widget class="QLineEdit" name="lineEditIDDQ_Delta_PostStress">
+        <property name="toolTip">
+         <string>Define sub-string to use to detect 'post-stress' IDDQ tests</string>
+        </property>
+        <property name="text">
+         <string>PstStrs</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="6">
+       <widget class="QLabel" name="textLabelNNR_N_2">
+        <property name="maximumSize">
+         <size>
+          <width>32767</width>
+          <height>32767</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>N=</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="7">
+       <widget class="QLineEdit" name="lineEditIDDQ_Delta_N">
+        <property name="toolTip">
+         <string>Custom N factor...</string>
+        </property>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="5">
+       <widget class="QComboBox" name="comboBoxIDDQ_Delta_Algorithm">
+        <property name="toolTip">
+         <string>Select IDDQ Algorithm to use</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Mean +/- N*Sigma</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Median +/- N*Robust Sigma</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>IQR: (LL: Q1-N*IQR. HL: Q3+N*IQR)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="5">
+       <widget class="QLabel" name="textLabel2_2_2_2_2_9">
+        <property name="maximumSize">
+         <size>
+          <width>32767</width>
+          <height>32767</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Test name 'Pre' stress substring:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="GColorPushButton" name="pushButtonFailBinColor">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Define the Bin color assigned to Good dies IDDQ Delta outlier</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="5">
+       <widget class="QLabel" name="textLabel2_2_2_2_2_10">
+        <property name="maximumSize">
+         <size>
+          <width>32767</width>
+          <height>32767</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Test name 'Post' stress substring:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3" colspan="4">
+       <widget class="QLineEdit" name="lineEditRuleName">
+        <property name="toolTip">
+         <string>Rule name...</string>
+        </property>
+        <property name="inputMask">
+         <string/>
+        </property>
+        <property name="text">
+         <string>IDDQ-Delta rule...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QSpinBox" name="spinBoxFailBin">
+        <property name="buttonSymbols">
+         <enum>QAbstractSpinBox::NoButtons</enum>
+        </property>
+        <property name="maximum">
+         <number>65535</number>
+        </property>
+        <property name="value">
+         <number>143</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QPushButton" name="pushButtonOk">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>OK</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="pushButtonCancel">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>147</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GColorPushButton</class>
+   <extends>QPushButton</extends>
+   <header>gcolorpushbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>lineEditRuleName</tabstop>
+  <tabstop>lineEditIDDQ_Delta_PreStress</tabstop>
+  <tabstop>lineEditIDDQ_Delta_PostStress</tabstop>
+  <tabstop>checkBoxIDDQ_Delta_CaseSensitive</tabstop>
+  <tabstop>comboBoxIDDQ_Delta_Algorithm</tabstop>
+  <tabstop>lineEditIDDQ_Delta_N</tabstop>
+  <tabstop>pushButtonOk</tabstop>
+  <tabstop>pushButtonCancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

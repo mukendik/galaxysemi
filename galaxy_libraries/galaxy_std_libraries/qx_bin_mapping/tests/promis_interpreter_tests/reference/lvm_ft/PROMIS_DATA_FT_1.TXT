@@ -1,0 +1,1 @@
+package type:1S|geometry name:NAKW20DFZA|date code:T52BAA|equipment id:3301673|product id:TMSUD40N02-3M3P-E3|site id:KS|package:TO252|lot id product 2:|geometry name product 2:|lot id product 3:|geometry name product 3:|lot id product 4:|geometry name product 4:|

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport Version="0.8" ID="ProductSummary" Title="Product summary" Description="Summary for the selected product...">
+
+  <parameter name="P_DATABASE_NAME" visible="false" readonly="false" mandatory="true" defaultValueExpression="gexdb" />
+
+  <parameter name="P_DATA_TYPE" visible="false" readonly="false" mandatory="true" defaultValueExpression="Wafer Sort"/>
+ 
+  <parameter name="P_TIME_PERIOD" visible="true" readonly="false" 	mandatory="true" 	defaultValueExpression="Pick dates from calendar..." />
+ 
+  <parameter name="P_AGGREGATE" visible="true" 	readonly="false" 	mandatory="true" 	defaultValueExpression="quarter" filter="time_only"/>
+ 
+  <parameter name="P_SERIE" visible="true" 		readonly="false" 	mandatory="false" 	defaultValueExpression="-" filter="without_time" />
+ 
+  <parameter name="P_FILTERS" visible="true" readonly="false" mandatory="false"  defaultValueExpression="disabled" />
+ 
+  <parameter name="P_OPTIONS" visible="true" readonly="false" mandatory="false"  defaultValueExpression="" />
+   
+</GalaxyReport>

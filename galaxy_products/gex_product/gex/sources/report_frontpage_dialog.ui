@@ -1,0 +1,261 @@
+<ui version="4.0" >
+ <class>FrontPageDialogBase</class>
+ <widget class="QDialog" name="FrontPageDialogBase" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>693</width>
+    <height>354</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Report Front Page</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <property name="autoFillBackground" >
+   <bool>true</bool>
+  </property>
+  <property name="sizeGripEnabled" >
+   <bool>true</bool>
+  </property>
+  <widget class="QPushButton" name="PushButtonOk" >
+   <property name="geometry" >
+    <rect>
+     <x>620</x>
+     <y>9</y>
+     <width>59</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>59</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+   <property name="default" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PushButtonCancel" >
+   <property name="geometry" >
+    <rect>
+     <x>620</x>
+     <y>40</y>
+     <width>59</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>59</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TextLabel" >
+   <property name="geometry" >
+    <rect>
+     <x>13</x>
+     <y>13</y>
+     <width>481</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Customize your report home page!&lt;br>Edit the text to display on your report's home page, and select your company logo!</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignTop</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>12</x>
+     <y>70</y>
+     <width>371</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string>Your home page text:</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" >
+    <item row="0" column="0" >
+     <widget class="QTextEdit" name="textHtml" />
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>402</x>
+     <y>70</y>
+     <width>272</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string>Logo to display:</string>
+   </property>
+   <widget class="QLabel" name="TextLabelPreviewStatus" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>241</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Report will display your GIF file correctly; however no preview is available...</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignTop</set>
+    </property>
+    <property name="wordWrap" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pixmapLogo" >
+    <property name="geometry" >
+     <rect>
+      <x>15</x>
+      <y>83</y>
+      <width>242</width>
+      <height>176</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="scaledContents" >
+     <bool>false</bool>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttonRemoveLogo" >
+    <property name="geometry" >
+     <rect>
+      <x>46</x>
+      <y>26</y>
+      <width>32</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>32</width>
+      <height>26</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>32</width>
+      <height>26</height>
+     </size>
+    </property>
+    <property name="toolTip" >
+     <string>Remove logo from home page</string>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="icon" >
+     <iconset resource="C:/Work/Dev_QT4/Galaxy_Products/gex_product/gex/sources/gex.qrc" >
+      <normaloff>:/gex/icons/file_remove.png</normaloff>:/gex/icons/file_remove.png</iconset>
+    </property>
+    <property name="iconSize" >
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttonAddLogo" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>26</y>
+      <width>32</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>32</width>
+      <height>26</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>32</width>
+      <height>26</height>
+     </size>
+    </property>
+    <property name="toolTip" >
+     <string>Browse disk to pick your logo...</string>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="icon" >
+     <iconset resource="C:/Work/Dev_QT4/Galaxy_Products/gex_product/gex/sources/gex.qrc" >
+      <normaloff>:/gex/icons/file_open.png</normaloff>:/gex/icons/file_open.png</iconset>
+    </property>
+    <property name="iconSize" >
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TextLabelImageName" >
+    <property name="geometry" >
+     <rect>
+      <x>83</x>
+      <y>32</y>
+      <width>181</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>file:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignTop</set>
+    </property>
+    <property name="wordWrap" >
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <resources>
+  <include location="gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

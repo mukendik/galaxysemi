@@ -1,0 +1,507 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Yield-Man V6.0 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">Yield-Man family : V6.0 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Yield-Man, PAT-Server)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table with important note -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold; color: rgb(204, 0, 0);">IMPORTANT NOTE:</span><br><br>
+      <span style="font-size: 13px;">
+      Customers upgrading to V6.Y Quantix applications (Examinator-Characterization, Examinator-Production,
+      Examinator-PAT, Yield-Man, PAT-Server), and connecting to a Gex-Lm license manager to get a license token,
+      must make sure that the Gex-Lm license manager is also upgraded to V6.Y.
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_gexstd_mo_history.htm">Back to main releases history page</a><br><br>
+      <a href="_gexstd_mo_history_v60_major.htm">V6.0 major enhancements</a><br>
+      <a href="#V6.0B154">V6.0 B154 release history</a><br>
+      <a href="#V6.0B153">V6.0 B153 (Beta) release history</a><br>
+      <a href="#V6.0B152">V6.0 B152 (Beta) release history</a><br>
+      <a href="#V6.0B151">V6.0 B151 (Beta) release history</a><br>
+      <a href="#V6.0B150">V6.0 B150 (Beta) release history</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with V6.0 B154 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B154">V6.0 B154 (18 September 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <!-- New Stuff goes in here.   -->
+            <li><b>Oracle - New insertion modes:</b>
+                   An environment variable (GEXDB_ORACLE_INDEX_INSERTMODE) now allows the user to select between 2 insertion modes:
+                   <ul>
+                   <li>DISABLE: the index on the xx_ptest_results table is disabled on the current partition. It is built just before
+                   changing to a new partition. This enables a faster and constant insertion time, but with the effect that the
+                   data extraction on recent data residing in the current partition is slower. A dialog box prevents the
+                   user that the extraction will be slower if part of the data he extracts is in the currentl partition.</li>
+                   <li>NORMAL (default): the index on the xx_ptest_results table is not disabled on the current partition. For each
+                   insertion, the index is rebuilt by Oracle just after inserting the data. Data insertion gets slower as more data is
+                   inserted in the current partition .</li>
+                   </ul>
+                   </li>
+            <li><b>Oracle - New partition management mode:</b>
+                   An environment variable (GEXDB_ORACLE_SPLITLOTS_PER_PARTITION) now allows the user to specify the frequency at which
+                   new partitions should be created in terms of number of splitlots. Before, a partition was created every new day. Now,
+                   a new partition is created every new day, and every N splitlots (if N defined with the GEXDB_ORACLE_SPLITLOTS_PER_PARTITION
+                   environment variable).
+                   </li>
+            <li><b>Oracle - Automatic creation of new datafiles:</b>
+                   A new datafile is now automatically added to the current tablespace if the current datafile becomes too big, so that
+                   a datafile won't exceed the 32Gb limit under Windows.
+                   </li>
+            <li><b>Datapump - Task execution window:</b>
+                   The datapump task execution window ('Do not execute before', 'Do not execute after') used to be checked only at the time
+                   the datapump was executed (depending on the frequency). If inside the window, the datapump task would insert all
+                   files from the 'Data source' folder, even if not anymore in the task execution window. The task execution window is
+                   now checked at every file inserted (except when the datapump task is started manually with the 'Execute task now!'
+                   button), so that if the task is started when inside the window, but the insertion overlaps the window, it will stop
+                   at the first file outside the execution window.</li>
+            <li><b>Datapump - Post-processing action for delayed files:</b>
+                   It is now possible, in the Datapump definition dialog box, to define a post-processing action (Leave, Rename, Move) 
+                   for delayed files, the same way it can be done for files that have been successfully inserted, and for rejected files.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            
+            <li><b>Case 2243 - PAT crash on multi-site file if not data on one site:</b>
+						       Fixed a bug that would cause Quantix to crash when reading a multi-site file for PAT analysis if one site 
+						       had no data.</li>
+						       
+						<li><b>Case 2234 - PAT Performance Degradation:</b>
+						       Fixed a bug that would cause Quantix PAT Man to run very slowly under specific conditions when analyzing a file for
+						       yield alarm or PAT yield loss.</li>      
+            
+            <li><b>Oracle - Delayed files do not increment the splitlot_id:</b>
+                   Delayed files used to increment the splitlot_id for the next insertion, this has been fixed.</li>
+            <li><b>Gex-Ftp - Truncated files after transfer:</b>
+                   A bug has been corrected where some files may be truncated by a few blocks after transfer with Gex-Ftp.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B153 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B153">V6.0 B153 (Beta) (7 August 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <!-- New Stuff goes in here.   -->
+            <li><b>Split Dataset by Two Combined Fields:</b>
+                   Added a feature that allows for splitting a dataset by a combined database field: Lot;Wafer.</li>
+            <li><b>Merge Dataset Feature:</b>  
+                   Added a feature that allows for the merging of multiple datasets.  This allows for calculating
+                   consolidated yield when there are multiple first pass and multiple retest splitlots.</li>
+            <li><b>GEXDB B9:</b>
+                   added support in the GEXDB database and insertion procedures for Final-Test data files coming from multi-die
+                   parts.</li>
+            <li><b>Gex-LS - Display version number:</b>
+                   Quantix License Status now displays the Examinator version number for connected clients.</li>
+            <li><b>Gex-Ftp - New option to prevent transfer of partial files:</b>
+                   Gex-Ftp now has an option that allows the user to specify how long a file must be on the remote server prior to 
+                   being downloaded the Quantix server. This prevents partial files from being downloaded.</li>
+            <li><b>Enterprise Report Save Script:</b>
+                   A feature has been added to allow one-click save of the script used to create a Yield-man Enterprise Report.</li>
+            <li><b>Force Testing Stage:</b>
+                   A variable has been added to support "forcing" data into a particular set of tables; E-Test, Wafer Probe, or Final Test.</li>
+            <li><b>Multiple Test Limits:</b>
+                   A variable has been added to support datafiles that contain multiple test limits. Quantix will insert the minimum and the
+                   maximum limit within a single data file.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Out of resources error with MySQL:</b>
+						       fixed a bug where a temporary table created during the wafer yield consolidation phase was not dropped, leading
+						       to MySQL 'out of resource' errors.</li>
+            <li><b>Yield & Bin Paretos:</b>
+						       <ul>
+                   <li>Fixed a bug that would cause yield and bin paretos to display incorrect values in some circumstances.</li>
+						       <li>Fixed a bug that caused the failing die contribution to display 'n/a.'</li>
+						       <li>Fixed a discrepancy between Enterprise reporting of yield and detailed reporting of yield that occurred under 
+                   certain circumstances, particularly when a query spans more than one month.</li>
+                   </ul>
+                   </li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B152 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B152">V6.0 B152 (Beta) (28 May 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>SYA computation:</b>
+						       added an option to direct the SYA system to use the Gross Die count rather than the number of samples when computing
+                   wafer yield statistics.</li>
+            <li><b>SYA computation:</b>
+                   added an option to direct the SYA system to ignore outliers when computing SYA limits.</li>
+            <li><b>Refuse to launch several Yield-Man (PAT-Server) instances:</b>
+                   added a check to refuse launching several Yield-Man instances on the same system with the same GEX_SERVER_PROFILE.</li>
+            <li><b>Final Test binning consolidation:</b>
+                   consolidation on software binnings has been dropped for Final Test. This is because it is not possible to guarantee
+                   a 100% correct consolidation on software binnings, as the only information available on final test re-test files
+                   is the list of hardware binnings that were re-tested. Yield-Man used to deduce the software binnings associated to
+                   each re-tested hardware binning to enable software binning consolidation, but there is no guarantee that this association
+                   is exhaustive in case of sampling.</li>
+            <li><b>Additional fields in the CSV export file:</b>
+                   when exporting a data file to the Quantix CSV format, additional fields are written to the header (if populated in
+                   the data file):
+                   <ul>
+                   <li>ModeCode</li>
+                   <li>RtstCode</li>
+                   <li>ProtCode</li>
+                   <li>CmodeCode</li>
+                   <li>BurnTime</li>
+                   </ul>
+                   </li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Gex-Ftp reading back invalid last modification date/time:</b>
+                   the bug fixed in previous B151 release was not 100% fixed, the problem still happened under certain circumstances
+                   (some type of FTP servers, some specific date formats). It should now be cmpletely resolved.</li>
+            <li><b>SYA alarm check on insertion:</b>
+                   fixed a bug where the SYA check on insertion used an invalid SQL query when the yield is to be computed using the
+                   summary data, rather than the samples.</li>
+            <li><b>Wafer Sort binning consolidation:</b>
+                   fixed a bug where the wafer sort binning consolidation was wrong when a re-tested bin was not present anymore
+                   in the re-test data.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B151 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B151">V6.0 B151 (Beta) (10 April 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Final Test yield consolidation:</b>
+                   the Final Test yield consolidation function has been improved to handle following situations:
+                   <ul>
+                   <li>after re-test yield consolidation, more parts are found than at initial test: the additional parts are considered
+                   new untested parts that were merged with the parts to re-test.</li>
+                   <li>after re-test yield consolidation, more parts are found than at initial test: the missing parts are considered
+                   dammaged parts, and if a binning is specified in the config.gexdbkeys file (Ft_YieldConsolidation_MissingPartsBin
+                   variable), they are affected to this binning.</li>
+                   </ul>
+                   </li>
+            <li><b>Final Test yield consolidation:</b>
+                   the config.gexdbkeys file supports a new keyword for Final Test test/re-test yield consolidation:
+                   <ul>
+                   <li>Ft_YieldConsolidation_MissingPartsBin= &lt;BinNb&gt;: enables to specify the BinNb that should be used
+                   to hold missing parts between initial test and re-test (ie parts dammaged after initial test and before re-test).</li>
+                   </ul>
+                   </li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Gex-Ftp reading back invalid last modification date/time:</b>
+                   fixed a bug where for some Windows Ftp servers, the Gex-Ftp tool was sometimes reading back invalid last
+                   modification date/time (for files having 'last modification time' < 10AM). As a result, these files were
+                   never downloaded.</li>
+            <li><b>Yield-Man processing empty ZIP files:</b>
+                   fixed a bug where Yield-Man exited when processing an empty ZIP file, instead of simply rejecting it.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B150 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B150">V6.0 B150 (Beta) (17 March 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Re-Test management:</b>
+                   the config.gexdbkeys file supports new keywords to specify the re-tested binnings:
+                   <ul>
+                   <li>RetestBinList = all: all parts (PASS and FAIL) from the previous test level (initial test or previous re-test level) have been re-tested.</li>
+                   <li>RetestBinList = all_pass: all PASS parts from the previous test level (initial test or previous re-test level) have been re-tested.</li>
+                   <li>RetestBinList = all_fail: all FAIL parts from the previous test level (initial test or previous re-test level) have been re-tested.</li>
+                   </ul>
+                   </li>
+            <li><b>SYA:</b>
+                   the first version of the Quantix SYA feature has been implemented.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Gex-Ftp transferring no files when reading corrupted server date/time:</b>
+                   on some type of Ftp servers, when retrieving the date/time of the server, at certain hours of the day, Gex-Ftp retrieves
+                   an invalid date/time. As a consequence, only old files are transferred (older than the corrupted date/time). The issue
+                   has been worked-around by using current UTC date/time -12 hours for the server date/time when reading back a corrupted
+                   date/time.
+            <li><b>Gex-Email save settings:</b>
+                   fixed a bug where the 'Save settings' button in Gex-Email remained disabled after changing the settings in the 'Smtp'
+                   tab.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+</body></html>

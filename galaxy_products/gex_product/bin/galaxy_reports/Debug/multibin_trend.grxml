@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport Version="0.8" ID="MultiBinTrend" Title="Multi binning trend" Description="Yield trend over time for all the selected bins...">
+
+	<parameter name="P_DATABASE_NAME" 	visible="false" readonly="false" mandatory="true" defaultValueExpression="gexdb" />
+	<parameter name="P_DATA_TYPE" 		visible="false" readonly="false" mandatory="true" datatype="Wafer Sort" defaultValueExpression="Wafer Sort" />
+
+	<!-- P_TIME_PERIOD expression : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+	<parameter name="P_TIME_PERIOD" 	visible="true" readonly="false" mandatory="true" defaultValueExpression="calendar"/>
+	<parameter name="P_FROM_DATE" visible="true"	defaultValueExpression="new Date(new Date().getFullYear(),00,01)" />
+	<parameter name="P_TO_DATE" visible="true"	defaultValueExpression="new Date()" />
+
+	<parameter name="P_AGGREGATE" 		visible="true" readonly="false" mandatory="true" defaultValueExpression="Week" filter="without_time" Time="Y" 
+	datatype="Wafer Sort"/>
+	<parameter name="P_SERIE" 			visible="true" readonly="false" mandatory="false" defaultValueExpression="" filter="without_time" Time="N" Binning="N"
+	datatype="Wafer Sort"/>
+
+	<parameter name="P_BIN_TYPE" 	visible="true" readonly="false" mandatory="true" defaultValueExpression="hard"/>
+
+	<!-- parameter name="P_BIN_NO" 		visible="true"	readonly="false" mandatory="true" defaultValueExpression="1" filter="all"/ -->
+	
+	<parameter name="P_FILTER" 		visible="true"	readonly="true"	mandatory="true"  defaultExpression="Hbin#" defaultValueExpression="1" 
+		datatype="Wafer Sort" operator="=" multivalue="true"/>
+	
+	<parameter name="P_FILTER" 		visible="true"	readonly="false"	mandatory="false"  defaultExpression="" defaultValueExpression="" 
+		datatype="Wafer Sort" operator="=" multivalue="true" Binning="N" Time="Y"/>
+
+	<parameter name="P_OPTIONS" 	visible="true" readonly="false" 	mandatory="false"  defaultValueExpression="" />
+	<parameter name="P_SHOW_TABLES" visible="true"	readonly="false" 	mandatory="false"  	defaultValueExpression="true" />
+	<parameter name="P_SHOW_CHARTS" visible="true"	readonly="false" 	mandatory="false"  	defaultValueExpression="true" />
+	
+	<parameter name="P_GRT_FILE" 	visible="false"		defaultValueExpression="../bin_trend.grt" />
+
+	<parameter name="P_YIELD" 	rawReplace="true"	visible="false"	defaultValueExpression="$FGrossYield" />
+	<parameter name="P_VOLUME"	rawReplace="true"	visible="false"	defaultValueExpression="$FBinVolume" />
+
+</GalaxyReport>

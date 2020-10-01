@@ -1,0 +1,63 @@
+# Insertion configuration file
+
+############################################################### 
+# Validation                                                  # 
+#                                                             #
+# Note: Validation can be done on any supported fields        # 
+# (FileName, Lot, Product...)                                 # 
+#                                                             #
+############################################################### 
+############################################################### 
+# The insertion process will check that the FileName respect the following syntax:
+# 
+# FileName = <tester name>_<station>_<program>_<sites>_<sw rev>_<wolfson lot id>_<test type id>_<subcon lot id>_<datecode>_<date>.* 
+# OR
+# FileName = <tester name>_<station>_<program>_rc_<sites>_<sw rev>_<wolfson lot id>_<test type id>_<subcon lot id>_<datecode>_<date>.* 
+# 
+# Ex of valid FileName: 
+#
+# FileName = u_cat_3t_1_wm8521hc_4_5_17036B_P1_SN65381_72ALPK9_feb23_02_46.stdf.gz
+#
+############################################################### 
+# The insertion process will check the syntax of the following MIR fields:
+# 
+# MIR.LOT_ID   = <customer lot id>_<test type id>_<subcon lot id>
+# MIR.SBLOT_ID = <datecode>
+#
+# Ex of valif MIR fields: 
+#
+# MIR.LOT_ID   = 17036B_P1_SN65381
+# MIR.SBLOT_ID = 72ALPK9
+# 
+############################################################### 
+
+Validation, FileName.RegExp(.+_wm[^_]+(_rc)?_\d+_\d+_[a-zA-Z0-9]+_(p\d+|bin\d+r\d+|correlation[^_]*|verify[^_]*|MARKING|qa\d*|bincheck|manual|eng[^_]*)_[a-zA-Z0-9.]+_[a-zA-Z0-9]{7}_[^_]+_\d+_\d+\..+) 
+Validation, Lot.RegExp([a-zA-Z0-9]+_(p\d+|bin\d+r\d+|correlation[^_]*|verify[^_]*|MARKING|qa\d*|bincheck|manual|eng[^_]*)_[a-zA-Z0-9.]+) 
+Validation, SubLot.RegExp([a-zA-Z0-9]{7}) 
+
+
+############################################################### 
+# Field overload                                              # 
+############################################################### 
+
+# TestSite = last folder of the file full path
+Facility, SourceArchive.RegExp(.*[\\/]([^\\/]+)[\\/][^\\/]+, \1)
+
+# Data Type 
+DataType, UNKNOWN
+DataType, Lot.RegExp([^_]+_correlation.*, CORRELATION) 
+DataType, Lot.RegExp([^_]+_verify.*, VERIFICATION) 
+DataType, Lot.RegExp([^_]+_qa.*, QA) 
+DataType, Lot.RegExp([^_]+_bincheck|manual.*, GOLDEN UNIT VERIFICATION) 
+DataType, Lot.RegExp([^_]+_eng.*, ENGINEERING) 
+DataType, Lot.RegExp([^_]+_(p[0-9]+|bin[0-9]+r[0-9]+).*, PROD) 
+ProdData, Lot.RegExp([^_]+_(p[0-9]+|bin[0-9]+r[0-9]+).*, Y, N) 
+
+# Tracking Lot (unique lot at all manufacturing stages) = 1st sub-string found in LotID 
+SubLot, Lot.Section(%1_) 
+TrackingLot, Sublot
+TrackingLot, SubLot.RegExp((.*)\D, \1)
+
+# Subcon LotID is 3d sub-string. Note: must appear LAST as it overloads the Lot field! 
+Lot, Lot.Section(%3_)
+

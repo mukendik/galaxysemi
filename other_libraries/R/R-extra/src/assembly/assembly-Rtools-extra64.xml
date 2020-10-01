@@ -1,0 +1,15 @@
+<assembly>
+    <id>assembly-Rtools-extra64</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>C:\R64</directory>
+            <excludes/>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>          
+    </fileSets>
+</assembly>

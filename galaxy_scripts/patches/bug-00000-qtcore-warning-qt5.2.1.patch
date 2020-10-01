@@ -1,0 +1,55 @@
+--- qt-everywhere-enterprise-src-5.2.1/qtbase/src/corelib/tools/qvector.h	2014-02-01 20:35:38.000000000 +0100
++++ qt-everywhere-enterprise-src-5.2.1/qtbase/src/corelib/tools/qvector.h	2015-06-09 16:14:47.000000000 +0200
+@@ -325,6 +325,8 @@
+     Q_ASSERT(isDetached());
+ }
+ 
++#pragma GCC push_options
++#pragma GCC optimize ("O0")
+ template <typename T>
+ void QVector<T>::reserve(int asize)
+ {
+@@ -334,6 +336,7 @@
+         d->capacityReserved = 1;
+     Q_ASSERT(capacity() >= asize);
+ }
++#pragma GCC pop_options
+ 
+ template <typename T>
+ void QVector<T>::resize(int asize)
+--- qt-everywhere-enterprise-src-5.2.1/qtbase/src/corelib/tools/qbytearray.h	2014-02-01 20:35:38.000000000 +0100
++++ qt-everywhere-enterprise-src-5.2.1/qtbase/src/corelib/tools/qbytearray.h	2015-06-09 16:15:37.000000000 +0200
+@@ -441,6 +441,8 @@
+ inline int QByteArray::capacity() const
+ { return d->alloc ? d->alloc - 1 : 0; }
+ 
++#pragma GCC push_options
++#pragma GCC optimize ("O0")
+ inline void QByteArray::reserve(int asize)
+ {
+     if (d->ref.isShared() || uint(asize) + 1u > d->alloc) {
+@@ -451,6 +453,7 @@
+         d->capacityReserved = true;
+     }
+ }
++#pragma GCC pop_options
+ 
+ inline void QByteArray::squeeze()
+ {
+--- qt-everywhere-enterprise-src-5.2.1/qtbase/src/corelib/thread/qgenericatomic.h	2014-02-01 20:35:38.000000000 +0100
++++ qt-everywhere-enterprise-src-5.2.1/qtbase/src/corelib/thread/qgenericatomic.h	2015-06-09 16:16:34.000000000 +0200
+@@ -90,11 +90,14 @@
+     {
+     }
+ 
++#   pragma GCC push_options
++#   pragma GCC optimize ("O0")
+     template <typename T> static inline always_inline
+     T load(const T &_q_value) Q_DECL_NOTHROW
+     {
+         return _q_value;
+     }
++#   pragma GCC pop_options
+ 
+     template <typename T, typename X> static inline always_inline
+     void store(T &_q_value, X newValue) Q_DECL_NOTHROW

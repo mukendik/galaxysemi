@@ -1,0 +1,12 @@
+#  Qt product license file
+CustomerID="5D324733-D858-E311-8E6B-005056B03937"
+LicenseID="1436274"
+Licensee="Garros Bernard"
+Products="Qt Enterprise - Desktop Multi OS"
+ExpiryDate=2015-08-31
+# Used for Qt 3.x
+LicenseKey=85L8-94RE-5CB4
+# Used for Qt 4.x and Qt 5.0
+LicenseKeyExt=BGKX-FM5-F4M-2CX-EXJHX-LMW87-721F
+# Used for Qt 5.1 ->
+Qt5LicenseKey=BGKX-FM5-F4M-2CX-EXJHX-LMW87-721F

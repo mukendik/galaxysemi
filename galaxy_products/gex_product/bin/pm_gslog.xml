@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is the default log configuration file. It is not adviced to modify it.
+    In order to tune logs according to your desires, copy/paste this one to your UserFolder/GalaxySemi/ or to the applications folder
+	and modify your copy which will be then used instead of this one. 
+	For documentation about this file, launch the online help website from the product 
+-->
+
+<gslog version="0.2" threaded="true" http_port="8080">
+
+	<!-- Keywords : $PM_SERVER_PROFILE $ISODATE $DATE $MODULE $HOME $PID $FILE -->
+
+	<!-- log type="console"	/ -->
+
+	<log type="txt" outputfile="$PM_SERVER_PROFILE/GalaxySemi/logs/$ISODATE/gslog_$ISODATE_$PID.txt" />
+
+	<!-- log type="rtf" outputfile="$PM_SERVER_PROFILE/GalaxySemi/logs/$ISODATE/gexlog_$ISODATE.rtf" / -->
+
+	<!-- log type="csv"	outputfile="$PM_SERVER_PROFILE/GalaxySemi/logs/$ISODATE/gexlog_$ISODATE.csv" 	output="$SEVERITY, $TIME, $MSG, $FUNCTION, $FILE" / -->
+
+	<!-- log type="xml" aggregation="file" outputfile="$PM_SERVER_PROFILE/GalaxySemi/logs/$ISODATE/gexlog_$ISODATE.xml" / -->
+	
+	<!-- log type="sql" level="6"	target="192.168.6.78" port="3306" user="root" pw="toto" / -->
+
+	<log type="syslog"	target="127.0.0.1"	port="514" protocol="udp" />
+
+</gslog>

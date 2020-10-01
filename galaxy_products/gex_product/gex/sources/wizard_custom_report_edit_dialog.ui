@@ -1,0 +1,4604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditReportSectionDialogBase</class>
+ <widget class="QDialog" name="EditReportSectionDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>567</width>
+    <height>484</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Report section</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <widget class="QLineEdit" name="editSectionTitle">
+   <property name="geometry">
+    <rect>
+     <x>116</x>
+     <y>40</y>
+     <width>340</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Edit the section title</string>
+   </property>
+   <property name="maxLength">
+    <number>254</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TextLabelTitle">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>40</y>
+     <width>105</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Title:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PushButtonCancel">
+   <property name="geometry">
+    <rect>
+     <x>481</x>
+     <y>39</y>
+     <width>59</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>59</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PushButtonOk">
+   <property name="geometry">
+    <rect>
+     <x>482</x>
+     <y>10</y>
+     <width>59</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>59</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>OK</string>
+   </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxSectionType">
+   <property name="geometry">
+    <rect>
+     <x>116</x>
+     <y>10</y>
+     <width>340</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Report section to create</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>---- Select section type to create ---</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="TextLabel_2">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>10</y>
+     <width>104</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Section type:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="widgetStackSectionType">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>541</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>8</number>
+   </property>
+   <widget class="QWidget" name="pageHome">
+    <widget class="QLabel" name="pixmapLabel4">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>69</y>
+       <width>523</width>
+       <height>150</height>
+      </rect>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="gex.qrc">:/gex/icons/customized_report.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextLabelTitle_2">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>9</y>
+       <width>523</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <italic>true</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Personalized Reports!</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageCharts">
+    <widget class="QLineEdit" name="editTestStats">
+     <property name="geometry">
+      <rect>
+       <x>67</x>
+       <y>39</y>
+       <width>215</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Enter list of tests in this report section</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>51</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tests:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextLabelList">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>39</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Test List:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBoxTestList">
+     <property name="geometry">
+      <rect>
+       <x>67</x>
+       <y>10</y>
+       <width>243</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Type of tests to include in this section</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>All tests</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Failing tests only</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tests with outliers</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Test list...</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tests with Cp lower than...</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tests with Cpk lower than...</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QToolButton" name="PickTestStats">
+     <property name="geometry">
+      <rect>
+       <x>288</x>
+       <y>39</y>
+       <width>22</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>64</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>237</red>
+           <green>228</green>
+           <blue>219</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Dark">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>144</red>
+           <green>139</green>
+           <blue>133</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="BrightText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Shadow">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>64</red>
+           <green>64</green>
+           <blue>64</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Highlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>36</green>
+           <blue>104</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="HighlightedText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Link">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="LinkVisited">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>64</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>237</red>
+           <green>228</green>
+           <blue>219</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Dark">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>144</red>
+           <green>139</green>
+           <blue>133</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="BrightText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Shadow">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>64</red>
+           <green>64</green>
+           <blue>64</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Highlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>216</red>
+           <green>208</green>
+           <blue>200</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="HighlightedText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Link">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="LinkVisited">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>64</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>235</red>
+           <green>231</green>
+           <blue>227</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Dark">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>144</red>
+           <green>139</green>
+           <blue>133</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>108</red>
+           <green>104</green>
+           <blue>100</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="BrightText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>108</red>
+           <green>104</green>
+           <blue>100</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Shadow">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Highlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>36</green>
+           <blue>104</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="HighlightedText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Link">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="LinkVisited">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="toolTip">
+      <string>Pick tests from list</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="gex.qrc">
+       <normaloff>:/gex/icons/combo.png</normaloff>:/gex/icons/combo.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="autoRaise">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QTabWidget" name="tabWidgetAggregate">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>69</y>
+       <width>523</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="tabCharts">
+      <attribute name="title">
+       <string>Charts to aggregate</string>
+      </attribute>
+      <widget class="QComboBox" name="comboTrend">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>100</y>
+         <width>351</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Specify Trend charting mode</string>
+       </property>
+      </widget>
+      <widget class="QToolButton" name="PickTestScatterY">
+       <property name="geometry">
+        <rect>
+         <x>464</x>
+         <y>118</y>
+         <width>22</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>64</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Light">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Midlight">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>228</green>
+             <blue>219</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Dark">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>128</red>
+             <green>128</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Mid">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>144</red>
+             <green>139</green>
+             <blue>133</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="BrightText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Shadow">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>64</red>
+             <green>64</green>
+             <blue>64</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Highlight">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>36</green>
+             <blue>104</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="HighlightedText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Link">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="LinkVisited">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>64</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Light">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Midlight">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>228</green>
+             <blue>219</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Dark">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>128</red>
+             <green>128</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Mid">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>144</red>
+             <green>139</green>
+             <blue>133</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="BrightText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Shadow">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>64</red>
+             <green>64</green>
+             <blue>64</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Highlight">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>216</red>
+             <green>208</green>
+             <blue>200</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="HighlightedText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Link">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="LinkVisited">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>64</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Light">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Midlight">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>235</red>
+             <green>231</green>
+             <blue>227</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Dark">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>128</red>
+             <green>128</green>
+             <blue>128</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Mid">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>144</red>
+             <green>139</green>
+             <blue>133</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>108</red>
+             <green>104</green>
+             <blue>100</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="BrightText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>108</red>
+             <green>104</green>
+             <blue>100</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>204</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Shadow">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Highlight">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>36</green>
+             <blue>104</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="HighlightedText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Link">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="LinkVisited">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>0</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="toolTip">
+        <string>Pick test to draw on the Y axis</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>image1</normaloff>image1</iconset>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTest2">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>132</y>
+         <width>64</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Tests in Y:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboHistogram">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>69</y>
+         <width>352</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Specify Histogram charting mode</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="TextLabelList_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>41</y>
+         <width>93</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Charting mode:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignTop</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxHistogram">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>125</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Include Advanced Histogram Chart</string>
+       </property>
+       <property name="text">
+        <string comment="dd">Histogram...</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxTrend">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>125</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Include Advanced Trend Chart</string>
+       </property>
+       <property name="text">
+        <string comment="dd">Trend chart...</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboScatter">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>129</y>
+         <width>152</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Specify Scatter charting mode</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="editTestY">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>130</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Enter Test numbers used on Y axis (from second group of files)</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBoxWhiskerType">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>250</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Define Whisker space type</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Range</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Q2 +/-1.5*IQR</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxBoxPlot">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>251</y>
+         <width>141</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Include Box-Whisker Chart</string>
+       </property>
+       <property name="text">
+        <string comment="dd">Gage R&amp;&amp;R (Boxplot)...</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxScatter">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>129</y>
+         <width>125</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Include Advanced Scatter Plot</string>
+       </property>
+       <property name="text">
+        <string comment="dd">Scatter plot...</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxStats">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>11</y>
+         <width>151</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Include Test statistics table</string>
+       </property>
+       <property name="text">
+        <string comment="dd">Test statistics table</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboChartingType">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>40</y>
+         <width>352</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Specify if overlay all parameters or one individual chart per parameter</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Individual test chart: One chart per parameter (all groups)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Individual layer chart: One chart per parameter and per group</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Overlay chart: All parameters on the same chart</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxProbability">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>160</y>
+         <width>125</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Include Advanced Probability Plot</string>
+       </property>
+       <property name="text">
+        <string comment="dd">Probability plot...</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboProbabilityPlot">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>160</y>
+         <width>351</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Specify Probability plot charting mode</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxBoxplotEx">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>125</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Include Advanced Box Plot</string>
+       </property>
+       <property name="text">
+        <string comment="dd">Box plot chart...</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBoxplotEx">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>190</y>
+         <width>351</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Specify Box plot charting mode</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBoxMultiChart">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>220</y>
+         <width>351</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Specify Box plot charting mode</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxMultiChart">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>125</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Include Advanced Box Plot</string>
+       </property>
+       <property name="text">
+        <string comment="dd">Multi Charts...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="TabTitles">
+      <attribute name="title">
+       <string>Titles</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBoxChartTitle">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>491</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Chart title</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLineEdit" name="lineEditChartTitle">
+          <property name="toolTip">
+           <string>Enter Chart's title</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxChartLegendX">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>491</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>X-Axis legend</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLineEdit" name="lineEditAxisLegendX">
+          <property name="toolTip">
+           <string>Text legend for X axis</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxChartLegendY">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>491</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Y-Axis legend</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QLineEdit" name="lineEditAxisLegendY">
+          <property name="toolTip">
+           <string>Text legend for Y axis</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tabViewport">
+      <attribute name="title">
+       <string>Viewport</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>491</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>X axis space:</string>
+       </property>
+       <widget class="QLineEdit" name="lineEditLowX">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>30</y>
+          <width>156</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Enter lowest value to display on the X axis</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textLabelHighX">
+        <property name="geometry">
+         <rect>
+          <x>253</x>
+          <y>31</y>
+          <width>45</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>High X:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxScaleX">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>59</y>
+          <width>156</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Scale type: Linear or Logarithmic</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Linear</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Logarithmic</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="textLabelLowX">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>31</y>
+          <width>45</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Low X:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textLabelLowX_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>62</y>
+          <width>45</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Scale:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditHighX">
+        <property name="geometry">
+         <rect>
+          <x>317</x>
+          <y>30</y>
+          <width>137</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Enter highest value to display on the X axis</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox4_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>491</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Y axis space:</string>
+       </property>
+       <widget class="QLineEdit" name="lineEditLowY">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>30</y>
+          <width>156</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Enter lowest value to display on the Y axis</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textLabelHighY">
+        <property name="geometry">
+         <rect>
+          <x>253</x>
+          <y>31</y>
+          <width>45</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>High Y:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textLabelLowY">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>31</y>
+          <width>45</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Low Y:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxScaleY">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>59</y>
+          <width>156</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Scale type: Linear or Logarithmic</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Linear</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Logarithmic</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="textLabelLowX_2_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>62</y>
+          <width>45</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Scale:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditHighY">
+        <property name="geometry">
+         <rect>
+          <x>317</x>
+          <y>30</y>
+          <width>137</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Enter highest value to display on the Y axis</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="TabStyle">
+      <attribute name="title">
+       <string>Style</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox12">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>491</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Charting style:</string>
+       </property>
+       <widget class="QLabel" name="textLabelLineStyle">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>20</y>
+          <width>81</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Line style:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textLabelLineColor">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>44</y>
+          <width>65</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Line color:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxBellCurve">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>74</y>
+          <width>117</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Plot Gaussian / bell-curve shape (Applies to Histogram charts only)</string>
+        </property>
+        <property name="text">
+         <string>Gaussian curve</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textLabelLineWidth">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>65</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Line width:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="GColorPushButton" name="pushButtonLineColor">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>44</y>
+          <width>58</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Set charting color</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textLabelSpotStyle">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>44</y>
+          <width>81</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Spot style:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxLines">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>74</y>
+          <width>64</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Connect data points / bins</string>
+        </property>
+        <property name="text">
+         <string>Lines</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxLineSpotStyle">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>44</y>
+          <width>132</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Set spot style</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Circle</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rectangle</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Diamond</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cross</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>XCross</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Up-Triangle</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Down-Triangle</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Left-Triangle</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Right-Triangle</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QComboBox" name="comboBoxLineStyle">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>19</y>
+          <width>132</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Set line style</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Solid line</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dash line</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dot line</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dash - Dot line</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dash - Dot - Dot</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxspots">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>74</y>
+          <width>74</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Outline Data points with a bullet</string>
+        </property>
+        <property name="text">
+         <string>Spots</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBoxLineWidth">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>20</y>
+          <width>55</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Set charting line width...or 0 to hide it!</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>20</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxfittingCurve">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>74</y>
+          <width>105</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Connect points with smooth fitting curve</string>
+        </property>
+        <property name="text">
+         <string>Fitting curve</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxBars">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>74</y>
+          <width>56</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Plot plain bars (histograms only)</string>
+        </property>
+        <property name="text">
+         <string>Bars</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>491</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Markers:</string>
+       </property>
+       <widget class="QSpinBox" name="spinBoxMarkerWidth">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>20</y>
+          <width>40</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Marker line width (or 0 to hide it)</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>20</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textLabelMarkerColor">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>20</y>
+          <width>60</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Color:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="GColorPushButton" name="pushButtonMarkerColor">
+        <property name="geometry">
+         <rect>
+          <x>428</x>
+          <y>20</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Set Marker color</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxMarker">
+        <property name="geometry">
+         <rect>
+          <x>89</x>
+          <y>19</y>
+          <width>117</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Select marker to customize</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Mean</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Limits</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Minimum</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Maximum</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Median</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Lot ID</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-Lot / Wafer ID</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Group name</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>+/- 1 Sigma</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>+/- 1.5 Sigma</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>+/- 3 Sigma</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>+/- 6 Sigma</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="textLabelMarkerWidth">
+        <property name="geometry">
+         <rect>
+          <x>216</x>
+          <y>21</y>
+          <width>60</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Line width:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textLabelMarkerType">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>73</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Label:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageWafermap">
+    <widget class="QComboBox" name="comboBoxWafmap">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>20</y>
+       <width>338</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Wafermap type to create</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Software binning</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hardware binning</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Parametric test</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Zonal</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="TextLabelWafermap">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>48</y>
+       <width>93</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Test#/Bin#:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextLabel_3_2">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>23</y>
+       <width>93</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Wafermap:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="editWafmap">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>45</y>
+       <width>309</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Enter one Test number (for parametric wafermap) or a bin/bin list</string>
+     </property>
+     <property name="maxLength">
+      <number>254</number>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="PickTestWafermap">
+     <property name="geometry">
+      <rect>
+       <x>436</x>
+       <y>46</y>
+       <width>22</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>22</horstretch>
+       <verstretch>22</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>64</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>237</red>
+           <green>228</green>
+           <blue>219</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Dark">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>144</red>
+           <green>139</green>
+           <blue>133</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="BrightText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Shadow">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>64</red>
+           <green>64</green>
+           <blue>64</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Highlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>36</green>
+           <blue>104</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="HighlightedText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Link">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="LinkVisited">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>64</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>237</red>
+           <green>228</green>
+           <blue>219</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Dark">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>144</red>
+           <green>139</green>
+           <blue>133</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="BrightText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Shadow">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>64</red>
+           <green>64</green>
+           <blue>64</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Highlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>216</red>
+           <green>208</green>
+           <blue>200</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="HighlightedText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Link">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="LinkVisited">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>64</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>235</red>
+           <green>231</green>
+           <blue>227</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Dark">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>144</red>
+           <green>139</green>
+           <blue>133</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>108</red>
+           <green>104</green>
+           <blue>100</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="BrightText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>108</red>
+           <green>104</green>
+           <blue>100</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Shadow">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Highlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>36</green>
+           <blue>104</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="HighlightedText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Link">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="LinkVisited">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="toolTip">
+      <string>Pick one test from list</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="gex.qrc">
+       <normaloff>:/gex/icons/combo.png</normaloff>:/gex/icons/combo.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="autoRaise">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageBinningSummary">
+    <widget class="QLabel" name="TextLabel_3_2_2">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>231</width>
+       <height>176</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Binning Summary, includes:&lt;br&gt;
+
+&lt;b&gt;- Soft Bin tables&lt;/b&gt;&lt;br&gt;
+
+&lt;b&gt;- Hard Bin tables&lt;/b&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pagePareto">
+    <widget class="QLabel" name="TextLabel_3_2_2_2">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>222</width>
+       <height>188</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pareto report, includes sorted tables for:&lt;br&gt;
+
+&lt;b&gt;- Tests Cp&lt;/b&gt;&lt;br&gt;
+
+&lt;b&gt;- Tests Cpk&lt;/b&gt;&lt;br&gt;
+
+&lt;b&gt;- Tests Failures&lt;/b&gt;&lt;br&gt;
+
+&lt;b&gt;- Failure signatures&lt;/b&gt;&lt;br&gt;
+
+&lt;b&gt;- Soft Bin&lt;/b&gt;&lt;br&gt;
+
+&lt;b&gt;- Hard Bin, ...&lt;/b&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pagePearsonsCorrelation">
+    <widget class="QLabel" name="TextLabel_3_2_2_2_2">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>272</width>
+       <height>153</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pearson's correlation report, includes:&lt;br&gt;
+
+&lt;b&gt;- Tests pairs with highest correlation&lt;/b&gt;&lt;br&gt;
+
+&lt;b&gt;- Tests pairs Scatter plot&lt;/b&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageTesterToTester">
+    <widget class="QLineEdit" name="editGBFile">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>30</y>
+       <width>309</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Select data file holding Guard Band reference info.</string>
+     </property>
+     <property name="maxLength">
+      <number>254</number>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonImportGBFile">
+     <property name="geometry">
+      <rect>
+       <x>436</x>
+       <y>27</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>Select the released guard band file</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="gex.qrc">
+       <normaloff>:/gex/icons/file_open.png</normaloff>:/gex/icons/file_open.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextLabelWafermap_2_2">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>74</y>
+       <width>110</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Generate GB File:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonCreateGBfile">
+     <property name="geometry">
+      <rect>
+       <x>124</x>
+       <y>68</y>
+       <width>82</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Build GuardBand file from QC and FT programs</string>
+     </property>
+     <property name="text">
+      <string>Create GB file</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextLabelWafermap_2">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>33</y>
+       <width>93</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>GB File:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageProductionReports">
+    <widget class="QComboBox" name="comboBoxProduction">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>30</y>
+       <width>338</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Define Charting mode</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Yield per Sublot (or Wafer)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yield per Lot</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yield per Group/Query</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yield per day</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yield per week</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yield per month</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="TextLabel_3_2_3">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>33</y>
+       <width>93</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Chart type:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageDataAudit">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QTabWidget" name="tabWidgetStdfChecker">
+       <property name="currentIndex">
+        <number>2</number>
+       </property>
+       <widget class="QWidget" name="tabFileAudit">
+        <attribute name="title">
+         <string>File Audit</string>
+        </attribute>
+        <widget class="QLabel" name="textLabel1_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>253</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;b&gt;Data file discrepancies to report:&lt;/b&gt;</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_EndRec">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>94</y>
+           <width>473</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect and report record shorter than expected</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect Unexpected end of records</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_MissingRec">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>67</y>
+           <width>468</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect and report all missing mandatory records</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect Missing records</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_BadRec">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>470</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect and report all invalid records</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect Invalid records</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_DuplicateTest">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>122</y>
+           <width>482</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect duplicate test number, or test names discrepancies</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect Duplicated test numbers / Test names discrepancies</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_LimitsIssue">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>151</y>
+           <width>483</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect test limits redefinition (overloading original ones)</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect Test limits discrepancies</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBoxAuditReportType">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>208</y>
+           <width>367</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Define amount of record errors to report...</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Short: Report first error only (per Record type)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Long: Report ALL Record Errors (can be big!)</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="textLabel1_3_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>211</y>
+           <width>93</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Report size:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_MissingLimits">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>180</y>
+           <width>483</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect if test limit(s) missing</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect missing Test limits (Low, High, or Both)</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tabTestsAudit">
+        <attribute name="title">
+         <string>Tests Audit</string>
+        </attribute>
+        <widget class="QLabel" name="textLabel1">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>289</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;b&gt;Define Test parameter analysis options:&lt;/b&gt;</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_RangeIssue">
+         <property name="geometry">
+          <rect>
+           <x>262</x>
+           <y>211</y>
+           <width>261</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect potential incorrect instrument setup (eg: if all values very small compared to limits)</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect instrumentation set over incorrect range</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_Categories">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>62</y>
+           <width>480</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect distributions with very few different values or only integer values (categories)</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect 'Categories' distributions (few different values, integers)</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_ZeroRange">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>475</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect distributions with single value</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect 'Zero' range distributions (single value)</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_MultiModal">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>84</y>
+           <width>475</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect multi-modal distributions</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect 'Multi-modal' distributions</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_ShowHisto">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>150</y>
+           <width>479</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Include Histogram chart and test limits in report</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Include Histogram Chart in report (HTML,Word,PDF,PPT)</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_MeasurementIssue">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>106</y>
+           <width>477</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect measurement issues (eg: values multiple of a given step size)</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect measurement resolution  / stratification problems</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_SiteToSite">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>128</y>
+           <width>476</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Detect site to site drifts</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Detect Site-to-Site discrepancies</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="TabFIlters">
+        <attribute name="title">
+         <string>Filters</string>
+        </attribute>
+        <widget class="QCheckBox" name="checkBoxAudit_SampleLimit">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>311</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Do not report issues for tests with too few samples</string>
+         </property>
+         <property name="text">
+          <string>Skip analysis for Parameters with little samples...</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_CpkLimit">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>62</y>
+           <width>311</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Do not report issues for tests with high Cpk (lowers false alarms)</string>
+         </property>
+         <property name="text">
+          <string>Skip analysis for Parameters with Cpk &gt;=...</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEditAuditSampleLimit">
+         <property name="geometry">
+          <rect>
+           <x>321</x>
+           <y>38</y>
+           <width>64</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Minimum required samples for the analysis...</string>
+         </property>
+         <property name="text">
+          <string>30</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEditAuditCpkLimit">
+         <property name="geometry">
+          <rect>
+           <x>321</x>
+           <y>60</y>
+           <width>64</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Do not report issues for tests with high Cpk (lowers false alarms)</string>
+         </property>
+         <property name="text">
+          <string>20</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="textLabel1_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>486</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;b&gt;Disable analysis over specific tests...:&lt;/b&gt;</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QGroupBox" name="groupBox9">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>90</y>
+           <width>501</width>
+           <height>251</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Tests to ignore:</string>
+         </property>
+         <widget class="QPushButton" name="buttonDuplicateFilter">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>20</y>
+            <width>32</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>32</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Duplicate selected filter</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="gex.qrc">
+            <normaloff>:/gex/icons/copy.png</normaloff>:/gex/icons/copy.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="PushButtonClearAllFilters">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>20</y>
+            <width>80</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Remove ALL filters...</string>
+          </property>
+          <property name="text">
+           <string>Clear All</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="buttonRemoveFilter">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>20</y>
+            <width>32</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>32</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Remove selected filter from list</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="gex.qrc">
+            <normaloff>:/gex/icons/file_remove.png</normaloff>:/gex/icons/file_remove.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="Line" name="Line2">
+          <property name="geometry">
+           <rect>
+            <x>122</x>
+            <y>20</y>
+            <width>16</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::VLine</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="buttonFilterParameters">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>32</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>32</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Add filter...</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="gex.qrc">
+            <normaloff>:/gex/icons/filter.png</normaloff>:/gex/icons/filter.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="buttonEditFilter">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>20</y>
+            <width>32</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>32</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::TabFocus</enum>
+          </property>
+          <property name="toolTip">
+           <string>Edit filter...</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="gex.qrc">
+            <normaloff>:/gex/icons/properties.png</normaloff>:/gex/icons/properties.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QTreeWidget" name="listViewAuditFilters">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>481</width>
+            <height>181</height>
+           </rect>
+          </property>
+          <property name="rootIsDecorated">
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Product</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Filter type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Details</string>
+           </property>
+          </column>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="TabMiscAudit">
+        <attribute name="title">
+         <string>Misc.</string>
+        </attribute>
+        <widget class="QLabel" name="textLabel1_3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>253</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;b&gt;Other issues to report:&lt;/b&gt;</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_DieLoc">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>121</y>
+           <width>433</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Report missing Die location info in data file</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Missing Wafer coordinates (DieX, DieY)</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_WaferID">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>94</y>
+           <width>433</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Report missing Wafer ID in data file</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Missing WaferID</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_LotID">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>67</y>
+           <width>438</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Report missing Lot ID in data file</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Missing LotID</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBoxAudit_ProductID">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>438</width>
+           <height>19</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Report missing Product ID in data file</string>
+         </property>
+         <property name="text">
+          <string comment="dd">Missing ProductID</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="pageGlobalInfo">
+    <widget class="QLabel" name="TextLabel_3_2_2_2_2_2_2_2_2">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>20</y>
+       <width>272</width>
+       <height>153</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Global info report, includes:&lt;br&gt;
+&lt;b&gt;- Files / Dataset selected&lt;/b&gt;&lt;br&gt;
+&lt;b&gt;- Testing time info&lt;/b&gt;
+&lt;b&gt;- Lot / Wafer info,...&lt;/b&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageDatalog">
+    <widget class="QToolButton" name="PickTestDatalog">
+     <property name="geometry">
+      <rect>
+       <x>291</x>
+       <y>50</y>
+       <width>22</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>64</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>237</red>
+           <green>228</green>
+           <blue>219</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Dark">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>144</red>
+           <green>139</green>
+           <blue>133</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="BrightText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Shadow">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>64</red>
+           <green>64</green>
+           <blue>64</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Highlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>36</green>
+           <blue>104</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="HighlightedText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Link">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="LinkVisited">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>64</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>237</red>
+           <green>228</green>
+           <blue>219</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Dark">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>144</red>
+           <green>139</green>
+           <blue>133</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="BrightText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Shadow">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>64</red>
+           <green>64</green>
+           <blue>64</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Highlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>216</red>
+           <green>208</green>
+           <blue>200</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="HighlightedText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Link">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="LinkVisited">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>64</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Light">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>235</red>
+           <green>231</green>
+           <blue>227</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Dark">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>128</red>
+           <green>128</green>
+           <blue>128</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>144</red>
+           <green>139</green>
+           <blue>133</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>108</red>
+           <green>104</green>
+           <blue>100</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="BrightText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>108</red>
+           <green>104</green>
+           <blue>100</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>204</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Shadow">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Highlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>36</green>
+           <blue>104</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="HighlightedText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Link">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="LinkVisited">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="toolTip">
+      <string>Pick tests from list</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="gex.qrc">
+       <normaloff>:/gex/icons/combo.png</normaloff>:/gex/icons/combo.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="autoRaise">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBoxTestTypeDatalog">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>21</y>
+       <width>243</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Type of tests to include in this section</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextLabelTestListDatalog">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>50</y>
+       <width>51</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Test List:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextLabelTestTypeDatalog">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>21</y>
+       <width>51</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tests:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="editTestListDatalog">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>50</y>
+       <width>215</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Enter list of tests in this report section</string>
+     </property>
+     <property name="maxLength">
+      <number>254</number>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GColorPushButton</class>
+   <extends>QPushButton</extends>
+   <header>gcolorpushbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>PushButtonOk</tabstop>
+  <tabstop>PushButtonCancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

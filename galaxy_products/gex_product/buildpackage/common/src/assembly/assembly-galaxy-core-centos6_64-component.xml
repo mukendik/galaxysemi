@@ -1,0 +1,115 @@
+<assembly
+    xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>assembly-core-linux64-dist</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/unix</directory>
+            <outputDirectory>bin</outputDirectory>
+            <includes>
+                <include>common.sh</include>
+            </includes>
+        </fileSet>
+        <!-- Qt -->
+        <fileSet>
+            <directory>${env.QTDIR}/lib</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <includes>
+                <include>${libSuffix}Qt5DBus${libPostfix}</include>
+                <include>${libSuffix}Qt5Core${libPostfix}</include>
+                <include>${libSuffix}Qt5Gui${libPostfix}</include>
+                <include>${libSuffix}Qt5Multimedia${libPostfix}</include>
+                <include>${libSuffix}Qt5MultimediaWidgets${libPostfix}</include>
+                <include>${libSuffix}Qt5Network${libPostfix}</include>
+                <include>${libSuffix}Qt5OpenGL${libPostfix}</include>
+                <include>${libSuffix}Qt5Positioning${libPostfix}</include>
+                <include>${libSuffix}Qt5PrintSupport${libPostfix}</include>
+                <include>${libSuffix}Qt5Qml${libPostfix}</include>
+                <include>${libSuffix}Qt5Quick${libPostfix}</include>
+                <include>${libSuffix}Qt5Script${libPostfix}</include>
+                <include>${libSuffix}Qt5ScriptTools${libPostfix}</include>
+                <include>${libSuffix}Qt5Sensors${libPostfix}</include>
+                <include>${libSuffix}Qt5Sql${libPostfix}</include>
+                <include>${libSuffix}Qt5Svg${libPostfix}</include>
+                <include>${libSuffix}Qt5V8${libPostfix}</include>
+                <include>${libSuffix}Qt5WebKit${libPostfix}</include>
+                <include>${libSuffix}Qt5WebKitWidgets${libPostfix}</include>
+                <include>${libSuffix}Qt5Widgets${libPostfix}</include>
+                <include>${libSuffix}Qt5XmlPatterns${libPostfix}</include>
+                <include>${libSuffix}Qt5Xml${libPostfix}</include>
+                <include>${libSuffix}Qt5WebChannel${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <!-- sqldrivers -->
+        <fileSet>
+            <directory>${env.QTDIR}/plugins/sqldrivers</directory>
+            <outputDirectory>sqldrivers</outputDirectory>
+            <includes>
+                <include>${libSuffix}qsql*${libPostfix}</include>
+            </includes>
+            <excludes>
+                <exclude>${libSuffix}qsqloci${libPostfix}</exclude>
+            </excludes>
+        </fileSet>
+        <!-- libgqtl -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_libraries/galaxy_qt_libraries/lib/${distName}</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <includes>
+                <include>${libSuffix}gqtl_datakeys${libPostfix}</include>
+                <include>${libSuffix}gqtl_log${libPostfix}</include>
+                <include>${libSuffix}gqtl_statsengine${libPostfix}</include>
+                <include>${libSuffix}gqtl_patcore${libPostfix}</include>
+                <include>${libSuffix}gqtl_svg${libPostfix}</include>
+                <include>libgqtl_ws${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <!-- libchartdir -->
+        <fileSet>
+            <directory>${project.build.directory}/other_libraries/chartdirector/lib/${distName}</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <includes>
+                <include>${libSuffix}chartdir${libPostfix}</include>
+                <include>fonts/*</include>
+            </includes>
+        </fileSet>
+        <!-- libqglviewer -->
+        <fileSet>
+            <directory>${project.build.directory}/other_libraries/libqglviewer/lib/${distName}</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <includes>
+                <include>${libSuffix}qglviewer${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <!-- libplatforms -->
+        <fileSet>
+            <directory>${env.QTDIR}/plugins</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>platforms/${libSuffix}qminimal${libPostfix}</include>
+                <include>platforms/${libSuffix}qoffscreen${libPostfix}</include>
+                <include>platforms/${libSuffix}qlinuxfb${libPostfix}</include>
+                <include>platforms/${libSuffix}qxcb${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/htmldoc/centos6.6-64</directory>
+            <outputDirectory>htmldoc</outputDirectory>
+            <includes>
+                <include>htmldoc_${osName}</include>
+            </includes>
+        </fileSet>
+        <!-- mariadb-connector-c lib -->
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>${libDir}</outputDirectory>
+            <includes>
+              <include>libmariadb${libPostfix}</include>
+              <include>libmysqlclient*${libPostfix}</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

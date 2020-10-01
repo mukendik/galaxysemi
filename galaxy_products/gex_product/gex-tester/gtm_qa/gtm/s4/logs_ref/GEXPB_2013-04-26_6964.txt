@@ -1,0 +1,2 @@
+[2013-04-26 19:04:57 GEXPB 5] Disabling property 25 : GexOptionsCenter.GetOption('output','location')=='default'||GexOptionsCenter.GetOption('output','location')=='same' ? true  	in bool CPropBrowser::UpdateGenericPropertyAttributes(int)  	in sources\propbrowser.cpp
+[2013-04-26 19:04:57 GEXPB 5] Disabling property 25 : GexOptionsCenter.GetOption('output','location')=='default'||GexOptionsCenter.GetOption('output','location')=='same' ? true  	in bool CPropBrowser::UpdateGenericPropertyAttributes(int)  	in sources\propbrowser.cpp

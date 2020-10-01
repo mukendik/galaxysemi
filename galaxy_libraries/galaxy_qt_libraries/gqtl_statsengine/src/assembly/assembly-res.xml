@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-lib</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <includes>
+                <include>galaxy_libraries/galaxy_qt_libraries/gqtl_statsengine/resources/*</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>  
+    </fileSets>
+</assembly>

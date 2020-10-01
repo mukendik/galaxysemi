@@ -1,0 +1,91 @@
+<assembly>
+    <id>assembly-linux-dist</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/readme</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>readme.txt</include>
+            </includes>
+        </fileSet>
+        <!-- For unix only!  (exeExt tricks to not include in windows packages) -->
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/${scriptPackageFolder}</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>gex${exeExt}</include>
+                <include>gexpat${exeExt}</include>
+                <include>gexpro${exeExt}</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <!-- graphics -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/gex/sources/icons</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>gex_application_48x48.png</include>
+            </includes>
+        </fileSet>
+        <!-- galaxy-la binary --><!-- linux and win -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>galaxy-la${exeExt}</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <!-- galaxy-la script -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/GS-License-Activation-Utility</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>galaxy-la${exeExt}</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <!-- plugins -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/plugins/lib/${distName}</directory>
+            <outputDirectory>plugins/db</outputDirectory>
+            <includes>
+                <include>${libSuffix}gexdb_plugin_galaxy${libPostfix}</include>
+                <include>${libSuffix}gexdb_plugin_medtronic${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <!-- releaseHistory -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/help/pages</directory>
+            <outputDirectory>bin/help/pages</outputDirectory>
+            <excludes/>
+        </fileSet>
+        <!-- Copyrights -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/help/images</directory>
+            <outputDirectory>bin/help/images</outputDirectory>
+            <includes>
+                <include>CopyrightAndLegalNotices.pdf</include>
+                <include>qntx_exam_gs.pdf</include>
+                <include>qntx_exam_install.pdf</include>
+                <include>qntx_exam_lic_user.pdf</include>
+                <include>qntx_rh.pdf</include>
+                <include>qntx_ter_install.pdf</include>
+                <include>qntx_ter_rh.pdf</include>
+                <include>qntx_third_party.pdf</include>
+                <include>qntx_ym_gs.pdf</include>
+                <include>qntx_ym_install.pdf</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <!-- gslog -->
+    <files>
+        <file>
+            <source>${project.build.directory}/galaxy_products/gex_product/bin/gex_gslog.xml</source>
+            <outputDirectory>samples</outputDirectory>
+            <destName>gslog.xml</destName>
+        </file>
+    </files>
+</assembly>

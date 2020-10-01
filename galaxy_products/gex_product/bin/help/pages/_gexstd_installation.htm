@@ -1,0 +1,245 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620"><b><br>
+      Installation<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      <p align="left">All details about GEX package and installation process:</p>
+      <ul>
+        <li>
+          <p align="left"><a href="#GEX Software Package">GEX Software package</a></li>
+        <li>
+          <p align="left">GEX Standalone or Evaluation installation : <a href="#Windows"> Windows 95, 98, NT, 2000,
+          XP</a></li>
+        <li>
+          <p align="left">GEX Standalone or Evaluation installation: <a href="#Unix">Unix</a>
+        </li>
+        <li>
+          <p align="left">Running GEX-LM : <a href="#Server">License
+          manager</a>
+        </li>
+        <li>
+          <p align="left">Running GEX <a href="#Clients">clients</a><br>
+        </li>
+      </ul>
+      <p align="left"><b><a name="Package">GEX Software Package</a><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"><br>
+      The Quantix Examinator software package includes the following:<br>
+  o 'gex' software   : The complete GEX application<br>
+  o 'gex-lm' software: The License Manager service to run<br>
+                       on the server (not used in Standalone mode)<br>
+  o 'gex-ls' software: The License Status tool used to display<br>
+                       the GEX clients running.</p>
+      <p align="left"><br>
+      <b><a name="Windows">GEX Standalone or
+      Evaluation installation: PC Windows</a><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></p>
+      <ol>
+        <li>
+          <p align="left">
+      Once you have downloaded the application from Quantix's web site (filename
+          galaxy_examinator_XXX.exe), you can run it as is on each PC that will
+      run a standalone license. This file self-extracts and automatically installs the software, so all you need to do is confirm the installation location, and validate
+      a few assistant pages.<br>
+      Once extraction is complete, the software is launched automatically. You
+          can restart it at any time by clicking the Start Button, then look in the Programs submenu for Quantix
+      Examinator.</li>
+        <li>
+          <p align="left"> GEX displays a welcome page that lets you decide
+          your installation mode.</li>
+        <li>
+          <p align="left">For a '<b>Standalone</b>' installation, select the running mode to 'Standalone'
+          then enter your full name and Product Key ID (sent to you by email on reception
+          of your PO). Otherwise, select the '<b>Evaluation</b>' running mode to
+          start a 10 days trial period.</li>
+        <li>
+          <p align="left">Click the 'Next' button</li>
+        <li>
+          <p align="left">Email the 'gex_request.txt' file created in your <b>Windows
+          directory</b> to <a href="mailto:gex.license@galaxysemi.com">gex.license@galaxysemi.com</a></li>
+        <li>
+          <p align="left">You will receive an automated reply with the attachment<br>
+   file 'gex_license.txt'. Copy this file to your <b> GEX directory</b>.</li>
+        <li>
+          <p align="left">Run the GEX software again...it is now activated for 12 months!
+          (or 10 days for an Evaluation)</li>
+        <li>
+          <p align="left">Any question? Check the support section on www.mentor.com</li>
+      </ol>
+      <p align="left"><b><a name="Unix">GEX
+      Standalone or Evaluation installation: Unix</a><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></p>
+      <ol>
+        <li>
+          <p align="left">&nbsp;Install the Quantix Examinator software on each Unix workstation that will run
+          GEX. To do it,
+          simply enter the following command lines:<br>
+          <b>
+          gzip -d galaxy_examinatorXXX.tar.gz<br>
+          tar xovf galaxy_examinatorXXX.tar<br>
+          </b>It creates a galaxy_examinator folder where all files are extracted.<br>
+      Note: XXX is the software release and Unix target (e.g: 320_hp)</p>
+        </li>
+        <li>
+          <p align="left">Edit your .login (or .cshrc) file, located in your home directory, and add the environment variable GEX_PATH and set it to the path of the Quantix Examinator folder you just created. Then, edit your PATH variable so it includes this new path.</p>
+        </li>
+        <li>
+          <p align="left">Edit (or create) the environment variable LD_LIBRARY_PATH
+          (under Solaris) or SHLIB_PATH (under HP-UX) and&nbsp;set it to include the path to the 'galaxy_examinator' folder.</p>
+        </li>
+        <li>
+          <p align="left">Ensure that your HOME variable exists and points to your home directory.
+          Quantix Examinator uses it to store its settings.<br>
+          <br>
+          Example of SOLARIS .login (or .cshrc) section with the Quantix Examinator changes:<br>
+          <br>
+          <b>
+          setenv GEX_PATH /export/home/galaxy_examinator<br>
+          setenv LD_LIBRARY_PATH&nbsp;&nbsp; ${LD_LIBRARY_PATH}:$GEX_PATH<br>
+          setenv PATH $PATH:$GEX_PATH<br>
+          <br>
+          </b>
+          Example of HP-UX .login (or .cshrc) section with the Quantix Examinator changes:<br>
+          <br>
+          <b>
+          setenv GEX_PATH /export/home/galaxy_examinator<br>
+          setenv SHLIB_PATH&nbsp;&nbsp; ${SHLIB_PATH&nbsp;}:$GEX_PATH<br>
+          setenv PATH $PATH:$GEX_PATH<br>
+          <br>
+          </b>Save your changes, and execute the command. E.g.: <b>  source .login<br>
+          </b>
+        </li>
+        <li>
+          <p align="left">Launch the GEX software: <b>gex&amp;</b></li>
+        <li>
+          <p align="left"> GEX will display a welcome page that lets you decide
+          your installation mode.</li>
+        <li>
+          <p align="left">For a '<b>Standalone</b>' installation, select the running mode to 'Standalone'
+   then enter your full name and Product Key ID (sent to you by email on reception
+          of your PO). Otherwise, select the '<b>Evaluation</b>' running mode to
+          start a 10 days trial period.</li>
+        <li>
+          <p align="left">Click the 'Next' button</li>
+        <li>
+          <p align="left"> Email the 'gex_request.txt' file created in your HOME
+          directiry to <a href="mailto:gex.license@galaxysemi.com">gex.license@galaxysemi.com</a></li>
+        <li>
+          <p align="left"> You will receive an automated reply with the attachment
+          file 'gex_license.txt'. Copy this file to your GEX directory.</li>
+        <li>
+          <p align="left"> Run the GEX software again...it is now activated for 12 months!
+          (or 10 days for an Evaluation)</li>
+        <li>
+          <p align="left"> Any question? Check the support section on www.mentor.com</li>
+      </ol>
+      <p align="left"> <b> <br>
+      </b><br>
+      If you run into any problems during the installation, <a href="_gexstd_contactus.htm"> contact</a> the Quantix support team, or request help from a Unix expert.<br>
+      <br>
+      <br>
+      <br>
+      <b><a name="Server">GEX Server installation</a><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"><br>
+      </p>
+      <ol>
+        <li>
+          <p align="left">Install the Quantix Examinator software at each client machine
+          (see above for <a href="#GEX Standalone installation: Unix">Unix</a>
+          or <a href="#GEX Standalone installation: PC Windows">PC</a> clients)</li>
+        <li>
+          <p align="left">Install the Quantix Examinator software on the server that will run the license manager software.</li>
+        <li>
+          <p align="left">On the server, run the '<b>gex-lm</b>' software.</li>
+        <li>
+          <p align="left">From the welcome page, enter your full name and Product Key ID
+          (sent to you by email on reception of your PO). Notice: If the server
+          is a PC it will ONLY service PC clients, and if the server is a
+          Solaris station, it will only service Solaris clients. For servicing
+          clients of different computer platforms, you need as many servers as
+		  platforms (for details, contacts Quantix sales <a href="mailto:quantix_sales@mentor.com">sales</a>)</li>
+        <li>
+          <p align="left">Email the 'gex_request.txt' file created in your
+          Windows (for a PC server) or HOME directory (for a Unix server) to <a href="mailto:gex.license@galaxysemi.com"> gex.license@galaxysemi.com</a></li>
+        <li>
+          <p align="left">You will receive an automated reply with the attachment
+          file 'gex_license.txt'. Copy this file to your server GEX directory.</li>
+        <li>
+          <p align="left"> Run the GEX-LM software again...it is now activated for 12 months!</li>
+        <li>
+          <p align="left">Any question? Check the support section on www.mentor.com<br>
+        </li>
+      </ol>
+      <p align="left"><b>Running GEX-LM Server<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"><br>
+      </p>
+      <ol>
+        <li>
+          <p align="left">Simply launch '<b>gex-lm</b>', it is a background application that can be<br>
+   launched like any other startup services (daemon) on your server.</li>
+        <li>
+          <p align="left">Run the '<b>gex-ls</b>' software at any time to see the license usage status</li>
+        <li>
+          <p align="left">Any question? Check the support section on <a href="http://www.mentor.com"> www.mentor.com</a></li>
+      </ol>
+      <p align="left"><b>Note</b>: GEX-LM communicates with GEX applications using the default<br>
+      socket port number 4242. You can force GEX-LM to use a different port,<br>
+      simply launch it with the following arguments:</p>
+      <blockquote>
+        <p align="left">      gex-lm -port &lt;PortNumber></p>
+      </blockquote>
+      <p align="left">      E.g.: <b> gex-lm -port 4240 </b>     will have GEX-LM use socket port# 4240</p>
+      <p align="left"><br>
+      </p>
+      <p align="left"><b><a name="Clients">Running GEX clients</a><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></p>
+      <ol>
+        <li>
+          <p align="left">The 'gex-lm' license manager MUST be running on your server.<br>
+   If not, any GEX client will refuse to run and report an error.</li>
+        <li>
+          <p align="left">From the welcome page, select the running mode to 'Connect to Server'<br>
+   then enter the server name (or IP address) and the socket port#<br>
+   (default is port 4242) used for communication.</li>
+        <li>
+          <p align="left">Run the 'gex-ls' software at any time to see the license usage status</li>
+        <li>
+          <p align="left">Any question? Check the support section on <a href="http://www.mentor.com"> www.mentor.com</a></li>
+      </ol>
+      <p align="left"><b>Note</b>: You can display the GEX welcome page at any time and change<br>
+      the server name or socket port# to use. To do it, simply launch<br>
+      GEX with the following argument: <b>   gex -W</b></p>
+      <p align="left"><br>
+      <b>Software License information<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></p>
+      <p align="left"><br>
+      <b>Warning</b>: Make sure you read the Software license page displayed during the installation process and during the first execution of the software. It is mandatory that you comply with the license terms before installing and using the software. One important aspect of the license is that you must be a Registered User. This means you must be an identified user listed in the Quantix database. The registration process is automatic if you download the software from the Quantix web site; otherwise you are required to send an email to
+      <b> <a href="mailto:quantix_sales@mentor.com">quantix_sales@mentor.com</a> </b>with the following information:</p>
+      <ul>
+        <li>
+          <p align="left">Full Name</li>
+        <li>
+          <p align="left">Function</li>
+        <li>
+          <p align="left">Company name</li>
+        <li>
+          <p align="left">Business email address</li>
+        <li>
+          <p align="left">Business Telephone number</li>
+        <li>
+          <p align="left">	Primary tester platform used</li>
+      </ul>
+      <p align="left"><br>
+      This registration process is not an option; you must complete the process in order to comply with the license terms.
+      <p align="left">&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

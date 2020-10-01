@@ -1,0 +1,15 @@
+diff -ur qt-everywhere-commercial-src-4.8.2/src/gui/kernel/qdnd_x11.cpp qt-everywhere-commercial-new-4.8.2/src/gui/kernel/qdnd_x11.cpp
+--- qt-everywhere-commercial-src-4.8.2/src/gui/kernel/qdnd_x11.cpp	2012-05-16 09:22:30.000000000 +0200
++++ qt-everywhere-commercial-new-4.8.2/src/gui/kernel/qdnd_x11.cpp	2012-06-29 17:52:11.636381673 +0200
+@@ -1446,8 +1446,10 @@
+                 if (type) {
+                     // When ShapeInput and ShapeBounding are not set they return a single rectangle with the geometry of the window, this is why we
+                     // need an && here so that in the case one is set and the other is not we still get the correct result.
+-#if !defined(Q_OS_SOLARIS)
++#if defined(ShapeInput) && defined(ShapeBounding)
+                     windowContainsMouse = windowInteractsWithPosition(pos, w, ShapeInput) && windowInteractsWithPosition(pos, w, ShapeBounding);
++#elif defined(ShapeBounding)
++                    windowContainsMouse = windowInteractsWithPosition(pos, w, ShapeBounding);
+ #endif
+                     if (windowContainsMouse)
+                         return w;

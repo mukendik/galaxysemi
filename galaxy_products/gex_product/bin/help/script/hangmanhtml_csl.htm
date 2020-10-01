@@ -1,0 +1,230 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: hangman-html.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This version of hangman uses the same source codes as
+      for <a href="hangman_csl.htm">hangman.csl</a>. The only difference is that
+      hangman status is no longer text string but HTML pages! This script shows
+      how to leverage the
+      script function <a href="syshtml.htm">sysHtml</a>; it is simple yet
+      powerful way for your script to show/hide the HTML script
+      window at any time and benefit from all the power of HTML. Pages can include
+      any text, hyperlinks
+      and images (in .PNG format)</p>
+          <p align="left">For additional information, see the scripting language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">review</a> the other sample scripts.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: hangman-html.csl
+//////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////
+// Number of WORDS in the dictionary
+///////////////////////////////////////////////////////////
+const DictionarySize=10;
+
+///////////////////////////////////////////////////////////
+// Hangman dictionary of words
+///////////////////////////////////////////////////////////
+const Dictionary[DictionarySize]= { 
+'THE', 'OF', 'AND', 'A', 'TO', 'IN', 'IS', 'YOU', 'THAT', 'IT'
+};</pre>
+      </div>
+      <div align="left">
+        <pre align="left">///////////////////////////////////////////////////////////
+// Variables used during the game
+///////////////////////////////////////////////////////////
+var MysteryWord;	// Holds the word you have to find
+var	iMysteryWord;	// Holds index to Mystery word in array
+var FoundWord;		// Holds current characters found in word
+var RemainingChars;	// Number of characters to be found
+var ErrorCount;		// Holds the number of errors you've made
+
+///////////////////////////////////////////////////////////
+// Start game: Pick one word from the dictionary, reset variables
+///////////////////////////////////////////////////////////
+StartGame()
+{
+  // Pick one word from the dictionary
+  iMysteryWord = sysRandom(DictionarySize-1);
+  MysteryWord = Dictionary[iMysteryWord];
+
+  // Sets string that holds characters found
+  FoundWord = &quot;&quot;;
+  RemainingChars = strLength(MysteryWord);
+  var index = RemainingChars;
+  while(index!=0)
+  {
+    index--;
+    FoundWord += '*';
+  }
+
+  // Reset error counter to 0.
+  ErrorCount = 0;
+}
+
+///////////////////////////////////////////////////////////
+// Shows current hanging status!
+///////////////////////////////////////////////////////////
+GameStatus()
+{
+  var html_page;
+
+  // Ensure the HTML console window is visible
+  sysHtml('show');
+
+  // Get path where HTML pages are located
+  html_page = sysStartPath();
+
+  switch(ErrorCount)
+  {
+    case 0: // Build path to HTML page: NO ERROR
+	  html_page = html_page + '/error0.htm';
+	  break;
+
+	case 1: // Build path to HTML page: 1 ERROR
+	  html_page = html_page + '/error1.htm';
+	break;
+
+	case 2: // Build path to HTML page: 2 ERRORS
+	  html_page = html_page + '/error2.htm';
+	break;
+
+
+	case 3: // Build path to HTML page: 3 ERRORS
+	  html_page = html_page + '/error3.htm';
+	break;
+
+
+	case 4: // Build path to HTML page: 4 ERRORS
+	  html_page = html_page + '/error4.htm';
+	break;
+
+
+	case 5: // Build path to HTML page: 5 ERRORS
+	  html_page = html_page + '/error5.htm';
+	break;
+
+
+	case 6: // Build path to HTML page: 6 ERRORS
+	  html_page = html_page + '/error6.htm';
+	break;
+
+
+	case 7: // Build path to HTML page: 7 ERRORS
+	  html_page = html_page + '/error7.htm';
+      	  sysLog('**** Too late!...');
+	  sysLog('The word was:'+Dictionary[iMysteryWord]);
+	break;
+  }
+  // Load the HTML page we want
+  sysHtml('load',html_page);
+
+  if(RemainingChars == 0)
+  {
+    // Congratulations message to HTML window
+    html_page = sysStartPath();
+    html_page = html_page + '/finish.htm';
+    sysHtml('load',html_page);
+
+    // Congratulations message to text window too!
+    sysLog('**** Congratulations ***');
+    sysLog('You found it:'+Dictionary[iMysteryWord]);
+  }
+}
+
+///////////////////////////////////////////////////////////
+// Get character, check if word found
+///////////////////////////////////////////////////////////
+GameTryCharacter()
+{
+  // Get user input character
+  sysLog('Word: '+FoundWord);
+  var cChar = sysPrompt('Enter character:');
+
+  // Ensure we only keep 1 character from the entered string
+  cChar = strSubString(cChar,1,1);
+
+  // Convert to Upper case
+  cChar = strUpper(cChar);
+
+  // Checks if this character is in the string to find...
+  var index = strIndexOf(MysteryWord, cChar);
+  if(index &lt;= 0)
+    ErrorCount++;	// This character is not in the MysteryWord. Error!!!
+  else
+  {
+    // This character is in the Mystery string...so let's update our variables
+    do
+	{
+	  // Keep track of characters found in Mystery string
+      MysteryWord = strChange(MysteryWord,cChar,'*',index,1);
+      FoundWord = strChange(FoundWord,'*',cChar,index,1);
+
+	  // Check if this character appears more than once in MysteryWord!
+	  index = strIndexOf(MysteryWord, cChar,index+1);
+	  
+	  // Updates remaining number of characters to find.
+	  RemainingChars--;
+	}
+	while(index &gt; 0);
+  }
+  
+  // Game over: success ?
+  if(RemainingChars == 0)
+	return 0;
+
+  // Game over: dead?
+  if(ErrorCount==7)
+    return 0;	
+
+  // Game not over yet!
+  return 1;
+}
+
+///////////////////////////////////////////////////////////
+// Script entry point
+///////////////////////////////////////////////////////////
+main()
+{
+  var bLoop;	// = 1 while game is not over
+
+  // Picks one word from the dictionary, reset variables
+  StartGame();
+
+
+  // Get user entry, check if word found
+  do
+  {
+    // Show Game status
+    GameStatus();
+
+	// Get character from user, check if belongs to Mystery word
+    bLoop = GameTryCharacter();
+  }
+  while(bLoop == 1);
+
+  // Show Game status: Hanged or not ?!!!!
+  GameStatus();
+}
+
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

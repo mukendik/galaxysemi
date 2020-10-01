@@ -1,0 +1,18 @@
+<assembly>
+    <id>assembly-${distName}</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <includes>
+                <include>${basepath}/0.8/include/*</include>
+                <include>${basepath}/0.8/src/*</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>          
+    </fileSets>
+</assembly>

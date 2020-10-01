@@ -1,0 +1,28 @@
+<assembly>
+    <id>assembly-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>galaxy_products/gex_product/bin/*galaxy-la*</include>
+            </includes>
+        </fileSet> 
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/galaxy-la.app</directory>
+            <outputDirectory>galaxy_products/gex_product/bin/galaxy-la.app</outputDirectory>
+            <excludes/>
+        </fileSet>          
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>galaxy_products/gex_product/gex-license-activation/sources/gs_act.ico</include>
+            </includes>
+        </fileSet>  
+    </fileSets>
+</assembly>

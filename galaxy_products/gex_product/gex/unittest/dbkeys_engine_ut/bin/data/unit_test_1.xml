@@ -1,0 +1,65 @@
+<dbkeys_engine_ut>
+	<static>
+		<data>
+			<!--key name="filename">ABDBS_CHAR_ROOM_LASUITE</key-->
+			<key name="sublot"><![CDATA[RF_Tests -1 <> TxiEVMieee_1p75_ch1_g9_5L]]></key>
+			<key name="lot">ABCD12345</key>
+			<key name="Product">PRO-A1</key>
+		</data>
+		<result status="1">
+			<key name="user1">1p75</key>
+			<key name="user2">ch1</key>
+			<key name="user3">g9</key>
+			<key name="user4">5L</key>
+			<key name="lot">12345</key>
+			<key name="Product">PRO-A1</key>
+		</result>
+	</static>
+	<dynamic>
+		<iteration>
+			<data>
+				<key name="test[name]">ABDNCN_RST_PUT_30V:ABDNCN_RST_PUT_30V@rst_n[1]</key>
+				<key name="test[number]">10000</key>
+			</data>
+			<result status="1">
+				<key name="test[name]">ABDNCN_RST_PUT:ABDNCN_RST_PUT@rst_n[1]</key>
+				<key name="testCondition[Temperature]">ROOM</key>
+				<key name="testCondition[Vcc]">30V</key>
+				<key name="test[number]">10000</key>
+			</result>
+		</iteration>
+		<iteration>
+			<data>
+				<key name="test[name]">ABDNCN_33V</key>
+				<key name="test[number]">20000</key>
+			</data>
+			<result status="1">
+				<key name="test[name]">ABDNCN</key>
+				<key name="testCondition[Temp]">33V</key>
+				<key name="testCondition[Vdd]">2.0V</key>
+			</result>
+		</iteration>
+		<iteration>
+			<data>
+				<key name="test[name]">ABDNCN_36V</key>
+				<key name="test[number]">10000</key>
+			</data>
+			<result status="1">
+				<key name="test[name]">ABDNCN</key>
+				<key name="testCondition[Temp]">36V</key>
+				<key name="test[number]">10000</key>
+			</result>
+		</iteration>
+		<iteration>
+			<data>
+				<key name="test[name]">ABDNCN_HOT</key>
+				<key name="test[number]">1500</key>
+			</data>
+			<result status="0">
+				<key name="test[name]">ABDNCN_HOT</key>
+				<key name="testCondition[Temp]"></key>
+				<key name="testCondition[Vdd]">0.5V</key>
+			</result>
+		</iteration>
+	</dynamic>
+</dbkeys_engine_ut>

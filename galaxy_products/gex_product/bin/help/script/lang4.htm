@@ -1,0 +1,125 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="150" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>Literals<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang2.htm">Comments</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="lang3.htm">Numbers</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang4.htm">Literals</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang5.htm">Var
+      and const</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang6.htm">Operators</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang7.htm">Statements
+      and&nbsp; blocks</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang8.htm">Program
+      flow</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang9.htm">Trace
+      facility</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang10.htm">Exception
+      handling</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang11.htm">Functions</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang12.htm">Predefined
+      identifiers</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">String literals may be enclosed in
+      single or double quotes:
+      <pre>'This is a string'
+&quot;This is also a string!&quot;
+</pre>
+      <p>Several consecutive literals are concatenated to a single string:</p>
+      <pre>&quot;john's&quot; ' car'
+</pre>
+      <p>evaluates to exactly the same as</p>
+      <pre>&quot;john's car&quot;
+</pre>
+      <p>Literals must terminate before the end of a line, consequently you must 
+      use the concatenation feature for long literals continue over several lines.</p>
+      <p><font size="+2"><b>Encoding Nonprintable Chars</b></font></p>
+      <p>Nonprintable characters are noted with a backslash followed by an
+      encoding character or number:</p>
+      <p>&nbsp;
+      <table cellSpacing="0" cellPadding="3" border="0" width="524">
+        <tbody>
+          <tr vAlign="top" bgColor="#0044aa">
+            <td width="51"><font color="#ffffff"><b>Written</b></font></td>
+            <td bgColor="#0034aa" width="457"><font color="#ffffff"><b>Description</b></font></td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td width="51">\e</td>
+            <td bgColor="#b0d0ff" width="457">escape (ESC)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td width="51">\t</td>
+            <td bgColor="#d0e0ff" width="457">horizontal tab (HT)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td width="51">\r</td>
+            <td bgColor="#b0d0ff" width="457">carriage return (CR)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td width="51">\n</td>
+            <td bgColor="#d0e0ff" width="457">newline/line feed (LF)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td width="51">\f</td>
+            <td bgColor="#b0d0ff" width="457">form feed (FF)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td width="51">\\</td>
+            <td bgColor="#d0e0ff" width="457">backslash (\)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td width="51">\'</td>
+            <td bgColor="#b0d0ff" width="457">single quote (')</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td width="51">\&quot;</td>
+            <td bgColor="#d0e0ff" width="457">double quote (&quot;)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td width="51">\oOO</td>
+            <td bgColor="#b0d0ff" width="457">octal character code (O standing for
+              octal digits 0...7). E.g..: \o77</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td width="51">\xhh</td>
+            <td bgColor="#d0e0ff" width="457">hex character code (h standing for
+              digits 0...9 and a..f). E.g.: \x7c</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

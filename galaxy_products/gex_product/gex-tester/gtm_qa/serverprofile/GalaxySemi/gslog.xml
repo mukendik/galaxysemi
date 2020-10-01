@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gslog version="0.2" threaded="true" http_port="8080">
+<log type="txt" outputfile="$GEX_SERVER_PROFILE/../gtm/s5/logs/$MODULE_$ISODATE_$PID.txt" />
+</gslog>

@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: sys_show.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This script uses the system command <a href="sysf.htm">sysShow</a>
+      to display internal information such as:</p>
+      <ul>
+        <li>
+          <p align="left">The Script libraries versions</li>
+        <li>
+          <p align="left">The list of functions available in each library</li>
+        <li>
+          <p align="left">The list of predefined variables.</li>
+      </ul>
+          <p align="left">For more information see the scripting language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">review</a> the other sample scripts.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: args.csl
+//////////////////////////////////////////
+
+main()
+{
+   for (var i=0; i&lt;sizeof(mainArgVals); i++)
+      sysLog(mainArgVals[i]);
+}</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,236 @@
+///////////////////////////////////////////////////////////
+// GEX skin classes: implementation file
+///////////////////////////////////////////////////////////
+
+#include "gqtl_skin.h"
+#include "gqtl_skinstyle.h"
+
+///////////////////////////////////////////////////////////////////////////////////
+// Class CGexSkin - class which
+///////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////
+// Constructor
+///////////////////////////////////////////////////////////
+CGexSkin::CGexSkin()
+{
+    m_eStyle		= CGexSkin::defaultStyle;
+    m_pSkinStyle	= NULL;
+
+    setCurrentStyle(m_eStyle);
+}
+
+///////////////////////////////////////////////////////////
+// Copy constructor
+///////////////////////////////////////////////////////////
+CGexSkin::CGexSkin(const CGexSkin& gexSkin)
+{
+    *this = gexSkin;
+}
+
+///////////////////////////////////////////////////////////
+// Destructor
+///////////////////////////////////////////////////////////
+CGexSkin::~CGexSkin()
+{
+    if (m_pSkinStyle)
+    {
+        delete m_pSkinStyle;
+        m_pSkinStyle = NULL;
+    }
+}
+
+///////////////////////////////////////////////////////////
+// Methods
+///////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	CGexSkin::skinStyle CGexSkin::defaultSkinStyle()
+//
+// Description	:	Get the default skin style from environment variable
+//
+///////////////////////////////////////////////////////////////////////////////////
+CGexSkin::skinStyle CGexSkin::defaultSkinStyle()
+{
+    // Get the skin from the environment variable
+    QString strEnv = getenv("GEX_SKIN");
+
+    // Make upper
+    strEnv = strEnv.toUpper();
+
+    // Since V7.0, LEGACY skin has been dropped, AQUA is the default skin.
+    return CGexSkin::aquaStyle;
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	void CGexSkin::setCurrentStyle(CGexSkin::skinStyle eStyle)
+//
+// Description	:	Set a new skin style
+//
+///////////////////////////////////////////////////////////////////////////////////
+void CGexSkin::setCurrentStyle(CGexSkin::skinStyle eStyle)
+{
+    if (eStyle == CGexSkin::defaultStyle)
+        eStyle = defaultSkinStyle();
+
+    if (m_eStyle != eStyle)
+    {
+        if (m_pSkinStyle)
+        {
+            delete m_pSkinStyle;
+            m_pSkinStyle = NULL;
+        }
+
+        m_eStyle = eStyle;
+
+        switch(m_eStyle)
+        {
+            case CGexSkin::aquaStyle	:	m_pSkinStyle = new CGexSkinStyleAqua();
+                                            break;
+
+            default						:	m_pSkinStyle = new CGexSkinStyleAqua(); // Should never occurs
+                                            break;
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	void CGexSkin::applyPalette(QWidget * pWidget)
+//
+// Description	:	Apply skin palette to the widget
+//
+///////////////////////////////////////////////////////////////////////////////////
+void CGexSkin::applyPalette(QWidget * pWidget) const
+{
+    if (pWidget)
+        pWidget->setPalette(m_pSkinStyle->palette());
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	CGexSkin& CGexSkin::operator=(const CGexSkin& gexSkin)
+//
+// Description	:	Copy operator
+//
+///////////////////////////////////////////////////////////////////////////////////
+CGexSkin& CGexSkin::operator=(const CGexSkin& gexSkin)
+{
+    if (this != &gexSkin)
+    {
+        m_eStyle = gexSkin.m_eStyle;					// Current Skin style
+
+        switch(m_eStyle)
+        {
+            case CGexSkin::aquaStyle	:	m_pSkinStyle = new CGexSkinStyleAqua();
+                                            break;
+
+            default						:	m_pSkinStyle = new CGexSkinStyleAqua(); // Should never occurs
+                                            break;
+        }
+    }
+
+    return *this;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	const QString& CGexSkin::htmlDataBackgroundColor() const
+//
+// Description	:	Get the data background color
+//
+///////////////////////////////////////////////////////////////////////////////////
+const QString& CGexSkin::htmlDataBackgroundColor() const
+{
+    return m_pSkinStyle->htmlDataBackgroundColor();
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	const QString& CGexSkin::htmlLabelBackgroundColor() const
+//
+// Description	:	Get the label background color
+//
+///////////////////////////////////////////////////////////////////////////////////
+const QString& CGexSkin::htmlLabelBackgroundColor() const
+{
+    return m_pSkinStyle->htmlLabelBackgroundColor();
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	const QString& CGexSkin::htmlSectionBackgroundColor() const
+//
+// Description	:	Get the section background color
+//
+///////////////////////////////////////////////////////////////////////////////////
+const QString& CGexSkin::htmlSectionBackgroundColor() const
+{
+    return m_pSkinStyle->htmlSectionBackgroundColor();
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	const QString& CGexSkin::htmlSectionTextColor() const
+//
+// Description	:	Get the section text color
+//
+///////////////////////////////////////////////////////////////////////////////////
+const QString& CGexSkin::htmlSectionTextColor() const
+{
+    return m_pSkinStyle->htmlSectionTextColor();
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	const QString& CGexSkin::htmlLabelTextColor() const
+//
+// Description	:	Get the label text color
+//
+///////////////////////////////////////////////////////////////////////////////////
+const QString& CGexSkin::htmlLabelTextColor() const
+{
+    return m_pSkinStyle->htmlLabelTextColor();
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	const QString& CGexSkin::htmlDataTextColor() const
+//
+// Description	:	Get the data text color
+//
+///////////////////////////////////////////////////////////////////////////////////
+const QString& CGexSkin::htmlDataTextColor() const
+{
+    return m_pSkinStyle->htmlDataTextColor();
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	const QString& CGexSkin::path() const
+//
+// Description	:	Get the skin folder path
+//
+///////////////////////////////////////////////////////////////////////////////////
+const QString& CGexSkin::path() const
+{
+    return m_pSkinStyle->path();
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+// Name			:	const QString& CGexSkin::name() const
+//
+// Description	:	Get the skin name
+//
+///////////////////////////////////////////////////////////////////////////////////
+const QString& CGexSkin::name() const
+{
+    return m_pSkinStyle->name();
+}
+
+
+

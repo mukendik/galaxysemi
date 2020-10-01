@@ -1,0 +1,157 @@
+<html>
+<head>
+</head>
+<body text="#00659C">
+<p align="left">For detailed help, check:<br>
+<img border="0" src="../images/rarrow.png" align="center" width="6" height="9">
+ <a href="_gexstd_manual_report_types.htm">Advanced help</a>
+ </p>
+<p align="left">or see the brief overview: </p>
+<b><a name="instant_report"></a>Examinator</b><p><b>Basic:</b><br>
+<img border="0" src="../images/options_statistics.png" align="center" width="17" height="17">
+ - Test statistics tables <a href="#stats"> <img border="0" src="../images/more_s.png" align="bottom" width="13" height="13" ></a><br>
+ <img border="0" src="../images/options_wafmap.png" align="center" width="17" height="17">
+ - Wafer map <a href="#wafermap"> <img border="0" src="../images/more_s.png" align="bottom" width="13" height="13" ></a><br>
+<img border="0" src="../images/options_histo.png" align="center" width="17" height="17">
+ - Histogram
+charts <a href="#histo"> <img border="0" src="../images/more_s.png" align="bottom" width="13" height="13" ></a><br>
+<br>
+<b>
+Advanced:</b><br>
+<img border="0" src="../images/options_advhisto.png" width="17" height="17">  - Histograms
+<a href="#adv_histo"> 
+<img border="0" src="../images/more_s.png" align="default" width="13" height="13" ></a><br>
+<img border="0" src="../images/options_trend.png" width="17" height="17">  - Trend charts
+<a href="#adv_trend"> 
+<img border="0" src="../images/more_s.png" align="default" width="13" height="13" ></a><br>
+<img border="0" src="../images/options_scatter.png" width="17" height="17">   - Correlation-Scatter
+<a href="#adv_scatter"> 
+<img border="0" src="../images/more_s.png" align="default" width="13" height="13" ></a><br>
+<img border="0" src="../images/options_candlemeanrange.png" width="17" height="17">
+ - Gage R&amp;R-Box plots <a href="#adv_boxplot"> 
+<img border="0" src="../images/more_s.png" align="default" width="13" height="13" ></a><br>
+<img border="0" src="../images/options_datalog.png" width="17" height="17">   - Datalog
+<a href="#adv_datalog"> 
+<img border="0" src="../images/more_s.png" align="default" width="13" height="13" ></a><br>
+<img border="0" src="../images/options_guardbanding.png" width="17" height="17">
+ - Guard banding, what if&nbsp; <a href="#what_if"><img border="0" src="../images/more_s.png" align="default" width="13" height="13" ></a><br>
+<img border="0" src="../images/gex_application.png" width="16" height="16">
+ - Pearson's correlation / TTR&nbsp; <a href="#adv_pearson"><img border="0" src="../images/more_s.png" align="default" width="13" height="13" ></a><a href="#what_if"><br>
+</a>
+<br>
+<br>
+</p>
+<hr>
+<b>
+Basic reports:</b>
+<hr>
+<p align="left"><a name="stats"></a>
+<img border="0" src="../images/options_statistics.png" width="17" height="17">
+ - This report section includes all test statistics information in table
+format. Typical information listed include: Test number, test name, test limits,
+mean, range, sigma, Cp, Cpk, etc. You can customize the statistical information
+included in the report, and the sorting criteria used, from the <a href="_gex_options.htm">Options</a>
+page in the Test statistics section.<br>
+Note: When files or groups of files are compared, this table can also include
+the drift in mean, sigma and Cpk. From the <a href="_gex_options.htm">Options</a>
+page, you can set and activate drift alarm limits so as to highlight, in red, any excessive
+test drift.</p><br>
+ <br>
+<p align="left"><a name="wafermap"></a>
+<img border="0" src="../images/options_wafmap.png" width="17" height="17"> 
+- This report section includes the 2D Wafer maps found in your files. It also
+lists summary information such as: the start/end date of the wafer map
+generation, the yield, and the list of bins. If you perform a test parametric
+wafer map, then each die is not colored based on its binning result, but based
+on the value of the specific test selected. This representation is very useful
+to diagnostic topologic process issues. If test limit(s) is missing, Examinator
+uses the Min/Max values instead. From the <a href="_gex_options.htm">Options</a>
+page, you can customize the wafer map image size, and enable/disable markers
+such as: outline dies re-tested, or write bin number in the die cell.</p><br>
+ <br>
+<p align="left"><a name="histo"></a>
+<img border="0" src="../images/options_histo.png" width="17" height="17"> 
+- This report section includes the histogram
+charts for all tests with valid test results found in your file. If your file is
+created with sampling activated, it may happen that some tests never have any
+result dataloged. In such a case, no histogram is available, and the test number
+in the test statistic table is written in black with no hyperlink to the
+histogram section.<br>
+<b>Tip</b>: When comparing files, this report generation may take significant
+time if all tests are selected (the default)...so <b>disable</b> this report
+generation if you don't need it!&nbsp;<br>
+<b>Note:</b> This report does <b>not</b> have any options: the histogram
+section in the <a href="_gex_options.htm">Options</a> page is for the <a href="#adv_histo">advanced
+histograms</a> <b>only</b>. </p>
+<hr>
+<b>
+Advanced reports:</b>
+<hr>
+<p align="left"><a name="adv_histo"></a>
+<img border="0" src="../images/options_advhisto.png" width="17" height="17">
+ - This report section gives more flexible histograms charts than in the basic
+report. It also supports customization from the <a href="_gex_options.htm">Options</a>
+page, section Histograms. You can define the chart size to create, and
+enable/disable markers to add on the chart such as: test name, mean, limits, 2
+sigma space, 3 sigma space or 6 sigma space.<br>
+<b>Tip</b>: When comparing files, this report generation may take significant
+time if many tests are selected...so <b>disable</b> this report
+generation if you don't need it!&nbsp;</p><br>
+<br>
+<p align="left"><a name="adv_trend"></a>
+<img border="0" src="../images/options_trend.png" width="17" height="17"> 
+- This report section creates trend chart (Test value, Difference between tests,
+Binning/Yield in production). It is the typical information you'll
+need to see how data behaves over time (kind of oscilloscope chart). From the
+section Trend of the <a href="_gex_options.htm">Options</a> page, you can
+customize the report section such as: the chart size to generate, and markers to
+add on the chart (test name, mean, limits, 2 sigma space, 3 sigma space or 6
+sigma space).</p><br>
+<br>
+<p align="left"><a name="adv_scatter"></a>
+<img border="0" src="../images/options_scatter.png" width="17" height="17"> 
+- This report section creates a scatter chart. It is the typical report you
+would use when analyzing the correlation between two parameters. From the regular,
+or indeed,&nbsp; noisy shape of the chart, you can quickly diagnostic a relation between two
+parameters. From the section Correlation of the <a href="_gex_options.htm">Options</a>
+page, you can customize the report section such as: the chart size to generate,
+and markers to add on the chart (test name, mean, limits, 2 sigma space, 3 sigma
+space or 6 sigma space).</p><br>
+<br>
+<p align="left"><a name="adv_boxplot"></a>
+<img border="0" src="../images/options_candlemeanrange.png" width="17" height="17">
+ - This report section creates a Gage R&amp;R (Box plots) chart. Very useful to visually analyze
+tests that are in the process or out of control, and to analyze repeatability 
+and reproducibility . From the section Gage R&amp;R-BoxPlot of the
+<a href="_gex_options.htm">Options</a> page, you can customize the chart size
+and sorting mode.</p><br>
+<br>
+<p align="left"><a name="adv_datalog"></a>
+<img border="0" src="../images/options_datalog.png" width="17" height="17"> 
+ - This report section lists test results (Datalog) for numerical analysis. From
+the section Datalog of the <a href="_gex_options.htm">Options</a> page, you can
+customize which datalog information to show or hide (e.g: test limits, test
+name, die location, etc).</p>
+<p align="left">&nbsp;</p>
+<p align="left"><a name="what_if"></a><img border="0" src="../images/options_guardbanding.png" width="17" height="17">
+ - This selection lets you interact with your data and play on the test limits
+until you have the Cp, Cpk you want. Once you're done with your trials, you
+simply click the snapshot icon <img border="0" src="../images/snapshot.png" width="34" height="23">
+so to save your table into the HTML snapshot gallery. This drilling function is
+quite convenient when working on guard banding and seeing the impact of test
+limits on the yield and Cp,Cpk statistics. This selection is maintained in the
+GEX-Instant Report module for historical reason, but it is the only selection
+that allows data interaction. For real Data Mining, checker the GEX-Data Mining,
+Yield Analysis module</p>
+<br>
+<a name="adv_pearson"></a>
+<img border="0" src="../images/gex_application.png" width="16" height="16"> - 
+This report section creates a list of tests pairs that highly correlate 
+(correlation between test computed using the Pearson's correlation formula). One 
+typical usage of this report is to spot tests that strongly correlate 
+(correlation score close to 1.0), and consider dropping one of the test so to 
+reduce testing time. This report also displays the scatter plot of the test 
+pairs so to easily confirm the correlation level and its validity.<br>
+<p align="left">&nbsp;</p>
+</body>
+</html>

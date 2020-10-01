@@ -1,0 +1,109 @@
+#ifndef GEX_CONNECTION_LM_H
+#define GEX_CONNECTION_LM_H
+
+///////////////////////////////////////////////////////////////////////////////////
+// GEX-LS Includes
+///////////////////////////////////////////////////////////////////////////////////
+#include "eventlm.h"
+
+///////////////////////////////////////////////////////////////////////////////////
+// 
+// Name			:	CConnectionLM
+//
+// Description	:	Represents a client connection to GEX-LM
+//
+///////////////////////////////////////////////////////////////////////////////////
+class CConnectionLM
+{
+
+public:
+
+	CConnectionLM(const CEventLMClient& eventLMLogin, const CEventLMClient& eventLMLogout);
+	~CConnectionLM();
+
+///////////////////////////////////////////////////////////////////////////////////////
+// Properties
+///////////////////////////////////////////////////////////////////////////////////////
+
+	QString		computer() const	{ return m_strComputer; }
+	QString		user() const		{ return m_strUser; }
+	QDateTime	datelogin() const	{ return m_dtLogin; }
+	QDateTime	dateLogout() const	{ return m_dtLogout; }
+	long		productID() const	{ return m_lProductID; }
+
+///////////////////////////////////////////////////////////////////////////////////////
+// Methods
+///////////////////////////////////////////////////////////////////////////////////////
+
+	long		time() const;						// Calculate the connection time in seconds
+	
+private:
+	
+	QString		m_strComputer;						// Computer name
+	QString		m_strUser;							// User name
+	QDateTime	m_dtLogin;							// Login date/time
+	QDateTime	m_dtLogout;							// Logout date/time
+	long		m_lProductID;						// Product ID
+};
+
+///////////////////////////////////////////////////////////////////////////////////
+// 
+// Name			:	CConnectionGroup
+//
+// Description	:	Represents a statistic for a set of connections 
+//					Connections can be grouped by user or computer
+//
+///////////////////////////////////////////////////////////////////////////////////
+class CConnectionGroup
+{
+public:
+	
+	CConnectionGroup();
+	~CConnectionGroup();
+
+///////////////////////////////////////////////////////////////////////////////////////
+// Properties
+///////////////////////////////////////////////////////////////////////////////////////
+
+	long		count() const		{ return m_lTotalConnection; }
+	long		totalTime() const	{ return m_lTotalConnectionTime; }
+	long		meanTime() const	{ return m_lMeanConnectionTime; }
+
+///////////////////////////////////////////////////////////////////////////////////////
+// Methods
+///////////////////////////////////////////////////////////////////////////////////////
+
+	
+	void		addConnection(const CConnectionLM& connectionLM);		// Add a connection to the group, and update the statistic
+	void		clear();												// Clear datas already computed
+
+private:
+
+	long		m_lTotalConnectionTime;									// Total connection time
+	long		m_lTotalConnection;										// Total connection number
+	long		m_lMeanConnectionTime;									// Average connection time
+};
+
+///////////////////////////////////////////////////////////////////////////////////
+// 
+// Name			:	CNodeGroup
+//
+// Description	:	Represents a statistic for a node of license
+//
+///////////////////////////////////////////////////////////////////////////////////
+class CNodeGroup
+{
+public:
+
+	CNodeGroup();
+	~CNodeGroup();
+
+	void		addEvent(const CEventLMClient& eventLMClient);
+	void		clear();
+
+private:
+
+	long		m_lTotalConnectionTime;
+};
+
+#endif // GEX_CONNECTION_LM_H

@@ -1,0 +1,172 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      Dataset Analysis<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p align="left">To analyze a dataset, all you have to do is:</p>
+      <ul>
+        <li>
+          <p align="left"><b>1: </b>Launch the
+          <b><a href="#_gex_wizard_single_query.htm">Analyze a Dataset</a> </b>assistant.</li>
+        <li>
+          <p align="left"><b>2: </b>Enter a Dataset name (used as your query 
+          name in the reports)</li>
+        <li>
+          <p align="left"><b>3:</b> Select the database from which the data will 
+          be read</li>
+        <li>
+          <p align="left"><b>4:</b> Specify your <a href="#Filters">filter</a> criteria (e.g.: LotID, 
+          Process ID, Temperature, etc)</li>
+        <li>
+          <p align="left"><b>5: </b>Go to next assistant page to define what to
+          include in your report: charts types, and which specific tests / 
+          parameters to plot (<a href="_gexstd_manual_settings.htm">settings</a>). Default report includes test statistics
+          tables, Soft bin wafermap, and histogram of all tests.</li>
+      </ul>
+      <p align="left">For more details, see also the
+      <a href="_gexstd_manual_query.htm">
+      <b>'Data'</b> tab description</a></p>
+      <p>&nbsp;</p>
+      <h1><b><a name="Filters">Filters</a><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>The Filters parameters let you narrow your query to only work on the 
+      Dataset that matches your needs. Examinator lets you define multiple 
+      Filters that can be activated at the same time.  List of filters available:</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="17%" bgcolor="#FFCC99"><b>Filters</b></td>
+          <td width="83%" bgcolor="#FFCC99"><b>Description</b></td>
+        </tr>
+        <tr>
+          <td width="17%">Burn-in time</td>
+          <td width="83%">Burn-in time (in minutes)</td>
+        </tr>
+        <tr>
+          <td width="17%">Data Origin</td>
+          <td width="83%">Where data have been collected. e.g.: TSMC or the 
+          Foundry name, etc.</td>
+        </tr>
+        <tr>
+          <td width="17%">Facility ID</td>
+          <td width="83%">Test facility ID </td>
+        </tr>
+        <tr>
+          <td width="17%">Family ID</td>
+          <td width="83%">Dataset product family ID </td>
+        </tr>
+        <tr>
+          <td width="17%">Floor ID</td>
+          <td width="83%">Test floor ID </td>
+        </tr>
+        <tr>
+          <td width="17%">Freq/Step ID</td>
+          <td width="83%">Operation frequency or step </td>
+        </tr>
+        <tr>
+          <td width="17%">Load board ID</td>
+          <td width="83%">Testing load board ID</td>
+        </tr>
+        <tr>
+          <td width="17%">Load board type</td>
+          <td width="83%">Load board type / family</td>
+        </tr>
+        <tr>
+          <td width="17%">Lot ID</td>
+          <td width="83%">Lot tracking number</td>
+        </tr>
+        <tr>
+          <td width="17%">Operator name</td>
+          <td width="83%">Operator that activated the process</td>
+        </tr>
+        <tr>
+          <td width="17%">Package type</td>
+          <td width="83%">Package type processed</td>
+        </tr>
+        <tr>
+          <td width="17%">Prober ID</td>
+          <td width="83%">Prober or Handler ID</td>
+        </tr>
+        <tr>
+          <td width="17%">Prober type</td>
+          <td width="83%">Prober or Handler type / family</td>
+        </tr>
+        <tr>
+          <td width="17%">Process ID</td>
+          <td width="83%">Process ID string</td>
+        </tr>
+        <tr>
+          <td width="17%">Product ID</td>
+          <td width="83%">Product ID string</td>
+        </tr>
+        <tr>
+          <td width="17%">Program name</td>
+          <td width="83%">Program used to test and collect the data</td>
+        </tr>
+        <tr>
+          <td width="17%">Program rev.</td>
+          <td width="83%">Program revision used</td>
+        </tr>
+        <tr>
+          <td width="17%">Sublot ID</td>
+          <td width="83%">Sub-lot ID string</td>
+        </tr>
+        <tr>
+          <td width="17%">Temperature</td>
+          <td width="83%">Test temperature</td>
+        </tr>
+        <tr>
+          <td width="17%">Tester name</td>
+          <td width="83%">Name of the tester</td>
+        </tr>
+        <tr>
+          <td width="17%">Tester type</td>
+          <td width="83%">Tester type / family</td>
+        </tr>
+        <tr>
+          <td width="17%">Testing code</td>
+          <td width="83%">Test phase or step code. E.g: WAFER or COLD or ROOM, 
+          etc. </td>
+        </tr>
+        <tr>
+          <td width="17%">Site# (hardware)</td>
+          <td width="83%">Tester hardware site that performed test</td>
+        </tr>
+        <tr>
+          <td width="17%">Wafer ID</td>
+          <td width="83%">Wafer ID string</td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h1>Combine filters?<b><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p>Define if filters have to be combined or not. Selection available are:</p>
+      <ul>
+        <li>Yes: all filters are combined which means you run in AND mode. Data 
+        retrieved are the one that match (pass) ALL the filters.</li>
+        <li>No: filters are not combined which means you run in OR mode. Data 
+        retrieved are the data that match ANY of the filters (pass one or more 
+        filters).</li>
+      </ul>
+      <p>&nbsp;</p>
+<h1 align="left"><b>Map Test/Parameter Numbers<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+<p align="left">One of the filter field lets you select a text file (comma 
+separated format) that includes the list of parameters / tests to map to new  indexes. 
+This is quite useful when you need to compare data sets created on different 
+test environment where the same parameter is declared under a different ID. Full details about the file format can be found in 
+the relevant <a href="../script/gex3.htm#Mapping Test numbers">scripting section</a></p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,946 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Yield-Man V6.4 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">Yield-Man family : V6.4 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Yield-Man, PAT-Server)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_gexstd_mo_history.htm">Back to main releases history page</a><br><br>
+      <!--<a href="#V6.4">V6.4 release history</a><br>-->
+	  <a href="#V6.4.16">V6.4.16 (4 May 2012) release history</a><br>
+	  <a href="#V6.4.15">V6.4.15 (2 March 2012) release history</a><br>
+	  <a href="#V6.4.14">V6.4.14 (8 February 2012) release history</a><br>
+	  <a href="#V6.4.13">V6.4.13 (10 January 2012) release history</a><br>
+	  <a href="#V6.4.12">V6.4.12 (22 December 2011) release history</a><br>
+	  <a href="#V6.4.11">V6.4.11 (12 December 2011) release history</a><br>
+	  <a href="#V6.4.10">V6.4.10 (24 November 2011) release history</a><br>
+	  <a href="#V6.4.09">V6.4.09 (22 November 2011) release history</a><br>
+      <a href="#V6.4.08">V6.4.08 (28 October 2011) release history</a><br>
+      <a href="#V6.4.07">V6.4.07 (5 October 2011) release history</a><br>
+	  <a href="#V6.4.06">V6.4.06 (7 September 2011) release history</a><br>
+	  <a href="#V6.4.05">V6.4.05 (30 August 2011) release history</a><br>
+	  <a href="#V6.4.04">V6.4.04 (11 August 2011) release history</a><br>
+	  <a href="#V6.4.03">V6.4.03 (15 July 2011) release history</a><br>
+	  <a href="#V6.4.02">V6.4.02 (7 July 2011) release history</a><br>
+	  <a href="#V6.4.01">V6.4.01 (4 July 2011) release history</a><br>
+	  <a href="#V6.4">V6.4 (28 June 2011) release history</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.16 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.16">V6.4.16 (4 May 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 6012 - WaferNotch in gexdbkeys doesn't work with E-Test files:</b>
+                               The et_wafer_info.wafer_flat is blank if the correspoding WT data for that lot and wafer number is not yet in the database even when the WaferNotch, d is used in the e-test gexdbkeys file.</li>
+			<li><b>Case 5968 - No date fields in consolidated table if meta_data on start_t field defined:</b>
+                               No date fields in wt_consolidated_wafer table if meta_data on start_t field defined (Y for consolidated_field).</li>
+			<li><b>Case 5966 - force testing stage to Etest doesn't work:</b>
+                               When using the gexdbkeys ForceTestingStage to E, the file was rejected by YM (invalid WaferId).</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.15 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.15">V6.4.15 (2 March 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5936 - Outlier removal don't works with space in the product ID:</b>
+                               When creating an outlier removal task, if there is a space in the product ID the task won't be executed on this product.</li>
+			<li><b>Case 5926 - Yield or parameter Alarms cannot be generated when product ID contains space:</b>
+                               When pumping in a specific file, we cannot have the yield monitoring or parameter monitoring tasks create emails if we have space in the product ID.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.14 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.14">V6.4.14 (8 February 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5754 - atdf issue with gex dump to atdf converter:</b>
+                               random hard returns in the atdf file created by gex causing problems. also, a long gdr record was created causing the file to not be processed in gex.</li>
+			<li><b>Case 5743 - hard return created in the MIR record in some stdf to atdf dumps:</b>
+                               when dumping an stdf file to atdf, a hard return is created in the middle of the mir record in the atdf file.
+							   this hard return, if not done on a pipe (|) separator for fields will give an error in gex.</li>
+			<li><b>Case 5714 - files were delayed but still inserted:</b>
+                               when an error occured during insertion that created a file delay, 
+							   the files were moved to the delayed folder but the data was put into the database despite the delay.</li>
+			<li><b>Case 5658 - update FETTEST parser:</b>
+                               update the FETTEST parser so that wafer test FETTEST file testing HVM data can use a different bin mapping and / or promis data file than what is specified in today's env variables.</li>
+			<li><b>Case 5642 - bad gdf file not handled correctly in Linux:</b>
+                               in linux group 1, ym and gexdb crash when this file is analyzed. in windows, ym and gexdb reject the file. in linux group 2, ym and gexdb.</li>
+			<li><b>Case 5189 - [Yokogawa parser] test numbers repeated with different test names:</b>
+                               test numbers are being repeated for tests with different test names creating confusion for the user.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.13 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.13">V6.4.13 (10 January 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5716 - update spektra summary parser:</b>
+                               the proc_id and extra_id fields in the MIR are not populated properly. additionally, 
+							   the file names resulting from the converter should be A04K041.1_W1_Summary.csv.gextb.std instead of A04K041_W1.1_Summary.csv.gextb.std.</li>
+			<li><b>Case 4145 - run PAT Server with wrong license:</b>
+                               missing error message when the user tries to run pat on a char license.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with V6.4.12 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.12">V6.4.12 (22 December 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5694 - Issues with 'Outlier Removal' tasks under Linux:</b>
+                               Error when editing 'Outlier Removal' tasks under Linux with 'Email->Details->Report location'='Keep report on server...'.
+							   When trying to edit such task, a message will be displayed specifying Word report is not supported under unix even if the selected format is not Word.</li>
+			<li><b>Case 5652 - update wt summary data parser (from case 5397):</b>
+                               parser needs to have an associated env var for reading a promis data file and a bin mapping file. use same files and env vars 
+							   as case 5625 as these two file types (summary and detailed) will use the same promis data and bin mapping files.</li>
+			<li><b>Case 5625 - Parser update for wt Spektra data (from case 5398):</b>
+                               parser needs to have an associated env var for reading a promis data file and a bin mapping file. file attached. 
+							   similar to the ft HVM parser in case 5399</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with V6.4.11 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.11">V6.4.11 (12 December 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5633 - GexPAT: Allow One map when merging stdf files:</b>
+                               When Merge Files is checked on Process Files tab, expect only one map file.</li>
+			<li><b>Case 5629 - Oracle data insertion error with some DTR:</b>
+                               data insertion error when some DTR contains quote ( ' ).</li>
+			<li><b>Case 5575 - reports being generated without labels:</b>
+                               auto reports in linux are being generated without labels.</li>
+			<li><b>Case 5444 - rules for file rejection differ between stdf and atdf:</b>
+                               if you process an stdf file with different # of PIR and PRR records, the file is rejected in GEX but not rejected in YM. If you process an stdf with no MRR, 
+							   it is rejected in GEX and YM. If you process an atdf in either GEX or YM with different # of PIR and PRR records or a missing MRR, neither tool rejects the file.</li>
+			<li><b>Case 5332 - Unable to record the database link:</b>
+                               While creating a new database link, if the user goes back to the "SETUP" windows after he has validate that the connection works properly.
+							   He will not be able to clic OK to record his new database link.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with V6.4.10 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.4.10">V6.4.10 (24 November 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5581 - Stop on Fail option for Pareto and Failures not correct when using continue on fail data:</b>
+                               When using the stop on fail option on continue on fail data, the Test Failure Pareto and failures in the stats are not correct.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with V6.4.09 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4.09">V6.4.09 (22 November 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  	<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 5399 - HVM parser - new parser for csv final test summary data:</b>
+                               custom parser for HVM final test data. add a variable where we read a promis data file. suggest: GEX_PROMIS_HVM_DATA_PATH.</li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		 <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5500 - GexFTP crash while loading settings file:</b>
+                               GexFTP crash while loading settings file if there is at least one line of more than 512 characters.</li>
+			<li><b>Case 5498 - STIF export not working on some files having only failed die:</b>
+                               Exporting a wafermap without good die in STIF format is not working.</li>
+			<li><b>Case 5490 - PIR does not match PRR from csv with 5 devices:</b>
+                               When running this in V6.4 the csv file cannot get past the PIR count does not match the PRR count. Even when there is only 5 parts and it is imported using the parsing wizard.</li>
+			<li><b>Case 5482 - when parsing certain bad dl4 files, ym can crash:</b>
+                               certain bad dl4 files are causing YM/GEX to crash.</li>
+            <li><b>Case 5441 - atdf file causes crash:</b>
+                               this atdf file has a missing PRR record at the end of the file. the mrr was added by a script as all the customer's files do not have mrr records. 
+							   The file was received as an stdf->converted to atdf->mrr added by script. the file was then queued to be inserted into ym and ym crashed. upon putting the file into gex, gex crashed.</li>
+			</ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with V6.4.08 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4.08">V6.4.08 (28 October 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  	<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 5397 - Spektra Lot Summary parser:</b>
+                               Parser from the Spektra tester's CSV lot summary output.</li>
+            <li><b>Case 5398 - Spektra samples CSV parser:</b>
+                               Parser to handle the datalog CSV output of a Spektra tester.</li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		 <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 5470 - Unable to start Gex-Email on unix systems:</b>
+                               When launching Gex-Email on a unix (Linux/Solaris) system, it will fail to start with an error message specifying that the .gexmo_tasks.conf file cannot be read. In fact, Gex-Email is looking in the wrong location.</li>
+            <li><b>Case 5440 - GexFTP: List of files to transfer don't works correctly:</b>
+                               The list of transferred files don't show the progress of the first downloaded file.</li>
+            <li><b>Case 5409 - SYA Log File: Results are in different order than header:</b>
+                               Contents of SYA log file are in the incorrect order in the 'Results: Software Bins Summary' section.</li>
+            <li><b>Case 5404 - dl4 file causing crash:</b>
+                               There are certain dl4 files that cause crashes in our product line.</li>
+            <li><b>Case 5391 - Incorrect  STDF output when processing a verigy edl file with invalid WaferId:</b>
+                               When the edl file contains wafer data without valid WaferId, Gex generate an incorrect STDF file with one WIR per part PIR/PRR.</li>
+            <li><b>Case 5388 - PCM converter does not support a valid PCM format:</b>
+                               The GEX PCM parser does not support a file in a valid PCM format.</li>
+            <li><b>Case 5379 - CSV converter does not convert a v4_2007 stdf file:</b>
+                               Unknown records in the stdf file preventing CSV conversion. The customer has v4 2007 stdf files and is seeing the new fields listed as UNKOWN in the stdf conversions to ascii and CSV from Examinator.</li>
+            <li><b>Case 5292 - Yield-Man crashes when creating an new Oracle gexdb (OCI driver) if this gexdb exists:</b>
+                               When creating an new Oracle gexdb (OCI driver), if this database already exists then Yield-Man crashes.</li>
+            <li><b>Case 5279 - Crash when .gexmo_report_XXXX-XX-XX.log is unusual:</b>
+                               Crash when .gexmo_report_XXXX-XX-XX.log is unusual</li>
+            <li><b>Case 5135 - YM inserts NULL results from invalid part:</b>
+                               When the first run is invalid but used to store test limits, YM inserts into the results table a step for this run with NULL results and the invalid flag set. No result data should be inserted into the database for this run, only the test limits should be retrieved.</li>
+            <li><b>Case 5025 - Sometimes, Yield-Man accepts to login a user other than root:</b>
+                               When using the locker to login to YM Admin DB, Yield-Man sometimes lists users other than root.</li>
+            <li><b>Case 5006 - V6.4.03 crashes on start up while executing incremental updates:</b>
+                               Open ym and after connecting to the databases, it executes tasks and incremental updates. it crashes while doing the updates.</li>
+			</ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.07 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4.07">V6.4.07 (5 October 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  	<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5260 - Add Gross die & Total Parts tested to SYA Wafer Level Analysis:</b>
+							   Modify the Wafer Level SYA analysis log file to match the lot level log file including the Gross Die and Total Parts Tested fields.</li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		 <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5300 - WaferNb key does not propogate through the db when a file is inserted for same wafer:</b>
+							   If a wafer is inserted with an entry in the config.gexdbkeys to overload the WaferNb field, and the database already contains data for this wafer with wt_wafer_info.wafer_nb=null, this field is not updated as expected..</li>
+			<li><b>Case 5273 - SYA Computation, limits do not read properly:</b>
+							   Manually created SYA limits do not get read properly back into the calculation page.</li>
+			<li><b>Case 5255 - Add GEXDB B14 installation scripts:</b>
+							   Add GEXDB B14 MySQL and Oracle installation scripts to packages.</li>
+			<li><b>Case 5251 - When parsing certain bad dl4 files, ym can crash:</b>
+							   On parsing some files, ym crashes. this is not every time, but often. 
+							   Especially when there are several of these bad files in a row. however, if you go to the gex toolbox, you can reproduce the crash every time.</li>
+			<li><b>Case 5210 - Error when processing a verigy edl file:</b>
+							   Gex must ignore all unknown Event Types and all unknown Attribute Types.</li>
+			</ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.06 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4.06">V6.4.06 (7 September 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  	<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 5060 - Pass the Message field from GexDb insertion process into the .bat file:</b>
+                               Currently YM passes the status flag from the insertion to the bat or csh script that can be called after file insertion. this case is requesting that the Message also be passed.</li>
+			<li><b>Case 5002 - Implement a parser for SDI format:</b>
+							   Implement a parser for SDI format (Avago custom format).</li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		 <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5179 - SYA Limits in different order for lot vs wafer data:</b>
+							   Correct the SYA log files so that the order of the binning for a lot level report is the same as for the wafer level report.</li>
+			<li><b>Case 5166 - Add content to SYA log file for no-alarm similar to alarm:</b>
+							   Please add content to the SYA log file when there is no alarm so that it is the same as the content for an alarm log file.</li>
+            <li><b>Case 5163 - [ORACLE] YM Insertion Error: Missing sequence:</b>
+                               Get the following error when YM attempts to insert data on a new GexDb@ORACLE database: 'Insertion failed: Error in plugin: Quantix SQL Database [Plugin V1.9 B14], Error executing SQL query, QUERY = select LAST_NUMBER from USER_SEQUENCES WHERE lower(SEQUENCE_NAME)='wt_splitlot_sequence', ERROR = gexdb_wm.wt_splitlot_sequence is undefined</li>
+            <li><b>Case 5067 - SYA: Per bin rules read incorrectly into Calculation window.:</b>
+                               When a modification is made to the SYA limits and confirmed, this modified rule set is not read properly when the user returns to the SYA Limits Calculation page.</li>
+			</ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.05 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4.05">V6.4.05 (30 August 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  	<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 5065 - Log file when no SYA alarm:</b>
+                               Please set the SYA log file that is created on NO ALARM to have the same content as the SYA log file when there is an ALARM.  Except set: 'SYA ALARM,NONE'</li>
+			<li><b>Case 4992 - Implement a parser for AVI/STIF inkless format:</b>
+							   Implement a parser for AVI (Automated Visual Inspection) / STIF (ST inkless format) format.</li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		 <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 5080 - Intranet reports not giving correct paths.:</b>
+                               When using intranet reports for a reporting task (reports center, etc.), the link sent to the user is incorrect.</li>
+			<li><b>Case 5063 - SYA Log File: Rules are in different order than header:</b>
+							   Contents of SYA log file are in the incorrect order.</li>
+			<li><b>Case 5026 - Cannot edit a GEXDB link if GEXDB not connected:</b>
+							   When running Yield-Man with the YM Admin DB activated, a GEXDB link that is not connected cannot be edited (all fields are greyed).</li>
+			</ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.04 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4.04">V6.4.04 (11 August 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		 <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 5068 - SYA Log file reports incorrect algorithm:</b>
+							   The SYA log file reports incorrect algorithm, N1, N2 for non default algorithm.</li>
+			<li><b>Case 5039 - Crash when loading SYA Trigger File:</b>
+							   Yield-Man crashes when loading an SYA Trigger file if SYA task is set to "Leave Report on Server".</li>
+			<li><b>Case 5023 - Yield-Man V6.4.03 crashes when you create a new SQL database:</b>
+							   When creating a new database in Yield-Man V6.4.03 it gets to the very end then crashes. All the tables are there but it doesn't create the link.</li>
+            <li><b>Case 4951 - Gex-Log: make sure each YM/PM instance writes in a different log file:</b>
+                               1) For Yield-Man, PAT-Man, write the log files into the location pointed to by $GEX_SERVER_PROFILE. 2) In any cases, add the PID to logfilename. 3) Configure ouput file location in gexlog.xml as explained in the gexlog 6.5 manual</li>
+			</ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.03 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4.03">V6.4.03 (15 July 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4982 - New option to trigger a batch file after processing SYA gtf files:</b>
+			                   New feature with the ability to launch a batch file on reading an SYA trigger file (gtf) regardless of SYA failure status.</li>
+            </ul>
+		  </td>
+        </tr>
+        <tr>
+		 <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4960 - Csv converter does not recognize the merge on test name option:</b>
+							   When converting a file with a particular test name that has multiple test numbers associated with it, it appears once for each test number even when the option to merge tests on test name (ignore test #) is chosen.</li>
+            <li><b>Case 4942 - Yieldman - Parameters passed to batch file not working:</b>
+                               Customer uses the trigger file tool to create an SYA task.  The data pump task that reads the trigger file can be used to kick off a batch file.  This batch file is used to get additional information about the SYA event.  The batch file does not contain the Log File path and name.</li>
+			<li><b>Case 4905 - Consolidation improvement time to shorten file insertion time:</b>
+							   Optimize the consolidation steps and trigger calls to shorten insertion time.</li>
+            <li><b>Case 4904 - Create a new stored procedure that is called based on unrecognized key words in the incremental_update fields:</b>
+                               Create a new stored procedure that is called when there exists a value in the xx_splitlot.incremental_update field that is not a recognized keyword of YM. This procedure would be available to aps to use for custom consolidation commands, etc.</li>
+			</ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!-- Table with V6.4.02 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4.02">V6.4.02 (7 July 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+		 <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4945 - Yield-Man node is not created in the YmAdminDB:</b>
+			                   When the user creates the YmAdminDB, Yield-Man updloads his tasks with the node id 1, but doesn't create the node 1 in the database.</li>
+			</ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4.01 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4.01">V6.4.01 (4 July 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+		 <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4944 - Fixed SYA log file path in alarm script arguments:</b>
+			                   When a SYA trigger emits an alarm, the SYA log file path is not passed as argument to the 'Yield alarm' script/batch defined in the 'AutoAdmin' task.</li>
+            <li><b>Case 4925 - Better support UMC data file format.:</b>
+                               GEX did not support a flavor of the UMC E-Test format. Instead of rejecting the file, the parser reads the first line as a wafer id. Therefore we get 26 wafers, one of which has the wafer id 'WF#'. The parser has been modified to support this format.</li>
+			</ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.4 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.4">V6.4 (28 June 2011) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Yield-Man:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 4913 - New switch to enable/disable the WaferNb integer check:</b>
+                               A new YM switch has been implemented (Housekeeping->Global Settings), that allows to enable/disable the WaferNb integer check: GEXDB_INSERTION_ALLOW_MISSING_WAFERNB. If set to TRUE (default), YM will accept to insert wafer/e-test data without a valid WaferNb. If set to FALSE, insertion of such data will be delayed.</li>
+			<li><b>Case 4829 - UMC - PCM Parser:</b>
+			                   Modified the UMC-PCM parser to handle a modification in the format specification.</li>
+			<li><b>Case 4670 - SYA enhancements: added the possibility to disable a SYA task at file insertion:</b>
+			                   Provided the capability for the user to enable/disable an SYA task at file insertion level.</li>
+            <li><b>Case 4668 - SYA enhancements: created log file capability for SYA tasks:</b>
+			                   Provide the capability to create a log file when a SYA task is executed through a SYA trigger.</li>
+			<li><b>Case 4621 - Added atdf format to the file type converter:</b>
+							   In the Yield-Man converter, allows the user to select atdf in addition to stdf and csv.</li>
+            <li><b>Case 4526 - Added Yield Loss in addition to Device Count:</b>
+			                   Added yield loss in addition to device count to PAT Algorithm, and Algorithm family report.</li>
+			<li><b>Case 4477 - Added the capability to manually enter Notch position with GEXDB keys for eTest & WaferSort.</b></li>
+            <li><b>Case 4471 - New feature enables extraction to be limited to a list of parameters:</b>
+			                   Behavior will be modified so that when a list of parameters is specified, 
+							   it acts as a filter, and only the requested parameters will appear in the reports.</li>
+            <li><b>Case 4438 - New feature allows the keys file to accept variables in a regular expression:</b></li>
+            <li><b>Case 4393 - New feature allows the user to specify to limit summary data AND samples data:</b>
+			                   Allows the user to choose to limit only samples data or both summary and samples data.</li>
+            <li><b>Case 4392 - New language eliminated confusion on database link creation:</b>
+			                   Tool tip on database admin:  changed ""create database"" to ""create database link"". in the create database wizard:
+							   changed ""create"" button to ""OK"" in the create database wizard:  changed title of the window from ""create a new database"" 
+							   to ""create a new database and database link"".</li>
+            <li><b>Case 4376 - SYA enhancements: allows for specifying bin limit algorithm per bin:</b>
+			                   Allows the user to specify different SYA algorithms for each individual binning.</li>
+            <li><b>Case 4151 - Parser for DLK test format:</b>
+            <li><b>Case 4107 - Parser for .sum summary file format:</b>
+			                   Created a parser for the attached summary file format.</li>
+            <li><b>Case 3991 - Parser for Global Foundries EtestFab7 WAT file format:</b>
+			                   New parser to support Global Foundries fab 7 WAT format. old format is still valid for the older fabs but this will be a valid format going forward.</li>
+            <li><b>Case 3921 - Added a dropdown selection for Yield Threshold for the product detail GUI on the Report Center:</b>
+            <li><b>Case 3717 - Parser Verigy Edf - update parser to include Passed/Failed transition structure:</b>
+			                   Records for Spec search that have 2 results for Passed/failed transition.</li>
+            <li><b>Case 3680 - SYA enhancements: allow miltuple rules per product:</b>
+			                   Allows the user to specify multiple SYA rules for a same product.</li>
+            </ul>
+		  </td>
+        </tr>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4909 - SYA value different from SBL Bin 1 value:</b>
+			                   The SYA results for all passing bins is slightly different from the SBL Bin 1 value. We expect that they would be the same.</li>
+			<li><b>Case 4907 - Datapump loses the path of the "Execute batch on insertion" with YieldMan Administration Server:</b>
+			                   When using YieldMan Administration Server, Datapump loses the path of the "Execute batch on insertion" fields.</li>
+			<li><b>Case 4903 - Batch to Execute on Insertion will not save:</b>
+			                   The Batch to Execute on Insertion will not save properly.</li>
+            <li><b>Case 4889 - Testers are appearing multiple times in the intranet reporting list.:</b>
+                               Using the intranet feature in YM, testers appear multiple times on the list. Click on the links, they all send you to the same page.</li>
+			<li><b>Case 4881 - Yield-Man crash while inserting in Black Hole database:</b>
+			                   The recipe editor appears to over write PAT bin values with values from a previous pat recipe.</li>
+            <li><b>Case 4863 - YM Task manager will not pause:</b>
+			                   The task manager pause button will not pause the task manager.</li>
+            <li><b>Case 4806 - Cannot use an email list file in linux Yield-Man:</b>
+			                   User needed to use an email list file because of the quantity of email addresses needed to be added to a YM task for an alarm. in windows, this is function but in linux, the list is not recognized. the email addresses must be typed in manually but it appears that multiple email addresses also don't seem to work on LG1.</li>
+			<li><b>Case 4873 - All Data going into splitlot 0:</b>
+			                   All of my data files are being inserted into Splitlot 0.</li>
+            <li><b>Case 4823 - Connection to DB works only if Servers/Local DB Paths parameters are setted:</b>
+			                   Connection to DB works only if Servers/Local DB Paths parameters are setted</li>
+            <li><b>Case 4814 - Yield-Man: Wafer consolidation fails during Data insertion under ORACLE:</b>
+			                   CREATE TEMPORARY TABLE for wafer consolidation fails.</li>
+            <li><b>Case 4809 - 7C7 PCM Parser error:</b>
+			                   7C7 file not converted</li>
+			<li><b>Case 4785 - Cannot insert sya task into xx_sya_set table:</b>
+			                   After computing limits, clicking the confirm button results in an error writing the limits to the database. The privileges and the host options in mysql have been checked for gexdb and appear correct.</li>
+			<li><b>Case 4756 - Cannot connect to a remote database in gex:</b>
+			                   Cannot connect to a database that is outside of local network or vpn. use the server name instead of the ip address and connect is successful.</li>
+            <li><b>Case 4732 - File cannot be converted by converter:</b>
+			                   This file is converted but all the tests have no measured values in the resulting csv file. if the file is analyzed in gex, the results are there.</li>
+            <li><b>Case 4691 - Convert to csv is not functioning properly:</b>
+			                   Convert a file to csv and see no data and the first test number is 0 then 26000. Dump the file to stdf and see that the first test number should be 0 then 10021.</li>
+			<li><b>Case 4656 - Recipe editor over writes binning:</b>
+			                   Yield-Man crash while inserting in a Black Hole database if a SYA task exists for the inserted product.</li>
+			<li><b>Case 4563 - Double log message when validation failed in config.gexdbkeys:</b>
+							   If a YM insertion fails due to the config.gexdbkeys file (validation rule not matching, syntax error...), the message was written twice to the history log file.</li>
+            <li><b>Case 4521 - Parameter list always reset:</b>
+			                   The value entered in the 'Parameter list' control ('Data' tab, 'RDB Options' tab) gets reset to the default value specified in the options 
+							   (Database options->RDB: default parameters to extract) each time the 'Data' page is activated.</li>
+            <li><b>Case 4505 - Quantix Decompression tool corrupting some data:</b>
+			                   When some files are decompressed using Quantix, the MRR record goes missing.  
+							   However, when the same file is decompressed using another tool, like 7Zip, the MRR is ok.</li>
+            <li><b>Case 4457 - YieldMan crashes for Database manual insertion:</b>
+			                   YieldMan crashes when user insert a DataFile into a selected Database.</li>
+            <li><b>Case 4336 - Remove ""Microsoft SQL Server"" from Create Database Gui:</b>
+			                   Since Quantix does not support SQL server, remove it from the Create Database Gui.</li>
+            <li><b>Case 4379 - Yieldman could crash when executing datapumps:</b>
+			                   After disconnecting from the yieldmanDB, datapump task could crash.</li>
+			<li><b>Case 4010 - Tests with multiple executions on the same part only show the last execution in the tables:</b>
+			                   When a part has a test repeated, only the last value is show in the tables. 
+							   The histograms and the stats reflect all the executions. 
+							   When the file is inserted into YM, GEX no longer sees all the executions but only sees the last execution.</li>
+            <li><b>Case 4048 - Global Options report for Test# policy it references the wrong setting:</b>
+							   Data Processing options -> Handling duplicated Test Numbers Names -> Ignore test#: Always merge tests with identical name.
+							   GEX use this selection however at the bottom of the Global Options report for Test# policy it says it instead used Never 
+							   merge tests with identical test number if test name not matching.
+            <li><b>Case 3701 - Filtering in SYA rules edition:</b>
+			                   When editing a SYA rule, the filters do not work as expected. When picking values for a given filter, not all values availabler in the RDB will be displayed.</li>
+            </ul>
+		  </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+</body></html>

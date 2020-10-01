@@ -1,0 +1,68 @@
+#!/bin/bash
+
+DEVDIR=/data/gex-prod-master
+QTDIR=/data/qt/4.8.3
+if [ -f /etc/gex-prod-conf.sh ]; then
+    source /etc/gex-prod-conf.sh
+fi
+export DEVDIR QTDIR
+
+#Package file name
+PackFileName=qpainter_poc_linux
+
+#Directories
+BuildDir=${DEVDIR}/galaxy_poc/qpainter_poc/unix_scripts
+InstallDir=qpainter_poc
+PackageDir=${DEVDIR}/galaxy_poc/qpainter_poc/packages
+
+echo ""
+echo ""
+echo "* OS: LINUX                             *"
+echo ""
+
+cd ${BuildDir}
+
+# Erase Temp Folder
+echo "> Erasing temporary folder..."
+rm -Rf ${InstallDir} > /dev/null 2> /dev/null
+mkdir ${InstallDir}
+mkdir -p ${PackageDir} > /dev/null 2> /dev/null
+cd ${InstallDir}
+
+# Get Examinator files
+echo "> Copy GexLm/GexLs files to target folder..."
+cp ../../qpainter_poc .
+cp -l ../../../../galaxy_libraries/galaxy_qt_libraries/lib/linux64/libgqtl_svg.so* .
+cp ../../mySVGImage.svg .
+
+# Get Examinator scripts
+cp ../../qpainter_pocd .
+dos2unix qpainter_pocd > /dev/null 2> /dev/null
+chmod a+x qpainter_pocd
+
+mkdir lib
+cp /usr/lib64/libXrender.so.1 lib
+cp /usr/lib64/libXext.so.6 lib
+cp /usr/lib64/libX11.so.6 lib
+
+# Get 3d party Libs
+echo "> Copy 3d-party Libs to target folder..."
+cp ${QTDIR}/lib/libQtGui.so.4 .
+cp ${QTDIR}/lib/libQtNetwork.so.4 .
+cp ${QTDIR}/lib/libQtCore.so.4 .
+
+mkdir imageformats
+cp ${QTDIR}/plugins/imageformats/*.so imageformats
+
+# Build .tar.gz package
+cd ..
+rm ${PackFileName}.tar.gz > /dev/null 2> /dev/null
+echo "> Build 'tar' package..."
+tar -cf ${PackFileName}.tar ${InstallDir}
+echo "> Zip 'tar' package..."
+gzip ${PackFileName}.tar
+mv ${PackFileName}.tar.gz ${PackageDir}
+echo "> Package created:  ${PackageDir}/${PackFileName}.tar.gz"
+
+# Remove temp directory
+rm -Rf ${InstallDir}

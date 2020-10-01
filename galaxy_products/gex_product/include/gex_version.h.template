@@ -1,0 +1,38 @@
+// contains the Examinator version info shared by all galaxy products (gex.exe, database plugins, ...)
+
+#ifndef GEX_VERSION
+#define	GEX_VERSION	1
+
+// DO NOT CHANGE TABS IN BELOW defines
+#define	GEX_APP_VERSION_DATE	"version_date"
+#define	GEX_APP_VERSION_MAJOR	6
+#define	GEX_APP_VERSION_MINOR	3
+#define	GEX_APP_VERSION_BUILD	158
+#define	GEX_APP_VERSION			"V6.3 B158 (preview #version_date#)"
+
+// Galaxy Reports versions supported
+#define GEX_MIN_GRT_VERSION				0.3f
+#define GEX_MAX_GRT_VERSION				0.4f
+
+#define GEX_MIN_GRXML_VERSION			0.3f
+#define GEX_MAX_GRXML_VERSION			0.5f
+
+// supported Galaxy Trigger File versions
+#define GEX_MIN_GTF_VERSION 0.1f
+#define GEX_MAX_GTF_VERSION 0.1f
+
+
+// Galaxy Apps names
+#define	GEX_APP_EXAMINATOR				"Examinator Characterization - " GEX_APP_VERSION
+#define	GEX_APP_EXAMINATOR_OEM_ASL		"Visual Examinator - " GEX_APP_VERSION
+#define	GEX_APP_EXAMINATOR_OEM_SAPPHIRE	"Examinator Sapphire D series - " GEX_APP_VERSION
+#define	GEX_APP_EXAMINATOR_OEM_SZ		"Examinator SPACE - " GEX_APP_VERSION
+#define GEX_APP_EXAMINATOR_DB			"Examinator Production - " GEX_APP_VERSION
+#define GEX_APP_EXAMINATOR_WEB			"Examinator Web - " GEX_APP_VERSION
+#define GEX_APP_EXAMINATOR_MO			"Galaxy Yield-Man - " GEX_APP_VERSION
+#define GEX_APP_EXAMINATOR_TB			"Examinator ToolBox - " GEX_APP_VERSION
+#define GEX_APP_EXAMINATOR_YIELD123		"Galaxy Yield123 - " GEX_APP_VERSION
+#define GEX_APP_PATMAN					"Galaxy PAT-Man - " GEX_APP_VERSION
+#define GEX_APP_EXAMINATOR_DB_PAT		"Examinator PAT - " GEX_APP_VERSION
+
+#endif

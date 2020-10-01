@@ -1,0 +1,433 @@
+<ui version="4.0" >
+ <class>LicenseStatusDialogBase</class>
+ <widget class="QDialog" name="LicenseStatusDialogBase" >
+  <property name="enabled" >
+   <bool>true</bool>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>697</width>
+    <height>693</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>GEX Licenses Status</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="gex_ls.qrc" >
+    <normaloff>:/gex_ls/images/resources/galaxy_icon.png</normaloff>:/gex_ls/images/resources/galaxy_icon.png</iconset>
+  </property>
+  <property name="sizeGripEnabled" >
+   <bool>true</bool>
+  </property>
+  <property name="modal" >
+   <bool>false</bool>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <property name="margin" >
+    <number>8</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="GroupBox2" >
+     <property name="title" >
+      <string>Connect to:</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_1" >
+      <property name="margin" >
+       <number>8</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="0" column="2" >
+       <widget class="QPushButton" name="buttonConnect" >
+        <property name="toolTip" >
+         <string>Click this button to establish the connection with specified GEX-LM server</string>
+        </property>
+        <property name="text" >
+         <string>Connect</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="TextLabelSocketPort" >
+        <property name="text" >
+         <string>Socket port:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QLineEdit" name="LineEditServerName" >
+        <property name="toolTip" >
+         <string>Specify the server name or IP address of a GEX-LM server</string>
+        </property>
+        <property name="text" >
+         <string>localhost</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="TextLabelServerName" >
+        <property name="text" >
+         <string>Server name / IP:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3" >
+       <widget class="QLabel" name="TextLabelLogo" >
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="pixmap" >
+         <pixmap resource="gex_ls.qrc" >:/gex_ls/images/resources/galaxy_logo.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QLineEdit" name="LineEditSocketPort" >
+        <property name="toolTip" >
+         <string>Specify the socket port# to use</string>
+        </property>
+        <property name="text" >
+         <string>4242</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" >
+       <widget class="QPushButton" name="buttonDisconnect" >
+        <property name="toolTip" >
+         <string>Click this button to disconnect from GEX-LM server</string>
+        </property>
+        <property name="text" >
+         <string>Disconnect</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSplitter" name="splitter" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QTabWidget" name="tabWidgetStatus" >
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="currentIndex" >
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab" >
+       <attribute name="title" >
+        <string>Live</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout" >
+        <item row="0" column="0" >
+         <widget class="QGroupBox" name="GroupBox4" >
+          <property name="title" >
+           <string>Galaxy Examinator clients running:</string>
+          </property>
+          <layout class="QVBoxLayout" name="_3" >
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <property name="margin" >
+            <number>8</number>
+           </property>
+           <item>
+            <widget class="QTreeWidget" name="TreeWidgetClientsList" >
+             <property name="columnCount" >
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" >
+         <widget class="QGroupBox" name="GroupBox3" >
+          <property name="title" >
+           <string>Server license details:</string>
+          </property>
+          <layout class="QVBoxLayout" name="_2" >
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <property name="margin" >
+            <number>8</number>
+           </property>
+           <item>
+            <widget class="QTreeWidget" name="TreeWidgetLicenseDetails" >
+             <property name="columnCount" >
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2" >
+         <widget class="QGroupBox" name="GroupBox1" >
+          <property name="title" >
+           <string>Status:</string>
+          </property>
+          <layout class="QHBoxLayout" name="_4" >
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <property name="margin" >
+            <number>8</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="TextLabelStatus" >
+             <property name="text" >
+              <string>Ready</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="ProgressBar" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize" >
+              <size>
+               <width>150</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>150</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="value" >
+              <number>0</number>
+             </property>
+             <property name="orientation" >
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2" >
+       <attribute name="title" >
+        <string>History</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4" >
+        <item row="0" column="0" >
+         <widget class="QGroupBox" name="groupBoxHistoryParameter" >
+          <property name="enabled" >
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title" >
+           <string>Filters</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3" >
+           <item row="0" column="0" >
+            <layout class="QHBoxLayout" name="horizontalLayout" >
+             <item>
+              <widget class="QLabel" name="label" >
+               <property name="sizePolicy" >
+                <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text" >
+                <string>From</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="dateEditBegin" >
+               <property name="calendarPopup" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_2" >
+               <property name="sizePolicy" >
+                <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text" >
+                <string>To</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="dateEditEnd" >
+               <property name="calendarPopup" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2" >
+               <property name="orientation" >
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0" >
+                <size>
+                 <width>328</width>
+                 <height>17</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0" >
+            <layout class="QHBoxLayout" name="horizontalLayout_2" >
+             <item>
+              <spacer name="horizontalSpacer" >
+               <property name="orientation" >
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0" >
+                <size>
+                 <width>558</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="buttonFindHistory" >
+               <property name="sizePolicy" >
+                <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text" >
+                <string>Get...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0" >
+         <widget class="QTabWidget" name="tabWidgetHistory" >
+          <property name="currentIndex" >
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab_3" >
+           <attribute name="title" >
+            <string>Raw data</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_2" >
+            <item row="0" column="0" >
+             <widget class="QTreeWidget" name="TreeWidgetHistory" >
+              <property name="columnCount" >
+               <number>0</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_4" >
+           <attribute name="title" >
+            <string>Statistics</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_5" >
+            <item row="0" column="0" >
+             <widget class="QLabel" name="labelReportLocation" >
+              <property name="frameShape" >
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow" >
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="text" >
+               <string>Report location :</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" >
+             <widget class="QLineEdit" name="lineEditReportLocation" >
+              <property name="readOnly" >
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2" >
+             <widget class="QTextBrowser" name="textBrowserStatistic" >
+              <property name="autoFillBackground" >
+               <bool>false</bool>
+              </property>
+              <property name="frameShape" >
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow" >
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="autoFormatting" >
+               <set>QTextEdit::AutoAll</set>
+              </property>
+              <property name="lineWrapMode" >
+               <enum>QTextEdit::NoWrap</enum>
+              </property>
+              <property name="readOnly" >
+               <bool>true</bool>
+              </property>
+              <property name="tabStopWidth" >
+               <number>80</number>
+              </property>
+              <property name="openExternalLinks" >
+               <bool>false</bool>
+              </property>
+              <property name="openLinks" >
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="gex_ls.qrc" />
+ </resources>
+ <connections/>
+</ui>

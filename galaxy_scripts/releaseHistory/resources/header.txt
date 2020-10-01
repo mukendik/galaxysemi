@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>__FAMILY__ __MINOR__ Release History</title>
+        <style>
+            .main-title-text
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 28px;
+                font-weight: normal;
+                color: #858585;
+                text-decoration: none;
+                line-height: 30px;
+            }
+            .main-subtitle-text
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                text-decoration: none;
+                line-height: 30px;
+            }
+            .main-table-text
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                text-decoration: none;
+                line-height: 30px;
+            }
+            .main-content-text
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: normal;
+                color: #4d4d4d;
+                text-decoration: none;
+                line-height: 15px;
+            }
+            .main-content-title-blue
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: bold;
+                color: #006699;
+                text-decoration: none;
+                padding-left: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- TITLE -->
+        <table width="800"><tbody>
+                <tr>
+                    <td class="main-title-text" align="center"><a name="Top">__FAMILY__ family : __MINOR__ Releases History</a></td>
+                </tr>
+                <tr>
+                    <td class="main-subtitle-text" align="center" >(__PRODUCTS__)</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>

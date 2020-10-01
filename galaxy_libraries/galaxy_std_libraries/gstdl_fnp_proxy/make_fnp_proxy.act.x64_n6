@@ -1,0 +1,113 @@
+SRCDIR = $(FNP_PROVIDER_DIR_M)\sources
+INCFLAGS = /I$(FNP_TOOLKITDIR_M)\machind  /I$(FNP_PROVIDER_DIR_M)\sources /I$(DEVDIR)\galaxy_libraries\galaxy_std_libraries\include
+FNP_DIR = $(FNP_TOOLKITDIR_M)\$(FNP_PLATFORM_M)
+FNP_DEST_DIR = $(FNP_TOOLKITDIR_M)\$(FNP_PLATFORM_M)
+FNP_SRC_DIR = $(FNP_TOOLKITDIR_M)\machind
+
+!ifdef DEBUG
+XTRACFLAG=/Zi /Od
+LDFLAGS=/DEBUG 
+CNAME=d
+FNP_OBJ_DIR = $(FNP_PROVIDER_DIR_M)\debug\win32
+!else
+XTRACFLAG =  /O1
+LDFLAGS = 
+CNAME=
+FNP_OBJ_DIR = $(FNP_PROVIDER_DIR_M)\release\win32
+!endif
+
+!ifdef DONGLE
+DONGLELIB =  lmgr_dongle.lib
+!else
+DONGLELIB = $(FNP_DIR)\lmgr_dongle_stub.lib
+LDFLAGS=$(LDFLAGS)
+!endif
+
+LD = LINK /nologo /NODEFAULTLIB /OPT:NOREF /NXCOMPAT:NO /DynamicBase $(LDFLAGS) 
+RC = RC
+
+FNPLOADLIB=$(FNP_DIR)\libFNPload.lib
+
+LMGRNAME=
+SUFFIX=
+EMBED_MANIFEST_LMNEWGEN=
+EMBED_MANIFEST=
+
+DLL_FLAG=/DFLEXLM_DLL
+
+
+!ifdef MD
+LMNEW_OBJ=$(FNP_DIR)\lm_new_md.obj 
+CRT_FLAG=/MD$(CNAME)
+CRT_LIB=msvcrt$(CNAME).lib 
+LMNEW_OBJ_CLIENT=$(LMNEW_OBJ)
+CPPRT_LIB=msvcrt$(CNAME).lib msvcprt$(CNAME).lib
+EMBED_MANIFEST_LMNEWGEN=if exist lmnewgen.exe.manifest mt.exe -nologo -manifest lmnewgen.exe.manifest -outputresource:lmnewgen.exe && del lmnewgen.exe.manifest
+EMBED_MANIFEST=if exist $@.manifest mt.exe -nologo -manifest $@.manifest -outputresource:$@ && del $@.manifest
+!else
+CRT_FLAG=/LD$(CNAME)
+CPPRT_LIB=libcmt$(CNAME).lib libcpmt$(CNAME).lib
+LMNEW_OBJ=$(FNP_DIR)\lm_new.obj
+LMNEW_OBJ_CLIENT=$(LMNEW_OBJ)
+CRT_LIB=libcmt$(CNAME).lib
+!endif
+
+
+EXAMPLESDIR= $(FNP_TOOLKITDIR_M)\examples 
+ACTIVATIONSRC= $(EXAMPLESDIR)\activation
+AAINCDIR = $(FNP_SRC_DIR)\activation\include
+APREPXMLDIR = $(FNP_SRC_DIR)\activation\prep_xml
+AALIBDIR = $(FNP_DIR)\activation\lib
+AALIB = $(AALIBDIR)\libact$(SUFFIX).lib
+ACTSTUB = $(AALIBDIR)\libnoact$(SUFFIX).lib
+ACTLIB = $(AALIB) $(FNPLOADLIB)
+ACTINSTALLERDIR = $(FNP_SRC_DIR)\activation\include\windows
+ACTINSTALLERLIB = $(FNP_DIR)\FNP_Act_Installer.lib
+ACTINSTALLERSRC = $(EXAMPLESDIR)\anchor_service
+
+SDTINCLUDES = $(FNP_SRC_DIR)\sdt
+LMGR_LIB=lmgr$(LMGRNAME).lib
+
+XTRALIB1 =  oldnames.lib kernel32.lib user32.lib netapi32.lib \
+        advapi32.lib  gdi32.lib comdlg32.lib  comctl32.lib wsock32.lib \
+        Rpcrt4.lib oleaut32.lib Ole32.lib Wbemuuid.lib wintrust.lib crypt32.lib
+	
+XTRALIB =  $(XTRALIB1) $(CRT_LIB) $(DONGLELIB)
+CPPXTRALIB = $(XTRALIB1) $(CPPRT_LIB)
+
+XTRACFLAG=$(XTRACFLAG) $(DLL_FLAG)
+
+#
+#	Use XTRAOBJS to define your object files for vendor daemon
+#	initialization routines, checkout filter, checkin callback, etc.
+#
+XTRAOBJS = $(FNP_OBJ_DIR)\fnp.obj
+
+
+CFLAGS_NOOPT = /DPC /nologo /c   $(CRT_FLAG) $(XTRACFLAG) $(INCFLAGS)
+CPPFLAGS_NOOPT = /DPC /nologo /c  $(CRT_FLAG) $(XTRACFLAG) $(INCFLAGS)
+CFLAGS = /DWINDOWS $(CFLAGS_NOOPT) 
+CPPCFLAGS = /DWINDOWS $(CPPFLAGS_NOOPT)
+LMNEW_CFLAGS = /nologo /c  $(INCFLAGS) $(CRT_FLAG) $(DLL_FLAG)
+
+
+CLIENTLIB        = $(FNP_DIR)\$(LMGR_LIB) $(FNP_DIR)\libsb$(SUFFIX).lib $(FNP_DIR)\libcrvs$(SUFFIX).lib $(ACTLIB)
+STATIC_CLIENTLIB = $(FNP_DIR)\lmgr$(SUFFIX).lib $(FNP_DIR)\libsb$(SUFFIX).lib $(FNP_DIR)\libcrvs$(SUFFIX).lib 
+LIBS             = $(FNP_DIR)\lmgras$(SUFFIX).lib $(FNP_DIR)\lmgrs$(SUFFIX).lib $(STATIC_CLIENTLIB)
+DAEMONLIBS       = $(FNP_DIR)\lmgras$(SUFFIX).lib $(FNP_DIR)\lmgrs$(SUFFIX).lib $(FNP_DIR)\lmgr$(SUFFIX).lib $(ACTLIB) $(FNP_DIR)\libsb$(SUFFIX).lib $(FNP_DIR)\libcrvs$(SUFFIX).lib
+EVENTLOGMESSAGEFILE = VendorLicenseServerMsgs
+EVENTLOGMESSAGEFILE2 = FnplmLicenseServerMsgs
+
+PREPTOOL = $(FNP_DIR)\preptool.exe
+
+
+
+fnp.dll: $(LMNEW_OBJ) $(SRCDIR)\fnp_proxy.cpp 
+	$(CC) /EHca /DLIB_GEX_LP_DLL_BUILD $(CPPCFLAGS) $(INCFLAGS) -I$(ACTINSTALLERDIR) /Fo$(FNP_OBJ_DIR)\fnp.obj $(SRCDIR)\fnp_proxy.cpp
+	$(LD)  /DLIB_GEX_LP_DLL_BUILD /NODEFAULTLIB /out:$(FNP_DEST_DIR)\fnp.dll /implib:$(FNP_DEST_DIR)\fnp.lib /dll  $(FNP_OBJ_DIR)\fnp.obj $(LMNEW_OBJ) $(CLIENTLIB) $(FNP_DIR)\lmgr$(SUFFIX).lib $(LIBS) $(ACTLIB) $(ACTINSTALLERLIB) $(XTRALIB)
+	$(EMBED_MANIFEST)
+	
+	
+	
+#$(PREPTOOL) -v $(FNP_DEST_DIR)\fnp_proxy.xml 
+

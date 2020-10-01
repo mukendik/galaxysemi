@@ -1,0 +1,10 @@
+SERVER this_host ANY
+    VENDOR galaxylm "${installdir}\fnp_utils\galaxylm\galaxylm.exe"
+    #This increment is only for vendor deamon initialization
+
+    INCREMENT GEX-Init galaxylm 1.0 permanent uncounted \
+    VENDOR_STRING="Galaxy Semiconductor" HOSTID=ANY TZ=SERVERTZ \
+    ISSUER="Galaxy Semiconductor" SIGN="1050 62C9 CD0F 71DE B52A \
+    6906 C04B 54E1 EBD7 89B1 7938 F3BF 28E1 B52A 6956 050D 1C03 \
+    23CB 3A0D 1D98 267D C12E 5281 1125 339F 8C75 6B12 74BA D49A \
+    F8A9"

@@ -1,0 +1,52 @@
+user godev godev
+ascii
+
+cd dev/gex_product/gex-tester/gtl
+
+lcd S:\gex_product\gex-tester\tools
+put gtl_make
+
+cd gtl-core
+mdel *
+
+lcd S:\gex_product\gex-tester\tools
+put gtl-core.makelib
+put gtl-core.makefile
+
+lcd S:\gex_product\gex-tester\gtc
+put gtc_constants.h
+put gtc_netmessage.c
+put gtc_netmessage.h
+
+lcd S:\gex_product\gex-tester\gtl\gtl-core
+mput *.c
+mput *.h
+put gtl_tester.conf
+
+lcd S:\gex_product\gex-tester\gtl\gtl-tester
+put gtl_tester.h
+
+lcd S:\Galaxy_Std_Libraries\sources\gstdutils_c
+mput gneterror.*
+mput gnetbuffer.*
+mput gnetmessage.*
+mput utils.*
+
+cd ../gtl-tester
+mdel *
+
+lcd S:\gex_product\gex-tester\tools
+put gtl-tester.makelib
+put gtl-tester.makefile
+
+lcd S:\gex_product\gex-tester\gtl\gtl-tester
+put gtl_tester.h
+put gtl_tester_image.c
+
+lcd S:\gex_product\gex-tester\gtc
+put gtc_constants.h
+
+lcd S:\Galaxy_Std_Libraries\sources\gstdutils_c
+mput utils.*
+
+quit

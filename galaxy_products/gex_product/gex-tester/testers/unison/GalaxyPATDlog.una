@@ -1,0 +1,39 @@
+Unison:SyntaxRevision6.310000;
+__ApplicationLibrary GalaxyPATDlogLib {
+   __LibraryPath = "./GalaxyPATDlog";
+   __BuildPath = "./GalaxyPATDlog/tmpfiles";
+   __LibraryType = __Debug;
+   __Source = "GalaxyPATDlog/GalaxyPATDlog.cpp";
+   __IncludePath = "gtl";
+   __Include = "gtl.h";
+   __LinkerPath = "gtl";
+   __LinkerFlags = "-Lgtl -lgtl_core";
+   __CompilerFlags = "-g";
+}
+__TestProg UnisonDemo {
+    __ParamCheck = 0;
+    	__PatternMap = DefaultPatternMap;
+        __BinMap =         __BinMap  {
+            __Bin evDefaultBin = 0;
+        }
+        __Mode = 0x00000000, 0x00000000, 0x80000000;
+        __CollectTestSummaryInfo = __True;
+        __FunctionalFails = 1;
+        __CalMethod = __Expression { __String = "CalMethod:Focused"; }
+        __IOStreamList[0] {
+           __IOStreamType = DataViewIO;
+           __IOStreamCode = 0x00001bf7;
+        }
+        __LotTypeSummary = "Lot";
+        __ReportSummary = "Final";
+        __SearchPaths {
+          "$CUSTOMER_DIR/unison/ltx/methods";
+          "$CUSTOMER_DIR/unison/ltx/libraries";
+          "$CUSTOMER_DIR/unison/ltx/code_templates";
+          "$CUSTOMER_DIR/unison/site/methods";
+          "$CUSTOMER_DIR/unison/site/libraries";
+          "$CUSTOMER_DIR/unison/site/code_templates";
+        }
+}
+__PatternMap DefaultPatternMap {
+}

@@ -1,0 +1,2 @@
+[2013-04-26 19:03:22 GEXOC 5] GetOCInstance for GEX version 'V7.1 preview(20121214)' GexScriptingEengine 'GexScriptEngine' loglevel=5  	in OptionsCenterWidget* GetOCInstance(QWidget*, GexScriptEngine*, GexMainwindow*, int, QString&)  	in sources\libgexoc.cpp
+[2013-04-26 19:03:22 GEXOC 5] GexProduct found in ScriptEngine : PRODUCT_GTM  	in OptionsCenterWidget* GetOCInstance(QWidget*, GexScriptEngine*, GexMainwindow*, int, QString&)  	in sources\libgexoc.cpp

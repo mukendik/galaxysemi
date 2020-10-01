@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>yieldmandb_login_dialog</class>
+ <widget class="QDialog" name="yieldmandb_login_dialog">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>349</width>
+    <height>439</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>51</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>51</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string notr="true"/>
+     </property>
+     <property name="statusTip">
+      <string notr="true"/>
+     </property>
+     <property name="whatsThis">
+      <string notr="true"/>
+     </property>
+     <property name="accessibleName">
+      <string notr="true"/>
+     </property>
+     <property name="accessibleDescription">
+      <string notr="true"/>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="documentTitle">
+      <string notr="true"/>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot; bgcolor=&quot;#00557f&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-style:italic; color:#ffaa00;&quot;&gt;Quantix&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:20pt; font-style:italic;&quot;&gt; &lt;/span&gt;&lt;img src=&quot;:/gex/icons/gex_application.png&quot; width=&quot;20&quot; height=&quot;20&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8pt; color:#00557f;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
+     </property>
+     <property name="openLinks">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabUserConnection">
+      <attribute name="title">
+       <string>Connection</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelConnectionLogin">
+         <property name="text">
+          <string>Login</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="comboBoxLogins"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labellConnectionPwd">
+         <property name="text">
+          <string>Password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEditPassword">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="maxLength">
+          <number>80</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelConfirmPassWord">
+         <property name="text">
+          <string>Confirm Password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEditConfirmPassword">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="maxLength">
+          <number>80</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelConnectionProfile">
+         <property name="text">
+          <string>Profile</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="comboBoxProfile"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelConnectionGroup">
+         <property name="text">
+          <string>Group</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="comboBoxGroup"/>
+       </item>
+       <item row="5" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>97</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabUserCreation">
+      <attribute name="title">
+       <string>User Creation</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelUserCreationLogin">
+         <property name="text">
+          <string>Login</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditUserCreationLogin">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="maxLength">
+          <number>80</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelUserCreationName">
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEditUserCreationName">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="maxLength">
+          <number>128</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelUserCreationMail">
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEditUserCreationEmail">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="maxLength">
+          <number>128</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelUserCreationType">
+         <property name="text">
+          <string>Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="comboBoxUserCreationType"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelUserCreationGroup">
+         <property name="text">
+          <string>Group</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="comboBoxUserCreationGroup"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="labelUserCreationOtherGroup">
+         <property name="text">
+          <string>Other Groups</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QListWidget" name="listWidgetUserCreationGroups">
+         <property name="editTriggers">
+          <set>QAbstractItemView::DoubleClicked</set>
+         </property>
+         <property name="showDropIndicator" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::MultiSelection</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2">
+        <widget class="QLabel" name="labelUserCreationStatus">
+         <property name="text">
+          <string>Last access</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabUserOptions">
+      <attribute name="title">
+       <string>User Options</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayoutOptions">
+       <item row="0" column="1">
+        <widget class="QLabel" name="labelOptions">
+         <property name="text">
+          <string>User options</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTableWidget" name="tableOptions"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabGroupCreation">
+      <attribute name="title">
+       <string>Group Creation</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelGroupCreationName">
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditGroupCreationName">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="maxLength">
+          <number>80</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelGroupCreationDescription">
+         <property name="text">
+          <string>Description</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEditGroupCreationDescription">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="maxLength">
+          <number>128</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelGroupCreationAdmin">
+         <property name="text">
+          <string>Admin User</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="comboBoxGroupCreationAdmin"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelGroupCreationProfile">
+         <property name="text">
+          <string>Default Profile</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="comboBoxGroupCreationProfile"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelGroupCreationProducts">
+         <property name="text">
+          <string>Products allowed</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEditGroupCreationProducts">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="maxLength">
+          <number>1024</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="labelGroupCreationLots">
+         <property name="text">
+          <string>Lots allowed</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="lineEditGroupCreationLots">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="maxLength">
+          <number>1024</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>71</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QDialogButtonBox" name="buttonBoxOk">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>comboBoxLogins</tabstop>
+  <tabstop>lineEditPassword</tabstop>
+  <tabstop>lineEditConfirmPassword</tabstop>
+  <tabstop>comboBoxGroup</tabstop>
+  <tabstop>comboBoxProfile</tabstop>
+  <tabstop>lineEditUserCreationLogin</tabstop>
+  <tabstop>lineEditUserCreationName</tabstop>
+  <tabstop>lineEditUserCreationEmail</tabstop>
+  <tabstop>comboBoxUserCreationType</tabstop>
+  <tabstop>comboBoxUserCreationGroup</tabstop>
+  <tabstop>listWidgetUserCreationGroups</tabstop>
+  <tabstop>lineEditGroupCreationName</tabstop>
+  <tabstop>lineEditGroupCreationDescription</tabstop>
+  <tabstop>comboBoxGroupCreationAdmin</tabstop>
+  <tabstop>comboBoxGroupCreationProfile</tabstop>
+  <tabstop>lineEditGroupCreationProducts</tabstop>
+  <tabstop>lineEditGroupCreationLots</tabstop>
+  <tabstop>buttonBoxOk</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources>
+  <include location="gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

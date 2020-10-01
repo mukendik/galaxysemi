@@ -1,0 +1,1391 @@
+{
+    "rules": [
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "5:X-Coord"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5124:X_Readfast_SerNr2"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "251:DUT_X_COORD"
+                }
+            ], 
+            "name": "rule1", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "6:Y-Coord"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "252:DUT_Y_COORD"
+                }
+            ], 
+            "name": "rule2", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "16:KepcoCkeck@-1A"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "15:KepcoCkeck@+1A"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "17:KepcoCkeck@0A"
+                }
+            ], 
+            "name": "rule3", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "77:ContactShorts"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "70:Contact@.1A"
+                }
+            ], 
+            "name": "rule4", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "73:ContactVdd-Gnd"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "75:ContactOut-Gnd"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "105:Isup@-8.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "3000:GND-Break"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "3002:Vdd-Break"
+                }
+            ], 
+            "name": "rule5", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "370:Vs_Hall@VDDMAX"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "103:Isup@VDDMAX"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4327:NB_Uout@+20mT"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "101:Isup@4.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4326:NB_Uout@-20mT"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "106:X_PrepVddz5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4320:SB(R-30mT)TC15SQ1"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "102:Isup@5.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "365:Vs_Hall@4.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4342:B-Feld(R-30mT)HR"
+                }
+            ], 
+            "name": "rule6", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "111:I@VDDMAX/I@4.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "104:X_Isup@12.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "112:X_AdjustVDDP"
+                }
+            ], 
+            "name": "rule7", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "220:Readfast_MinOut"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "222:Readfast_Slope"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5120:X_Readfast_SerNr0"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "224:Readfast_TC"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "225:Chk+PrgRgsAfWLBI"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "223:Readfast_Shift"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "221:Readfast_MaxOut"
+                }
+            ], 
+            "name": "rule8", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "237:Readfast_Special"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5118:Readfast_Special"
+                }
+            ], 
+            "name": "rule9", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "499:NB_Time_Af_DAC"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4449:NB_Time_Af_Rout"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "3010:NB_Time_Af_WireBreak\u0011'"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4399:NB_Time_Af_MagIII"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "559:NB_TimeBfDADAC"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "799:NB_Time_Af_TC"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "9990:TestTime"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "299:NB_Time_Af_RegPrgRd"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "639:NB_Time_Af_DAADC"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "398:NB_Time_Af_Ref"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "599:NB_Time_Af_DADAC"
+                }
+            ], 
+            "name": "rule10", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "388:VCollector@5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "340:ADCV_int@4.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "386:MVDD@5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "300:VVDD@4.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "305:VVDD@VDDMAX"
+                }
+            ], 
+            "name": "rule11", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "400:DAW1_0*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "437:DAW2_7*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "419:DAW1_TUE"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4300:ER(0mT_R-30mT)"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "438:DAW2_8*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "407:DAW1_7*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "465:DAW3_5*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "471:DAW3_B*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "441:DAW2_B*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "413:DAW1_D*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "466:DAW3_6*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "320:hvkp@4.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "470:DAW3_A*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "330:hvkn@4.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "408:DAW1_8*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "461:DAW3_1*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "464:DAW3_4*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "463:DAW3_3*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "442:DAW2_C*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "460:DAW3_0*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "444:DAW2_E*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "436:DAW2_6*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "434:DAW2_4*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5093:ResetFeat256_bP"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "445:DAW2_F*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "406:DAW1_6*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "473:DAW3_D*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "440:DAW2_A*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "432:DAW2_2*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5094:ResetFeat256_aP"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "435:DAW2_5*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "412:DAW1_C*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "404:DAW1_4*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "402:DAW1_2*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "414:DAW1_E*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "472:DAW3_C*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "433:DAW2_3*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "462:DAW3_2*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "405:DAW1_5*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "411:DAW1_B*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "333:hvkn@8V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5091:ResetFeat64_aP"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "474:DAW3_E*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "443:DAW2_D*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4348:B-Diff(R-100mT)HR"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "439:DAW2_9*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "431:DAW2_1*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4346:B-Diff(R-80mT)HR"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "415:DAW1_F*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "468:DAW3_8*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "409:DAW1_9*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "469:DAW3_9*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4344:B-Diff(R-60mT)HR"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "403:DAW1_3*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "401:DAW1_1*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "410:DAW1_A*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "475:DAW3_F*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5090:ResetFeat64_bP"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "430:DAW2_0*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "467:DAW3_7*VDD/16"
+                }
+            ], 
+            "name": "rule12", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "323:hvkp@8V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "327:hvkp_8-4p5V"
+                }
+            ], 
+            "name": "rule13", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "632:DAad_Full_Scale"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "757:TC_003B"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "610:DAad_AbsDigit10"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "628:DAad_AbsDigit28"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "614:DAad_AbsDigit14"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "631:DAad_AbsDigit31"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "626:DAad_AbsDigit26"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "621:DAad_AbsDigit21"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "762:TC_0303"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "630:DAad_AbsDigit30"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "761:TC_0202"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "623:DAad_AbsDigit23"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "760:TC_0101"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "752:TC_0002"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "625:DAad_AbsDigit25"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "627:DAad_AbsDigit27"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "612:DAad_AbsDigit12"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "350:ADCDAVref@5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "701:TCADJ_0B09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "629:DAad_AbsDigit29"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "751:TC_0001"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "618:DAad_AbsDigit18"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "611:DAad_AbsDigit11"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "754:TC_0008"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "616:DAad_AbsDigit16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "609:DAad_AbsDigit09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "753:TC_0004"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "755:TC_0010"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "750:TC_0000"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "702:TCADJ_2B09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "620:DAad_AbsDigit20"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "617:DAad_AbsDigit17"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "619:DAad_AbsDigit19"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "703:TCADJ_0309"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "704:TCADJ_1309"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "705:TCADJ_1B09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "758:TC_0040"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "622:DAad_AbsDigit22"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "759:TC_0080"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "756:TC_0020"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "615:DAad_AbsDigit15"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "624:DAad_AbsDigit24"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "700:TCADJ_0000"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "613:DAad_AbsDigit13"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "608:DAad_AbsDigit08"
+                }
+            ], 
+            "name": "rule14", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "475:DAW3_F*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "401:DAW1_1*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "400:DAW1_0*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "438:DAW2_8*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "407:DAW1_7*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "431:DAW2_1*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "471:DAW3_B*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "437:DAW2_7*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "413:DAW1_D*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "470:DAW3_A*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "360:Vbe_Toff@4.5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "434:DAW2_4*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "466:DAW3_6*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "461:DAW3_1*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "414:DAW1_E*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "412:DAW1_C*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "441:DAW2_B*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "442:DAW2_C*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "465:DAW3_5*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "460:DAW3_0*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "444:DAW2_E*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4300:ER(0mT_R-30mT)"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "436:DAW2_6*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "445:DAW2_F*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "406:DAW1_6*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "464:DAW3_4*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "473:DAW3_D*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "440:DAW2_A*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "432:DAW2_2*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "435:DAW2_5*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "408:DAW1_8*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "404:DAW1_4*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "402:DAW1_2*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "443:DAW2_D*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "472:DAW3_C*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "433:DAW2_3*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "462:DAW3_2*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "405:DAW1_5*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "411:DAW1_B*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "419:DAW1_TUE"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5091:ResetFeat64_aP"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "474:DAW3_E*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4348:B-Diff(R-100mT)HR"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "439:DAW2_9*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "415:DAW1_F*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "468:DAW3_8*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "409:DAW1_9*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "469:DAW3_9*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "403:DAW1_3*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "463:DAW3_3*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "410:DAW1_A*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5090:ResetFeat64_bP"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "430:DAW2_0*VDD/16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "467:DAW3_7*VDD/16"
+                }
+            ], 
+            "name": "rule15", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "9910:NB_Sys_TSensor"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "380:DUT_TJ"
+                }
+            ], 
+            "name": "rule16", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "390:VRefReset@5V"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "392:MVddRef@5V"
+                }
+            ], 
+            "name": "rule17", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "580:X_Voq(0mT)"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "4325:NB_Uout@0mT"
+                }
+            ], 
+            "name": "rule18", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "757:TC_003B"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "610:DAad_AbsDigit10"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "628:DAad_AbsDigit28"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "618:DAad_AbsDigit18"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "620:DAad_AbsDigit20"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "762:TC_0303"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "630:DAad_AbsDigit30"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "761:TC_0202"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "760:TC_0101"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "752:TC_0002"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "603:DAad_AbsDigit03"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "619:DAad_AbsDigit19"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "701:TCADJ_0B09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "703:TCADJ_0309"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "611:DAad_AbsDigit11"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "754:TC_0008"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "616:DAad_AbsDigit16"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "753:TC_0004"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "600:DAad_AbsDigit00"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "606:DAad_AbsDigit06"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "750:TC_0000"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "601:DAad_AbsDigit01"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "612:DAad_AbsDigit12"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "617:DAad_AbsDigit17"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "705:TCADJ_1B09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "631:DAad_AbsDigit31"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "759:TC_0080"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "756:TC_0020"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "604:DAad_AbsDigit04"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "700:TCADJ_0000"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "613:DAad_AbsDigit13"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "608:DAad_AbsDigit08"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "607:DAad_AbsDigit07"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "615:DAad_AbsDigit15"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "629:DAad_AbsDigit29"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "614:DAad_AbsDigit14"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "622:DAad_AbsDigit22"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "605:DAad_AbsDigit05"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "626:DAad_AbsDigit26"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "621:DAad_AbsDigit21"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "623:DAad_AbsDigit23"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "627:DAad_AbsDigit27"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "609:DAad_AbsDigit09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "755:TC_0010"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "702:TCADJ_2B09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "625:DAad_AbsDigit25"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "751:TC_0001"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "704:TCADJ_1309"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "758:TC_0040"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "624:DAad_AbsDigit24"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "602:DAad_AbsDigit02"
+                }
+            ], 
+            "name": "rule19", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "757:TC_003B"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "753:TC_0004"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "755:TC_0010"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "750:TC_0000"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "706:TCADJ_0909"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "762:TC_0303"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "710:TCADJ_0A19"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "761:TC_0202"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "760:TC_0101"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "752:TC_0002"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "712:TCADJ_0A49"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "758:TC_0040"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "711:TCADJ_0A29"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "708:TCADJ_0F09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "707:TCADJ_0D09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "759:TC_0080"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "756:TC_0020"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "713:TCADJ_0A89"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "709:TCADJ_0A09"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "751:TC_0001"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "754:TC_0008"
+                }
+            ], 
+            "name": "rule20", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }, 
+        {
+            "distance": "near", 
+            "tests": [
+                {
+                    "shape": "normal", 
+                    "name": "5096:ResetFeat960_bP"
+                }, 
+                {
+                    "shape": "normal", 
+                    "name": "5097:ResetFeat960_aP"
+                }
+            ], 
+            "name": "rule21", 
+            "enabled": true, 
+            "components": 1000, 
+            "type": "multivariate", 
+            "method": "emp"
+        }
+    ], 
+    "version": "1.0.0"
+}

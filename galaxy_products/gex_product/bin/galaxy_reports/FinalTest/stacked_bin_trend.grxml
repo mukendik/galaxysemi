@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport 
+	Version="0.6"
+	Type="AER"
+	GRT="../stacked_bin_trend.grt"  ID="StackedBinTrend" Title="Stacked Bin trend" Description="Stacked Bin trend (Failed bins stacked, Pass bins lines)...">
+
+	<dataset ID="DS1" label="Main dataset"  
+		stage="Final Test" 
+		binning="H" binning_visible="true" binning_readonly="false" 
+		time_period_visible="true" time_period_readonly="false" time_period_mandatory="false" 
+		time_period_label="Select here the time period"
+		time_period_from="new Date(new Date().getFullYear(),00,01)" 
+		time_period_to="new Date()"
+		time_period_defaultValueExpression="all_dates" 
+		>
+		<!-- time_period_defaultValueExpression can be : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+		<!-- Date objects in javascript example : new Date() returns today. new Date(2006, 00, 01) returns the 1st jan 2006 -->
+
+		<multifield 
+			label="Select here your split params"	
+			role="SPLIT" 
+			time="N" consolidated="Y"  facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="true"  multivalue="true"
+			field_mandatory="false" 
+			value_mandatory="false" value_editable="true"
+			>
+		</multifield>
+
+		<multifield 
+			label="Select here your aggregate " 
+			role="AGGREGATE" 
+			time="*" facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  
+			allow_full_range_choice="false" full_range="false"  
+			multivalue="true"
+			field_mandatory="true" 
+			value_readonly="false" value_mandatory="false" value_editable="true"
+			>
+		</multifield>
+	
+		<multifield 
+			label="Select here your serie params"
+			role="SERIE" 
+			time="*" facts="true" binning="Y"
+			filterable="true" visible="true"  autorepeat="false" orderable="false"  full_range="false"  
+			multivalue="true"
+			field_mandatory="true" field_readonly="true"
+			value_readonly="false" value_mandatory="false" value_editable="false"
+			default_field="Hbin#"
+			>
+		</multifield>
+		
+		<multifield 
+			label="Select here any other filters "
+			role="FILTER" 
+			time="*"  facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+			indent="false"
+			>
+			<field  default_field="Product ID" multivalue="true" field_mandatory="true" field_readonly="true" value_readonly="false" value_editable="true" value_mandatory="false"/>
+		</multifield>
+		
+		<multifield 
+			label="Order by "
+			role="ORDER" 
+			time="*"  facts="false"
+			filterable="false" visible="true"  autorepeat="true" orderable="true"  full_range="false"  multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+			indent="false" extra_fields="start_time|bin_volume|good_volume|volume|bin_yield|yield"
+			>
+		</multifield>
+		
+	</dataset>
+	
+	<options>
+		<option ID="P_TITLE" 		type="String" 	hideif="false" label="Report title" rawReplace="true" defaultvalue="'Final Test Stacked Bin Trend'" />
+		<option ID="P_SHOWCHARTS" 	type="Bool" 	hideif="false" label="Show charts" 				rawReplace="true" defaultvalue="true" />
+		<option ID="P_SHOWLEGEND" 	type="Enum" 	hideif="false" label="Show legend in charts" 	rawReplace="true" defaultvalue="'true'" 
+			codingvalues="true|false|auto"	displayvalues="true|false|auto"	/>
+		<option ID="P_SHOWTABLES" 					type="Bool" 	hideif="false" 	label="Show tables" 					rawReplace="true" 	defaultvalue="true" />
+		<option ID="P_SHOW_VOL_IN_CHART" 			type="Bool" 	hideif="false" 	label="Show vol in charts" 				rawReplace="true" 	defaultvalue="true" />
+		<option ID="P_SHOW_NULL_VOLUME" 			type="Bool" 	hideif="false" 	label="Show items when volume is null" 	rawReplace="true" 	defaultvalue="false" />
+		<option ID="P_MAX_NUM_AGGREGATES_IN_CHART"	type="Int" 		hideif="false" 	label="Max num. of agg. in charts" 		rawReplace="true" 	defaultvalue="30" 	minimum="1" singleStep="1"  />
+		<option ID="P_MAX_LABEL_SIZE"	type="Int" 	hideif="false" label="Max X label length" rawReplace="true" minimum="4" singleStep="1" defaultvalue="18" />
+		<option ID="P_CHART_LEFTAXIS_MIN" type="Float" 	hideif="false" label="Fail Yield min" rawReplace="true" defaultvalue="0" />
+		<option ID="P_CHART_LEFTAXIS_MAX" type="Float" 	hideif="false" label="Fail Yield max" rawReplace="true" defaultvalue="20" />
+		<option ID="P_CHART_RIGHTAXIS_MIN" type="Float" hideif="false" label="Pass Yield min" rawReplace="true" defaultvalue="90" />
+		<option ID="P_CHART_RIGHTAXIS_MAX" type="Float" hideif="false" label="Pass Yield max" rawReplace="true" defaultvalue="100" />
+		<option ID="P_TOP_N_SERIE" 					type="Int" 		hideif="false" 	label="Top N Fail Bins" 	rawReplace="true" 	defaultvalue="10" minimum="0"/>
+		<option ID="P_YIELD" 		type="String"	hideif="true" 	label="Yield"		rawReplace="true"		defaultvalue="'$FBinYield'" />
+		<option ID="P_VOLUME" 		type="String"	hideif="true" 	label="Vol"			rawReplace="true"		defaultvalue="'$FBinVolume'" />
+		<option ID="P_SUMMARY" 		type="String" 	hideif="true"	label="Summary"		rawReplace="true"		defaultvalue="'parts'" />
+	</options>
+
+</GalaxyReport>

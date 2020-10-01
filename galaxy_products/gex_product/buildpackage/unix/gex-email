@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source `dirname $0`/bin/common.sh
+run gex-email $*
+
+exit $?
+

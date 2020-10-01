@@ -1,0 +1,24 @@
+OTI ,,FETTEST/ EAGLE
+Enabled,Family,Tests name
+1,G-D-S (Short),GDS sh
+1,GS Short,GS sh
+1,DS Short,DS sh
+1,Gate (Open),G-open
+1,L2/4 open,L2/4 open
+1,ISO (Short),ISO sh
+1,Real Rg,Rg
+1,S-open,Ass'y Rejects
+1,TR,TR
+1,SPU,SPU
+1,UIS,UIS
+1,Vision Rej,Vision Rej
+1,Unknown,Unknown
+1,Purge units,Purge units
+1,Reject units,Handler Loss
+1,Delta Rds1,D_RDSON
+1,V_Droop,VDRP(VD)
+1,V_Collapse,VCOL(VC)
+1,UIS_Low,UIS_LOW
+1,Real Rg,Rg_Stat
+1,G-D-S (Short)2,GDS sh2
+1,S-Open2,S-Open2

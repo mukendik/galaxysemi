@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/g-trigger">
+        <file alias="gtrigger-rh">html/g-trigger-history.htm</file>
+        <file alias="gtrigger-icon">gtrigger.png</file>
+    </qresource>
+</RCC>

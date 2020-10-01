@@ -1,0 +1,16 @@
+{
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n# \n# http://www.rstudio.com/shiny/\n#\n\nlibrary(shiny)\nlibrary(DBI)\nlibrary(RMySQL)\n# library(knitr)\n\n#con <- dbConnect(MySQL(), user=\"root\", password=\"root\", dbname=\"gexdb_3390\")\n\ncat(\"Server: current DB exception: \", length( dbGetException(con) ), \"\\n\")\n\n#res <- dbSendQuery(con, \"select * from wt_ptest_results where splitlot_id=1011000012 and ptest_info_id=1\")\n\n# \n\nbins <- 40\n\nshinyServer(function(input, output) \n{\n  \n  # output\n  #output$uppercase <- renderText({\"qsdfqs\"})\n  output$distPlot <- renderPlot({\n    cat(\"renderPlot for test input$dataset\", input$dataset, \"\\n\")\n  \n    #\n    index_of_testname<-match(input$dataset, test_infos[,2])\n    cat(\"Index of \", input$dataset, \"=\",index_of_testname, \"\\n\" )\n    query<-paste(\"select value from wt_ptest_results where splitlot_id=1011000012 and ptest_info_id=\", index_of_testname)\n    res <- dbSendQuery(con, query)\n    x<-NULL\n    x <- fetch(res, n=-1) # in datasamples: 800 test results\n    cat (\"Fetched: \", dbGetRowCount(res), \"\\n\")\n    cat(\"DB exception: \", length( dbGetException(con) ), \"\\n\")\n    # dbClearResult(res) # ?\n    cat(\"Retrieved: \", length(x[,1]), \" testresults\\n\")\n    m<-mean(x[,1])\n    cat(\"mean\", m, \"\\n\")\n    #cat(\"dim x\", dim(x), \"\\n\")\n    #cat(\"head x\", head(x[,1]), \"\\n\")\n    \n    #output$dist<-x\n    \n    # generate bins based on input$bins from ui.R\n    #x    <- faithful[, 2] \n    \n    #bins <- seq(min(x), max(x), length.out = input$bins + 1)\n    \n    \n    if (input$charttype==\"histogram\")\n    {\n      # draw the histogram with the specified number of bins\n      hist(x[,1], breaks=bins, col='green', border = 'white', freq=FALSE, \n           main = input$dataset,\n           xlab=\"Test results\", ylab=\"Distribution (%)\")\n      abline(NULL, 0, v=m, col=\"red\")\n    }\n    else\n    {\n      #plot( seq(length=dbGetRowCount(res), from=0, by=1), x[,1])\n      plot(seq(length=length(x[,1]), from=0, by=1), x[,1], \n           main=paste(\"Test \", input$dataset),\n           type=\"l\", col=\"green\",  ylab=\"Test results\", \n           xlab=paste(\"Data count (\", length(x[,1]), \" samples found)\" ) )\n      abline(m, 0, col=\"red\")\n    }\n    \n  })\n})\n\n#dbDisconnect(con)\n#print(\"Server: disconnected.\")\n",
+    "created" : 1412158696098.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4033762302",
+    "id" : "2FD339D7",
+    "lastKnownWriteTime" : 1412244147,
+    "path" : "G:/shiny_poc/shiny_poc/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

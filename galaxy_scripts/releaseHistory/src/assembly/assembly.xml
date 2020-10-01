@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory>${project.artifactId}</outputDirectory>
+            <excludes>
+                <exclude>target/**</exclude>
+                <exclude>pom.xml</exclude>
+            </excludes>
+        </fileSet>  
+    </fileSets>
+</assembly>

@@ -1,0 +1,23 @@
+<assembly>
+    <id>assembly</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory>${basepath}</outputDirectory>
+            <includes>
+                <include>*.pro</include>
+                <include>*.h</include>
+                <include>*.cpp</include>
+                <include>*.ui</include>
+                <include>*.qrc</include>
+                <!--<include>install/sqlite/gs_tdr_b2.sql</include>-->
+            </includes>
+            <!--<include>galaxy_products/gex_product/plugins/gexdb_plugin_galaxy/install/sqlite/gs_tdr_b2.sql</include>-->
+        </fileSet>  
+    </fileSets>
+</assembly>

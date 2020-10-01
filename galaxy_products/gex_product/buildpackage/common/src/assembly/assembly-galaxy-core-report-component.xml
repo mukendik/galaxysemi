@@ -1,0 +1,88 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>assembly-core-report-dist</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <!-- core component -->
+        <!-- galaxy_reports -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>galaxy_reports/bin_pareto.grt</include>
+                <include>galaxy_reports/bin_pareto_intermediate.grt</include>
+                <include>galaxy_reports/bin_trend.grt</include>
+                <include>galaxy_reports/product_trend.grt</include>
+                <include>galaxy_reports/products_bin_details.grt</include>
+                <include>galaxy_reports/products_details.grt</include>
+                <include>galaxy_reports/stacked_bin_trend.grt</include>
+                <include>galaxy_reports/stacked_bin_trend_intermediate.grt</include>
+                <include>galaxy_reports/yield_trend.grt</include>
+                <include>galaxy_reports/yield_trend_intermediate.grt</include>
+                <include>galaxy_reports/yield_trend_wafer.grt</include>
+            </includes>
+        </fileSet>
+        <!-- galaxy_reports/WaferSort -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>galaxy_reports/WaferSort/bin_pareto_intermediate.grxml</include>
+                <include>galaxy_reports/WaferSort/yield_trend_intermediate.grxml</include>
+                <include>galaxy_reports/WaferSort/bin_pareto.grxml</include>
+                <include>galaxy_reports/WaferSort/bin_trend.grxml</include>
+                <include>galaxy_reports/WaferSort/product_trend.grxml</include>
+                <include>galaxy_reports/WaferSort/products_bin_details.grxml</include>
+                <include>galaxy_reports/WaferSort/products_details.grxml</include>
+                <include>galaxy_reports/WaferSort/stacked_bin_trend.grxml</include>
+                <include>galaxy_reports/WaferSort/stacked_bin_trend_intermediate.grxml</include>
+                <include>galaxy_reports/WaferSort/yield_trend.grxml</include>
+                <include>galaxy_reports/WaferSort/yield_trend_wafer.grxml</include>
+                <include>galaxy_reports/WaferSort/icon.png</include>
+            </includes>
+        </fileSet>
+        <!-- galaxy_reports/FinalTest -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>galaxy_reports/FinalTest/bin_pareto_intermediate.grxml</include>
+                <include>galaxy_reports/FinalTest/yield_trend_intermediate.grxml</include>
+                <include>galaxy_reports/FinalTest/bin_pareto.grxml</include>
+                <include>galaxy_reports/FinalTest/bin_trend.grxml</include>
+                <include>galaxy_reports/FinalTest/product_trend.grxml</include>
+                <include>galaxy_reports/FinalTest/products_bin_details.grxml</include>
+                <include>galaxy_reports/FinalTest/products_details.grxml</include>
+                <include>galaxy_reports/FinalTest/stacked_bin_trend.grxml</include>
+                <include>galaxy_reports/FinalTest/stacked_bin_trend_intermediate.grxml</include>
+                <include>galaxy_reports/FinalTest/yield_trend.grxml</include>
+                <include>galaxy_reports/FinalTest/icon.png</include>
+            </includes>
+        </fileSet>
+        <!-- galaxy_reports/Genealogy -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>galaxy_reports/Genealogy/genealogy_from_et_to_ft.grxml</include>
+                <include>galaxy_reports/Genealogy/genealogy_from_et_to_ws.grxml</include>
+                <include>galaxy_reports/Genealogy/icon.png</include>
+            </includes>
+        </fileSet>
+        <!-- galaxy_reports/AtoZ -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>galaxy_reports/AtoZ/icon.png</include>
+                <include>galaxy_reports/AtoZ/yield_bin_details.grt</include>
+                <include>galaxy_reports/AtoZ/yield_bin_details.grxml</include>
+                <include>galaxy_reports/AtoZ/yield_details.grt</include>
+                <include>galaxy_reports/AtoZ/yield_details.grxml</include>
+                <include>galaxy_reports/AtoZ/yield_trend.grt</include>
+                <include>galaxy_reports/AtoZ/yield_trend.grxml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

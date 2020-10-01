@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LicenseStatusDialogBase</class>
+ <widget class="QDialog" name="LicenseStatusDialogBase">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>694</width>
+    <height>625</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Galaxy VFEI Console debugger</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/gex_ls/images/resources/galaxy_icon.png</normaloff>:/gex_ls/images/resources/galaxy_icon.png</iconset>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <widget class="QGroupBox" name="GroupBox2">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>8</y>
+     <width>681</width>
+     <height>95</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Connect to:</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_1">
+    <property name="margin">
+     <number>8</number>
+    </property>
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="buttonConnect">
+      <property name="toolTip">
+       <string>Click this button to connect to PAT-Man</string>
+      </property>
+      <property name="text">
+       <string>Connect</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="TextLabelSocketPort">
+      <property name="text">
+       <string>Socket port:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="LineEditServerName">
+      <property name="toolTip">
+       <string>Specify the server name or IP address of a GEX-LM server</string>
+      </property>
+      <property name="text">
+       <string>localhost</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="TextLabelServerName">
+      <property name="text">
+       <string>Server name / IP:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="TextLabelLogo">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/gex_ls/images/resources/galaxy_logo.png</pixmap>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="LineEditSocketPort">
+      <property name="toolTip">
+       <string>Specify the socket port# to use</string>
+      </property>
+      <property name="text">
+       <string>4242</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="buttonDisconnect">
+      <property name="toolTip">
+       <string>Click this button to disconnect from GEX-LM server</string>
+      </property>
+      <property name="text">
+       <string>Disconnect</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>671</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="Debug">
+    <attribute name="title">
+     <string>Debug</string>
+    </attribute>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>311</width>
+       <height>351</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEditServer">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>50</y>
+       <width>311</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonSendCMD">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>15</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Send CMD</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextLabelSocketPort_2">
+     <property name="geometry">
+      <rect>
+       <x>485</x>
+       <y>10</y>
+       <width>85</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Server Reply</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonClearServer">
+     <property name="geometry">
+      <rect>
+       <x>575</x>
+       <y>15</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Clear</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>CMD-ready</string>
+    </attribute>
+    <widget class="QTextEdit" name="textEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>15</y>
+       <width>611</width>
+       <height>346</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;CMD/A=&amp;quot;JOB_CREATE&amp;quot; MID/A=&amp;quot;PAT-Man&amp;quot; MTY/A=&amp;quot;C&amp;quot; TID/U4=17 CAM_LOT/A=&amp;quot;12345&amp;quot; RCP_NME/A=&amp;quot;mobile-05&amp;quot; RCP_VER/A=&amp;quot;1&amp;quot; DATE/A=&amp;quot;20090101140021&amp;quot;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;CMD/A=&amp;quot;START&amp;quot; MID/A=&amp;quot;PATMAN_SW&amp;quot; MTY/A=&amp;quot;C&amp;quot; TID/U4=17 CAM_LOT/A=&amp;quot;12345&amp;quot; OCR_LOT/A=&amp;quot;M123456&amp;quot; OPERATION/A=&amp;quot;5782&amp;quot; WAFER_CNT/U2=5 WAF_LST/U2[5]=[01 02 11 12 21] RCP_NME/A=&amp;quot;mobile-05&amp;quot; RCP_VER/A=&amp;quot;1&amp;quot; DATE/A=&amp;quot;20090101140021&amp;quot;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;CMD/A=&amp;quot;ABORT&amp;quot; MID/A=&amp;quot;PATMAN_SW&amp;quot; MTY/A=&amp;quot;C&amp;quot; TID/U4=23 CAM_LOT/A=&amp;quot;12345&amp;quot; RCP_NME/A=&amp;quot;mobile-05&amp;quot; RCP_VER/A=&amp;quot;1&amp;quot; DATE/A=&amp;quot;20090101140087&amp;quot;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;CMD/A=&amp;quot;STATUS&amp;quot; MID/A=&amp;quot;PATMAN_SW&amp;quot; MTY/A=&amp;quot;C&amp;quot; TID/U4=35 DATE/A=&amp;quot;20090101140099&amp;quot;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="GroupBoxRunScript">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>104</y>
+     <width>681</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Execute Script:</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <property name="margin">
+     <number>8</number>
+    </property>
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <item row="1" column="4">
+     <widget class="QLabel" name="TextLabelLogo_2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>:/gex_ls/images/resources/galaxy_logo.png</pixmap>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="LineEditScriptFile">
+      <property name="toolTip">
+       <string>Specify the socket port# to use</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="buttonRunScript">
+      <property name="toolTip">
+       <string>Load script file to run...</string>
+      </property>
+      <property name="text">
+       <string>Load...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="TextLabelSocketPort_3">
+      <property name="text">
+       <string>Script file</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

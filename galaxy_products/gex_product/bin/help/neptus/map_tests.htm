@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>Map / Change Test Numbers</title>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../../html/images/assistant.png" width="120" height="114" ></a>Map 
+      / Change 
+      Test Numbers<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p align="left">Quantix Examinator makes it very easy to map any test 
+      number to a new index! It alsp allows to map test names to new names! This is very convenient when you have to compare 
+      data files created on different tester platforms with different test names 
+      and/or indexes. The process is the following:</p>
+      <ul>
+        <li>
+      <p align="left">Create a text file with your mapping table (see format
+      <a href="#Mapping file format">below</a>)</p>
+        </li>
+        <li>
+      <p align="left">Click the Examinator '<b>Data</b>' tab and double click any test file 
+      that must use your mapping table (multiple selections supported) to 
+      display the <b>Properties</b> page.</p>
+        </li>
+        <li>
+      <p align="left">By the <b>Map Tests</b> field, click the file browse icon
+      <b>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../images/open.png" width="15" height="13" ></a> </b>to 
+      select your mapping file</p>
+        </li>
+      </ul>
+      <h1 align="left"><a name="Mapping file format">Mapping file format</a>: 
+      Test number</h1>
+      <p align="left">Your tests numbers mapping table consists of two columns 
+      of numbers with a comma separator. The first column includes a keyword 
+      (action to take), then parameters:</p>
+      <p align="left">Each line mapping a test number is as following:</p>
+      <blockquote>
+      <p align="left"><font face="Courier New"><b>Test#, &lt;Old_Test_Number&gt;&nbsp; 
+      =&nbsp;&nbsp; 
+      &lt;New_Test_Number&gt;</b></font></p>
+      </blockquote>
+      <p align="left">E.g.:</p>
+      <blockquote>
+      <p align="left"># Map Tests 1000 to 1002 to higher indexes!<br>
+      Test#,
+      1000 = 1200<br>
+      Test#,
+      1001 = 2200<br>
+      Test#,
+      1002 = 3000</p>
+      </blockquote>
+      <p align="left"><b>Few hints:</b></p>
+      <ul>
+        <li>
+      <p align="left">Any line starting with the <b># </b>character is <b>
+      ignored</b></p>
+        </li>
+        <li>
+      <p align="left">Tests <b>not listed </b>in the first column (old test 
+      number) are <b>not mapped</b>, and therefore remain unchanged</p>
+        </li>
+        <li>
+      <p align="left">Tests mapped to a same new test (defined in the second&nbsp; 
+      column) are <b>merged</b>. It is better to do this only on tests with same 
+      test limits!</p>
+        </li>
+        <li>
+      <p align="left">Test numbers must be integers only (no pin map accepted. 
+      e.g.: 12.4 is NOT a valid test number)</p>
+        </li>
+        <li>
+      <p align="left">The mapping file must be saved in ASCII format, file 
+      extension should be .txt or .csv so to be visible under the Examinator 
+      environment.</p>
+        </li>
+      </ul>
+      <h1 align="left">Mapping Test Name</h1>
+      <p align="left">Each line mapping a test name is as following:</p>
+      <blockquote>
+      <p align="left"><font face="Courier New"><b>TestName, &lt;Old_Test_Name&gt;&nbsp; 
+      =&nbsp;&nbsp; 
+      &lt;New_Test_Name&gt;</b></font></p>
+      </blockquote>
+      <p align="left">E.g.:</p>
+      <blockquote>
+      <p align="left"># Map Tests names<br>
+      TestName, continuity_old1 = New_Continuity_Name_1<br>
+      TestName, continuity_old2 = New_Continuity_Name_2<br>
+&nbsp;</p>
+      </blockquote>
+      <p align="left">Note: mapping test names is very convenient for test 
+      programs that include typos and need test names to be fixed.</p>
+      <p align="left">&nbsp;</p>
+      <h1 align="left"><b>Typical pitfall</b></h1>
+      <p align="left">It may happen that while you've used the mapping feature 
+      then compare files, you don't end-up with the expected result and 
+      Examinator doesn't compare your tests. You'll wonder why Examinator failed 
+      to compare the tests while they now have the same test number? The answer 
+      is that Examinator has an option you can toggle that either compares tests 
+      based on the test number only...or also checks if test names are matching! 
+      So this is a typical pitfall to avoid: if you know tests to compare may not have the 
+      same test name, then force Examinator to compare tests based on the test 
+      number only. The option is available from the Examinator 'Options' tab, 
+      section 'Data processing options / Handling duplicated test numbers'.</p>
+      <p align="left">&nbsp;</p>
+      <p align="left">Example of Mapping file:</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" bgcolor="#FFFFCC">
+        <tr>
+          <td width="100%">
+          #################################################################<br>
+          # Mapping Test Numbers<br>
+          #<br>
+          # o Any line starting with the '#' is a comment line and is ignored.<br>
+          # o File format consists of one line per test to map.<br>
+          # o If multiple tests are mapped to the same index<br>
+          # ...then data are merged under a single Test number!<br>
+          #################################################################<br>
+          # List of few tests to map...with 3 tests to merge into Test 5000.<br>
+          # Test#, &lt;Original_Test_Index&gt; = &lt;New_Test_Index&gt;<br>
+          #<br>
+          Test#,
+          1000 = 5000<br>
+          Test#,
+          1001 = 5000<br>
+          Test#,
+          1002 =&nbsp; 5000<br>
+          Test#,
+          1003 = 5001<br>
+          Test#,
+          1004 = 5007</td>
+        </tr>
+      </table>
+      <p align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">&nbsp;
+      You have other questions? <a href="#_gex_wizard_assistant.htm">Click here!</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

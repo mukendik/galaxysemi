@@ -1,0 +1,130 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="150" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>Predefined identifiers<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang2.htm">Comments</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="lang3.htm">Numbers</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang4.htm">Literals</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang5.htm">Var
+      and const</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang6.htm">Operators</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang7.htm">Statements
+      and&nbsp; blocks</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang8.htm">Program
+      flow</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang9.htm">Trace
+      facility</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang10.htm">Exception
+      handling</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang11.htm">Functions</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang12.htm">Predefined
+      identifiers</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">&nbsp;
+      <pre>&nbsp;</pre>
+      <table width="646">
+        <tr vAlign="top" bgColor="#0044aa">
+          <td width="154"><font color="#ffffff"><b>Identifier</b></font></td>
+          <td bgColor="#0034aa" width="68"><font color="#ffffff"><b>Scope</b></font></td>
+          <td width="178"><font color="#ffffff"><b>Value</b></font></td>
+          <td bgColor="#0034aa" width="220"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr vAlign="top" bgColor="#c0e0ff">
+          <td width="154">const true</td>
+          <td bgColor="#b0d0ff" width="68">global</td>
+          <td width="178">1</td>
+          <td bgColor="#b0d0ff" width="220">&nbsp;</td>
+        </tr>
+        <tr vAlign="top" bgColor="#e0f0ff">
+          <td width="154">const false</td>
+          <td bgColor="#d0e0ff" width="68">global</td>
+          <td width="178">0</td>
+          <td bgColor="#d0e0ff" width="220">&nbsp;</td>
+        </tr>
+        <tr vAlign="top" bgColor="#c0e0ff">
+          <td width="154">const PATHSEPARATOR</td>
+          <td bgColor="#b0d0ff" width="68">global</td>
+          <td width="178">/ or \</td>
+          <td bgColor="#b0d0ff" width="220">Depending on operating system</td>
+        </tr>
+        <tr vAlign="top" bgColor="#e0f0ff">
+          <td width="154">const MAXLONG</td>
+          <td bgColor="#d0e0ff" width="68">global</td>
+          <td width="178">2147483647</td>
+          <td bgColor="#d0e0ff" width="220">Useful for some library functions</td>
+        </tr>
+        <tr vAlign="top" bgColor="#c0e0ff">
+          <td width="154">const cslVersion</td>
+          <td bgColor="#b0d0ff" width="68">global</td>
+          <td width="178">CSL kernel version</td>
+          <td bgColor="#b0d0ff" width="220">&nbsp;</td>
+        </tr>
+        <tr vAlign="top" bgColor="#c0e0ff">
+          <td width="154">const cslBuilt</td>
+          <td bgColor="#b0d0ff" width="68">global</td>
+          <td width="178">Date and time of kernel build</td>
+          <td bgColor="#b0d0ff" width="220">&nbsp;</td>
+        </tr>
+        <tr vAlign="top" bgColor="#e0f0ff">
+          <td width="154">static const cslFileName</td>
+          <td bgColor="#d0e0ff" width="68">global</td>
+          <td width="178">file/module name</td>
+          <td bgColor="#d0e0ff" width="220">&nbsp;</td>
+        </tr>
+        <tr vAlign="top" bgColor="#c0e0ff">
+          <td width="154">const argCount</td>
+          <td bgColor="#b0d0ff" width="68">local</td>
+          <td width="178"># of arguments passed to function</td>
+          <td bgColor="#b0d0ff" width="220">Only present in functions with
+            optional parameters</td>
+        </tr>
+        <tr vAlign="top" bgColor="#e0f0ff">
+          <td width="154">const cslFunction</td>
+          <td bgColor="#d0e0ff" width="68">local</td>
+          <td width="178">function name</td>
+          <td bgColor="#d0e0ff" width="220">Only present in functions</td>
+        </tr>
+        <tr vAlign="top" bgColor="#c0e0ff">
+          <td noWrap width="154">const mainArgVals[]</td>
+          <td bgColor="#b0d0ff" width="68">global</td>
+          <td width="178">arguments on command line</td>
+          <td bgColor="#b0d0ff" width="220">Only present when run by csl
+            executive</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

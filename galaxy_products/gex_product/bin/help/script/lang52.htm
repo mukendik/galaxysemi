@@ -1,0 +1,115 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="150" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>Initialization<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang2.htm">Comments</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="lang3.htm">Numbers</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang4.htm">Literals</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang5.htm">Var
+      and const<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang51.htm">Arrays<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang52.htm">Initialization</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang53.htm">Static
+      and extern<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang54.htm">Dynamic
+      reallocation</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang6.htm">Operators</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang7.htm">Statements
+      and&nbsp; blocks</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang8.htm">Program
+      flow</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang9.htm">Trace
+      facility</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang10.htm">Exception
+      handling</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang11.htm">Functions</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang12.htm">Predefined
+      identifiers</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <p><i>var</i>'s may be optionally initialized but if initialization is
+      omitted, they are initialized to an empty string:</p>
+      <pre>var x; // equivalent to var x = '';
+var yMax = 12, message = 'hello Quantix world!';
+</pre>
+      <p><i>const</i> initialization is mandatory (except for externals).</p>
+      <p>When initializing an array with a single value, all elements are set to
+      that value:</p>
+      <pre>var a1[100]; // all elements are initialized to ''
+const a2[12] = 100; // all elements are set to 100
+</pre>
+      <p>Array elements may be initialized similar as in C/C++ by supplying the
+      values in braces. There is a difference<br>
+      between global array initialization and array initialization within
+      functions. The latter is dynamic while global<br>
+      is static.</p>
+      <p>Example:</p>
+      <pre>var adr[4][2] = {
+  { 1, 'fred' },
+  { 2, &quot;john&quot; },
+  { 3 }
+};
+</pre>
+      <p>If adr is a global array it's size is truly 4 by 2 as noted by the
+      indexes. Not explicitly initialized elements are
+      set to an empty string so <b> adr</b> will in fact evaluate to:</p>
+      <pre>    1    'fred'
+    2    'john'
+    3    ''
+    ''   ''
+</pre>
+      <p>However if <b>adr</b> were a local <b> var</b> (i.e. declared within a function) the
+      indexes are irrelevant; the number of
+      dimensions and their size is determined by the data itself. The variable 
+      would now evaluate to
+      an array of 3 rows and 2 columns in
+      this case:</p>
+      <pre>    1    'fred'
+    2    'john'
+    3    ''
+</pre>
+      <p>Since the array indexes are irrelevant for  locally initialized arrays, you
+      may omit them all together:</p>
+      <pre>var adr = {
+ { 1, 'fred' },
+ { 2, 'john' },
+ { 3, }
+};</pre>
+      <pre></pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

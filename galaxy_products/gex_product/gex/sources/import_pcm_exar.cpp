@@ -1,0 +1,987 @@
+//////////////////////////////////////////////////////////////////////
+// import_pcm_exar.cpp: Convert a PcmExar file to STDF V4.0
+//////////////////////////////////////////////////////////////////////
+
+#include "gqtl_global.h"
+#include <qmath.h>
+#include <time.h>
+
+#ifdef _WIN32
+#include "windows.h"		// For 'GetWindowsDirectoryA' declaration
+#endif
+
+#include <qfileinfo.h>
+#include <qmap.h>
+#include <qprogressbar.h>
+#include <qapplication.h>
+#include <qlabel.h>
+
+#include "engine.h"
+#include "import_pcm_exar.h"
+#include "import_constants.h"
+
+// File format:
+//PRD,LOT,DATE,PROCESS,WAFERID,SITE ID,18N 20/20 Vt0 (V)        ,18N 20/.18 Vt0 (V)       ,18N 20/.18 Idsat uA/um   ,
+//COXR86V38-N,SEA940024.1,09-Nov-2009,5-Q1818-16A-1833ZZ-1U0-00D, 1,6 , 3.627e-01, 4.554e-01, 6.047e+02, 4.500e+00, 3
+//COXR86V38-N,SEA940024.1,09-Nov-2009,5-Q1818-16A-1833ZZ-1U0-00D, 1,9 , 3.618e-01, 4.530e-01, 6.168e+02, 4.500e+00, 3
+//COXR86V38-N,SEA940024.1,09-Nov-2009,5-Q1818-16A-1833ZZ-1U0-00D, 1,1 , 3.581e-01, 4.684e-01, 5.858e+02, 4.500e+00, 3
+//
+
+
+
+// main.cpp
+extern QLabel			*GexScriptStatusLabel;	// Handle to script status text in status bar
+extern QProgressBar	*	GexProgressBar;		// Handle to progress bar in status bar
+
+#define TEST_PASSFLAG_UNKNOWN 0
+#define TEST_PASSFLAG_PASS 1
+#define TEST_PASSFLAG_FAIL 2
+
+
+#define BIT0			0x01
+#define BIT1			0x02
+#define BIT2			0x04
+#define BIT3			0x08
+#define BIT4			0x10
+#define BIT5			0x20
+#define BIT6			0x40
+#define BIT7			0x80
+
+CGPcmExarParameter::CGPcmExarParameter()
+{	
+	m_nNumber = -1;
+	m_nScale = 0;
+	m_fLowLimit = m_fHighLimit = 0;
+	m_bValidLowLimit = m_bValidHighLimit = m_bStaticHeaderWritten = false;
+};
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+CGPcmExartoSTDF::CGPcmExartoSTDF()
+{
+	// Default: PcmExar parameter list on disk includes all known PcmExar parameters...
+	m_bNewPcmExarParameterFound = false;
+	m_lStartTime = 0;
+	m_pParameterList = NULL;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+CGPcmExartoSTDF::~CGPcmExartoSTDF()
+{
+	if(m_pParameterList)
+		delete [] m_pParameterList;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Get Error
+//////////////////////////////////////////////////////////////////////
+QString CGPcmExartoSTDF::GetLastError()
+{
+	m_strLastError = "Import Exar - PCM data : ";
+
+	switch(m_iLastError)
+	{
+		default:
+		case errNoError:
+			m_strLastError += "No Error";
+			break;
+		case errOpenFail:
+			m_strLastError += "Failed to open file";
+			break;
+		case errInvalidFormat:
+			m_strLastError += "Invalid file format";
+			break;
+		case errWriteSTDF:
+			m_strLastError += "Failed creating temporary file. Folder permission issue?";
+			break;	
+		case errLicenceExpired:
+			m_strLastError += "License has expired or Data file out of date...";
+			break;	
+	}
+	// Return Error Message
+	return m_strLastError;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Load PcmExar Parameter table from DISK
+//////////////////////////////////////////////////////////////////////
+void CGPcmExartoSTDF::LoadParameterIndexTable(void)
+{
+	QString	strPcmExarTableFile;
+	QString	strString;
+
+    strPcmExarTableFile  = GS::Gex::Engine::GetInstance().Get("UserFolder").toString();
+	strPcmExarTableFile += GEX_PCM_PARAMETERS;
+
+	// Open PcmExar Parameter table file
+	QFile f( strPcmExarTableFile );
+    if(!f.open( QIODevice::ReadOnly ))
+		return;
+
+	// Assign file I/O stream
+	QTextStream hPcmExarTableFile(&f);
+
+	// Skip comment or empty lines
+	do
+	{
+	  strString = hPcmExarTableFile.readLine();
+	}
+    while((strString.indexOf("----------------------") < 0) && (!hPcmExarTableFile.atEnd()));
+
+	// Read lines
+	m_pFullPcmExarParametersList.clear();
+	strString = hPcmExarTableFile.readLine();
+	while (strString.isNull() == false)
+	{
+		// Save Parameter name in list
+		m_pFullPcmExarParametersList.append(strString);
+		// Read next line
+		strString = hPcmExarTableFile.readLine();
+	};
+
+	// Close file
+	f.close();
+}
+
+//////////////////////////////////////////////////////////////////////
+// Save PcmExar Parameter table to DISK
+//////////////////////////////////////////////////////////////////////
+void CGPcmExartoSTDF::DumpParameterIndexTable(void)
+{
+	QString		strPcmExarTableFile;
+
+    strPcmExarTableFile  = GS::Gex::Engine::GetInstance().Get("UserFolder").toString();
+	strPcmExarTableFile += GEX_PCM_PARAMETERS;
+
+	// Open PcmExar Parameter table file
+	QFile f( strPcmExarTableFile );
+    if(!f.open( QIODevice::WriteOnly ))
+		return;
+
+	// Assign file I/O stream
+	QTextStream hPcmExarTableFile(&f);
+
+	// First few lines are comments:
+	hPcmExarTableFile << "############################################################" << endl;
+	hPcmExarTableFile << "# DO NOT EDIT THIS FILE!" << endl;
+    hPcmExarTableFile << "# Quantix Examinator: PCM Parameters detected" << endl;
+	hPcmExarTableFile << "# www.mentor.com" << endl;
+    hPcmExarTableFile << "# Quantix Examinator reads and writes into this file..." << endl;
+	hPcmExarTableFile << "-----------------------------------------------------------" << endl;
+
+	// Write lines
+	// m_pFullPcmExarParametersList.sort();
+	for(int nIndex = 0; nIndex < m_pFullPcmExarParametersList.count(); nIndex++)
+	{
+		// Write line
+		hPcmExarTableFile << m_pFullPcmExarParametersList[nIndex] << endl;
+	};
+
+	// Close file
+	f.close();
+}
+
+//////////////////////////////////////////////////////////////////////
+// If Examinator doesn't have this PcmExar parameter in his dictionnary, have it added.
+//////////////////////////////////////////////////////////////////////
+int CGPcmExartoSTDF::UpdateParameterIndexTable(QString strParamName)
+{
+	int iTestNumber;
+
+	// Check if the table is empty...if so, load it from disk first!
+	if(m_pFullPcmExarParametersList.isEmpty() == true)
+	{
+		// Load PcmExar parameter table from disk...
+		LoadParameterIndexTable();
+	}
+	
+	// Check if Parameter name already in table...if not, add it to the list
+	// the new full list will be dumped to the disk at the end.
+
+    iTestNumber = m_pFullPcmExarParametersList.indexOf(strParamName);
+	if(iTestNumber < 0)
+	{
+		// Update list
+		m_pFullPcmExarParametersList.append(strParamName);
+        iTestNumber = m_pFullPcmExarParametersList.indexOf(strParamName);
+
+		// Set flag to force the current PcmExar table to be updated on disk
+		m_bNewPcmExarParameterFound = true;
+	}
+
+	return iTestNumber;
+}
+
+
+//////////////////////////////////////////////////////////////////////
+// Save PCM parameter High or Low Limit result...
+//////////////////////////////////////////////////////////////////////
+void CGPcmExartoSTDF::SaveParameter(int iIndex,QString strName,QString strLowLimit, QString strHighLimit)
+{
+	if(iIndex > m_iTotalParameters)
+		return;
+
+	if(strName.isEmpty())
+		return;	// Ignore empty entry!
+
+	CGPcmExarParameter *ptParam = &m_pParameterList[iIndex];
+
+	QString strTestName = strName;
+	QString strUnit;
+	// Find the unit at the end of the name
+	// 18N 20/.18 Vt0 (V)
+	// 18N 20/.18 Idsat uA/um
+	if(strTestName.indexOf("(") > 0)
+	{
+		strUnit = strTestName.section("(",strTestName.count("(")).section(")",0,0);
+		strTestName = strTestName.section("(",0,strTestName.count("(")-1);
+
+		ptParam->m_strUnit = strUnit;
+		NormalizeLimits(ptParam->m_strUnit, ptParam->m_nScale);
+	}
+	else
+	if(strTestName.indexOf(" ") > 0)
+	{
+		strUnit = strTestName.section(" ",strTestName.count(" "));
+
+		ptParam->m_strUnit = strUnit;
+		NormalizeLimits(ptParam->m_strUnit, ptParam->m_nScale);
+		strUnit = ptParam->m_strUnit;
+
+		// Check if it is a known unit
+		QString strKnownUnits = "|volt|ampere|ohm|farad|hertz|decibel|watt|second|kelvin|degree|siemens|coulomb";
+		strKnownUnits += "|volts|amperes|amp|amps|ohms|farads|hertzs|hz|hzs|decibels|db|dbs|watts|seconds|sec|secs|kelvins|degrees|deg|degs|coulombs";
+		strKnownUnits += "|v|a|o|f|w|s|k|c|";
+		if(strKnownUnits.indexOf("|"+strUnit.section("/",0,0).toLower()+"|") >= 0)
+			strTestName = strTestName.section(" ",0,strTestName.count(" ")-1);
+		else
+		{
+			// else undo
+			ptParam->m_strUnit = "";
+			ptParam->m_nScale = 0;
+		}
+	}
+
+
+	ptParam->m_nNumber = UpdateParameterIndexTable(strTestName);		// Update Parameter master list if needed.
+
+	ptParam->m_strName = strTestName;
+
+	ptParam->m_bValidLowLimit = false;
+	ptParam->m_bValidHighLimit = false;
+	
+	// If all is "0" then no limit
+	if((strLowLimit == "0")
+	&& (strHighLimit == "0"))
+		return;
+
+	if((strLowLimit != "0")
+	|| (strHighLimit != "0"))
+	{
+		// if have one or two Control limits	
+		// Save Control limit
+		ptParam->m_fLowLimit = strLowLimit.toFloat(&ptParam->m_bValidLowLimit) * GS_POW(10.0,ptParam->m_nScale);
+		ptParam->m_fHighLimit = strHighLimit.toFloat(&ptParam->m_bValidHighLimit) * GS_POW(10.0,ptParam->m_nScale);
+	}
+
+
+}
+
+//////////////////////////////////////////////////////////////////////
+// Normalize test limits when writing into PTR.
+//////////////////////////////////////////////////////////////////////
+void CGPcmExartoSTDF::NormalizeLimits(QString &strUnit, int &nScale)
+{
+	nScale = 0;
+	if(strUnit.length() <= 1)
+	{
+		// units too short to include a prefix, then keep it 'as-is'
+		return;
+	}
+
+	QChar cPrefix = strUnit[0];
+	switch(cPrefix.toLatin1())
+	{
+		case 'm': // Milli
+			nScale = -3;
+			break;
+		case 'u': // Micro
+			nScale = -6;
+			break;
+		case 'n': // Nano
+			nScale = -9;
+			break;
+		case 'p': // Pico
+			nScale = -12;
+			break;
+		case 'f': // Fento
+			nScale = -15;
+			break;
+		case 'K': // Kilo
+			nScale = 3;
+			break;
+		case 'M': // Mega
+			nScale = 6;
+			break;
+		case 'G': // Giga
+			nScale = 9;
+			break;
+		case 'T': // Tera
+			nScale = 12;
+			break;
+	}
+	if(nScale)
+		strUnit = strUnit.mid(1);	// Take all characters after the prefix.
+}
+
+//////////////////////////////////////////////////////////////////////
+// Check if File is compatible with PcmExar format
+//////////////////////////////////////////////////////////////////////
+bool CGPcmExartoSTDF::IsCompatible(const char *szFileName)
+{
+	QString strString;
+	QString strSection;
+	QString strValue;
+	QString	strSite;
+
+	// Open hCsmFile file
+    QFile f( szFileName );
+    if(!f.open( QIODevice::ReadOnly ))
+	{
+		// Failed Opening ASL1000 file
+		return false;
+	}
+	QTextStream hPcmExarFile(&f);
+	QStringList lstSections;
+
+	// Check if first line is the correct PcmExar header...
+	//PRD,LOT,DATE,PROCESS,WAFERID,SITE ID
+
+	do
+		strString = hPcmExarFile.readLine().simplified();
+	while(!strString.isNull() && strString.isEmpty());
+
+	if(	!strString.startsWith("PRD,LOT,DATE,PROCESS,WAFERID,SITE ID", Qt::CaseInsensitive))
+	{
+		// Incorrect header...this is not a PcmExar file!
+		// Close file
+		f.close();
+		return false;
+	}
+	// Close file
+	f.close();
+
+	return true;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Read and Parse the PcmExar file
+//////////////////////////////////////////////////////////////////////
+bool CGPcmExartoSTDF::ReadPcmExarFile(const char *PcmExarFileName, const char *strFileNameSTDF)
+{
+	QString strString;
+	QString strSection;
+	QString strValue;
+	QString	strSite;
+
+	// Open PcmExar file
+	QFile f( PcmExarFileName );
+    if(!f.open( QIODevice::ReadOnly ))
+	{
+		// Failed Opening PcmExar file
+		m_iLastError = errOpenFail;
+		
+		// Convertion failed.
+		return false;
+	}
+	// Assign file I/O stream
+	QTextStream hPcmExarFile(&f);
+	QStringList lstSections;
+
+	//////////////////////////////////////////////////////////////////////
+	// For ProgressBar
+	iFileSize = f.size() + 1;
+
+	// Check if first line is the correct PcmExar header...
+	//PRD,LOT,DATE,PROCESS,WAFERID,SITE ID,18N 20/20 Vt0 (V)        ,18N 20/.18 Vt0 (V)       ,18N 20/.18 Idsat uA/um   ,
+	//COXR86V38-N,SEA940024.1,09-Nov-2009,5-Q1818-16A-1833ZZ-1U0-00D, 1,6 , 3.627e-01, 4.554e-01, 6.047e+02, 4.500e+00, 3
+
+	strString = ReadLine(hPcmExarFile).simplified();
+	if(	!strString.startsWith("PRD,LOT,DATE,PROCESS,WAFERID,SITE ID", Qt::CaseInsensitive))
+	{
+		// Incorrect header...this is not a PcmExar file!
+		m_iLastError = errInvalidFormat;
+		
+		// Convertion failed.
+		// Close file
+		f.close();
+		return false;
+	}
+
+	// Good header
+
+	//PRD,LOT,DATE,PROCESS,WAFERID,SITE ID,18N 20/20 Vt0 (V)        ,18N 20/.18 Vt0 (V)       ,18N 20/.18 Idsat uA/um   ,
+	//COXR86V38-N,SEA940024.1,09-Nov-2009,5-Q1818-16A-1833ZZ-1U0-00D, 1,6 , 3.627e-01, 4.554e-01, 6.047e+02, 4.500e+00, 3
+
+	// Read PcmExar information
+    lstSections = strString.split(",",QString::KeepEmptyParts);
+	m_iParametersOffset = 6;
+
+	// Count the number of parameters specified in the line
+	// Do not count first 4 fields
+	m_iTotalParameters=lstSections.count() - m_iParametersOffset;
+	// If no parameter specified...ignore!
+	if(m_iTotalParameters <= 0)
+	{
+		// Incorrect header...this is not a valid Exar - PCM file!
+		m_iLastError = errInvalidFormat;
+
+		// Convertion failed.
+		// Close file
+		f.close();
+		return false;
+	}
+
+	// Allocate the buffer to hold the N parameters & results.
+	m_pParameterList = new CGPcmExarParameter[m_iTotalParameters];	// List of parameters
+
+	// Extract the N column names
+	int iIndex;
+	for(iIndex=0;iIndex<m_iTotalParameters;iIndex++)
+	{
+		strSection = lstSections[iIndex+m_iParametersOffset].trimmed();	// Remove spaces
+		SaveParameter(iIndex,strSection,"","");
+	}
+
+    if(!WriteStdfFile(&hPcmExarFile,strFileNameSTDF))
+	{
+		QFile::remove(strFileNameSTDF);
+		// Close file
+		f.close();
+		return false;
+	}
+	
+	// Close file
+	f.close();
+	
+	// All PcmExar file read...check if need to update the PcmExar Parameter list on disk?
+	if(m_bNewPcmExarParameterFound == true)
+		DumpParameterIndexTable();
+
+	// Success parsing PcmExar file
+	return true;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Create STDF file from PcmExar data parsed
+//////////////////////////////////////////////////////////////////////
+bool CGPcmExartoSTDF::WriteStdfFile(QTextStream *hPcmExarFile,const char *strFileNameSTDF)
+{
+	// now generate the STDF file...
+    GS::StdLib::Stdf StdfFile;
+    GS::StdLib::StdfRecordReadInfo RecordReadInfo;
+    if(StdfFile.Open((char*)strFileNameSTDF,STDF_WRITE) != GS::StdLib::Stdf::NoError)
+	{
+		// Failed importing PcmExar file into STDF database
+		m_iLastError = errWriteSTDF;
+		
+		// Convertion failed.
+		return false;
+	}
+
+	// Read the first line result to have Lot and Product information
+	QString		strString;
+	strString = ReadLine(*hPcmExarFile);
+
+    QStringList lstSections = strString.split(",",QString::KeepEmptyParts);
+	if(lstSections.count() <= m_iParametersOffset)
+	{
+		// Incorrect header...this is not a valid Exar - PCM file!
+		m_iLastError = errInvalidFormat;
+
+		// Convertion failed.
+		return false;
+	}
+
+	//PRD,LOT,DATE,PROCESS,WAFERID,SITE ID,18N 20/20 Vt0 (V)        ,18N 20/.18 Vt0 (V)       ,18N 20/.18 Idsat uA/um   ,
+	//COXR86V38-N,SEA940024.1,09-Nov-2009,5-Q1818-16A-1833ZZ-1U0-00D, 1,6 , 3.627e-01, 4.554e-01, 6.047e+02, 4.500e+00, 3
+	QString strDate;
+	m_strProductId = lstSections[0].trimmed();
+	m_strLotId = lstSections[1].trimmed();
+	strDate = lstSections[2].trimmed();
+	m_strProcessId = lstSections[3].trimmed();
+	m_strWaferId = lstSections[4].trimmed();
+
+	// Extract TimeStamp, convert to UINT (nbr of seconds since 1-1-1970)
+	int iDay=1,iMonth=1,iYear=1970;
+	iDay = strDate.section("-",0,0).toInt();	// First field is Day
+	iYear = strDate.section('-',2,2).toInt();	// Last field is Year
+	strDate = strDate.section('-',1,1);		// Second field is Month
+	if(strDate.startsWith("Jan", Qt::CaseInsensitive))
+		iMonth=1;
+	if(strDate.startsWith("Fev", Qt::CaseInsensitive))
+		iMonth=2;
+	if(strDate.startsWith("Mar", Qt::CaseInsensitive))
+		iMonth=3;
+	if(strDate.startsWith("Apr", Qt::CaseInsensitive))
+		iMonth=4;
+	if(strDate.startsWith("May", Qt::CaseInsensitive))
+		iMonth=5;
+	if(strDate.startsWith("Jun", Qt::CaseInsensitive))
+		iMonth=6;
+	if(strDate.startsWith("Jul", Qt::CaseInsensitive))
+		iMonth=7;
+	if(strDate.startsWith("Aug", Qt::CaseInsensitive))
+		iMonth=8;
+	if(strDate.startsWith("Sep", Qt::CaseInsensitive))
+		iMonth=9;
+	if(strDate.startsWith("Oct", Qt::CaseInsensitive))
+		iMonth=10;
+	if(strDate.startsWith("Nov", Qt::CaseInsensitive))
+		iMonth=11;
+	if(strDate.startsWith("Dec", Qt::CaseInsensitive))
+		iMonth=12;
+
+	QDate clDate(iYear,iMonth,iDay);
+	QDateTime clDateTime(clDate);
+	clDateTime.setTimeSpec(Qt::UTC);
+	m_lStartTime = clDateTime.toTime_t();
+
+	// Write FAR
+	RecordReadInfo.iRecordType = 0;
+	RecordReadInfo.iRecordSubType = 10;
+	StdfFile.WriteHeader(&RecordReadInfo);
+	StdfFile.WriteByte(1);					// SUN CPU type
+	StdfFile.WriteByte(4);					// STDF V4
+	StdfFile.WriteRecord();
+
+	if(m_lStartTime <= 0)
+		m_lStartTime = QDateTime::currentDateTime().toTime_t();
+
+	// Write MIR
+	RecordReadInfo.iRecordType = 1;
+	RecordReadInfo.iRecordSubType = 10;
+	StdfFile.WriteHeader(&RecordReadInfo);
+	StdfFile.WriteDword(m_lStartTime);			// Setup time
+	StdfFile.WriteDword(m_lStartTime);			// Start time
+	StdfFile.WriteByte(1);						// Station
+	StdfFile.WriteByte((BYTE) 'P');				// Test Mode = PRODUCTION
+	StdfFile.WriteByte((BYTE) ' ');				// rtst_cod
+	StdfFile.WriteByte((BYTE) ' ');				// prot_cod
+	StdfFile.WriteWord(65535);					// burn_tim
+	StdfFile.WriteByte((BYTE) ' ');				// cmod_cod
+	StdfFile.WriteString(m_strLotId.toLatin1().constData());		// Lot ID
+	StdfFile.WriteString(m_strProductId.toLatin1().constData());	// Part Type / Product ID
+	StdfFile.WriteString("");					// Node name
+	StdfFile.WriteString("Pcm Exar");			// Tester Type
+	StdfFile.WriteString("");					// Job name
+	StdfFile.WriteString("");					// Job rev
+	StdfFile.WriteString("");					// sublot-id
+	StdfFile.WriteString("");					// operator
+	StdfFile.WriteString("");					// exec-type
+	StdfFile.WriteString("");					// exe-ver
+	StdfFile.WriteString("WAFER");				// test-cod
+	StdfFile.WriteString("");					// test-temperature
+	// Construct custom Galaxy USER_TXT 
+	QString	strUserTxt;
+	strUserTxt = GEX_IMPORT_DATAORIGIN_LABEL;	
+	strUserTxt += ":";
+	strUserTxt += GEX_IMPORT_DATAORIGIN_ETEST;
+	strUserTxt += ":PCM_EXAR";
+	StdfFile.WriteString((char *)strUserTxt.toLatin1().constData());	// user-txt
+	StdfFile.WriteString("");					// aux-file
+	StdfFile.WriteString("");					// package-type
+	StdfFile.WriteString("");					// familyID
+	StdfFile.WriteString("");					// Date-code
+	StdfFile.WriteString("");					// Facility-ID
+	StdfFile.WriteString("");					// FloorID
+	StdfFile.WriteString(m_strProcessId.toLatin1().constData());	// ProcessID
+
+	StdfFile.WriteRecord();
+
+	// Write Test results for each line read.
+	WORD		wSoftBin,wHardBin;
+	int			iGoodParts;
+	int			iTotalGoodBin,iTotalFailBin;
+	int			iTotalTests,iPartNumber;
+	bool		bPassStatus;
+	BYTE		bData;
+
+	int			iIndex;
+	int			iSiteNumber;
+	bool		bTestPass;
+	float		fValue;
+	bool		bValue;
+	QString		strWaferNumber;
+
+	// Reset counters
+	iGoodParts=iTotalGoodBin=iTotalFailBin=0;
+	iPartNumber=0;
+
+	m_strWaferId = "";
+
+	//PRD,LOT,DATE,PROCESS,WAFERID,SITE ID,18N 20/20 Vt0 (V)        ,18N 20/.18 Vt0 (V)       ,18N 20/.18 Idsat uA/um   ,
+	//COXR86V38-N,SEA940024.1,09-Nov-2009,5-Q1818-16A-1833ZZ-1U0-00D, 1,6 , 3.627e-01, 4.554e-01, 6.047e+02, 4.500e+00, 3
+
+	// Write all Parameters read on this file : WIR,PIR,PTR...,PRR,WRR WIR,PIR,PTR..., PRR
+	// Read PcmExar result
+	do
+	{
+		if(strString.isEmpty())
+			strString = ReadLine(*hPcmExarFile).simplified();
+
+		strWaferNumber = strString.section(",",4,4).trimmed();
+		iSiteNumber = strString.section(",",5,5).trimmed().toInt();
+
+		if(m_strWaferId != strWaferNumber)
+		{
+			// New wafer
+			// Close the last
+			if(!m_strWaferId.isEmpty())
+			{
+				// Write WRR for last wafer inserted
+				RecordReadInfo.iRecordType = 2;
+				RecordReadInfo.iRecordSubType = 20;
+				StdfFile.WriteHeader(&RecordReadInfo);
+				StdfFile.WriteByte(1);						// Test head
+				StdfFile.WriteByte(255);					// Tester site (all)
+				StdfFile.WriteDword(m_lStartTime);			// Time of last part tested
+				StdfFile.WriteDword(iTotalGoodBin+iTotalFailBin);	// Parts tested
+				StdfFile.WriteDword(0);						// Parts retested
+				StdfFile.WriteDword(0);						// Parts Aborted
+				StdfFile.WriteDword(iTotalGoodBin);			// Good Parts
+				StdfFile.WriteDword((DWORD)-1);				// Functionnal Parts
+				StdfFile.WriteString(m_strWaferId.toLatin1().constData());	// WaferID
+				StdfFile.WriteString("");					// FabId
+				StdfFile.WriteString("");					// FrameId
+				StdfFile.WriteString("");					// MaskId
+				StdfFile.WriteString("");					// UserDesc
+				StdfFile.WriteRecord();
+
+			}
+
+			m_strWaferId = strWaferNumber;
+
+			if(!m_strWaferId.isEmpty())
+			{
+				// Write WIR of new Wafer.
+				RecordReadInfo.iRecordType = 2;
+				RecordReadInfo.iRecordSubType = 10;
+				StdfFile.WriteHeader(&RecordReadInfo);
+				StdfFile.WriteByte(1);							// Test head
+				StdfFile.WriteByte(255);						// Tester site (all)
+				StdfFile.WriteDword(m_lStartTime);				// Start time
+				StdfFile.WriteString(m_strWaferId.toLatin1().constData());	// WaferID
+				StdfFile.WriteRecord();
+
+				// For each wafer, have to write limit in the first PTR
+				for(iIndex=0;iIndex<m_iTotalParameters;iIndex++)
+				{
+					m_pParameterList[iIndex].m_bStaticHeaderWritten = false;
+				}
+			}
+
+			iTotalGoodBin = iTotalFailBin = iTotalTests = 0;
+			iPartNumber = 0;
+
+		}
+
+		if(strString.isEmpty())
+			continue;
+
+		iPartNumber++;
+
+		// Write PIR
+		// Write PIR for parts in this Wafer site
+		RecordReadInfo.iRecordType = 5;
+		RecordReadInfo.iRecordSubType = 10;
+		StdfFile.WriteHeader(&RecordReadInfo);
+		StdfFile.WriteByte(1);								// Test head
+		StdfFile.WriteByte(iSiteNumber);					// Tester site
+		StdfFile.WriteRecord();
+
+		// Reset Pass/Fail flag.
+		bPassStatus = true;
+
+		// Reset counters
+		iTotalTests = 0;
+
+		strString = strString.trimmed().remove(" ");
+
+		for(iIndex=0;iIndex<m_iTotalParameters;iIndex++)
+		{
+			fValue = strString.section(",",iIndex+m_iParametersOffset,iIndex+m_iParametersOffset).toFloat(&bValue);
+
+			// Check if have valid value
+			if(!bValue)
+				continue;
+
+			iTotalTests++;
+			bTestPass = true;
+			// Compute Test# (add user-defined offset)
+
+			if(m_pParameterList[iIndex].m_bValidLowLimit)
+				bTestPass &= (m_pParameterList[iIndex].m_fLowLimit < fValue * GS_POW(10.0,m_pParameterList[iIndex].m_nScale));
+			if(m_pParameterList[iIndex].m_bValidHighLimit)
+				bTestPass &= (m_pParameterList[iIndex].m_fHighLimit > fValue * GS_POW(10.0,m_pParameterList[iIndex].m_nScale));
+			bPassStatus &= bTestPass;
+			
+
+			// Write PTR
+			RecordReadInfo.iRecordType = 15;
+			RecordReadInfo.iRecordSubType = 10;
+			
+			StdfFile.WriteHeader(&RecordReadInfo);
+			StdfFile.WriteDword(m_pParameterList[iIndex].m_nNumber + GEX_TESTNBR_OFFSET_PCM);			// Test Number
+			StdfFile.WriteByte(1);						// Test head
+			StdfFile.WriteByte(iSiteNumber);			// Tester site:1,2,3,4 or 5, etc.
+			if(bTestPass)
+				bData = 0;		// Test passed
+			else
+				bData = BIT7;	// Test Failed
+			StdfFile.WriteByte(bData);							// TEST_FLG
+			bData = BIT6|BIT7;
+			StdfFile.WriteByte(bData);							// PARAM_FLG
+			StdfFile.WriteFloat(fValue * GS_POW(10.0,m_pParameterList[iIndex].m_nScale));		// Test result
+			if(!m_pParameterList[iIndex].m_bStaticHeaderWritten)
+			{
+				m_pParameterList[iIndex].m_bStaticHeaderWritten = true;
+
+				// save Parameter name
+				StdfFile.WriteString(m_pParameterList[iIndex].m_strName.toLatin1().constData());	// TEST_TXT
+				StdfFile.WriteString("");							// ALARM_ID
+
+				bData = 2;	// Valid data.
+				if(!m_pParameterList[iIndex].m_bValidLowLimit)
+					bData |= BIT6;
+				if(!m_pParameterList[iIndex].m_bValidHighLimit)
+					bData |= BIT7;
+				StdfFile.WriteByte(bData);							// OPT_FLAG
+
+				StdfFile.WriteByte(-m_pParameterList[iIndex].m_nScale);	// RES_SCALE
+				StdfFile.WriteByte(-m_pParameterList[iIndex].m_nScale);	// LLM_SCALE
+				StdfFile.WriteByte(-m_pParameterList[iIndex].m_nScale);	// HLM_SCALE
+				StdfFile.WriteFloat(m_pParameterList[iIndex].m_fLowLimit);	// LOW Limit
+				StdfFile.WriteFloat(m_pParameterList[iIndex].m_fHighLimit);// HIGH Limit
+				StdfFile.WriteString(m_pParameterList[iIndex].m_strUnit.toLatin1().constData());		// Units
+			}
+			StdfFile.WriteRecord();
+		}
+
+		// Write PRR
+		RecordReadInfo.iRecordType = 5;
+		RecordReadInfo.iRecordSubType = 20;
+		StdfFile.WriteHeader(&RecordReadInfo);
+		StdfFile.WriteByte(1);					// Test head
+		StdfFile.WriteByte(iSiteNumber);		// Tester site:1,2,3,4 or 5
+		if(bPassStatus == true)
+		{
+			StdfFile.WriteByte(0);				// PART_FLG : PASSED
+			iTotalGoodBin++;
+			iGoodParts++;
+			wSoftBin = wHardBin = 1;
+		}
+		else
+		{
+			StdfFile.WriteByte(8);				// PART_FLG : FAILED
+			iTotalFailBin++;
+			wSoftBin = wHardBin = 0;
+		}
+		StdfFile.WriteWord((WORD)iTotalTests);	// NUM_TEST
+		StdfFile.WriteWord(wHardBin);           // HARD_BIN
+		StdfFile.WriteWord(wSoftBin);           // SOFT_BIN
+		switch(iSiteNumber)
+		{
+					case 1:	// Center
+						StdfFile.WriteWord(1);			// X_COORD
+						StdfFile.WriteWord(1);			// Y_COORD
+						break;
+					case 2:	// Bottom
+						StdfFile.WriteWord(1);			// X_COORD
+						StdfFile.WriteWord(2);			// Y_COORD
+						break;
+					case 3:	// Right
+						StdfFile.WriteWord(0);			// X_COORD
+						StdfFile.WriteWord(1);			// Y_COORD
+						break;
+					case 4:	// Top
+						StdfFile.WriteWord(1);			// X_COORD
+						StdfFile.WriteWord(0);			// Y_COORD
+						break;
+					case 5:	// Left
+						StdfFile.WriteWord(2);			// X_COORD
+						StdfFile.WriteWord(1);			// Y_COORD
+						break;
+					case 6:	// Lower-Right corner
+						StdfFile.WriteWord(2);			// X_COORD
+						StdfFile.WriteWord(2);			// Y_COORD
+						break;
+					case 7:	// Lower left corner
+						StdfFile.WriteWord(0);			// X_COORD
+						StdfFile.WriteWord(2);			// Y_COORD
+						break;
+					case 8:	// toUpper-Left corner
+						StdfFile.WriteWord(0);			// X_COORD
+						StdfFile.WriteWord(0);			// Y_COORD
+						break;
+					case 9:	// toUpper-Right corner
+						StdfFile.WriteWord(2);			// X_COORD
+						StdfFile.WriteWord(0);			// Y_COORD
+						break;
+					default: // More than 9 sites?....give 0,0 coordonates
+						StdfFile.WriteWord(0);			// X_COORD
+						StdfFile.WriteWord(0);			// Y_COORD
+						break;
+		}
+		StdfFile.WriteDword(0);					// No testing time known...
+		StdfFile.WriteString(QString::number(iPartNumber).toLatin1().constData());// PART_ID
+		StdfFile.WriteString("");				// PART_TXT
+		StdfFile.WriteString("");				// PART_FIX
+		StdfFile.WriteRecord();
+
+		strString = "";
+	}
+	while(!hPcmExarFile->atEnd());
+
+	// Close the last
+	if(!m_strWaferId.isEmpty())
+	{
+		// Write WRR for last wafer inserted
+		RecordReadInfo.iRecordType = 2;
+		RecordReadInfo.iRecordSubType = 20;
+		StdfFile.WriteHeader(&RecordReadInfo);
+		StdfFile.WriteByte(1);						// Test head
+		StdfFile.WriteByte(255);					// Tester site (all)
+		StdfFile.WriteDword(m_lStartTime);			// Time of last part tested
+		StdfFile.WriteDword(iTotalGoodBin+iTotalFailBin);	// Parts tested
+		StdfFile.WriteDword(0);						// Parts retested
+		StdfFile.WriteDword(0);						// Parts Aborted
+		StdfFile.WriteDword(iTotalGoodBin);			// Good Parts
+		StdfFile.WriteDword((DWORD)-1);				// Functionnal Parts
+		StdfFile.WriteString(m_strWaferId.toLatin1().constData());	// WaferID
+		StdfFile.WriteString("");					// FabId
+		StdfFile.WriteString("");					// FrameId
+		StdfFile.WriteString("");					// MaskId
+		StdfFile.WriteString("");					// UserDesc
+		StdfFile.WriteRecord();
+
+	}
+
+	// Write MRR
+	RecordReadInfo.iRecordType = 1; 
+	RecordReadInfo.iRecordSubType = 20;
+	StdfFile.WriteHeader(&RecordReadInfo);
+	StdfFile.WriteDword(m_lStartTime);			// File finish-time.
+	StdfFile.WriteRecord();
+
+	// Close STDF file.
+	StdfFile.Close();
+
+	// Success
+	return true;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Convert 'FileName' PcmExar file, to STDF 'strFileNameSTDF' file
+//////////////////////////////////////////////////////////////////////
+bool CGPcmExartoSTDF::Convert(const char *PcmExarFileName, const char *strFileNameSTDF)
+{
+	// No erro (default)
+	m_iLastError = errNoError;
+
+	// If STDF file already exists...do not rebuild it...unless dates not matching!
+	QFileInfo fInput(PcmExarFileName);
+	QFileInfo fOutput(strFileNameSTDF);
+
+    QFile f( strFileNameSTDF );
+    if((f.exists() == true) && (fInput.lastModified() < fOutput.lastModified()))
+		return true;
+
+	//////////////////////////////////////////////////////////////////////
+	// For ProgressBar
+	iProgressStep = 0;
+	iNextFilePos = 0;
+
+	bool bHideProgressAfter=true;
+	bool bHideLabelAfter=false;
+	if(GexProgressBar != NULL)
+	{
+		bHideProgressAfter = GexProgressBar->isHidden();
+		GexProgressBar->setMaximum(100);
+		GexProgressBar->setTextVisible(true);
+		GexProgressBar->setValue(0);
+		GexProgressBar->show();
+	}
+
+	if(GexScriptStatusLabel != NULL)
+	{
+		if(GexScriptStatusLabel->isHidden())
+		{
+			bHideLabelAfter = true;
+			GS::Gex::Engine::GetInstance().UpdateLabelStatus("Converting data from file "+QFileInfo(PcmExarFileName).fileName()+"...");
+			GexScriptStatusLabel->show();
+		}
+		GS::Gex::Engine::GetInstance().UpdateLabelStatus("Converting data from file "+QFileInfo(PcmExarFileName).fileName()+"...");
+		GexScriptStatusLabel->show();
+	}
+    QCoreApplication::processEvents();
+
+
+    if(ReadPcmExarFile(PcmExarFileName,strFileNameSTDF) != true)
+	{
+		//////////////////////////////////////////////////////////////////////
+		// For ProgressBar
+		if((GexProgressBar != NULL)
+		&& bHideProgressAfter)
+			GexProgressBar->hide();
+		
+		if((GexScriptStatusLabel != NULL)
+		&& bHideLabelAfter)
+			GexScriptStatusLabel->hide();
+		return false;	// Error reading PcmExar file
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// For ProgressBar
+	if((GexProgressBar != NULL)
+	&& bHideProgressAfter)
+		GexProgressBar->hide();
+	
+	if((GexScriptStatusLabel != NULL)
+	&& bHideLabelAfter)
+		GexScriptStatusLabel->hide();
+
+	// Convertion successful
+	return true;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Read line : skip empty line
+//////////////////////////////////////////////////////////////////////
+QString CGPcmExartoSTDF::ReadLine(QTextStream& hFile)
+{
+	QString strString;
+		
+	//////////////////////////////////////////////////////////////////////
+	// For ProgressBar
+	if(GexProgressBar != NULL)
+	{
+        while((int) hFile.device()->pos() > iNextFilePos)
+		{
+			iProgressStep += 100/iFileSize + 1;
+			iNextFilePos  += iFileSize/100 + 1;
+			GexProgressBar->setValue(iProgressStep);
+		}
+	}
+    QCoreApplication::processEvents();
+
+	do
+		strString = hFile.readLine();
+	while(!strString.isNull() && strString.isEmpty());
+
+	return strString;
+
+}

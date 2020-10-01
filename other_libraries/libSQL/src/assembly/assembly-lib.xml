@@ -1,0 +1,24 @@
+<assembly>
+    <id>assembly-inczip</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/build/libmariadb</directory>
+            <outputDirectory>libSQL/lib</outputDirectory>
+            <includes>
+                <include>*.a</include>
+                <include>*.so*</include>
+                <include>*.dylib</include>                
+            </includes>
+        </fileSet>          
+        <fileSet>
+            <directory>${project.build.directory}/build/include</directory>
+            <outputDirectory>libSQL/include</outputDirectory>
+            <excludes/>
+        </fileSet>                  
+    </fileSets>
+</assembly>

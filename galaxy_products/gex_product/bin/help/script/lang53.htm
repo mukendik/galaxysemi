@@ -1,0 +1,93 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="150" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>Static and Extern<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang2.htm">Comments</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="lang3.htm">Numbers</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang4.htm">Literals</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang5.htm">Var
+      and const<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang51.htm">Arrays<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang52.htm">Initialization</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang53.htm">Static
+      and extern<br>
+      </a>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="lang54.htm">Dynamic
+      reallocation</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang6.htm">Operators</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang7.htm">Statements
+      and&nbsp; blocks</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang8.htm">Program
+      flow</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang9.htm">Trace
+      facility</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang10.htm">Exception
+      handling</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang11.htm">Functions</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang12.htm">Predefined
+      identifiers</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">Global identifiers may be prefixed
+      by <i>static</i> or <i>extern</i>:
+      <pre>static var max = 100;
+</pre>
+      <p>Static globals such as <b>max</b> are visible only to the module they are
+      defined in. Unlike C/C++, static's may not be
+      defined within functions.</p>
+      <pre>extern const size;
+</pre>
+      <p>Since <b>size</b> is defined as an extern reference, it can't be
+      initialized
+      in this context. In fact you can also use extern as a forward declaration for an identifier declared later in the same module.
+      As long as the value of <b>size
+      </b>is unknown you cannot use it as index when defining a global array. However
+      you may use it to define
+      arrays within functions:</p>
+      <pre>var zz[size]; // illegal, unknown at compile time
+&nbsp;
+var bee(var y)
+{
+  var kk[y][size]; // ok, allocated at runtime
+} // bee
+</pre>
+      <p>External declarations are necessary when using identifiers that are
+      loaded at runtime (see <a href="sys7.htm">sysLoadScript</a>). Usually you will have the external
+      definitions in a .csl file that will be referenced using an <a href="direct2.htm">#include</a> or
+      <a href="direct5.htm">#loadScript</a> directive.&nbsp; Identifiers loaded at compile-time need no forward
+      declaration if they are loaded before use.
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

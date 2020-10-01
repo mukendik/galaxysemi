@@ -1,0 +1,29 @@
+<assembly>
+    <id>assembly-inc</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <includes>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/common/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/lvm_ft/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/lvm_ws/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/hvm_ft/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/hvm_ws/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/common/promis_interpreter/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/promis_interpreter/hvm_ft/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/promis_interpreter/hvm_wt/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/promis_interpreter/lvm_ft/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/promis_interpreter/lvm_ft_lotlist/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/promis_interpreter/lvm_ft_subcon_data/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/promis_interpreter/lvm_wt/*.h</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>          
+    </fileSets>
+</assembly>

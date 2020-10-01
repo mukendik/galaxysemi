@@ -1,0 +1,848 @@
+//////////////////////////////////////////////////////////////////////
+// import_tessera_microlupi.cpp: Convert a TesseraMicrolupi .csv
+// file to STDF V4.0
+//////////////////////////////////////////////////////////////////////
+
+#include "gqtl_global.h"
+#include <qmath.h>
+
+#ifdef _WIN32
+#include "windows.h"		// For 'GetWindowsDirectoryA' declaration
+#endif
+
+#include <qfileinfo.h>
+#include <qregexp.h>
+#include <qprogressbar.h>
+#include <qapplication.h>
+#include <qlabel.h>
+#include "engine.h"
+#include "import_tessera_microlupi.h"
+#include "time.h"
+#include "import_constants.h"
+
+// Microlupi Format :
+
+//UEtch_Ref-fpobre-wc100-U-17954-1UV-200905131856-FULL
+//"RowOffset:",0,"ColOffset:",0
+//"RowMult:",1,"ColMult:",1
+//"Row:",1,"Col:",11
+//"ROC:",123.98,"   µm   "
+//"k:",-1.045
+//"rms:",146.32,"   nm   "
+
+// main.cpp
+extern QLabel			*GexScriptStatusLabel;	// Handle to script status text in status bar
+extern QProgressBar	*	GexProgressBar;		// Handle to progress bar in status bar
+
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+CGTesseraMicrolupitoSTDF::CGTesseraMicrolupitoSTDF()
+{
+	// Default: TesseraMicrolupi parameter list on disk includes all known TesseraMicrolupi parameters...
+	m_bNewTesseraMicrolupiParameterFound = false;
+	m_lStartTime = 0;
+	m_strTesterType = "MicroLupi";
+}
+
+//////////////////////////////////////////////////////////////////////
+// Destruction
+//////////////////////////////////////////////////////////////////////
+CGTesseraMicrolupitoSTDF::~CGTesseraMicrolupitoSTDF()
+{
+	// Destroy list of Parameters tables.
+	QMap<QString,CGTesseraMicrolupiParameter *>::Iterator it;
+	for(it = m_mapTesseraMicrolupiParameter.begin(); it!= m_mapTesseraMicrolupiParameter.end(); it++)
+		delete m_mapTesseraMicrolupiParameter[it.key()];
+	m_mapTesseraMicrolupiParameter.clear();
+}
+
+
+//////////////////////////////////////////////////////////////////////
+// Get Error
+//////////////////////////////////////////////////////////////////////
+QString CGTesseraMicrolupitoSTDF::GetLastError()
+{
+	strLastError = "Import Tessera "+m_strTesterType+": ";
+
+	switch(iLastError)
+	{
+		default:
+		case errNoError:
+			strLastError += "No Error";
+			break;
+		case errOpenFail:
+			strLastError += "Failed to open file";
+			break;
+		case errInvalidFormat:
+			strLastError += "Invalid file format";
+			break;
+		case errInvalidFormatLowInRows:
+			strLastError += "Invalid file format: 'Parameter' line too short, missing rows";
+			break;
+		case errWriteSTDF:
+			strLastError += "Failed creating temporary file. Folder permission issue?";
+            break;
+		case errLicenceExpired:
+			strLastError += "License has expired or Data file out of date...";
+            break;
+	}
+	// Return Error Message
+	return strLastError;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Load TesseraMicrolupi Parameter table from DISK
+//////////////////////////////////////////////////////////////////////
+void CGTesseraMicrolupitoSTDF::LoadParameterIndexTable(void)
+{
+	QString	strTesseraMicrolupiTableFile;
+	QString	strString;
+
+    strTesseraMicrolupiTableFile  = GS::Gex::Engine::GetInstance().Get("UserFolder").toString();
+	strTesseraMicrolupiTableFile += GEX_TESSERA_PARAMETERS;
+
+	// Open TesseraMicrolupi Parameter table file
+    QFile f( strTesseraMicrolupiTableFile );
+    if(!f.open( QIODevice::ReadOnly ))
+		return;
+
+	// Assign file I/O stream
+	QTextStream hTesseraMicrolupiTableFile(&f);
+
+	// Skip comment lines
+	do
+	{
+	  strString = hTesseraMicrolupiTableFile.readLine();
+	}
+    while((strString.indexOf("----------------------") < 0) && (hTesseraMicrolupiTableFile.atEnd() == false));
+
+	// Read lines
+	m_pFullTesseraMicrolupiParametersList.clear();
+	strString = hTesseraMicrolupiTableFile.readLine();
+	while (strString.isNull() == false)
+	{
+		// Save Parameter name in list
+		m_pFullTesseraMicrolupiParametersList.append(strString);
+		// Read next line
+		strString = hTesseraMicrolupiTableFile.readLine();
+	};
+
+	// Close file
+	f.close();
+}
+
+//////////////////////////////////////////////////////////////////////
+// Save TesseraMicrolupi Parameter table to DISK
+//////////////////////////////////////////////////////////////////////
+void CGTesseraMicrolupitoSTDF::DumpParameterIndexTable(void)
+{
+	QString		strTesseraMicrolupiTableFile;
+	int			uIndex;
+
+    strTesseraMicrolupiTableFile  = GS::Gex::Engine::GetInstance().Get("UserFolder").toString();
+	strTesseraMicrolupiTableFile += GEX_TESSERA_PARAMETERS;
+
+	// Open TesseraMicrolupi Parameter table file
+    QFile f( strTesseraMicrolupiTableFile );
+    if(!f.open( QIODevice::WriteOnly ))
+		return;
+
+	// Assign file I/O stream
+	QTextStream hTesseraMicrolupiTableFile(&f);
+
+	// First few lines are comments:
+	hTesseraMicrolupiTableFile << "############################################################" << endl;
+	hTesseraMicrolupiTableFile << "# DO NOT EDIT THIS FILE!" << endl;
+    hTesseraMicrolupiTableFile << "# Quantix Examinator: Tessera Parameters detected" << endl;
+	hTesseraMicrolupiTableFile << "# www.mentor.com" << endl;
+    hTesseraMicrolupiTableFile << "# Quantix Examinator reads and writes into this file..." << endl;
+	hTesseraMicrolupiTableFile << "-----------------------------------------------------------" << endl;
+
+	// Write lines
+	// m_pFullTesseraMicrolupiParametersList.sort();
+	for(uIndex=0;uIndex<m_pFullTesseraMicrolupiParametersList.count();uIndex++)
+	{
+		// Write line
+		hTesseraMicrolupiTableFile << m_pFullTesseraMicrolupiParametersList[uIndex] << endl;
+	};
+
+	// Close file
+	f.close();
+}
+
+//////////////////////////////////////////////////////////////////////
+// If Examinator doesn't have this TesseraMicrolupi parameter in his dictionnary, have it added.
+//////////////////////////////////////////////////////////////////////
+void CGTesseraMicrolupitoSTDF::UpdateParameterIndexTable(QString strParamName)
+{
+	// Check if the table is empty...if so, load it from disk first!
+	if(m_pFullTesseraMicrolupiParametersList.isEmpty() == true)
+	{
+		// Load Tessera parameter table from disk...
+		LoadParameterIndexTable();
+	}
+
+	// Check if Parameter name already in table...if not, add it to the list
+	// the new full list will be dumped to the disk at the end.
+    if(m_pFullTesseraMicrolupiParametersList.indexOf(strParamName) < 0)
+	{
+		// Update list
+		m_pFullTesseraMicrolupiParametersList.append(strParamName);
+
+		// Set flag to force the current TesseraMicrolupi table to be updated on disk
+		m_bNewTesseraMicrolupiParameterFound = true;
+	}
+}
+
+
+//////////////////////////////////////////////////////////////////////
+// Check if File is compatible with TesseraMicrolupi format
+//////////////////////////////////////////////////////////////////////
+bool CGTesseraMicrolupitoSTDF::IsCompatible(const char *szFileName)
+{
+	QString strString;
+	QString strValue;
+	QString	strSite;
+
+	// Open hCsmFile file
+    QFile f( szFileName );
+    if(!f.open( QIODevice::ReadOnly ))
+	{
+		// Failed Opening ASL1000 file
+		return false;
+	}
+	// Assign file I/O stream
+	QTextStream hTesseraMicrolupiFile(&f);
+
+	// Check if first line is the correct Tessera Microlupi header...
+	//UEtch_Ref-fpobre-wc100-U-17954-1UV-200905131856-FULL
+	//"RowOffset:",0,"ColOffset:",0
+	//"RowMult:",1,"ColMult:",1
+	//"Row:",1,"Col:",11
+
+
+	int iLine = 0;
+	bool bHaveRowOffset, bHaveRowMult, bHaveRow;
+
+	bHaveRowOffset = bHaveRowMult = bHaveRow = false;
+
+	do
+	{
+		strString = hTesseraMicrolupiFile.readLine();
+
+		iLine++;
+
+		if((strString.indexOf("RowOffset:",0,Qt::CaseInsensitive) >= 0) && (strString.indexOf("ColOffset:",0,Qt::CaseInsensitive) >= 0))
+			bHaveRowOffset = true;
+		if((strString.indexOf("RowMult:",0,Qt::CaseInsensitive) >= 0) && (strString.indexOf("ColMult:",0,Qt::CaseInsensitive) >= 0))
+			bHaveRowMult = true;
+		if((strString.indexOf("Row:",0,Qt::CaseInsensitive) >= 0) && (strString.indexOf("Col:",0,Qt::CaseInsensitive) >= 0))
+			bHaveRow = true;
+
+		if(iLine > 6)
+		{
+			// Incorrect header...this is not a Tessera Microlupi file!
+			f.close();
+			return false;
+		}
+
+		if(bHaveRowOffset && bHaveRowMult && bHaveRow)
+		{
+			// Good header...this is a Tessera Microlupi file!
+			f.close();
+			return true;
+		}
+	}
+	while(!hTesseraMicrolupiFile.atEnd());
+
+	f.close();
+
+	return false;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Read and Parse the TesseraMicrolupi file
+//////////////////////////////////////////////////////////////////////
+bool CGTesseraMicrolupitoSTDF::ReadTesseraMicrolupiFile(const char *TesseraMicrolupiFileName, const char *strFileNameSTDF)
+{
+	QString strString;
+	QString strSection;
+	bool	bStatus;
+
+	// Open CSV file
+    QFile f( TesseraMicrolupiFileName );
+    if(!f.open( QIODevice::ReadOnly ))
+	{
+		// Failed Opening Tessera Microlupi file
+		iLastError = errOpenFail;
+
+		// Convertion failed.
+		return false;
+	}
+
+ 	//////////////////////////////////////////////////////////////////////
+	// For ProgressBar
+	iNextFilePos = 0;
+	iProgressStep = 0;
+	iFileSize = f.size() + 1;
+
+
+	// Assign file I/O stream
+	QTextStream hTesseraMicrolupiFile(&f);
+
+	// Check if first line is the correct Tessera Microlupi header...
+	//UEtch_Ref-fpobre-wc100-U-17954-1UV-200905131856-FULL
+	//"RowOffset:",0,"ColOffset:",0
+	//"RowMult:",1,"ColMult:",1
+	//"Row:",1,"Col:",11
+	//"ROC:",123.98,"   µm   "
+	//"k:",-1.045
+	//"rms:",146.32,"   nm   "
+
+	QDate	clDate;
+	QTime	clTime;
+
+	//UEtch_Ref-fpobre-wc100-U-17954-1UV-200905131856-FULL
+
+	// TestName = UEtch_Ref
+	// OperatorName = fpobre
+	// MachineName = wc100
+	// Scribed or Unscribed = S ou U
+	// ContainerName or WaferId = 17954-1UV
+	// Date = 200906121554
+	// Test Method = FULL or Sample
+
+	m_strWaferID = "1";
+	m_strTesterType = "Microlupi";
+	m_lStartTime = m_lStopTime = 0;
+
+	//UEtch_Ref-fpobre-wc100-U-17954-1UV-200905131856-FULL
+	strString = ReadLine(hTesseraMicrolupiFile);
+	m_strJobName = strString.simplified();
+	m_strSetupId = "LensSettings="+m_strJobName;
+
+	if(strString.count("-") >= 7)
+	{
+		QDate	clDate;
+		QTime	clTime;
+		// Good naming convention
+		// extract info
+		m_strProductID = strString.section("-",0,0);
+		m_strOperatorID = strString.section("-",1,1);
+		m_strTesterID = strString.section("-",2,2);
+		m_strWaferID = strString.section("-",4,5);
+		m_strJobRev = strString.section("-",7,7);
+
+		//Date Time:200906121554
+		QString	strDate = strString.section("-",6,6);
+		clDate = QDate(strDate.left(4).toInt(),strDate.mid(4,2).toInt(),strDate.mid(6,2).toInt());
+		clTime.setHMS(strDate.mid(8,2).toInt(), strDate.right(2).toInt(), 0);
+
+
+		QDateTime clDateTime(clDate,clTime);
+		clDateTime.setTimeSpec(Qt::UTC);
+		m_lStartTime = clDateTime.toTime_t();
+	}
+
+	// Goto Data
+	//"RowOffset:",0,"ColOffset:",0
+	//"RowMult:",1,"ColMult:",1
+	//"Row:",1,"Col:",11
+	int iLine = 1;
+
+	m_iRowOffset = m_iColOffset = 0;
+	m_iRowMult = m_iColMult = 1;
+
+	while(!hTesseraMicrolupiFile.atEnd())
+	{
+		strString = ReadLine(hTesseraMicrolupiFile);
+
+		iLine++;
+
+
+		if((strString.indexOf("RowOffset",0,Qt::CaseInsensitive) >= 0) && (strString.indexOf("ColOffset",0,Qt::CaseInsensitive) >= 0))
+		{
+			m_iRowOffset = strString.section(",",1,1).toInt();
+			m_iColOffset = strString.section(",",3,3).toInt();
+
+			// Setup Configuration
+			if(!m_strSetupId.isEmpty())
+				m_strSetupId += ";";
+			m_strSetupId += "RowOffset="+strString.section(",",1,1);
+			m_strSetupId += ";";
+			m_strSetupId += "ColOffset="+strString.section(",",3,3);
+		}
+		if((strString.indexOf("RowMult",0,Qt::CaseInsensitive) >= 0) && (strString.indexOf("ColMult",0,Qt::CaseInsensitive) >= 0))
+		{
+			m_iRowMult = strString.section(",",1,1).toInt();
+			m_iColMult = strString.section(",",3,3).toInt();
+
+			// Setup Configuration
+			if(!m_strSetupId.isEmpty())
+				m_strSetupId += ";";
+			m_strSetupId += "RowMult="+strString.section(",",1,1);
+			m_strSetupId += ";";
+			m_strSetupId += "ColMult="+strString.section(",",3,3);
+
+			break;
+
+		}
+
+		if(iLine > 3)
+		{
+			break;
+		}
+
+	}
+
+	if(strString.indexOf("RowMult",0,Qt::CaseInsensitive) < 0)
+	{
+		// Incorrect header...this is not a Tessera Microlupi file!
+		iLastError = errInvalidFormat;
+		f.close();
+		return false;
+	}
+
+
+	// Loop reading file until end is reached & generate STDF file dynamically.
+	bStatus = WriteStdfFile(&hTesseraMicrolupiFile,strFileNameSTDF);
+	if(!bStatus)
+		QFile::remove(strFileNameSTDF);
+
+	// All Tessera Microlupi file read...check if need to update the Tessera Microlupi Parameter list on disk?
+	if(bStatus && (m_bNewTesseraMicrolupiParameterFound == true))
+		DumpParameterIndexTable();
+
+	// Success parsing Tessera Microlupi file
+	f.close();
+	return bStatus;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Create STDF file from Tessera Microlupi data parsed
+//////////////////////////////////////////////////////////////////////
+bool CGTesseraMicrolupitoSTDF::WriteStdfFile(QTextStream *hTesseraMicrolupiFile, const char *strFileNameSTDF)
+{
+	// now generate the STDF file...
+    GS::StdLib::Stdf StdfFile;
+    GS::StdLib::StdfRecordReadInfo RecordReadInfo;
+    if(StdfFile.Open((char*)strFileNameSTDF,STDF_WRITE) != GS::StdLib::Stdf::NoError)
+	{
+		// Failed importing CSV file into STDF database
+		iLastError = errWriteSTDF;
+
+		// Convertion failed.
+		return false;
+	}
+
+	// Write FAR
+	RecordReadInfo.iRecordType = 0;
+	RecordReadInfo.iRecordSubType = 10;
+	StdfFile.WriteHeader(&RecordReadInfo);
+	StdfFile.WriteByte(1);					// SUN CPU type
+	StdfFile.WriteByte(4);					// STDF V4
+	StdfFile.WriteRecord();
+
+	if(m_lStartTime <= 0)
+		m_lStartTime = QDateTime::currentDateTime().toTime_t();
+
+	// Write MIR
+	RecordReadInfo.iRecordType = 1;
+	RecordReadInfo.iRecordSubType = 10;
+	StdfFile.WriteHeader(&RecordReadInfo);
+	StdfFile.WriteDword(m_lStartTime);			// Setup time
+	StdfFile.WriteDword(m_lStartTime);			// Start time
+	StdfFile.WriteByte(1);						// Station
+	StdfFile.WriteByte((BYTE) 'P');				// Test Mode = PRODUCTION
+	StdfFile.WriteByte((BYTE) ' ');				// rtst_cod
+	StdfFile.WriteByte((BYTE) ' ');				// prot_cod
+	StdfFile.WriteWord(65535);					// burn_tim
+	StdfFile.WriteByte((BYTE) ' ');				// cmod_cod
+	StdfFile.WriteString(m_strLotID.toLatin1().constData());		// Lot ID
+	StdfFile.WriteString(m_strProductID.toLatin1().constData());	// Part Type / Product ID
+	StdfFile.WriteString(m_strTesterID.toLatin1().constData());	// Node name
+	StdfFile.WriteString(m_strTesterType.toLatin1().constData());	// Tester Type
+	StdfFile.WriteString(m_strJobName.toLatin1().constData());	// Job name
+	StdfFile.WriteString(m_strJobRev.toLatin1().constData());	// Job rev
+	StdfFile.WriteString("");					// sublot-id
+	StdfFile.WriteString(m_strOperatorID.toLatin1().constData());	// operator
+	StdfFile.WriteString("");					// exec-type
+	StdfFile.WriteString(m_strSoftVer.toLatin1().constData());	// exe-ver
+	StdfFile.WriteString("WAFER");				// test-cod
+	StdfFile.WriteString("");					// test-temperature
+    // Construct custom Galaxy USER_TXT
+	QString	strUserTxt;
+    strUserTxt = GEX_IMPORT_DATAORIGIN_LABEL;
+	strUserTxt += ":";
+	strUserTxt += GEX_IMPORT_DATAORIGIN_ATETEST;
+	strUserTxt += ":TESSERA_"+m_strTesterType.toUpper();
+	StdfFile.WriteString((char *)strUserTxt.toLatin1().constData());	// user-txt
+	StdfFile.WriteString("");							// aux-file
+	StdfFile.WriteString("");							// package-type
+	StdfFile.WriteString(m_strProductID.toLatin1().constData());	// familyID
+	StdfFile.WriteString("");							// Date-code
+	StdfFile.WriteString("");							// Facility-ID
+	StdfFile.WriteString("");							// FloorID
+	StdfFile.WriteString("");							// ProcessID
+	StdfFile.WriteString("");							// OperationFreq
+	StdfFile.WriteString("");							// Spec-nam
+	StdfFile.WriteString("");							// Spec-ver
+	StdfFile.WriteString("");							// Flow-id
+	StdfFile.WriteString((char *)m_strSetupId.left(255).toLatin1().constData());	// setup_id
+	StdfFile.WriteRecord();
+
+	// Write Test results for each line read.
+	QString strString;
+	QString strTestName;
+	QString strUnit;
+	int		nScale;
+	float	fValue;				// Used for readng floating point numbers.
+	int		iXpos, iYpos;
+  //FIXME: not used ?
+  //long iTotalGoodPart;
+	long		iTotalTests,iPartNumber;
+	BYTE		bData;
+
+	CGTesseraMicrolupiParameter *pTest;
+
+	// Reset counters
+  //FIXME: not used ?
+  //iTotalGoodPart=0;
+	iPartNumber=0;
+
+	// Write all Parameters read on this wafer.: WIR.PIR,PTR....PTR, PRR, PIR, PTR,PTR...PRR,   ... WRR
+
+	// Write WIR of new Wafer.
+	RecordReadInfo.iRecordType = 2;
+	RecordReadInfo.iRecordSubType = 10;
+	StdfFile.WriteHeader(&RecordReadInfo);
+	StdfFile.WriteByte(1);								// Test head
+	StdfFile.WriteByte(255);							// Tester site (all)
+	StdfFile.WriteDword(m_lStartTime);					// Start time
+	StdfFile.WriteString(m_strWaferID.toLatin1().constData());	// WaferID
+	StdfFile.WriteRecord();
+
+	// Goto Rows Data
+	while(hTesseraMicrolupiFile->atEnd() == false)
+	{
+
+		// Read line
+		strString = ReadLine(*hTesseraMicrolupiFile).remove('"');
+		if(strString.startsWith("Row:",Qt::CaseInsensitive))
+			break;
+	}
+
+	//"Row:",1,"Col:",11
+	//"ROC:",123.98,"   µm   "
+	//"k:",-1.045
+	//"rms:",146.32,"   nm   "
+	do
+	{
+
+		if(!strString.startsWith("Row:",Qt::CaseInsensitive))
+		{
+			// Incorrect header...this is not a Tessera Microlupi file!
+			iLastError = errInvalidFormat;
+			return false;
+		}
+
+		// Extract Column,Row,Pass
+		iXpos = strString.section(",",3,3).toInt();
+		iYpos = strString.section(",",1,1).toInt();
+
+		// Part number
+		iPartNumber++;
+
+		// Reset counters
+		iTotalTests = 0;
+
+		// Write PIR for parts in this Wafer site
+		RecordReadInfo.iRecordType = 5;
+		RecordReadInfo.iRecordSubType = 10;
+		StdfFile.WriteHeader(&RecordReadInfo);
+		StdfFile.WriteByte(1);					// Test head
+		StdfFile.WriteByte(1);					// Tester site
+		StdfFile.WriteRecord();
+
+		// Read Data
+		// Read line
+		strString = ReadLine(*hTesseraMicrolupiFile).remove('"').simplified();
+
+		do
+		{
+
+			if(strString.startsWith("Row:",Qt::CaseInsensitive))
+				break;
+
+			strTestName = strString.section(",",0,0).remove(':');
+			fValue = strString.section(",",1,1).toFloat();
+			strUnit = strString.section(",",2,2).remove(' ');
+
+			if(!m_mapTesseraMicrolupiParameter.contains(strTestName))
+			{
+				pTest = new CGTesseraMicrolupiParameter;
+				pTest->strName = strTestName;
+
+				NormalizeLimits(strUnit, nScale);
+
+				pTest->strUnits = strUnit;
+				pTest->nScale = nScale;
+
+
+				UpdateParameterIndexTable(strTestName);		// Update Parameter master list if needed.
+
+				pTest->nNumber = m_pFullTesseraMicrolupiParametersList.indexOf(strTestName);
+				pTest->bStaticHeaderWritten = false;
+
+				m_mapTesseraMicrolupiParameter[strTestName] = pTest;
+			}
+			else
+				pTest = m_mapTesseraMicrolupiParameter[strTestName];
+
+
+			iTotalTests++;
+
+			RecordReadInfo.iRecordType = 15;
+			RecordReadInfo.iRecordSubType = 10;
+			StdfFile.WriteHeader(&RecordReadInfo);
+			// Compute Test# (add user-defined offset)
+			StdfFile.WriteDword(pTest->nNumber + GEX_TESTNBR_OFFSET_TESSERA);			// Test Number
+			StdfFile.WriteByte(1);						// Test head
+			StdfFile.WriteByte(1);			// Tester site#
+
+			// No pass/fail information
+			bData = 0x40;
+			StdfFile.WriteByte(bData);							// TEST_FLG
+			StdfFile.WriteByte(0x40|0x80);						// PARAM_FLG
+			StdfFile.WriteFloat(fValue * GS_POW(10.0,pTest->nScale));						// Test result
+			if(pTest->bStaticHeaderWritten == false)
+			{
+				StdfFile.WriteString(pTest->strName.toLatin1().constData());	// TEST_TXT
+				StdfFile.WriteString("");							// ALARM_ID
+				bData = 2;	// Valid data.
+				bData |=0x40;
+				bData |=0x80;
+				StdfFile.WriteByte(bData);							// OPT_FLAG
+				StdfFile.WriteByte(-pTest->nScale);			// RES_SCALE
+				StdfFile.WriteByte(-pTest->nScale);			// LLM_SCALE
+				StdfFile.WriteByte(-pTest->nScale);			// HLM_SCALE
+				StdfFile.WriteFloat(0);		// LOW Limit
+				StdfFile.WriteFloat(0);		// HIGH Limit
+				StdfFile.WriteString(pTest->strUnits.toLatin1().constData());	// Units
+				pTest->bStaticHeaderWritten = true;
+			}
+			StdfFile.WriteRecord();
+
+			// Read line
+			if(!hTesseraMicrolupiFile->atEnd())
+				strString = ReadLine(*hTesseraMicrolupiFile).remove('"').simplified();
+			else
+				break;
+
+		}			// Read all lines with valid data records in file
+		while(true);
+
+		// Write PRR
+		RecordReadInfo.iRecordType = 5;
+		RecordReadInfo.iRecordSubType = 20;
+		StdfFile.WriteHeader(&RecordReadInfo);
+		StdfFile.WriteByte(1);			// Test head
+		StdfFile.WriteByte(1);// Tester site#:1
+		StdfFile.WriteByte(0x10);				// PART_FLG : PASSED
+		StdfFile.WriteWord((WORD)iTotalTests);	// NUM_TEST
+		StdfFile.WriteWord(0);				// HARD_BIN
+		StdfFile.WriteWord(0);				// SOFT_BIN
+		StdfFile.WriteWord(iXpos);				// X_COORD
+		StdfFile.WriteWord(iYpos);				// Y_COORD
+		StdfFile.WriteDword(0);					// No testing time known...
+		StdfFile.WriteString(QString::number(iPartNumber).toLatin1().constData());		// PART_ID
+		StdfFile.WriteString("");			// PART_TXT
+		StdfFile.WriteString("");			// PART_FIX
+		StdfFile.WriteRecord();
+
+	}			// Read all lines with valid data records in file
+	while(hTesseraMicrolupiFile->atEnd() == false);
+
+	// Write WRR for last wafer inserted
+	RecordReadInfo.iRecordType = 2;
+	RecordReadInfo.iRecordSubType = 20;
+	StdfFile.WriteHeader(&RecordReadInfo);
+	StdfFile.WriteByte(1);						// Test head
+	StdfFile.WriteByte(255);					// Tester site (all)
+	StdfFile.WriteDword(m_lStopTime);			// Time of last part tested
+	StdfFile.WriteDword(iPartNumber)	;		// Parts tested
+	StdfFile.WriteDword(0);						// Parts retested
+	StdfFile.WriteDword(0);						// Parts Aborted
+	StdfFile.WriteDword(0);		// Good Parts
+	StdfFile.WriteDword((DWORD)-1);				// Functionnal Parts
+	StdfFile.WriteString(m_strWaferID.toLatin1().constData());	// WaferID
+	StdfFile.WriteString("");					// FabId
+	StdfFile.WriteString("");					// FrameId
+	StdfFile.WriteString("");					// MaskId
+	StdfFile.WriteString("");					// UserDesc
+	StdfFile.WriteRecord();
+
+
+	// Write MRR
+    RecordReadInfo.iRecordType = 1;
+	RecordReadInfo.iRecordSubType = 20;
+	StdfFile.WriteHeader(&RecordReadInfo);
+	StdfFile.WriteDword(m_lStartTime);			// File finish-time.
+	StdfFile.WriteRecord();
+
+	// Close STDF file.
+	StdfFile.Close();
+
+	// Success
+	return true;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Convert 'FileName' TesseraMicrolupi file, to STDF 'strFileNameSTDF' file
+//////////////////////////////////////////////////////////////////////
+bool CGTesseraMicrolupitoSTDF::Convert(const char *TesseraMicrolupiFileName, const char *strFileNameSTDF)
+{
+	// No erro (default)
+	iLastError = errNoError;
+
+	// If STDF file already exists...do not rebuild it...unless dates not matching!
+	QFileInfo fInput(TesseraMicrolupiFileName);
+	QFileInfo fOutput(strFileNameSTDF);
+
+    QFile f( strFileNameSTDF );
+    if((f.exists() == true) && (fInput.lastModified() < fOutput.lastModified()))
+		return true;
+
+	//////////////////////////////////////////////////////////////////////
+	// For ProgressBar
+	bool bHideProgressAfter=true;
+	bool bHideLabelAfter=false;
+	if(GexProgressBar != NULL)
+	{
+		bHideProgressAfter = GexProgressBar->isHidden();
+		GexProgressBar->setMaximum(100);
+		GexProgressBar->setTextVisible(true);
+		GexProgressBar->setValue(0);
+		GexProgressBar->show();
+	}
+
+	if(GexScriptStatusLabel != NULL)
+	{
+		if(GexScriptStatusLabel->isHidden())
+		{
+			bHideLabelAfter = true;
+			GS::Gex::Engine::GetInstance().UpdateLabelStatus("Converting data from file "+QFileInfo(TesseraMicrolupiFileName).fileName()+"...");
+			GexScriptStatusLabel->show();
+		}
+		GS::Gex::Engine::GetInstance().UpdateLabelStatus("Converting data from file "+QFileInfo(TesseraMicrolupiFileName).fileName()+"...");
+		GexScriptStatusLabel->show();
+	}
+    QCoreApplication::processEvents();
+
+    if(ReadTesseraMicrolupiFile(TesseraMicrolupiFileName,strFileNameSTDF) != true)
+	{
+		//////////////////////////////////////////////////////////////////////
+		// For ProgressBar
+		if((GexProgressBar != NULL)
+		&& bHideProgressAfter)
+			GexProgressBar->hide();
+
+		if((GexScriptStatusLabel != NULL)
+		&& bHideLabelAfter)
+			GexScriptStatusLabel->hide();
+		return false;	// Error reading TesseraMicrolupi file
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// For ProgressBar
+	if((GexProgressBar != NULL)
+	&& bHideProgressAfter)
+		GexProgressBar->hide();
+
+	if((GexScriptStatusLabel != NULL)
+    && bHideLabelAfter)
+		GexScriptStatusLabel->hide();
+
+	// Convertion successful
+	return true;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Normalize test limits when writing into PTR.
+//////////////////////////////////////////////////////////////////////
+void CGTesseraMicrolupitoSTDF::NormalizeLimits(QString &strUnit, int &nScale)
+{
+	nScale = 0;
+	if(strUnit.length() <= 1)
+	{
+		// units too short to include a prefix, then keep it 'as-is'
+		return;
+	}
+
+	QChar cPrefix = strUnit[0];
+	switch(cPrefix.toLatin1())
+	{
+		case 'm': // Milli
+			nScale = -3;
+			break;
+		case 'u': // Micro
+			nScale = -6;
+			break;
+        case -26: // Micro (µ) We could not use µ here as it is encoded in UTF-8, it takes 2 bytes. So use the its decimal value char(0xE6) = -26
+			nScale = -6;
+			break;
+		case 'n': // Nano
+			nScale = -9;
+			break;
+		case 'p': // Pico
+			nScale = -12;
+			break;
+		case 'f': // Fento
+			nScale = -15;
+			break;
+		case 'K': // Kilo
+			nScale = 3;
+			break;
+		case 'M': // Mega
+			nScale = 6;
+			break;
+		case 'G': // Giga
+			nScale = 9;
+			break;
+		case 'T': // Tera
+			nScale = 12;
+			break;
+	}
+	if(nScale)
+		strUnit = strUnit.mid(1);	// Take all characters after the prefix.
+}
+
+//////////////////////////////////////////////////////////////////////
+// Read line : skip empty line
+//////////////////////////////////////////////////////////////////////
+QString CGTesseraMicrolupitoSTDF::ReadLine(QTextStream& hFile)
+{
+	QString strString;
+
+	//////////////////////////////////////////////////////////////////////
+	// For ProgressBar
+	if(GexProgressBar != NULL)
+	{
+        while((int) hFile.device()->pos() > iNextFilePos)
+		{
+			iProgressStep += 100/iFileSize + 1;
+			iNextFilePos  += iFileSize/100 + 1;
+			GexProgressBar->setValue(iProgressStep);
+		}
+	}
+    QCoreApplication::processEvents();
+
+	do
+		strString = hFile.readLine();
+	while(!strString.isNull() && strString.isEmpty());
+
+	return strString;
+
+}

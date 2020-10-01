@@ -1,0 +1,17 @@
+{
+    "contents" : "print(\"Global\")\nprint(\"Global: Connecting...\")\ncon <- dbConnect(MySQL(), user=\"root\", password=\"root\", dbname=\"gexdb_3390\")\nfor(e in dbGetException(con))\n{\n  print(e)\n}\n\ntest_infos_res<-dbSendQuery(con, \n            \"select ptest_info_id, concat(tnum, ' ', tname) from wt_ptest_info where splitlot_id=1011000012\")\ntest_infos<-fetch(test_infos_res, n=-1)\ncat(\"global: \", length(test_infos[,1]), \" tests info found\\n\")\n",
+    "created" : 1412178738992.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "479090285",
+    "id" : "51C05CBB",
+    "lastKnownWriteTime" : 1412180941,
+    "path" : "G:/shiny_poc/shiny_poc/global.R",
+    "project_path" : "global.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

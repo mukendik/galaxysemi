@@ -1,0 +1,35 @@
+---
+title: "Sample Document"
+output: word_document
+---
+
+========================================================
+
+```{r echo=FALSE, message=FALSE, results='hide'}
+library(DBI)
+library(RMySQL, verbose=FALSE, quietly=TRUE, warn.conflicts=FALSE)
+#library(knitr)
+#library(RMySQL, verbose=FALSE, quietly=TRUE, warn.conflicts=FALSE)
+#require(RMySQL, quietly=TRUE, warn.conflicts=FALSE)
+```
+
+```{r kable, results="asis", message=FALSE, echo=FALSE}
+#val <- read.csv("c:/fsqd.csv", header=TRUE)
+#kable(val)
+
+con <- dbConnect(MySQL(), user="root", password="root", dbname="gexdb_3390")
+res <- dbSendQuery(con, "select ss.hbin_no, hb.hbin_name, ss.bin_count from wt_hbin_stats_summary ss join wt_hbin hb on ss.hbin_no=hb.hbin_no  where ss.bin_count > 0 group by ss.hbin_no order by ss.bin_count desc limit 10")
+out<-NULL
+while(!dbHasCompleted(res))
+{
+  out<- fetch(res, n=10000)
+}
+# out[1] : bin no
+# out[2] : bin names
+# out[3] : bin counts
+knitr::kable(out, "html")
+
+pie(out[[3]], labels=out[[2]])
+
+```
+

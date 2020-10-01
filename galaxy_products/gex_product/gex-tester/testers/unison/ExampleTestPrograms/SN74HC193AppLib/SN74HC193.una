@@ -1,0 +1,943 @@
+Unison:SyntaxRevision6.430000;
+__ExternalRef {
+   __File = "Package.uno";
+}
+__ExternalRef {
+   __File = "Common.uno";
+}
+__TestProg SN74HC193 {
+    __Device = "SN74HC193";
+    __ParamCheck = 0;
+    __ResolveAndLoad __OnProgramLoad;
+        __OperatorVariable[0] = CharacterizeDevice;
+        __OperatorVariable[1] = InduceFuncFails;
+        __OperatorVariable[2] = EnableCal;
+        __OperatorVariable[3] = Training;
+        __AdapterBoard = Null;
+        __Flow = MainFlow;
+    	__WaferDescriptor = example;
+    	__PatternMap = GenericPatternMap;
+        __BinMap = SN74HC193_BinMap;
+        __Mode = 0x00000000, 0x00000000, 0x80000000;
+    	__LimitTable = SN74HC193Limits;
+        __DatalogObject[0] {
+            __Method = LTXC_Datalog;
+            __Format = ASCII;
+            __Mode = __Buffered;
+            __Type = __Production;
+            __SamplingSize = 1;
+            __TestIDFilter = __Expression { __String = "#"; __Mode = Output; }
+            __FileFrequency = __Expression { __String = "DlogFreq:Lot"; }
+            __Attribute ASCIIDatalogInColumns = __False;
+            __Attribute AppendPinName = __True;
+            __Attribute EnableDebugText = __False;
+            __Attribute EnableVerbose = __False;
+            __Attribute EnhancedFunctionalChars = __False;
+            __Attribute PerSiteSummary = __True;
+            __Attribute UnitAutoscaling = __True;
+        }
+        __DatalogObject[1] {
+            __Method = GalaxyPATDlog;
+            __Format = GTL;
+            __Mode = __Immediate;
+            __Type = __Production;
+            __SamplingSize = 1;
+            __TestIDFilter = __Expression { __String = "#"; __Mode = Output; }
+            __FileFrequency = __Expression { __String = "DlogFreq:Lot"; }
+        }
+        __DatalogObject[2] {
+            __Method = LTXC_Datalog;
+            __Format = STDFV4;
+            __Mode = __Immediate;
+            __Type = __Production;
+            __SamplingSize = 1;
+            __TestIDFilter = __Expression { __String = "#"; __Mode = Output; }
+            __FileFrequency = __Expression { __String = "DlogFreq:Lot"; }
+            __Destination = "'/media/sf_vm_exchange/unison/${ObjName}_${LotId}_${SublotId}_${DlogSetupTime}.std'";
+            __Attribute ASCIIDatalogInColumns = __False;
+            __Attribute AppendPinName = __True;
+            __Attribute EnableDebugText = __False;
+            __Attribute EnableVerbose = __False;
+            __Attribute EnhancedFunctionalChars = __False;
+            __Attribute PerSiteSummary = __True;
+            __Attribute UnitAutoscaling = __True;
+        }
+        __CollectTestSummaryInfo = __True;
+        __FunctionalFails = 1;
+        __CalMethod = __Expression { __String = "CalMethod:Focused"; }
+        __IOStreamList[0] {
+           __IOStreamType = DataViewIO;
+           __IOStreamCode = 0x80001bf7;
+        }
+        __IOStreamList[1] {
+           __Name = "Galaxy";
+           __IOStreamType = DataViewIO;
+           __IOStreamCode = 0x00000008;
+        }
+        __LotTypeSummary = "Lot";
+        __ReportSummary = "Final";
+        __SearchPaths {
+          "$CUSTOMER_DIR/unison/ltx/methods";
+          "$CUSTOMER_DIR/unison/ltx/libraries";
+          "$CUSTOMER_DIR/unison/site/methods";
+          "$CUSTOMER_DIR/unison/site/libraries";
+          "$CUSTOMER_DIR/unison/galaxysemi/lib";
+          "./";
+        }
+}
+__WaveformTable SN74HC193_PatGrp SN74HC193_PatGrp {
+    __Period "period_spec";
+    __Cell "AllPins" 0/1 Alias1_0 {
+        __Data 6/7;
+    }
+    __Cell "AllPins" L/H AliasL_H {
+        __Data 0/1;
+    }
+    __Cell "AllPins" X AliasX {
+        __Data 2;
+    }
+}
+__WaveformTable BasicWft2 {
+    __Period "period_spec";
+    __Cell "clocks" 0/1 Clks {
+        __Data 6/7;
+        __Drive {
+            __Waveform { __DriveOn @ "drive_data_spec"; __DriveData @ "drive_data_spec"; __DriveHigh @ "drive_data_spec + period_spec/2"; }
+        }
+    }
+    __Cell "allin_no_clks" 0/1 NonClk {
+        __Data 6/7;
+        __Drive {
+            __Waveform { __DriveOn @ "drive_data_spec"; __DriveData @ "drive_data_spec"; }
+        }
+    }
+    __Cell "allouts" L/H Outs {
+        __Data 0/1;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+        __Compare {
+            __Waveform { __CompareData @ "compare_data_spec"; }
+        }
+    }
+    __Cell "allouts" X WFC7 {
+        __Data 2;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+    }
+}
+__WaveformTable BasicWft {
+    __Period "period_spec";
+    __Cell "clocks" 0/1 Clks {
+        __Data 6/7;
+        __Drive {
+            __Waveform { __DriveData @ clock_pw <- D2; __DriveHigh @ "clock_stop"; }
+        }
+    }
+    __Cell "allin_no_clks" 0/1 NonClk {
+        __Data 6/7;
+        __Drive {
+            __Waveform { __DriveData @ "drive_data_spec"; }
+        }
+    }
+    __Cell "allouts" L/H Outs {
+        __Data 0/1;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+        __Compare {
+            __Waveform { __CompareData @ "compare_data_spec"; }
+        }
+    }
+    __Cell "allouts" X WFC7 {
+        __Data 2;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+    }
+}
+__WaveformTable SliderWft {
+    __Period "period_spec";
+    __Cell "AllPins" 0/1 NonClk {
+        __Data 6/7;
+        __Drive {
+            __Waveform { __DriveData @ "drive_data_spec"; }
+        }
+    }
+    __Cell "AllPins" L/H Outs {
+        __Data 0/1;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+        __Compare {
+            __Waveform { __CompareData @ "compare_data_spec"; }
+        }
+    }
+    __Cell "AllPins" X WFC7 {
+        __Data 2;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+    }
+}
+__WaveformTable SliderWft2 {
+    __Period "period_spec";
+    __Cell "AllPins" 0/1 NonClk {
+        __Data 6/7;
+        __Drive {
+            __Waveform { __DriveOn @ "drive_data_spec"; __DriveData @ "drive_data_spec"; }
+        }
+    }
+    __Cell "AllPins" L/H Outs {
+        __Data 0/1;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+        __Compare {
+            __Waveform { __CompareData @ "compare_data_spec"; }
+        }
+    }
+    __Cell "AllPins" X WFC7 {
+        __Data 2;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+    }
+}
+__WaveformTable ScanWft {
+    __Period "period_spec";
+    __Cell "clocks" 0/1 Clks {
+        __Data 6/7;
+        __Drive {
+            __Waveform { __DriveOn @ "drive_data_spec"; __DriveData @ "drive_data_spec"; __DriveHigh @ "drive_data_spec + period_spec/2"; }
+        }
+    }
+    __Cell "allin_no_clks" 0/1 NonClk {
+        __Data 6/7;
+        __Drive {
+            __Waveform { __DriveOn @ "drive_data_spec"; __DriveData @ "drive_data_spec"; }
+        }
+    }
+    __Cell "allouts" L/H Outs {
+        __Data 0/1;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+        __Compare {
+            __Waveform { __CompareData @ "period_spec"; }
+        }
+    }
+    __Cell "allouts" X Ignore {
+        __Data 2;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+    }
+    __Cell "ScanHeader_group" D ScanIn {
+        __Data 6 __Serial;
+        __Drive {
+            __Waveform { __DriveOn @ "0ns"; __DriveData @ "0ns"; }
+        }
+    }
+    __Cell "ScanHeader_group" C ScanOut {
+        __Data 3 __Serial;
+        __Drive {
+            __Waveform { __DriveOff @ "0ns"; }
+        }
+        __Compare {
+            __Waveform { __CompareData @ "0ns"; }
+        }
+    }
+}
+__SignalHeader SH1 {
+    __Signals {
+        UP DOWN CLR LOAD_ D_in C_in B_in A_in QD QC QB QA BO_ CO_
+    }
+}
+__SignalHeader ScanHeader {
+    __Signals {
+        QA { __Scan, __ScanLength = 10, __Fill = X, __PostFill; }
+        UP { __Scan, __ScanLength = 10, __Fill = 0, __PreFill; }
+    }
+}
+__PatternGroup SN74HC193_PatGrp {
+    __SignalHeader SH1 ScanHeader;
+}
+__Thread BasicFuncBurst {
+    __Row {
+        __ThreadAction = __Expression { __String = "Seq:EnterExit"; }
+        __Pattern = BasicFuncPat;
+    }
+}
+__PatternSequence BasicFuncExec_PatSeq {
+    __Thread[0] = BasicFuncBurst;
+    __Thread[1] = StaticIddBurst;
+    __Thread[2] = FreqCounterBurst;
+    __Thread[3] = SliderBurst;
+    __Thread[4] = VOLBurst;
+    __Thread[5] = VOHBurst;
+    __Zipper = __Zipper {
+        __Row { SN74HC193_PatGrp, BasicWft = { BasicWft } }
+        __Row { SN74HC193_PatGrp, SliderWft = { SliderWft } }
+    }
+    __PinModes {
+        __Row {
+            __Pins = __Expression { __String = "AllPins"; __Type = PIN; }
+            __Direction = __Expression { __String = "Dir:Bidirect"; __Type = Dir:; }
+            __Term = __Expression { __String = "Term:NoLoad"; __Type = Term:; }
+        }
+    }
+}
+
+__Thread StaticIddBurst {
+    __StopCount = __Expression { __String = "2"; __Type = INTEGER; }
+    __Row {
+        __ThreadAction = __Expression { __String = "Seq:EnterExit"; }
+        __Pattern = StaticIddFunc;
+    }
+}
+__Thread SliderBurst {
+    __Row {
+        __ThreadAction = __Expression { __String = "Seq:EnterExit"; }
+        __Pattern = SliderPat;
+    }
+}
+__Thread FreqCounterBurst {
+    __Row {
+        __ThreadAction = __Expression { __String = "Seq:EnterExit"; }
+        __Pattern = FreqCounterPat;
+    }
+}
+
+__Thread VOLBurst {
+    __Row {
+        __ThreadAction = __Expression { __String = "Seq:Enter"; }
+        __Pattern = BasicFuncPat;
+    }
+    __Row {
+        __ThreadAction = __Expression { __String = "Seq:Exit"; }
+        __PatternLabel = __Expression { __String = "BasicFuncPat.VOL"; }
+    }
+}
+__Thread VOHBurst {
+    __Row {
+        __ThreadAction = __Expression { __String = "Seq:Enter"; }
+        __Pattern = BasicFuncPat;
+    }
+    __Row {
+        __ThreadAction = __Expression { __String = "Seq:Exit"; }
+        __PatternLabel = __Expression { __String = "BasicFuncPat.VOH"; }
+    }
+}
+__PatternMap GenericPatternMap {
+    __DefaultSourcePath = "../Patterns/PatternSource/D96";
+    __DefaultBinaryPath = "../Patterns/PatternBinary";
+    __DefaultPatternGroup = "SN74HC193_PatGrp";
+    __Pattern BasePattern {
+        __File "BasePattern";
+    }
+    __Pattern BasicFuncPat {
+        __File "BasicFuncPat";
+    }
+    __Pattern FreqCounterPat {
+        __File "FreqCounterPat";
+    }
+    __Pattern StaticIddFunc {
+        __File "StaticIddFunc";
+    }
+    __Pattern SliderPat {
+        __File "SliderPat";
+    }
+}
+__SubFlow MainFlow_OnStart {
+    __TestGroup OpensShorts {
+        __XCoord = (100,100);
+        __Port[0] {
+            __PortPosition = 90;
+        }
+        __Port[1] {
+            __PortPosition = 200;
+        }
+        __Port[2] {
+            __PortPosition = 160;
+        }
+        __InputPosition = 270;
+        __TestID = "0";
+        __Exec = __Test {
+            __Mask[0] = LevelsNomSel;
+            __Entry[0] = PowerDownLevels;
+            __PortExpression[0] = __Expression { __String = ".Result = TM_RESULT:TM_PASS"; }
+            __PortExpression[1] = __Expression { __String = ".DCOpens.Result = TM_RESULT:TM_FAIL"; }
+            __PortExpression[2] = __Expression { __String = "TRUE"; }
+            __Block[0] = {
+                __Title = DCOpens;
+                __WrapCells = __True;
+                __EnableExpression = __Expression { __String = "TRUE"; }
+                __TestMethod {
+                    __Name = LTXC::DCTest;
+                    ShowAdditionalArgs = __Expression { __String = "TRUE"; }
+                    ShowPresetArgs = __Expression { __String = "FALSE"; }
+                    DisableDatalog = __Expression { __String = "FALSE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    LevelsSetup = __Expression { __String = "&OpensTestLevels"; }
+                    OverridePatternFails = __Expression { __String = "FALSE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    PresetLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LOCAL_LIMITS"; }
+                    PresetExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    PresetPatternMinorID = __Expression { __String = "10"; }
+                    TestLimitSource = __Expression { __String = "DC_LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    LimitStructure = __Expression { __String = "@1000"; }
+                    MinorID = __Expression { __String = "0"; }
+                    LowLimit = __Expression { __String = "cont_limit"; }
+                    HighLimit = __Expression { __String = "0V"; }
+                    MethodOfTest = __Expression { __String = "MEASURE_METHOD:MEASURE_SERIAL"; }
+                    MakeBeforeBreakRelays = __Expression { __String = "VI_CONNECT_SEQUENCE:VI_MAKE_BEFORE_BREAK"; }
+                    OptimizationMethod = __Expression { __String = "OPTIMIZATION_METHOD:OPTIMIZE_FOR_SPEED"; }
+                    TestPins = __Expression { __String = "AllPins"; }
+                    ForceValue = __Expression { __String = "cont_current"; }
+                    ForceRange = __Expression { __String = "cont_current"; }
+                    MeasureRange = __Expression { __String = "-2V"; }
+                    LowClamp = __Expression { __String = "-1.5V"; }
+                    HighClamp = __Expression { __String = "1.5V"; }
+                    MeasurementAverages = __Expression { __String = "1"; }
+                    PerPinMeasurements = __Expression { __String = "#"; __Mode = Output; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    SimulatedPerPinMeasurements = __Expression { __String = "if(Training,(Site(SimpleArray(NumPins(AllPins),-0.7),SimpleArray(NumPins(AllPins),-2.0),SimpleArray(NumPins(AllPins),-0.7),SimpleArray(NumPins(AllPins),-2.0))),(Site(SimpleArray(NumPins(AllPins),-0.7),SimpleArray(NumPins(AllPins),-0.7),SimpleArray(NumPins(AllPins),-0.7),SimpleArray(NumPins(AllPins),-0.7))))"; }
+                    CharacterizationEnable = __Expression { __String = "CharacterizeDevice"; }
+                }
+            }
+            __Block[1] = {
+                __Title = DCShorts;
+                __WrapCells = __True;
+                __EnableExpression = __Expression { __String = "TRUE"; }
+                __TestMethod {
+                    __Name = LTXC::DCTest;
+                    ShowAdditionalArgs = __Expression { __String = "TRUE"; }
+                    ShowPresetArgs = __Expression { __String = "FALSE"; }
+                    DisableDatalog = __Expression { __String = "FALSE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    LevelsSetup = __Expression { __String = "&ShortsTestLevels"; }
+                    OverridePatternFails = __Expression { __String = "FALSE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    PresetLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LOCAL_LIMITS"; }
+                    PresetExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    PresetPatternMinorID = __Expression { __String = "30"; }
+                    TestLimitSource = __Expression { __String = "DC_LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    LimitStructure = __Expression { __String = "@1020"; }
+                    MinorID = __Expression { __String = "20"; }
+                    LowLimit = __Expression { __String = "-2.5V"; }
+                    HighLimit = __Expression { __String = "-200mV"; }
+                    MethodOfTest = __Expression { __String = "MEASURE_METHOD:MEASURE_PARALLEL"; }
+                    MakeBeforeBreakRelays = __Expression { __String = "VI_CONNECT_SEQUENCE:VI_MAKE_BEFORE_BREAK"; }
+                    OptimizationMethod = __Expression { __String = "OPTIMIZATION_METHOD:OPTIMIZE_FOR_SPEED"; }
+                    TestPins = __Expression { __String = "AllPins"; }
+                    ForceValue = __Expression { __String = "-100uA"; }
+                    ForceRange = __Expression { __String = "-100uA"; }
+                    MeasureRange = __Expression { __String = "-1V"; }
+                    LowClamp = __Expression { __String = "-1.5V"; }
+                    HighClamp = __Expression { __String = "1.5V"; }
+                    MeasurementAverages = __Expression { __String = "1"; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    SimulatedPerPinMeasurements = __Expression { __String = "Site(SimpleArray(NumPins(AllPins),-0.7),SimpleArray(NumPins(AllPins),-0.7),SimpleArray(NumPins(AllPins),-2.0),SimpleArray(NumPins(AllPins),-2.0))"; }
+                    CharacterizationEnable = __Expression { __String = "FALSE"; }
+                }
+            }
+        }
+    }
+    __Node ContinuityFail_62 {
+        __XCoord = (100,300);
+        __InputPosition = 0;
+        __TestID = "";
+        __Exec = OpensFail;
+    }
+    __TestGroup BasicFunctional {
+        __XCoord = (250,100);
+        __Port[0] {
+            __PortPosition = 90;
+        }
+        __Port[1] {
+            __PortPosition = 180;
+        }
+        __InputPosition = 270;
+        __TestID = "0";
+        __Exec = __Test {
+            __Mask[0] = LevelsNomSel;
+            __Mask[1] = TimingNomSel;
+            __Entry[0] = BasicDCLevels;
+            __Entry[1] = BasicFuncExec_PatSeq;
+            __PortExpression[0] = __Expression { __String = ".Result = TM_RESULT:TM_PASS"; }
+            __PortExpression[1] = __Expression { __String = "TRUE"; }
+            __Block[0] = {
+                __Title = BasicFunc;
+                __WrapCells = __True;
+                __EnableExpression = __Expression { __String = "TRUE"; }
+                __ContinueOnFail = __Expression { __String = "TRUE"; }
+                __TestMethod {
+                    __Name = LTXC::FuncTest;
+                    ShowAdditionalArgs = __Expression { __String = "TRUE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    TestPins = __Expression { __String = "AllPins"; }
+                    TestPatterns = __Expression { __String = "'BasicFuncBurst'"; }
+                    TestMode = __Expression { __String = "FUNC_MODE_ENUM:SETUP_AND_EXECUTE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    TestLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    ExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    LimitStructure = __Expression { __String = "@2000"; }
+                    MinorID = __Expression { __String = "0"; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    CharacterizationEnable = __Expression { __String = "CharacterizeDevice"; }
+                    CharacterizationObject = __Expression { __String = "&AC_Margin"; }
+                }
+            }
+        }
+    }
+    __Node FunctionalFail_103 {
+        __XCoord = (250,300);
+        __InputPosition = 0;
+        __TestID = "";
+        __Exec = FunctionalFail;
+    }
+    __TestGroup InputLeakage {
+        __XCoord = (400,100);
+        __Port[0] {
+            __PortPosition = 90;
+        }
+        __Port[1] {
+            __PortPosition = 180;
+        }
+        __InputPosition = 270;
+        __TestID = "0";
+        __Exec = __Test {
+            __Mask[0] = LevelsNomSel;
+            __Entry[0] = BasicDCLevels;
+            __PortExpression[0] = __Expression { __String = ".Result = TM_RESULT:TM_PASS"; }
+            __PortExpression[1] = __Expression { __String = "TRUE"; }
+            __Block[0] = {
+                __Title = IIL;
+                __WrapCells = __True;
+                __EnableExpression = __Expression { __String = "TRUE"; }
+                __ContinueOnFail = __Expression { __String = "FALSE"; }
+                __TestMethod {
+                    __Name = LTXC::DCTest;
+                    ShowAdditionalArgs = __Expression { __String = "TRUE"; }
+                    ShowPresetArgs = __Expression { __String = "TRUE"; }
+                    DisableDatalog = __Expression { __String = "FALSE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    LevelsSetup = __Expression { __String = "&IILTestLevels"; }
+                    OverridePatternFails = __Expression { __String = "FALSE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    PresetLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LOCAL_LIMITS"; }
+                    PresetExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    PresetPatternMinorID = __Expression { __String = "10"; }
+                    TestLimitSource = __Expression { __String = "DC_LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    LimitStructure = __Expression { __String = "@3000"; }
+                    MinorID = __Expression { __String = "0"; }
+                    LowLimit = __Expression { __String = "-iil_spec"; }
+                    HighLimit = __Expression { __String = "iil_spec"; }
+                    MethodOfTest = __Expression { __String = "MEASURE_METHOD:MEASURE_PARALLEL"; }
+                    MakeBeforeBreakRelays = __Expression { __String = "VI_CONNECT_SEQUENCE:VI_MAKE_BEFORE_BREAK"; }
+                    OptimizationMethod = __Expression { __String = "OPTIMIZATION_METHOD:OPTIMIZE_FOR_SPEED"; }
+                    TestPins = __Expression { __String = "allins"; }
+                    ForceValue = __Expression { __String = "iil_force"; }
+                    ForceRange = __Expression { __String = "iih_force"; }
+                    MeasureRange = __Expression { __String = "2mA"; }
+                    MeasurementAverages = __Expression { __String = "5U"; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    SimulatedPerPinMeasurements = __Expression { __String = "LTXC::RandomizedOffset(TRUE,SimpleArray(NumPins(allins),0),Array(1,1,1,1,1),Array(-0.0015,-0.0005,0.0005,0.0014,0.00022))"; }
+                    CharacterizationEnable = __Expression { __String = "FALSE"; }
+                }
+            }
+            __Block[1] = {
+                __Title = IIH;
+                __WrapCells = __True;
+                __EnableExpression = __Expression { __String = "TRUE"; }
+                __ContinueOnFail = __Expression { __String = "FALSE"; }
+                __TestMethod {
+                    __Name = LTXC::DCTest;
+                    ShowAdditionalArgs = __Expression { __String = "TRUE"; }
+                    ShowPresetArgs = __Expression { __String = "FALSE"; }
+                    DisableDatalog = __Expression { __String = "FALSE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    OverridePatternFails = __Expression { __String = "FALSE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    PresetLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LOCAL_LIMITS"; }
+                    PresetExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    PresetPatternMinorID = __Expression { __String = "30"; }
+                    TestLimitSource = __Expression { __String = "DC_LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    LimitStructure = __Expression { __String = "@3500"; }
+                    MinorID = __Expression { __String = "20"; }
+                    LowLimit = __Expression { __String = "-iih_spec"; }
+                    HighLimit = __Expression { __String = "iih_spec"; }
+                    MethodOfTest = __Expression { __String = "MEASURE_METHOD:MEASURE_PARALLEL"; }
+                    MakeBeforeBreakRelays = __Expression { __String = "VI_CONNECT_SEQUENCE:VI_MAKE_BEFORE_BREAK"; }
+                    OptimizationMethod = __Expression { __String = "OPTIMIZATION_METHOD:OPTIMIZE_FOR_SPEED"; }
+                    TestPins = __Expression { __String = "allins"; }
+                    ForceValue = __Expression { __String = "iih_force"; }
+                    ForceRange = __Expression { __String = "iih_force"; }
+                    MeasureRange = __Expression { __String = "20mA"; }
+                    MeasurementAverages = __Expression { __String = "5U"; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    SimulatedPerPinMeasurements = __Expression { __String = "LTXC::RandomizedOffset(TRUE,SimpleArray(NumPins(allins),0),Array(1,1,1,1,1),Array(-0.0015,-0.0005,0.0005,0.0014,0.00022))"; }
+                    CharacterizationEnable = __Expression { __String = "FALSE"; }
+                }
+            }
+        }
+    }
+    __Node InputLeakageFail_72 {
+        __XCoord = (400,300);
+        __InputPosition = 0;
+        __TestID = "";
+        __Exec = InputLeakageFail;
+    }
+    __TestGroup StaticIddTest {
+        __XCoord = (550,100);
+        __Port[0] {
+            __PortPosition = 90;
+        }
+        __Port[1] {
+            __PortPosition = 180;
+        }
+        __InputPosition = 270;
+        __TestID = "0";
+        __Exec = __Test {
+            __Mask[0] = LevelsMaxSel;
+            __Mask[1] = TimingNomSel;
+            __Entry[0] = BasicDCLevels;
+            __Entry[1] = BasicFuncExec_PatSeq;
+            __PortExpression[0] = __Expression { __String = ".Result = TM_RESULT:TM_PASS"; }
+            __PortExpression[1] = __Expression { __String = "TRUE"; }
+            __Block[0] = {
+                __Title = Block1;
+                __WrapCells = __True;
+                __EnableExpression = __Expression { __String = "TRUE"; }
+                __TestMethod {
+                    __Name = LTXC::PowerTest;
+                    ShowAdditionalArgs = __Expression { __String = "TRUE"; }
+                    ShowPresetArgs = __Expression { __String = "TRUE"; }
+                    DisableDatalog = __Expression { __String = "FALSE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    PresetPatterns = __Expression { __String = "'StaticIddBurst'"; }
+                    OverridePatternFails = __Expression { __String = "FALSE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    PresetLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    PresetExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    PresetPatternMinorID = __Expression { __String = "10"; }
+                    PresetLimitStructure = __Expression { __String = "@4000"; }
+                    SetupRangeAfterPreset = __Expression { __String = "FALSE"; }
+                    TestLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    LimitStructure = __Expression { __String = "@4100"; }
+                    MinorID = __Expression { __String = "0"; }
+                    LowLimit = __Expression { __String = "-200uA"; }
+                    HighLimit = __Expression { __String = "icc_max"; }
+                    TestPins = __Expression { __String = "VCC"; }
+                    MethodOfTest = __Expression { __String = "POWER_TEST_METHOD_ENUM:STATIC"; }
+                    MaxExpectedCurrent = __Expression { __String = "200mA"; }
+                    MinAllowedCurrent = __Expression { __String = "-100mA"; }
+                    MaxAllowedCurrent = __Expression { __String = "100mA"; }
+                    ForcedVoltage = __Expression { __String = "vcc_spec"; }
+                    MeasurementDelay = __Expression { __String = "10mS"; }
+                    MeasurementAverages = __Expression { __String = "10U"; }
+                    ComparePath = __Expression { __String = "DIGITAL_CMP_PATH:DIGITAL_CMP_VOH"; }
+                    EdgeType = __Expression { __String = "EDGE_TYPE:EDGE_RISING"; }
+                    TriggerMode = __Expression { __String = "DIGITAL_TRIGGER_MODE:DIGITAL_TRIGGER_PULSE"; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    SimulatedPerPinMeasurements = __Expression { __String = "6.8mA"; }
+                    CharacterizationEnable = __Expression { __String = "FALSE"; }
+                }
+            }
+        }
+    }
+    __Node StaticIddFail_95 {
+        __XCoord = (550,300);
+        __InputPosition = 0;
+        __TestID = "";
+        __Exec = StaticIddFail;
+    }
+    __TestGroup VolVohTest {
+        __XCoord = (700,100);
+        __Port[0] {
+            __PortPosition = 90;
+        }
+        __Port[1] {
+            __PortPosition = 180;
+        }
+        __InputPosition = 270;
+        __TestID = "0";
+        __Exec = __Test {
+            __Mask[0] = LevelsNomSel;
+            __Mask[1] = TimingNomSel;
+            __Entry[0] = BasicFuncExec_PatSeq;
+            __Entry[1] = BasicDCLevels;
+            __PortExpression[0] = __Expression { __String = ".Result = TM_RESULT:TM_PASS"; }
+            __PortExpression[1] = __Expression { __String = "TRUE"; }
+            __Block[0] = {
+                __Title = VOLSetup;
+                __WrapCells = __True;
+                __TestMethod {
+                    __Name = LTXC::FuncTest;
+                    ShowAdditionalArgs = __Expression { __String = "FALSE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    TestPins = __Expression { __String = "AllPins"; }
+                    TestPatterns = __Expression { __String = "'VOLBurst'"; }
+                    TestMode = __Expression { __String = "FUNC_MODE_ENUM:SETUP_AND_EXECUTE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    TestLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    ExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    LimitStructure = __Expression { __String = "@5100"; }
+                    MinorID = __Expression { __String = "0"; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    CharacterizationEnable = __Expression { __String = "FALSE"; }
+                }
+            }
+            __Block[1] = {
+                __Title = VOLTest;
+                __WrapCells = __True;
+                __EnableExpression = __Expression { __String = "TRUE"; }
+                __TestMethod {
+                    __Name = LTXC::DCTest;
+                    ShowAdditionalArgs = __Expression { __String = "FALSE"; }
+                    ShowPresetArgs = __Expression { __String = "FALSE"; }
+                    DisableDatalog = __Expression { __String = "FALSE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    LevelsSetup = __Expression { __String = "&VOLTestLevels"; }
+                    OverridePatternFails = __Expression { __String = "FALSE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    PresetLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LOCAL_LIMITS"; }
+                    PresetExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    PresetPatternMinorID = __Expression { __String = "20"; }
+                    TestLimitSource = __Expression { __String = "DC_LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    LimitStructure = __Expression { __String = "&VOL"; }
+                    MinorID = __Expression { __String = "10"; }
+                    LowLimit = __Expression { __String = "-0.5V"; }
+                    HighLimit = __Expression { __String = "vol_spec"; }
+                    MethodOfTest = __Expression { __String = "MEASURE_METHOD:MEASURE_PARALLEL"; }
+                    MakeBeforeBreakRelays = __Expression { __String = "VI_CONNECT_SEQUENCE:VI_MAKE_BEFORE_BREAK"; }
+                    OptimizationMethod = __Expression { __String = "OPTIMIZATION_METHOD:OPTIMIZE_FOR_SPEED"; }
+                    TestPins = __Expression { __String = "QA+QB+QC+QD"; }
+                    ForceValue = __Expression { __String = "iol_spec/2"; }
+                    ForceRange = __Expression { __String = "iol_spec"; }
+                    MeasureRange = __Expression { __String = "2V"; }
+                    LowClamp = __Expression { __String = "0V"; }
+                    HighClamp = __Expression { __String = "6V"; }
+                    MeasurementAverages = __Expression { __String = "1"; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    CharacterizationEnable = __Expression { __String = "FALSE"; }
+                }
+            }
+            __Block[2] = {
+                __Title = VOHSetup;
+                __TestMethod {
+                    __Name = LTXC::FuncTest;
+                    ShowAdditionalArgs = __Expression { __String = "FALSE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    TestPins = __Expression { __String = "AllPins"; }
+                    TestPatterns = __Expression { __String = "'VOHBurst'"; }
+                    TestMode = __Expression { __String = "FUNC_MODE_ENUM:SETUP_AND_EXECUTE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    TestLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    ExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    LimitStructure = __Expression { __String = "@5300"; }
+                    MinorID = __Expression { __String = "30"; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    CharacterizationEnable = __Expression { __String = "FALSE"; }
+                }
+            }
+            __Block[3] = {
+                __Title = VOHTest;
+                __WrapCells = __True;
+                __TestMethod {
+                    __Name = LTXC::DCTest;
+                    ShowAdditionalArgs = __Expression { __String = "TRUE"; }
+                    ShowPresetArgs = __Expression { __String = "FALSE"; }
+                    DisableDatalog = __Expression { __String = "FALSE"; }
+                    ExecuteSitesSerially = __Expression { __String = "FALSE"; }
+                    LevelsSetup = __Expression { __String = "&VOHTestLevels"; }
+                    OverridePatternFails = __Expression { __String = "FALSE"; }
+                    DisablePatternDatalog = __Expression { __String = "FALSE"; }
+                    PresetLimitSource = __Expression { __String = "LIMITS_TYPE_ENUM:USE_LOCAL_LIMITS"; }
+                    PresetExpectedResult = __Expression { __String = "EXPECTED_RESULT:ER_PASS"; }
+                    PresetPatternMinorID = __Expression { __String = "50"; }
+                    TestLimitSource = __Expression { __String = "DC_LIMITS_TYPE_ENUM:USE_LIMIT_STRUCT"; }
+                    LimitStructure = __Expression { __String = "&VOH"; }
+                    MinorID = __Expression { __String = "40"; }
+                    LowLimit = __Expression { __String = "voh_spec"; }
+                    HighLimit = __Expression { __String = "6V"; }
+                    MethodOfTest = __Expression { __String = "MEASURE_METHOD:MEASURE_PARALLEL"; }
+                    MakeBeforeBreakRelays = __Expression { __String = "VI_CONNECT_SEQUENCE:VI_MAKE_BEFORE_BREAK"; }
+                    OptimizationMethod = __Expression { __String = "OPTIMIZATION_METHOD:OPTIMIZE_FOR_SPEED"; }
+                    TestPins = __Expression { __String = "QA+QB+QC+QD"; }
+                    ForceValue = __Expression { __String = "ioh_spec"; }
+                    ForceRange = __Expression { __String = "ioh_spec"; }
+                    MeasureRange = __Expression { __String = "vcc_spec"; }
+                    LowClamp = __Expression { __String = "0V"; }
+                    HighClamp = __Expression { __String = "6V"; }
+                    MeasurementAverages = __Expression { __String = "1"; }
+                    SimulatedTestResult = __Expression { __String = "TM_RESULT:TM_PASS"; }
+                    SimulatedPerPinMeasurements = __Expression { __String = "PerPinRandomValue(4, 4.0V, 4.5V)"; }
+                    CharacterizationEnable = __Expression { __String = "FALSE"; }
+                }
+            }
+        }
+    }
+    __Node OutputLevelFail_94 {
+        __XCoord = (700,300);
+        __InputPosition = 0;
+        __TestID = "";
+        __Exec = OutputLevelFail;
+    }
+    __TestGroup SingleDatalog {
+        __XCoord = (850,100);
+        __Port[0] {
+            __PortPosition = 90;
+        }
+        __Port[1] {
+            __PortPosition = 180;
+        }
+        __InputPosition = 270;
+        __TestID = "0";
+        __Exec = __Test {
+            __PortExpression[0] = __Expression { __String = ".Result = TM_RESULT:TM_PASS"; }
+            __PortExpression[1] = __Expression { __String = "TRUE"; }
+            __Block[0] = {
+                __Title = Block1;
+                __TestMethod {
+                    __Name = DatalogItem;
+                    val = __Expression { __String = "SingleRandomValue(Site(0.38, -0.52), Site(0.42, -0.48), Site(0.05, 0.05), Site(20, 20), Site(0.5, 0.5), Site(0.0, 0.0))"; }
+                    lim = __Expression { __String = "@6000"; }
+                }
+            }
+        }
+    }
+    __Node DatalogFail_99 {
+        __XCoord = (850,300);
+        __InputPosition = 0;
+        __TestID = "";
+        __Exec = DatalogFail;
+    }
+    __Node Pass_116 {
+        __XCoord = (1000,300);
+        __InputPosition = 0;
+        __TestID = "";
+        __Exec = Pass;
+    }
+    __StartNode = OpensShorts;
+    __PortConnections {
+        OpensShorts __Port[0] = BasicFunctional;
+        OpensShorts __Port[1] = ContinuityFail_62;
+        OpensShorts __Port[2] = ContinuityFail_62;
+        BasicFunctional __Port[0] = InputLeakage;
+        BasicFunctional __Port[1] = FunctionalFail_103;
+        InputLeakage __Port[0] = StaticIddTest;
+        InputLeakage __Port[1] = InputLeakageFail_72;
+        StaticIddTest __Port[0] = VolVohTest;
+        StaticIddTest __Port[1] = StaticIddFail_95;
+        VolVohTest __Port[0] = SingleDatalog;
+        VolVohTest __Port[1] = OutputLevelFail_94;
+        SingleDatalog __Port[0] = Pass_116;
+        SingleDatalog __Port[1] = DatalogFail_99;
+    }
+}
+__LimitTable SN74HC193Limits {
+    __CSVFile = "../Limits/SN74HC193Limits.csv";
+    __GBSetting = __Off;
+}
+__Levels OpensTestLevels {
+    __Column[0] {
+    	__LevelsColumnType = __DCTestType;
+    	__Group = __Expression { __String = "AllPins"; }
+    	__ForceValue = __Expression { __String = "-100uA"; }
+    	__ForceRange = __Expression { __String = "-100uA"; }
+    	__MeasureRange = __Expression { __String = "-2V"; }
+    	__LowClamp = __Expression { __String = "-1.5V"; }
+    	__HighClamp = __Expression { __String = "1.5V"; }
+    }
+}
+__Levels ShortsTestLevels {
+    __Column[0] {
+    	__LevelsColumnType = __DCTestType;
+    	__Group = __Expression { __String = "AllPins"; }
+    	__ForceValue = __Expression { __String = "-100uA"; }
+    	__ForceRange = __Expression { __String = "-100uA"; }
+    	__MeasureRange = __Expression { __String = "-1V"; }
+    	__LowClamp = __Expression { __String = "-1.5V"; }
+    	__HighClamp = __Expression { __String = "1.5V"; }
+    }
+}
+__Levels IILTestLevels {
+    __Column[0] {
+    	__LevelsColumnType = __DCTestType;
+    	__Group = __Expression { __String = "allins"; }
+    	__ForceValue = __Expression { __String = "0V"; }
+    	__ForceRange = __Expression { __String = "5V"; }
+    	__MeasureRange = __Expression { __String = "2mA"; }
+    }
+}
+__Levels IIHTestLevels {
+    __Column[0] {
+    	__LevelsColumnType = __DCTestType;
+    	__Group = __Expression { __String = "allins"; }
+    	__ForceValue = __Expression { __String = "5V"; }
+    	__ForceRange = __Expression { __String = "5V"; }
+    	__MeasureRange = __Expression { __String = "20mA"; }
+    }
+}
+__Levels VOLTestLevels {
+    __Column[0] {
+    	__LevelsColumnType = __DCTestType;
+    	__Group = __Expression { __String = "QA+QB+QC+QD"; }
+    	__ForceValue = __Expression { __String = "5mA"; }
+    	__ForceRange = __Expression { __String = "10mA"; }
+    	__MeasureRange = __Expression { __String = "2V"; }
+    	__LowClamp = __Expression { __String = "0V"; }
+    	__HighClamp = __Expression { __String = "6V"; }
+    }
+}
+__Levels VOHTestLevels {
+    __Column[0] {
+    	__LevelsColumnType = __DCTestType;
+    	__Group = __Expression { __String = "QA+QB+QC+QD"; }
+    	__ForceValue = __Expression { __String = "-400uA"; }
+    	__ForceRange = __Expression { __String = "-400uA"; }
+    	__MeasureRange = __Expression { __String = "5V"; }
+    	__LowClamp = __Expression { __String = "0V"; }
+    	__HighClamp = __Expression { __String = "6V"; }
+    }
+}
+__Bin DatalogFail {
+    __Number = 50;
+    __Result = __False;
+    __CheckOverFlow = __True;
+    __Color = 2;
+}
+__ExternalRef {
+   __Path = "../../gtl_datalogger/working_1";
+   __File = "GalaxyPATDlog.uno";
+}
+__Bin ff {
+    __Result = __False;
+    __CheckOverFlow = __True;
+    __Color = 0;
+}
+__Bin Bin_0 {
+    __Result = __False;
+    __CheckOverFlow = __True;
+    __Color = 0;
+}
+__Bin SPAT {
+    __Number = 140;
+    __Result = __False;
+    __CheckOverFlow = __True;
+    __Color = 2;
+}
+__Bin Bin_1 {
+    __Result = __False;
+    __CheckOverFlow = __True;
+    __Color = 0;
+}
+__Bin DPAT {
+    __Number = 141;
+    __Result = __False;
+    __CheckOverFlow = __True;
+    __Color = 2;
+}

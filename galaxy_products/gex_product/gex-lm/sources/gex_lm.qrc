@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/gex_lm/images" >
+    <file>resources/galaxy_icon.png</file>
+    <file>resources/galaxy_lm_icon.png</file>
+    <file>resources/galaxy_logo.png</file>
+  </qresource>
+</RCC>

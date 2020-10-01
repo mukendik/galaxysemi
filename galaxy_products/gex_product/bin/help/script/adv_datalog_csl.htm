@@ -1,0 +1,72 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: adv_datalog.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This script generates the datalog report
+      section for tests 1000 to 1005.
+      When executed, you are prompted to enter a file to process.
+      The script uses the function&nbsp;<a href="gex6.htm">gexReportType('advanced')</a> to display the&nbsp;datalog
+      page (advanced report) directly, instead of the standard
+      home page. This saves you one mouse click!</p>
+          <p align="left">Additional information can be found in the scripting 
+          language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">reviewing</a> the other sample scripts.
+          <p align="left"><b>Important note</b>: this script doesn't overwrite 
+          your options and assumes your report type output is set to HTML. If 
+          you want the script to have full control of the options, merge it with 
+          the <a href="options_csl.htm">options.csl</a>
+          script.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: adv_datalog.csl
+//////////////////////////////////////////
+
+// Function to setup the datalog report section
+SetDatalogReport()
+{
+  sysLog('*** Script to datalog tests 1000-1005! ***');
+
+  // Select file name to process
+  var vFile = sysPrompt('Select the data file to process...');
+
+  // Creates a group to hold the file to process!
+  var group_id = gexGroup('insert','Group1');
+
+  // Add selected file into that group.
+  gexFile(group_id,'insert',vFile,'all','all');
+
+  // Set options to all defaults
+  gexOptions('reset','all','default');
+
+  // Set datalog report section: show tests 1000 to 1005
+  gexReportType('adv_datalog','tests','1000-1005');
+
+  // Get report created+show it (the advanced report page)!
+  gexBuildReport('advanced');
+}
+
+// Script entry point
+main()
+{
+  // Call function to setup the datalog report
+  SetDatalogReport();
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

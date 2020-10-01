@@ -1,0 +1,101 @@
+binning name:PASS|binning name alias:001 /S/L|hard bin number:1|soft bin number:1|binning category:P|
+binning name:CONTACT|binning name alias:CONTACT|hard bin number:2|soft bin number:2|binning category:F|
+binning name:CONTACT|binning name alias:QA_____CONTACTS|hard bin number:2|soft bin number:2|binning category:F|
+binning name:CONTACT|binning name alias:FINAL-CONT|hard bin number:2|soft bin number:2|binning category:F|
+binning name:NO AC BOARD|binning name alias:267 NO AAC BOAR|hard bin number:3|soft bin number:3|binning category:F|
+binning name:NO AC BOARD|binning name alias:267 NO AC BOARD|hard bin number:3|soft bin number:3|binning category:F|
+binning name:NO AC BOARD|binning name alias:267NO AAC BOARD|hard bin number:3|soft bin number:3|binning category:F|
+binning name:NO AC BOARD|binning name alias:267NO AAC BOAR|hard bin number:3|soft bin number:3|binning category:F|
+binning name:MIX LC|binning name alias:266 MIX LC|hard bin number:4|soft bin number:4|binning category:F|
+binning name:MIX LC|binning name alias:266MIX LC|hard bin number:4|soft bin number:4|binning category:F|
+binning name:REJECT_W/OCA|binning name alias:280REJECT_W/OCA|hard bin number:5|soft bin number:5|binning category:F|
+binning name:REJECT_W/OCA|binning name alias:280REJECT_W/O_C|hard bin number:5|soft bin number:5|binning category:F|
+binning name:FT KELVIN|binning name alias:290FT____KELVIN|hard bin number:6|soft bin number:6|binning category:F|
+binning name:FT KELVIN|binning name alias:290FT___KELVIN|hard bin number:6|soft bin number:6|binning category:F|
+binning name:FT KELVIN|binning name alias:290FT___KELVINS|hard bin number:6|soft bin number:6|binning category:F|
+binning name:FT KELVIN|binning name alias:290FT_KELVIN|hard bin number:6|soft bin number:6|binning category:F|
+binning name:FT KELVIN|binning name alias:290KELVIN GRADE|hard bin number:6|soft bin number:6|binning category:F|
+binning name:FT KELVIN|binning name alias:290 FT__KELVIN|hard bin number:6|soft bin number:6|binning category:F|
+binning name:FT KELVIN|binning name alias:290 FT___KELVIN|hard bin number:6|soft bin number:6|binning category:F|
+binning name:FT KELVIN|binning name alias:290FT____KELVIV|hard bin number:6|soft bin number:6|binning category:F|
+binning name:ISO Fault|binning name alias:056 ISOLA_FAULT|hard bin number:7|soft bin number:7|binning category:F|
+binning name:ISOLATION|binning name alias:250 ISOLATION|hard bin number:8|soft bin number:8|binning category:F|
+binning name:G-S SHORT|binning name alias:025 G-S___SHORT|hard bin number:10|soft bin number:10|binning category:F|
+binning name:G-S SHORT|binning name alias:025 G-S_SHORT|hard bin number:10|soft bin number:10|binning category:F|
+binning name:G-S SHORT|binning name alias:025 SHORT GS|hard bin number:10|soft bin number:10|binning category:F|
+binning name:G-S SHORT|binning name alias:025IL_G-S_SHORT|hard bin number:10|soft bin number:10|binning category:F|
+binning name:G-S SHORT|binning name alias:025 G-S SHORT|hard bin number:10|soft bin number:10|binning category:F|
+binning name:D-S SHORT|binning name alias:015 D-S___SHORT|hard bin number:11|soft bin number:11|binning category:F|
+binning name:D-S SHORT|binning name alias:015 D-S_SHORT|hard bin number:11|soft bin number:11|binning category:F|
+binning name:D-S SHORT|binning name alias:015IL_D-S_SHORT|hard bin number:11|soft bin number:11|binning category:F|
+binning name:D-S SHORT|binning name alias:015D-S_SHORT|hard bin number:11|soft bin number:11|binning category:F|
+binning name:D-S SHORT|binning name alias:015 SHORT DS|hard bin number:11|soft bin number:11|binning category:F|
+binning name:FINAL-SHORT|binning name alias:FINAL-SHORT|hard bin number:12|soft bin number:12|binning category:F|
+binning name:FINAL-IR|binning name alias:FINAL-IR|hard bin number:13|soft bin number:13|binning category:F|
+binning name:FINAL-IR|binning name alias:FINAL-VR|hard bin number:13|soft bin number:13|binning category:F|
+binning name:SHORT|binning name alias:010 SHORT|hard bin number:14|soft bin number:14|binning category:F|
+binning name:G-S OPEN|binning name alias:295 G_OR_S_OPEN|hard bin number:15|soft bin number:15|binning category:F|
+binning name:G-S OPEN|binning name alias:295IL_G_OR_S_OP|hard bin number:15|soft bin number:15|binning category:F|
+binning name:OSC|binning name alias:275 OSCILLATION|hard bin number:16|soft bin number:16|binning category:F|
+binning name:OSC|binning name alias:275OSCILLATION|hard bin number:16|soft bin number:16|binning category:F|
+binning name:Dummy|binning name alias:000 DUMMY|hard bin number:17|soft bin number:17|binning category:F|
+binning name:Dummy|binning name alias:000DUMMY|hard bin number:17|soft bin number:17|binning category:F|
+binning name:IL FAULT|binning name alias:055IL_____FAULT|hard bin number:20|soft bin number:20|binning category:F|
+binning name:IL FAULT|binning name alias:055IL___NO_TEST|hard bin number:20|soft bin number:20|binning category:F|
+binning name:IL KELVIN|binning name alias:285IL____KELVIN|hard bin number:21|soft bin number:21|binning category:F|
+binning name:IL KELVIN|binning name alias:285IL___KELVINS|hard bin number:21|soft bin number:21|binning category:F|
+binning name:IL Function|binning name alias:030IL__FUNCTION|hard bin number:22|soft bin number:22|binning category:F|
+binning name:IL Avalanche|binning name alias:035IL_AVALANCHE|hard bin number:23|soft bin number:23|binning category:F|
+binning name:IGSS1|binning name alias:060IGSS1_REJECT|hard bin number:31|soft bin number:31|binning category:F|
+binning name:IGSS2|binning name alias:065IGSS2_REJECT|hard bin number:32|soft bin number:32|binning category:F|
+binning name:IGSS3|binning name alias:070IGSS3_REJECT|hard bin number:33|soft bin number:33|binning category:F|
+binning name:BVDSS|binning name alias:080BVDSS_REJECT|hard bin number:40|soft bin number:40|binning category:F|
+binning name:BVDSS|binning name alias:080BVDSS REJECT|hard bin number:40|soft bin number:40|binning category:F|
+binning name:BVDSS SNAP|binning name alias:220BVDSS_SNAPBA|hard bin number:41|soft bin number:41|binning category:F|
+binning name:BVDSS SNAP|binning name alias:220BVDSS__SNAPB|hard bin number:41|soft bin number:41|binning category:F|
+binning name:BVDSS UNSTAB|binning name alias:235BVDSS_UNSTAB|hard bin number:42|soft bin number:42|binning category:F|
+binning name:BVDSX-REJ|binning name alias:083BVDSX-REJ|hard bin number:43|soft bin number:43|binning category:F|
+binning name:BVDSX-REJ|binning name alias:116BVDSX_REJECT|hard bin number:43|soft bin number:43|binning category:F|
+binning name:BVDSX-REJ|binning name alias:116IDSX__REJECT|hard bin number:43|soft bin number:43|binning category:F|
+binning name:BVDSX-REJ|binning name alias:116IDSX___REJECT|hard bin number:43|soft bin number:43|binning category:F|
+binning name:BVDSX-REJ|binning name alias:116 BVDSX_RJ|hard bin number:43|soft bin number:43|binning category:F|
+binning name:BVDSS_STF_NK|binning name alias:230BVDSS_STF_NK|hard bin number:44|soft bin number:44|binning category:F|
+binning name:BVUNST_BLK|binning name alias:236 BVUNST__BLK|hard bin number:45|soft bin number:45|binning category:F|
+binning name:IDSS_REJECT|binning name alias:115IDSS_REJ|hard bin number:50|soft bin number:50|binning category:F|
+binning name:IDSX_RJ|binning name alias:110IDSS__REJECT|hard bin number:51|soft bin number:51|binning category:F|
+binning name:IDSX_RJ|binning name alias:110IDSS_REJECT|hard bin number:51|soft bin number:51|binning category:F|
+binning name:IDSX_RJ|binning name alias:110IDSS1_REJECT|hard bin number:51|soft bin number:51|binning category:F|
+binning name:IDSS_95%_BVR|binning name alias:120IDSS_95%_BVR|hard bin number:52|soft bin number:52|binning category:F|
+binning name:IDSS+IDSX_RJ|binning name alias:113IDSS+IDSX_RJ|hard bin number:53|soft bin number:53|binning category:F|
+binning name:IDSS+IDSX_RJ|binning name alias:IDSS&IDSX REJ|hard bin number:53|soft bin number:53|binning category:F|
+binning name:IDSS+IDSX_RJ|binning name alias:113IDSX__REJECT|hard bin number:53|soft bin number:53|binning category:F|
+binning name:IDON_REJ|binning name alias:'IDON___REJ|hard bin number:54|soft bin number:54|binning category:F|
+binning name:VDSON2|binning name alias:145VDSON2___REJ|hard bin number:59|soft bin number:59|binning category:F|
+binning name:VDSON|binning name alias:140VDSON1___REJ|hard bin number:60|soft bin number:60|binning category:F|
+binning name:VDSON|binning name alias:140VDSON1-REJEC|hard bin number:60|soft bin number:60|binning category:F|
+binning name:VDSON|binning name alias:140VDSON1_REJEC|hard bin number:60|soft bin number:60|binning category:F|
+binning name:VDSON|binning name alias:140VDSON1_REJ|hard bin number:60|soft bin number:60|binning category:F|
+binning name:VTH|binning name alias:075VTH___REJECT|hard bin number:61|soft bin number:61|binning category:F|
+binning name:VTH|binning name alias:075VTH__REJECT|hard bin number:61|soft bin number:61|binning category:F|
+binning name:VSD|binning name alias:VSD|hard bin number:62|soft bin number:62|binning category:F|
+binning name:VP|binning name alias:VP|hard bin number:63|soft bin number:63|binning category:F|
+binning name:IR|binning name alias:IR|hard bin number:64|soft bin number:64|binning category:F|
+binning name:VF|binning name alias:185VF____REJECT|hard bin number:65|soft bin number:65|binning category:F|
+binning name:VF|binning name alias:185VF___REJECT|hard bin number:65|soft bin number:65|binning category:F|
+binning name:KT FAIL LOW|binning name alias:KT FAIL LOW|hard bin number:70|soft bin number:70|binning category:F|
+binning name:KT FAIL HIGH|binning name alias:KT FAIL HIGH|hard bin number:71|soft bin number:71|binning category:F|
+binning name:KT OPEN/SHORT|binning name alias:KTOPEN/SHORT|hard bin number:72|soft bin number:72|binning category:F|
+binning name:KT FAULT|binning name alias:KT FAULT|hard bin number:73|soft bin number:73|binning category:F|
+binning name:RG1|binning name alias:RG_FAL1|hard bin number:80|soft bin number:80|binning category:F|
+binning name:RG1|binning name alias:RG-FAL1|hard bin number:80|soft bin number:80|binning category:F|
+binning name:RG2|binning name alias:RG_FAL2|hard bin number:81|soft bin number:81|binning category:F|
+binning name:RG2|binning name alias:RG-FAL2|hard bin number:81|soft bin number:81|binning category:F|
+binning name:RG2|binning name alias:RG_EXT2C_FAL|hard bin number:81|soft bin number:81|binning category:F|
+binning name:RG2|binning name alias:RG_EXT2C_FAL1|hard bin number:81|soft bin number:81|binning category:F|
+binning name:RG_KELVIN|binning name alias:RG_KELVIN|hard bin number:82|soft bin number:82|binning category:F|
+binning name:RG_FUNCTION|binning name alias:RG_FUNCTION|hard bin number:83|soft bin number:83|binning category:F|
+binning name:EXTC FAULT|binning name alias:058 EXTC__FAULT|hard bin number:90|soft bin number:90|binning category:F|
+binning name:EXTC FAULT|binning name alias:058 EXTC_FAULT|hard bin number:90|soft bin number:90|binning category:F|
+binning name:EXTC FAULT|binning name alias:058 EXTC__FAUL|hard bin number:90|soft bin number:90|binning category:F|
+binning name:EXT1C_FAIL|binning name alias:EXT1C_FAIL|hard bin number:91|soft bin number:91|binning category:F|
+binning name:EXT1C_FAIL|binning name alias:EXT1C_FAIL1|hard bin number:91|soft bin number:91|binning category:F|

@@ -1,0 +1,135 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: gtl_core - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+gtl_core.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: gtl_core - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+gtl_core.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: gtm - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\BERNAR~1.SOF\LOCALS~1\Temp\RSP394.tmp" with contents
+[
+/nologo /MD /W3 /O1 /I "C:\Qt\3.3.2\include" /I "S:\gex_product\gex-tester\gtm" /I "C:\Qt\mkspecs\win32-msvc" /D "PATMAN_TESTER" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "UNICODE" /D "QT_DLL" /D "QT_THREAD_SUPPORT" /D "QT_NO_DEBUG" /Fo"Release/" /Fd"Release/" /FD -Zm200 /c 
+"D:\Dev\gex_product\gex\patman_lib.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\BERNAR~1.SOF\LOCALS~1\Temp\RSP394.tmp" 
+Creating temporary file "C:\DOCUME~1\BERNAR~1.SOF\LOCALS~1\Temp\RSP395.tmp" with contents
+[
+"qt-mt332.lib" "qtmain.lib" "kernel32.lib" "user32.lib" "gdi32.lib" "comdlg32.lib" "advapi32.lib" "shell32.lib" "ole32.lib" "oleaut32.lib" "uuid.lib" "imm32.lib" "winmm.lib" "wsock32.lib" "winspool.lib" "kernel32.lib" "user32.lib" "gdi32.lib" "comdlg32.lib" "advapi32.lib" "shell32.lib" "ole32.lib" "oleaut32.lib" "uuid.lib" "imm32.lib" "winmm.lib" "wsock32.lib" "winspool.lib" "opengl32.lib" "glu32.lib" "delayimp.lib" delayimp.lib gstdutils_c.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/gtm.pdb" /machine:IX86 /out:"Release/gtm.exe" /libpath:"C:\Qt\3.3.2\lib" /DELAYLOAD:comdlg32.dll /DELAYLOAD:oleaut32.dll /DELAYLOAD:winmm.dll /DELAYLOAD:wsock32.dll /DELAYLOAD:winspool.dll 
+".\Release\gtc_netmessage.obj"
+".\Release\gtm_data_processing.obj"
+".\Release\gtm_mainwindow.obj"
+".\Release\gtm_sockets.obj"
+".\Release\gtm_testerwindow.obj"
+".\Release\main.obj"
+".\Release\gtm_mainwindow_base.obj"
+".\Release\gtm_testerwindow_base.obj"
+".\Release\moc_gtm_mainwindow_base.obj"
+".\Release\moc_gtm_sockets.obj"
+".\Release\moc_gtm_testerwindow_base.obj"
+".\Release\qmake_image_collection.obj"
+".\Release\classes.obj"
+".\Release\cstats.obj"
+".\Release\cstdf.obj"
+".\Release\ctest.obj"
+".\Release\moc_tb_pat_dialogbase.obj"
+".\Release\patman_lib.obj"
+".\Release\tb_pat_dialogbase.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\BERNAR~1.SOF\LOCALS~1\Temp\RSP395.tmp"
+<h3>Output Window</h3>
+Compiling...
+patman_lib.cpp
+Linking...
+MSVCRT.lib(cinitexe.obj) : warning LNK4098: defaultlib "msvcrtd.lib" conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4199: /DELAYLOAD:comdlg32.dll ignored; no imports found from comdlg32.dll
+LINK : warning LNK4199: /DELAYLOAD:oleaut32.dll ignored; no imports found from oleaut32.dll
+LINK : warning LNK4199: /DELAYLOAD:winmm.dll ignored; no imports found from winmm.dll
+LINK : warning LNK4199: /DELAYLOAD:wsock32.dll ignored; no imports found from wsock32.dll
+LINK : warning LNK4199: /DELAYLOAD:winspool.dll ignored; no imports found from winspool.dll
+
+
+
+<h3>Results</h3>
+gtm.exe - 0 error(s), 6 warning(s)
+<h3>
+--------------------Configuration: gtm - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\BERNAR~1.SOF\LOCALS~1\Temp\RSP398.tmp" with contents
+[
+/nologo /MDd /W3 /Zi /Od /I "C:\Qt\3.3.2\include" /I "S:\gex_product\gex-tester\gtm" /I "C:\Qt\mkspecs\win32-msvc" /D "PATMAN_TESTER" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "UNICODE" /D "QT_DLL" /D "QT_THREAD_SUPPORT" /Fo"Debug/" /Fd"Debug/" /FD /GZ -Zm200 /c 
+"D:\Dev\gex_product\gex\patman_lib.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\BERNAR~1.SOF\LOCALS~1\Temp\RSP398.tmp" 
+Creating temporary file "C:\DOCUME~1\BERNAR~1.SOF\LOCALS~1\Temp\RSP399.tmp" with contents
+[
+"qt-mt332.lib" "qtmain.lib" "kernel32.lib" "user32.lib" "gdi32.lib" "comdlg32.lib" "advapi32.lib" "shell32.lib" "ole32.lib" "oleaut32.lib" "uuid.lib" "imm32.lib" "winmm.lib" "wsock32.lib" "winspool.lib" "kernel32.lib" "user32.lib" "gdi32.lib" "comdlg32.lib" "advapi32.lib" "shell32.lib" "ole32.lib" "oleaut32.lib" "uuid.lib" "imm32.lib" "winmm.lib" "wsock32.lib" "winspool.lib" "opengl32.lib" "glu32.lib" "delayimp.lib" gstdutils_c_debug.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/gtm.pdb" /debug /machine:IX86 /out:"Debug/gtm.exe" /pdbtype:sept /libpath:"C:\Qt\3.3.2\lib" 
+".\Debug\gtc_netmessage.obj"
+".\Debug\gtm_data_processing.obj"
+".\Debug\gtm_mainwindow.obj"
+".\Debug\gtm_sockets.obj"
+".\Debug\gtm_testerwindow.obj"
+".\Debug\main.obj"
+".\Debug\gtm_mainwindow_base.obj"
+".\Debug\gtm_testerwindow_base.obj"
+".\Debug\moc_gtm_mainwindow_base.obj"
+".\Debug\moc_gtm_sockets.obj"
+".\Debug\moc_gtm_testerwindow_base.obj"
+".\Debug\qmake_image_collection.obj"
+".\Debug\classes.obj"
+".\Debug\cstats.obj"
+".\Debug\cstdf.obj"
+".\Debug\ctest.obj"
+".\Debug\moc_tb_pat_dialogbase.obj"
+".\Debug\patman_lib.obj"
+".\Debug\tb_pat_dialogbase.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\BERNAR~1.SOF\LOCALS~1\Temp\RSP399.tmp"
+<h3>Output Window</h3>
+Compiling...
+patman_lib.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+gtm.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: gts - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+gts.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: gts - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+gts.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

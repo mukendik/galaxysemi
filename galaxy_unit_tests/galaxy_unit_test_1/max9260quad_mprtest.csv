@@ -1,0 +1,126 @@
+# Outlier Configuration file
+# Date: lun. 19 ao�t 2013 12:14:41
+# Examinator PAT - V7.1 RC3_preview
+# www.mentor.com
+ 
+<Outlier_Options TestingStage="Final Test">
+Product, 
+GoodBinList,1,
+GoodHardBinList,1,
+TestKey,2,
+PatLimitsFromBin,goodbins,,
+MinimumSamples,50,
+MinimumOutliersToFail,1,
+ScanGoodPartsOnly,1,
+StickWithinSpecLimits,1,
+StopOnFirstFail,0,
+IgnoreHighCpk,-1,
+AssumeIntegerCategory,0,
+CategoryValueCount,5,
+RecipeVersion,-1,0,
+StaticFailColor,255 0 0,
+DynamicFailColor,255 0 0,
+EWS_Flow_Names,EWS1,
+EWS_Flow_Comments,EWS flow 1,
+EWS_Flow_Kill_STDF_SBIN,,
+EWS_Flow_Kill_STDF_HBIN,,
+EWS_Flow_Kill_MAP_BIN,,
+EWS_Rules_Precedence,NNR,IDDQ-Delta,GDBN,Clustering,Reticle,
+GPAT_IgnorePPatBins,1,
+BadClusterBin,143,
+BadClusterColor,0 0 0,
+BadClusterCustomLib,0,
+NNR_Enabled,0,
+NRR_ClusterBin,142,
+NNR_Color,0 0 0,
+IDDQ_Delta_Enabled,0,
+IDDQ_Delta_Bin,10,
+IDDQ_Delta_Color,0 0 0,
+ReticleEnabled,0,
+ReticleWafermapSource,0,
+ReticleYieldThreshold,5,
+ReticleSizeX,6,
+ReticleSizeY,3,
+BadBinReticle,0;2-65535,
+ReticleBin,144,
+ReticleColor,0 0 0,
+StaticPatRule,0,
+StaticPatBin,11,
+DynamicPatRule,1,
+DynamicPatBin,10,
+CustomAlgorithmLibEnabled,0,
+BadClusterRule,0,
+BadBinZPAT,0;2-65535,
+ZPAT_OnSoftBin,1,
+CompositeExclusionZoneYield,0,
+CompositeZoneBin,148,
+3DNeighbourhoodEnabled,0,
+3DNeighbourhoodBin,147,
+MergeEtestStdf,0,
+MergeEtestStdfBin,146,
+ZPAT_GDBN_Enabled,0,
+ZPAT_Reticle_Enabled,0,
+ZPAT_Clustering_Enabled,0,
+ZPAT_Color,0 0 0,
+ClusteringPotatoEnabled,0,
+BadBinClusteringPotato,145,
+BadClusteringPotatoColor,0 0 0,
+FT_BaseLineAlgo,1,
+FT_BaseLine,200,
+FT_SubsequentBaseLine,100,
+FT_MinSamplesPerSite,10,
+FT_BaseLineMaxOutliers,5,
+FT_Tuning,200,
+FT_TuningType,0,
+FT_TuningSamples,200,
+# Recipe version 2013 April 22th : 0=Critical 1=Warning 2=Notice 3=Ignore (case 7103)
+FT_Alarm_Severity_Outliers,0,
+FT_RunsPerPacket,1,
+FT_Traceability,1,
+Report_Stats,1,
+Report_Histo,1,
+Report_Wafermap,1,
+Report_WafermapType,0,
+Report_Pareto,1,
+Report_Binning,1,
+Report_SPAT_Limits,1,
+Report_DPAT_Limits_Outliers,1,
+Report_DPAT_Limits_NoOutliers,1,
+GaussianShape,2,2,9,9,12,12,
+GaussianTailedShape,2,2,9,10,12,14,
+GaussianDoubleTailedShape,2,2,10,10,14,14,
+LogNormalShape,2,2,4,10,6,14,
+MultiModalShape,2,2,9,9,12,12,
+ClampedShape,3,6,4,9,6,12,
+DoubleClampedShape,3,3,4,4,6,6,
+CategoryShape,6,6,9,9,12,12,
+UnknownShape,2,2,9,9,12,12,
+GaussianAlgo,0
+GaussianTailedAlgo,0
+GaussianDoubleTailedAlgo,0
+LogNormalAlgo,0
+MultiModalAlgo,0
+ClampedAlgo,0
+DoubleClampedAlgo,0
+CategoryAlgo,0
+UnknownAlgo,0
+GaussianPAT,1
+GaussianTailedPAT,1
+GaussianDoubleTailedPAT,1
+LogNormalPAT,1
+MultiModalPAT,1
+ClampedPAT,1
+DoubleClampedPAT,1
+CategoryPAT,1
+UnknownPAT,1
+IgnoreIQR0,1,
+IgnoreH_Category,0,
+IgnoreH_Cpk,-1,
+</Outlier_Options>
+ 
+<Outlier_Rules>
+# Static Bin ,Dynamic Bin ,Test#,TestName,Low Limit,High Limit,Shape,Cpk,Robust Mean,Robust Sigma,Mean,Sigma,Range,Samples to Ignore,Outliers to Keep,Outlier Limits set,Outlier Rule,N factor (or Head),T factor (Tail),PAT-Median Drift alarm,Drift units,Test Mean drift alarm, Drift  units,Cpk alarm,LL scale,HL scale,SPAT Rule,N factor (or Head),T factor (Tail),DPAT Notes,SPAT Notes,NNR Rule
+-1,10,171000001,VDDA/hs41__vdda,0.00100000004749745 A,0.200000002980232 A,Gaussian,29,0.106471516,0.001060356,0.106469055,0.001076765,0.006967016,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001035,IOS__DOUT__1V7__DCS__H - 1,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001035,IOS__DOUT__1V7__DCS__H - 2,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+</Outlier_Rules>

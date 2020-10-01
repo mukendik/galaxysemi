@@ -1,0 +1,22 @@
+EXPORTS
+    d_gtl_beginjob @1
+    d_gtl_binning @2
+    d_gtl_clear_messages_stack @3
+    d_gtl_close @4
+    d_gtl_command @5
+    d_gtl_endjob @6
+    d_gtl_get @7
+    d_gtl_get_lib_state @8
+    d_gtl_get_lib_version @9
+    d_gtl_get_number_messages_in_stack @10
+    d_gtl_get_site_state @11
+    d_gtl_init @12
+    d_gtl_log @13
+    d_gtl_pop_first_message @14
+    d_gtl_pop_last_message @15
+    d_gtl_set @16
+    d_gtl_set_node_info @17
+    d_gtl_set_prod_info @18
+    d_gtl_test @19
+    d_gtl_mptest @20
+

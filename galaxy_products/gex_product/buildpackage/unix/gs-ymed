@@ -1,0 +1,109 @@
+#!/bin/bash
+# ---------------------------------------------------------------------------- #
+# gs-ymed
+# ---------------------------------------------------------------------------- #
+# chkconfig: 2345 85 15
+# description: Quantix Yield-Man Enterprise
+# processname: gs-ymed / GS-Yield-Man-Enterprise
+# 
+### Go through following steps for install the daemon on Linux:
+### You need to be root to perform this action
+#
+#     o prompt> cd <install_dir>
+#     o prompt> cp gs-ymed /etc/init.d/
+#
+#     REDHAT / CENTOS / FEDORA :
+#     o prompt> /sbin/chkconfig gs-ymed on
+#
+#     DEBIAN / UBUNTU :
+#     o prompt> update-rc.d gs-ymed defaults 25 15
+#
+### BEGIN INIT INFO
+# Provides:          gs-ymed
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Quantix Yield-Man Enterprise
+# Description:       Quantix Yield-Man Enterprise
+### END INIT INFO
+
+## edit these settings to ensure proper path for this env
+export GEX_PATH=@@INSTALL_PATH@@
+export HOME=/root
+export YM_SERVER_PROFILE=/root/serverprofile_ym
+
+procname=./gs-ymd
+
+# ---------------------------------------------------------------------------- #
+# Check if process is running
+# ---------------------------------------------------------------------------- #
+checkproc()
+{
+    pid=`pgrep -f "$procname -platform minimal"`
+    return $?
+}
+
+# ---------------------------------------------------------------------------- #
+# killproc
+# ---------------------------------------------------------------------------- #
+killproc()
+{
+    checkproc
+    if [ -n "$pid" ]; then
+        kill $pid >/dev/null 2>&1
+        ret=$?
+        sleep 1
+        return $ret
+    else
+	return 1
+    fi
+}
+
+# ---------------------------------------------------------------------------- #
+# main
+# ---------------------------------------------------------------------------- #
+common=`dirname $0`/bin/common.sh
+if [ -f $common ]; then
+    source $common
+else
+    source $GEX_PATH/bin/common.sh
+fi
+
+sanitycheck $procname
+
+setenvironment $procname
+
+case "$1" in
+    start)
+        if checkproc; then
+            echo "[QX-INFO] Quantix Yield-Man Enterprise daemon is already running"
+            exit 1
+        fi
+        echo "[QX-INFO] Starting Quantix Yield-Man Enterprise daemon"
+        cd $GEX_PATH/bin
+        eval $procname -platform minimal -GYME $2
+        ;;
+    stop)
+        if ! checkproc; then
+            echo "[QX-INFO] Quantix Yield-Man Enerprise daemon is not running"
+            exit 1
+        fi
+        echo "[QX-INFO] Stopping Quantix Enterprise Yield-Man daemon"
+        cd $GEX_PATH/bin
+        eval $procname -t
+        #killproc
+        ;;
+    status)
+        if checkproc; then
+            echo "[QX-INFO] Quantix Yield-Man Enterprise daemon is running"
+        else
+            echo "[QX-INFO] Quantix Yield-Man Enterprise daemon is not running"
+        fi
+        ;;
+    *)
+        echo "[QX-INFO] Usage: $0 {start|stop|status}"
+        ;;
+esac
+
+exit 0

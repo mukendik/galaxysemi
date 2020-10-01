@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Patman V7.6 Release History</title>
+        <style>
+            .main-title-text
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 28px;
+                font-weight: normal;
+                color: #858585;
+                text-decoration: none;
+                line-height: 30px;
+            }
+            .main-subtitle-text
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                text-decoration: none;
+                line-height: 30px;
+            }
+            .main-table-text
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                text-decoration: none;
+                line-height: 30px;
+            }
+            .main-content-text
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: normal;
+                color: #4d4d4d;
+                text-decoration: none;
+                line-height: 15px;
+            }
+            .main-content-title-blue
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: bold;
+                color: #006699;
+                text-decoration: none;
+                padding-left: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- TITLE -->
+        <table width="800"><tbody>
+                <tr>
+                    <td class="main-title-text" align="center"><a name="Top">Patman family : V7.6 Releases History</a></td>
+                </tr>
+                <tr>
+                    <td class="main-subtitle-text" align="center" >(Examinator-PAT, PAT-Man)</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>        <!-- Table of contents -->
+        <table width="800"><tbody>
+                <tr>
+                    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+                        <span style="font-size: 13px;">
+                            <a href="_pat_history.htm">Back to main releases history page</a><br><br>
+                            <!-- toc -->
+                            <a href="#V7.6.0">V7.6.0</a><br>
+                            <a href="#V7.6.0-RC1">V7.6.0-RC1</a><br>
+                            <a href="#V7.6.0-beta">V7.6.0-beta</a><br>
+                            <a href="#V7.6.0-alpha">V7.6.0-alpha</a><br>
+                        </span>
+                    </td>
+                </tr>
+            </tbody></table>
+
+        <br><br>
+
+        <!-- Table with hr -->
+        <table width="800"><tbody>
+                <tr>
+                    <td valign="top"><hr color="#afc22a"></td>
+                </tr>
+            </tbody></table>
+
+        <!-- contents -->
+
+        <!-- Table with V7.6.0 changes -->
+        <table width="800"><tbody>
+                <tr>
+                    <td halign="center" height="29" valign="middle" width="15">
+                        <img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+                    <td class="main-content-title-blue" align="left" height="29" width="785">
+                        <p align="left">
+                            <a id="V7.6.0">V7.6.0</a>
+                            <a href="#Top">(Top)</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="1" width="15"></td>
+                    <td height="1" width="785"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <!--------------------------------------------------------------------->
+        <table cellspacing="0" cols="3" border="0">
+            <colgroup width="144"></colgroup>
+            <colgroup width="384"></colgroup>
+            <colgroup width="768"></colgroup>
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+            </tr>
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+            </tr>
+           <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-7097" SDNUM="26693"><font face="Verdana">GCORE-7097</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Loading a csv recipe into GEX-PAT gives an error when duplicate test names are present</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Even when the csv recipe file is set to use the test name as the test key, when converting the recipe to json by opening it in the GEX-PAT recipe editor, an error is given about the duplicate test names.</font></td>
+            </tr>
+        </table>
+        <!-- Table with hr -->
+        <table width="800"><tbody>
+                <tr>
+                    <td valign="top"><hr color="#afc22a"></td>
+                </tr>
+            </tbody></table>
+
+        <!-- contents -->
+
+        <!-- Table with V7.6.0-RC1 changes -->
+        <table width="800"><tbody>
+                <tr>
+                    <td halign="center" height="29" valign="middle" width="15">
+                        <img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+                    <td class="main-content-title-blue" align="left" height="29" width="785">
+                        <p align="left">
+                            <a id="V7.6.0-RC1">V7.6.0-RC1</a>
+                            <a href="#Top">(Top)</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="1" width="15"></td>
+                    <td height="1" width="785"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <!--------------------------------------------------------------------->
+        <table cellspacing="0" cols="3" border="0">
+            <colgroup width="144"></colgroup>
+            <colgroup width="384"></colgroup>
+            <colgroup width="768"></colgroup>
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Enhancements</font></B></td>
+            </tr>
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+            </tr>
+           <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-7048" SDNUM="26386"><font face="Verdana">GCORE-7048</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Parser for Global Foundries PCM</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Parser for custom Global Foundries PCM data formats.</font></td>
+            </tr>
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+            </tr>
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+            </tr>
+           <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-7265" SDNUM="27409"><font face="Verdana">GCORE-7265</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Custom parser use of external files</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Change how bin mapping is done for a custom csv parser using external files to map bins.</font></td>
+            </tr>
+        </table>
+        <!-- Table with hr -->
+        <table width="800"><tbody>
+                <tr>
+                    <td valign="top"><hr color="#afc22a"></td>
+                </tr>
+            </tbody></table>
+
+        <!-- contents -->
+
+        <!-- Table with V7.6.0-beta changes -->
+        <table width="800"><tbody>
+                <tr>
+                    <td halign="center" height="29" valign="middle" width="15">
+                        <img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+                    <td class="main-content-title-blue" align="left" height="29" width="785">
+                        <p align="left">
+                            <a id="V7.6.0-beta">V7.6.0-beta</a>
+                            <a href="#Top">(Top)</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="1" width="15"></td>
+                    <td height="1" width="785"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <!--------------------------------------------------------------------->
+        <table cellspacing="0" cols="3" border="0">
+            <colgroup width="144"></colgroup>
+            <colgroup width="384"></colgroup>
+            <colgroup width="768"></colgroup>
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Enhancements</font></B></td>
+            </tr>
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+            </tr>
+           <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-7235" SDNUM="27310"><font face="Verdana">GCORE-7235</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">IFF Parser update - Rely on binning only for P/F flag</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">For all IFF parsers (.ftpi, .prbd, .pcme, .pcmd formats), the part P/F flag should be set using the binning information present in the IFF file, rather than comparing test results to their limits.
+<br/>
+</font></td>
+            </tr>
+           <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-7206" SDNUM="27173"><font face="Verdana">GCORE-7206</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">IFF Parser update for Genealogy - Load the site_config for E-Test</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The IFF parser has been updated to support the IFF.site_config field. Following DTR record is used to store the information in the generated STDF file:
+<br/>
+DTR.text_dat = {&quot;KEY&quot;: &quot;SITE_CONFIG&quot;,&quot;TYPE&quot;: &quot;MD&quot;,&quot;VALUE&quot;: &quot;5-zone-circle&quot;}
+<br/>
+
+<br/>
+This information is then used to populate the site_config field in the TDR (E-Test testing stage), which is required for the Genealogy feature.</font></td>
+            </tr>
+           <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-7205" SDNUM="27172"><font face="Verdana">GCORE-7205</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">IFF Parser update for Genealogy - Load the wafer number for E-Test and Wafer-Sort</font></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The IFF parser has been updated to write the wafer number into the converted STDF file for E-Test (ET) and Wafer-Sort (WT) testing stages, in addition to the wafer_id field, which is alphanumeric.
+<br/>
+Following DTR record is used to store the information in the generated STDF file:
+<br/>
+DTR.text_dat = {&quot;KEY&quot;: &quot;WAFER_NUMBER&quot;,&quot;TYPE&quot;: &quot;MD&quot;,&quot;VALUE&quot;: &quot;8&quot;}
+<br/>
+
+<br/>
+This information is then used to populate the wafer_nb field in the TDR (E-Test and Wafer-Sort testing stages), which is required for the Genealogy feature.
+<br/>
+</font></td>
+            </tr>
+        </table>
+        <!-- Table with hr -->
+        <table width="800"><tbody>
+                <tr>
+                    <td valign="top"><hr color="#afc22a"></td>
+                </tr>
+            </tbody></table>
+
+        <!-- contents -->
+
+        <!-- Table with V7.6.0-alpha changes -->
+        <table width="800"><tbody>
+                <tr>
+                    <td halign="center" height="29" valign="middle" width="15">
+                        <img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+                    <td class="main-content-title-blue" align="left" height="29" width="785">
+                        <p align="left">
+                            <a id="V7.6.0-alpha">V7.6.0-alpha</a>
+                            <a href="#Top">(Top)</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="1" width="15"></td>
+                    <td height="1" width="785"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <!--------------------------------------------------------------------->
+        <table cellspacing="0" cols="3" border="0">
+            <colgroup width="144"></colgroup>
+            <colgroup width="384"></colgroup>
+            <colgroup width="768"></colgroup>
+        </table>        <!-- Table with hr -->
+        <table width="800"><tbody>
+                <tr>
+                    <td valign="top"><hr color="#afc22a"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

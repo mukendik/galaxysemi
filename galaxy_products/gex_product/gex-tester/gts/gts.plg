@@ -1,0 +1,93 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: gtl_core - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\bernardg\LOCALS~1\Temp\RSP764.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/gtl_core.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Dev\gex_product\gex-tester\gtl\gtl-core\gtl_main.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\bernardg\LOCALS~1\Temp\RSP764.tmp" 
+Creating temporary file "C:\DOCUME~1\bernardg\LOCALS~1\Temp\RSP765.tmp" with contents
+[
+/nologo /out:"Debug\gtl_core.lib" 
+".\Debug\gtc_netmessage.obj"
+".\Debug\gtl_error.obj"
+".\Debug\gtl_main.obj"
+".\Debug\gtl_message.obj"
+".\Debug\gtl_server.obj"
+".\Debug\gtl_socket.obj"
+".\Debug\gtl_testlist.obj"
+"\Dev\gex_product\gex-tester\GTL\GTL-TESTER\Debug\gtl_tester.lib"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\bernardg\LOCALS~1\Temp\RSP765.tmp"
+<h3>Output Window</h3>
+Compiling...
+gtl_main.c
+Creating library...
+Creating temporary file "C:\DOCUME~1\bernardg\LOCALS~1\Temp\RSP767.bat" with contents
+[
+@echo off
+copy ".\Debug\gtl_core.lib" "..\lib_debug\gtl_core_debug.lib"
+]
+Creating command line "C:\DOCUME~1\bernardg\LOCALS~1\Temp\RSP767.bat"
+
+        1 file(s) copied.
+<h3>
+--------------------Configuration: gts_station - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\bernardg\LOCALS~1\Temp\RSP768.tmp" with contents
+[
+"qt-mt332.lib" "qtmain.lib" "kernel32.lib" "user32.lib" "gdi32.lib" "comdlg32.lib" "advapi32.lib" "shell32.lib" "ole32.lib" "oleaut32.lib" "uuid.lib" "imm32.lib" "winmm.lib" "wsock32.lib" "winspool.lib" "kernel32.lib" "user32.lib" "gdi32.lib" "comdlg32.lib" "advapi32.lib" "shell32.lib" "ole32.lib" "oleaut32.lib" "uuid.lib" "imm32.lib" "winmm.lib" "wsock32.lib" "winspool.lib" "opengl32.lib" "glu32.lib" "delayimp.lib" gtl_core_debug.lib gtl_tester_debug.lib gstdutils_c_debug.lib gerrormgr_debug.lib gstdutils_debug.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/gts-station.pdb" /debug /machine:IX86 /out:"Debug/gts-station.exe" /pdbtype:sept /libpath:"C:\Qt\3.3.2\lib" 
+".\Debug\gts_station.obj"
+".\Debug\gts_station_gtlcommandsdialog.obj"
+".\Debug\gts_station_infowidget.obj"
+".\Debug\gts_station_mainwindow.obj"
+".\Debug\gts_station_messagedialog.obj"
+".\Debug\gts_station_newlotdialog.obj"
+".\Debug\gts_station_objects.obj"
+".\Debug\gts_station_outputwidget.obj"
+".\Debug\gts_station_statswidget.obj"
+".\Debug\main.obj"
+".\Debug\gts_station_gtlcommandsdialog_base.obj"
+".\Debug\gts_station_infowidget_base.obj"
+".\Debug\gts_station_mainwindow_base.obj"
+".\Debug\gts_station_messagedialog_base.obj"
+".\Debug\gts_station_newlotdialog_base.obj"
+".\Debug\gts_station_outputwidget_base.obj"
+".\Debug\gts_station_statswidget_base.obj"
+".\Debug\moc_gts_station_gtlcommandsdialog_base.obj"
+".\Debug\moc_gts_station_infowidget_base.obj"
+".\Debug\moc_gts_station_mainwindow_base.obj"
+".\Debug\moc_gts_station_messagedialog_base.obj"
+".\Debug\moc_gts_station_newlotdialog_base.obj"
+".\Debug\moc_gts_station_outputwidget_base.obj"
+".\Debug\moc_gts_station_statswidget_base.obj"
+".\Debug\qmake_image_collection.obj"
+".\Debug\cstdf.obj"
+".\Debug\cstdfparse_v4.obj"
+".\Debug\cstdfrecords_v4.obj"
+"\Dev\gex_product\gex-tester\gtl\gtl-core\Debug\gtl_core.lib"
+"\Dev\gex_product\gex-tester\GTL\GTL-TESTER\Debug\gtl_tester.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\bernardg\LOCALS~1\Temp\RSP768.tmp"
+<h3>Output Window</h3>
+Linking...
+LINK : warning LNK4098: defaultlib "LIBCD" conflicts with use of other libs; use /NODEFAULTLIB:library
+<h3>
+--------------------Configuration: gts - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+gts.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

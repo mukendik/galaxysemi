@@ -1,0 +1,9 @@
+#ifndef GEXDB_PLUGIN_GALAXY_DATABASE_SETTINGS
+#define GEXDB_PLUGIN_GALAXY_DATABASE_SETTINGS
+
+#include <QString>
+#include "gexdb_plugin_galaxy.h"
+
+
+#endif // GEXDB_PLUGIN_GALAXY_DATABASE_SETTINGS
+

@@ -1,0 +1,41 @@
+# ---------------------------------------------------------------------------- #
+# Makefile for gs_data
+# ---------------------------------------------------------------------------- #
+# export MINGWDIR=/cygdrive/c/TDM-GCC-64-4.8.1
+# export PATH=$MINGWDIR/bin:$PATH
+# mingw32-make -f Makefile.noqt dep
+# mingw32-make -f Makefile.noqt
+# ---------------------------------------------------------------------------- #
+PROJECT = gs_data
+OBJECTS = gs_buffer.o
+INCPATH = -I../include
+CFLAGS  = $(INCPATH)
+ifneq "$(MINGWDIR)" ""
+  SQLITEOBJ = sqlite3.o
+  SQLITEPATH = ../../../other_libraries/sqlite/3.7.17
+  CFLAGS += -I$(SQLITEPATH)
+  LIBEXT = dll
+else
+  SQLITELIB = -lsqlite3
+  ifeq "$(shell uname)" "Darwin"
+    LIBEXT = dylib
+  else
+    LIBEXT = so
+  endif
+endif
+
+.PHONY: all
+all: lib$(PROJECT).$(LIBEXT) lib$(PROJECT)_sqlite.$(LIBEXT)
+
+lib$(PROJECT).$(LIBEXT): $(PROJECT).o $(OBJECTS) $(DLOBJ)
+	$(CC) -shared $^ $(LDFLAGS) -o $@
+
+lib$(PROJECT)_sqlite.$(LIBEXT): $(PROJECT)_sqlite.o $(OBJECTS) $(SQLITEOBJ)
+	$(CC) -shared $^ $(LDFLAGS) -L. -l$(PROJECT) $(SQLITELIB) -o $@
+
+lib$(PROJECT)_sqlite.$(LIBEXT): lib$(PROJECT).$(LIBEXT)
+
+$(SQLITEOBJ): $(SQLITEPATH)/sqlite3.c
+	$(CC) $(CFLAGS) -Wno-error $^ -c -o $@
+
+include ../include/gs_common.mk

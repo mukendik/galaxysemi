@@ -1,0 +1,914 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Examinator V6.2 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">Examinator family : V6.2 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Examinator-Characterization, Examinator-Production, Examinator-PAT)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_gexstd_history.htm">Back to main releases history page</a><br><br>
+<!--      <a href="_gexstd_history_v62_major.htm">V6.2 major enhancements</a><br> -->
+      <a href="#V6.2B157">V6.2 B157 release history</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.13 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.13 (15 December 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4158 - Update to CSV Parser - some tests have no names or data:</b>
+							   When some testName appears more than one time in a same run with a different testNumber, runs are incorrect and some test appears without the good testName.</li>
+			<li><b>Case 4141 - Update to SEMI E142 parser:</b>
+							   SEMI E142 parser now include wafermap origin location.</li>
+			<li><b>Case 4037 - Transpose csv file crashes gex:</b>
+							   File converted to csv cannot be transposed or GEX will crash. Crash message says that the program has requested a run time error.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.12 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.12 (29 November 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4050 - Crashing when comparing files:</b>
+							   When using the "list of parts", filter the tables show all parts, not just the list of parts selected.
+							   Also When using a compare analysis on the same file but using the "list of parts" filter as the means for comparing
+							   Quantix B157 crashes when going to the tables tab within the interactive graph area.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.11 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.11 (24 November 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4075 - Update to Mcube parser:</b>
+							   Start time is taken from the DTG of the first part in the file. add finish time and take it from the last DTG in the file so that the probe time is no longer 0.</li>
+			<li><b>Case 4046 - Crash on query using consolidated data while merging tests on name (ignore test #):</b>
+							   When querying data using consolidated data and the option to ignore test number (merge tests based on similar name), GEX crashes. GEX crashes after the query completes during the report phase.</li>
+			<li><b>Case 4040 - Add site # capability to the Amida parser:</b>
+							   Add the column to the parser that allows the site # column.</li>
+			<li><b>Case 3948 - DSTIM file won't process:</b>
+							   Update the Verigy dstim parser such that unknown event types are ignored.</li>
+			<li><b>Case 3861 - Test name is showing up incorrectly:</b>
+							   The STDF generated contains FTR records with empty test name (FTR.test_txt=��) but with FTR.prog_txt = FTR test name.
+							   This issue is present in B157.07 and B158 and probably in all old versions.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.10 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.10 (10 November 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4009 - GEX crashed during a query:</b>
+							   GEX crashes when extracting data from the GEXDB under some very specific circumstances.</li>
+			<li><b>Case 3749 - Verigy 93000 parser:</b>
+							   The Verigy 93000 parser was enhanced to support files with data prior the TestFlowStartEventType marker.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.09 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.09 (03 November 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 4008 - KLA/INF parser enhancement:</b>
+							   KLA/INF parser has been enhanced so that the setup_t, start_t, and finish_t timestamps are populated with current date/time at time of conversion, rather than with 0.</li>
+			<li><b>Case 4006 - Change MCube parser so that if good bins are not defined in the header, the file is rejected:</b>
+							   If no good bins are defined, do not assume all bins are bad, reject the file instead.</li>
+			<li><b>Case 3988 - GEX cannot perform query:</b>
+							   Cannot query a database with gex b157.08. The list windows are empty even when I confirm that are splitlots in the
+							   splitlot table. The query is returned as empty even if a valid lot value is typed into the filter field.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.08 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.08 (27 October 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 3974 - Incorrect detection of Adjacent edge die:</b>
+			                   Some adjacent edge die are not correctly detected when applying the GDBN algorithm.</li>
+            <li><b>Case 3966 - Excel converter truncates digits:</b>
+			                   When I convert our stdf datalog files to csv format with the converter, the data in the csv file is truncated to 6 significant figures.
+							   We are datalogging register values, and need the full value (up to ten digits, plus sign). If I do an STDF Records Dump (from the Quantix Toolbox), 
+							   I can see the full number of digits, so I know the data is correct in the stdf file.</li>
+            <li><b>Case 3945 - Medtronic DB plugin: LotID is concatenated to WaferNumber, X-coordinate and Y-coordinate:</b>
+			                   When querying LotID, the user expects this a 5-digit alpha numeric: 1ABCD. However, they are getting 1ABCD.02+002.004 which is lotid.wafer.xcoord.ycoord.</li>
+            <li><b>Case 3937 - Discrepancy in GDBN results from B156 to B157:</b>
+			                   There is a difference between the GDBN results from B156 to B157. When using the same recipe on the same wafer stdf, GDBN results can differ.</li>
+            <li><b>Case 3900 - Update to Mcube Parser:</b>
+			                   Provide parser update per provided documentation."
+            <li><b>Case 3898 - Can't export wafer map:</b>
+			                   Cannot export wafer maps from the wafer map page when the WaferID or the LotID contains special characters such as LF (Line Feed)...</li>
+            <li><b>Case 3894 - Bin names are not showing up in WT data for consolidated queries:</b>
+			                   There are bin names in the wt_sbin, wt_wafer_sbin, wt_lot_sbin for all bins but bin 2. When a query is done on raw data, bin names are present. 
+							   When a query is done on consolidated data, bin names are present but not for bins 200 and 201. The data was inserted in two pieces: the first piece 
+							   is an stdf file and the second is a kla file. The bins in the kla file are the ones in question.</li>
+            <li><b>Case 3888 - Cumulation of failures adds to 57.4% but says 100%:</b>
+			                   User ran a failure pareto and the cumulation of failures did not add properly.</li>
+            <li><b>Case 3855 - CSV conversion has fewer delimiters than expected:</b>
+			                   When converting stdf to csv, the commas end on each part when the part has no more measurements. Even though there are more parameters. 
+							   So that comma count for parameters is 889 but the comma count for PID-2 for example is 885 & PID-4 is 886. In previous versions, the comma count 
+							   for each part matched that of the parameter count.</li>
+            <li><b>Case 3789 - Compare multiple file with differents test lists could crash Gex:</b>
+			                   When comparing multiple file with differents test lists and you would like to open the interactive tables page, Gex could crashes in some case.</li>
+            <li><b>Case 3761 - When comparing datasets, the min/max values are the same for all datasets:</b>
+			                   Min and max values are the same for all datasets when comparing datasets.</li>
+            <li><b>Case 3741 - Gex crashes when running some Reports Center templates:</b>
+			                   Running report from Reports Center with option 'Full Aggregate Range' checked does crash Gex.</li>
+            <li><b>Case 3730 - CSV export doesn't export all the data:</b>
+			                   CSV export exports only the first line of data when tests have no name.</li>
+            <li><b>Case 3724 - PAT Bins Report incorrect calculation:</b>
+			                   The PAT Bins report shows incorrect calculation for total parts, and overall PAT yield loss. It appears that these are related.</li>
+            <li><b>Case 3722 - Yield-Man and GEX crash if temporary STDF file already exist:</b>
+			                   When converting from a suported format other than STDF, Yield-Man and GEX crash if the target STDF file already exist.</li>
+            <li><b>Case 1801 - Banner mode histograms show X axis and legend in different scales when PTR.scaling is non-zero:</b>
+			                   The banner mode of the historgrams need to all be on the same scale.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.07 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.07 (14 September 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 3724 - Reports Center: PAT Bins Report Incorrect Calculation:</b>
+                               The PAT Bins report shows incorrect calculation for total parts, and overall PAT yield loss. It appears that these are related.</li>
+			<li><b>Case 3710 - Error in Gage R&R calculations:</b>
+                               The R&R value had a small error when at least 1 group has multiple files.</li>
+			<li><b>Case 3625 - Test limits go to 0 when doing a merge file analysis with splitting MPR records:</b>
+                               When looking at files in an "analyze 1 file" or "compare files" analysis the limits look normal. When performing a "merge files" 
+                               analysis all the limits go to 0. The option is set to not merge MPR records. If they are merged the limits are ok even with the 
+                               merge file analysis. If you use the toolbox to merge the two test files then do an analyze single file analysis with the MPR 
+                               records not merged the limits look good again.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.06 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.06 (03 September 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 3685 - Application crash on ATDF->STDF conversion:</b>
+                               On a specific ATDF file, the application crashes during the ATDF->STDF conversion.
+                               This caused Yield-Man to shut down during execution of the datapump.
+                               Manually analyzing the incriminated file with Examinator also causes a crash.</li>
+			<li><b>Case 3530 - Application crash when all parts removed during outlier/inlier removal:</b>
+                               Option 'Data processing options -> outlier removal -> Exclude +/-N*sigma range' (last option) is causing
+                               GEX to crash if the rule causes all parts to be removed from the wafer. With another outlier removal option
+                               (not removing all parts), there is no crash.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.05 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.05 (30 August 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+            <li><b>Case 3537 - Quantix crash in V6.2 B157 when pressing a new icon button...:</b>
+                               When clicking the blue book icon on the top of GEX Characterization, GEX crashes.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.04 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.04 (04 August 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 3506 - ETest RDB Query does not work when set to consolidated data:</b>
+                               The etest query will attempt to pull consolidated data when a previous wt or ft query was set to consolidated data. This causes incorrect or no data to appear in the query.</li>
+			<li><b>Case 3463 - My Reports function crashes GEX:</b>
+                               When running non-default My Reports, GEX stops responding.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157.03 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.03 (03 August 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 3484,3485 - Evaluation license file does not work with Examinator Production:</b>
+                               User received the evaluation license file forwarded from Quantix and placed it in the application directory. Upon opening Examinator Production, the user is prompted to request another license.</li>
+			<li><b>Case 3455 - Scatter plots are absent when comparing multiple sites:</b>
+                               When splitting a data file by site # then creating a report with scatter plots, the scatter plots are absent.</li>
+			<li><b>Case 3267 - Hard Bin Custom Color Wafer Map Shows Black For All Bins:</b>
+                               When you run a report with the hard bin map and change the bin colors to custom, the appear on the map correct, but the legend has all of the colors as black.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.02 (21 July 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 3400 - * in the RDB options tab of database query is no longer there by default:</b>
+                               On previous builds, the * was in the RDB options tab for a query page by default.</li>
+			<li><b>Case 3430 - Application crash when refreshing database list on Linux OS:</b>
+                               In the Database Administration page, application crash when clicking one or several time on the refresh button.</li>
+			<li><b>Case 3324 - GEX only processes first 100 rows of a csv file whe using the user-parser:</b>
+                               Any non-standard csv file longer than 100 lines is not completely loaded into GEX. The parsing window opens and only the first 100 lines are processed.</li>
+			<li><b>Case 2941, 2193 & 3281 - #IND value showing up in Gage R&R report:</b>
+                               Some tests have a "#IND" value showing up in the R&R report.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.2B157">V6.2 B157.01 (13 July 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+	      <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+			<li><b>Case 3411 - Problem with duplicate FT consolidated Soft bins after B10 update:</b>
+                               The consolidated yield #'s from the enterprise report, and the report center don't match. There are also multiple FT soft bins with the same # and similar names when pulling a product bins details report.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.2 B157 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (09 July 2010)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3252 - PAT BIN Pareto:</b>
+                               Add the ability to plot PAT bins on a pareto. PAT Yield loss global synthesis (trend, histo) per product/recipe/version/test program/version/time period/wafer/lot, with type of loss: PPAT, GPAT, ZPAT, NNR, DRIFT</li>
+            <li><b>Case 3169 - Allow extraction of the new Site ID for e-test tables that was created in Gexdb-10:</b>
+                               Allow extraction of the new Site ID for e-test tables that was created in Gexdb-10.</li>
+            <li><b>Case 3207 - Report center: use green colors for Pass bins:</b>
+                               For all templates where the binning is a serie, use colors in the green range for passing bins, and colors outside the green range for failing bins.</li>
+            <li><b>Case 3082 - Report Center: add a link to export raw data to CSV:</b>
+                               For all templetes, add a link to export the raw data into a CSV file.</li>
+            <li><b>Case 2807 - Progress bar while connecting to databases:</b>
+                               A nice item to have would be a progress bar that displays while Quantix is attempting to connect to an external database.  On startup, Quantix sits non-responsive for a 10-15 seconds while it attempts to find its database connections.  A progress bar would prevent frustration in trying to click on items while Quantix is not responding.</li>
+            <li><b>Case 2038 - Allow soft Bin trending for Final Test consolidated yield reports (Report Center):</b>
+                               Allow Soft Bin trending for Final Test consolidated yield reports using templates from the 'Report Center'.</li>
+            <li><b>Case 1794 - Check databases only once at startup or when going to database admin:</b>
+                               The database connections should be checked only once at startup and when clicking the 'Reload' button in the 'Database Admin' page.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+		<!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 3325 - When loading a script file into the scripting center, it does not load in and no error message:</b>
+                               When loading in a script file into the scripting center it doesn't load the file in, and it gives no error.</li>
+            <li><b>Case 3292 - Bin counts do not match from pareto to wafermap:</b>
+                               Bin counts from pareto to wafermap do not match.</li>
+            <li><b>Case 3269 - Atdf parser not using UTC for dates:</b>
+                               The ATDF parser was not using UTC for dates when converting to STDF.</li>
+            <li><b>Case 3211 - Compare Dataset query does not work with consolidated data:</b>
+                               When using compare datasets, I am unable to insert the datasets with Compare Dataset query does not work with consolidated data.</li>
+            <li><b>Case 2963 - Stdf to atdf convert (MPR data are not fully converted):</b>
+			                   MPR data are not fully converted from stdf file to atdf file.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (preview 20100611)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3190 - Report Center: add a summary table at the end of the 'Product details' template:</b>
+                               This summary table would sum up the values for all products. It will be defined in the .grt file with a new group.</li>
+            <li><b>Case 3189 - Report Center: small header in report:</b>
+                               For all 'Report Center' reports, reduce the size of the header in the generated report.</li>
+            <li><b>Case 3184 - New Parser for MCube ASCII data format</b>
+                               </li>
+            <li><b>Case 3183 - Parser for KVD:</b>
+                               Need parser for KVD tester file format.  We committed to deliver this parser ( based on sample file provided ) if the customer , Digital Imaging Systems in Germany, purchased GEX.  Purchase order received on June 2, 2010.  THis is a new customer who expects to expand to multiple licenses of GEX Production in the future.</li>
+            <li><b>Case 3083 - Report Center: add date period in summary header:</b>
+                               Add the date in the small header section below the title for the graphs not based on a timeline.</li>
+            <li><b>Case 3081 - Report Center: use chronological order in 'Product Trend' report:</b>
+                               In the 'Product Trend' report, allow lots to be sorted by chronological order in the graph and in the table.</li>
+            <li><b>Case 3080 - Report Center: allow selection of multiple bins for the 'Product Trend':</b>
+                               In the 'Product Trend' template, allow selection of multiple binnings: either 'Worst' OR multiple binnings.</li>
+            <li><b>Case 3079 - Report Center: image not showing in toolbar button:</b>
+                               The image is sometimes missing in the 'Report Center' toolbar button.</li>
+            <li><b>Case 3077 - Report Center: option to stack bars:</b>
+                               When having series, add an option in the template GUI to stack the volume bars instead of having them side by side.</li>
+            <li><b>Case 3034 - Add the real value of shift in addition to % shift for mean and sigma:</b>
+                               When comparing files have the % mean shift  and % sigma shift column add the real difference by value in addition to the % which is the only way it shows currently.</li>
+            <li><b>Case 2683 - Be able to add or subtract the stats in the interactive window:</b>
+                               You have to scroll down in the interactive stats window on the left to see the cpk. Allow us to delete un-needed stats so we can see the cpk without scrolling down.</li>
+            <li><b>Case 2505 - Ability to export stackmaps in Ascii or Text format, instead of image format:</b>
+                               When using the option under wafer maps ->stacked maps->pass/fail be able to output the stacked map to file using the same file options as the single wafer map options. Minimum ascii and laurier.</li>
+            <li><b>Case 1749 - Have the multi-charts available on non-interactive reports:</li>
+                               Allow the multi-charts to be available on non-interactive reports such as pdf.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+		<!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 3157 - DL4 file causes crash:</b>
+                               A DL4 file caused GEX to crash.</li>
+            <li><b>Case 3209 - PDF report using on Linux used to work, but not anymore:</b>
+                               With V6.1B157_preview_20100527, the report generation using the PDF output format doesn't work anymore under Linux. It fails with the following error message: ""Error creating PDF document: no PDF file was generated."".</li>
+            <li><b>Case 3027 - Quantix Pearson Correlation Graphs in PDF's are too small:</b>
+                               Please set the chart size setting for the X-Y correlation chart to flow to the pearson correlation graph.  Make sure it also works for the pdf.</li>
+            <li><b>Case 2708 - Error in exported wafermap:</b>
+                               The bug causes an exported png map of a wafer comparison to be different from the original created by Quantix.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (preview 20100527)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 2946 - ReportCenter : volume/yield hide/show on a per serie value basis:</b>
+                               Filter pick added on the serie field: 1 for volume, 1 for yield.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+		<!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 2861 - Intelligent handling of percent '%' in units field of PTR:</b>
+                               Please provide for suppression of the display of the '%' sign when scaling is set to No Scaling.</li>
+            <li><b>Case 2336 - B83 Percent scaling error:</b>
+                               When using data editor, % is displayed incorrectly. For example, 4% is displayed as 0.04%.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (preview 20100517)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 3053 - Parser for gdf files enhanced:</b>
+                               For the moment, to be compatible with our converter, the fields supported are the same as STDF format. 
+                               But after looking at a lot of file examples, we could add other GDF fields if it is necessary to enhance 
+                               the GDF to STDF parser.</li>
+            <li><b>Case 3004 - ACCO STS8200 parser support, mainly for Asian market:</b>
+                               Implemented STS8200 parser for ACCO files.</li>
+            <li><b>Case 2826 - Option to exclude all generic Quantix tests:</b>
+                               New option to exclude all generic Quantix tests so they don't show up in the pdf report.</li>
+            <li><b>Case 2000 - Quantix parser for TSMC WPR files:</b>
+                               New parser for TSMC WPR files.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+		<!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 3049 - Report center bin pareto template has "reference error" in the bin name:</b>
+                               When running a bin report in report center the bar graphs have "reference error" at the bottom of the graphs instead of the bin name.</li>
+            <li><b>Case 3044 - LGE files crash GEX:</b>
+                               3 files: typeA.stm, typeB.DSTIM, nd1_14.datalog. typeA and typeB crash B155, B156. nd1_14 does not crash 
+                               but says that it's an unrecognized format. B153 processes the typeA and typeB files as well as converts 
+                               them to csv. Will not convert to another format like stdf. The nd1_14 file appears to be a datalog and 
+                               opens with a text editor.</li>
+            <li><b>Case 2971 - STDF to ATDF dump error. GEX can't read ATDF with MPR data:</b>
+                               When dumping an STDF file that has MPR data to ATDF format, the resulting ATDF file has errors and won't 
+                               import to GEX. When the file is modified to resolve the errors, GEX will not import the MPR data properly. 
+                               With the Merge option, GEX drops the tests completely. With the Do Not Merge option, GEX shows the test 
+                               numbers but the test name and data are missing and zero respectively.</li>
+            <li><b>Case 2820 - Switching between GEX version changes the user profile:</b>
+                               When using different versions of GEX,the user profile is changed. I have created a user profile with v155 
+                               and when I open v156_preview and use the profile without making setting changes, the profile settings are 
+                               lost when I go back to v155. This is also true when doing any combination of switching between versions 
+                               v153, v155 and v156_preview.</li>
+            <li><b>Case 2808 - Units of percent aren't handled correctly by GEX:</b>
+                               Sometimes, tests with '%' units are not scaled correctly.</li>
+            <li><b>Case 2607 - Different scaling between file analysis and database:</b>
+                               The scaling in the reports is sometimes different when analyzing the data file, and when inserting this 
+                               data file into the GEXDB, and then using 'Analyze a dataset' on the corresponding data. The same tests, 
+                               with the same Options set up, scales differently.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.2B157">V6.2 B157 (preview 20100428)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Case 1574 - Report Center: stacked histogram:</b>
+                               The request is for a stacked histogram. In the example from the customer, there is a data grouping on the X axis, probably wafers, and a count or percentage on the y axis. Individual series are stacked by group.</li>
+            <li><b>Case 2502 - Add Site ID to e-test tables:</b>
+                               Allow the ability to split the dataset by site ID in e-test data.</li>
+            <li><b>Case 2901 - Report Center: fill holes for timeline aggregates:</b>
+                               When aggregate is a timeline (year, month, quarter...), and no data is available for a specific value within the selected period, the report should show this aggregate value with a 0 volume (and no yield: no yield spot in the graph, n/a in the table).</li>
+            <li><b>Case 2902 - Report Center: better organize graph legends:</b>
+                               Try to organize graph legends so that they are more readable:
+                               <ul>
+                               <li>Horizontal justification</li>
+                               <li>If possible, create 2 legend groups: volume, yield</li>
+                               </ul></li>
+            <li><b>Case 2900 - Report Center: hide/show volume/yield:</b>
+                               Following options will be added to the GUI of our report templates: Global hide/show for volume/yield.</li>
+            <li><b>Case 2964 - Examinator to support .GEX archive file:</b>
+                               <ul>
+                               <li>'.gex' extension associated with Examinator (gex and gex-production packages must support this)</li>
+                               <li> When Examinator is launched because of a .GEX file (or a .GEX file is dropped), following work is done:
+                               <ul>
+                               <li>Unzip the .GEX file (a .GEX is a archive of files) in the temporary folder</li>
+                               <li>If multiple files in .zip, must ask if 'merge' or 'compare' files</li>
+                               <li>On Examinator exit: remove all unzipped files AND delete the .GEX file</li>
+                               </ul></li>
+                               </ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+		<!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>     
+            <li><b>Case 2911 - File causing crash:</b>
+                               File with .dat extension does cause a crash. It's a binary format of some sort, not supported by Examinator.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+</body></html>

@@ -1,0 +1,19 @@
+--- qt-everywhere-enterprise-src-5.3.2/qtbase/src/gui/painting/qpdf.cpp	2013-08-25 22:04:41.000000000 +0200
++++ qt-everywhere-enterprise-new-5.3.2/qtbase/src/gui/painting/qpdf.cpp	2013-11-04 10:40:37.861325437 +0100
+@@ -1061,7 +1061,16 @@
+ 
+     if (d->simplePen) {
+         // draw strokes natively in this case for better output
++        QBrush oldBrush = d->brush;
++        if (d->opacity != 1.0 && !d->hasBrush) {
++            d->brush = d->pen.brush();
++            setBrush();
++        }
+         *d->currentPage << QPdf::generatePath(p, QTransform(), d->hasBrush ? QPdf::FillAndStrokePath : QPdf::StrokePath);
++        if (oldBrush != d->brush) {
++            d->brush = oldBrush;
++            setBrush();
++        }
+     } else {
+         if (d->hasBrush)
+             *d->currentPage << QPdf::generatePath(p, d->stroker.matrix, QPdf::FillPath);

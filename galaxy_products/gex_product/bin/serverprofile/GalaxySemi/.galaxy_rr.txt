@@ -1,0 +1,37 @@
+#################################################################
+# Gage R&R Warning definitions 
+#
+# Template file
+#
+# o Any line starting with the '#' is a comment line and is ignored.
+# o Each line is evaluated, and if true, defined reports background colors.
+# o All lines are always evaluated.
+#
+# Format:
+# If <Expression> Then Color = <BackgroundColorType>
+#
+# Example:
+# IF R_R < 45 AND Cpk > 1.33 THEN Color = White
+# IF R_R > 45 AND R_R < 65 AND Cpk > 1.33 THEN Color = Yellow
+#
+# Note: for full description refer to support.galaxysemi.com
+#       and look at Examinator User Manual (PDF document)
+#################################################################
+#
+# 1) Define default background color in case all other expressions are not verified
+IF 1 THEN Color = Red
+#
+# 2) For Cpk greater than 1.33, the RR should be less than 45% to make it pass
+IF Cpk > 1.33 AND R_R < 45 THEN Color = Default
+#
+# 3) For Cpk between 1.0 and 1.33, the RR should be less than 25% to make it pass
+IF Cpk > 1.0 AND Cpk < 1.33 AND R_R < 25 THEN Color = Default
+#
+# 4) For Cpk less than 1.0, the RR should be less than 10% in order to pass
+IF Cpk < 1.0 AND R_R < 10 THEN Color = Default
+#
+# 5) For Cpk greater than 1.33, and the RR is less than 65%, this is a conditional release
+IF Cpk > 1.33 AND R_R < 65 THEN Color = Yellow
+#
+# 6) For Cpk between 1.0 and 1.33, and the RR is less than 45%, this is also a conditional release
+IF Cpk > 1.0 AND Cpk < 1.33 AND R_R < 45 THEN Color = Yellow

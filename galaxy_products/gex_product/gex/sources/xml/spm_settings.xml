@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SPMSettings Version="0.1">
+    <group label="Computing rules and defaults" tooltip="Define the SPM monitoring rules and defaults for comuting your products/test limits" icon=":/gex/icons/spm_rules.png">
+        <setting key="$K_STATSTOMONITOR" type="Flag" label="Statistics to monitor" tooltip="Specify which statistics you want to monitor with this SPM task" defaultvalue="''" codingvalues="$CV_STATSTOMONITOR" displayvalues="$DV_STATSTOMONITOR"/>
+        <setting key="$K_MINLOTS" type="Int" label="Minimum lots" tooltip="Specify the minimum nb. of lots required to compute your SPM limits" defaultvalue="'6'" minimum="1"/>
+        <setting key="$K_MINDATAPOINTS" type="Int" label="Minimum wafers/sublots" tooltip="Specify the minimum nb. of wafers/sublots required to compute your SPM limits" defaultvalue="'30'" minimum="1"/>
+        <setting key="$K_VERSION_SITEMERGEMODE" type="Enum" label="Compute limits" tooltip="Specify which SPM limits should be computed with regard to multi-site data" defaultvalue="'merged_sites'" codingvalues="merged_sites|per_site|both" displayvalues="On merged sites|Per Site|On both split and merged sites" />
+        <setting key="$K_DEFAULTALGO" type="Enum" label="Default computation formula" tooltip="Specify the default formula to be used for your SPM limits comutation" defaultvalue="''" codingvalues="$CV_DEFAULTALGO" displayvalues="$DV_DEFAULTALGO" />
+        <setting key="$K_N1" type="Float" label="N1 (standard)" tooltip="For standard alarm, N factor to be used in the formula for computing SPM limits" defaultvalue="'6'" minimum="0" />
+        <setting key="$K_N2" type="Float" label="N2 (critical)" tooltip="For critical alarm, N factor to be used in the formula for computing SPM limits" defaultvalue="'6'" minimum="0" />
+        <setting key="$K_DATACLEANING" type="Bool" label="Data cleaning during computation" tooltip="Check this box if you want abnormal data points to be removed/filtered when computing limits" defaultvalue="true" />
+    </group>
+    <group label="Activating rules" tooltip="Define how your SPM task will be executed" icon=":/gex/icons/spm_rules.png">
+        <setting key="$K_ACTIVEONINSERT" type="Bool" label="Active on file insertion" tooltip="Check this box if you want these SPM rules to be triggered on file insertion" defaultvalue="false" />
+        <setting key="$K_ACTIVEONTRIGGER" type="Bool" label="Active on trigger file" tooltip="Check this box if you want these SPM rules to be triggered by trigger files" defaultvalue="true" />
+    </group>
+    <group label="Expiration management" tooltip="Define the expiration management rules for your SPM task" icon=":/gex/icons/spm_expiration.png">
+        <setting key="$K_VALIDITYPERIOD" type="Int" label="Validity (days)" tooltip="Define the validity period in days for your SPM limits (used to compute the expiration date)" defaultvalue="'90'" minimum="1" />
+        <setting key="$K_DAYSBEFOREEXPIRATION" type="Int" label="Expiration warning (days)" tooltip="Specify how many days before the expiration of your SPM limits you want to trigger an expiration event. This expiration event can trigger a warning email and/or a SPM limits auto-recomputation (see below options)" defaultvalue="'7'" minimum="0" />
+        <setting key="$K_SENDEMAILBEFOREEXPIRATION" type="Bool" label="Send expiration email" tooltip="Check this box if you want expiration warning emails to be delivered for your SPM task" defaultvalue="true" />
+        <setting key="$K_AUTORECOMPUTE" type="Bool" label="Automatically recompute limits" tooltip="Check this box if you want your SPM limits to be automatically recomputed before expiring" defaultvalue="true" />
+        <setting key="$K_AUTORECOMPUTEMETHOD" type="Enum" label="Auto-recompute method" tooltip="Specify the method to use when automatically recomputing SPM limits before expiration" defaultvalue="'duplicateIfRecomputeFails'" codingvalues="duplicate|recompute|duplicateIfRecomputeFails" displayvalues="Duplicate previous limits|Recompute new limits|Duplicate previous limits if recompute fails" />
+        <setting key="$K_AUTORECOMPUTEPERIOD" type="Int" label="Auto-recompute period (days)" tooltip="Specify how many days of data you want to use when automatically recomputing SPM limits before expiration" defaultvalue="'90'" minimum="1" />
+    </group>
+    <group label="Email settings" tooltip="Define the email settings for alarm and auto-recompute notification emails." icon=":/gex/icons/spm_exception.png">
+        <!-- EXCEPTIONTYPE is not adequate, as the severity is defined by N1/N2 parameters -->
+        <!--setting key="$K_EXCEPTIONTYPE" type="Enum" label="Exception type" tooltip="Define alarm severity level if exception detected (Standard, or Critical)" defaultvalue="'critical'" codingvalues="standard|critical" displayvalues="Standard|Critical" /-->
+        <setting key="$K_EMAILFROM" type="String" label="Email from" tooltip="Specify the 'From' email address for alarm/auto-recompute notification emails" defaultvalue="'no-reply@mentor.com'" />
+        <setting key="$K_EMAILTO" type="String" label="Email to" tooltip="Specify the 'To' email address(es) for alarm/auto-recompute notification emails (comma separated if multiple emails)" defaultvalue="''" />
+        <setting key="$K_EMAILFORMAT" type="Enum" label="Email format" tooltip="Email format: HTML or Plain TEXT" defaultvalue="'html'" codingvalues="html|plain_text" displayvalues="Html|Plain text" />
+    </group>
+</SPMSettings>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport 
+	Version="0.66" 
+	Type="AER"
+	GRT="../products_bin_details.grt" 
+	ID="ProductsBinsDetails" 
+	Title="Products bins details" Description="Products bins details tables with one line per binning...">
+
+	<dataset ID="DS1" label="Main dataset"  
+		stage="Wafer Sort" 
+		binning="H" binning_visible="true" binning_readonly="false" 
+		time_period_visible="false" time_period_readonly="false" time_period_mandatory="false" 
+		time_period_label="Select here the time period"
+		time_period_from="new Date(new Date().getFullYear(),00,01)" 
+		time_period_to="new Date()"
+		time_period_defaultValueExpression="all_dates" 
+		>
+		<!-- time_period_defaultValueExpression can be : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+		<!-- Date objects in javascript example : new Date() returns today. new Date(2006, 00, 01) returns the 1st jan 2006 -->
+
+		<multifield 
+			label="Select here your split params"	
+			role="SPLIT" 
+			time="N"  facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  multivalue="true"
+			allow_full_range_choice="false"
+			field_mandatory="false" field_readonly="false" value_readonly="false" value_editable="false" value_mandatory="false"
+			>
+		</multifield>
+
+		<multifield 
+			label="Select here your serie params"	
+			role="SERIE" 
+			time="N"  facts="false"
+			filterable="true" visible="false"  autorepeat="false" orderable="false"  full_range="false"  multivalue="true"
+			field_mandatory="true"  value_mandatory="false" value_readonly="true"
+			default_field="Hbin#" field_readonly="true"
+			>
+		</multifield>
+		
+		<multifield 
+			label="Select here your aggregate " 
+			role="AGGREGATE" 	
+			time="*" facts="false"
+			filterable="false" visible="true"  autorepeat="false" orderable="false"  
+			allow_full_range_choice="false" full_range="true"  
+			multivalue="true"
+			field_mandatory="true" 
+			value_readonly="true" value_mandatory="false" value_editable="false"
+			default_field="Month" field_readonly="true"
+			>
+		</multifield>
+				
+		<multifield 
+			label="Select here any other filters "
+			role="FILTER" 
+			time="*"  facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="false" 
+			indent="false"
+			>
+			<field  default_field="Year" field_readonly="true" field_mandatory="true" value_mandatory="true" />
+		</multifield>
+		
+	</dataset>
+	
+	<options>
+		<option ID="P_TITLE" 				type="String" 	hideif="false" 		label="Report title" 						rawReplace="true" 		defaultvalue="'Product Binning Details'" />
+		<option ID="P_BREAKPAGE"			type="Int"		hideif="false"		label="Nb. of split per page"				rawReplace="true"		defaultvalue="1" minimum="1"/>
+
+		<option ID="P_BIN_YIELD" 			type="String"	hideif="true" 		label="Gross Bin Yield variable"			rawReplace="true"		defaultvalue="'$FGrossBinYield'" />
+		<option ID="P_SUM_BIN_YIELD" 		type="String"	hideif="true"		label="Sum Gross Bin Yield variable"		rawReplace="true"		defaultvalue="'$FSumGrossBinYield'" />
+		<option ID="P_YIELD" 				type="String"	hideif="true"		label="Group Gross Yield variable"			rawReplace="true"		defaultvalue="'$FGroupGrossYield'" />
+		<option ID="P_SUM_YIELD" 			type="String"	hideif="true"		label="Group Sum Gross Yield variable"		rawReplace="true"		defaultvalue="'$FGroupSumGrossYield'" />
+		<option ID="P_VOLUME" 				type="String"	hideif="true"		label="Group Volume variable"				rawReplace="true"		defaultvalue="'$FGroupGrossVolume'" />
+		<option ID="P_SUM_VOLUME" 			type="String"	hideif="true"		label="Group Sum Volume variable"			rawReplace="true"		defaultvalue="'$FGroupSumGrossVolume'" />
+		<option ID="P_SERIE_BIN_VOLUME" 	type="String" 	hideif="true"		label="Sum Bin Volume variable" 			rawReplace="true"		defaultvalue="'$FBinVolume'" />
+		<option ID="P_SERIE_SUM_BIN_VOLUME" type="String"	hideif="true"		label="Sum Volume variable"					rawReplace="true"		defaultvalue="'$FSumBinVolume'" />
+		<option ID="P_SERIE_YIELD" 			type="String"	hideif="true"		label="Yield variable"						rawReplace="true"		defaultvalue="'$FBinYield'" />
+		<option ID="P_SERIE_SUM_YIELD" 		type="String"	hideif="true"		label="Sum Yield variable"					rawReplace="true"		defaultvalue="'$FSumBinYield'" />
+		<option ID="P_SERIE_VOLUME" 		type="String"	hideif="true"		label="Volume variable"						rawReplace="true"		defaultvalue="'$FVolume'" />
+		<option ID="P_SERIE_SUM_VOLUME" 	type="String"	hideif="true"		label="Sum Volume variable"					rawReplace="true"		defaultvalue="'$FSumVolume'"/>
+		<option ID="P_SUMMARY" 				type="String" 	hideif="true"		label="Summary text variable"				rawReplace="true"		defaultvalue="'gross die'" />
+
+	</options>
+	
+</GalaxyReport>

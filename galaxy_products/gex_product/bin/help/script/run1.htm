@@ -1,0 +1,72 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40"> 
+    </td>
+    <td width="650"><b>
+      Running a Script&nbsp;<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9"> 
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="run2.htm">Jump start<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="run4.htm">Runtime options<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="run3.htm">Command line param.</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">The GEX Quantix Examinator executive program
+      comes with built-in scripting support. It allows you<br>
+      to leverage the power of scripting language by writing custom scripts that
+      do exactly what you want!
+      <p>Syntax to launch the Examinator and have it run a script:</p>
+      <pre><b>gex [-options] [scriptfile] [additional parameters]</b></pre>
+      <p>The <b> scriptfile</b> extension may be omitted if it is <b>.csl</b>, the additional
+      parameters depend on your script file.<br>
+      The <b>-options</b> parameter&nbsp; lets you provide run time options to
+      the Examinator, and lets you decide how<br>
+      the Examinator must behave while processing the script (e.g. run minimized in
+      icon, close once script is&nbsp;<br>
+      completed, etc...). Check the <a href="run4.htm">Runtime options</a> page
+      for a full description of the options available.</p>
+      <p>The following script example  creates a gradient waferwap for parametric test#
+      1020, and executes with GEX&nbsp;hidden, and has GEX close after the script has been executed:
+</p>
+      <pre><b>gex -HCS /export/home/myscripts/wafer_map.csl 1020</b></pre>
+      <p>You can also run your&nbsp; script file from the Examinator interface,
+      clicking the <a href="../pages/_gexstd_manual_gui.htm">Script</a> toolbar icon: <a href="_gex_script.htm"> <img border="0" src="../images/script.png" width="22" height="23">
+      </a>
+      <br>
+      Then add your script to the favorite list and run it, using icons: <img border="0" src="../images/file_open.png" width="26" height="25"> 
+      and <img border="0" src="../images/script_run.png" width="26" height="25">
+      <p><b>Note</b>: If the script created a report, only HTML and CSV formats 
+      will be accepted. To have reports created in PDF, Word or PowerPoint 
+	  format you need to run this script from the Yield-Man scheduler instead&nbsp;
+	  (contact Quantix to learn more about Yield-Man).</td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

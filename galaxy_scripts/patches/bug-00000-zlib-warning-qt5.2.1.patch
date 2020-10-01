@@ -1,0 +1,48 @@
+--- qt-everywhere-enterprise-src-5.2.1/qtbase/src/3rdparty/zlib/zconf.h	2014-02-01 20:35:35.000000000 +0100
++++ qt-everywhere-enterprise-src-5.2.1/qtbase/src/3rdparty/zlib/zconf.h	2015-04-02 15:38:07.318364882 +0200
+@@ -28,13 +28,17 @@
+ #  define _tr_stored_block      z__tr_stored_block
+ #  define _tr_tally             z__tr_tally
+ #  define adler32               z_adler32
++#if defined(ZLIB_INTERNAL) || _FILE_OFFSET_BITS-0 != 64 || _LFS64_LARGEFILE-0 == 0
+ #  define adler32_combine       z_adler32_combine
++#endif
+ #  define adler32_combine64     z_adler32_combine64
+ #  define compress              z_compress
+ #  define compress2             z_compress2
+ #  define compressBound         z_compressBound
+ #  define crc32                 z_crc32
++#if defined(ZLIB_INTERNAL) || _FILE_OFFSET_BITS-0 != 64 || _LFS64_LARGEFILE-0 == 0
+ #  define crc32_combine         z_crc32_combine
++#endif
+ #  define crc32_combine64       z_crc32_combine64
+ #  define deflate               z_deflate
+ #  define deflateBound          z_deflateBound
+@@ -65,19 +69,27 @@
+ #  define gzflush               z_gzflush
+ #  define gzgetc                z_gzgetc
+ #  define gzgets                z_gzgets
++#if defined(ZLIB_INTERNAL) || _FILE_OFFSET_BITS-0 != 64 || _LFS64_LARGEFILE-0 == 0
+ #  define gzoffset              z_gzoffset
++#endif
+ #  define gzoffset64            z_gzoffset64
++#if defined(ZLIB_INTERNAL) || _FILE_OFFSET_BITS-0 != 64 || _LFS64_LARGEFILE-0 == 0
+ #  define gzopen                z_gzopen
++#endif
+ #  define gzopen64              z_gzopen64
+ #  define gzprintf              z_gzprintf
+ #  define gzputc                z_gzputc
+ #  define gzputs                z_gzputs
+ #  define gzread                z_gzread
+ #  define gzrewind              z_gzrewind
++#if defined(ZLIB_INTERNAL) || _FILE_OFFSET_BITS-0 != 64 || _LFS64_LARGEFILE-0 == 0
+ #  define gzseek                z_gzseek
++#endif
+ #  define gzseek64              z_gzseek64
+ #  define gzsetparams           z_gzsetparams
++#if defined(ZLIB_INTERNAL) || _FILE_OFFSET_BITS-0 != 64 || _LFS64_LARGEFILE-0 == 0
+ #  define gztell                z_gztell
++#endif
+ #  define gztell64              z_gztell64
+ #  define gzungetc              z_gzungetc
+ #  define gzwrite               z_gzwrite

@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>Data Pump</title>
+</head>
+<body>
+<table border="0" width="656" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="656">
+      <h1><b><br>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../../html/images/assistant.png" width="120" height="114" ></a>DataPump: 
+      Automatic Data Insertion<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+	  <p align="left">Yield-Man should always have at least one
+      task of this type. The DataPump task allows to automate the data 
+      collection of test data files and import them into a given database. From 
+      this task, you can automate the following:</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="31%" bgcolor="#FFFF99"><b>Topics</b></td>
+          <td width="69%" bgcolor="#FFFF99"><b>Comments</b></td>
+        </tr>
+        <tr>
+          <td width="31%"><b>Import data files</b></td>
+          <td width="69%">Define spooling folder that must be scanned 
+      periodically (if data come from remote places, favor FTP data transfers to 
+          the server using a script independent of the Examinator solution: this 
+          allows to maximize CPU and network load).<br>
+          <br>
+          Data file in compressed format are supported for the following type:<ul>
+            <li><b>*.zip</b> : PC compression format from WinZip, PkZip or other 
+            tools</li>
+            <li><b>*.gz</b> : Unix compression format from gzip tool</li>
+            <li><b>*.Z</b> : Unix compression format from compress tool</li>
+          </ul>
+          <p>Note: Have only one file per compressed archive (no multiple data 
+          files in a .zip or .gz or .Z file).</p>
+          <p>Valid files extensions (in compressed or uncompressed formats) 
+          include:</p>
+          <ul>
+            <li>*.std and *.stdf for STDF V3 and STDF V4 files from all Test 
+            equipment vendors and E-Test.</li>
+            <li>*.atd and *.atdf for ATDF V2</li>
+            <li>*.gdf for Agilent's GDF format</li>
+            <li>*.pcm or *.csv for UMC foundry data files</li>
+            <li>*.wat or *.csv for TSMC foundry data files</li>
+            <li>*.spd for Credence / TMT</li>
+            <li>etc...</li>
+          </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="31%"><b>Database destination</b></td>
+          <td width="69%">Must be a <b>Server</b> database type, so other 
+      users can have access to it from their computer).</td>
+        </tr>
+        <tr>
+          <td width="31%"><b>Data import frequency</b></td>
+          <td width="69%">Lets you define the period of execution; typically 30 
+          minutes if you deal with very large amount of data, or less if you 
+          server has a configuration that can accommodate the volume of data to 
+          crunch.</td>
+        </tr>
+        <tr>
+          <td width="31%"><b>Time window</b></td>
+          <td width="69%">Time window: lets you disable the DataPump for certain 
+      hours...can be convenient to allow easy &amp; save backup policy.</td>
+        </tr>
+        <tr>
+          <td width="31%"><b>Source files after insertion...</b></td>
+          <td width="69%">Lets you define what to do with the source files once 
+          inserted into the 
+      database. You can decide to discard them, or have them renamed. Default is 
+          to rename them erased from the polling folder<p>Note: Corrupted will 
+          be renamed and will have the <b>.bad </b>extension instead.</td>
+        </tr>
+        <tr>
+          <td width="31%"><b>Yield Check</b></td>
+          <td width="69%">Check yield: lets you check that any incoming file (with a 
+      minimum of parts tested) is over a yield limit. For a per-product yield 
+      monitoring, use the <a href="mo_yield.htm">Yield Monitoring task</a> instead 
+          as it gives more options. This task is rather a 
+      basic filter to ensure all data (no matter the product line) all path a 
+      minimum catastrophic yield level. </td>
+        </tr>
+      </table>
+      <p align="left">You can create as many DataPump tasks as you want. This 
+      offers you full flexibility to import data from multiple sources and/or 
+      into multiple databases.</p>
+      <p align="left">&nbsp;</p>
+      <h1 align="left">Add/Change data header info at insertion</h1>
+      <p align="left">
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></p>
+	  <p align="left">Yield-Man supports configuration files to let
+      you add/change data header info on the flight at the time of the data 
+      insertion. The benefit is that you can be 100% sure on which data will be 
+      retrieved when you run queries and filters. As custom keys can be created, 
+      you can even create your own sorting/filtering keys (eg: Temperature, 
+      frequency, other...) [<a href="mo_keys.htm">more</a>]</p>
+      <p align="left">&nbsp;</p>
+      <h1 align="left">Low Yield email notification: Mailing list<b><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p align="left">The email notification is sent to the email addresses or 
+      mailing list file you define. If you specify email addresses, use the 
+      semi-colon separator (e.g: <a href="mailto:user1@galaxysemi.com">
+      user1@galaxysemi.com</a> ; <a href="mailto:user2@galaxysemi.com">
+      user2@galaxysemi.com</a>)</p>
+      <p align="left">If you click the Mailing list icon to specify a mailing 
+      list file, make sure the file selected complies with the following format:</p>
+      <ul>
+        <li>
+      <p align="left">File is in ASCII format</p>
+        </li>
+        <li>
+      <p align="left">Each line includes one email address in format <b>
+      name@domain</b></p>
+        </li>
+        <li>
+      <p align="left">If multiple addresses appear on one line, use the 
+      semi-colon separator <b>;</b></p>
+        </li>
+      </ul>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="100%" bgcolor="#FFFF99"><b>Example of mailing list ASCII 
+          file:</b></td>
+        </tr>
+      </table>
+      <blockquote>
+      <p align="left"><b><font face="Courier">
+      <a href="mailto:user1@galaxysemi.com">user1@galaxysemi.com</a><br>
+      <a href="mailto:user2@galaxysemi.com">user2@galaxysemi.com</a><br>
+      <a href="mailto:user3@galaxysemi.com">user3@galaxysemi.com</a> ;
+      <a href="mailto:user4@galaxysemi.com">user4@galaxysemi.com</a><br>
+      <a href="mailto:user5@galaxysemi.com">user5@galaxysemi.com</a></font><br>
+&nbsp;</b></p>
+      </blockquote>
+      <p align="left"><b>Note:</b> Have your system administrator check that the
+      <a href="mo_emails.htm">Monitoring email service </a>is correctly setup 
+      otherwise emails notification won't go!</p>
+      <p align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">&nbsp;
+      You have other questions? <a href="#_gex_wizard_assistant.htm">Click here!</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+diff -ur qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/WebCore/features.pri qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/WebCore/features.pri
+--- qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/WebCore/features.pri	2012-09-12 12:20:50.000000000 +0200
++++ qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/WebCore/features.pri	2012-10-08 16:04:18.368253949 +0200
+@@ -154,7 +154,7 @@
+     }
+ }
+ 
+-!contains(DEFINES, ENABLE_TOUCH_EVENTS=.): DEFINES += ENABLE_TOUCH_EVENTS=1
++!contains(DEFINES, ENABLE_TOUCH_EVENTS=.): DEFINES += ENABLE_TOUCH_EVENTS=0
+ 
+ # HTML5 Media Support
+ # We require QtMultimedia
+diff -ur qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/WebCore/generated/JSDocument.cpp qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/WebCore/generated/JSDocument.cpp
+--- qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/WebCore/generated/JSDocument.cpp	2012-09-12 12:20:50.000000000 +0200
++++ qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/WebCore/generated/JSDocument.cpp	2012-10-08 16:06:51.538253570 +0200
+@@ -296,8 +296,10 @@
+     { "getElementsByClassName", DontDelete | Function, (intptr_t)static_cast<NativeFunction>(jsDocumentPrototypeFunctionGetElementsByClassName), (intptr_t)1 THUNK_GENERATOR(0) },
+     { "querySelector", DontDelete | Function, (intptr_t)static_cast<NativeFunction>(jsDocumentPrototypeFunctionQuerySelector), (intptr_t)1 THUNK_GENERATOR(0) },
+     { "querySelectorAll", DontDelete | Function, (intptr_t)static_cast<NativeFunction>(jsDocumentPrototypeFunctionQuerySelectorAll), (intptr_t)1 THUNK_GENERATOR(0) },
++#if ENABLE(TOUCH_EVENTS)
+     { "createTouch", DontDelete | Function, (intptr_t)static_cast<NativeFunction>(jsDocumentPrototypeFunctionCreateTouch), (intptr_t)7 THUNK_GENERATOR(0) },
+     { "createTouchList", DontDelete | Function, (intptr_t)static_cast<NativeFunction>(jsDocumentPrototypeFunctionCreateTouchList), (intptr_t)0 THUNK_GENERATOR(0) },
++#endif
+     { 0, 0, 0, 0 THUNK_GENERATOR(0) }
+ };
+ 
+@@ -2570,6 +2572,7 @@
+     return JSValue::encode(result);
+ }
+ 
++#if ENABLE(TOUCH_EVENTS)
+ EncodedJSValue JSC_HOST_CALL jsDocumentPrototypeFunctionCreateTouch(ExecState* exec)
+ {
+     JSValue thisValue = exec->hostThisValue();
+@@ -2605,7 +2608,9 @@
+     setDOMException(exec, ec);
+     return JSValue::encode(result);
+ }
++#endif
+ 
++#if ENABLE(TOUCH_EVENTS)
+ EncodedJSValue JSC_HOST_CALL jsDocumentPrototypeFunctionCreateTouchList(ExecState* exec)
+ {
+     JSValue thisValue = exec->hostThisValue();
+@@ -2614,6 +2619,7 @@
+     JSDocument* castedThis = static_cast<JSDocument*>(asObject(thisValue));
+     return JSValue::encode(castedThis->createTouchList(exec));
+ }
++#endif
+ 
+ Document* toDocument(JSC::JSValue value)
+ {
+diff -ur qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/WebCore/generated/JSDocument.h qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/WebCore/generated/JSDocument.h
+--- qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/WebCore/generated/JSDocument.h	2012-09-12 12:20:50.000000000 +0200
++++ qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/WebCore/generated/JSDocument.h	2012-10-08 16:07:41.958253479 +0200
+@@ -130,8 +130,10 @@
+ JSC::EncodedJSValue JSC_HOST_CALL jsDocumentPrototypeFunctionGetElementsByClassName(JSC::ExecState*);
+ JSC::EncodedJSValue JSC_HOST_CALL jsDocumentPrototypeFunctionQuerySelector(JSC::ExecState*);
+ JSC::EncodedJSValue JSC_HOST_CALL jsDocumentPrototypeFunctionQuerySelectorAll(JSC::ExecState*);
++#if ENABLE(TOUCH_EVENTS)
+ JSC::EncodedJSValue JSC_HOST_CALL jsDocumentPrototypeFunctionCreateTouch(JSC::ExecState*);
+ JSC::EncodedJSValue JSC_HOST_CALL jsDocumentPrototypeFunctionCreateTouchList(JSC::ExecState*);
++#endif
+ // Attributes
+ 
+ JSC::JSValue jsDocumentDoctype(JSC::ExecState*, JSC::JSValue, const JSC::Identifier&);

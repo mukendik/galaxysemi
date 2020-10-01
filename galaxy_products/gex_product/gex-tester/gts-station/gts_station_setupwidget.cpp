@@ -1,0 +1,31 @@
+/****************************************************************************
+** Deriven from gts_station_setupwidget_base.cpp
+****************************************************************************/
+#include "gts_station_setupwidget.h"
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+// Constructs a GtsStationSetupwidget as a child of 'parent', with the
+// name 'name' and widget flags set to 'f'.
+/////////////////////////////////////////////////////////////////////////////////////
+GtsStationSetupwidget::GtsStationSetupwidget(QWidget* parent, Qt::WindowFlags fl)
+    : QWidget(parent, fl)
+{
+    // Setup UI
+    setupUi(this);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+// Destroys the object and frees any allocated resources
+/////////////////////////////////////////////////////////////////////////////////////
+GtsStationSetupwidget::~GtsStationSetupwidget()
+{
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+// Get value of Max Lines spin
+/////////////////////////////////////////////////////////////////////////////////////
+int GtsStationSetupwidget::GexMaxLines()
+{
+	return spinMaxOutputLines->value();
+}

@@ -1,0 +1,23 @@
+test enabled:1|test name:gds sh|test number:1000|binning name:G-D-S (Short)|hard bin number:1000|soft bin number:1000|
+test enabled:1|test name:gs sh|test number:1001|binning name:GS Short|hard bin number:1001|soft bin number:1001|
+test enabled:1|test name:ds sh|test number:1002|binning name:DS Short|hard bin number:1002|soft bin number:1002|
+test enabled:1|test name:g-open|test number:1003|binning name:Gate (Open)|hard bin number:1003|soft bin number:1003|
+test enabled:1|test name:l2/4 open|test number:1004|binning name:L2/4 open|hard bin number:1004|soft bin number:1004|
+test enabled:1|test name:iso sh|test number:1005|binning name:ISO (Short)|hard bin number:1005|soft bin number:1005|
+test enabled:1|test name:rg|test number:1006|binning name:Real Rg|hard bin number:1006|soft bin number:1006|
+test enabled:1|test name:ass'y rejects|test number:1007|binning name:S-open|hard bin number:1007|soft bin number:1007|
+test enabled:1|test name:tr|test number:1008|binning name:TR|hard bin number:1008|soft bin number:1008|
+test enabled:1|test name:spu|test number:1009|binning name:SPU|hard bin number:1009|soft bin number:1009|
+test enabled:1|test name:uis|test number:1010|binning name:UIS|hard bin number:1010|soft bin number:1010|
+test enabled:1|test name:vision rej|test number:1011|binning name:Vision Rej|hard bin number:1011|soft bin number:1011|
+test enabled:1|test name:unknown|test number:1013|binning name:Unknown|hard bin number:1013|soft bin number:1013|
+test enabled:1|test name:purge units|test number:1015|binning name:Purge units|hard bin number:1015|soft bin number:1015|
+test enabled:1|test name:handler loss|test number:1016|binning name:Reject units|hard bin number:1016|soft bin number:1016|
+test enabled:1|test name:d_rdson|test number:1014|binning name:Delta Rds1|hard bin number:1014|soft bin number:1014|
+test enabled:1|test name:vdrp(vd)|test number:1017|binning name:V_Droop|hard bin number:1017|soft bin number:1017|
+test enabled:1|test name:vcol(vc)|test number:1018|binning name:V_Collapse|hard bin number:1018|soft bin number:1018|
+test enabled:1|test name:uis_low|test number:1019|binning name:UIS_Low|hard bin number:1019|soft bin number:1019|
+test enabled:1|test name:rg_stat|test number:2006|binning name:Real Rg|hard bin number:2006|soft bin number:2006|
+test enabled:1|test name:gds sh2|test number:1020|binning name:G-D-S (Short)2|hard bin number:1020|soft bin number:1020|
+test enabled:1|test name:s-open2|test number:1021|binning name:S-Open2|hard bin number:1021|soft bin number:1021|
+test enabled:1|test name:uis-l(u4)|test number:1022|binning name:UIS-L(U4)|hard bin number:1022|soft bin number:1022|

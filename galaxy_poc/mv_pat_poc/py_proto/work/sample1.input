@@ -1,0 +1,10 @@
+{
+"version": "1.0.0",
+"descriptor":	{
+				"name": "../data/ds1.csv",
+				"ignoredRows1":40,
+				"ignoredRows2":5,
+				"ignoredCols":10,
+				"delimiter":","
+				}
+}

@@ -1,0 +1,19 @@
+<assembly>
+    <id>assembly</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/pat_prod_gtrigger</directory>
+            <includes>
+                <include>bin/**/*</include>
+                <include>buildpackage/**/*</include>
+                <include>sources/gtrigger.ico</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>  
+    </fileSets>
+</assembly>

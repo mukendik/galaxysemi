@@ -1,0 +1,15 @@
+<assembly>
+    <id>assembly-inc</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/ChartDirector/include</directory>
+            <outputDirectory>other_libraries/chartdirector/include</outputDirectory>
+            <excludes/>
+        </fileSet>          
+    </fileSets>
+</assembly>

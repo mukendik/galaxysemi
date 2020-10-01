@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport 
+	Version="0.65" 
+	Type="MergeDS"
+	ID="PatMarginalityReport"
+	Title="PAT: Marginality failures"
+	Description="Report dies failing due to a combination of Marginalilty"
+	>
+
+	<dataset ID="DS1" label="Main dataset"  
+		stage="Wafer Sort"  consolidated="false"
+		binning="H" binning_visible="false" binning_readonly="false" 
+		time_period_visible="true" time_period_readonly="false" time_period_mandatory="false" 
+		time_period_label="Select here the time period"
+		time_period_from="new Date(new Date().getFullYear(),00,01)" 
+		time_period_to="new Date()"
+		time_period_defaultValueExpression="all_dates" 
+		export="gexQuery('db_testlist','*');"
+		>
+		<!-- time_period_defaultValueExpression can be : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+		<!-- Date objects in javascript example : new Date() returns today. new Date(2006, 00, 01) returns the 1st jan 2006 -->
+		
+
+		<multifield 
+			label="Select here any filters "
+			role="FILTER" 
+			time="*"  facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+			indent="false"
+			>
+			<field  default_field="Product ID" filterable="true" multivalue="false" value_mandatory="true" />
+			<field  default_field="Lot ID" filterable="true" multivalue="true" value_mandatory="false" />
+			<field  default_field="Wafer ID" filterable="true" multivalue="true" value_mandatory="false" />
+			<field  default_field="HBin#" filterable="true" multivalue="true" value_readonly="false" value_editable="true" value_mandatory="true" value="80-87" />
+		</multifield>
+
+		<multifield 
+			label="Split by"
+			role="SPLITBY" 
+			time="*"  facts="false"
+			filterable="false" visible="true"  autorepeat="false" orderable="false"  full_range="false"  multivalue="false"
+			field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+			indent="false"
+			csl_export="gexQuery('db_split','dbf_sql','%1');"
+			/>
+				
+	</dataset>
+
+	<options>
+		<!-- option ID="P_TITLE" type="String" visible="true" label="Report title" rawReplace="true" defaultValueExpression="Report" / -->
+		<!-- option ID="MORE_REPORTS" type="Enum" visible="true" label="More reports"  rawReplace="false"  
+			enumNames="PAT-Man history"
+		/ -->
+		<!-- option ID="Parameters" type="String" visible="true" label="Parameters to extract" defaultValueExpression="*" / -->
+		<!-- option ID="Consolidated" type="Enum" visible="true" label="Extraction mode" enumNames="Raw|Consolidated" defaultValueExpression="Raw" / -->
+		
+	</options>
+
+</GalaxyReport>

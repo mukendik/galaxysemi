@@ -1,0 +1,213 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>gexFile<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library
+      </a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>gexFile(
+  const group_id,     // Group ID
+  const action,       // action on File
+  const file,         // file name+path
+  const site,	      // site#
+  const process,      // type of parts to process
+  [const range],      // range of parts-bins to process
+  [const map_tests]   // .CSV file with list of tests numbers to re-map
+  [const waferID]    // if one specific WaferID only must be extracted from file
+  [const temperature] // Temperature (in °C) at which data where tested
+  [const group_name]  // Label assigned to this dataset / file</pre>
+      <p>Update the list of files that belong to specific groups.&nbsp;<br>
+      Note: Fields are not case sensitive.<br>
+      </p>
+      <p>Example:</p>
+      <pre>// Reset all groups
+gexFile(t1,'insert','c://temp/stdf1.std','all','fail');
+// Because parameters are not case sensitive, it is the same as: 
+gexFile(t1,'INSERT','c://temp/stdf1.std','All','FAIL');</pre>
+      <p>Here is the list of actions you can conduct on a file using this script
+      function:</p>
+      <table border="1" width="646" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="108"><font color="#ffffff"><b>action</b></font></td>
+          <td bgColor="#0034aa" width="514"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="108"><b>insert</b></td>
+          <td width="514">Insert the specified file into a given group.</td>
+        </tr>
+      </table>
+      <pre>&nbsp;</pre>
+      <h1>Section: insert<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Fields</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>group_id</b></td>
+          <td width="507">Is the <b>group_id</b> of the group created with the
+            function <a href="gex4.htm">gexGroup</a>.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>action</b></td>
+          <td width="507">Must be <b>insert</b>, specifies to insert a file to 
+          process into the given group</td>
+        </tr>
+        <tr>
+          <td width="116"><b>file</b></td>
+          <td width="507">Specifies the file full name and path (e.g.: <b>
+          /export/home/stdf/file1.std</b>)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>site</b></td>
+          <td width="507">Either <b>all</b> or the single site number to process 
+          (e.g. <b>3</b>)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>process</b></td>
+          <td width="507">Must be one of the following:<br>
+    <b>all</b> for processing all parts<br>
+    <b>allparts_except</b> for processing all parts except a given
+    list<b><br>
+    good</b> for processing good parts only (Bin 1)<br>
+    <b>fails</b> for processing failing parts only (all non Bin 1)<br>
+    <b>parts</b> for processing a given list of parts<br>
+    <b>bins</b> for processing a given list of software bins<br>
+    <b>allbins_except</b> for processing all bins except the given list of
+          software&nbsp; bins<br>
+    <b>hbins</b> for processing a given list of hardware bins<br>
+    <b>allhbins_except</b> for processing all bins except the given list of
+          hardware&nbsp; bins<br>
+    <b>allhbins_except</b> for processing all bins except the given list of
+          hardware&nbsp; bins<br>
+          <b>odd_parts</b> for processing ODD parts only (part#1,3,5,....)<br>
+          <b>even_parts</b> for processing EVEN parts only (part#2,4,6,....)<br>
+          <b>first_instance</b> for processing wafer-sort first testing instance 
+          only (ignore die retests)<br>
+          <b>last_instance</b> for processing wafer-sort last testing instance 
+          only</td>
+        </tr>
+        <tr>
+          <td width="116"><b>range</b></td>
+          <td width="507">Specify the list of parts to process if <b>
+          process</b> is <b>allparts_except</b> or <b>parts<br>
+            </b>Specify the list of bins to process if <b>process</b> is
+            <b>allbins_except</b> or <b>bins</b><br>
+            range syntax can be a list as follows:<br>
+            <b>XX</b> <b>to</b> <b>YY,ZZ,WW to VV</b> to specify a range of parts or binning&nbsp;<br>
+          (e.g. <b>1 to 50, 52, 53 to 57</b>)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>map_tests</b></td>
+          <td width="507">Specifies the file full name and path to the text file 
+          (.CSV format) that includes the mapping list for tests numbers to map. 
+          See file format below.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>waferID</b></td>
+          <td width="507">A string that defines the only WaferID to consider in 
+          the file, and ignore all the other wafers.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>temperature</b></td>
+          <td width="507">Temperature value (in °C) at which data have been 
+          tested. E.g: 25</td>
+        </tr>
+        <tr>
+          <td width="116"><b>group_name</b></td>
+          <td width="507">Group name label assigned to the data held in the 
+          file. Label can be used as a marker on trend charts</td>
+        </tr>
+      </table>
+      <p>Example1:</p>
+      <pre>// Creates group
+gexGroup('reset','all');
+t1 = gexGroup('insert','Group1: files from tester T1');
+// Add the 3 STDF files created on tester T1 with 3 lots: all sites, BIN1 only
+gexInsert(t1,'insert','/stdf/file1.std','all','good');
+gexInsert(t1,'insert','/stdf/file2.std','all','good');
+gexInsert(t1,'insert','/stdf/file3.std','all','good');</pre>
+      <p>Example2:</p>
+      <pre>// Creates group
+gexGroup('reset','all');
+t1 = gexGroup('insert','Group1: files from tester T1');
+// Add the 2 STDF files created on tester T1 with 2 lots: site 1, list parts
+gexInsert(t1,'insert','/stdf/file1.std','1','parts','1 to 50,51 to 57,75');
+gexInsert(t1,'insert','/stdf/file2.std','1','parts','1 to 50,51 to 57,75');</pre>
+      <pre>&nbsp;</pre>
+      <h1><a name="Mapping Test numbers">Mapping Test numbers</a></h1>
+      <pre><font face="Times New Roman" size="3">To have the Parameter / test numbers of your data file remapped to new values or to have multiple tests merged under 
+a single Test number, all you need is to create an ASCII file comma delimited (CSV format) that 
+includes the list of test numbers original and new index. 
+Note1: All test numbers not listed keep their default test index as found in the test data files.
+Note2: Tests can be listed in any order. No need to be sorted.</font></pre>
+      <pre><font face="Times New Roman" size="3">Example of script mapping test numbers:</font>
+// Creates group
+gexGroup('reset','all');
+t1 = gexGroup('insert','Group1: files from tester T1');
+// Add the WAT file
+gexInsert(t1,'insert','/wat/file1.wat','all','good','','/export/home/map.csv');
+</pre>
+      <pre>The Test Numbers Mapping file format is the following:</pre>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" bgcolor="#FFFFCC">
+        <tr>
+          <td width="100%">
+          <blockquote>
+            <p>#################################################################<br>
+            # Any line starting with the '#' is a comment line and is ignored<br>
+            # File format is one line per test to map.<br>
+            # If multiple tests are remapped to the same index<br>
+            #...then data are merged under a single Test number!<br>
+            # Format:<br>
+            # &lt;Original_Test_Index&gt; , &lt;New_Test_Index&gt;<br>
+            #################################################################<br>
+            1000, 5000<br>
+            1001, 5000<br>
+            1002, 5000<br>
+            1003, 5001<br>
+            1004, 5007</p>
+          </blockquote>
+          </td>
+        </tr>
+      </table>
+      <h1><br>
+</h1>
+      <pre></pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

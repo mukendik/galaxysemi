@@ -1,0 +1,164 @@
+test enabled:1|test name:IGSS @ + 100%VGS|test number:1|binning name:IGSS @ + 100%VGS|hard bin number:10|soft bin number:10|
+test enabled:1|test name:IGSS @ -100%VGS|test number:2|binning name:IGSS @ -100%VGS|hard bin number:11|soft bin number:11|
+test enabled:1|test name:IGSS @ + High Voltage|test number:3|binning name:IGSS @ + High Voltage|hard bin number:6|soft bin number:6|
+test enabled:1|test name:IGSS @ - High Voltage|test number:4|binning name:IGSS @ - High Voltage|hard bin number:7|soft bin number:7|
+test enabled:0|test name:|test number:5|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:6|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:7|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:8|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:IGSS @ + High Voltage_Plus|test number:9|binning name:IGSS @ + High Voltage_Plus|hard bin number:9|soft bin number:9|
+test enabled:1|test name:IGSS @ - High Voltage_Plus|test number:10|binning name:IGSS @ - High Voltage_Plus|hard bin number:8|soft bin number:8|
+test enabled:1|test name:IGDO|test number:11|binning name:IGDO|hard bin number:28|soft bin number:28|
+test enabled:0|test name:|test number:12|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:13|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:Delta_Igss|test number:14|binning name:Delta_Igss|hard bin number:314|soft bin number:314|
+test enabled:1|test name:IBEV|test number:15|binning name:IBEV|hard bin number:27|soft bin number:27|
+test enabled:1|test name:D_BVDSS @50uA|test number:16|binning name:D_BVDSS @50uA|hard bin number:316|soft bin number:316|
+test enabled:1|test name:D_BVDSS @100uA|test number:17|binning name:D_BVDSS @100uA|hard bin number:317|soft bin number:317|
+test enabled:1|test name:D_BVDSS @250uA|test number:18|binning name:D_BVDSS @250uA|hard bin number:318|soft bin number:318|
+test enabled:1|test name:KELVIN|test number:19|binning name:KELVIN|hard bin number:319|soft bin number:319|
+test enabled:1|test name:UIS2|test number:20|binning name:UIS2|hard bin number:319|soft bin number:319|
+test enabled:1|test name:IDSX @ 100%VDS|test number:21|binning name:IDSX @ 100%VDS|hard bin number:14|soft bin number:14|
+test enabled:1|test name:IDSX @ 50-80%VDS|test number:22|binning name:IDSX @ 50-80%VDS|hard bin number:16|soft bin number:16|
+test enabled:0|test name:|test number:23|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:24|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:25|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:26|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:27|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:IDSS @0.1V|test number:28|binning name:IDSS @0.1V|hard bin number:328|soft bin number:328|
+test enabled:1|test name:IDSX @ 100%VDS-#2|test number:29|binning name:IDSX @ 100%VDS-#2|hard bin number:329|soft bin number:329|
+test enabled:1|test name:UIS2_Aval|test number:30|binning name:UIS2_Aval|hard bin number:305|soft bin number:305|
+test enabled:1|test name:Vth|test number:31|binning name:Vth|hard bin number:12|soft bin number:12|
+test enabled:0|test name:|test number:32|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:33|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:34|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:D-VTH|test number:35|binning name:D-VTH|hard bin number:335|soft bin number:335|
+test enabled:1|test name:IDON|test number:36|binning name:IDON|hard bin number:13|soft bin number:13|
+test enabled:1|test name:IGSS @ + 100%VGS-#2|test number:37|binning name:IGSS @ + 100%VGS-#2|hard bin number:337|soft bin number:337|
+test enabled:1|test name:IDON|test number:38|binning name:IDON|hard bin number:338|soft bin number:338|
+test enabled:1|test name:BVDSX @ (10uA & 20uA)|test number:39|binning name:BVDSX @ (10uA & 20uA)|hard bin number:339|soft bin number:339|
+test enabled:1|test name:BVDSX @ 50uA|test number:40|binning name:BVDSX @ 50uA|hard bin number:340|soft bin number:340|
+test enabled:1|test name:BVDSX @ 250uA|test number:41|binning name:BVDSX @ 250uA|hard bin number:41|soft bin number:41|
+test enabled:1|test name:BVDSX @ 100uA|test number:42|binning name:BVDSX @ 100uA|hard bin number:42|soft bin number:42|
+test enabled:1|test name:BVDSX @ 50mA|test number:43|binning name:BVDSX @ 50mA|hard bin number:43|soft bin number:43|
+test enabled:1|test name:BVDSX @ (1mA - 2mA)|test number:44|binning name:BVDSX @ (1mA - 2mA)|hard bin number:344|soft bin number:344|
+test enabled:1|test name:BVDSX (50uA)-#2|test number:45|binning name:BVDSX (50uA)-#2|hard bin number:345|soft bin number:345|
+test enabled:1|test name:BVDSX @ 5mA|test number:46|binning name:BVDSX @ 5mA|hard bin number:346|soft bin number:346|
+test enabled:1|test name:BVDSX @ 10mA|test number:47|binning name:BVDSX @ 10mA|hard bin number:347|soft bin number:347|
+test enabled:1|test name:D_BVDSS (250uA-5mA)|test number:48|binning name:D_BVDSS (250uA-5mA)|hard bin number:348|soft bin number:348|
+test enabled:1|test name:D_BVDSS (250uA-10mA)|test number:49|binning name:D_BVDSS (250uA-10mA)|hard bin number:349|soft bin number:349|
+test enabled:1|test name:D_BVDSS (5mA-10mA)|test number:50|binning name:D_BVDSS (5mA-10mA)|hard bin number:350|soft bin number:350|
+test enabled:1|test name:D_BVDSS (250uA-50uA)|test number:51|binning name:D_BVDSS (250uA-50uA)|hard bin number:351|soft bin number:351|
+test enabled:1|test name:BVGSS @ 1mA|test number:52|binning name:BVGSS @ 1mA|hard bin number:52|soft bin number:52|
+test enabled:1|test name:BVGSS @ -1mA|test number:53|binning name:BVGSS @ -1mA|hard bin number:53|soft bin number:53|
+test enabled:1|test name:rDSon @ VGS= 15V|test number:54|binning name:rDSon @ VGS= 15V|hard bin number:40|soft bin number:40|
+test enabled:1|test name:rDSon @ VGS= 12V|test number:55|binning name:rDSon @ VGS= 12V|hard bin number:35|soft bin number:35|
+test enabled:1|test name:rDSon @ VGS= 10V|test number:56|binning name:rDSon @ VGS= 10V|hard bin number:18|soft bin number:18|
+test enabled:1|test name:rDSon @ VGS= 8V|test number:57|binning name:rDSon @ VGS= 8V|hard bin number:34|soft bin number:34|
+test enabled:1|test name:rDSon @ VGS= 6V|test number:58|binning name:rDSon @ VGS= 6V|hard bin number:32|soft bin number:32|
+test enabled:1|test name:rDSon @ VGS= (4.5V & 4.45V)|test number:59|binning name:rDSon @ VGS= 4.5V|hard bin number:19|soft bin number:19|
+test enabled:1|test name:BVDSX  (100uA)-#2|test number:60|binning name:BVDSX  (100uA)-#2|hard bin number:60|soft bin number:60|
+test enabled:1|test name:rDSon @ VGS= 4V|test number:61|binning name:rDSon @ VGS= 4V|hard bin number:37|soft bin number:37|
+test enabled:1|test name:rDSon @ VGS= 3.6V|test number:62|binning name:rDSon @ VGS= 3.6V|hard bin number:36|soft bin number:36|
+test enabled:1|test name:Vth@50uA|test number:63|binning name:Vth@50uA|hard bin number:363|soft bin number:363|
+test enabled:1|test name:rDSon @ VGS= 3V|test number:64|binning name:rDSon @ VGS= 3V|hard bin number:33|soft bin number:33|
+test enabled:1|test name:rDSon @ VGS= 2.7V|test number:65|binning name:rDSon @ VGS= 2.7V|hard bin number:2|soft bin number:2|
+test enabled:1|test name:rDSon @ VGS= 2.5V|test number:66|binning name:rDSon @ VGS= 2.5V|hard bin number:20|soft bin number:20|
+test enabled:1|test name:rDSon @ VGS= 1.8V|test number:67|binning name:rDSon @ VGS= 1.8V|hard bin number:21|soft bin number:21|
+test enabled:1|test name:rDSon @ VGS= 1.5V|test number:68|binning name:rDSon @ VGS= 1.5V|hard bin number:22|soft bin number:22|
+test enabled:1|test name:rDSon @ VGS= 1.2V|test number:69|binning name:rDSon @ VGS= 1.2V|hard bin number:370|soft bin number:370|
+test enabled:1|test name:VFP @500mA|test number:70|binning name:VFP @500mA|hard bin number:23|soft bin number:23|
+test enabled:1|test name:Vsdp|test number:71|binning name:Vsdp|hard bin number:371|soft bin number:371|
+test enabled:1|test name:VR|test number:72|binning name:VR|hard bin number:372|soft bin number:372|
+test enabled:1|test name:VFP|test number:73|binning name:VFP|hard bin number:373|soft bin number:373|
+test enabled:1|test name:VF|test number:74|binning name:VF|hard bin number:374|soft bin number:374|
+test enabled:1|test name:IR#1|test number:75|binning name:IR#1|hard bin number:25|soft bin number:25|
+test enabled:1|test name:Q-Vth|test number:76|binning name:Q-Vth|hard bin number:376|soft bin number:376|
+test enabled:1|test name:Q-BVDSS|test number:77|binning name:Q-BVDSS|hard bin number:377|soft bin number:377|
+test enabled:1|test name:BVDSX (250uA)-#2|test number:78|binning name:BVDSX  (250uA)-#2|hard bin number:378|soft bin number:378|
+test enabled:0|test name:|test number:79|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:80|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:Gm1IP|test number:81|binning name:Gm1IP|hard bin number:381|soft bin number:381|
+test enabled:1|test name:Delta_IDSS- #1|test number:82|binning name:Delta_IDSS- #1|hard bin number:382|soft bin number:382|
+test enabled:1|test name:Q-IDSS|test number:83|binning name:Q-IDSS|hard bin number:383|soft bin number:383|
+test enabled:1|test name:Q-IGSS|test number:84|binning name:Q-IGSS|hard bin number:384|soft bin number:384|
+test enabled:1|test name:BVGSS @ 20uA|test number:85|binning name:BVGSS @ 20uA|hard bin number:385|soft bin number:385|
+test enabled:1|test name:BVGSS @ -20uA|test number:86|binning name:BVGSS @ -20uA|hard bin number:386|soft bin number:386|
+test enabled:1|test name:BVGSS @ 50uA|test number:87|binning name:BVGSS @ 50uA|hard bin number:387|soft bin number:387|
+test enabled:1|test name:BVGSS @ -50uA|test number:88|binning name:BVGSS @ -50uA|hard bin number:388|soft bin number:388|
+test enabled:1|test name:BVGSS @ +250uA_10mA_5mA_1mA|test number:89|binning name:BVGSS @ +250uA_10mA_5mA_1mA|hard bin number:389|soft bin number:389|
+test enabled:1|test name:BVGSS @ -250uA_-10mA_-5mA_-1mA|test number:90|binning name:BVGSS @ -250uA_-10mA_-5mA_-1mA|hard bin number:390|soft bin number:390|
+test enabled:0|test name:|test number:92|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:Coss|test number:93|binning name:Coss|hard bin number:393|soft bin number:393|
+test enabled:1|test name:CISS|test number:94|binning name:CISS|hard bin number:394|soft bin number:394|
+test enabled:1|test name:CRSS|test number:95|binning name:CRSS|hard bin number:395|soft bin number:395|
+test enabled:0|test name:|test number:96|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:97|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:98|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:99|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:UIS_Invalid|test number:100|binning name:UIS_Invalid|hard bin number:400|soft bin number:400|
+test enabled:0|test name:|test number:201|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:202|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:203|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:VSD1_IS=10ua/Vgs=0V|test number:204|binning name:VSD1_IS=10ua/Vgs=0V|hard bin number:504|soft bin number:504|
+test enabled:1|test name:VSD1_IS=10ua/Vgs=-1V|test number:205|binning name:VSD1_IS=10ua/Vgs=-1V|hard bin number:505|soft bin number:505|
+test enabled:1|test name:D_VSD1 (VGS@0V-VGS@1V)|test number:206|binning name:D_VSD1 (VGS@0V-VGS@1V)|hard bin number:506|soft bin number:506|
+test enabled:1|test name:TR2_Kel|test number:207|binning name:TR2_Kel|hard bin number:507|soft bin number:507|
+test enabled:1|test name:ISRP|test number:208|binning name:ISRP|hard bin number:508|soft bin number:508|
+test enabled:1|test name:L2/4 open|test number:209|binning name:L2/4 open|hard bin number:509|soft bin number:509|
+test enabled:1|test name:L2/4 open|test number:210|binning name:L2/4 open|hard bin number:509|soft bin number:509|
+test enabled:1|test name:ISO sh|test number:211|binning name:ISO sh|hard bin number:511|soft bin number:511|
+test enabled:1|test name:Diode_Leak @ +HV|test number:212|binning name:Diode_Leak @ +HV|hard bin number:512|soft bin number:512|
+test enabled:1|test name:Diode_Leak @ -HV|test number:213|binning name:Diode_Leak @ -HV|hard bin number:513|soft bin number:513|
+test enabled:1|test name:VF @ 100% IF|test number:214|binning name:VF @ 100% IF|hard bin number:514|soft bin number:514|
+test enabled:1|test name:VF @ 100% IF|test number:215|binning name:VF @ 100% IF|hard bin number:514|soft bin number:514|
+test enabled:1|test name:VF @  50% IF|test number:216|binning name:VF @  50% IF|hard bin number:516|soft bin number:516|
+test enabled:1|test name:VF @  50% IF|test number:217|binning name:VF @  50% IF|hard bin number:516|soft bin number:516|
+test enabled:1|test name:D_VF@ + (100% -50%)|test number:218|binning name:D_VF1@ + (100% -50%)|hard bin number:518|soft bin number:518|
+test enabled:1|test name:D_VF@ + (100% -50%)|test number:519|binning name:D_VF2@ + (100% -50%)|hard bin number:519|soft bin number:519|
+test enabled:1|test name:IA1S2|test number:520|binning name:IA1S2|hard bin number:520|soft bin number:520|
+test enabled:1|test name:I4DO|test number:221|binning name:I4DO|hard bin number:521|soft bin number:521|
+test enabled:0|test name:|test number:222|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:ID1D2 (I4DO-1A)|test number:223|binning name:ID1D2 (I4DO-1A)|hard bin number:523|soft bin number:523|
+test enabled:1|test name:BVG4|test number:224|binning name:BVG4|hard bin number:524|soft bin number:524|
+test enabled:1|test name:BVG1S1 (BVG4-2V)|test number:225|binning name:BVG1S1 (BVG4-2V)|hard bin number:525|soft bin number:525|
+test enabled:1|test name:BVG1S2 (BVG4-1V)|test number:226|binning name:BVG1S2 (BVG4-1V)|hard bin number:526|soft bin number:526|
+test enabled:1|test name:I4SO|test number:227|binning name:I4SO|hard bin number:527|soft bin number:527|
+test enabled:0|test name:|test number:228|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:229|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:IK1D2|test number:230|binning name:IK1D2|hard bin number:530|soft bin number:530|
+test enabled:1|test name:100%Vds|test number:231|binning name:100%Vds|hard bin number:531|soft bin number:531|
+test enabled:1|test name:50%Vds|test number:232|binning name:50%Vds|hard bin number:532|soft bin number:532|
+test enabled:1|test name:negative Id of T41|test number:233|binning name:negative Id of T41|hard bin number:533|soft bin number:533|
+test enabled:1|test name:VG1G2 (T224-1)|test number:234|binning name:VG1G2 (T224-1)|hard bin number:534|soft bin number:534|
+test enabled:1|test name:VDS_ISO (T80-1)|test number:235|binning name:VDS_ISO (T80-1)|hard bin number:535|soft bin number:535|
+test enabled:1|test name:IGSS1_ISO (T12-1)|test number:236|binning name:IGSS1_ISO (T12-1)|hard bin number:536|soft bin number:536|
+test enabled:1|test name:IGSO_ISO (T13-1)|test number:237|binning name:IGSO_ISO (T13-1)|hard bin number:537|soft bin number:537|
+test enabled:1|test name:IGSS2_ISO (7-1)|test number:238|binning name:IGSS2_ISO (7-1)|hard bin number:538|soft bin number:538|
+test enabled:1|test name:IDSX_ISO (T27-1)|test number:239|binning name:IDSX_ISO (T27-1)|hard bin number:539|soft bin number:539|
+test enabled:1|test name:VSD2_IS=10ua/Vgs=0V|test number:240|binning name:VSD2_IS=10ua/Vgs=0V|hard bin number:540|soft bin number:540|
+test enabled:1|test name:VSD2_IS=10ua/Vgs=-1V|test number:241|binning name:VSD2_IS=10ua/Vgs=-1V|hard bin number:541|soft bin number:541|
+test enabled:1|test name:D_VSD2 (VGS@0V-VGS@1V)|test number:242|binning name:D_VSD2 (VGS@0V-VGS@1V)|hard bin number:542|soft bin number:542|
+test enabled:1|test name:IG4|test number:243|binning name:IG4|hard bin number:543|soft bin number:543|
+test enabled:1|test name:IG1D2 (IG4-1)|test number:244|binning name:IG1D2 (IG4-1)|hard bin number:544|soft bin number:544|
+test enabled:1|test name:ISDX1|test number:245|binning name:ISDX1|hard bin number:545|soft bin number:545|
+test enabled:1|test name:ISDX2|test number:246|binning name:ISDX2|hard bin number:546|soft bin number:546|
+test enabled:0|test name:|test number:247|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:Open Lead_ISO|test number:248|binning name:Open Lead_ISO|hard bin number:548|soft bin number:548|
+test enabled:0|test name:|test number:249|binning name:|hard bin number:0|soft bin number:0|
+test enabled:0|test name:|test number:250|binning name:|hard bin number:0|soft bin number:0|
+test enabled:1|test name:BVGSS @1A|test number:251|binning name:BVGSS @1A|hard bin number:551|soft bin number:551|
+test enabled:1|test name:BVGSS @10A|test number:252|binning name:BVGSS @10A|hard bin number:552|soft bin number:552|
+test enabled:1|test name:Result = (T41/ / T47) -- (250uA/ 1mA)|test number:304|binning name:BV_Ratio(250uA/1mA)|hard bin number:604|soft bin number:604|
+test enabled:1|test name:Result = (T41/ / T378) -- (250uA / 250uA)|test number:305|binning name:BV_Ratio(250uA/250uA)|hard bin number:605|soft bin number:605|
+test enabled:1|test name:Result = (T47/ / T44) -- (1mA / 1mA)|test number:306|binning name:BV_Ratio(1mA/1mA)|hard bin number:606|soft bin number:606|
+test enabled:1|test name:Result = (T40/ / T45) -- (50uA / 50uA)|test number:307|binning name:BV_Ratio(50uA/50uA)|hard bin number:607|soft bin number:607|
+test enabled:1|test name:Result = (T45/ / T340) -- (50uA / 50uA)|test number:308|binning name:BV_Ratio(50uA/50uA)|hard bin number:608|soft bin number:608|
+test enabled:1|test name:V_Collapse2|test number:324|binning name:V_Collapse2|hard bin number:624|soft bin number:624|
+test enabled:1|test name:V_Droop2|test number:399|binning name:V_Droop2|hard bin number:699|soft bin number:699|
+test enabled:1|test name:BVDSX @ 50uA|test number:340|binning name:BVDSX @ 50uA_3|hard bin number:640|soft bin number:640|
+test enabled:1|test name:BVDSX @ 250uA_3|test number:378|binning name:BVDSX @ 250uA_3|hard bin number:678|soft bin number:678|
+test enabled:1|test name:UIS_Ipeak|test number:381|binning name:UIS_Ipeak|hard bin number:231|soft bin number:231|
+test enabled:1|test name:UIS_Vmax|test number:382|binning name:UIS_Vmax|hard bin number:232|soft bin number:232|
+test enabled:1|test name:UIS_Tav|test number:385|binning name:UIS_Tav|hard bin number:235|soft bin number:235|
+test enabled:1|test name:UIS_Tcharge|test number:386|binning name:UIS_Tcharge|hard bin number:236|soft bin number:236|

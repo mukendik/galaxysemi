@@ -1,0 +1,161 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="150" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>Functions<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang2.htm">Comments</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="lang3.htm">Numbers</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang4.htm">Literals</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang5.htm">Var
+      and const</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang6.htm">Operators</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang7.htm">Statements
+      and&nbsp; blocks</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang8.htm">Program
+      flow</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang9.htm">Trace
+      facility</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang10.htm">Exception
+      handling</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang11.htm">Functions</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang12.htm">Predefined
+      identifiers</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">Functions always have a return
+      type of <b>var</b>. If a function does not explicitly return a value, an
+      empty string<br>
+      will be returned. Since each function returns a <b>var</b>, it is not
+      necessary to put <b>var</b> in front of the function<br>
+      header, although you may do so to indicate that your function ought to
+      return something meaningful:
+      <pre>var foo()       // the 'var' is optional
+{
+  return 'hello';
+} // foo
+&nbsp;
+main()
+{
+  const x = foo(); // x = 'hello'
+} // main
+</pre>
+      <p>The parameter list may have a fixed or variable number of parameters.
+      Optional parameters are enclosed in<br>
+      braces [ ]:</p>
+      <pre> fixParam(var a, var b)
+ // 2 mandatory parameters
+ ...
+&nbsp;
+ varParam(var a, [var b, var c])
+ // 1 mandatory and 2 optional parameters
+ ...
+</pre>
+      <p>If there are optional parameters, CSL generates a local const named <b>argCount</b>
+      holding the  number of<br>
+      passed arguments. CSL will validate that the number of arguments passed isn't
+      less than the number of<br>
+      mandatory parameters and also not bigger than the total number of
+      parameters.</p>
+      <p>Your function must validate the number of optional parameters before
+      accessing them:</p>
+      <pre>foo(const a, [const b])
+{
+  if (argCount == 2)
+    sysLog('you passed 2 args: '+a+' and '+b);
+  else
+    sysLog('you passed 1 arg: '+a);
+}
+</pre>
+      <p>If your function doesn't change the arg values you may define them <b>const</b>
+      instead of <b>var</b> so they are<br>
+      protected by CSL.</p>
+      <p>CSL also supports parameter passing by reference with the operator
+      &amp; (as known by C++). In fact arrays<br>
+      may only be passed by reference and not by value:</p>
+      <pre>&nbsp;
+groom(var&amp; a, var &amp;b[][])
+{
+  const maxDim = 10;
+  a = 'groom';
+  const dim2 = sizeof(b[0]);
+  const dim1 = sizeof(b) / dim2;
+  if (dim1 &gt; maxDim || dim2 &gt; maxDim)
+    throw '%%% groom was designed for dims &lt;= '+maxDim;
+  for (var y = 0; y &lt; dim1; y++)
+    for (var x = 0; x &lt; dim2; x++)
+      b[y][x] = y*dim2+x;
+  return a+' done';
+}
+&nbsp;
+main()
+{
+  var aa;
+  var bb[3][4][5];
+  sysLog(groom(aa, bb[1])); // groom done
+  sysLog(aa);               // groom
+  sysLog(bb[1][2][3]);      // 13
+}
+</pre>
+      <p>Array-parameters never have an explicit index as you see in the example
+      above. If your function imposes<br>
+      restrictions on array size(s), it's up to your function to verify that by
+      using the <b>sizeof</b> operator as we did in<br>
+      the example above.</p>
+      <p><b>Static and Forward functions<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </p>
+      <p>Forward or <a href="lang53.htm"> external</a> definition of functions is done by defining the
+      function header followed by a semicolon:
+      </p>
+      <pre>extern(var b);
+</pre>
+      <p>External declarations are necessary when using functions that are
+      loaded at runtime (see <a href="sys7.htm">sysLoadScript</a>).<br>
+      Usually you will have the external definitions in
+      a file bound in by <a href="direct2.htm">#include</a> or <a href="direct5.htm">#loadScript</a>. Functions loaded<br>
+      at compile-time need no forward
+      declaration if they are loaded before use.</p>
+      <p><a href="lang53.htm">Static</a> functions are visible only to the module they were
+      defined in:</p>
+      <pre>// calcXy is a local function not visible
+// by other modules:
+static var calcXy(var x, var y)
+{
+  ....
+} // calcXy
+</pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

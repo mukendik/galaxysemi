@@ -1,0 +1,70 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: statistics.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This script  generates the test statistics report section
+      for tests with a Cpk &lt;= 1.33. When executed, you are prompted to enter the file to process.
+      The script uses the
+      function <a href="gex6.htm">gexReportType('stats')</a> to display the
+      wafer map page directly instead of the standard
+      home page. This saves you one mouse click!</p>
+          <p align="left">For more information see the scripting language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">reviewing</a> the other sample scripts.
+          <p align="left"><b>Important note</b>: this script doesn't overwrite
+          your options and assumes your report type output is set to HTML. If 
+          you want to have the script fully control the options, merge it with the <a href="options_csl.htm">options.csl</a>
+          script.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: statistics.csl
+//////////////////////////////////////////
+
+// Function to setup the test statistics report section
+SetStatsReport()
+{
+  sysLog('*** This script creates a list of tests with Cpk less than 1.33! ***');
+
+  // Select file name to process
+  var vFile = sysPrompt('Select the STDF file to process...');
+
+  // Creates a group to hold the file to process!
+  var group_id = gexGroup('insert','Group1');
+
+  // Add selected file into that group.
+  gexFile(group_id,'insert',vFile,'all','all');
+
+  // Set options to all defaults
+  gexOptions('reset','all','default');
+
+  // Set Statistics report section to: include tests with Cpk less or equal to 1.33
+  gexReportType('stats','cpk','1.33');
+
+  // Get report created+show report at page test statistics!
+  gexBuildReport('statistics');
+}
+
+// Script entry point
+main()
+{
+  // Call function to setup the test statistics report
+  SetStatsReport();
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

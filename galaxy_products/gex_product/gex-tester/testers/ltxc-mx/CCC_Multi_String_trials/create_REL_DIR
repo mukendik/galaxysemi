@@ -1,0 +1,10 @@
+rm -rf ./REL_DIR
+mkdir REL_DIR
+cp Cfiles/lib* REL_DIR
+cp CADENCE/verify*.eva REL_DIR
+cp CADENCE/verify*.tp REL_DIR
+mkdir REL_DIR/BIN_FILES
+cp ./BIN_FILES/* REL_DIR/BIN_FILES
+cp README* REL_DIR
+tar cvf MyLib.tar REL_DIR
+gzip MyLib.tar

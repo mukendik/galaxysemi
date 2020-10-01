@@ -1,0 +1,46 @@
+#include "gex_test_to_update.h"
+
+GexTestToUpdate::GexTestToUpdate()
+{
+}
+
+GexTestToUpdate::~GexTestToUpdate(){
+
+}
+
+///////////////////////////////////////////////////////////
+// Setter: Test Name
+///////////////////////////////////////////////////////////
+void GexTestToUpdate::setTestName(QString strTestName)
+{
+    m_strTestName = strTestName;
+}
+
+///////////////////////////////////////////////////////////
+// Setter: Test Number
+///////////////////////////////////////////////////////////
+void GexTestToUpdate::setTestNumber(QString strTestNumber)
+{
+    m_strTestNumber = strTestNumber;
+}
+
+///////////////////////////////////////////////////////////
+// Setter: Low Limit
+///////////////////////////////////////////////////////////
+void GexTestToUpdate::setTestLowLimit(QString strLLimit)
+{
+    m_strLLimit = strLLimit;
+}
+
+///////////////////////////////////////////////////////////
+// Setter: High Limit
+///////////////////////////////////////////////////////////
+void GexTestToUpdate::setTestHighLimit(QString strHLimit)
+{
+    m_strHLimit = strHLimit;
+}
+
+void GexTestToUpdate::setSource(QString strSrc){
+    m_strSource = strSrc;
+}
+

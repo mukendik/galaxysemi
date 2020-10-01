@@ -1,0 +1,547 @@
+#!/bin/bash
+# ---------------------------------------------------------------------------- #
+# make_galaxy
+# ---------------------------------------------------------------------------- #
+nasAddr=gexprod@192.168.1.54
+kernel=`uname`
+
+if [ "$DEBUG" = 1 ]; then
+    compile_mode=Debug
+    compile_target=debug
+    clean_target=debug-clean
+else
+    compile_mode=Release
+    compile_target=release
+    clean_target=release-clean
+fi
+
+# ---------------------------------------------------------------------------- #
+# Log function (logs to screen and file)
+# ---------------------------------------------------------------------------- #
+Log()
+{
+    echo $1 | tee -a $LogFile
+}
+
+# ---------------------------------------------------------------------------- #
+# scp
+# ---------------------------------------------------------------------------- #
+scp()
+{
+    Log "scp $1 $2"
+    source ~/.keychain/*-sh
+    /usr/bin/scp -r -o ConnectTimeout=60 $1 $2
+    if (($?)); then
+        /usr/bin/scp -r -o ConnectTimeout=60 $1 $2
+    fi
+    if (($?)); then
+        Log "Error: scp $1 $2"
+    fi
+}
+
+# ---------------------------------------------------------------------------- #
+# Set platform-dependant variables
+# ---------------------------------------------------------------------------- #
+SetPlatformEnv()
+{
+    cd `dirname "$1"`/..
+    export DEVDIR=`pwd -P`
+    export DEVDIR_CP=`pwd -P`
+    export BRANCH=`echo $DEVDIR|awk -F"/" '{print $NF}' | cut -d '-' -f 3`
+    cd -
+    if [ $CleanProjects = "true" ]; then
+        LogFile=$DEVDIR/galaxy_scripts/clean_galaxy.txt
+    else
+        LogFile=$DEVDIR/galaxy_scripts/make_galaxy.txt
+    fi
+    mv -f $LogFile $LogFile.bak
+
+    conf=~/.gex-prod-conf.sh
+    if [ -f $conf ]; then
+        source $conf
+    else
+        Log "warning: `basename $0`: cannot find $conf"
+    fi
+
+    if [ $kernel = "Linux" ]; then
+        jnproc="-j`cat /proc/cpuinfo | grep processor | wc -l`"
+        if [ $jnproc = "-j" ]; then
+            jnproc=""
+        fi
+        MakeTool="make --no-print-directory $jnproc"
+        kernelPrefix=linux
+        if [ `uname -m` = "x86_64" ]; then
+            OS_ARCH=linux64
+        else
+            OS_ARCH=linux32
+        fi
+    elif [ $kernel = "SunOS" ]; then
+        MakeTool="make --no-print-directory"
+        kernelPrefix=sol
+    elif [ $kernel = "Darwin" ]; then
+        jnproc="-j`/usr/sbin/sysctl -n hw.ncpu`"
+        if [ $jnproc = "-j" ]; then
+            jnproc=""
+        fi
+        MakeTool="make --no-print-directory $jnproc"
+        kernelPrefix=mac
+        OS_ARCH=mac
+    else
+        jnproc="-j`nproc`"
+        if [ $jnproc = "-j" ]; then
+            jnproc=""
+        fi
+        MakeTool="mingw32-make --no-print-directory $jnproc"
+        kernelPrefix=win32
+        cygpath=/usr/bin/cygpath
+        if [ -x $cygpath ]; then
+            export DEVDIR=`$cygpath -m $DEVDIR`
+            export ISSQTDIR=`$cygpath -m $QTDIR`
+        else
+            Log "warning: `basename $0`: cannot find $cygpath"
+        fi
+        if echo $MINGWDIR | grep 64 >/dev/null; then
+            ARCH=wg2-x64
+            OS_ARCH=win64
+        elif echo $MINGWDIR|grep 32 >/dev/null; then
+            ARCH=wg1-x32
+            OS_ARCH=win32
+        fi
+        export PATH=$MINGWDIR:$PATH
+    fi
+
+    export PATH=$QTDIR/bin:$PATH
+
+    Log "==> Environment variables..."
+    Log "devdir=$DEVDIR"
+    Log "qtdir=$QTDIR"
+    Log "qtsrcdir=$QTSRCDIR"
+    Log "makespec=$Makespec"
+    Log ""
+}
+
+# ---------------------------------------------------------------------------- #
+# getdefine
+# ---------------------------------------------------------------------------- #
+getdefine()
+{
+    grep GEX_APP_VERSION_$2 $1 | cut -f3 | tr -d '\15\32'
+}
+
+# ---------------------------------------------------------------------------- #
+# updateVersion
+# ---------------------------------------------------------------------------- #
+updateVersion()
+{
+    file="$DEVDIR/galaxy_products/gex_product/include/gex_version.h"
+    abbrev_commit_hash=`git rev-parse --short HEAD`
+    sed -i.bak "s/#abbrev_commit_hash#/$abbrev_commit_hash/g" $file
+    if [ -n "$GEX_VERSION_DATE" ]; then
+        old_date=`getdefine $file DATE`
+        sed -i.bak "s/$old_date/$GEX_VERSION_DATE/" $file
+    fi
+}
+
+# ---------------------------------------------------------------------------- #
+# PushLibGtl
+# ---------------------------------------------------------------------------- #
+PushLibGtl()
+{
+    return 0
+    scp $1 $nasAddr:$2
+}
+
+# ---------------------------------------------------------------------------- #
+# PullLibGtl
+# ---------------------------------------------------------------------------- #
+PullLibGtl()
+{
+    return 0
+    scp $nasAddr:/data/lib_gtl/${BRANCH}/* $1
+# GTL Envision
+    scp $nasAddr:/data/lib_gtl/${BRANCH}_specs/libGTLenVision.so.0\
+        $DEVDIR_CP/galaxy_products/gex_product/bin/gtl/ltxc/envision/
+
+    scp $nasAddr:/data/lib_gtl/${BRANCH}_specs/gtl_core.h\
+        $DEVDIR_CP/galaxy_products/gex_product/bin/gtl/include/
+    scp $nasAddr:/data/lib_gtl/${BRANCH}_specs/gtl-igxl.dll\
+        $DEVDIR_CP/galaxy_products/gex_product/bin/gtl/teradyne/igxl
+}
+
+# ---------------------------------------------------------------------------- #
+# Make function
+# ---------------------------------------------------------------------------- #
+Make_Project()
+{
+    Log "======================================================================"
+    if [ $CleanProjects = "true" ]; then
+        Log " Clean $1"
+    else
+        Log " Project $1"
+    fi
+    Log "======================================================================"
+    cd $2
+    args="-r -spec $Makespec -o Makefile_$kernelPrefix $1.pro"
+    for i in $config; do
+        args="$args CONFIG+=$i"
+    done
+    Log "pwd = "`pwd`
+    Log "qmake $args"
+    qmake $args 2>&1 | tee -a $LogFile
+
+    if [ $CleanProjects = "true" ]; then
+        args="-f Makefile_$kernelPrefix $clean_target"
+        Log "$MakeTool $args"
+        $MakeTool $args 2>&1 | tee -a $LogFile
+    else
+        args="-f Makefile_$kernelPrefix $compile_target"
+        if [ "$VDEP" = 0 ]; then
+            MAKE="$MakeTool -o $DEVDIR/galaxy_products/gex_product"
+            MAKE="$MAKE/include/gex_version.h"
+            export MAKE
+        fi
+        Log "$MakeTool $args"
+        $MakeTool $args 2>&1 | tee -a $LogFile
+    fi
+}
+
+# ---------------------------------------------------------------------------- #
+# Make_Lib
+# ---------------------------------------------------------------------------- #
+Make_Lib()
+{
+    Log "======================================================================"
+    if [ $CleanProjects = "true" ]; then
+        Log " Clean $1"
+    else
+        Log " Project $1"
+    fi
+    Log "======================================================================"
+    cd $2
+    Log "pwd = "`pwd`
+
+    if [ $CleanProjects = "true" ]; then
+        Log "$MakeTool clean"
+        $MakeTool clean 2>&1 | tee -a $LogFile
+        Log "$MakeTool dep"
+        $MakeTool dep 2>&1 | tee -a $LogFile
+    else
+        if [ "$VDEP" = 0 ]; then
+            MAKE="$MakeTool -o $DEVDIR/galaxy_products/gex_product"
+            MAKE="$MAKE/include/gex_version.h"
+            export MAKE
+        fi
+        Log "$MakeTool"
+        $MakeTool 2>&1 | tee -a $LogFile
+    fi
+}
+
+# ---------------------------------------------------------------------------- #
+# Menu to get user choice
+# ---------------------------------------------------------------------------- #
+Menu()
+{
+    if [ "$1" != 0 ]; then
+        MenuChoice=$1
+    else
+        echo ""
+        echo "Usage: make_galaxy [clean]"
+        echo ""
+        echo "1. Make galaxy_std_libraries"
+        echo "2. Make galaxy_qt_libraries"
+        echo "3. Make other_libraries"
+        echo "4. Make galaxy_products"
+        echo "5. Make all"
+    echo "6. Make all_libraries"
+        echo "7. Make Fnp_Toolkit"
+        echo "8. Make gtl"
+        echo "9. Exit"
+        echo ""
+        printf "Enter your choice: "
+        read MenuChoice
+    fi
+
+    ValidChoice=OK
+    MakeGalaxyStdLibraries=false
+    MakeGalaxyQtLibraries=false
+    MakeOtherLibraries=false
+    MakeGtl=false
+    MakeFnpToolkit=false
+    MakeGalaxyProducts=false
+    case $MenuChoice in
+        1) MakeGalaxyStdLibraries=true;;
+        2) MakeGalaxyQtLibraries=true;;
+        3) MakeOtherLibraries=true;;
+        4) MakeGalaxyProducts=true;;
+        5) MakeGalaxyStdLibraries=true
+           MakeGalaxyQtLibraries=true
+           MakeOtherLibraries=true
+           MakeFnpToolkit=true
+           MakeGalaxyProducts=true;;
+        6) MakeGalaxyStdLibraries=true
+           MakeGalaxyQtLibraries=true
+           MakeOtherLibraries=true
+           MakeGtl=true;;
+        7) MakeFnpToolkit=true;;
+        8) MakeGtl=true;;
+        9) ;;
+        *) ValidChoice=NOK
+    esac
+}
+
+# ---------------------------------------------------------------------------- #
+# main
+# ---------------------------------------------------------------------------- #
+# Display menu and check user choice
+if [ -n "$1" ] && (($1 > 1)) && (($1 < 9)); then
+    MenuChoice=$1
+    if [ -n "$2" ]; then
+        shift
+        config=$*
+    fi
+elif [ "$1" == "clean" ]; then
+    MenuChoice=5
+else
+    MenuChoice=0
+fi
+Menu $MenuChoice
+while [ $ValidChoice = "NOK" ]; do
+    echo ""
+    echo "Invalid choice: $MenuChoice"
+    Menu
+done
+
+echo ""
+echo "Your choice: $MenuChoice"
+
+# Exit?
+if [ $MenuChoice = 9 ]; then
+    exit 0
+fi
+
+# Check if projects should be cleaned first
+CleanProjects=false
+if [ "$1" = "clean" ]; then
+    CleanProjects=true
+fi
+
+# Set platform-dependant variables
+SetPlatformEnv "$0"
+
+# updateVersion
+updateVersion
+
+
+if [ $MakeOtherLibraries = "true" ]; then
+    #Log "#################### COMPILING OTHER LIBRARIES ######################"
+    dir=$DEVDIR/other_libraries
+    Make_Project qglviewer $dir/libqglviewer/qglviewer
+    Make_Project buildlib  $dir/qtpropertybrowser-2.5_1-commercial/buildlib
+    Make_Project quazip    $dir/quazip-0.4.4/quazip
+    Make_Project libtufao     $dir/tufao/0.8
+fi
+
+if [ $MakeGalaxyStdLibraries = "true" ]; then
+    #Log "################## COMPILING GALAXY STD LIBRARIES ###################"
+    dir=$DEVDIR/galaxy_libraries/galaxy_std_libraries
+    Make_Project gs_data $dir/gs_data
+    Make_Project gs_data_sqlite $dir/gs_data
+    Make_Project gs_gtl_traceability $dir/gs_gtl_traceability
+    Make_Project external_services $dir/external_services
+    Make_Project gstdl $dir
+    Make_Project qx_std_utils $dir/qx_std_utils
+    Make_Project qx_bin_mapping $dir/qx_bin_mapping
+fi
+
+if [ $MakeGalaxyQtLibraries = "true" ]; then
+    #Log "################### COMPILING GALAXY QT LIBRARIES ###################"
+    dir=$DEVDIR/galaxy_libraries/galaxy_qt_libraries
+    Make_Project gqtl               $dir
+    Make_Project gqtl_filelock      $dir/gqtl_filelock
+    Make_Project gqtl_service       $dir/gqtl_service
+    Make_Project gqtl_svg           $dir/gqtl_svg
+    Make_Project gqtl_stdf          $dir/gqtl_stdf
+    Make_Project gqtl_datakeys      $dir/gqtl_datakeys
+    Make_Project gqtl_statsengine   $dir/gqtl_statsengine
+    Make_Project gqtl_log           $dir/gqtl_log
+    Make_Project gqtl_sqlbrowser    $dir/gqtl_sqlbrowser
+    Make_Project gqtl_webserver     $dir/gqtl_webserver
+    Make_Project gqtl_ftp           $dir/gqtl_ftp
+    dir=$DEVDIR/galaxy_products/gex_product
+    Make_Project gexdb_plugin_base $dir/plugins/gexdb_plugin_base
+    Make_Project base-lp $dir/plugins/license-provider-plugin/base-lp
+    dir=$DEVDIR/galaxy_libraries/galaxy_qt_libraries
+    Make_Project gqtl_patcore       $dir/gqtl_patcore
+    Make_Project gqtl_parser        $dir/gqtl_parser
+fi
+
+if [ $MakeGalaxyProducts = "true" ]; then
+    #Log "##################### COMPILING GALAXY PRODUCTS #####################"
+    dir=$DEVDIR/galaxy_products/log_center
+    Make_Project log_center $dir
+    if [ $kernel = "Linux" ]; then
+        if [ `uname -m` = "x86_64" ]; then
+            \cp $dir/$OS_ARCH/gs-logcenter $DEVDIR/galaxy_products/gex_product/bin/
+        else
+            \cp $dir/$OS_ARCH/gs-logcenter $DEVDIR/galaxy_products/gex_product/bin/
+        fi
+    elif [ $kernel = "Darwin" ]; then
+            \cp $dir/$OS_ARCH/gs-logcenter $DEVDIR/galaxy_products/gex_product/bin/
+    else
+        if echo $MINGWDIR | grep 64 >/dev/null; then
+            \cp $dir/$OS_ARCH/gs-logcenter.exe $DEVDIR/galaxy_products/gex_product/bin/
+        elif echo $MINGWDIR|grep 32 >/dev/null; then
+            \cp $dir/$OS_ARCH/gs-logcenter.exe $DEVDIR/galaxy_products/gex_product/bin/
+        fi
+    fi
+    dir=$DEVDIR/galaxy_products/gex_product
+    Make_Project gtl_core  $dir/gex-tester/gtl/gtl-core
+    Make_Project gtl-core-dynlib $dir/gex-tester/gtl/gtl-core-dynlib
+    Make_Project gts-station    $dir/gex-tester/gts-station
+    Make_Project gexdb_plugin_base $dir/plugins/gexdb_plugin_base
+    if [ $kernel != "Darwin" ]; then
+        #Make_Project gex-ls    $dir/gex-ls
+        #Make_Project gex-lm    $dir/gex-lm
+        Make_Project gex-email $dir/gex-email
+        Make_Project gex-ftp   $dir/gex-ftp
+    fi
+    Make_Project libgexpb  $dir/gex-pb
+    Make_Project libgexoc  $dir/gex-oc
+    #Make_Project gtl_core  $dir/gex-tester/gtl/gtl-core
+    #Make_Project gtl-core-dynlib $dir/gex-tester/gtl/gtl-core-dynlib
+    #Make_Project gts-station    $dir/gex-tester/gts-station
+    Make_Project da-galaxy     $dir/plugins/directory-access-plugin/da-galaxy
+    Make_Project gexdb_plugin_galaxy     $dir/plugins/gexdb_plugin_galaxy
+    Make_Project gexdb_plugin_medtronic  $dir/plugins/gexdb_plugin_medtronic
+    # Make_Project license-provider-plugin $dir/plugins/license-provider-plugin
+    Make_Project base-lp $dir/plugins/license-provider-plugin/base-lp
+    Make_Project fnp-lp $dir/plugins/license-provider-plugin/fnp-lp
+    Make_Project gs-lp $dir/plugins/license-provider-plugin/gs-lp
+    Make_Project gex-license-activation $dir/gex-license-activation
+    # Added to log environment infos
+    env
+    Make_Project gex       $dir/gex
+fi
+
+if [ $MakeFnpToolkit = "true" ]; then
+    #Log "###################### COMPILING Fnp Toolkit ######################"
+    cd $DEVDIR/galaxy_libraries/galaxy_std_libraries/gstdl_fnp_proxy
+    ./make_fnp_proxy.sh $DEVDIR/galaxy_products/gex_product/bin ~/fnp_toolkit_$BRANCH 2>&1 | tee -a $LogFile
+fi
+
+if [ $MakeGtl = "true" ]; then
+    #Log "###################### COMPILING Gtl ######################"
+    LIB_GTL=$DEVDIR/galaxy_products/gex_product/bin/gtl/lib
+    LIB_GSTDL=$DEVDIR/galaxy_libraries/galaxy_std_libraries/lib
+    LIB_GTL_CP=$DEVDIR_CP/galaxy_products/gex_product/bin/gtl/lib
+    DIR_WG1_CP=$LIB_GTL_CP/wg1
+    DIR_WG2_CP=$LIB_GTL_CP/wg2
+    # dol-guldur-prod
+    DIR_WG1=$LIB_GTL/wg1
+    # lubgurz-prod
+    DIR_WG2=$LIB_GTL/wg2
+    # cirith-ungol-prod
+    DIR_MG1=$LIB_GTL/mg1
+    # barad-eithel-prod
+    DIR_LG1=$LIB_GTL/lg1
+    # durthang-prod
+    DIR_LG2=$LIB_GTL/lg2
+    # dunharrow-prod
+    DIR_LG3=$LIB_GTL/lg3
+    dir=$DEVDIR/galaxy_libraries/galaxy_std_libraries
+    Make_Project gstdl $dir
+    dir=$DEVDIR/galaxy_libraries/galaxy_qt_libraries
+#    Make_Project gqtl            $dir
+#    Make_Project gqtl_stdf       $dir/gqtl_stdf
+#    Make_Project gqtl_datakeys   $dir/gqtl_datakeys
+    dir=$DEVDIR/galaxy_products/gex_product/gex-tester
+    Make_Project gtl_core    $dir/gtl/gtl-core
+    Make_Project gtl-core-dynlib $dir/gtl/gtl-core-dynlib
+#    Make_Project gts-station $dir/gts-station
+    INCLUDE_DIR=$DEVDIR/galaxy_products/gex_product/bin/gtl/include
+    if [ ! -d "$INCLUDE_DIR" ]; then
+        mkdir $INCLUDE_DIR
+    fi
+    if [ $kernel = "Linux" ]; then
+        if [ `uname -m` = "x86_64" ]; then
+            \cp $dir/gtl/include/gtl_core.h $DEVDIR/galaxy_products/gex_product/bin/gtl/include/gtl_core.h
+            PushLibGtl $DEVDIR/galaxy_products/gex_product/bin/gtl/include/gtl_core.h /data/lib_gtl/${BRANCH}_specs/
+            if [ ! -d "$DIR_LG3" ]; then
+                mkdir $DIR_LG3
+            fi
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl_core.a $DIR_LG3
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl.so $DIR_LG3
+            \cp $LIB_GSTDL/$OS_ARCH/libgstdl.a $DIR_LG3
+            PushLibGtl $DIR_LG3 /data/lib_gtl/$BRANCH/
+        elif [ `lsb_release -a|grep Distributor|awk '{print $3}'`  == "CentOS" ] && [ `lsb_release -a|grep Release|awk '{print $2}'` == "4.6" ]; then
+            cd $dir/testers/ltxc-mx/libGTL-enVision
+            ./compile.sh
+            cd -
+            \cp $dir/testers/ltxc-mx/libGTL-enVision/libGTLenVision.so.0 $DEVDIR/galaxy_products/gex_product/bin/gtl/ltxc/envision/
+            PushLibGtl $DEVDIR/galaxy_products/gex_product/bin/gtl/ltxc/envision/libGTLenVision.so.0 /data/lib_gtl/${BRANCH}_specs/
+            if [ ! -d "$DIR_LG1" ]; then
+                mkdir $DIR_LG1
+            fi
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl_core.a $DIR_LG1
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl.so $DIR_LG1
+            \cp $LIB_GSTDL/$OS_ARCH/libgstdl.a $DIR_LG1
+            PushLibGtl $DIR_LG1 /data/lib_gtl/$BRANCH/
+        else
+            if [ ! -d "$DIR_LG2" ]; then
+                mkdir $DIR_LG2
+            fi
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl_core.a $DIR_LG2
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl.so $DIR_LG2
+            \cp $LIB_GSTDL/$OS_ARCH/libgstdl.a $DIR_LG2
+            PushLibGtl $DIR_LG2 /data/lib_gtl/$BRANCH/
+        fi
+    elif [ $kernel = "Darwin" ]; then
+        if [ ! -d "$DIR_MG1" ]; then
+            mkdir $DIR_MG1
+        fi
+        \cp $dir/gtl/lib/$OS_ARCH/libgtl.dylib $DIR_MG1
+        \cp $dir/gtl/lib/$OS_ARCH/libgtl_core.a $DIR_MG1
+        \cp $LIB_GSTDL/$OS_ARCH/libgstdl.a $DIR_MG1
+        PushLibGtl $DIR_MG1 /data/lib_gtl/$BRANCH/
+    else
+        if echo $MINGWDIR | grep 64 >/dev/null; then
+            if [ ! -d "$DIR_WG2" ]; then
+                mkdir $DIR_WG2
+            fi
+            \cp $dir/gtl/lib/$OS_ARCH/gtl.def $DIR_WG2
+            \cp $dir/gtl/lib/$OS_ARCH/gtl.dll $DIR_WG2
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl.a $DIR_WG2
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl_core.a $DIR_WG2
+            \cp $LIB_GSTDL/$OS_ARCH/libgstdl.a $DIR_WG2
+            PushLibGtl $DIR_WG2_CP /data/lib_gtl/$BRANCH/
+        elif echo $MINGWDIR|grep 32 >/dev/null; then
+            Make_Project libgtl-igxl $dir/testers/ig-xl/libgtl-igxl
+            \cp $dir/testers/ig-xl/gtl-igxl.dll $DEVDIR/galaxy_products/gex_product/bin/gtl/teradyne/igxl
+            PushLibGtl $DEVDIR_CP/galaxy_products/gex_product/bin/gtl/teradyne/igxl/gtl-igxl.dll /data/lib_gtl/${BRANCH}_specs/
+            if [ ! -d "$DIR_WG1" ]; then
+                mkdir $DIR_WG1
+            fi
+            \cp $dir/gtl/lib/$OS_ARCH/gtl.def $DIR_WG1
+            \cp $dir/gtl/lib/$OS_ARCH/gtl.dll $DIR_WG1
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl.a $DIR_WG1
+            \cp $dir/gtl/lib/$OS_ARCH/libgtl_core.a $DIR_WG1
+            \cp $LIB_GSTDL/$OS_ARCH/libgstdl.a $DIR_WG1
+            PushLibGtl $DIR_WG1_CP /data/lib_gtl/$BRANCH/
+        fi
+    fi
+    PullLibGtl $LIB_GTL_CP
+fi
+
+# Remove gex_version update
+cd $DEVDIR/galaxy_products/gex_product/include
+git checkout gex_version.h 2>&1 | tee -a $LogFile
+
+# Done: check if errors occured
+Log ""
+if [ `grep -c " Error " $LogFile`_ok != "0_ok" ]; then
+    Log "Compilation done WITH ERRORS. Check $LogFile."
+    exit 1
+else
+    Log "Compilation done WITH SUCCESS. Check $LogFile."
+    exit 0
+fi

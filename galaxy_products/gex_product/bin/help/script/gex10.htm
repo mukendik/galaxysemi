@@ -1,0 +1,175 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>gexToolbox<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library
+      </a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>gexToolbox(
+  const action,     	// Action type
+  const field,         // Parameter field to set
+  const value)	       // Field value
+
+</pre>
+      <p>This scripting function allows you to automate some of the Examinator 
+      toolbox functions. <br>
+      Note: Fields are not case sensitive.<br>
+      </p>
+      <pre>&nbsp;</pre>
+      <h1>Action descriptions<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#FFFFFF"><b>action</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>stdf_dump</b></td>
+          <td width="507">Function to perform the ASCII dump of a STDF data file </td>
+        </tr>
+        </table>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <h1>Action: STDF_DUMP<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"><br>
+&nbsp;</h1>
+      <p>The stdf_dump action allows to dump STDF files to ASCII. This function 
+      supports STDF and compressed STDF (.gz .zip .Z). Note that if the file is 
+      compressed, Examinator first decompresses the file into a folder of the 
+      same name without the compressed extension 'i.e: file.zip in decompressed 
+      in sub-folder ./file/), and the dump is created in this sub-folder too. It 
+      is your responsibility to erase such temporary folders when dump files are 
+      no longer required. Alternatively, if you define the optional output path, 
+      you don't have to perform any housekeeping! Therefore, the output path is 
+      strongly recommended when processing compressed data files.</p>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#FFFFFF"><b>field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>file</b></td>
+          <td width="507">Define the STDF file name to dump (and optional output 
+          path). Note that if you 
+          call multiple times this function, you can trigger multiple dumps at 
+          once!</td>
+        </tr>
+        <tr>
+          <td width="116"><b>records</b></td>
+          <td width="507">Defines one of the STDF record to dump. To include 
+          multiple records, you must call this function multiple times. 
+          Following are the only valid values for the 'value' field:<br>
+          <b>all&nbsp; : </b>to default all records to be dumped (this is the 
+          default)<br>
+          <b>clear&nbsp; : </b>to clear all records<br>
+          and one of the following STDF records: <b>ATR, BPS, DTR, EPS, FAR, FTR, 
+          GDR, HBR, MIR, MPR,&nbsp; MRR, PCR, PGR, PIR, PLR, PMR, PRR, PTR, RDR, 
+          SBR, SDR, TSR, WCR, WIR, WRR</b></td>
+        </tr>
+        <tr>
+          <td width="116"><b>style</b></td>
+          <td width="507">Defines if the records are dump in the short form 
+          (record name only) or detailed form (all record fields listed). Valid 
+          values for the 'value' field are:<br>
+          <b>short</b> : for only listing record titles<br>
+          <b>detailed</b> : for detailed records, with all fields listed (this 
+          is the default)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>size</b></td>
+          <td width="507">Defines the maximum dump size in Kbytes (convenient 
+          when only the first 500K of first few mega bytes of dump is needed). 
+          Typical&nbsp; values for the 'value' field are:<br>
+          <b>0</b> (or any negative value) : no limit defined, the full dump is 
+          created (this is the default)<br>
+          <b>500</b> : for 500 Kbytes of dump<br>
+          <b>1000</b>: for 1Mbytes of dump<br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>consecutive</b></td>
+          <td width="507">Tells if ignore or display consecutive reports f a 
+          same type (eg: when many PTR records are found, you can instruct to 
+          only display the first one or all PTRs ). Valid values for the 'value' 
+          field are:<br>
+          <b>yes : </b>to display all records, even consecutive ones (this is 
+          the default)<br>
+          <b>no: </b>To only&nbsp; display the first record when multiple 
+          records of a same type are detected.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>dump</b></td>
+          <td width="507">Instructs to dump the file, using all options defined 
+          in previous calls.</td>
+        </tr>
+        </table>
+      <p>&nbsp;</p>
+      
+      <pre>Example1:
+// Dump STDF file: ALL STDF records, detail all fields
+gexToolbox('stdf_dump','file','c:/files/file.std');
+gexToolbox('stdf_dump','dump');	// Trigger dump now!
+</pre>
+      <pre>&nbsp;</pre>
+      
+      <pre>Example2:
+// Dump STDF file in a <b>specific output folder</b>: ALL STDF records, detail all fields
+gexToolbox('stdf_dump','file','c:/files/file.std','c:/output_folder');
+gexToolbox('stdf_dump','dump');	// Trigger dump now!
+</pre>
+      <pre>&nbsp;</pre>
+      <pre>Example3:
+// Dump 2 STDF files: ALL STDF records, detail all fields
+gexToolbox('stdf_dump','file','c:/files/file_1.std');
+gexToolbox('stdf_dump','file','c:/files/file_2.std');
+gexToolbox('stdf_dump','dump');	// Trigger dump now!
+</pre>
+      
+      <pre>Example4:
+// Dump STDF file: MIR and PRR records, up to 500 Kbytes of dump
+gexToolbox('stdf_dump','file','c:/files/file.std');
+gexToolbox('stdf_dump','records','clear');	// clear all STDF records to dump
+gexToolbox('stdf_dump','records','MIR');	// Dump MIR record
+gexToolbox('stdf_dump','records','PRR');	// Dump PRR records
+gexToolbox('stdf_dump','size','500');		// Dump up to 500 Kbytes of text
+gexToolbox('stdf_dump','dump');			// Trigger dump now!
+</pre>
+      <pre>&nbsp;</pre>
+      <pre></pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,6 @@
+
+fnp-proxy: $(FNPPROXYDIR)/fnp_proxy.cpp $(LMNEW_OBJ)
+	$(CC) $(CFLAGS) $(CFLAGS_PIC) $(LDSHAREFLAGS) $(FNPPROXYDIR)/fnp_proxy.cpp -o fnp.so \
+	lm_new$(PIC).o liblmgr$(PIC)_trl.a $(DONGLEPICLIB) libcrvs$(PIC).a libsb$(PIC).a libFNPload$(PIC).a $(THREADLIB) -lc
+	rm -f fnp_proxy.o
+	$(PREPTOOL) -v $(FNPPROXYDIR)/fnp_proxy_lx.xml

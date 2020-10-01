@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<matrix-project plugin="matrix-project@1.3">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>branch</name>
+          <description>Choose your branch</description>
+          <defaultValue>master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>cleanBuild</name>
+          <description>clean builds</description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>mvnAction</name>
+          <description>Action</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>install</string>
+              <string>deploy</string>
+              <string>test</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>deployGTL</name>
+          <description>Deploy GTL packages to artifact server</description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>logDebug</name>
+          <description>Log in debug level</description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>failAtEnd</name>
+          <description>Only fail the build afterwards; allow all non-impacted builds to continue
+</description>
+          <defaultValue>false</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>additionalOptions</name>
+          <description>Additional maven options
+e.g.
+#mvn -T 4 clean install # Builds with 4 threads
+#mvn -T 1C clean install # 1 thread per cpu core
+#mvn -T 1.5C clean install # 1.5 thread per cpu core</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.plugins.matrix__configuration__parameter.MatrixCombinationsParameterDefinition plugin="matrix-combinations-parameter@1.0.7">
+          <name>Nodes</name>
+          <description></description>
+        </hudson.plugins.matrix__configuration__parameter.MatrixCombinationsParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <com.gmail.ikeike443.PlayAutoTestJobProperty plugin="play-autotest-plugin@0.0.12"/>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.5">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>git@codebasehq.com:galaxysemi/galaxy_dev/galaxy_dev.git</url>
+        <credentialsId>817fb73b-67ab-486e-baf4-e70918587b71</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>${branch}</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <gitTool>myGit</gitTool>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.CloneOption>
+        <shallow>true</shallow>
+        <reference></reference>
+        <timeout>60</timeout>
+      </hudson.plugins.git.extensions.impl.CloneOption>
+      <hudson.plugins.git.extensions.impl.CheckoutOption>
+        <timeout>60</timeout>
+      </hudson.plugins.git.extensions.impl.CheckoutOption>
+    </extensions>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.SCMTrigger>
+      <spec> H H(2-4) * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>true</concurrentBuild>
+  <customWorkspace>workspace/galaxy_dev/${branch}</customWorkspace>
+  <axes>
+    <hudson.matrix.LabelAxis>
+      <name>label</name>
+      <values>
+        <string>centos58-32</string>
+        <string>centos58-64</string>
+        <string>centos6-32</string>
+        <string>centos6-64</string>
+        <string>mac64</string>
+        <string>win7-32</string>
+        <string>win7-64</string>
+      </values>
+    </hudson.matrix.LabelAxis>
+  </axes>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>if [ &quot;${cleanBuild}&quot; = &quot;true&quot; ]; then mvnClean=clean ; fi
+if [ &quot;${logDebug}&quot; = &quot;true&quot; ]; then mvnX=&quot;-X -DX&quot; ; fi
+#if [ &quot;${skipITs}&quot; = &quot;true&quot; ]; then mvnSkipITs=-DskipITs ; fi
+#if [ &quot;${gexPackages}&quot; = &quot;true&quot; ]; then mvnGexPackages=-DgexPackages ; fi
+if [ &quot;${failAtEnd}&quot; = &quot;true&quot; ]; then mvnFailAtEnd=-fae ; fi
+
+env
+mvn -B ${MVN_OPTIONS} help:active-profiles -N
+
+mvn -B ${MVN_OPTIONS} ${mvnX} ${mvnClean} ${mvnAction} ${mvnFailAtEnd} ${additionalOptions}
+
+if [ &quot;${deployGTL}&quot; = &quot;true&quot; ]; then
+   mvn -B ${MVN_OPTIONS} ${mvnX} -pl :gtl -am deploy
+fi</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer plugin="mailer@1.10">
+      <recipients>clement.igonet_@galaxysemi.com</recipients>
+      <dontNotifyEveryUnstableBuild>true</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.25">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+          <configs class="empty-list"/>
+          <projects>galaxy_dev_unit_tests</projects>
+          <condition>SUCCESS</condition>
+          <triggerWithNoParameters>false</triggerWithNoParameters>
+        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+          <configs>
+            <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
+          </configs>
+          <projects>galaxy_dev_package</projects>
+          <condition>SUCCESS</condition>
+          <triggerWithNoParameters>false</triggerWithNoParameters>
+        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+      </configs>
+    </hudson.plugins.parameterizedtrigger.BuildTrigger>
+    <jp.skypencil.jenkins.regression.RegressionReportNotifier plugin="regression-report-plugin@1.1">
+      <recipients>clement.igonet_@galaxysemi.com</recipients>
+      <sendToCulprits>false</sendToCulprits>
+      <mailSender class="jp.skypencil.jenkins.regression.RegressionReportNotifier$1">
+        <outer-class reference="../.."/>
+      </mailSender>
+    </jp.skypencil.jenkins.regression.RegressionReportNotifier>
+  </publishers>
+  <buildWrappers/>
+  <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
+    <runSequentially>false</runSequentially>
+    <sorter class="hudson.matrix.NoopMatrixConfigurationSorter"/>
+  </executionStrategy>
+</matrix-project>

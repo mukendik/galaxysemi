@@ -1,0 +1,53 @@
+2005-09-16 17:23  yaworsky
+
+	* daemon/writer.c: Fixed file creation date workaround.
+
+2005-09-16 17:22  yaworsky
+
+	* daemon/main.c: Added #ifdef for machine type in exception
+	  handler.
+
+2005-09-16 17:20  yaworsky
+
+	* daemon/logrotate.c: Fixed daily and weekly conditions.
+
+2005-09-16 16:26  yaworsky
+
+	* daemon/: conf.c, pathnames.c: Fixed locale issues.
+
+2005-09-16 16:06  yaworsky
+
+	* setup.iss: Added AUTHORS and NEWS files.
+
+2005-09-16 15:42  yaworsky
+
+	* ChangeLog: Added to repository.
+
+2005-09-16 15:38  yaworsky
+
+	* test/dropcount.c, test/test.c, client/Makefile.am, Makefile.am,
+	  README, autogen.sh, build.sh, configure.ac, setup.iss,
+	  version.m4, daemon/Makefile.am, etc/Makefile.am,
+	  extras/Makefile.am, test/Makefile.am: Added to repository.
+
+2005-09-16 15:36  yaworsky
+
+	* client/logger.c, include/syslog.h: Modified for native win32.
+
+2005-09-16 15:33  yaworsky
+
+	* client/syslog-client.c, daemon/conf.c, daemon/fifo.c,
+	  daemon/listener.c, daemon/logrotate.c, daemon/main.c,
+	  daemon/names.c, daemon/pathnames.c, daemon/purger.c,
+	  daemon/syslogd.c, daemon/syslogd.h, daemon/writer.c, AUTHORS,
+	  COPYING, NEWS, TODO, etc/syslog.conf, extras/cross-compile-libs,
+	  extras/glib-static-win32.patch: Added to repository.
+
+2005-09-16 10:18  yaworsky
+
+	* client/logger.c: Original source from util-linux-2.12
+
+2005-09-16 10:17  yaworsky
+
+	* include/syslog.h: Taken from Slackware 9.1
+

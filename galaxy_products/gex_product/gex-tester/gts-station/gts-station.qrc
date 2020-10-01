@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="HelpIcon">images/help.png</file>
+        <file alias="GreenSphereIcon">images/green_sphere.png</file>
+        <file alias="HomeIcon">images/home.png</file>
+        <file alias="MainIcon">images/main.png</file>
+        <file alias="OutputIcon">images/output.png</file>
+        <file alias="RedSphereIcon">images/red_sphere.png</file>
+        <file alias="SetupIcon">images/setup.png</file>
+        <file alias="StationOffIcon">images/station_off.png</file>
+        <file alias="StationOnIcon">images/station_on.png</file>
+        <file alias="StatsIcon">images/stats.png</file>
+        <file alias="GalaxyLogo22">images/galaxy_logo_22.png</file>
+        <file alias="GalaxyLogo32">images/galaxy_logo_32.png</file>
+        <file alias="GtlIcon">images/gtl.png</file>
+    </qresource>
+    <qresource prefix="/html"/>
+</RCC>

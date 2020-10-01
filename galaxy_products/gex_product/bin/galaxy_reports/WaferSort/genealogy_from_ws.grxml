@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport 
+	Version="0.66" 
+	Type="MergeDS"
+	GRT="N"	
+	ID="GenealogyFromWS" Title="Genealogy from WaferSort" 
+	Description="Genealogy reports from WaferSort testing stage..."
+	>
+
+	<dataset ID="WS" label="WaferSort dataset"  
+		stage="Wafer Sort" 
+		binning="N" binning_visible="false" binning_readonly="false" 
+		time_period_visible="true" time_period_readonly="false" time_period_mandatory="false" 
+		time_period_label="Select here the time period"
+		time_period_from="new Date(new Date().getFullYear(),00,01)" 
+		time_period_to="new Date()"
+		time_period_defaultValueExpression="all_dates" 
+		>
+		<!-- time_period_defaultValueExpression can be : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+		<!-- Date objects in javascript example : new Date() returns today. new Date(2006, 00, 01) returns the 1st jan 2006 -->
+				
+		<multifield 
+			label="Select here any filters "
+			role="FILTER" extra_fields="Test"
+			time="*"  facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+			indent="false"
+			>
+		</multifield>
+		
+	</dataset>
+
+	<options>
+		<option ID="P_TITLE" 			type="String" 	hideif="false" 	label="Report title" 	rawReplace="true" 	defaultvalue="'My Report'" />
+	</options>
+
+</GalaxyReport>

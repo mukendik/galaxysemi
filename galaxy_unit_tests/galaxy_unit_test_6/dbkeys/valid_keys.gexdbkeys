@@ -1,0 +1,100 @@
+# STATIC KEYS
+Lot, GAL-LOT-TEST
+TrackingLot, GAL-LOT-TEST
+SubconLot, GAL-LOT-TEST
+Product, GOLD8BAR-TEST
+SubLot, 03-TEST
+ProberType, electrogl-TEST
+ProgramName, mobile-05-TEST
+ProgramRevision, 16-TEST
+TestingCode, E38-TEST
+TesterName, tester-1-TEST
+TesterType, A530-TEST
+Wafer, GAL-LOT-03-TEST
+WaferNotch,U
+BurninTime, 65545
+Operator, ews-TEST
+RetestIndex, 0
+DataType,E
+ProdData,Y
+Station, 2
+SetupTime, 991732696
+StartTime, 991790035
+FinishTime, 991795698
+DibType, 0
+FtpPort, 21
+WeekNb, 10
+Year, 10
+#3333
+GrossDie,1456
+IgnoreSummary, Y
+# checkBoxRejectSmallSplitlots_NbPart & spinBoxRejectSmallSplitlots_NbParts seems not used bug
+RejectIfNbPartsLessThan, 1
+# checkBoxRejectSmallSplitlots_GdpwPercent & comboBoxRejectSmallSplitlots_GdpwPercent seems not used bug
+RejectIfNbPartsPercentOfGDPWLessThan,1
+#spinBoxMaxPartForTestResultInsertion seems not used
+IgnoreResultsIfNbPartsMoreThan, 1
+
+ExecType, IMAGE V6.3.y2k D8 052200-TEST
+CommandModeCode, b
+HeadNumber, 2
+DataOrigin, TEST_OVERLOAD
+Family, TEST_FAMILY
+Facility, TEST_FACILITY
+Floor, TEST_1
+FrequencyStep, TEST_STEP
+PackageType, TEST_TYPE
+Process, TEST_PROCESS
+LoadBoard, TEST_BOARD
+LoadBoardType, TEST_BOARD_TYPE
+ProberName, TEST_PROBER
+ExtraName, TEST_NAME
+ExtraType, TEST_TYPE
+Temperature, TEST_TEMPERATUR
+WaferNb, 1
+EtestSiteConfig, TEST_CONFIG
+DateCode, TEST_CODE
+SpecName, TEST_NAME
+DesignRevision, TEST_REVISION
+User1, TEST_User1
+User2, TEST_User2
+User3, TEST_User3
+User4, TEST_User4
+User5, TEST_User5
+RetestBinList, TEST_BinList
+User1Label, TEST_User1Label
+User2Label, TEST_User2Label
+User3Label, TEST_User3Label
+User4Label, TEST_User4Label
+User5Label, TEST_User5Label
+DibName, TEST_DibName
+FtpServer, TEST_FtpServer
+FtpUser, TEST_FtpUser
+FtpPassword, TEST_FtpPassword
+FtpPath, TEST_FtpPath
+MovePath, MTEST_ovePath
+UserText, TEST_UserText
+ExecVersion, TEST_VERSION
+RetestCode,A
+ProtectionCode,B
+AuxiliaryFile, TEST_AuxiliaryFile
+SpecVersion, TEST_SpecVersion
+Flow, TEST_Flow
+Setup, TEST_Setup
+Engineering, TEST_Engineering
+RomCode, TEST_RomCode
+SerialNumber, TEST_SerialNumber
+SupervisorName, TEST_SupervisorName
+CardType, TEST_CardType
+Card, TEST_Card
+CableType, TEST_CableType
+Cable, TEST_Cable
+ContactorType, TEST_ContactorType
+Contactor, TEST_Contactor
+LaserType, TEST_LaserType
+Laser, TEST_Laser
+SiteNumbers, 5
+AllowBinPRRMismatch, WARNING
+
+# DYNAMIC KEYS
+

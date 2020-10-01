@@ -1,0 +1,38 @@
+<assembly>
+    <id>assembly-linux</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/fnp-toolkit/${fnp-platform}</directory>
+            <outputDirectory>/lib/${distName}</outputDirectory>
+            <includes>
+                <include>fnp${libPostfix}</include>
+                <include>fnp_libFNP${libPostfix}</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/fnp-toolkit/machind/activation/include</directory>
+            <outputDirectory>/include</outputDirectory>
+            <includes>
+                <include>FlxActError.h</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/fnp-toolkit/machind</directory>
+            <outputDirectory>/include</outputDirectory>
+            <includes>
+                <include>lm_attr.h</include>
+                <include>lmclient.h</include>
+                <include>lmhostid.h</include>
+                <include>lm_trl.h</include>
+                <include>version_dependent.h</include>
+                <include>version_hotfix.h</include>
+                <include>version_info.h</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

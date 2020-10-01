@@ -1,0 +1,322 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Examinator V6.6 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">Examinator family : V6.6 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Examinator, Examinator-Pro, Examinator-PAT)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_gexstd_history.htm">Back to main releases history page</a><br><br>
+	  <!--<a href="#V6.6">V6.6 release history</a><br>-->
+	  <a href="#V6.6.02">V6.6.02 (20 July 2012) release history</a><br>
+	  <a href="#V6.6.01">V6.6.01 (14 May 2012) release history</a><br>
+	  <a href="#V6.6">V6.6 (10 May 2012) release history</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.6.02 changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+	<a name="V6.6.02">V6.6.02 (20 July 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	    <tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 6362 - SPEA parser: update for SPEA340 and SPEA372 format:</b>
+							   The SPEA tester has a variation in output between
+								* the AtosC Datalogging - Specifications (Release : 1.40)
+								* the SPEA340
+								* the SPEA372.
+								Update to the parser to accommodate all this 3 formats.</li>		
+			<li><b>Case 6304 - HVM parser update for bin mapping:</b>
+                               the parser for the bin mapping files at vishay for hvm searchs only Bin Names which starts with "001" and ends with "/S/L". 
+							   need to update the parser such that this is a valid line: 1,1,001 <product>,PASS.</li>
+			<li><b>Case 6237 - Add the ability to choose chart over limits/results/adaptive in pearson's correlation:</b>
+							   On the settings tab, give a pull down that allows the user to select 'chart over results', 'chart over limits', or 'chart adaptively over limits and results'.</li>
+            </ul>
+		  </td>
+        </tr>
+	    <tr>
+		<!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+        	<li><b>Case 6410 - In Pass/Fail mode, Stacked Wafer Map report on bin 1 is not producing consistent report:</b>
+                               The intent of this case is to get the same Stacked Wafer map when choosing bin 1, than when using default Soft Bin Wafer map.</li>
+			<li><b>Case 6406 - Low Yield pattern threshold seems not be working as expected:</b>
+                               When setting the Low Yield threshold to a value > 90%, we expect to get more blue dies than what is actually shown (7 dies only). 
+							   Indeed, the 10 wafers stacked attached have a lot more XY locations where the total number of pass bin is below 9.</li>
+			<li><b>Case 6398 - Examinator crash with do not merge MPR results option:</b>
+                               Examinator closes unexpectedly with certain bad stdf files and do not merge MPR option selected.</li>
+			<li><b>Case 6397 - Datalog output issue:</b>
+                               Datalog output is incorrect.</li>
+			<li><b>Case 6375 - Tool tip on stdf records dump needs updated for v4 2007 records:</b>
+                               The tool tip on the stdf records dump in the toolbox has the same tool tip as the FAR record for all of the stdf v4 2007 records.</li>
+			<li><b>Case 6374 - Die counts are incorrect for wafer data:</b>
+                               Incorrect stats/bin data from the Quantix prod DB extraction.</li>
+			<li><b>Case 6347 - Wrong limits when not merging tests with the same test name:</b>
+							   When selecting to not merge tests if the test name is different, the limits for the first instance of this test is used for all instances of this test.</li>
+			<li><b>Case 6294 - The marker for the mean value on the interactive wafer map scale is incorrectly placed:</b>
+							   When viewing a parametric wafer map in the interactive wafer maps section, the scale illustrating the min,
+							   max and mean in the right pane has the mean pointing to the min regardless of the mean value.</li>
+			<li><b>Case 6128 - Parser for Maxwell Freescale format:</b>
+							   New Parser for csv format for Freescale whcih uses an external file for the bin #'s and names.</li>
+			<li><b>Case 6065 - Why do histograms in multi-chart from More report are cumulative histograms:</b>
+							   When we generate a multi-chart from the More report, the histograms are plotted over cumulative results. 
+							   We expect to have a chart not cumulated.
+							   If we chart over test limits, histograms are not cumulated however.</li>
+			<li><b>Case 5974 - Test names are replaced by test numbers since v64.8:</b>
+							   In this specific configuration where PTR.test_txt is not valid and TSR.test_name holds the actual test name, Examinator replaces the test name by the test number instead. This occurs since v64.08. 
+							   Workaround consists in using "ignore test name, always merge on test number" to get the expected results.</li>
+			<li><b>Case 5867 - Limits reached when querying db:</b>
+							   A popup warning shows up when moving from interactive histogram to box plot. It tells that no samples are available because dataset is bigger than the limits allowed.
+							   This warning is inconsistent since no particular limits have been set in the options tab.</li>
+			<li><b>Case 5830 - Softbin table has incorrect headers in PPT/PDF/DOC reports:</b>
+							   In the second part of the soft bin table, the third column header is missing (Pass/Fail) leading to an inconsistency where "Count" header replaces the "Pass/Fail" one. This also affects the other column header: "Percentage" replaces "Count", "Software Bin Chart" replaces "Percentage" and finally the last header has no header. 
+							   There is also an inconsistency where "Count" should be renamed to "Total count". This affects PPT/DOC and PDF reports.</li>
+			<li><b>Case 5770 - Pareto functional failure signatures count issue:</b>
+                               Total Fail count is wrong in the Pareto of Functional failure signatures.</li>
+			<li><b>Case 5707 - Stats tab not updated in Interactive reports and Box Plot More Report for same test number, different test name:</b>
+							   In compare mode, the stats tab of interactive reports are not updated when moving from one parameter to the other. Also when generating a word report with box plots, the stats going with each box plot are always the ones from the first parameter. 
+							   This probably comes from the fact Test numbers are the same while the test names differ.</li>
+			<li><b>Case 5697 - Incorrect adptative scale in plot when high limit is below all results:</b>
+							   If the high limit is below all results, you get incorrect scales in plots (whether interactive or static). Indeed, when choosing adaptive scale we can't see the high limit while it is far below the results. 
+							   Also, when choosing the box plot and charting over test limit, the Y axis get reversed. </li>
+			<li><b>Case 5329 - File using MPR records will not process as expected:</b>
+							   File has MPR.RTN_INDX defined for the first PIR/PRR record pair but not for subsequent PIR/PRR record pairs. As a result, GEX assumings that the testing for the first part follows 
+							   the order in the MPR.RTN_INDX but the testing for the subsequent parts follow the order laid out in the PMR.</li>
+			<li><b>Case 4717 - ATDF / STDF conversion problem with summary records:</b>
+							   * PCR.HEAD_NUM : empty in ATDF if PCR field contains summary of the part counts for all test sites
+							   * PCR.SITE_NUM : empty in ATDF if PCR field contains summary of the part counts for all test sites </li>
+			<li><b>Case 3934 - Iddq delta does not work as expected.</b></li>
+			<li><b>Case 3915 - Quantix doesn't read test names from TSR's - regression:</b>
+                               In the attached data file, test names are present in the TSR's but not in the PTR's. Quantix reads the test names and displays them in test number pick lists, but does not display test names in the Test Statistics table or in the interactive histograms. 
+							   This is a regression since over 6.4.07.</li>
+			<li><b>Case 3076 - Graphs are appearing for functional tests when they shouldn't when using My Reports:</b>
+                               when running reports, the functional tests are not graphed. however, when running custom reports using my reports, the functional tests are graphed.</li>
+			<li><b>Case 2376 - Display changes to soft bin map in the middle of a data session:</b>
+                               The software doesn't stay on the parametric map when the map has been previously pinned.</li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.6.01  changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.6.01">V6.6.01 (14 May 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 6228 - crash in interactive tables:</b>
+								GEX crashes while user is in interactive tables switching between individual part datasheets.</li>
+			<li><b>Case 6084 - User can't change the layer name in interactive histogram. Regression over 6.3:</b>
+								When using the edit layer properties, there is a field displaying the layer name which can be edited. Unfortunately, 
+								changes that one can do in this field don't reflect in the layer tab of the interactive chart.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.6  changes -->
+<table width="800"><tbody>
+  <tr>
+	<td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+	<td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+  <a name="V6.6">V6.6 (10 May 2012) release history</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+	<td height="1" width="15"></td>
+	<td height="1" width="785"></td>
+  </tr>
+  <tr>
+	<td width="15"></td>
+	<td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+	  <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+	  	<tr>
+		<!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 6146 - PAT limit display in interactive charts When Check/unckecK Org.Limits boxplot is resized:</b>
+							   Check/unckecK Org.Limits and see that it resize the boxplot whereas it shouldn't.</li>
+			<li><b>Case 6039 - Generate a post-pat output wafer map with failing bins from input Map file:</b>
+							   In Gex-PAT, when an AVI/MAP file is used in addition to the source STDF, the resulting post-pat output Wafer map does not contain the failed bins from the AVI/MAP file.
+							   It only contains the bins from the source STDF, and the PAT bins. 
+							   The user expects to also have the failed bins from the input AVI/MAP file.</li>
+			<li><b>Case 6108 - Several dies have an inconsistent rebin in what-if:</b>
+							   Several dies in this dataset which have a failing bin, are after a what-if reassigned to pass bin 1, while the what-if pass bin is 11 and the what-if fail bin is 99. There is no reason why we do a binning reassignment on those.
+								Another set of die have incorrect reassignment to a What-if pass while they don't have any measures for the test on which we do the what-if. They should not be reassigned neither.</li>
+			<li><b>Case 5962 - Force binning options to sample data when using filters from the Data tab:</b>
+							   Force option to compute stats (tests and binnings) from samples if parts filters are selected.</li>
+			<li><b>Case 5915 - Linear approximation in Pearsons/Scatter plots</b></li>
+			<li><b>Case 5914 - Remove data points in scatter plot mode</b></li>
+			<li><b>Case 5982 - Compute and display correlation in Scatter interactive charts in multi dataset.</b></li>
+			<li><b>Case 5789 - Do not override patman conf file with CSV recipe options.</b></li>
+			<li><b>Case 5525 - Update Bin Trend gui to allow the selection of multiple bins:</b>
+							   Allow the user to select more than one bin to trend.</li>
+			<li><b>Case 5361 - Make the default "keep viewport" option in the interactive graph to unchecked:</b>
+							   If you check the keep viewport box, then close Examinator and open it again, when you run a report the box stays checked.</li>
+			<li><b>Case 5061 - When saving a report center script, remove unnecessary paths from the options list:</b>
+							   In the .csl file from a Reports Center script, the options section has some options that are system specific. For instance, the location and name of the r&r alarms criteria file is listed in the options section for a Reports Center report. This item will create an error when the user tries to install this report as an automated report on the Yield-Manserver.</li>
+			<li><b>Case 4375 - Merge STDF Files From Command Prompt:</b>
+							   Allow the ability to Merge STDF Files From Command Prompt.</li>
+			<li><b>Case 4019 - In the Reports Center, allow soft bin name to be in the report title:</b>
+							   In the Reports Center templates, allow Soft Bin Name (not just #) to be shown along with the bin number in the bin trend and bin pareto reports.</li>
+			<li><b>Case 3896 - Make the default "keep viewport" option in the interactive graph to unchecked:</b>
+							   Provide the ability to turn off or on PAT limit display in interactive charts.</li>
+			<li><b>Case 2888 - Allow for splitting the dataset by selecting certain groups of outliers with the mouse.</b></li>
+			<li><b>Case 2825 - CSV Output from Database Query.</b></li>
+            </ul>
+		  </td>
+        </tr>
+		<tr>
+		  <!-- FIXED -->
+		  <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+		  <td class="main-content-text" align="left" valign="top" width="720">
+			<ul>
+			<li><b>Case 6203 - Memory Leaks in GEX-LM:</b>
+							   After a certain amount of time and number of connection to GEX-LM it is noticed that GEX-LM consume to much memory.</li>
+			<li><b>Case 6127 - GexPAT: No Data Samples for results at first access:</b>
+							   When accessing PAT Report, get No Data Samples for results.</li>
+			<li><b>Case 6199 - Fix 'Last N X' in compare dataset mode</b></li>
+			<li><b>Case 2741 - Snapshot feature in when using What-If analysis is not functioning as expected:</b>
+							   When using the What-If feature, the snapshot tool add an an item to the snapshot gallery but does not take a snapshot in the Windows clip board.</li>
+			</ul>
+		  </td>
+		</tr>
+	  </tbody></table>
+	</td>
+  </tr>
+  <tr>
+	<td></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+</body></html>
+

@@ -1,0 +1,2212 @@
+-- MySQL dump 10.11
+--
+-- Host: saturne    Database: gexdb_new
+-- ------------------------------------------------------
+-- Server version	5.0.67-community-nt
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `et_hbin`
+--
+
+DROP TABLE IF EXISTS `et_hbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_hbin` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `HBIN_NAME` varchar(255) NOT NULL default '',
+  `HBIN_CAT` char(1) default NULL,
+  `BIN_COUNT` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_lot`
+--
+
+DROP TABLE IF EXISTS `et_lot`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_lot` (
+  `LOT_ID` varchar(255) NOT NULL default '',
+  `TRACKING_LOT_ID` varchar(255) default NULL,
+  `PRODUCT_NAME` varchar(255) default NULL,
+  `NB_PARTS` int(10) NOT NULL default '0',
+  `NB_PARTS_GOOD` int(10) NOT NULL default '0',
+  `FLAGS` binary(2) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_lot_hbin`
+--
+
+DROP TABLE IF EXISTS `et_lot_hbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_lot_hbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `HBIN_NAME` varchar(255) NOT NULL default '',
+  `HBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_lot_sbin`
+--
+
+DROP TABLE IF EXISTS `et_lot_sbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_lot_sbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NAME` varchar(255) NOT NULL default '',
+  `SBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_metadata_link`
+--
+
+DROP TABLE IF EXISTS `et_metadata_link`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_metadata_link` (
+  `LINK_NAME` varchar(255) NOT NULL,
+  `GEXDB_TABLE1_NAME` varchar(255) NOT NULL,
+  `GEXDB_FIELD1_FULLNAME` varchar(255) NOT NULL,
+  `GEXDB_TABLE2_NAME` varchar(255) NOT NULL,
+  `GEXDB_FIELD2_FULLNAME` varchar(255) NOT NULL,
+  `GEXDB_LINK_NAME` varchar(255) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_metadata_mapping`
+--
+
+DROP TABLE IF EXISTS `et_metadata_mapping`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_metadata_mapping` (
+  `META_NAME` varchar(255) NOT NULL,
+  `GEX_NAME` varchar(255) default NULL,
+  `GEXDB_TABLE_NAME` varchar(255) NOT NULL,
+  `GEXDB_FIELD_FULLNAME` varchar(255) NOT NULL,
+  `GEXDB_LINK_NAME` varchar(255) default NULL,
+  `GEX_DISPLAY_IN_GUI` char(1) NOT NULL default 'Y'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_prod_alarm`
+--
+
+DROP TABLE IF EXISTS `et_prod_alarm`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_prod_alarm` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL,
+  `ALARM_CAT` varchar(255) NOT NULL,
+  `ALARM_TYPE` varchar(255) NOT NULL,
+  `ITEM_NO` int(10) unsigned NOT NULL,
+  `ITEM_NAME` varchar(255) default NULL,
+  `FLAGS` binary(2) NOT NULL,
+  `LCL` float NOT NULL default '0',
+  `UCL` float NOT NULL default '0',
+  `VALUE` float NOT NULL default '0',
+  `UNITS` varchar(10) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_ptest_info`
+--
+
+DROP TABLE IF EXISTS `et_ptest_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_ptest_info` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `TNUM` int(10) unsigned NOT NULL default '0',
+  `TNAME` varchar(255) NOT NULL default '',
+  `UNITS` varchar(255) NOT NULL default '',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `LL` float default NULL,
+  `HL` float default NULL,
+  `TESTSEQ` smallint(5) unsigned default NULL,
+  `SPEC_LL` float default NULL,
+  `SPEC_HL` float default NULL,
+  `SPEC_TARGET` float default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_ptest_results`
+--
+
+DROP TABLE IF EXISTS `et_ptest_results`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_ptest_results` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `RUN_ID` smallint(5) unsigned NOT NULL default '0',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `VALUE` float default NULL,
+  KEY `et_ptest_results` (`SPLITLOT_ID`,`PTEST_INFO_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_ptest_stats`
+--
+
+DROP TABLE IF EXISTS `et_ptest_stats`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_ptest_stats` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `EXEC_COUNT` smallint(5) unsigned default NULL,
+  `FAIL_COUNT` smallint(5) unsigned default NULL,
+  `MIN_VALUE` float default NULL,
+  `MAX_VALUE` float default NULL,
+  `SUM` float default NULL,
+  `SQUARE_SUM` float default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_run`
+--
+
+DROP TABLE IF EXISTS `et_run`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_run` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `RUN_ID` smallint(5) unsigned NOT NULL default '0',
+  `PART_ID` varchar(255) default NULL,
+  `PART_X` smallint(6) default NULL,
+  `PART_Y` smallint(6) default NULL,
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NO` smallint(5) unsigned default NULL,
+  `TTIME` int(10) unsigned default NULL,
+  `TESTS_EXECUTED` smallint(5) unsigned NOT NULL default '0',
+  `TESTS_FAILED` smallint(5) unsigned NOT NULL default '0',
+  `FIRSTFAIL_TNUM` int(10) unsigned default NULL,
+  `FIRSTFAIL_TNAME` varchar(255) default NULL,
+  `RETEST_INDEX` tinyint(3) unsigned NOT NULL default '0',
+  KEY `et_run` (`SPLITLOT_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_sbin`
+--
+
+DROP TABLE IF EXISTS `et_sbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_sbin` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NAME` varchar(255) NOT NULL default '',
+  `SBIN_CAT` char(1) default NULL,
+  `BIN_COUNT` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_sbl`
+--
+
+DROP TABLE IF EXISTS `et_sbl`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_sbl` (
+  `SBL_ID` int(10) unsigned NOT NULL,
+  `BIN_NO` smallint(3) unsigned NOT NULL,
+  `BIN_NAME` varchar(255) default NULL,
+  `LL` smallint(5) NOT NULL default '-1',
+  `HL` smallint(5) NOT NULL default '-1'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_sbl_set`
+--
+
+DROP TABLE IF EXISTS `et_sbl_set`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_sbl_set` (
+  `SBL_ID` int(10) unsigned NOT NULL,
+  `PRODUCT_ID` varchar(255) NOT NULL,
+  `CREATION_DATE` datetime NOT NULL,
+  `FILE_NAME` varchar(255) default NULL,
+  `USER_COMMENT` varchar(255) default NULL,
+  PRIMARY KEY  (`SBL_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_splitlot`
+--
+
+DROP TABLE IF EXISTS `et_splitlot`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_splitlot` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL auto_increment,
+  `LOT_ID` varchar(255) NOT NULL default '',
+  `SUBLOT_ID` varchar(255) NOT NULL default '',
+  `START_T` int(10) NOT NULL default '0',
+  `FINISH_T` int(10) NOT NULL default '0',
+  `WEEK_NB` tinyint(3) NOT NULL default '0',
+  `YEAR` smallint(5) NOT NULL default '0',
+  `TESTER_NAME` varchar(255) NOT NULL default '',
+  `TESTER_TYPE` varchar(255) NOT NULL default '',
+  `FLAGS` binary(2) NOT NULL default '\0\0',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_GOOD` mediumint(8) NOT NULL default '0',
+  `DATA_PROVIDER` varchar(255) default '',
+  `DATA_TYPE` varchar(255) default '',
+  `PROD_DATA` char(1) NOT NULL default 'Y',
+  `JOB_NAM` varchar(255) NOT NULL default '',
+  `JOB_REV` varchar(255) NOT NULL default '',
+  `OPER_NAM` varchar(255) NOT NULL default '',
+  `EXEC_TYP` varchar(255) NOT NULL default '',
+  `EXEC_VER` varchar(255) NOT NULL default '',
+  `FACIL_ID` varchar(255) NOT NULL default '',
+  `PART_TYP` varchar(255) default NULL,
+  `USER_TXT` varchar(255) default NULL,
+  `FAMLY_ID` varchar(255) default NULL,
+  `PROC_ID` varchar(255) default NULL,
+  `FILE_HOST_ID` int(10) unsigned default '0',
+  `FILE_PATH` varchar(255) NOT NULL default '',
+  `FILE_NAME` varchar(255) NOT NULL default '',
+  `VALID_SPLITLOT` char(1) NOT NULL default 'N',
+  `INSERTION_TIME` int(10) unsigned NOT NULL default '0',
+  `SUBCON_LOT_ID` varchar(255) NOT NULL default '',
+  `WAFER_ID` varchar(255) default NULL,
+  `SYL_ID` int(10) unsigned default '0',
+  `SBL_ID` int(10) unsigned default '0',
+  `INCREMENTAL_UPDATE` varchar(255) default NULL,
+  PRIMARY KEY  (`SPLITLOT_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_syl_set`
+--
+
+DROP TABLE IF EXISTS `et_syl_set`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_syl_set` (
+  `SYL_ID` int(10) unsigned NOT NULL,
+  `PRODUCT_ID` varchar(255) NOT NULL,
+  `CREATION_DATE` datetime NOT NULL,
+  `FILE_NAME` varchar(255) default NULL,
+  `USER_COMMENT` varchar(255) default NULL,
+  `LL` smallint(5) NOT NULL default '-1',
+  `HL` smallint(5) NOT NULL default '-1',
+  PRIMARY KEY  (`SYL_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_wafer_hbin`
+--
+
+DROP TABLE IF EXISTS `et_wafer_hbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_wafer_hbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `WAFER_ID` varchar(255) default NULL,
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `HBIN_NAME` varchar(255) NOT NULL default '',
+  `HBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_wafer_info`
+--
+
+DROP TABLE IF EXISTS `et_wafer_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_wafer_info` (
+  `LOT_ID` varchar(255) NOT NULL default '',
+  `WAFER_ID` varchar(255) default NULL,
+  `FAB_ID` varchar(255) default NULL,
+  `FRAME_ID` varchar(255) default NULL,
+  `MASK_ID` varchar(255) default NULL,
+  `WAFER_SIZE` float default NULL,
+  `DIE_HT` float default NULL,
+  `DIE_WID` float default NULL,
+  `WAFER_UNITS` tinyint(3) unsigned default NULL,
+  `WAFER_FLAT` char(1) default NULL,
+  `CENTER_X` smallint(5) unsigned default NULL,
+  `CENTER_Y` smallint(5) unsigned default NULL,
+  `POS_X` char(1) default NULL,
+  `POS_Y` char(1) default NULL,
+  `GROSS_DIE` mediumint(8) NOT NULL default '0',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_GOOD` mediumint(8) NOT NULL default '0',
+  `FLAGS` binary(2) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_wafer_sbin`
+--
+
+DROP TABLE IF EXISTS `et_wafer_sbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_wafer_sbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `WAFER_ID` varchar(255) default NULL,
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NAME` varchar(255) NOT NULL default '',
+  `SBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_wyr`
+--
+
+DROP TABLE IF EXISTS `et_wyr`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_wyr` (
+  `SITE_NAME` varchar(255) NOT NULL,
+  `WEEK_NB` tinyint(3) default NULL,
+  `YEAR` smallint(5) default NULL,
+  `DATE_IN` datetime default NULL,
+  `DATE_OUT` datetime default NULL,
+  `PRODUCT_NAME` varchar(255) default NULL,
+  `PROGRAM_NAME` varchar(255) default NULL,
+  `TESTER_NAME` varchar(255) default NULL,
+  `LOT_ID` varchar(255) default NULL,
+  `SUBCON_LOT_ID` varchar(255) default NULL,
+  `USER_SPLIT` varchar(1024) default NULL,
+  `YIELD` float default '0',
+  `PARTS_RECEIVED` int(10) default '0',
+  `PRETEST_REJECTS` int(10) default '0',
+  `PRETEST_REJECTS_SPLIT` varchar(1024) default NULL,
+  `PARTS_TESTED` int(10) default '0',
+  `PARTS_PASS` int(10) default '0',
+  `PARTS_PASS_SPLIT` varchar(1024) default NULL,
+  `PARTS_FAIL` int(10) default '0',
+  `PARTS_FAIL_SPLIT` varchar(1024) default NULL,
+  `PARTS_RETEST` int(10) default '0',
+  `PARTS_RETEST_SPLIT` varchar(1024) default NULL,
+  `INSERTIONS` int(10) default '0',
+  `POSTTEST_REJECTS` int(10) default '0',
+  `POSTTEST_REJECTS_SPLIT` varchar(1024) default NULL,
+  `PARTS_SHIPPED` int(10) default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `et_wyr_format`
+--
+
+DROP TABLE IF EXISTS `et_wyr_format`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `et_wyr_format` (
+  `SITE_NAME` varchar(255) NOT NULL,
+  `COLUMN_ID` tinyint(3) NOT NULL,
+  `COLUMN_NB` tinyint(3) NOT NULL,
+  `COLUMN_NAME` varchar(255) NOT NULL,
+  `DATA_TYPE` varchar(255) NOT NULL,
+  `DISPLAY` char(1) NOT NULL default 'Y'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `file_host`
+--
+
+DROP TABLE IF EXISTS `file_host`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `file_host` (
+  `FILE_HOST_ID` int(10) unsigned NOT NULL auto_increment,
+  `HOST_NAME` varchar(255) NOT NULL default '',
+  `HOST_FTPUSER` varchar(255) NOT NULL default '',
+  `HOST_FTPPASSWORD` varchar(255) NOT NULL default '',
+  `HOST_FTPPATH` varchar(255) default NULL,
+  `HOST_FTPPORT` smallint(5) unsigned NOT NULL default '21',
+  PRIMARY KEY  (`FILE_HOST_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_ftest_info`
+--
+
+DROP TABLE IF EXISTS `ft_ftest_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_ftest_info` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `FTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `TNUM` int(10) unsigned NOT NULL default '0',
+  `TNAME` varchar(255) NOT NULL default '',
+  `TESTSEQ` smallint(5) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_ftest_results`
+--
+
+DROP TABLE IF EXISTS `ft_ftest_results`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_ftest_results` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `FTEST_INFO_ID` smallint(5) unsigned NOT NULL,
+  `RUN_ID` mediumint(8) unsigned NOT NULL default '0',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `VECT_NAM` varchar(255) NOT NULL default '',
+  `VECT_OFF` smallint(6) default NULL,
+  KEY `ft_ftest_results` (`SPLITLOT_ID`,`FTEST_INFO_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_ftest_stats_samples`
+--
+
+DROP TABLE IF EXISTS `ft_ftest_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_ftest_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `FTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `FAIL_COUNT` mediumint(8) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_ftest_stats_summary`
+--
+
+DROP TABLE IF EXISTS `ft_ftest_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_ftest_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `FTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned default NULL,
+  `FAIL_COUNT` mediumint(8) unsigned default NULL,
+  `TTIME` int(10) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_hbin`
+--
+
+DROP TABLE IF EXISTS `ft_hbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_hbin` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `HBIN_NAME` varchar(255) NOT NULL default '',
+  `HBIN_CAT` char(1) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_hbin_stats_samples`
+--
+
+DROP TABLE IF EXISTS `ft_hbin_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_hbin_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `NB_PARTS` mediumint(8) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_hbin_stats_summary`
+--
+
+DROP TABLE IF EXISTS `ft_hbin_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_hbin_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `BIN_COUNT` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_lot`
+--
+
+DROP TABLE IF EXISTS `ft_lot`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_lot` (
+  `LOT_ID` varchar(255) NOT NULL default '',
+  `TRACKING_LOT_ID` varchar(255) default NULL,
+  `PRODUCT_NAME` varchar(255) default NULL,
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_GOOD` mediumint(8) NOT NULL default '0',
+  `FLAGS` binary(2) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_lot_hbin`
+--
+
+DROP TABLE IF EXISTS `ft_lot_hbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_lot_hbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `HBIN_NAME` varchar(255) NOT NULL default '',
+  `HBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_lot_sbin`
+--
+
+DROP TABLE IF EXISTS `ft_lot_sbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_lot_sbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NAME` varchar(255) NOT NULL default '',
+  `SBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_metadata_link`
+--
+
+DROP TABLE IF EXISTS `ft_metadata_link`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_metadata_link` (
+  `LINK_NAME` varchar(255) NOT NULL,
+  `GEXDB_TABLE1_NAME` varchar(255) NOT NULL,
+  `GEXDB_FIELD1_FULLNAME` varchar(255) NOT NULL,
+  `GEXDB_TABLE2_NAME` varchar(255) NOT NULL,
+  `GEXDB_FIELD2_FULLNAME` varchar(255) NOT NULL,
+  `GEXDB_LINK_NAME` varchar(255) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_metadata_mapping`
+--
+
+DROP TABLE IF EXISTS `ft_metadata_mapping`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_metadata_mapping` (
+  `META_NAME` varchar(255) NOT NULL,
+  `GEX_NAME` varchar(255) default NULL,
+  `GEXDB_TABLE_NAME` varchar(255) NOT NULL,
+  `GEXDB_FIELD_FULLNAME` varchar(255) NOT NULL,
+  `GEXDB_LINK_NAME` varchar(255) default NULL,
+  `GEX_DISPLAY_IN_GUI` char(1) NOT NULL default 'Y'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_mptest_info`
+--
+
+DROP TABLE IF EXISTS `ft_mptest_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_mptest_info` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `TNUM` int(10) unsigned NOT NULL default '0',
+  `TNAME` varchar(255) NOT NULL default '',
+  `TPIN_ARRAYINDEX` smallint(6) NOT NULL default '0',
+  `UNITS` varchar(255) NOT NULL default '',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `LL` float default NULL,
+  `HL` float default NULL,
+  `TESTSEQ` smallint(5) unsigned default NULL,
+  `SPEC_LL` float default NULL,
+  `SPEC_HL` float default NULL,
+  `SPEC_TARGET` float default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_mptest_limits`
+--
+
+DROP TABLE IF EXISTS `ft_mptest_limits`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_mptest_limits` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `LL` float NOT NULL default '0',
+  `HL` float NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_mptest_results`
+--
+
+DROP TABLE IF EXISTS `ft_mptest_results`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_mptest_results` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `RUN_ID` mediumint(8) unsigned NOT NULL default '0',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `VALUE` float NOT NULL default '0',
+  `TPIN_PMRINDEX` smallint(6) default NULL,
+  KEY `ft_mptest_results` (`SPLITLOT_ID`,`MPTEST_INFO_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_mptest_stats_samples`
+--
+
+DROP TABLE IF EXISTS `ft_mptest_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_mptest_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `FAIL_COUNT` mediumint(8) unsigned default NULL,
+  `MIN_VALUE` float default NULL,
+  `MAX_VALUE` float default NULL,
+  `SUM` float default NULL,
+  `SQUARE_SUM` float default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_mptest_stats_summary`
+--
+
+DROP TABLE IF EXISTS `ft_mptest_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_mptest_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `FAIL_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `MIN_VALUE` float default NULL,
+  `MAX_VALUE` float default NULL,
+  `SUM` float default NULL,
+  `SQUARE_SUM` float default NULL,
+  `TTIME` int(10) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_parts_stats_samples`
+--
+
+DROP TABLE IF EXISTS `ft_parts_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_parts_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_GOOD` mediumint(8) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_parts_stats_summary`
+--
+
+DROP TABLE IF EXISTS `ft_parts_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_parts_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_GOOD` mediumint(8) default NULL,
+  `NB_RTST` mediumint(8) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_prod_alarm`
+--
+
+DROP TABLE IF EXISTS `ft_prod_alarm`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_prod_alarm` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL,
+  `ALARM_CAT` varchar(255) NOT NULL,
+  `ALARM_TYPE` varchar(255) NOT NULL,
+  `ITEM_NO` int(10) unsigned NOT NULL,
+  `ITEM_NAME` varchar(255) default NULL,
+  `FLAGS` binary(2) NOT NULL,
+  `LCL` float NOT NULL default '0',
+  `UCL` float NOT NULL default '0',
+  `VALUE` float NOT NULL default '0',
+  `UNITS` varchar(10) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_ptest_info`
+--
+
+DROP TABLE IF EXISTS `ft_ptest_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_ptest_info` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `TNUM` int(10) unsigned NOT NULL default '0',
+  `TNAME` varchar(255) NOT NULL default '',
+  `UNITS` varchar(255) NOT NULL default '',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `LL` float default NULL,
+  `HL` float default NULL,
+  `TESTSEQ` smallint(5) unsigned default NULL,
+  `SPEC_LL` float default NULL,
+  `SPEC_HL` float default NULL,
+  `SPEC_TARGET` float default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_ptest_limits`
+--
+
+DROP TABLE IF EXISTS `ft_ptest_limits`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_ptest_limits` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `LL` float NOT NULL default '0',
+  `HL` float NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_ptest_results`
+--
+
+DROP TABLE IF EXISTS `ft_ptest_results`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_ptest_results` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `RUN_ID` mediumint(8) unsigned NOT NULL default '0',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `VALUE` float default NULL,
+  KEY `ft_ptest_results` (`SPLITLOT_ID`,`PTEST_INFO_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_ptest_stats_samples`
+--
+
+DROP TABLE IF EXISTS `ft_ptest_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_ptest_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `FAIL_COUNT` mediumint(8) unsigned default NULL,
+  `MIN_VALUE` float default NULL,
+  `MAX_VALUE` float default NULL,
+  `SUM` float default NULL,
+  `SQUARE_SUM` float default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_ptest_stats_summary`
+--
+
+DROP TABLE IF EXISTS `ft_ptest_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_ptest_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned default NULL,
+  `FAIL_COUNT` mediumint(8) unsigned default NULL,
+  `MIN_VALUE` float default NULL,
+  `MAX_VALUE` float default NULL,
+  `SUM` float default NULL,
+  `SQUARE_SUM` float default NULL,
+  `TTIME` int(10) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_run`
+--
+
+DROP TABLE IF EXISTS `ft_run`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_run` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `RUN_ID` mediumint(8) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `PART_ID` varchar(255) default NULL,
+  `PART_X` smallint(6) default NULL,
+  `PART_Y` smallint(6) default NULL,
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NO` smallint(5) unsigned default NULL,
+  `TTIME` int(10) unsigned default NULL,
+  `TESTS_EXECUTED` smallint(5) unsigned NOT NULL default '0',
+  `TESTS_FAILED` smallint(5) unsigned NOT NULL default '0',
+  `FIRSTFAIL_TNUM` int(10) unsigned default NULL,
+  `FIRSTFAIL_TNAME` varchar(255) default NULL,
+  `RETEST_INDEX` tinyint(3) unsigned NOT NULL default '0',
+  KEY `ft_run` (`SPLITLOT_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_sbin`
+--
+
+DROP TABLE IF EXISTS `ft_sbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_sbin` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NAME` varchar(255) NOT NULL default '',
+  `SBIN_CAT` char(1) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_sbin_stats_samples`
+--
+
+DROP TABLE IF EXISTS `ft_sbin_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_sbin_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `NB_PARTS` mediumint(8) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_sbin_stats_summary`
+--
+
+DROP TABLE IF EXISTS `ft_sbin_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_sbin_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `BIN_COUNT` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_sbl`
+--
+
+DROP TABLE IF EXISTS `ft_sbl`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_sbl` (
+  `SBL_ID` int(10) unsigned NOT NULL,
+  `BIN_NO` smallint(3) unsigned NOT NULL,
+  `BIN_NAME` varchar(255) default NULL,
+  `LL` smallint(5) NOT NULL default '-1',
+  `HL` smallint(5) NOT NULL default '-1'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_sbl_set`
+--
+
+DROP TABLE IF EXISTS `ft_sbl_set`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_sbl_set` (
+  `SBL_ID` int(10) unsigned NOT NULL,
+  `PRODUCT_ID` varchar(255) NOT NULL,
+  `CREATION_DATE` datetime NOT NULL,
+  `FILE_NAME` varchar(255) default NULL,
+  `USER_COMMENT` varchar(255) default NULL,
+  PRIMARY KEY  (`SBL_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_splitlot`
+--
+
+DROP TABLE IF EXISTS `ft_splitlot`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_splitlot` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL auto_increment,
+  `LOT_ID` varchar(255) NOT NULL default '',
+  `SUBLOT_ID` varchar(255) NOT NULL default '',
+  `SETUP_T` int(10) NOT NULL default '0',
+  `START_T` int(10) NOT NULL default '0',
+  `FINISH_T` int(10) NOT NULL default '0',
+  `WEEK_NB` tinyint(3) NOT NULL default '0',
+  `YEAR` smallint(5) NOT NULL default '0',
+  `STAT_NUM` tinyint(3) unsigned NOT NULL default '0',
+  `TESTER_NAME` varchar(255) NOT NULL default '',
+  `TESTER_TYPE` varchar(255) NOT NULL default '',
+  `FLAGS` binary(2) NOT NULL default '\0\0',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_GOOD` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_SAMPLES` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_SAMPLES_GOOD` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_SUMMARY` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_SUMMARY_GOOD` mediumint(8) NOT NULL default '0',
+  `DATA_PROVIDER` varchar(255) default '',
+  `DATA_TYPE` varchar(255) default '',
+  `PROD_DATA` char(1) NOT NULL default 'Y',
+  `RETEST_INDEX` tinyint(3) unsigned NOT NULL default '0',
+  `RETEST_HBINS` varchar(255) default NULL,
+  `REWORK_CODE` tinyint(3) unsigned NOT NULL default '0',
+  `JOB_NAM` varchar(255) NOT NULL default '',
+  `JOB_REV` varchar(255) NOT NULL default '',
+  `OPER_NAM` varchar(255) NOT NULL default '',
+  `EXEC_TYP` varchar(255) NOT NULL default '',
+  `EXEC_VER` varchar(255) NOT NULL default '',
+  `TEST_COD` varchar(255) NOT NULL default '',
+  `FACIL_ID` varchar(255) NOT NULL default '',
+  `TST_TEMP` varchar(255) NOT NULL default '',
+  `MODE_COD` char(1) default NULL,
+  `RTST_COD` char(1) default NULL,
+  `PROT_COD` char(1) default NULL,
+  `BURN_TIM` int(10) default NULL,
+  `CMOD_COD` char(1) default NULL,
+  `PART_TYP` varchar(255) default NULL,
+  `USER_TXT` varchar(255) default NULL,
+  `AUX_FILE` varchar(255) default NULL,
+  `PKG_TYP` varchar(255) default NULL,
+  `FAMLY_ID` varchar(255) default NULL,
+  `DATE_COD` varchar(255) default NULL,
+  `FLOOR_ID` varchar(255) default NULL,
+  `PROC_ID` varchar(255) default NULL,
+  `OPER_FRQ` varchar(255) default NULL,
+  `SPEC_NAM` varchar(255) default NULL,
+  `SPEC_VER` varchar(255) default NULL,
+  `FLOW_ID` varchar(255) default NULL,
+  `SETUP_ID` varchar(255) default NULL,
+  `DSGN_REV` varchar(255) default NULL,
+  `ENG_ID` varchar(255) default NULL,
+  `ROM_COD` varchar(255) default NULL,
+  `SERL_NUM` varchar(255) default NULL,
+  `SUPR_NAM` varchar(255) default NULL,
+  `NB_SITES` tinyint(3) unsigned NOT NULL default '1',
+  `HEAD_NUM` tinyint(3) unsigned default NULL,
+  `HANDLER_TYP` varchar(255) default NULL,
+  `HANDLER_ID` varchar(255) default NULL,
+  `CARD_TYP` varchar(255) default NULL,
+  `CARD_ID` varchar(255) default NULL,
+  `LOADBOARD_TYP` varchar(255) default NULL,
+  `LOADBOARD_ID` varchar(255) default NULL,
+  `DIB_TYP` varchar(255) default NULL,
+  `DIB_ID` varchar(255) default NULL,
+  `CABLE_TYP` varchar(255) default NULL,
+  `CABLE_ID` varchar(255) default NULL,
+  `CONTACTOR_TYP` varchar(255) default NULL,
+  `CONTACTOR_ID` varchar(255) default NULL,
+  `LASER_TYP` varchar(255) default NULL,
+  `LASER_ID` varchar(255) default NULL,
+  `EXTRA_TYP` varchar(255) default NULL,
+  `EXTRA_ID` varchar(255) default NULL,
+  `FILE_HOST_ID` int(10) unsigned default '0',
+  `FILE_PATH` varchar(255) NOT NULL default '',
+  `FILE_NAME` varchar(255) NOT NULL default '',
+  `VALID_SPLITLOT` char(1) NOT NULL default 'N',
+  `INSERTION_TIME` int(10) unsigned NOT NULL default '0',
+  `SUBCON_LOT_ID` varchar(255) NOT NULL default '',
+  `SYL_ID` int(10) unsigned default '0',
+  `SBL_ID` int(10) unsigned default '0',
+  `INCREMENTAL_UPDATE` varchar(255) default NULL,
+  PRIMARY KEY  (`SPLITLOT_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_syl_set`
+--
+
+DROP TABLE IF EXISTS `ft_syl_set`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_syl_set` (
+  `SYL_ID` int(10) unsigned NOT NULL,
+  `PRODUCT_ID` varchar(255) NOT NULL,
+  `CREATION_DATE` datetime NOT NULL,
+  `FILE_NAME` varchar(255) default NULL,
+  `USER_COMMENT` varchar(255) default NULL,
+  `LL` smallint(5) NOT NULL default '-1',
+  `HL` smallint(5) NOT NULL default '-1',
+  PRIMARY KEY  (`SYL_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_wyr`
+--
+
+DROP TABLE IF EXISTS `ft_wyr`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_wyr` (
+  `SITE_NAME` varchar(255) NOT NULL,
+  `WEEK_NB` tinyint(3) default NULL,
+  `YEAR` smallint(5) default NULL,
+  `DATE_IN` datetime default NULL,
+  `DATE_OUT` datetime default NULL,
+  `PRODUCT_NAME` varchar(255) default NULL,
+  `PROGRAM_NAME` varchar(255) default NULL,
+  `TESTER_NAME` varchar(255) default NULL,
+  `LOT_ID` varchar(255) default NULL,
+  `SUBCON_LOT_ID` varchar(255) default NULL,
+  `USER_SPLIT` varchar(1024) default NULL,
+  `YIELD` float default '0',
+  `PARTS_RECEIVED` int(10) default '0',
+  `PRETEST_REJECTS` int(10) default '0',
+  `PRETEST_REJECTS_SPLIT` varchar(1024) default NULL,
+  `PARTS_TESTED` int(10) default '0',
+  `PARTS_PASS` int(10) default '0',
+  `PARTS_PASS_SPLIT` varchar(1024) default NULL,
+  `PARTS_FAIL` int(10) default '0',
+  `PARTS_FAIL_SPLIT` varchar(1024) default NULL,
+  `PARTS_RETEST` int(10) default '0',
+  `PARTS_RETEST_SPLIT` varchar(1024) default NULL,
+  `INSERTIONS` int(10) default '0',
+  `POSTTEST_REJECTS` int(10) default '0',
+  `POSTTEST_REJECTS_SPLIT` varchar(1024) default NULL,
+  `PARTS_SHIPPED` int(10) default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `ft_wyr_format`
+--
+
+DROP TABLE IF EXISTS `ft_wyr_format`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `ft_wyr_format` (
+  `SITE_NAME` varchar(255) NOT NULL,
+  `COLUMN_ID` tinyint(3) NOT NULL,
+  `COLUMN_NB` tinyint(3) NOT NULL,
+  `COLUMN_NAME` varchar(255) NOT NULL,
+  `DATA_TYPE` varchar(255) NOT NULL,
+  `DISPLAY` char(1) NOT NULL default 'Y'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `gexdb_debug`
+--
+
+DROP TABLE IF EXISTS `gexdb_debug`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `gexdb_debug` (
+  `DS_PART_NUMBER` varchar(1024) default NULL,
+  `GEOMETRY_NAME` varchar(1024) default NULL,
+  `VARIABLE` varchar(1024) default NULL,
+  `VALUE` varchar(1024) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `global_info`
+--
+
+DROP TABLE IF EXISTS `global_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `global_info` (
+  `DB_VERSION_NAME` varchar(255) NOT NULL,
+  `DB_VERSION_NB` smallint(5) NOT NULL,
+  `DB_VERSION_BUILD` smallint(5) NOT NULL,
+  `INCREMENTAL_SPLITLOTS` int(9) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `incremental_update`
+--
+
+DROP TABLE IF EXISTS `incremental_update`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `incremental_update` (
+  `DB_UPDATE_NAME` varchar(255) NOT NULL,
+  `INITIAL_SPLITLOTS` int(9) NOT NULL default '0',
+  `REMAINING_SPLITLOTS` int(9) NOT NULL default '0',
+  `DB_VERSION_BUILD` smallint(5) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `product` (
+  `PRODUCT_NAME` varchar(255) NOT NULL default '',
+  `DESCRIPTION` varchar(1000) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `temp_parts`
+--
+
+DROP TABLE IF EXISTS `temp_parts`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `temp_parts` (
+  `product_name` varchar(255) default NULL,
+  `lot_id` varchar(255) default NULL,
+  `wafer_id` varchar(255) default NULL,
+  `splitlot_id` int(10) unsigned NOT NULL,
+  `site_no` smallint(5) unsigned NOT NULL,
+  `nb_parts` int(9) default NULL,
+  KEY `splitlot` (`splitlot_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `temp_parts_sum`
+--
+
+DROP TABLE IF EXISTS `temp_parts_sum`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `temp_parts_sum` (
+  `product_name` varchar(255) default NULL,
+  `lot_id` varchar(255) default NULL,
+  `wafer_id` varchar(255) default NULL,
+  `splitlot_id` int(10) unsigned NOT NULL,
+  `site_no` smallint(5) unsigned NOT NULL,
+  `nb_parts` int(9) default NULL,
+  KEY `splitlot` (`splitlot_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `temp_serie1`
+--
+
+DROP TABLE IF EXISTS `temp_serie1`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `temp_serie1` (
+  `product_name` varchar(255) default NULL,
+  `lot_id` varchar(255) default NULL,
+  `wafer_id` varchar(255) default NULL,
+  `splitlot_id` int(10) unsigned NOT NULL,
+  `site_no` smallint(5) unsigned NOT NULL,
+  `nb_parts` int(9) default NULL,
+  KEY `splitlot` (`splitlot_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `temp_serie1_sum`
+--
+
+DROP TABLE IF EXISTS `temp_serie1_sum`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `temp_serie1_sum` (
+  `product_name` varchar(255) default NULL,
+  `lot_id` varchar(255) default NULL,
+  `wafer_id` varchar(255) default NULL,
+  `splitlot_id` int(10) unsigned NOT NULL,
+  `site_no` smallint(5) unsigned NOT NULL,
+  `nb_parts` int(9) default NULL,
+  KEY `splitlot` (`splitlot_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `temp_serie2`
+--
+
+DROP TABLE IF EXISTS `temp_serie2`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `temp_serie2` (
+  `product_name` varchar(255) default NULL,
+  `lot_id` varchar(255) default NULL,
+  `wafer_id` varchar(255) default NULL,
+  `splitlot_id` int(10) unsigned NOT NULL,
+  `site_no` smallint(5) unsigned NOT NULL,
+  `nb_parts` int(9) default NULL,
+  KEY `splitlot` (`splitlot_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `temp_serie2_sum`
+--
+
+DROP TABLE IF EXISTS `temp_serie2_sum`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `temp_serie2_sum` (
+  `product_name` varchar(255) default NULL,
+  `lot_id` varchar(255) default NULL,
+  `wafer_id` varchar(255) default NULL,
+  `splitlot_id` int(10) unsigned NOT NULL,
+  `site_no` smallint(5) unsigned NOT NULL,
+  `nb_parts` int(9) default NULL,
+  KEY `splitlot` (`splitlot_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `vy_promis_info`
+--
+
+DROP TABLE IF EXISTS `vy_promis_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `vy_promis_info` (
+  `DS_PART_NUMBER` varchar(30) NOT NULL,
+  `DS_PART_NUMBER_REV` varchar(10) NOT NULL,
+  `EQUIPMENT_ID` varchar(30) NOT NULL default 'N/A',
+  `MASK_APPLICATION` varchar(30) NOT NULL default 'N/A',
+  `MASK_DEVICE_POLARITY` char(1) NOT NULL,
+  `MASK_PROCESS_TECH` varchar(50) NOT NULL default 'N/A',
+  `MASK_DEVICE_DESIGN` varchar(50) NOT NULL,
+  `MASK_PITCH_SIZE` varchar(30) NOT NULL default 'N/A',
+  `MASK_CELL_DENSITY` varchar(30) NOT NULL default 'N/A',
+  `MASK_TRENCH_WIDTH` varchar(30) NOT NULL default 'N/A',
+  `BACKSIDE_METAL` varchar(30) NOT NULL,
+  `WAFER_THICKNESS` varchar(30) NOT NULL,
+  `BREAKDOWN_VOLTAGE` smallint(5) unsigned NOT NULL,
+  `VTH_TARGET` float NOT NULL,
+  `GATE_OXYDE_THICKNESS` smallint(5) unsigned NOT NULL,
+  `PROCESS_TECHNOLOGY` varchar(30) NOT NULL,
+  `PROCESS_FRONT_METAL` varchar(30) NOT NULL default 'N/A',
+  `SPECIAL_FEATURE` varchar(100) NOT NULL default 'N/A',
+  `WAFER_SIZE` smallint(5) unsigned NOT NULL,
+  `STEPPER` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `vy_promis_info_debug`
+--
+
+DROP TABLE IF EXISTS `vy_promis_info_debug`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `vy_promis_info_debug` (
+  `DS_PART_NUMBER` varchar(30) NOT NULL,
+  `DS_PART_NUMBER_REV` varchar(10) NOT NULL,
+  `EQUIPMENT_ID` varchar(30) NOT NULL default 'N/A',
+  `MASK_APPLICATION` varchar(30) NOT NULL default 'N/A',
+  `MASK_DEVICE_POLARITY` char(1) NOT NULL,
+  `MASK_PROCESS_TECH` varchar(50) NOT NULL default 'N/A',
+  `MASK_DEVICE_DESIGN` varchar(50) NOT NULL,
+  `MASK_PITCH_SIZE` varchar(30) NOT NULL default 'N/A',
+  `MASK_CELL_DENSITY` varchar(30) NOT NULL default 'N/A',
+  `MASK_TRENCH_WIDTH` varchar(30) NOT NULL default 'N/A',
+  `BACKSIDE_METAL` varchar(30) NOT NULL,
+  `WAFER_THICKNESS` varchar(30) NOT NULL,
+  `BREAKDOWN_VOLTAGE` smallint(5) unsigned NOT NULL,
+  `VTH_TARGET` float NOT NULL,
+  `GATE_OXYDE_THICKNESS` smallint(5) unsigned NOT NULL,
+  `PROCESS_TECHNOLOGY` varchar(30) NOT NULL,
+  `PROCESS_FRONT_METAL` varchar(30) NOT NULL default 'N/A',
+  `SPECIAL_FEATURE` varchar(100) NOT NULL default 'N/A',
+  `WAFER_SIZE` smallint(5) unsigned NOT NULL,
+  `STEPPER` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_ftest_info`
+--
+
+DROP TABLE IF EXISTS `wt_ftest_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_ftest_info` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `FTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `TNUM` int(10) unsigned NOT NULL default '0',
+  `TNAME` varchar(255) NOT NULL default '',
+  `TESTSEQ` smallint(5) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_ftest_results`
+--
+
+DROP TABLE IF EXISTS `wt_ftest_results`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_ftest_results` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `FTEST_INFO_ID` smallint(5) unsigned NOT NULL,
+  `RUN_ID` smallint(5) unsigned NOT NULL default '0',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `VECT_NAM` varchar(255) NOT NULL default '',
+  `VECT_OFF` smallint(6) default NULL,
+  KEY `WT_FTEST_RESULTS` (`SPLITLOT_ID`,`FTEST_INFO_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_ftest_stats_samples`
+--
+
+DROP TABLE IF EXISTS `wt_ftest_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_ftest_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `FTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `FAIL_COUNT` mediumint(8) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_ftest_stats_summary`
+--
+
+DROP TABLE IF EXISTS `wt_ftest_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_ftest_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `FTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned default NULL,
+  `FAIL_COUNT` mediumint(8) unsigned default NULL,
+  `TTIME` int(10) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_hbin`
+--
+
+DROP TABLE IF EXISTS `wt_hbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_hbin` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `HBIN_NAME` varchar(255) NOT NULL default '',
+  `HBIN_CAT` char(1) default NULL,
+  KEY `splitlot_id` (`SPLITLOT_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_hbin_stats_samples`
+--
+
+DROP TABLE IF EXISTS `wt_hbin_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_hbin_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  KEY `splitlot_id` USING BTREE (`SPLITLOT_ID`,`SITE_NO`,`HBIN_NO`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_hbin_stats_summary`
+--
+
+DROP TABLE IF EXISTS `wt_hbin_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_hbin_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `BIN_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  KEY `splitlot_id` USING BTREE (`SPLITLOT_ID`,`SITE_NO`,`HBIN_NO`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_lot`
+--
+
+DROP TABLE IF EXISTS `wt_lot`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_lot` (
+  `LOT_ID` varchar(255) NOT NULL default '',
+  `TRACKING_LOT_ID` varchar(255) default NULL,
+  `PRODUCT_NAME` varchar(255) default NULL,
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_GOOD` mediumint(8) NOT NULL default '0',
+  `FLAGS` binary(2) default NULL,
+  KEY `PRODUCT_NAME` (`PRODUCT_NAME`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_lot_hbin`
+--
+
+DROP TABLE IF EXISTS `wt_lot_hbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_lot_hbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `HBIN_NAME` varchar(255) NOT NULL default '',
+  `HBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_lot_sbin`
+--
+
+DROP TABLE IF EXISTS `wt_lot_sbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_lot_sbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NAME` varchar(255) NOT NULL default '',
+  `SBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_metadata_link`
+--
+
+DROP TABLE IF EXISTS `wt_metadata_link`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_metadata_link` (
+  `LINK_NAME` varchar(255) NOT NULL,
+  `GEXDB_TABLE1_NAME` varchar(255) NOT NULL,
+  `GEXDB_FIELD1_FULLNAME` varchar(255) NOT NULL,
+  `GEXDB_TABLE2_NAME` varchar(255) NOT NULL,
+  `GEXDB_FIELD2_FULLNAME` varchar(255) NOT NULL,
+  `GEXDB_LINK_NAME` varchar(255) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_metadata_mapping`
+--
+
+DROP TABLE IF EXISTS `wt_metadata_mapping`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_metadata_mapping` (
+  `META_NAME` varchar(255) NOT NULL,
+  `GEX_NAME` varchar(255) default NULL,
+  `GEXDB_TABLE_NAME` varchar(255) NOT NULL,
+  `GEXDB_FIELD_FULLNAME` varchar(255) NOT NULL,
+  `GEXDB_LINK_NAME` varchar(255) default NULL,
+  `GEX_DISPLAY_IN_GUI` char(1) NOT NULL default 'Y'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_mptest_info`
+--
+
+DROP TABLE IF EXISTS `wt_mptest_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_mptest_info` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `TNUM` int(10) unsigned NOT NULL default '0',
+  `TNAME` varchar(255) NOT NULL default '',
+  `TPIN_ARRAYINDEX` smallint(6) NOT NULL default '0',
+  `UNITS` varchar(255) NOT NULL default '',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `LL` float default NULL,
+  `HL` float default NULL,
+  `TESTSEQ` smallint(5) unsigned default NULL,
+  `SPEC_LL` float default NULL,
+  `SPEC_HL` float default NULL,
+  `SPEC_TARGET` float default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_mptest_limits`
+--
+
+DROP TABLE IF EXISTS `wt_mptest_limits`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_mptest_limits` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `LL` float NOT NULL default '0',
+  `HL` float NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_mptest_results`
+--
+
+DROP TABLE IF EXISTS `wt_mptest_results`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_mptest_results` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `RUN_ID` smallint(5) unsigned NOT NULL default '0',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `VALUE` float NOT NULL default '0',
+  `TPIN_PMRINDEX` smallint(6) default NULL,
+  KEY `WT_MPTEST_RESULTS` (`SPLITLOT_ID`,`MPTEST_INFO_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_mptest_stats_samples`
+--
+
+DROP TABLE IF EXISTS `wt_mptest_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_mptest_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `FAIL_COUNT` mediumint(8) unsigned default NULL,
+  `MIN_VALUE` float default NULL,
+  `MAX_VALUE` float default NULL,
+  `SUM` float default NULL,
+  `SQUARE_SUM` float default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_mptest_stats_summary`
+--
+
+DROP TABLE IF EXISTS `wt_mptest_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_mptest_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `MPTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `FAIL_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `MIN_VALUE` float default NULL,
+  `MAX_VALUE` float default NULL,
+  `SUM` float default NULL,
+  `SQUARE_SUM` float default NULL,
+  `TTIME` int(10) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_parts_stats_samples`
+--
+
+DROP TABLE IF EXISTS `wt_parts_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_parts_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_GOOD` mediumint(8) NOT NULL default '0',
+  KEY `SPLITLOT_ID` USING BTREE (`SPLITLOT_ID`,`SITE_NO`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_parts_stats_summary`
+--
+
+DROP TABLE IF EXISTS `wt_parts_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_parts_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_GOOD` mediumint(8) default NULL,
+  `NB_RTST` mediumint(8) default NULL,
+  KEY `SPLITLOT_ID` USING BTREE (`SPLITLOT_ID`,`SITE_NO`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_prod_alarm`
+--
+
+DROP TABLE IF EXISTS `wt_prod_alarm`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_prod_alarm` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL,
+  `ALARM_CAT` varchar(255) NOT NULL,
+  `ALARM_TYPE` varchar(255) NOT NULL,
+  `ITEM_NO` int(10) unsigned NOT NULL,
+  `ITEM_NAME` varchar(255) default NULL,
+  `FLAGS` binary(2) NOT NULL,
+  `LCL` float NOT NULL default '0',
+  `UCL` float NOT NULL default '0',
+  `VALUE` float NOT NULL default '0',
+  `UNITS` varchar(10) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_ptest_info`
+--
+
+DROP TABLE IF EXISTS `wt_ptest_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_ptest_info` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `TNUM` int(10) unsigned NOT NULL default '0',
+  `TNAME` varchar(255) NOT NULL default '',
+  `UNITS` varchar(255) NOT NULL default '',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `LL` float default NULL,
+  `HL` float default NULL,
+  `TESTSEQ` smallint(5) unsigned default NULL,
+  `SPEC_LL` float default NULL,
+  `SPEC_HL` float default NULL,
+  `SPEC_TARGET` float default NULL,
+  KEY `SPLITLOT_ID` (`SPLITLOT_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_ptest_limits`
+--
+
+DROP TABLE IF EXISTS `wt_ptest_limits`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_ptest_limits` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `LL` float NOT NULL default '0',
+  `HL` float NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_ptest_results`
+--
+
+DROP TABLE IF EXISTS `wt_ptest_results`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_ptest_results` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `RUN_ID` smallint(5) unsigned NOT NULL default '0',
+  `FLAGS` binary(1) NOT NULL default '\0',
+  `VALUE` float default NULL,
+  KEY `WT_PTEST_RESULTS` (`SPLITLOT_ID`,`PTEST_INFO_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_ptest_stats_samples`
+--
+
+DROP TABLE IF EXISTS `wt_ptest_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_ptest_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  `FAIL_COUNT` mediumint(8) unsigned default NULL,
+  `MIN_VALUE` float default NULL,
+  `MAX_VALUE` float default NULL,
+  `SUM` float default NULL,
+  `SQUARE_SUM` float default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_ptest_stats_summary`
+--
+
+DROP TABLE IF EXISTS `wt_ptest_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_ptest_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `PTEST_INFO_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `EXEC_COUNT` mediumint(8) unsigned default NULL,
+  `FAIL_COUNT` mediumint(8) unsigned default NULL,
+  `MIN_VALUE` float default NULL,
+  `MAX_VALUE` float default NULL,
+  `SUM` float default NULL,
+  `SQUARE_SUM` float default NULL,
+  `TTIME` int(10) unsigned default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_run`
+--
+
+DROP TABLE IF EXISTS `wt_run`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_run` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `RUN_ID` smallint(5) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `PART_ID` varchar(255) default NULL,
+  `PART_X` smallint(6) default NULL,
+  `PART_Y` smallint(6) default NULL,
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NO` smallint(5) unsigned default NULL,
+  `TTIME` int(10) unsigned default NULL,
+  `TESTS_EXECUTED` smallint(5) unsigned NOT NULL default '0',
+  `TESTS_FAILED` smallint(5) unsigned NOT NULL default '0',
+  `FIRSTFAIL_TNUM` int(10) unsigned default NULL,
+  `FIRSTFAIL_TNAME` varchar(255) default NULL,
+  `RETEST_INDEX` tinyint(3) unsigned NOT NULL default '0',
+  KEY `WT_RUN` (`SPLITLOT_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_sbin`
+--
+
+DROP TABLE IF EXISTS `wt_sbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_sbin` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NAME` varchar(255) NOT NULL default '',
+  `SBIN_CAT` char(1) default NULL,
+  KEY `splitlot_id` (`SPLITLOT_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_sbin_stats_samples`
+--
+
+DROP TABLE IF EXISTS `wt_sbin_stats_samples`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_sbin_stats_samples` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  KEY `splitlot_id` USING BTREE (`SPLITLOT_ID`,`SITE_NO`,`SBIN_NO`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_sbin_stats_summary`
+--
+
+DROP TABLE IF EXISTS `wt_sbin_stats_summary`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_sbin_stats_summary` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL default '0',
+  `SITE_NO` smallint(5) NOT NULL default '1',
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `BIN_COUNT` mediumint(8) unsigned NOT NULL default '0',
+  KEY `splitlot_id` USING BTREE (`SPLITLOT_ID`,`SITE_NO`,`SBIN_NO`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_sbl`
+--
+
+DROP TABLE IF EXISTS `wt_sbl`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_sbl` (
+  `SBL_ID` int(10) unsigned NOT NULL,
+  `BIN_NO` smallint(3) unsigned NOT NULL,
+  `BIN_NAME` varchar(255) default NULL,
+  `LL` smallint(5) NOT NULL default '-1',
+  `HL` smallint(5) NOT NULL default '-1'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_sbl_set`
+--
+
+DROP TABLE IF EXISTS `wt_sbl_set`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_sbl_set` (
+  `SBL_ID` int(10) unsigned NOT NULL,
+  `PRODUCT_ID` varchar(255) NOT NULL,
+  `CREATION_DATE` datetime NOT NULL,
+  `FILE_NAME` varchar(255) default NULL,
+  `USER_COMMENT` varchar(255) default NULL,
+  PRIMARY KEY  (`SBL_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_splitlot`
+--
+
+DROP TABLE IF EXISTS `wt_splitlot`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_splitlot` (
+  `SPLITLOT_ID` int(10) unsigned NOT NULL auto_increment,
+  `LOT_ID` varchar(255) NOT NULL default '',
+  `SUBLOT_ID` varchar(255) NOT NULL default '',
+  `SETUP_T` int(10) NOT NULL default '0',
+  `START_T` int(10) NOT NULL default '0',
+  `FINISH_T` int(10) NOT NULL default '0',
+  `WEEK_NB` tinyint(3) NOT NULL default '0',
+  `YEAR` smallint(5) NOT NULL default '0',
+  `STAT_NUM` tinyint(3) unsigned NOT NULL default '0',
+  `TESTER_NAME` varchar(255) NOT NULL default '',
+  `TESTER_TYPE` varchar(255) NOT NULL default '',
+  `FLAGS` binary(2) NOT NULL default '\0\0',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_GOOD` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_SAMPLES` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_SAMPLES_GOOD` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_SUMMARY` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_SUMMARY_GOOD` mediumint(8) NOT NULL default '0',
+  `DATA_PROVIDER` varchar(255) default '',
+  `DATA_TYPE` varchar(255) default '',
+  `PROD_DATA` char(1) NOT NULL default 'Y',
+  `RETEST_INDEX` tinyint(3) unsigned NOT NULL default '0',
+  `RETEST_HBINS` varchar(255) default NULL,
+  `REWORK_CODE` tinyint(3) unsigned NOT NULL default '0',
+  `JOB_NAM` varchar(255) NOT NULL default '',
+  `JOB_REV` varchar(255) NOT NULL default '',
+  `OPER_NAM` varchar(255) NOT NULL default '',
+  `EXEC_TYP` varchar(255) NOT NULL default '',
+  `EXEC_VER` varchar(255) NOT NULL default '',
+  `TEST_COD` varchar(255) NOT NULL default '',
+  `FACIL_ID` varchar(255) NOT NULL default '',
+  `TST_TEMP` varchar(255) NOT NULL default '',
+  `MODE_COD` char(1) default NULL,
+  `RTST_COD` char(1) default NULL,
+  `PROT_COD` char(1) default NULL,
+  `BURN_TIM` int(10) default NULL,
+  `CMOD_COD` char(1) default NULL,
+  `PART_TYP` varchar(255) default NULL,
+  `USER_TXT` varchar(255) default NULL,
+  `AUX_FILE` varchar(255) default NULL,
+  `PKG_TYP` varchar(255) default NULL,
+  `FAMLY_ID` varchar(255) default NULL,
+  `DATE_COD` varchar(255) default NULL,
+  `FLOOR_ID` varchar(255) default NULL,
+  `PROC_ID` varchar(255) default NULL,
+  `OPER_FRQ` varchar(255) default NULL,
+  `SPEC_NAM` varchar(255) default NULL,
+  `SPEC_VER` varchar(255) default NULL,
+  `FLOW_ID` varchar(255) default NULL,
+  `SETUP_ID` varchar(255) default NULL,
+  `DSGN_REV` varchar(255) default NULL,
+  `ENG_ID` varchar(255) default NULL,
+  `ROM_COD` varchar(255) default NULL,
+  `SERL_NUM` varchar(255) default NULL,
+  `SUPR_NAM` varchar(255) default NULL,
+  `NB_SITES` tinyint(3) unsigned NOT NULL default '1',
+  `HEAD_NUM` tinyint(3) unsigned default NULL,
+  `HANDLER_TYP` varchar(255) default NULL,
+  `HANDLER_ID` varchar(255) default NULL,
+  `CARD_TYP` varchar(255) default NULL,
+  `CARD_ID` varchar(255) default NULL,
+  `LOADBOARD_TYP` varchar(255) default NULL,
+  `LOADBOARD_ID` varchar(255) default NULL,
+  `DIB_TYP` varchar(255) default NULL,
+  `DIB_ID` varchar(255) default NULL,
+  `CABLE_TYP` varchar(255) default NULL,
+  `CABLE_ID` varchar(255) default NULL,
+  `CONTACTOR_TYP` varchar(255) default NULL,
+  `CONTACTOR_ID` varchar(255) default NULL,
+  `LASER_TYP` varchar(255) default NULL,
+  `LASER_ID` varchar(255) default NULL,
+  `EXTRA_TYP` varchar(255) default NULL,
+  `EXTRA_ID` varchar(255) default NULL,
+  `FILE_HOST_ID` int(10) unsigned default '0',
+  `FILE_PATH` varchar(255) NOT NULL default '',
+  `FILE_NAME` varchar(255) NOT NULL default '',
+  `VALID_SPLITLOT` char(1) NOT NULL default 'N',
+  `INSERTION_TIME` int(10) unsigned NOT NULL default '0',
+  `SUBCON_LOT_ID` varchar(255) NOT NULL default '',
+  `WAFER_ID` varchar(255) default NULL,
+  `SYL_ID` int(10) unsigned default '0',
+  `SBL_ID` int(10) unsigned default '0',
+  `INCREMENTAL_UPDATE` varchar(255) default NULL,
+  PRIMARY KEY  (`SPLITLOT_ID`),
+  KEY `lot_id` (`LOT_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=604738 DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_syl_set`
+--
+
+DROP TABLE IF EXISTS `wt_syl_set`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_syl_set` (
+  `SYL_ID` int(10) unsigned NOT NULL,
+  `PRODUCT_ID` varchar(255) NOT NULL,
+  `CREATION_DATE` datetime NOT NULL,
+  `FILE_NAME` varchar(255) default NULL,
+  `USER_COMMENT` varchar(255) default NULL,
+  `LL` smallint(5) NOT NULL default '-1',
+  `HL` smallint(5) NOT NULL default '-1',
+  PRIMARY KEY  (`SYL_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_wafer_hbin`
+--
+
+DROP TABLE IF EXISTS `wt_wafer_hbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_wafer_hbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `WAFER_ID` varchar(255) default NULL,
+  `HBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `HBIN_NAME` varchar(255) NOT NULL default '',
+  `HBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_wafer_info`
+--
+
+DROP TABLE IF EXISTS `wt_wafer_info`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_wafer_info` (
+  `LOT_ID` varchar(255) NOT NULL default '',
+  `WAFER_ID` varchar(255) default NULL,
+  `FAB_ID` varchar(255) default NULL,
+  `FRAME_ID` varchar(255) default NULL,
+  `MASK_ID` varchar(255) default NULL,
+  `WAFER_SIZE` float default NULL,
+  `DIE_HT` float default NULL,
+  `DIE_WID` float default NULL,
+  `WAFER_UNITS` tinyint(3) unsigned default NULL,
+  `WAFER_FLAT` char(1) default NULL,
+  `CENTER_X` smallint(5) unsigned default NULL,
+  `CENTER_Y` smallint(5) unsigned default NULL,
+  `POS_X` char(1) default NULL,
+  `POS_Y` char(1) default NULL,
+  `GROSS_DIE` mediumint(8) NOT NULL default '0',
+  `NB_PARTS` mediumint(8) NOT NULL default '0',
+  `NB_PARTS_GOOD` mediumint(8) NOT NULL default '0',
+  `FLAGS` binary(2) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_wafer_sbin`
+--
+
+DROP TABLE IF EXISTS `wt_wafer_sbin`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_wafer_sbin` (
+  `LOT_ID` varchar(255) NOT NULL,
+  `WAFER_ID` varchar(255) default NULL,
+  `SBIN_NO` smallint(5) unsigned NOT NULL default '0',
+  `SBIN_NAME` varchar(255) NOT NULL default '',
+  `SBIN_CAT` char(1) default NULL,
+  `NB_PARTS` mediumint(8) unsigned NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_wyr`
+--
+
+DROP TABLE IF EXISTS `wt_wyr`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_wyr` (
+  `SITE_NAME` varchar(255) NOT NULL,
+  `WEEK_NB` tinyint(3) default NULL,
+  `YEAR` smallint(5) default NULL,
+  `DATE_IN` datetime default NULL,
+  `DATE_OUT` datetime default NULL,
+  `PRODUCT_NAME` varchar(255) default NULL,
+  `PROGRAM_NAME` varchar(255) default NULL,
+  `TESTER_NAME` varchar(255) default NULL,
+  `LOT_ID` varchar(255) default NULL,
+  `SUBCON_LOT_ID` varchar(255) default NULL,
+  `USER_SPLIT` varchar(1024) default NULL,
+  `YIELD` float default '0',
+  `PARTS_RECEIVED` int(10) default '0',
+  `PRETEST_REJECTS` int(10) default '0',
+  `PRETEST_REJECTS_SPLIT` varchar(1024) default NULL,
+  `PARTS_TESTED` int(10) default '0',
+  `PARTS_PASS` int(10) default '0',
+  `PARTS_PASS_SPLIT` varchar(1024) default NULL,
+  `PARTS_FAIL` int(10) default '0',
+  `PARTS_FAIL_SPLIT` varchar(1024) default NULL,
+  `PARTS_RETEST` int(10) default '0',
+  `PARTS_RETEST_SPLIT` varchar(1024) default NULL,
+  `INSERTIONS` int(10) default '0',
+  `POSTTEST_REJECTS` int(10) default '0',
+  `POSTTEST_REJECTS_SPLIT` varchar(1024) default NULL,
+  `PARTS_SHIPPED` int(10) default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `wt_wyr_format`
+--
+
+DROP TABLE IF EXISTS `wt_wyr_format`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `wt_wyr_format` (
+  `SITE_NAME` varchar(255) NOT NULL,
+  `COLUMN_ID` tinyint(3) NOT NULL,
+  `COLUMN_NB` tinyint(3) NOT NULL,
+  `COLUMN_NAME` varchar(255) NOT NULL,
+  `DATA_TYPE` varchar(255) NOT NULL,
+  `DISPLAY` char(1) NOT NULL default 'Y'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 PACK_KEYS=1;
+SET character_set_client = @saved_cs_client;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2008-12-15  9:24:24

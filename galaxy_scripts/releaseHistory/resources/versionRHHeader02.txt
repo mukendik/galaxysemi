@@ -1,0 +1,8 @@
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">__ISSUE_TYPE__</font></B></td>
+            </tr>
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+            </tr>

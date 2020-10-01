@@ -1,0 +1,107 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>gexBuildReport<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><a href="gex6.htm"><br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library
+      </a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>gexBuildReport(
+	[const show_page])  // page to show</pre>
+      <p>Starts data analysis and generates the report.&nbsp;If <b>show_page</b>&nbsp; is 
+      omitted, the report home page is shown.&nbsp;</p>
+      <p>For a complete example, take a look at the ready-to-use template <a href="wafermap_csl.htm">
+      wafermap.csl</a></p>
+      <table border="1" width="646">
+        <tr>
+          <td bgcolor="#0034AA" align="center" width="102"><font color="#ffffff"><b>show_page</b></font></td>
+          <td bgColor="#0034aa" width="528"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="102" align="center"><b>hide</b> or<b><br>
+            none</b></td>
+          <td width="528">No page displayed, Examinator remains on the default 
+          page that launched the script.</td>
+        </tr>
+        <tr>
+          <td width="102" align="center"><b>home</b></td>
+          <td width="528">Launch report on its home page</td>
+        </tr>
+        <tr>
+          <td width="102" align="center"><b>global</b></td>
+          <td width="528">Launch report on the Global information page</td>
+        </tr>
+        <tr>
+          <td width="102" align="center"><b>statistics</b></td>
+          <td width="528">Launch report on the Test statistics page</td>
+        </tr>
+        <tr>
+          <td width="102" align="center"><b>histogram</b></td>
+          <td width="528">Launch report on the Histogram page</td>
+        </tr>
+        <tr>
+          <td width="102" align="center"><b>wafer</b></td>
+          <td width="528">Launch report on the Wafer map page</td>
+        </tr>
+        <tr>
+          <td width="102" align="center"><b>binning</b></td>
+          <td width="528">Launch report on the Binning page</td>
+        </tr>
+        <tr>
+          <td width="102" align="center"><b>pareto</b></td>
+          <td width="528">Launch report on the Pareto page</td>
+        </tr>
+        <tr>
+          <td width="102" align="center"><b>advanced</b></td>
+          <td width="528">Launch report on the Advanced report page</td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p>Example:</p>
+      <pre>// Calls user function to set options
+SetReportOptions();
+// Calls user function to set report type to generate
+SetReportType();
+// Call GEX function to analyze data+create report
+gexBuildReport('home');
+sysLog('Report Generated!');
+
+</pre>
+      <pre></pre>
+      <pre></pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

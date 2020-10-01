@@ -1,0 +1,84 @@
+<html>
+<head>
+<title></title>
+</head>
+<body topmargin="6">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" BGCOLOR="#1F84CA">
+  <tr>
+    <td width="65"><b><img border="0" src="../../html/images/logo.png" width="64" height="32"></b></td>
+    <td width="100%">
+      <h2 align="center"><b>Welcome
+to<br>
+	  Yield-Man!<br>
+      </b>
+      </h2>
+    </td>
+    <td width="65" align="right"><b><img border="0" src="../../html/images/logo.png" width="64" height="32"></b></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td width="68%">
+      <p align="left">
+<b><a name="Client">Client/Server connection</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+From the current connection page. You have to enter the details to allow 
+Yield-Man to connect to the <b>gex-lm</b> license manager process:</p>
+<ol>
+  <li>
+    <p align="left">Enter the license server name or IP address</li>
+  <li>
+    <p align="left">Enter the communication port # (Socket port#)</li>
+  <li>
+    <p align="left">Click the 'Next' button</li>
+</ol>
+    <p align="left"><a name="GEX arguments at launch time"><b>A</b></a><b><a name="GEX arguments at launch time">rguments 
+    at launch time</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+	The Yield-Man application supports launch time arguments that can be very
+    convenient:
+<table border="1" width="100%">
+  <tr>
+    <td width="24%" bgcolor="#FFFFCC"><b>Line</b></td>
+    <td width="76%" bgcolor="#FFFFCC"><b>Description</b></td>
+  </tr>
+  <tr>
+    <td width="24%">gex -WYM</td>
+	<td width="76%">Displays Yield-Man Welcome page. Lets you reset the running mode
+      and/or server name+port number.</td>
+  </tr>
+  </table>
+  <p align="left">eg: <b>gex -WYM</b> will let you display Yield-Man welcome page
+    and allows to select any running mode available.<p align="left">
+<b><br>
+<a name="GEX-LM License manager">GEX-LM License manager</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+The gex-lm application handles all the floating license management and authorization
+mechanisms. It is installed with the Examinator-Pro data analysis 
+package. It must be running on the server prior to running any client application
+(Yield-Man or GEX-LS). This application communicates with the other software using
+the TCP/IP protocol. The only setting you may want/need to change is the socket
+port number used for the communication channel. If GEX-LM is launched without
+any argument, the default socket port 4242 is used. To force the application to
+use a different port, simply launch the application as follows:<p align="left">
+gex-lm
+-port &lt;PortNumber&gt;&nbsp;&nbsp;&nbsp;&nbsp; where &lt;PortNumber&gt; is the
+decimal Socket port number to use.<p align="left">eg: gex-lm -port 4243<p align="left"><b><a name="GEX-LS License status">
+GEX-LS
+License status</a></b><br>
+<img border="0" src="../../html/images/ruler.png" width="350" height="8">
+<br>
+You can see the current license usage at any time launching the client
+application gex-ls. When executed, simply specify the server name (or IP
+address) that is running the gex-lm application, and the socket port number used
+to establish the communication (default is 4242 unless you have specified a
+custom number when launching the gex-lm application on the server).
+      <p align="left">
+      &nbsp;</td>
+  </tr>
+</table>
+    </body>
+</html>

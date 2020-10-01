@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>MDE Main</title>
+</head>
+
+<body>
+
+<p><b>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../../../../html/images/assistant.png" width="120" height="114" ></a><font size="5">MASA MDE Models: Introduction to MDE models</font><br>
+      </b>
+<img border="0" src="../../../../html/images/ruler.png" width="616" height="8"> </p>
+<p>&nbsp;</p>
+
+<p><font size="4">What is an MDE model?</font></p>
+<p>An MDE model is a representation that <b>captures the statistical characteristics
+of a reference dataset</b> of sample test vectors and allows for the analysis of
+all newly
+encountered test vectors to <b>decide whether they are normal or abnormal</b>
+with respect to the reference dataset.</p>
+<p>Hence, an MDE analysis is a sort of novel <b>multivariate analysis</b>
+that has the following advantages over classical approaches such as T2/Hotelling:</p>
+<ul>
+  <li>the user has only one<b> parameter to set</b></li>
+  <li>equally good performance is achieved both on <b>highly non-gaussian data
+    distributions</b> and on <b>gaussian data distributions</b></li>
+</ul>
+<p> MDE analysis is applied to vectors of <b>Inline Tests</b>, possibly
+measured at a number of different locations on a wafer, thus making it possible to <b>detect abnormal
+wafer patterns</b> that could not be detected by
+a univariate analysis <b>without complicated parameter setting procedures</b>.</p>
+
+<p>For each test vector, an MDE model outputs a <b>MDE abnormality score</b>. If a
+test vector has an <b>MDE abnormality score</b> of <i>x</i>, this means
+that,
+according to the MDE model,&nbsp; (100.<i>x</i>)% of the reference test vectors are more
+normal than this vector. For example, <b>an abnormality score of 0.99 indicates
+that only 1% of the reference vectors are more abnormal than the analyzed vector</b>. In
+this case, if the user has set the MDE model's <b> rejection rate parameter</b> to
+1% (or more) the
+tested data will be considered abnormal, that is rejected.</p>
+
+<p><b><i>Note:</i></b> MDE stands for <b> Multivariate Density Estimation</b>.
+MDE analysis is a technology invented and developed by <a href="mde_aboutmasa.htm">MASA</a>.
+Examinator's MDE functionalities are provided by the <b>MASA MDE plug-in</b>
+component for off-line analysis.</p>
+<p>&nbsp;</p>
+<p><font size="4">How does an MDE model work?</font></p>
+<p>An MDE model is tuned during training over <b>a
+dataset of reference test vectors</b>. The reference dataset must be
+provided in one of the <a href="mde_inputs.htm"> supported inputs formats</a>.</p>
+<p>Although the reference set must be representative of the normal behavior of the process, all reference test
+vectors do not necessarily need be normal. This means that <b>it is not
+necessary to analyze and label every single test vector</b> as normal or
+abnormal before training an MDE model.</p>
+<p>To <a href="mde_training.htm"> train an MDE model</a> <b>only one user
+parameter</b> needs to be set, namely <b>the desired rejection rate</b>, namely the rate
+of wafers that the user wish to mark as abnormal in the reference set.</p>
+<p>Once trained, an MDE model is stored in the <a href="mde_modellibrary.htm">MDE
+model library</a>. MDE models are then used to estimate the <b>abnormality scores</b>
+of a <b>dataset of test vectors</b>, with respect to
+the reference set. The to-be-analyzed data must be
+provided in one of the <a href="mde_inputs.htm">supported inputs formats</a>.</p>
+<p>To <a href="mde_analysis.htm">perform an MDE analysis</a>, the user selects an MDE model among the available
+ones and the result of this <b>multivariate</b> analysis is displayed in
+different <a href="mde_reports.htm">MDE Reports</a> that show <b> the abnormality
+score distribution</b> and the <b>wafer result summaries</b>.</p>
+
+<p>The wafer result
+summary reports suggest <b> lists of tests that are farthest from reference</b>
+ and provide links to their corresponding standard <b>univariate reports</b>
+ provided by Examinator.</p>
+
+<p>&nbsp;</p>
+<p><a href="mde_help.htm"><i>More</i></a><a href="mde_help.htm"><i> questions
+about MASA MDE?</i></a></p>
+
+</body>
+
+</html>

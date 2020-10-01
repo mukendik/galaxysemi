@@ -1,0 +1,20 @@
+DTR:{"TYPE":"ML","TNAME":"Before first PTR: should be rejected at insertion","
+ TNUM":"1","HL":"1.000e-05","HBIN":"1"}
+DTR:{"TYPE":"ML","TNUM":"1","HL":"1.000e-05","HBIN":"1"}
+DTR:{"TYPE":"ML","TNAME":"Not a ML type: this DTR should be processed at inser
+ tion as a standard non-GS DTR","TNUM":"1","HL":"1.000e-05","HBIN":"1"}
+DTR:{"TYPE":"ML","TNAME":"LKC_Hi_VCC_PRE","TNUM":"1","HL":"1.000e-05","HBIN":"
+ 1"}
+DTR:{"TYPE":"ML","TNAME":"LKC_Hi_VCC_PRE","TNUM":"1","LL":"1.000e-05","HBIN":"
+ 1"}
+DTR:{"TYPE":"ML","TNUM":"1","HL":"2.000e-05","HBIN":"2"}
+DTR:{"TYPE":"ML","TNUM":"1","HL":"2.100e-05","HBIN":"4"}
+DTR:{"TYPE":"ML","TNUM":"1","HBIN":"7","SBIN":"5"}
+DTR:{"TYPE":"ML","TNAME":"IQB_B7_HPM_3P3_ET","TNUM":"3","LL":"1.000e-03","HL":
+ "5.000e-03","HBIN":"1"}
+DTR:{"TYPE":"ML","TNUM":"3","LL":"9.000e-04","HL":"5.500e-03","HBIN":"4"}
+DTR:{"TYPE":"ML","TNUM":"3","HBIN":"7","SBIN":"5"}
+DTR:{"TYPE":"ML","TNUM":"4","LL":"8.000e-03","HL":"1.600e-02","HBIN":"1"}
+DTR:{"TYPE":"ML","TNUM":"4","LL":"8.000e-03","HL":"1.800e-02","HBIN":"2"}
+DTR:{"TYPE":"ML","TNUM":"4","LL":"7.200e-03","HL":"1.980e-02","HBIN":"4"}
+DTR:{"TYPE":"ML","TNUM":"4","HBIN":"7","SBIN":"5"}

@@ -1,0 +1,361 @@
+<html>
+<head>
+<title>Data Pump</title>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../../html/images/assistant.png" width="120" height="114" ></a>Data 
+      insertion: Adding sorting keys<br>
+      Overwriting header info, etc...<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p align="left">The key for efficient data analysis is to have flexible 
+      and sharp filtering options. When data files are inserted into the 
+      database, they are first read so to extract  information that can later 
+      be used as index keys for fast data retrieval (indexed keys). Typical keys include:</p>
+      <ul>
+        <li>
+      <p align="left">LotID, Sublot ID</p>
+        </li>
+        <li>
+      <p align="left">Product ID, Process ID</p>
+        </li>
+        <li>
+      <p align="left">Tester name and type</p>
+        </li>
+        <li>
+      <p align="left">Program name and revision</p>
+        </li>
+        <li>
+      <p align="left">Operator name</p>
+        </li>
+        <li>
+      <p align="left">Temperature</p>
+        </li>
+        <li>
+      <p align="left">Frequency</p>
+        </li>
+      </ul>
+	  <p align="left">Yield-Man allows you to create configuration
+      files so header info of each data file inserted can be replaced on the 
+      fly. As a result, data inserted can have their header info adapted as 
+      needed. Furthermore, custom user keys can be created and allow users to 
+      create brand new filtering keys. E.g: wind speed or humidity rate, etc...</p>
+      <p align="left">How does data insertion work?</p>
+      <ol>
+        <li>
+	  <p align="left">Yield-Man looks for data files to import.</p>
+        </li>
+        <li>
+	  <p align="left">For each data file found, Yield-Man looks if a file with
+      the extension &quot;<b>.gexdbkeys</b>&quot; also exists (data file configuration file). If 
+      so, it uses it to overwrite the data file header info with the one found 
+	  in the file. This file is erased by Yield-Man after being successfully
+      read.</p>
+        </li>
+        <li>
+	  <p align="left">If no data file configuration file exists, then Yield-Man looks for a global configuration file to apply for any data file imported
+      from this folder. The global configuration file name is: &quot;<b>config.gexdbkeys</b>&quot;. 
+      If such file exists, then each data file found in this folder uses the 
+      keys found in it prior to be inserted into the database. This file is 
+	  never erased by Yield-Man.</p>
+        </li>
+        <li>
+      <p align="left">If no configuration file is found, then the data file is 
+      simply inserted 'as-is' into the database.<br>
+&nbsp;</p>
+        </li>
+      </ol>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="100%" bgcolor="#FFFF99"><b>Example1</b>:</td>
+        </tr>
+      </table>
+      <p align="left">Spooling folder includes files:</p>
+      <ul>
+        <li>
+      <p align="left">file1.stdf</p>
+        </li>
+        <li>
+      <p align="left">file1.stdf.gexdbkeys</p>
+        </li>
+        <li>
+      <p align="left">file2.stdf</p>
+        </li>
+      </ul>
+      <p align="left">In the above example, the file &quot;file1.stdf&quot; will be inserted 
+      into the database using the keys found in &quot;file1.stdf.gexdbkeys&quot;. However 
+      &quot;file2.stdf&quot; will be directly inserted into the database without any 
+      substitution of its header info as no configuration file exists.<br>
+&nbsp;</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="100%" bgcolor="#FFFF99"><b>Example2</b>:</td>
+        </tr>
+      </table>      
+      <p align="left">Spooling folder includes files:</p>
+      <ul>
+        <li>
+      <p align="left">file1.stdf</p>
+        </li>
+        <li>
+      <p align="left">file2.stdf</p>
+        </li>
+        <li>
+      <p align="left">config.gexdbkeys</p>
+        </li>
+      </ul>
+      <p align="left">In the above example, the files &quot;file1.stdf&quot; and &quot;file2.stdf&quot; 
+      will be inserted into the database using the keys found in the global 
+      configuration file &quot;config.gexdbkeys&quot;. </p>
+      <h1 align="left">Configuration file format<b>
+      </b></h1>
+      <p align="left"><img border="0" src="../../html/images/ruler.png" width="616" height="8"></p>
+      <p align="left">The configuration file is an ASCII CSV file (ASCII with coma 
+      separated fields) with each line in the format:</p>
+      <blockquote>
+      <p align="left"><b><font face="Courier">&lt;string&gt; , &lt;string&gt;</font></b></p>
+      </blockquote>
+      <p align="left">The first column holds the key name (eg: Product) and the 
+      second column holds the value (eg: RF678C0). This file doesn't need to include all keys available; only 
+      keys listed in this file are used to overwrite the data file ones. The key 
+      names are NOT case sensitive.<br>
+&nbsp;</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="100%" bgcolor="#FFFF99"><b>Example of configuration file:</b></td>
+        </tr>
+      </table>      
+      <blockquote>
+      <p align="left"><font face="Courier">Product&nbsp; ,&nbsp; RTF507<br>
+      Temperature,&nbsp; ROOM<br>
+      Family ,&nbsp; RFIC device</font></p>
+      <p align="left">&nbsp;</p>
+      </blockquote>
+      <h1 align="left">Configuration file keys<b>
+      </b></h1>
+      <p align="left"><img border="0" src="../../html/images/ruler.png" width="616" height="8"></p>
+      <p align="left">The configuration file can include any of the following 
+      keys:</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="37%" bgcolor="#FFFF99" align="center"><b>Key name</b></td>
+          <td width="63%" bgcolor="#FFFF99"><b>Description/ Typical content</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">DataOrigin</font></b></td>
+          <td width="63%">Holds the data origin. Typically the company 
+          name/location where the data where collected.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Family</font></b></td>
+          <td width="63%">FamilyID string. Usually product family name. E.g.: <b>
+          DVD</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Lot</font></b></td>
+          <td width="63%">LotID string. E.g.: <b>E4560PL365-W</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">TrackingLot</font></b></td>
+          <td width="63%">Tracking LotID string. E.g.: <b>E4560PL365</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">SubconLot</font></b></td>
+          <td width="63%">Subcontractor LotID string. E.g.: <b>GX_E4560PLW</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Product</font></b></td>
+          <td width="63%">Product name. E.g: <b>NE555</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Sublot</font></b></td>
+          <td width="63%">Sub lot ID string. E.g.: <b>1</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Facility</font></b></td>
+          <td width="63%">Facility ID string. Typically Fab name or Test factory 
+          name, etc.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Floor</font></b></td>
+          <td width="63%">Floor ID string. Typically Manufacturing or Test floor 
+          ID</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">FrequencyStep</font></b></td>
+          <td width="63%">Typically Operation frequency or Step. E.g: <b>Step5-a</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">PackageType</font></b></td>
+          <td width="63%">Device package type. E.g: <b>FLAT</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Process</font></b></td>
+          <td width="63%">Process ID. Typically Manufacturing or Test Process ID</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">LoadBoard</font></b></td>
+          <td width="63%">Testing load board name / serial number</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">LoadBoardType</font></b></td>
+          <td width="63%">Testing load board type. Typically device related</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">ProberName</font></b></td>
+          <td width="63%">Prober name / serial number</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">ProberType</font></b></td>
+          <td width="63%">Prober type. Typically prober brand name and model.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">ExtraName</font></b></td>
+          <td width="63%">Extra eauipment ID</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">ExtraType</font></b></td>
+          <td width="63%">Extra equipment type.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">ProgramName</font></b></td>
+          <td width="63%">Testing program name. E.g: <b>DVD</b> </td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">ProgramRevision</font></b></td>
+          <td width="63%">Testing program revision. E.g: <b>Revision 5.0.4 Build 
+          88</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Temperature</font></b></td>
+          <td width="63%">Temperature information. E.g: <b>ROOM</b> or <b>
+          75Celcius</b>, etc.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">TestingCode</font></b></td>
+          <td width="63%">Testing code. E.g: <b>Wafer</b>, or <b>Final</b>, etc.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">TesterName</font></b></td>
+          <td width="63%">Tester name / serial number</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">TesterType</font></b></td>
+          <td width="63%">Tester type. Typically tester brand name and model.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Wafer</font></b></td>
+          <td width="63%">WaferID string</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">BurninTime</font></b></td>
+          <td width="63%">Burn-in time. Typically a number in seconds. E.g: <b>
+          3600</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Operator</font></b></td>
+          <td width="63%">Operator name. E.g: <b>arthur-s</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">DateCode</font></b></td>
+          <td width="63%">Date Code.</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">SpecName</font></b></td>
+          <td width="63%">Test specification name.</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">DesignRevision</font></b></td>
+          <td width="63%">Device design revision.</b></td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">User1</font></b></td>
+          <td width="63%">User key for generic usage.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">User2</font></b></td>
+          <td width="63%">User key for generic usage.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">User3</font></b></td>
+          <td width="63%">User key for generic usage.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">User4</font></b></td>
+          <td width="63%">User key for generic usage.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">User5</font></b></td>
+          <td width="63%">User key for generic usage.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">RetestIndex</font></b></td>
+          <td width="63%">Final test: retest count. 0 if lot was not previously tested, 1 if 
+          first retest, 2 if lot 2nd retest (retest of first retest), etc.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">RetestBinList</font></b></td>
+          <td width="63%">Final test: list of hard bins retested in case of retest data. E.g: <b>4,9-12</b>.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Ft_YieldConsolidation_MissingPartsBin</font></b></td>
+          <td width="63%">Final test: hard bin to be used when consolidating test/retest data for missing parts
+		  (if nb of part in retest data &lt; nb parts with the retested hard bins in the retested data).</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Wt_YieldConsolidation_Rule</font></b></td>
+          <td width="63%">Wafer sort: rule to use when consolidating test/retest data at wafer sort level
+		  when a X/Y part has been retested. Possible values:
+		  <ul>
+		  <li>HighestBin (default): use highest bin nb.</li>
+		  <li>LowestBin: use lowest bin nb.</li>
+		  <li>LastPass: use last passing bin.</li>
+		  <li>FirstPass: use first passing bin.</li>
+		  <li>LastFail: use last failing bin.</li>
+		  <li>FirstFail: use first failing bin.</li>
+          <li> </li>
+		  </ul>
+		  </td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">DataType</font></b></td>
+          <td width="63%">Data type. Typically used to classify data in the GEXDB database for easy extraction.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">ProdData</font></b></td>
+          <td width="63%">Production data flag (Y/N). Only Production data is used when consolidating test/retest data.
+		  It is important that this field is set to Y when Production data is inserted. If this field is not overloaded,
+		  it is set to Y if the MIR.MODE_COD is P in the STDF file.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">FileName</font></b></td>
+          <td width="63%">Name of the inserted data file.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">Station</font></b></td>
+          <td width="63%">Tester station number.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">SetupTime</font></b></td>
+          <td width="63%">Date and time of job setup.</td>
+        </tr>
+        <tr>
+          <td width="37%" align="center"><b><font face="Courier">StartTime</font></b></td>
+          <td width="63%">Date and time of first part tested.</td>
+        </tr>
+      </table>
+      <p align="left">&nbsp;</p>
+      <p align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">&nbsp;
+      You have other questions? <a href="#_gex_wizard_assistant.htm">Click here!</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

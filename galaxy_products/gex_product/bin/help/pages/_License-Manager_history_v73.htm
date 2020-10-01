@@ -1,0 +1,376 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>License Manager V7.3 Release History</title>
+<style>
+.main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+.main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+.main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">License Manager family : V7.3 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(License Manager)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_License-Manager_history.htm">Back to main releases history page</a><br><br>
+<!-- toc -->
+      <a href="#V7.3 RC1">V7.3 RC1 (25 July 2014)</a><br>
+      <a href="#V7.3.B2">V7.3.B2 (3 July 2014)</a><br>
+      <a href="#V7.3.B">V7.3.B (19 May 2014)</a><br>
+      <a href="#V7.3.A">V7.3.A (11 April 2014)</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- contents -->
+
+<!-- Table with V7.3 RC1 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.3 RC1">V7.3 RC1 (25 July 2014)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-1097" SDNUM="1036;"><font face="Verdana">GCORE-1097</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Return of a borrowed license does not work when FlexNet listening port is changed</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">If a licensing administrator changes the FlexNet Manager listening port from TCP port 27000 to another port number (e.g. 4242), this will cause problems for Quantix-LA users when returning a borrowed license.  The problem occurs because the new port number is missing in the command generated by the Quantix-LA GUI.</font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.3.B2 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.3.B2">V7.3.B2 (3 July 2014)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-852" SDNUM="1036;"><font face="Verdana">GCORE-852</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The Quantix-la shell script is missing from some Linux packages </font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The Quantix-la shell script is missing from some Linux packages and causing licensing problems.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-772" SDNUM="1036;"><font face="Verdana">GCORE-772</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Older gex-lm and gex-ls license managers do not run in V7.2 and V7.3 on Linux computers</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">The older gex-lm and gex-ls license managers do not run because they are missing software libraries.  This bug affects Quantix license manager packages for Linux 32 bit and 64 bit computers.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-606" SDNUM="1036;"><font face="Verdana">GCORE-606</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Not found</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Not found</font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.3.B changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.3.B">V7.3.B (19 May 2014)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Enhancements</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-166" SDNUM="1036;"><font face="Verdana">GCORE-166</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">7994: The Quantix license daemon is not creating the directories it needs in all cases.</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">On Linux, the Quantix license daemon needs a .examinator dir in the $GEX_SERVER_PROFILE for linux platforms. this dir should be automatically created by the tool. The result of having no .examinator dir is on another system where there is a ym_admin_db and a gexdb, no matter how many times you start ym or pm, you cannot connect to the ym_admin_db. Also if you start with the -W command and see that you connect but on restart, you can no longer connect.
+
+Need to find portable functions that can create directories.  This is a legacy issue.  This is a configuration file that is needed and generated for legacy reasons.  If directory does not exist, create it.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-163" SDNUM="1036;"><font face="Verdana">GCORE-163</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Update FNP LP connection error messages</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">As a user, if the connection to the flexera license server fails, I want to see in the error message the IP address and the port that were used for the failed connection.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-150" SDNUM="1036;"><font face="Verdana">GCORE-150</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Timeout for automatic release of license when not in use from Flexera </font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Requested by ASE. This capability should already exist in Flexera. Anis to test out this option on the server side.   
+
+
+</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-712" SDNUM="1036;"><font face="Verdana">GCORE-712</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Examinator crash on right click in interactive mode</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">In the interactive mode, in any chart<br/>
+if the user right clic more than one time an then left clic the application crash</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-632" SDNUM="1036;"><font face="Verdana">GCORE-632</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Error in PTR read not correctly caught in scanfile</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">When an error is detected in the read PTR, <br/>
+the scanfile function is well stopped but without error</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-90" SDNUM="1036;"><font face="Verdana">GCORE-90</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">7994: The Quantix license daemon should create any dirs that it needs</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">the Quantix license daemon needs a .examinator dir in the $GEX_SERVER_PROFILE for linux platforms. this dir should be automatically created by the tool.</font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V7.3.A changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15">
+<img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785">
+<p align="left">
+    <a name="V7.3.A">V7.3.A (11 April 2014)</a>
+ <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+<!--------------------------------------------------------------------->
+<table cellspacing="0" cols="3" border="0">
+<colgroup width="144"></colgroup>
+<colgroup width="384"></colgroup>
+<colgroup width="768"></colgroup>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Enhancements</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GEXYM-125" SDNUM="1036;"><font face="Verdana">GEXYM-125</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">7957: Improvements to license activation evaluation flow</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Implement as specified in attached flow diagram.<br/>
+This flow will satisfy case 7957. </font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GEXYM-124" SDNUM="1036;"><font face="Verdana">GEXYM-124</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Improvements to license activation flow for floating licenses</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Implement as specified in attached flow diagram.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GEXYM-123" SDNUM="1036;"><font face="Verdana">GEXYM-123</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">7897: Improvements to license activation CPU flow</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Implement as specified in attached flow diagram.<br/>
+This flow will satisfy case 7897.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GEXYM-122" SDNUM="1036;"><font face="Verdana">GEXYM-122</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Improvements to license activation front-end flow</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Implement front-end license activation flow as specified in attachments below</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GEXYM-82" SDNUM="1036;"><font face="Verdana">GEXYM-82</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">7851: When running mixed licenses (WW or site), users cannot set group / user restrictions on usage.</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">No update from Flexera since Jan 2. Dependent on Flexera. Anis reported bug to Flexera (#SIOA-000216882).
+
+Solution requires making new catalogs.
+
+For customers with existing floating licenses, they will need to return and renew license.  Some apps work will be required.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GEXYM-80" SDNUM="1036;"><font face="Verdana">GEXYM-80</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">Validate use of redundant server for Flexera license manager</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">A user wants to have a redundant Flexera license server in case the primary server goes down.  Per Anis...Flexera provide this feature but we need only to test it and document procedure for the setup.</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 height="25" align="left" bgcolor="#B3B3B3"><B><font face="Verdana" size=4 color="#0000FF">Bug fixes</font></B></td>
+        </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="21" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Case Number</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Subject</font></B></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top bgcolor="#E6E6E6"><B><font face="Verdana" size=3>Description</font></B></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GEXYM-204" SDNUM="1036;"><font face="Verdana">GEXYM-204</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">7851: Can't restrict Worldwide license to a user or group of users</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">This issue affects large companies with multiple groups buying the same feature but with different options such as non WW and WW. Assuming we have 1 GEXPRO license non WW (entitlement A), and 1 GEXPRO WW (entitlement B). Assuming also that options have been set up in the license file so that group 1 only get access to entitlement A and group 2 only get access to entitlement B. Currently the Flex options do not allow to do so (specially EXCLUDE_ENTITLEMENT which is not intended to restrict the usage but the borrowing). We need to find a way to do it, either by differentiating the same products with different options with different expiration dates for instance. The problem is that even with the different expiration dates, it appears that EXCLUDE feature:expdate=&lt;timestamp&gt; does not work neither</font></td>
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="38" align="left" valign=top SDVAL="GCORE-3" SDNUM="1036;"><font face="Verdana">GCORE-3</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">H8028: Missing libstdc++ in Win installer package</font></td>
+        <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=top><font face="Verdana">There is a missing library in Quantix-la installer preventing to run the tool</font></td>
+    </tr>
+</table>
+<!--------------------------------------------------------------------->
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+

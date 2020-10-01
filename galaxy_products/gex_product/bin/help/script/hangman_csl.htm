@@ -1,0 +1,293 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: hangman.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">Remember the classic hangman game?! Well  now you can play 
+      it again thanks to GEX's powerful
+      scripting language! The following  source code is for the hangman.csl script
+      provided with the GEX
+      solution We have reduced the dictionary to 10 words to keep the
+      following page short, but&nbsp;all functions and source code remain unchanged. For the complete source
+      code with the whole
+      dictionary list (1178 of the most used English words),  consult the
+      actual program in the samples directory.</p>
+          <p align="left">For additional information, see the scripting language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">reviewing</a> the other sample scripts.
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: hangman.csl
+//////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////
+// Number of WORDS in the dictionary
+///////////////////////////////////////////////////////////
+const DictionarySize=10;
+
+///////////////////////////////////////////////////////////
+// Hangman dictionary of words
+///////////////////////////////////////////////////////////
+const Dictionary[DictionarySize]= { 
+'THE', 'OF', 'AND', 'A', 'TO', 'IN', 'IS', 'YOU', 'THAT', 'IT'
+};</pre>
+      </div>
+      <div align="left">
+        <pre align="left">///////////////////////////////////////////////////////////
+// Variables used during the game
+///////////////////////////////////////////////////////////
+var MysteryWord;	// Holds the word you have to find
+var iMysteryWord;	// Holds index to Mystery word in array
+var FoundWord;		// Holds current characters found in word
+var RemainingChars;	// Number of characters to be found
+var ErrorCount;		// Holds the number of errors you've made
+
+///////////////////////////////////////////////////////////
+// Start game: Pick one word from the dictionary, reset variables
+///////////////////////////////////////////////////////////
+StartGame()
+{
+  // Pick one word from the dictionary
+  iMysteryWord = sysRandom(DictionarySize-1);
+  MysteryWord = Dictionary[iMysteryWord];
+
+  // Sets string that holds characters found
+  FoundWord = &quot;&quot;;
+  RemainingChars = strLength(MysteryWord);
+  var index = RemainingChars;
+  while(index!=0)
+  {
+    index--;
+    FoundWord += '*';
+  }
+
+  // Reset error counter to 0.
+  ErrorCount = 0;
+}
+
+///////////////////////////////////////////////////////////
+// Shows current hanging status!
+///////////////////////////////////////////////////////////
+GameStatus()
+{
+  switch(ErrorCount)
+  {
+    case 0:
+	  sysLog('     **********');
+	  sysLog('     *        * ');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('============');	
+	  break;
+	case 1:
+	  sysLog('     **********');
+	  sysLog('     *        * ');
+	  sysLog('     *       ****');
+	  sysLog('     *       *  *');
+	  sysLog('     *       ****');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('============');	
+	break;
+	case 2:
+	  sysLog('     **********');
+	  sysLog('     *        * ');
+	  sysLog('     *       ****');
+	  sysLog('     *       *  *');
+	  sysLog('     *       ****');
+	  sysLog('     *        **');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('============');	
+	break;
+	case 3:
+	  sysLog('     **********');
+	  sysLog('     *        * ');
+	  sysLog('     *       ****');
+	  sysLog('     *       *  *');
+	  sysLog('     *       ****');
+	  sysLog('     *        **');
+	  sysLog('     *    ******');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('============');	
+	break;
+	case 4:
+	  sysLog('     **********');
+	  sysLog('     *        * ');
+	  sysLog('     *       ****');
+	  sysLog('     *       *  *');
+	  sysLog('     *       ****');
+	  sysLog('     *        **');
+	  sysLog('     *    **********');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('============');	
+	break;
+	case 5:
+	  sysLog('     **********');
+	  sysLog('     *        * ');
+	  sysLog('     *       ****');
+	  sysLog('     *       *  *');
+	  sysLog('     *       ****');
+	  sysLog('     *        **');
+	  sysLog('     *    **********');
+	  sysLog('     *        **');
+	  sysLog('     *        **');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('     *');
+	  sysLog('============');	
+	break;
+	case 6:
+	  sysLog('     **********');
+	  sysLog('     *        * ');
+	  sysLog('     *       ****');
+	  sysLog('     *       *  *');
+	  sysLog('     *       ****');
+	  sysLog('     *        **');
+	  sysLog('     *    **********');
+	  sysLog('     *        **');
+	  sysLog('     *        **');
+	  sysLog('     *       /');
+	  sysLog('     *      /');
+	  sysLog('     *');
+	  sysLog('============');
+	break;
+	case 7:
+	  sysLog('     **********');
+	  sysLog('     *        * ');
+	  sysLog('     *       ****');
+	  sysLog('     *       *  *');
+	  sysLog('     *       ****');
+	  sysLog('     *        **');
+	  sysLog('     *    **********');
+	  sysLog('     *        **');
+	  sysLog('     *        **');
+	  sysLog('     *       /  \\');
+	  sysLog('     *      /    \\');
+	  sysLog('     *');
+	  sysLog('============');	
+    sysLog('**** Too late!...the word was:'+Dictionary[iMysteryWord]);
+	break;
+  }
+  
+  if(RemainingChars == 0)
+    sysLog('**** Congratulations...you found it:'+Dictionary[iMysteryWord]);
+}
+
+///////////////////////////////////////////////////////////
+// Get character, check if word found
+///////////////////////////////////////////////////////////
+GameTryCharacter()
+{
+  // Get user input character
+  sysLog('Word: '+FoundWord);
+  var cChar = sysPrompt('Enter character:');
+
+  // Ensure we only keep 1 character from the entered string
+  cChar = strSubString(cChar,1,1);
+
+  // Convert to Upper case
+  cChar = strUpper(cChar);
+
+  // Checks if this character is in the string to find...
+  var index = strIndexOf(MysteryWord, cChar);
+  if(index &lt;= 0)
+    ErrorCount++;	// This character is not in the MysteryWord. Error!!!
+  else
+  {
+    // This character is in the Mystery string...so let's update our variables
+    do
+	{
+	  // Keep track of characters found in Mystery string
+      MysteryWord = strChange(MysteryWord,cChar,'*',index,1);
+      FoundWord = strChange(FoundWord,'*',cChar,index,1);
+
+	  // Check if this character appears more than once in MysteryWord!
+	  index = strIndexOf(MysteryWord, cChar,index+1);
+	  
+	  // Updates remaining number of characters to find.
+	  RemainingChars--;
+	}
+	while(index &gt; 0);
+  }
+  
+  // Game over: success ?
+  if(RemainingChars == 0)
+	return 0;
+
+  // Game over: dead?
+  if(ErrorCount==7)
+    return 0;	
+
+  // Game not over yet!
+  return 1;
+}
+
+///////////////////////////////////////////////////////////
+// Script entry point
+///////////////////////////////////////////////////////////
+main()
+{
+  var bLoop;	// = 1 while game is not over
+
+  // Picks one word from the dictionary, reset variables
+  StartGame();
+
+
+  // Get user entry, check if word found
+  do
+  {
+    // Show Game status
+    GameStatus();
+
+	// Get character from user, check if belongs to Mystery word
+    bLoop = GameTryCharacter();
+  }
+  while(bLoop == 1);
+
+  // Show Game status: Hanged or not ?!!!!
+  GameStatus();
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

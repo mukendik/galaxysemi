@@ -1,0 +1,18 @@
+<assembly>
+    <id>assembly-inc</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <includes>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/*.h</include>
+                <include>galaxy_libraries/galaxy_std_libraries/${project.artifactId}/sources/string_utils/*.h</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>          
+    </fileSets>
+</assembly>

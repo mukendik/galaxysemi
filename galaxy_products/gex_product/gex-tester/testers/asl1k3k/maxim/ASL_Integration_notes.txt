@@ -1,0 +1,289 @@
+* gtl_tester_asl.cpp instead of a library.
+* For now, this cpp has to be with the test program (because it includes USER.h)
+* gtl_test_lib() has to receive normalized values.
+* site_num passed to GTL must be zero-based
+* Although we force bin 141, ASL reports bin 5
+* active_site[], activate_one_site()
+
+BOOL active_site[MAX_SITES]
+#define MAX_SITES 256			//V1_12: 64
+void store_site_status(BOOL current_active_site_[MAX_SITES])
+
+
+TEST PROGRAM test function:
+void Fake_Test(test_function& func)
+{
+    // The two lines below must be the first two in the function.
+    Fake_Test_params *ours;
+    ours = (Fake_Test_params *)func.params;
+	int test_no = 1;
+	Sfloat value;
+	//float value;
+	int bin_num = 20;
+	int site_num=0;
+	srand(time(NULL));
+	value = ( 50 * rand()/RAND_MAX );
+	START_SEQ_LOOP(site_num)
+	value = ( 50 * rand()/RAND_MAX );
+	END_SEQ_LOOP
+
+	
+    Su_test(func, value/1000,POWER_MILLI , bin_num, test_no++);
+	START_SEQ_LOOP(site_num)
+	value = ( 2.0 * rand()/RAND_MAX );
+	END_SEQ_LOOP
+    Su_test(func, value,POWER_UNIT , bin_num, test_no++);
+	START_SEQ_LOOP(site_num)
+	value = ( 2.0 * rand()/RAND_MAX );
+	END_SEQ_LOOP
+    Su_test(func, value,POWER_UNIT , bin_num, test_no++);
+	
+}
+
+U_EXT int u_device_fail, u_debug_test;
+U_EXT int u_bin_nt;
+
+
+#define START_SEQ_LOOP(site_no_mml) 
+{
+	for(int site_no_mml=0; site_no_mml < CSC_MAX_SITES; site_no_mml++)	
+		if (active_site[site_no_mml]) 
+		{ 
+			BOOL current_active_site_[CSC_MAX_SITES]; 
+			store_site_status(current_active_site_); 
+			activate_one_site(site_no_mml);
+
+#define END_SEQ_LOOP  
+			restore_site_status(current_active_site_);
+		}
+	}
+			
+template <class T> class SiteTypeClass
+{
+protected:
+#if CSC_MAX_SITES > 1
+	T result[CSC_MAX_SITES];
+#else
+	T result;
+#endif
+public:
+	SiteTypeClass();
+	SiteTypeClass(SiteTypeClass& val);
+	~SiteTypeClass();
+	SiteTypeClass& operator = (T value);
+	SiteTypeClass& operator = (SiteTypeClass& value);
+	SiteTypeClass& operator+= (T value);
+	SiteTypeClass& operator+= (SiteTypeClass& value);
+	SiteTypeClass& operator-= (T value);
+	SiteTypeClass& operator-= (SiteTypeClass& value);
+	SiteTypeClass& operator*= (T value);
+	SiteTypeClass& operator*= (SiteTypeClass& value);
+	SiteTypeClass& operator/= (T value);
+	SiteTypeClass& operator/= (SiteTypeClass& value);
+
+	SiteTypeClass operator+  (T value);
+	SiteTypeClass operator+  (SiteTypeClass& value);
+	SiteTypeClass operator-  (T value);
+	SiteTypeClass operator-  (SiteTypeClass& value);
+	SiteTypeClass operator*  (T value);
+	SiteTypeClass operator*  (SiteTypeClass& value);
+	SiteTypeClass operator/  (T value);
+	SiteTypeClass operator/  (SiteTypeClass& value);
+	SiteTypeClass operator - ();
+	Sbool  operator== (T value);
+	Sbool  operator== (SiteTypeClass& value);
+	Sbool  operator!= (T value);
+	Sbool  operator!= (SiteTypeClass& value);
+	Sbool  operator>  (T value);
+	Sbool  operator>  (SiteTypeClass& value);
+	Sbool  operator>= (T value);
+	Sbool  operator>= (SiteTypeClass& value);
+	Sbool  operator<  (T value);
+	Sbool  operator<  (SiteTypeClass& value);
+	Sbool  operator<= (T value);
+	Sbool  operator<= (SiteTypeClass& value);
+
+	void init();
+	void set_to(T* value, bool filter=false); // get value from array, filtered with active site if desired (0_7)
+	void set_to(T value, int site);
+	T get_value(int site);
+	T* get_value(T* buffer);		// fill array
+	SiteTypeClass& reciprocal();	// return reciprocal value of result
+};
+
+///////////////////////////////////////////////////////////////////////
+U_EXT template class SiteTypeClass<float>;
+U_EXT template class SiteTypeClass<int>;
+U_EXT template class SiteTypeClass<unsigned int>;
+U_EXT template class SiteTypeClass<double>;
+
+typedef SiteTypeClass< float > Sfloat;
+typedef SiteTypeClass< int > Sint; 
+typedef SiteTypeClass< unsigned int > Suint; 
+typedef SiteTypeClass< double > Sdouble; 
+
+template <class T>
+SiteTypeClass<T>& SiteTypeClass<T>::operator = (T value) 
+{
+	#if CSC_MAX_SITES > 1
+	for (int site=0; site < CSC_MAX_SITES; site++)
+	  if(active_site[site])
+		result[site] = value;
+	#else
+		result = value;
+	#endif
+
+	return *this;
+}
+
+Su_test() function:
+Sbool Su_test(test_function& func, Sfloat value, char unit, int fail_bin, int test_no)
+{
+	Sbool ret;
+	sint test_failed;
+
+	START_SEQ_LOOP(site_no)
+
+	 u_device_fail = !device_passed[site_no]; 
+	 //U_device_fail = !device_passed[site_no];  
+	 u_bin_nt = su_bin_nt.get_value(site_no);
+
+     if (test_failed[site_no]=u_test(func, value.get_value(site_no),unit,fail_bin,test_no, site_no+1))
+		device_passed[site_no]=false;
+	//due to bug on the multisite code in mxuse_nt.c
+	 //U_device_fail = !device_passed[site_no];  
+
+	 su_bin_nt = u_bin_nt; // for Bin Failure Monitor 
+
+	 ret.set_to(test_failed[site_no],site_no);	// return fail flag
+
+	 if(test_failed[site_no])
+	 {
+		 if (!(u_option & ALLTEST)) 
+		 {
+#ifdef POWERDOWN
+			power_down(site_no);	//execute power_down for the failing site only
+#endif
+			restore_site_status();
+//ALM
+			restore_site_status(current_active_site_);
+			active_site[site_no] = false;
+//ALM
+			store_site_status(current_active_site_);
+			store_site_status();
+			activate_one_site(site_no);
+		 }
+	 }
+	END_SEQ_LOOP
+
+	return Sbool(ret);
+}				
+
+u_test() function:
+
+//** Used to datalog test results.
+
+int u_test(test_function& func, float value, char unit, int fail_bin,
+	   int test_no, int site_num)
+{
+  static char* second = "S";
+  char string[20], message[50];
+  int fail_flag = 0;
+ 
+  
+#ifdef U_TMT30
+  func.dlog->set_test_no(test_no, site_num);
+#else
+  func.dlog->set_test_no(test_no);
+#endif
+
+  //Initialize the Bin Flag
+  if((u_device_fail == FALSE) && (u_bin_nt != 1))
+    u_bin_nt = 1; 
+
+  if(u_time_tests)
+    func.dlog->power = POWER_UNIT;
+  else
+    func.dlog->power = unit;
+  func.dlog->test_val(value);
+
+if(ag_correlate)		//grem
+	agf_RunStoreValue(func, value, test_no);	//grem
+
+  if(u_time_tests)
+    {
+      func.dlog->set_unit(second);
+      func.dlog->power = POWER_UNIT;
+      func.dlog->tests[test_no-1].f_measured_value = u_clock_read();
+      func.dlog->set_bin(16);
+    }
+
+  if(func.dlog->tests[test_no-1].passed_fail == FAILED_TEST)
+    {
+		/////////////////////////////////////////////////////////////////
+		//  Two contact bins assuming testing normal esd diode:
+		//  "short" is fail_bin ,							   
+		//  "open" is fail_bin-1 added 8/23/07 J. Contreras   rev 1-21-08
+		/////////////////////////////////////////////////////////////////
+		if(fail_bin < 0)
+		{
+		  fail_bin = fabs(fail_bin);
+			if(fabs(value) > fabs(func.dlog->tests[test_no-1].f_min_limit_val[0]) ||
+			   fabs(value) > fabs(func.dlog->tests[test_no-1].f_max_limit_val[0]))
+			fail_bin = fail_bin - 1;
+		}
+		/////////////////////////////////////////////////////////////////
+		//  Two contact bins assuming testing normal esd diode:
+		//  "short" is fail_bin ,							   
+		//  "open" is fail_bin-1 added 8/23/07 J. Contreras   rev 1-21-08
+		/////////////////////////////////////////////////////////////////
+      func.dlog->set_bin(fail_bin);
+      fail_flag = 1;
+	  //On the First Failure ONLY, set the Bin Flag
+	  if(u_device_fail == FALSE) 
+		  u_bin_nt = fail_bin; 
+      u_device_fail = TRUE;
+    }
+
+  /////////////////////////////////////////////////////////////////////
+  //   MVXML added 7-24-06
+  ///////////////////////////////////////////////////////////////////////
+#ifdef _MVXML_H_
+  /* Maxim programs must used site_num-1 (Dallas just uses site_num) */
+  mvxml_dlog(func, test_no, value, fail_bin, site_num-1,
+	     NULL, //func.dlog->datalog_notes(notes), /* is this correct? */
+	     func.dlog->power);
+#endif
+
+  /////////////////////////////////////////////////////////////////////
+  //   MVXML added 7-24-06
+  ///////////////////////////////////////////////////////////////////////
+
+  if(func.dlog->tests[test_no-1].display_results) // check for datalog on
+    func.dlog->display_results();
+
+  if(( u_debug_test == test_no)                    ||
+     ( u_debug_test == DEBUG_ALL)                  ||
+     ((u_debug_test == DEBUG_FAIL) && fail_flag))
+    {
+      strcpy(message, func.dlog->tests[test_no-1].test_name);
+      strcat(message, "          Value measured: ");
+      sprintf(string, "%g", value);
+      strcat(message, string);
+    }
+
+//////////////////////////////////////////////////////////////////////////
+  //DPAT added 3-1-2010
+  ////////////////////////////////////////////////////////////////////////
+#ifdef MAXIM_DPAT
+	DPAT_data(func, value, unit, test_no, site_num);
+#endif
+
+//Galaxy DPAT, Need to add enable switch somewhere)
+#ifdef GALAXY_DPAT
+	gtl_test_lib(site_num,func.dlog->test_offset*1000+test_no, func.dlog->tests[test_no-1].test_name, value);
+#endif
+
+  return(fail_flag);
+}
+

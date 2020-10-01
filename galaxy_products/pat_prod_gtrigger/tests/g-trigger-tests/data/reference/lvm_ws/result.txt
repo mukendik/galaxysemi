@@ -1,0 +1,1335 @@
+FAR:A|4|2|S
+DTR:<cmd> gross_die=2372
+SDR:1|1|1||||||||||||||||3301958
+WIR:1|07:14:00 18-May-2003||05
+WRR:1|00:00:00 01-Jan-1970|1517|05||0|0|1054
+TSR:1|1|1|IGSS @ + 100% VGS|P|1517|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|1517|0|0
+TSR:1|1|4|IGSS @ - High Volatge|P|1517|3|0
+TSR:1|1|5|GS SHORT|P|1517|22|0
+TSR:1|1|26|Vth(OPEN)|P|1517|18|0
+TSR:1|1|27|Vth|P|1517|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|1517|52|0
+TSR:1|1|52|IDSX(50%VDS)|P|1517|20|0
+TSR:1|1|53|DS SHORT|P|1517|8|0
+TSR:1|1|76|BVDSX(100-250uA)|P|1517|0|0
+TSR:1|1|100|UIS_SIM|P|1517|0|0
+TSR:1|1|102|VDSP|P|1517|8|0
+TSR:1|1|103|UIS|P|1517|0|0
+TSR:1|1|104|UIS|P|1517|1|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|1517|260|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|1517|71|0
+TSR:1|1|201|VSDP|P|1517|0|0
+HBR:1|1|1|1054|P|PASS
+SBR:1|1|1|1054|P|PASS
+SBR:1|1|7|3|F|IGSS @ - High Volatge
+SBR:1|1|60|22|F|GS SHORT
+SBR:1|1|31|18|F|Vth(OPEN)
+SBR:1|1|16|52|F|IDSX(100%VDS)
+SBR:1|1|15|20|F|IDSX(50%VDS)
+SBR:1|1|61|8|F|DS SHORT
+SBR:1|1|13|8|F|VDSP
+SBR:1|1|5|1|F|UIS
+SBR:1|1|18|260|F|rDSon #1 @ VGS= 10V
+SBR:1|1|19|71|F|rDSon #2 @ VGS= 4.5V
+HBR:1|1|0|463|F|FAIL
+PCR:1|1|1517|0|0|1054
+FAR:A|4|2|S
+DTR:<cmd> gross_die=2372
+SDR:1|1|1||||||||||||||||3301958
+WIR:1|07:14:00 18-May-2003||06
+WRR:1|00:00:00 01-Jan-1970|1509|06||0|0|1110
+TSR:1|1|1|IGSS @ + 100% VGS|P|1509|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|1509|1|0
+TSR:1|1|4|IGSS @ - High Volatge|P|1509|3|0
+TSR:1|1|5|GS SHORT|P|1509|17|0
+TSR:1|1|26|Vth(OPEN)|P|1509|23|0
+TSR:1|1|27|Vth|P|1509|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|1509|36|0
+TSR:1|1|52|IDSX(50%VDS)|P|1509|8|0
+TSR:1|1|53|DS SHORT|P|1509|2|0
+TSR:1|1|76|BVDSX(100-250uA)|P|1509|0|0
+TSR:1|1|100|UIS_SIM|P|1509|0|0
+TSR:1|1|102|VDSP|P|1509|2|0
+TSR:1|1|103|UIS|P|1509|0|0
+TSR:1|1|104|UIS|P|1509|1|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|1509|248|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|1509|58|0
+TSR:1|1|201|VSDP|P|1509|0|0
+HBR:1|1|1|1110|P|PASS
+SBR:1|1|1|1110|P|PASS
+SBR:1|1|11|1|F|IGSS @ - 100% VGS
+SBR:1|1|7|3|F|IGSS @ - High Volatge
+SBR:1|1|60|17|F|GS SHORT
+SBR:1|1|31|23|F|Vth(OPEN)
+SBR:1|1|16|36|F|IDSX(100%VDS)
+SBR:1|1|15|8|F|IDSX(50%VDS)
+SBR:1|1|61|2|F|DS SHORT
+SBR:1|1|13|2|F|VDSP
+SBR:1|1|5|1|F|UIS
+SBR:1|1|18|248|F|rDSon #1 @ VGS= 10V
+SBR:1|1|19|58|F|rDSon #2 @ VGS= 4.5V
+HBR:1|1|0|399|F|FAIL
+PCR:1|1|1509|0|0|1110
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||01
+WRR:1|00:00:00 01-Jan-1970|3529|01||0|0|3429
+TSR:1|1|1|IGSS @ + 100% VGS|P|3529|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3529|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3529|17|0
+TSR:1|1|28|Vth|P|3529|0|0
+TSR:1|1|29|Vth|P|3529|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3529|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3529|71|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3529|0|0
+TSR:1|1|120|Kelvin|P|3529|12|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3529|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3529|0|0
+TSR:1|1|201|VSDP|P|3529|0|0
+HBR:1|1|1|3429|P|PASS
+SBR:1|1|1|3429|P|PASS
+SBR:1|1|6|17|F|IGSS @ + High Voltage
+SBR:1|1|16|71|F|IDSX(100%VDS)
+SBR:1|1|202|12|F|Kelvin
+HBR:1|1|0|100|F|FAIL
+PCR:1|1|3529|0|0|3429
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||02
+WRR:1|00:00:00 01-Jan-1970|3554|02||0|0|3490
+TSR:1|1|1|IGSS @ + 100% VGS|P|3554|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3554|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3554|9|0
+TSR:1|1|28|Vth|P|3554|0|0
+TSR:1|1|29|Vth|P|3554|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3554|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3554|40|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3554|0|0
+TSR:1|1|120|Kelvin|P|3554|15|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3554|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3554|0|0
+TSR:1|1|201|VSDP|P|3554|0|0
+HBR:1|1|1|3490|P|PASS
+SBR:1|1|1|3490|P|PASS
+SBR:1|1|6|9|F|IGSS @ + High Voltage
+SBR:1|1|16|40|F|IDSX(100%VDS)
+SBR:1|1|202|15|F|Kelvin
+HBR:1|1|0|64|F|FAIL
+PCR:1|1|3554|0|0|3490
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||03
+WRR:1|00:00:00 01-Jan-1970|3597|03||0|0|3443
+TSR:1|1|1|IGSS @ + 100% VGS|P|3597|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3597|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3597|8|0
+TSR:1|1|28|Vth|P|3597|0|0
+TSR:1|1|29|Vth|P|3597|44|0
+TSR:1|1|43|IDSX(80%VDS)|P|3597|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3597|87|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3597|0|0
+TSR:1|1|120|Kelvin|P|3597|15|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3597|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3597|0|0
+TSR:1|1|201|VSDP|P|3597|0|0
+HBR:1|1|1|3443|P|PASS
+SBR:1|1|1|3443|P|PASS
+SBR:1|1|6|8|F|IGSS @ + High Voltage
+SBR:1|1|12|44|F|Vth
+SBR:1|1|16|87|F|IDSX(100%VDS)
+SBR:1|1|202|15|F|Kelvin
+HBR:1|1|0|154|F|FAIL
+PCR:1|1|3597|0|0|3443
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||04
+WRR:1|00:00:00 01-Jan-1970|3552|04||0|0|3495
+TSR:1|1|1|IGSS @ + 100% VGS|P|3552|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3552|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3552|8|0
+TSR:1|1|28|Vth|P|3552|1|0
+TSR:1|1|29|Vth|P|3552|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3552|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3552|33|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3552|0|0
+TSR:1|1|120|Kelvin|P|3552|15|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3552|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3552|0|0
+TSR:1|1|201|VSDP|P|3552|0|0
+HBR:1|1|1|3495|P|PASS
+SBR:1|1|1|3495|P|PASS
+SBR:1|1|6|8|F|IGSS @ + High Voltage
+SBR:1|1|12|1|F|Vth
+SBR:1|1|16|33|F|IDSX(100%VDS)
+SBR:1|1|202|15|F|Kelvin
+HBR:1|1|0|57|F|FAIL
+PCR:1|1|3552|0|0|3495
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||05
+WRR:1|00:00:00 01-Jan-1970|3556|05||0|0|3447
+TSR:1|1|1|IGSS @ + 100% VGS|P|3556|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3556|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3556|10|0
+TSR:1|1|28|Vth|P|3556|0|0
+TSR:1|1|29|Vth|P|3556|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3556|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3556|84|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3556|0|0
+TSR:1|1|120|Kelvin|P|3556|15|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3556|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3556|0|0
+TSR:1|1|201|VSDP|P|3556|0|0
+HBR:1|1|1|3447|P|PASS
+SBR:1|1|1|3447|P|PASS
+SBR:1|1|6|10|F|IGSS @ + High Voltage
+SBR:1|1|16|84|F|IDSX(100%VDS)
+SBR:1|1|202|15|F|Kelvin
+HBR:1|1|0|109|F|FAIL
+PCR:1|1|3556|0|0|3447
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||06
+WRR:1|00:00:00 01-Jan-1970|3556|06||0|0|3480
+TSR:1|1|1|IGSS @ + 100% VGS|P|3556|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3556|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3556|14|0
+TSR:1|1|28|Vth|P|3556|0|0
+TSR:1|1|29|Vth|P|3556|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3556|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3556|47|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3556|0|0
+TSR:1|1|120|Kelvin|P|3556|15|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3556|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3556|0|0
+TSR:1|1|201|VSDP|P|3556|0|0
+HBR:1|1|1|3480|P|PASS
+SBR:1|1|1|3480|P|PASS
+SBR:1|1|6|14|F|IGSS @ + High Voltage
+SBR:1|1|16|47|F|IDSX(100%VDS)
+SBR:1|1|202|15|F|Kelvin
+HBR:1|1|0|76|F|FAIL
+PCR:1|1|3556|0|0|3480
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||07
+WRR:1|00:00:00 01-Jan-1970|3627|07||0|0|3489
+TSR:1|1|1|IGSS @ + 100% VGS|P|3627|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3627|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3627|12|0
+TSR:1|1|28|Vth|P|3627|0|0
+TSR:1|1|29|Vth|P|3627|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3627|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3627|112|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3627|0|0
+TSR:1|1|120|Kelvin|P|3627|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3627|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3627|0|0
+TSR:1|1|201|VSDP|P|3627|0|0
+HBR:1|1|1|3489|P|PASS
+SBR:1|1|1|3489|P|PASS
+SBR:1|1|6|12|F|IGSS @ + High Voltage
+SBR:1|1|16|112|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|138|F|FAIL
+PCR:1|1|3627|0|0|3489
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||08
+WRR:1|00:00:00 01-Jan-1970|3551|08||0|0|3500
+TSR:1|1|1|IGSS @ + 100% VGS|P|3551|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3551|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3551|9|0
+TSR:1|1|28|Vth|P|3551|0|0
+TSR:1|1|29|Vth|P|3551|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3551|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3551|28|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3551|0|0
+TSR:1|1|120|Kelvin|P|3551|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3551|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3551|0|0
+TSR:1|1|201|VSDP|P|3551|0|0
+HBR:1|1|1|3500|P|PASS
+SBR:1|1|1|3500|P|PASS
+SBR:1|1|6|9|F|IGSS @ + High Voltage
+SBR:1|1|16|28|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|51|F|FAIL
+PCR:1|1|3551|0|0|3500
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||09
+WRR:1|00:00:00 01-Jan-1970|3552|09||0|0|3462
+TSR:1|1|1|IGSS @ + 100% VGS|P|3552|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3552|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3552|8|0
+TSR:1|1|28|Vth|P|3552|0|0
+TSR:1|1|29|Vth|P|3552|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3552|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3552|68|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3552|0|0
+TSR:1|1|120|Kelvin|P|3552|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3552|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3552|0|0
+TSR:1|1|201|VSDP|P|3552|0|0
+HBR:1|1|1|3462|P|PASS
+SBR:1|1|1|3462|P|PASS
+SBR:1|1|6|8|F|IGSS @ + High Voltage
+SBR:1|1|16|68|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|90|F|FAIL
+PCR:1|1|3552|0|0|3462
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||10
+WRR:1|00:00:00 01-Jan-1970|3554|10||0|0|3503
+TSR:1|1|1|IGSS @ + 100% VGS|P|3554|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3554|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3554|9|0
+TSR:1|1|28|Vth|P|3554|0|0
+TSR:1|1|29|Vth|P|3554|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3554|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3554|28|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3554|0|0
+TSR:1|1|120|Kelvin|P|3554|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3554|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3554|0|0
+TSR:1|1|201|VSDP|P|3554|0|0
+HBR:1|1|1|3503|P|PASS
+SBR:1|1|1|3503|P|PASS
+SBR:1|1|6|9|F|IGSS @ + High Voltage
+SBR:1|1|16|28|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|51|F|FAIL
+PCR:1|1|3554|0|0|3503
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||11
+WRR:1|00:00:00 01-Jan-1970|3555|11||0|0|3467
+TSR:1|1|1|IGSS @ + 100% VGS|P|3555|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3555|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3555|10|0
+TSR:1|1|28|Vth|P|3555|0|0
+TSR:1|1|29|Vth|P|3555|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3555|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3555|64|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3555|0|0
+TSR:1|1|120|Kelvin|P|3555|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3555|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3555|0|0
+TSR:1|1|201|VSDP|P|3555|0|0
+HBR:1|1|1|3467|P|PASS
+SBR:1|1|1|3467|P|PASS
+SBR:1|1|6|10|F|IGSS @ + High Voltage
+SBR:1|1|16|64|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|88|F|FAIL
+PCR:1|1|3555|0|0|3467
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||12
+WRR:1|00:00:00 01-Jan-1970|3552|12||0|0|3495
+TSR:1|1|1|IGSS @ + 100% VGS|P|3552|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3552|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3552|9|0
+TSR:1|1|28|Vth|P|3552|0|0
+TSR:1|1|29|Vth|P|3552|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3552|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3552|34|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3552|0|0
+TSR:1|1|120|Kelvin|P|3552|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3552|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3552|0|0
+TSR:1|1|201|VSDP|P|3552|0|0
+HBR:1|1|1|3495|P|PASS
+SBR:1|1|1|3495|P|PASS
+SBR:1|1|6|9|F|IGSS @ + High Voltage
+SBR:1|1|16|34|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|57|F|FAIL
+PCR:1|1|3552|0|0|3495
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||13
+WRR:1|00:00:00 01-Jan-1970|3553|13||0|0|3438
+TSR:1|1|1|IGSS @ + 100% VGS|P|3553|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3553|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3553|11|0
+TSR:1|1|28|Vth|P|3553|0|0
+TSR:1|1|29|Vth|P|3553|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3553|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3553|90|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3553|0|0
+TSR:1|1|120|Kelvin|P|3553|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3553|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3553|0|0
+TSR:1|1|201|VSDP|P|3553|0|0
+HBR:1|1|1|3438|P|PASS
+SBR:1|1|1|3438|P|PASS
+SBR:1|1|6|11|F|IGSS @ + High Voltage
+SBR:1|1|16|90|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|115|F|FAIL
+PCR:1|1|3553|0|0|3438
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||14
+WRR:1|00:00:00 01-Jan-1970|3552|14||0|0|3496
+TSR:1|1|1|IGSS @ + 100% VGS|P|3552|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3552|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3552|2|0
+TSR:1|1|28|Vth|P|3552|0|0
+TSR:1|1|29|Vth|P|3552|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3552|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3552|40|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3552|0|0
+TSR:1|1|120|Kelvin|P|3552|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3552|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3552|0|0
+TSR:1|1|201|VSDP|P|3552|0|0
+HBR:1|1|1|3496|P|PASS
+SBR:1|1|1|3496|P|PASS
+SBR:1|1|6|2|F|IGSS @ + High Voltage
+SBR:1|1|16|40|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|56|F|FAIL
+PCR:1|1|3552|0|0|3496
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||15
+WRR:1|00:00:00 01-Jan-1970|3555|15||0|0|3457
+TSR:1|1|1|IGSS @ + 100% VGS|P|3555|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3555|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3555|11|0
+TSR:1|1|28|Vth|P|3555|0|0
+TSR:1|1|29|Vth|P|3555|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3555|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3555|72|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3555|0|0
+TSR:1|1|120|Kelvin|P|3555|15|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3555|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3555|0|0
+TSR:1|1|201|VSDP|P|3555|0|0
+HBR:1|1|1|3457|P|PASS
+SBR:1|1|1|3457|P|PASS
+SBR:1|1|6|11|F|IGSS @ + High Voltage
+SBR:1|1|16|72|F|IDSX(100%VDS)
+SBR:1|1|202|15|F|Kelvin
+HBR:1|1|0|98|F|FAIL
+PCR:1|1|3555|0|0|3457
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||16
+WRR:1|00:00:00 01-Jan-1970|3553|16||0|0|3502
+TSR:1|1|1|IGSS @ + 100% VGS|P|3553|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3553|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3553|4|0
+TSR:1|1|28|Vth|P|3553|0|0
+TSR:1|1|29|Vth|P|3553|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3553|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3553|33|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3553|0|0
+TSR:1|1|120|Kelvin|P|3553|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3553|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3553|0|0
+TSR:1|1|201|VSDP|P|3553|0|0
+HBR:1|1|1|3502|P|PASS
+SBR:1|1|1|3502|P|PASS
+SBR:1|1|6|4|F|IGSS @ + High Voltage
+SBR:1|1|16|33|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|51|F|FAIL
+PCR:1|1|3553|0|0|3502
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||17
+WRR:1|00:00:00 01-Jan-1970|3552|17||0|0|3448
+TSR:1|1|1|IGSS @ + 100% VGS|P|3552|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3552|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3552|9|0
+TSR:1|1|28|Vth|P|3552|0|0
+TSR:1|1|29|Vth|P|3552|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3552|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3552|81|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3552|0|0
+TSR:1|1|120|Kelvin|P|3552|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3552|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3552|0|0
+TSR:1|1|201|VSDP|P|3552|0|0
+HBR:1|1|1|3448|P|PASS
+SBR:1|1|1|3448|P|PASS
+SBR:1|1|6|9|F|IGSS @ + High Voltage
+SBR:1|1|16|81|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|104|F|FAIL
+PCR:1|1|3552|0|0|3448
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||18
+WRR:1|00:00:00 01-Jan-1970|3556|18||0|0|3479
+TSR:1|1|1|IGSS @ + 100% VGS|P|3556|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3556|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3556|7|0
+TSR:1|1|28|Vth|P|3556|0|0
+TSR:1|1|29|Vth|P|3556|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3556|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3556|54|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3556|1|0
+TSR:1|1|120|Kelvin|P|3556|15|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3556|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3556|0|0
+TSR:1|1|201|VSDP|P|3556|0|0
+HBR:1|1|1|3479|P|PASS
+SBR:1|1|1|3479|P|PASS
+SBR:1|1|6|7|F|IGSS @ + High Voltage
+SBR:1|1|16|54|F|IDSX(100%VDS)
+SBR:1|1|176|1|F|BVDSX(100-250uA)
+SBR:1|1|202|15|F|Kelvin
+HBR:1|1|0|77|F|FAIL
+PCR:1|1|3556|0|0|3479
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||19
+WRR:1|00:00:00 01-Jan-1970|3553|19||0|0|3435
+TSR:1|1|1|IGSS @ + 100% VGS|P|3553|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3553|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3553|11|0
+TSR:1|1|28|Vth|P|3553|0|0
+TSR:1|1|29|Vth|P|3553|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3553|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3553|93|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3553|0|0
+TSR:1|1|120|Kelvin|P|3553|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3553|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3553|0|0
+TSR:1|1|201|VSDP|P|3553|0|0
+HBR:1|1|1|3435|P|PASS
+SBR:1|1|1|3435|P|PASS
+SBR:1|1|6|11|F|IGSS @ + High Voltage
+SBR:1|1|16|93|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|118|F|FAIL
+PCR:1|1|3553|0|0|3435
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||21
+WRR:1|00:00:00 01-Jan-1970|3554|21||0|0|3494
+TSR:1|1|1|IGSS @ + 100% VGS|P|3554|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3554|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3554|19|0
+TSR:1|1|28|Vth|P|3554|0|0
+TSR:1|1|29|Vth|P|3554|1|0
+TSR:1|1|43|IDSX(80%VDS)|P|3554|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3554|26|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3554|0|0
+TSR:1|1|120|Kelvin|P|3554|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3554|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3554|0|0
+TSR:1|1|201|VSDP|P|3554|0|0
+HBR:1|1|1|3494|P|PASS
+SBR:1|1|1|3494|P|PASS
+SBR:1|1|6|19|F|IGSS @ + High Voltage
+SBR:1|1|12|1|F|Vth
+SBR:1|1|16|26|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|60|F|FAIL
+PCR:1|1|3554|0|0|3494
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||22
+WRR:1|00:00:00 01-Jan-1970|3554|22||0|0|3470
+TSR:1|1|1|IGSS @ + 100% VGS|P|3554|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3554|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3554|8|0
+TSR:1|1|28|Vth|P|3554|0|0
+TSR:1|1|29|Vth|P|3554|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3554|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3554|62|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3554|0|0
+TSR:1|1|120|Kelvin|P|3554|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3554|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3554|0|0
+TSR:1|1|201|VSDP|P|3554|0|0
+HBR:1|1|1|3470|P|PASS
+SBR:1|1|1|3470|P|PASS
+SBR:1|1|6|8|F|IGSS @ + High Voltage
+SBR:1|1|16|62|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|84|F|FAIL
+PCR:1|1|3554|0|0|3470
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||23
+WRR:1|00:00:00 01-Jan-1970|3554|23||0|0|3487
+TSR:1|1|1|IGSS @ + 100% VGS|P|3554|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3554|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3554|17|0
+TSR:1|1|28|Vth|P|3554|0|0
+TSR:1|1|29|Vth|P|3554|1|0
+TSR:1|1|43|IDSX(80%VDS)|P|3554|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3554|35|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3554|0|0
+TSR:1|1|120|Kelvin|P|3554|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3554|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3554|0|0
+TSR:1|1|201|VSDP|P|3554|0|0
+HBR:1|1|1|3487|P|PASS
+SBR:1|1|1|3487|P|PASS
+SBR:1|1|6|17|F|IGSS @ + High Voltage
+SBR:1|1|12|1|F|Vth
+SBR:1|1|16|35|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|67|F|FAIL
+PCR:1|1|3554|0|0|3487
+FAR:A|4|2|S
+DTR:<cmd> gross_die=1200
+SDR:1|1|1||||||||||||||||WEG03
+WIR:1|23:42:53 27-Sep-2016||24
+WRR:1|00:00:00 01-Jan-1970|3554|24||0|0|3473
+TSR:1|1|1|IGSS @ + 100% VGS|P|3554|0|0
+TSR:1|1|2|IGSS @ - 100% VGS|P|3554|0|0
+TSR:1|1|3|IGSS @ + High Voltage|P|3554|10|0
+TSR:1|1|28|Vth|P|3554|0|0
+TSR:1|1|29|Vth|P|3554|0|0
+TSR:1|1|43|IDSX(80%VDS)|P|3554|0|0
+TSR:1|1|51|IDSX(100%VDS)|P|3554|57|0
+TSR:1|1|76|BVDSX(100-250uA)|P|3554|0|0
+TSR:1|1|120|Kelvin|P|3554|14|0
+TSR:1|1|126|rDSon #1 @ VGS= 10V|P|3554|0|0
+TSR:1|1|127|rDSon #2 @ VGS= 4.5V|P|3554|0|0
+TSR:1|1|201|VSDP|P|3554|0|0
+HBR:1|1|1|3473|P|PASS
+SBR:1|1|1|3473|P|PASS
+SBR:1|1|6|10|F|IGSS @ + High Voltage
+SBR:1|1|16|57|F|IDSX(100%VDS)
+SBR:1|1|202|14|F|Kelvin
+HBR:1|1|0|81|F|FAIL
+PCR:1|1|3554|0|0|3473
+# PAT-Man SUMMARY log file
+# Created by: g-trigger-tests
+
+Geometry       : PBJL150AFOA
+Lot            : H31Y032.1
+Program        : FetTest program
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Wafer#                :     1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18      19      21      22      23      24  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total Dies            :   3529    3554    3597    3552    3556    3556    3627    3551    3552    3554    3555    3552    3553    3552    3555    3553    3552    3556    3553    3554    3554    3554    3554 
+Gross Die (GPDW)      :   1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200    1200 
+Good dies             :   3429    3490    3443    3495    3447    3480    3489    3500    3462    3503    3467    3495    3438    3496    3457    3502    3448    3479    3435    3494    3470    3487    3473 
+Yield level           :285.75% 290.83% 286.92% 291.25% 287.25% 290.00% 290.75% 291.67% 288.50% 291.92% 288.92% 291.25% 286.50% 291.33% 288.08% 291.83% 287.33% 289.92% 286.25% 291.17% 289.17% 290.58% 289.42% 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# PAT-Man SUMMARY log file
+# Created by: g-trigger-tests
+
+Geometry       : APBRB60D8XIZ
+Lot            : Y33M123.4
+Program        : FetTest program
+
+-----------------------------------------------
+Wafer#                :     5       6  
+-----------------------------------------------
+Total Dies            :   1517    1509 
+Gross Die (GPDW)      :   2372    2372 
+Good dies             :   1054    1110 
+Yield level           : 44.44%  46.80% 
+-----------------------------------------------
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,01
+#
+# STDF Wafer details
+Stdf_TotalDies,3529
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3429,17,71,12,
+#
+# Yield details
+GoodParts,3429
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,02
+#
+# STDF Wafer details
+Stdf_TotalDies,3554
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3490,9,40,15,
+#
+# Yield details
+GoodParts,3490
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,03
+#
+# STDF Wafer details
+Stdf_TotalDies,3597
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,Vth,IDSX(100%VDS),Kelvin,
+Bin#,1,6,12,16,202,
+BinCount,3443,8,44,87,15,
+#
+# Yield details
+GoodParts,3443
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,04
+#
+# STDF Wafer details
+Stdf_TotalDies,3552
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,Vth,IDSX(100%VDS),Kelvin,
+Bin#,1,6,12,16,202,
+BinCount,3495,8,1,33,15,
+#
+# Yield details
+GoodParts,3495
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,05
+#
+# STDF Wafer details
+Stdf_TotalDies,3556
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3447,10,84,15,
+#
+# Yield details
+GoodParts,3447
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,06
+#
+# STDF Wafer details
+Stdf_TotalDies,3556
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3480,14,47,15,
+#
+# Yield details
+GoodParts,3480
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,07
+#
+# STDF Wafer details
+Stdf_TotalDies,3627
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3489,12,112,14,
+#
+# Yield details
+GoodParts,3489
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,08
+#
+# STDF Wafer details
+Stdf_TotalDies,3551
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3500,9,28,14,
+#
+# Yield details
+GoodParts,3500
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,09
+#
+# STDF Wafer details
+Stdf_TotalDies,3552
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3462,8,68,14,
+#
+# Yield details
+GoodParts,3462
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,10
+#
+# STDF Wafer details
+Stdf_TotalDies,3554
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3503,9,28,14,
+#
+# Yield details
+GoodParts,3503
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,11
+#
+# STDF Wafer details
+Stdf_TotalDies,3555
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3467,10,64,14,
+#
+# Yield details
+GoodParts,3467
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,12
+#
+# STDF Wafer details
+Stdf_TotalDies,3552
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3495,9,34,14,
+#
+# Yield details
+GoodParts,3495
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,13
+#
+# STDF Wafer details
+Stdf_TotalDies,3553
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3438,11,90,14,
+#
+# Yield details
+GoodParts,3438
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,14
+#
+# STDF Wafer details
+Stdf_TotalDies,3552
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3496,2,40,14,
+#
+# Yield details
+GoodParts,3496
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,15
+#
+# STDF Wafer details
+Stdf_TotalDies,3555
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3457,11,72,15,
+#
+# Yield details
+GoodParts,3457
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,16
+#
+# STDF Wafer details
+Stdf_TotalDies,3553
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3502,4,33,14,
+#
+# Yield details
+GoodParts,3502
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,17
+#
+# STDF Wafer details
+Stdf_TotalDies,3552
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3448,9,81,14,
+#
+# Yield details
+GoodParts,3448
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,18
+#
+# STDF Wafer details
+Stdf_TotalDies,3556
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),BVDSX(100-250uA),Kelvin,
+Bin#,1,6,16,176,202,
+BinCount,3479,7,54,1,15,
+#
+# Yield details
+GoodParts,3479
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,19
+#
+# STDF Wafer details
+Stdf_TotalDies,3553
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3435,11,93,14,
+#
+# Yield details
+GoodParts,3435
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,21
+#
+# STDF Wafer details
+Stdf_TotalDies,3554
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,Vth,IDSX(100%VDS),Kelvin,
+Bin#,1,6,12,16,202,
+BinCount,3494,19,1,26,14,
+#
+# Yield details
+GoodParts,3494
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,22
+#
+# STDF Wafer details
+Stdf_TotalDies,3554
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3470,8,62,14,
+#
+# Yield details
+GoodParts,3470
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,23
+#
+# STDF Wafer details
+Stdf_TotalDies,3554
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,Vth,IDSX(100%VDS),Kelvin,
+Bin#,1,6,12,16,202,
+BinCount,3487,17,1,35,14,
+#
+# Yield details
+GoodParts,3487
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Wed 09 28 01:42:53 2016
+Product,PBJL150AFOA
+Lot,H31Y032
+SubLot,H31Y032.1
+WaferID,24
+#
+# STDF Wafer details
+Stdf_TotalDies,3554
+Stdf_GrossDiesPerWafer,1200
+#
+# Binning info
+BinName,PASS,IGSS @ + High Voltage,IDSX(100%VDS),Kelvin,
+Bin#,1,6,16,202,
+BinCount,3473,10,57,14,
+#
+# Yield details
+GoodParts,3473
+#
+# Promis details
+# GrossDie=1200
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Sun 05 18 09:14:00 2003
+Product,APBRB60D8XIZ
+Lot,Y33M123
+SubLot,Y33M123.4
+WaferID,05
+#
+# STDF Wafer details
+Stdf_TotalDies,1517
+Stdf_GrossDiesPerWafer,2372
+#
+# Binning info
+BinName,PASS,IGSS @ - High Volatge,GS SHORT,Vth(OPEN),IDSX(100%VDS),IDSX(50%VDS),DS SHORT,VDSP,UIS,rDSon #1 @ VGS= 10V,rDSon #2 @ VGS= 4.5V,
+Bin#,1,7,60,31,16,15,61,13,5,18,19,
+BinCount,1054,3,22,18,52,20,8,8,1,260,71,
+#
+# Yield details
+GoodParts,1054
+#
+# Promis details
+# GrossDie=2372
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+
+# G-Trigger FET_NOPAT wafer log file
+# Created by: g-trigger-tests
+#
+# Global info
+SetupTime,Sun 05 18 09:14:00 2003
+Product,APBRB60D8XIZ
+Lot,Y33M123
+SubLot,Y33M123.4
+WaferID,06
+#
+# STDF Wafer details
+Stdf_TotalDies,1509
+Stdf_GrossDiesPerWafer,2372
+#
+# Binning info
+BinName,PASS,IGSS @ - 100% VGS,IGSS @ - High Volatge,GS SHORT,Vth(OPEN),IDSX(100%VDS),IDSX(50%VDS),DS SHORT,VDSP,UIS,rDSon #1 @ VGS= 10V,rDSon #2 @ VGS= 4.5V,
+Bin#,1,11,7,60,31,16,15,61,13,5,18,19,
+BinCount,1110,1,3,17,23,36,8,2,2,1,248,58,
+#
+# Yield details
+GoodParts,1110
+#
+# Promis details
+# GrossDie=2372
+# #Define Gross die ratio to be used to accept a wafer (parts > ratio*GrossDie)
+# ValidWaferThreshold_GrossDieRatio=0.75
+

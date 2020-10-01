@@ -1,0 +1,96 @@
+<assembly>
+    <id>assembly-galaxy-testermonitor-linux-component</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <!-- executables -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>gts-station${exeExt}</include>
+                <include>gs-logcenter${exeExt}</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <!-- executables -->
+        <!-- logcenter -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/log_center/${distName}</directory>
+            <outputDirectory>${binDir}</outputDirectory>
+            <includes>
+                <include>gs-logcenter${exeExt}</include>
+            </includes>
+        </fileSet>
+        <!-- gtl components -->
+        <!--        <fileSet>
+            <directory>${project.build.directory}/gtl-all-platforms</directory>
+            <outputDirectory>lib</outputDirectory>
+            <excludes/>
+        </fileSet>         -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/gex-tester</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>gtl/include/gtl_core.h</include>
+            </includes>
+        </fileSet>
+        <!-- gtl -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/gtl</directory>
+            <outputDirectory>gtl</outputDirectory>
+            <excludes/>
+        </fileSet>
+        <!-- external gtl -->
+        <fileSet>
+            <directory>${project.build.directory}/gtl</directory>
+            <outputDirectory>gtl</outputDirectory>
+            <excludes/>
+        </fileSet>
+        <!-- gtl -->
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/readme</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>readme.txt</include>
+            </includes>
+        </fileSet>
+        <!-- scripts -->
+        <!-- unix specific -->
+        <fileSet>
+            <directory>${project.build.directory}/${basepath}/${scriptPackageFolder}</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>gtm${exeExt}</include>
+                <include>gs-gtmd${exeExt}</include>
+                <include>gts${exeExt}</include>
+                <include>gs-logcenter${exeExt}</include>
+            </includes>
+
+        </fileSet>
+        <!-- Copyrights -->
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/bin/help/images</directory>
+            <outputDirectory>bin/help/images</outputDirectory>
+            <includes>
+                <include>CopyrightAndLegalNotices.pdf</include>
+                <include>qntx_exam_gs.pdf</include>
+                <include>qntx_exam_install.pdf</include>
+                <include>qntx_exam_lic_user.pdf</include>
+                <include>qntx_rh.pdf</include>
+                <include>qntx_ter_install.pdf</include>
+                <include>qntx_ter_rh.pdf</include>
+                <include>qntx_third_party.pdf</include>
+                <include>qntx_ym_gs.pdf</include>
+                <include>qntx_ym_install.pdf</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <!-- gslog -->
+    <files>
+        <file>
+            <source>${project.build.directory}/galaxy_products/gex_product/bin/gtm_gslog.xml</source>
+            <outputDirectory>samples</outputDirectory>
+            <destName>gslog.xml</destName>
+        </file>
+     </files>
+</assembly>

@@ -1,0 +1,4 @@
+<external_files>
+	<promis format="vishay-hvm" type="wafer">./input/SpektraLotSummary/converter_external_file/HVM_PROMIS_DATA.TXT</promis>
+	<binmap format="vishay-hvm" type="wafer">./input/SpektraLotSummary/converter_external_file/HVM_Sort_Bin_Mapping_kcmod.csv</binmap>
+</external_files>

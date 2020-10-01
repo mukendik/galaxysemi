@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport 
+	Version="0.6" 
+	Type="AER"
+	GRT="../product_trend.grt" 
+	ID="ProductTrend" Title="Product trend" Description="Product trend with chart over corresponding lots...">
+
+	<dataset ID="DS1" label="Main dataset"  
+		stage="Wafer Sort" 
+		binning="H" binning_visible="true" binning_readonly="false" 
+		time_period_visible="true" time_period_readonly="false" time_period_mandatory="false" 
+		time_period_label="Select here the time period"
+		time_period_from="new Date(new Date().getFullYear(),00,01)" 
+		time_period_to="new Date()"
+		time_period_defaultValueExpression="all_dates" 
+		>
+		<!-- time_period_defaultValueExpression can be : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+		<!-- Date objects in javascript example : new Date() returns today. new Date(2006, 00, 01) returns the 1st jan 2006 -->
+
+		<multifield 
+			label="Select here your split params"	
+			role="SPLIT" 
+			time="N" consolidated="Y"  facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="true"  multivalue="true"
+			field_mandatory="false" 
+			value_mandatory="false" value_editable="true" value_readonly="false"
+			>
+		</multifield>
+
+		<multifield 
+			label="Select here your aggregate " 
+			role="AGGREGATE" 
+			time="*" facts="false"
+			filterable="true" visible="true"  autorepeat="false" orderable="false"  
+			allow_full_range_choice="false" full_range="false"  
+			multivalue="true"
+			value_readonly="false" value_mandatory="false" value_editable="true"
+			default_field="Lot ID" field_mandatory="true" field_readonly="true" 
+			>
+		</multifield>
+	
+		<multifield 
+			label="Select here your serie params"
+			role="SERIE" 
+			time="*" facts="true"
+			filterable="true" visible="true"  autorepeat="false" orderable="false"  full_range="false"  
+			multivalue="true"
+			field_mandatory="false" 
+			value_readonly="false" value_mandatory="false" value_editable="true"
+			default_field="Hbin#" field_mandatory="true" field_readonly="true" 
+			>
+		</multifield>
+		
+		<multifield 
+			label="Select here any other filters "
+			role="FILTER" 
+			time="*"  facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+			indent="false"
+			>
+			<field  default_field="Product ID" field_mandatory="true" field_readonly="true" value_mandatory="true"/>
+		</multifield>
+		
+		<multifield 
+			label="Order by "
+			role="ORDER" 
+			time="*"  facts="false"
+			filterable="false" visible="true"  autorepeat="true" orderable="true"  full_range="false"  multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+			indent="false" extra_fields="start_time|bin_volume|good_volume|gross_volume|volume|bin_yield|gross_yield|yield"
+			>
+			<field  default_field="start_time" field_mandatory="false" field_readonly="false" value_mandatory="false" orderdir="asc"/>
+			<field  default_field="bin_volume" field_mandatory="false" field_readonly="false" value_mandatory="false" orderdir="desc"/>
+		</multifield>
+		
+	</dataset>
+	
+	<options>
+		<option ID="P_BIN_NO" 				type="String"	label="Serie to display" hideif="false" rawReplace="true" 	defaultvalue="'Worst'"/>
+		<option ID="P_SHOWCHARTS" 			type="Bool" 	hideif="false" 	label="Show charts" 	rawReplace="true" 	defaultvalue="true" />
+		<option ID="P_SHOWLEGEND" 			type="Bool" 	hideif="false" 	label="Show legend in charts" 	rawReplace="true" defaultvalue="true" />
+		<option ID="P_SHOWTABLES" 			type="Bool" 	hideif="false" 	label="Show tables" 	rawReplace="true" 	defaultvalue="true" />
+
+		<option ID="P_YIELD_AXIS_STYLE" 	type="Enum"		hideif="false" 	label="Yield style" 	rawReplace="true" 	
+			codingvalues="line|bars|stackedbars"	displayvalues="line|bars|stackedbars"  defaultvalue="'line'" />
+		
+		<option ID="P_VOL_AXIS_STYLE" 		type="Enum"		hideif="false" 	label="Volume style"  	rawReplace="true" 	
+			codingvalues="line|bars|stackedbars"	displayvalues="line|bars|stackedbars" defaultvalue="'bars'" />
+			
+		<option ID="P_YIELD" 				type="String"	hideif="true"	label="P_YIELD" 	rawReplace="true" 	defaultvalue="'$FGrossBinYield'"/>
+		<option ID="P_OVERALL_YIELD" 		type="String"	hideif="true"	label="P_OVERALL_YIELD" rawReplace="true"	defaultvalue="'$FGrossYield'" />
+		<option ID="P_VOLUME" 				type="String"	hideif="true"	label="P_VOLUME" 	rawReplace="true"	defaultvalue="'$FGrossVolume'" />
+		<option ID="P_SUMMARY" 				type="String"	hideif="true"	label="P_SUMMARY" 	rawReplace="true"	defaultvalue="'gross die'" />
+
+		<option ID="P_SHOW_VOL_IN_CHART" 	type="Bool"		label="Show volume in chart" 	hideif="false" rawReplace="true" defaultvalue="true"/>
+		<option ID="P_CHART_LEFTAXIS_MIN" 	type="Float"	label="Min Yield axis"			hideif="false" rawReplace="true" defaultvalue="0" />
+		<option ID="P_CHART_LEFTAXIS_MAX" 	type="Float"	label="MAX Yield axis" 			hideif="false" rawReplace="true" defaultvalue="100" />
+		<option ID="P_MAX_NUM_AGGREGATES_IN_CHART" 	type="Int" label="Max num. of agg. in charts" 	hideif="false" 	rawReplace="true"	minimum="1" singleStep="1" defaultvalue="30"/>
+		<option ID="P_MAX_LABEL_SIZE"	type="Int" 	hideif="false" label="Max X label length" rawReplace="true" minimum="4" singleStep="1" defaultvalue="18" />
+	</options>
+
+</GalaxyReport>

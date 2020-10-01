@@ -1,0 +1,1093 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Examinator V6.0 Release History</title>
+<style>
+..main-title-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #858585;
+  text-decoration: none;
+  line-height: 30px;
+}
+..main-subtitle-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+..main-table-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 30px;
+}
+..main-content-text
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4d4d;
+  text-decoration: none;
+  line-height: 15px;
+}
+..main-content-title-blue
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  text-decoration: none;
+  padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<table width="800"><tbody>
+  <tr>
+    <td class="main-title-text" align="center"><a name="Top">Examinator family : V6.0 Releases History</a></td>
+  </tr>
+  <tr>
+    <td class="main-subtitle-text" align="center" >(Examinator, Examinator-Pro, Examinator-PAT)</td>
+  </tr>
+</tbody></table>
+
+<br><br><br>
+
+<!-- Table with important note -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold; color: rgb(204, 0, 0);">IMPORTANT NOTE:</span><br><br>
+      <span style="font-size: 13px;">
+      Customers upgrading to V6.Y Quantix applications (Examinator-Characterization, Examinator-Production,
+      Examinator-PAT, Yield-Man, PAT-Server), and connecting to a Gex-Lm license manager to get a license token,
+      must make sure that the Gex-Lm license manager is also upgraded to V6.Y.
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+
+
+<!-- Table of contents -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr style="height: 2px;" color="#afc22a"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <span style="font-size: 16px; font-weight: bold;;">QUICK LINKS:</span><br><br>
+      <span style="font-size: 13px;">
+      <a href="_gexstd_history.htm">Back to main releases history page</a><br><br>
+      <a href="_gexstd_history_v60_major.htm">V6.0 major enhancements</a><br>
+      <a href="#V6.0B154">V6.0 B154 release history</a><br>
+      <a href="#V6.0B153">V6.0 B153 release history</a><br>
+      <a href="#V6.0B152">V6.0 B152 release history</a><br>
+      <a href="#V6.0B151">V6.0 B151 release history</a><br>
+      <a href="#V6.0B150">V6.0 B150 release history</a><br>
+      <a href="#V6.0B149">V6.0 B149 release history</a><br>
+      <a href="#V6.0B148">V6.0 B148 release history</a><br>
+      <a href="#V6.0B147">V6.0 B147 release history</a><br>
+      <a href="#V6.0B146">V6.0 B146 release history</a><br>
+      </span>
+    </td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with V6.0 B154 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B154">V6.0 B154 (18 September 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          
+          
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            
+            <!-- New Stuff goes in here.   -->
+            
+                 
+            <li><b>Case 2195 - Enhanced Tango Parser:</b>
+						       Implemented several enhancements to the Tango parser.</li>
+            <li><b>Case 2160 - Title for PNG Wafermap export:</b>  
+						       Added a title line to the exported PNG Wafermap.</li>
+            <li><b>Case 2159 - Wafermap export:</b>
+						       Added a feature to the Export Wafermap utility.  When using the 'Export wafermap' feature the first time, 
+						       the path for the output file will be set to the 'Report Output' dircetory, then it will be remembered throughout 
+                   the session. </li>
+            <li><b>Case 2112 - EDL Parser:</b> 
+                   Added enhanced functionality to the EDL data parser.</li>
+            <li><b>Case 2102 - Interactive Chart Display Modes:</b> 
+						       Added a feature that allows the user to specify a display type in the interactive mode, and that same display 
+                   type will carry through all of the interactive charts during that particular session.</li>
+            <li><b>Case 2100 - New Markers for Histograms:</b> 
+						       Added Min, Max, and Test Limits to the banner mode histograms.</li>
+            <li><b>Case 2096 - Enhanced SPEA Datalog support:</b>
+						       Added enhanced suppport for the SPEA datalog .log format.</li>
+            <li><b>Case 2049 - Units in CSV Export:</b> 
+						       Added the capability to export CSV format with non-normalized units.</li>
+						<li><b>Case 2007 - Scaled Units in Toolbox CSV Output:</b>
+						       Added a capability to export data into a CSV file with scaled units in addition to normalized units.</li>
+						       
+						       
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+	        
+	        
+	        <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+                       
+            <li><b>Case 2241 - Hyperlinks not working:</b>
+						       Fixed a bug that would cause the Test Statistics page hyperlinks to act improperly at times.</li>
+            
+            <li><b>Cases 2240 & 2223 - Software Crash:</b>
+						       Fixed a bug that caused Quantix to crash when viewing a 3D wafermap under certain conditions.</li>
+                        
+            <li><b>Case 2197 - Error in Statistics on CSV Output:</b>
+						       Fixed a statistics calculation error that would cause a floating point discrepancy between the Test Statistics
+						       table and the Toolbox - CSV output.</li>
+            
+            <li><b>Case 2190 - Incorrect pass/fail:</b>
+						       Fixed a bug that would cause parts that are between the spec limits to register as failing parts unders certian 
+                   conditions.  This would appear when Normalize/Scale Statistics was set to Normalize All Units.</li>
+            <li><b>Case 2184 - Test results not properly aligned:</b>
+						       Fixed a bug that would cause Quantix to misalign results for STDF files with interlaced results.</li>
+						<li><b>Case 2181 - Save Settings:</b>
+						       Fixed a problem with the Save Settings page. Prior to this fix when saving settings from the Settings page, 
+                   if some settings contained a list of tests with one or more commas, the test list would be truncated before the 
+                   comma upon reloading.</li>
+						<li><b>Case 2175 - AWW Files:</b>
+						       Fixed a problem that would cause Quantix to crash when loading multiple AWW files.</li>
+ 						<li><b>Case 2161 - Image PNG Wafermap export:</b>
+						       Fixed a bug that caused an exported wafermap to be oriented improperly.</li>
+						<li><b>Case 2147 - Test Number Pick List:</b>
+						       Fixed a problem that would cause Quantix to freeze when typing a test number into the test number pick list that 
+						       was not present in the database.</li>
+						<li><b>Case 2144 - Titles misaligned:</b>
+						       Fixed a glitch that caused titles to be misaligned on PDF reports.</li>
+						<li><b>Case 2126 - Pearson Correlation Report:</b>
+						       Fixed a problem that caused Quantix to crash when running the Pearson Correlation report under certain conditions.</li>
+            <li><b>Case 2125 - Incomplete Optical Files causing freeze:</b>
+						       Fixed a bug that would cause Quantix to freeze, with no error message, when loading incomplete Optical files such as 
+                   Imagemaster, Talysurf, & Voyager.</li>
+            <li><b>Case 2116 - Individual retested die display:</b>
+						       Fixed a bug that caused an individual die on the 3D wafermap to display the first-pass Min/Max values on wafermaps 
+                   and histograms.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B153 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B153">V6.0 B153 (7 August 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <!-- New Stuff goes in here.   -->
+            <li><b>Split Dataset by Two Fields:</b>  
+						       Added a feature that allows for splitting a dataset by a combined database field: Lot;Wafer.</li>
+            <li><b>Merge Dataset Feature.</b>  
+						       Added a feature that allows for the merging of multiple datasets. This allows for calculating
+						       consolidated yield when there are multiple first pass and multiple retest splitlots.</li>
+            <li><b>Interactive Dataset Split Feature:</b>
+						       In the interactive mode, Quantix now supports the capability to split a dataset and maintain the split
+						       while scrolling through other test id's.</li>
+            <li><b>Fault Tolerance:</b>
+						       <ul>
+                   <li>Added additional fault tolerance to prevent Quantix from crashing when it encounters corrupt files or missing
+						       fields in data files.</li>
+						       <li>Added the ability to detect if Sites are logged out of order in the data file.</li>
+						       </ul>
+                   </li>
+            <li><b>New Parsers:</b>
+						       <ul>
+                   <li>Added suppport for the Teradyne Catalyst .log format.</li>
+						       <li>Added support for Optical testers: QV302, Voyager, & Talysurf.</li>
+                   </ul>
+                   </li> 
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Time Zone Error:</b>
+						       Fixed a bug that caused Quantix to apply an incorrect time zone adjustment under certain condiditons,
+						       causing the time to display 8 hours ahead of the correct value.</li>
+            <li><b>Error on Opening Interactive Tables</b>
+						       Fixed a bug that would cause Quantix to crash under certain conditions when opening
+						       the Interactive Data Tables, Trend Charts, or Histograms.</li>
+            <li><b>Missing Test Names during TSMC Conversion to CSV.</b>
+						       Added code to include all test names when converting from TSMC WAT format to CSV format.</li>
+            <li><b>Powerpoint:</b>
+						       Fixed a bug that would cause Quantix to close an existing Powerpoint window when creating a new report in
+						       Powerpoint. Under certain conditions, this could cause work in Powerpoint to be lost.</li>
+						       <li>Fixed a problem that would cause some charts to not display properly in Powerpoint
+						       when using the Powerpoint template and the MyReports format.</li>
+            <li><b>Yield & Bin Paretos:</b>
+						       <ul><li>Fixed a bug that would cause yield and bin paretos to display incorrect values
+						       when the Last Test Instance filter is used.</li>
+						       <li>Fixed a bug that caused the failing die contribution to display 'n/a.'</li>
+						       <li>Fixed a discrepancy between Enterprise reporting of yield and detailed reporting of yield that occurred under certain
+						       circumstances, particularly when a query spans more than one month.</li></ul>
+            <li><b>Remove All Matching Parts:</b>
+						       Fixed a bug that caused some statistics to be calculated incorrectly when using the Remove All Matching
+						       Parts feature in the interactive report.</li>
+            <li><b>Reporting Units of Percentages:</b>
+						       Fixed some problem that occurred when working with units of percentage.
+						       Percentage now is reported correctly when using data extraction from the Relational Database,
+						       and when performaing calcuations in What-If / Virtual Retest.
+						       </li>
+            <li><b>Converting GZ Compressed Files:</b>
+						       Fixed a problem that caused Quantix to run very slowly when de-compressing GZ files.</li>
+            <li><b>Gage R&R:</b>
+						       Fixed a problem that caused negative R&R percentage values to display under certian conditions.</li>
+            <li><b>Wafermap X-axis swap, Y-axis swap:</b>
+                   the wafermap X-axis swap and Y-axis swap options (Options->Wafer map...->Visual options...) were
+                   not functional anymore in V6.0.</li>
+            <li><b>What-If:</b>
+                   fixed a bug that caused Examinator to use an incorrect scaling factor when the limit was manually modified
+						       while using What-If / Virtual Retest.</li>
+            <li><b>KLA Wafer XML parser:</b>
+                   Corrected to insert the proper PosX and PosY information. Examinator used the default PosX and PosY
+                   values (PosX=Right, PosY=Down), so that the wafer map could be swapped in both X and Y.</li>
+            <li><b>Trend chart on custom parameters:</b>
+                   fixed a bug that caused Examinator to crash when displaying a trend chart for a custom parameter
+                   created with the 'Create a custom parameter...' button in the 'Interactive Charts' window.</li>
+            <li><b>Functional tests when filtering parts:</b>
+                   fixed a bug where the functional test results of excluded parts were not removed when the dataset was
+                   filtered (ie 'Last test instance' filter).</li>
+            <li><b>'Pick tests from list...' dialog box:</b>
+                   fixed a bug that would cause only the last character to appear in
+                   the edit box, overwriting the characters previously entered, when entering a string into the 'Search' edit, .</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B152 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B152">V6.0 B152 (27 May 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>New option for bin stacked wafer maps:</b>
+                   an option was added to specify how the stacked binning wafer map should be generated. Available Options are:
+                   <ul>
+                   <li><b>Bin Count:</b> the map will display the count of matching bins for each X/Y location.</li>
+                   <li><b>Pass/Fail:</b> the map will display a merged pass/fail information for each X/Y location.
+                   An X-Y location is considered a Pass <b>Only If</b> all the die for all wafers at that
+                   particular location are Pass. A missing die is considered a fail.</li>
+                   </ul>
+                   The option is accessible through the GUI at 'Options->Wafer map, Strip map->Bin stacked wafermap', and through the scripting
+                   language using "gexOptions('wafer','bin_stacked','<value>');".
+                   </li>
+            <li><b>New option for trend chart X-axis:</b>
+                   an option was added to specify the iformation to use on the X-axis for trend charts.
+                   Available Options are:
+                   <ul>
+                   <li>Run ID: the trend chart X-axis will contain the Run ID (1,2,...n).</li>
+                   <li>Part ID: the trend chart X-axis will contain the Part ID (alphanumerical value read from the data file).</li>
+                   </ul>
+                   The option is accessible through the GUI at 'Options->Trend (Control chart)->X-Axis scale type)', and through the scripting
+                   language using "gexOptions('adv_trend','x_axis','<value>');".
+                   </li>
+            <li><b>Support for 'Laurier Die Sort' wafer map format:</b>
+                   added support for the 'Laurier Die Sort' wafer map fomrat. This format is supported both as an input file, and
+                   as an output file (wafer map export function).</li>
+            <li><b>'Datalog' section added to the 'My Reports':</b></li>
+            <li><b>Display of the PartID:</b>
+                   the PartID is now displayed in various locations:
+                   <ul>
+                   <li>when searching for a particular part in the interactive wafer map.</li>
+                   <li>when searching for a particular part in the interactive table ('Part results' tab).</li>
+                   <li>in the tool tip when hoovering the mouse over a specific data point in the trend chart (if option 'Options->
+                   Data Processing options->PartID display' is set to 'Show PartID').</li>
+                   <li>in the interactive chart's 'Table' tab (if option 'Options->Data Processing options->PartID display' is set
+                   to 'Show PartID').</li>
+                   </ul>
+                   </li>
+            <li><b>Support for 'SPEA datalog':</b>
+                   added support for the 'SPEA datalog' data fomrat. This format is generated by SPEA testers.</li>
+            <li><b>Teradyne Image datalog parser:</b>
+                   the parser for the 'Teradyne Image datalog' ascii format has been enhanced:
+                   <ul>
+                   <li>lines with non standard content (unknown keywords) are ignored, rather than generating a parser error.</li>
+                   <li>test numbers with more than 6 digits are supported.</li>
+                   <li>test numbers from the datalog file are used, rather than auto-generated test numbers.</li>
+                   </ul>
+                   </li>
+            <li><b>Additional fields in the CSV export file:</b>
+                   when exporting a data file to the Quantix CSV format, additional fields are written to the header (if populated in
+                   the data file):
+                   <ul>
+                   <li>ModeCode</li>
+                   <li>RtstCode</li>
+                   <li>ProtCode</li>
+                   <li>CmodeCode</li>
+                   <li>BurnTime</li>
+                   </ul>
+                   </li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Wafermap retest policy option:</b>
+                   fixed a bug that caused an inconsistency in bin counts between the 3D
+                   Interactive wafermap and the Binning section of the report. This error
+                   was previously observed only under the following Options settings.
+                   <ul>
+                   <li>'Options->Wafermap->Retest Policy' = 'Highest Bin'.</li>
+                   <li>'Options->Binning->How is Binning Computed' = 'From Wafer map'.</li>
+                   </ul>
+            </li>
+            <li><b>&lt;end dataset&gt; tag in CSV files:</b>
+                   fixed a bug that caused &lt;end dataset&gt; tag in Quantix CSV files to be read improperly.</li>
+            <li><b>SQL error when querying sample data:</b>
+                   fixed a bug that caused Examinator-Production to display an SQL error when extracting data from an RDB
+                   database.  This error occurred when a query included a list of tests for which the raw data should be extracted.
+                   If the dataset was composed of multiple splitlots, the error would appear for any splitlot having no executions for
+                   one of the selected tests.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B151 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B151">V6.0 B151 (10 April 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Parametric test stacked wafermap using median:</b>
+                   an option was added to let the user select whether the mean or the median should be used to generate
+                   the parametric test stacked wafer map.</li>
+            <li><b>Parametric Pass/Fail wafer map:</b>
+                   Examinator now allows (from the 'Settings' page) to select Parametric test Pass/Fail wafer maps.
+                   Each individual Pass/Fail wafer map can be viewed in the interactive wafer map view, and the user can
+                   dynamically switch between 3 possible views: 'Over test limits', 'Over test results', 'Pass/Fail'.</li>
+            <li><b>Parametric failure stacked wafer map:</b>
+                   When multiple wafers are merged, and Parametric test Pass/Fail wafer map is selected, a stacked Pass/Fail
+                   wafer map is also generated.</li>
+            <li><b>Multi-selection in layers list view:</b>
+                   the layers list view now supports multi-selection, enabling to hide/show/remove multiple layers at a time.</li>
+            <li><b>Display of specification limits:</b>
+                   if specified in the STDF file, Examinator now has the option to display specification limits along with
+                   the test limits (Options->Test statistics->Fields to include in report table).</li>
+            <li><b>Labels in interactive box-plots:</b>
+                   the angle used to display the X-axis labels in interactive box-plots has been modified to enhance the lisibility
+                   of the labels. Also, the labels now start properly below the corresponding tick, where the tick
+                   used to be aligned with the middle of the text. The zone used for displaying the labels now automatically adapts
+                   to allow displaying the labels without being truncated. When the labels are too long, and the label zone is too big,
+                   reducing the zone available for the graph, the option 'Options->Report Output->Truncating test names' can be used to
+                   automatically truncate the labels at a fixed length.</li>
+             <li> </li>
+           </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Split fields in Enterprise Reports couldn't be removed:</b>
+                   in the Enterprise Report yield wizard, when selecting fields to be used to split the dataset into several graphs
+                   (page 3/4), or each graph into several layers (page 4/4), the selected fields could not be removed from the list.
+                   The user had to do a 'Reset'.</li>
+            <li><b>Crash when re-building Examinator test list:</b>
+                   fixed a bug where Examinator crashed when re-building it's testlist. Also, in some circumstances, the application
+                   was unnecessarily asking the user if the testlist should be rebuilt or if Examinator should use the existing one.
+                   When selecting to rebuild the testlist, the application crashed.</li>
+            <li><b>Binning type (P/F) not initialized if no summary records available:</b>
+                   fixed a bug where the binning type (Pass or Fail) was not initialized when no summary data (SBR,HBR) is
+                   available in the STDF file, and no wafermap stacking is performed. Examinator now initializes the binning
+                   type using as default: Bin1=Pass, other Bins=Fail. This problem could affect the binning mismatch table when
+                   comparing 2 datasets.</li>
+            <li><b>Show all test results for run#:</b>
+                   fixed a bug introduced recently, where nothing happened when right-clicking on a data-point in the trend chart,
+                   and selecting 'Show all test results for run#'.</li>
+            <li><b>Line type for gaussian curve not changing:</b>
+                   fixed a bug where when comparing datasets, and then changing the line type for the gaussian curve in the
+                   interactive histogram, it had no effect on the graph.</li>
+            <li><b>"-1.#IND V" displayed in the statistics table:</b>
+                   fixed a bug where invalid mean values (ie no executions) were displayed as "-1.#IND V" in the test statistics table,
+                   instead of "n/a".</li>
+            <li><b>Pin names not displayed in the Datalog report:</b>
+                   fixed a bug where pin names were correctly appended to the test names (<test name> - <pin name>) in the statistics
+                   table (when selecting the option to slit pins), but not in the datalog report.</li>
+            <li><b>Database upload:</b>
+                   fixed a bug where Examinator failed uploading some zipped stdf files (*.STD.gz) into a database. It would
+                   log a "File copy failed" error.</li>
+            <li><b>Test & Re-test merge tool/Yield trend:</b>
+                   fixed a bug where the Yield trend production report was not displaying the right yield on a merged test
+                   and re-test file.</li>
+            <li><b>Log scale looks linear:</b>
+                   fixed a bug where the probability plot scales didn't change when selecting the 'Logarithmic scale' in the
+                   "Edit Legends, Scales..." menu.</li>
+            <li><b>Scales not changing in interactive histograms:</b>
+                   fixed a bug where the histogram scales didn't change when modifying the 'Low X:' and 'High X:' values in the
+                   "Edit Legends, Scales..." menu.</li>
+            <li><b>Compare parametric wafermaps:</b>
+                   fixed a bug where Examinator crashed when comparing 2 datasets and selecting 'Parametric wafermap' in the 'Settings'
+                   page.</li>
+            <li><b>Interactive charts:</b>
+                   fixed a bug where when using a custom number of histogram bars (Options->Histogram->Total bars/bins to plot histograms),
+                   after creating a standard Examinator HTML report and clicking on the 'Charts' link from the 'Report' tab, the
+                   application would crash.</li>
+            <li><b>Gex-Lm on Windows Server:</b>
+                   fixed a bug where Gex-Lm would not start properly on a Windows Server system, despite the gex-lm.exe process being
+                   still alive.</li>
+            <li><b>Uncompressing zipped .STD files:</b>
+                   fixed a bug where Examinator would fail processing a zipped file (.zip, .gz) containing files with a .STD extension
+                   in uppercase.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B150 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B150">V6.0 B150 (17 March 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Gage R&R:</b>
+                   added an option letting the user select how Examinator should compute the variation: over TV or over limit space.</li>
+            <li><b>Multi parametric wafermaps:</b>
+                   when selecting 'Parametric test...' for the 'Wafermap' section in the 'Settings' page, the user can now select
+                   a list of tests. This results in multiple parametric wafermaps in the resulting report.</li>
+            <li><b>Re-test Filtering now available for Final Test Data:</b>
+                   the 'First Test instances...' and 'Last Test instances...' now also works on Final Test data, provided
+                   the PartID string contains numerical data. It uses X/Y coordinates computed by Examinator to create the
+                   Strip map (based on the number extracted from the PartID) to identify re-tests.</li>
+            <li><b>Plug-in data extraction:</b>
+                   data extraction from a SQL database through a Quantix plug-in can now be aborted (Abort button).</li>
+            <li><b>Test mapping enhanced:</b>
+                   the test mapping is now done through a test setup XML file, and offers more flexibility. Test number
+                   and test name can be mapped for the same test.</li>
+            <li><b>Up-front test filtering added:</b>
+                   tests can now be filtered up-front, prior to report creation, by using the Test Setup XML file. Only those tests
+                   that are specified in the filter will be present in the static reports, and in the interactive tables & charts.</li>
+            <li><b>New inkless wafermap formats supported:</b>
+                   following inkless wafermap formats are now supported as input files:
+                   <ul>
+                   <li>Semi G85 (XML)</li>
+                   <li>Semi E142 (XML)</li>
+                   <li>SPIL</li>
+                   </ul>
+                   </li>
+            <li><b>Semi G85 ascii inkless wafermap format:</b>
+                   Examinator now supports loading Semi G85 (ascii) inkless wafermap files containing multiple wafermaps.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Interactive charts zoom:</b>
+                   fixed a bug where the chart viewport was limited to the original selection (over data, over limits, adaptive),
+                   preventing the user to further zoom out (ie to view the 6*Sigma marker).</li>
+            <li><b>Extraction performance with Oracle:</b>
+                   resolved an issue where the extraction performance on Oracle databases was 10+ times slower than with V5.7. The performance is
+                   now back to normal (same as with V5.7).</li>
+            <li><b>SPD parser:</b>
+                   fixed a bug where the SPD parser would reject SPD files containing empty lines.</li>
+            <li><b>Strip map:</b>
+                   corrected a bug where the Strip map was not correct in certain circumstances.</li>
+            <li><b>Dates in the 'Compare datasets' query page:</b>
+                   fixed a bug where the dates selected for an individual dataset (when using 'Time period'='Pick dates from calendar...')
+                   were reset to year 1752 when re-opening the 'Properties' dialog for this dataset.</li>
+            <li><b>STDF V3 X/Y coordinates:</b>
+                   fixed a bug introduced in V6 where the X/Y coordinates read from a STDF V3 file were not stored correctly, and as
+                   a consequence, the resulting wafermap was wrong.</li>
+            <li><b>Word report generation:</b>
+                   fixed a bug where the Word report generation was very slow, and the resulting Word report didn't have any layout
+                   (page breaks).
+            <li><b>Interactive/advanced histograms:</b>
+                   fixed a bug where interactive/advanced histograms were empty if all test values were identical. The histogram
+                   will now display one bar.</li>
+            <li><b>Filter button in interactive windows:</b>
+                   fixed a visual bug where the filter button was in checked state, even if the user clicked the 'Cancel' button in
+                   the filter selection dialog box.</li>
+            <li><b>What-If:</b>
+                   fixed a bug that caused a revised limit to be ignored in reports if this limit was not present in the original data set.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B149 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B149">V6.0 B149 (25 February 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>X/Y coordinates filtering:</b>
+                   a dataset can now be filtered based on X/Y coordinates.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Histogram labels in HTML reports:</b>
+                   corrected a problem where in HTML reports, the labels on the histogram X-axis were not aligned with the graph.</li>
+            <li><b>Histogram over test limits in HTML reports:</b>
+                   corrected a problem where in HTML reports, when selecting 'Chart over test limits' or 'Cumulate over test limits'
+                   in the 'Histogram' selection on the 'Settings' page, the histograms were displayed over the data range instead.</li>
+            <li><b>Small values display 0:</b>
+                   corrected a problem where small values were displayed as 0 in the interactive charts axis labels.</li>
+            <li><b>Strip map:</b>
+                   corrected a problem where the STRIP map was not displayed anymore in V6.</li>
+            <li><b>Data files having a test with TestNumber=0:</b>
+                   the application crashed when attempting to display the interactive trend chart or the interactive multi-chart page
+                   for test 0.</li>
+            <li><b>Analyzing an empty file:</b>
+                   when trying to analyze an empty file (size=0 kb), the wrong error message was displayed (Invalid PCM file format).</li>
+            <li><b>Analyzing an empty Zip file:</b>
+                   when trying to analyze a valid Zip file containing 0 files, the application crashes.</li>
+            <li><b>Reports on empty datasets:</b>
+                   when generating a report on a GEXDB dataset returning no results (due to selected filters), the application crashes.</li>
+            <li><b>Interactive windows:</b>
+                   when minimizing an interactive window (Wafermap 3D, Interactive tables, Interactive charts), and later clicking
+                   on a link that should bring this window up, it stays minimized.</li>
+            <li><b>Wafermap 3D:</b>
+                   when multiple wafers present, the wafer selection combobox would not display the LotID (empty or ?? instead).</li>
+            <li><b>Yokogawa parser:</b>
+                   added support for Yokogawa files not starting with the expected first header line "<< Test Result Data >>...".
+                   If this line is missing, and the first non-empty line is "$#HEADER#$", the file is parsed.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B148 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B148">V6.0 B148 (19 February 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Help assistant:</b>
+                   a new help assistant has been implemented. It can be launched by clicking the help button
+                   (<img alt="Filter" src="../images/gex_history_help_icon.png" width="18" height="17">), by hitting the 'F1' key, or by using the new
+                   shortcut (Windows: Start-&gt;All programs-&gt;&lt;Examinator link&gt;-&gt;GEX Assistant).</li>
+            <li><b>Box plot/Probability plot options:</b>
+                   box plot and probability plot available with "More Reports" and"My Reports" can be customized in the 'Options' tab.</li>
+            <li><b>Test filter:</b>
+                   a test filter has been added to the interactive mode, enabling the user to select a list of tests, and ignore all other
+                   tests in the interactive statistics table, and in all interactive test navigation/selection controls. This filter can be
+                   activated and disabled with a toggle button (<img alt="Filter" src="../images/gex_history_test_filter_icon.png" width="18" height="15">).</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>SPD parser:</b>
+                   Corrected a problem with the SPD parser that caused multiple commas to appear in the Test Name Field.
+                   <table border="0" cellpadding="0" cellspacing="0" width="600"><tbody>
+                   <tr>
+                   <td>Before:<br>
+                   <img alt="Filter" src="../images/gex_history_spd_tests_before.png" width="294" height="40"></td>
+                   <td>After :<br>
+                   <img alt="Filter" src="../images/gex_history_spd_tests_after.png" width="294" height="40"></td>
+                   </tr></li>
+            <li><b>Custom logo:</b>
+                   corrected a Microsoft specific problem that caused custom logos to display incorrectly in certain reports.
+                   The logos now display correctly.</li>
+            <li><b>Gage R&amp;R:</b>
+                   corrected a display problem in the Gage RnR reports that caused incorrect boxplots to display when working with a
+                   single data set, and selecting Chart Over Data Range. The Boxplots now display correctly.</li>
+            <li><b>What-if:</b>
+                   when doing guard-banding on multiple groups (each group include many files), and setting a custom limit, only the
+                   first group actually gets its limit changed during re-computing, the others stay the same.</li>
+            <li><b>Trend charts in non-interactive reports:</b>
+                   fixed a display problem with static trend charts. It is now possible to remove lines from trend charts.</li>
+            <li><b>Compare (Files, Group of files, Datasets):</b>
+                   when including trend charts in the report ('More reports' or 'My&nbsp;reports'), the application crashed if a test
+                   was not present in one of the groups.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B147 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B147">V6.0 B147 Beta (06 February 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Layouts:</b>
+                   layouts have been added to most dialog boxes and wizards for smart re-scaling.</li>
+            <li><b>More Reports/My Reports:</b>
+                   box plot and probability plot are now available with "More Reports" and"My Reports".</li>
+            <li><b>Examinator Skin:</b>
+                   the skin (LEGACY, AQUA) background color is now used to fill the background of all dialog boxes, wizards...</li>
+            <li><b>Interactive charts sync.:</b>
+                   Ctrl+click on the Trend chart synchronizes the Wafermap 3D chart with the corresponding test number (parametric
+                   wafermap).</li>
+            <li><b>Chart customization:</b>
+                   the title, X and Y axis on can now be customized for the Box plot and Probability plot charts.</li>
+            <li><b>Export wafermap:</b>
+                   when working on (a) dataset(s) with multiple wafers (compare/merge), the 'Export all wafers' option has been
+                   implemented when exporting a wafermap. This allows to export all wafers, each in a separate file, using the
+                   selected format.</li>
+            <li><b>Export wafermap:</b>
+                   when working on (a) dataset(s) with multiple wafers (compare/merge), the 'Export all wafers' option can generate
+                   a single file with all wafers when HTML format is selected as output format.</li>
+            <li><b>Export wafermap:</b>
+                   the export wafermap function has been activated for stacked wafermaps. Only Image PNG output format is supported.</li>
+            <li><b>What-if:</b>
+                   when reloading a saved CSV what-if limits file:
+                   <ul>
+                   <li>all 'New' values are reset with the current 'Ref' values</li>
+                   <li>all green highlighting is removed</li>
+                   <li>only the fields flagged as 'edited' in the loaded CSV file are highlighted in yellow</li>
+                   </ul>
+                   </li>
+            <li><b>Gage R&amp;R:</b>
+                   added support of the P/T ratio as a field that can be included in the statistics table, and in the Gage R&amp;R
+                   report.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Layer/Curve name: </b>
+                   the name of a layer/curve doesn't display when showing Gaussian or Fitting curve on the histogram interactive
+                   chart.</li>
+            <li><b>Interactive charts tool-tips:</b>
+                   when hovering over a curve in the interactive charts, all the info is there, except when doing a "compare files"
+                   analysis, then the hover does not show the info.</li>
+            <li><b>Wafermap 3D:</b>
+                   parametric wafermap does not work (nothing displayed) when the test number is greater than soft bin test number.</li>
+            <li><b>Copy/Save chart:</b>
+                   when right-clicking on a histogram chart, and selecting either option "Copy chart to clipboard" or "Save chart
+                   to disk", in the output jpeg image file, the contextual menu is super-imposed &amp;/or pasted on top of the test
+                   histogram plot making it ugly and hiding the plot data.</li>
+            <li><b>Wafermap 3D:</b>
+                   the 'Find die' dialog box shows dies for all wafermaps. It should show dies for the active wafermap only.</li>
+            <li><b>Wafermap 3D:</b>
+                   when working on multiple datasets (compare/merge), the 'Global statistics' tab showed statistics for all wafermaps,
+                   instead of displaying the statistics for the active wafermap only.</li>
+            <li><b>What-if:</b>
+                   reload of a saved limit file doesn't work properly. Sometimes, some fields would be displayed in yellow, even though
+                   they were not modified.</li>
+            <li><b>What-if:</b>
+                   when new what-if limits are applied to a test, or many tests, but those what-if limits have no impact on the parts
+                   binning (no part changes binning), the Cp, Cpk, and yield for the individual tests with modified limits are not
+                   re-computed.</li>
+            <li><b>Box plot interactive chart:</b>
+                   median cross appears in the wrong place on box plot charts when horizontal chart selected in the options.</li>
+            <li><b>Unit scaling:</b>
+                   when the option 'Options-&gt;Test statistics-&gt;Normalize/scale statistics' is set to 'Re-scale all units
+                   to Limits units', some tests are not rescaled to the limit units as expected.</li>
+            <li><b>CSV parsing wizard:</b>
+                   unable to specify the 'High Limit' and 'Low Limit' type of column from the parsing wizard when '1 parameter per
+                   line' mode selected.</li>
+            <li><b>Wafermap 3D:</b>
+                   when viewing a parametric wafermap, the slider values in the 'Scale colors' tab are truncated if the value is too
+                   long.</li>
+            <li><b>What-if:</b>
+                   when computing 'Suggest Ideal Limits...', in some cases, when the units&nbsp;in the STDF file are not normalized
+                   (which they should be), the new yield becomes 0%.</li>
+            <li><b>Gage R&amp;R:</b>
+                   fixed wrong computation of the R&amp;R value.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with hr -->
+<table width="800"><tbody>
+  <tr>
+    <td valign="top"><hr color="#afc22a"></td>
+  </tr>
+</tbody></table>
+
+<!-- Table with V6.0 B146 changes -->
+<table width="800"><tbody>
+  <tr>
+    <td halign="center" height="29" valign="middle" width="15"><img src="../images/gex_history_arrow_orange.png" height="9" width="10"></td>
+    <td class="main-content-title-blue" align="left" height="29" width="785"><p align="left">
+    <a name="V6.0B146">V6.0 B146 Beta (23 January 2009)</a>  <a href="#Top">(Top)</a></p></td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+  <tr>
+    <td width="15"></td>
+    <td class="main-content-text" width="785"><b><font size="5">Examinator:</font></b>
+      <table border="1" cellpadding="2" cellspacing="0" width="785"><tbody>
+        <tr>
+          <!-- NEW -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="New" src="../images/gex_history_new_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>Part Result tab:</b>
+                   a 'Flow ID' column was added to the Part Result tab (interactive tables).</li>
+            <li><b>STDF compliancy:</b>
+                   when 'Options-&gt;Data processing options-&gt;Handling STDF Compliancy Issues' is set to 'Flexible', tests having
+                   a valid result are displayed, regardless of other PTR flags (even if flag set specifying the test was not
+                   executed).</li>
+            <li><b>Load/Save 'Settings':</b>
+                   selections in the Settings page can be saved/loaded. Drag&amp;drop is supported.</li>
+            <li><b>User profile management:</b>
+                   a default profile can be specified. If so, this profile is loaded at startup. If no default profile defined
+                   amongst multiple profiles, the profile selection dialog box is displayed at startup.</li>
+            <li><b>Interactive Wafermap 3D:</b>
+                   retested dies are&nbsp;drawn with black outline border.</li>
+            <li><b>Interactive Wafermap 3D: </b>
+                   the limit slider can be locked so that when browsing through parameters, and viewing the same test parametric
+                   map again, the slider recovers same positions.</li>
+            <li><b>Interactive Charts:</b>
+                   when placing the cursor over a curve, the group name gets displayed in the tool-tip.</li>
+            <li><b>CSV Import wizard:</b>
+                   Test# and SiteID columns supported.</li>
+            <li><b>Interactive Wafermap 3D:</b>
+                   right panel is shown when opening for the first time.</li>
+            <li><b>Interactive Wafermap 3D: </b>
+                   '+' and&nbsp;'-'&nbsp;keys zoom in and out.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <!-- FIXED -->
+          <td halign="center" valign="top" width="50"><img style="width: 50px; height: 45px;" alt="Fixed" src="../images/gex_history_fixed_icon.png"></td>
+          <td class="main-content-text" align="left" valign="top" width="720">
+            <ul>
+            <li><b>UTC: </b>
+                   date/time fields are displayed in UTC.</li>
+            <li><b>Eagle log files:</b>
+                   a bug was fixed in the Eagle log file parser.</li>
+            <li><b>All parsers:</b>
+                   a potential bug was fixed that could affect all parsers.</li>
+            <li><b>PartID test number:</b>
+                   the PartID test created by Examinator had a test number of 1, where all other tests created by Examinator have
+                   a test number of -1.</li>
+            <li><b>WCR record read:</b>
+                   a variable was not initialized. As a result exported inkless maps could be flipped.</li>
+            <li><b>Stop on fail&nbsp;mode:</b>
+                   the 'Stop on Fail' option (Options-&gt;Data processing options-&gt;Failures count mode) didn't work anymore in
+                   V6.0.</li>
+            <li><b>Interactive Charts: </b>
+                   changing the X axis scales do not seem to update anything. Neither does changing the Y axis in the interactive
+                   trend graphs.</li>
+            <li><b>Interactive Charts:</b>
+                   click on style, then markers on the left, clicking on "layer/curve name" does nothing to the graph.</li>
+            <li><b>Interactive Wafermap 3D Scale color:</b>
+                   invert Min and max (Min now is at the bottom and Max at the top).</li>
+            <li><b>What-if:</b>
+                   when you put a new value in for a limit change then compute, it removes the unit from that column. Then if you
+                   "reset" the old values come back, but again without the units.</li>
+            <li><b>What-if:</b>
+                   when the user clicks on the reset button, "limit new" doesn't change to their default value.</li>
+            <li><b>What-if:</b>
+                   Reload saved limit file doesn't work properly.</li>
+            <li><b>What-if:</b>
+                   if a limit is changed from '3.4mA' to '12' with no decimals or units written in, it computes it as 12,000 mA.
+                   The new limit is automatically scale to the default units for that test. Units are automatically set
+                   if not specified by the user.</li>
+            <li><b>What-if:</b>
+                   bad parts are changed to good parts even though what-if limits shouldn't change them.</li>
+            <li><b>Interactive Table / Binning tabs:</b>
+                   binning tables are not updated when user resets the what-if. Fixed.</li>
+            <li><b>Interactive Table / Part result tab: </b>
+                   PartID combo is not re-initialized when PartID is changed from the Wafermap 3D.</li>
+            <li><b>Import wizard:</b>
+                   could not save a parsing template.</li>
+            <li> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td height="1" width="15"></td>
+    <td height="1" width="785"></td>
+  </tr>
+</tbody></table>
+
+</body></html>

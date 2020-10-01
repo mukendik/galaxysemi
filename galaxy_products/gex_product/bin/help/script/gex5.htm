@@ -1,0 +1,1711 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="821" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="651"><b>gexOptions<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library
+      </a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="651" valign="top" align="left">
+      <pre>gexOptions(
+  const section,      // section entry name
+  const field,        // field name
+  const value)        // field value</pre>
+      <p>Sets the specified option entry field to a given value. Used to
+      configure all the gex report generation<br>
+      options and environment . Fields are not case sensitive except when
+      specifying a file path.<br>
+      </p>
+      <p>For a complete example, take a look at the ready-to-use template <a href="options_csl.htm">options.csl</a></p>
+      <p>Example:</p>
+      <pre>// Sets report output format to HTML
+gexOptions('output','format','html');
+// Because parameters are not case sensitive, it is the same as: 
+gexOptions('Output','Format','HTML');
+// or even the same as...
+gexOptions('Output','FORMAT','HTML');</pre>
+      <p>Here is the list of sections you can configure using this script
+      function:</p>
+      <table border="1" width="646" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="123"><font color="#ffffff"><b>Section</b></font></td>
+          <td bgColor="#0034aa" width="499"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#reset">reset</a></b></td>
+          <td width="499">Reset all options at once to default values, or to all 
+          fields disabled</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#databases">databases</a></b></td>
+          <td width="499">lets you define the path to the databases: <b>
+          Examinator Pro only</b></td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#output">output</a></b></td>
+          <td width="499">Set the report output format (HTML, Word, PDF,...) , paper size and location</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#speed">speed</a></b></td>
+          <td width="499">Define preferences that affect data processing speed</td>
+        </tr>
+        <tr>
+          <td width="123"><a href="#duplicatetest"><b>duplicate_test</b></a></td>
+          <td width="499">Define how to handle identical test numbers with 
+          different test names (merge / no merge)</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#partid">part_id</a></b></td>
+          <td width="499">Show/Hide PartID on trend chart &amp; tables.</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#sorting">sorting</a></b></td>
+          <td width="499">Define the data sorting policy (none, or by date)</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#failcount">fail_count</a></b></td>
+          <td width="499">Define how test failures must be counted</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#multiparametric">multi_parametric</a></b></td>
+          <td width="499">Define how to handle multi-results parametric tests 
+          (merge or No merge mode)</td>
+        </tr>
+        <tr>
+          <td width="123"><a href="#stdfcompliancy"><b>stdf_compliancy</b></a></td>
+          <td width="499">Define how to handle STDF data files not compliant</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#outlier">outlier</a></b></td>
+          <td width="499">Define the outlier policy</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#statistics">statistics</a></b></td>
+          <td width="499">Define the test statistics table options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#histograms">histograms</a></b></td>
+          <td width="499">Define the standard histogram options (3D prebuilt 
+          .gif images)</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#wafer">wafer</a></b></td>
+          <td width="499">Define the wafer map report options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#pareto">pareto</a></b></td>
+          <td width="499">Define the pareto reports options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#binning">binning</a></b></td>
+          <td width="499">Define the binning summary report options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#advhistogram">adv_histogram</a></b></td>
+          <td width="499">Define the advanced histogram report options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#advtrend">adv_trend</a></b></td>
+          <td width="499">Define the advanced trend report options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#advcorrelation">adv_correlation</a></b></td>
+          <td width="499">Define the advanced correlation, XY scatter, BiVariate report options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#advproyield">adv_productionyied</a></b></td>
+          <td width="499">Define the production yield/volume report options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#advboxplot">adv_boxplot</a></b></td>
+          <td width="499">Define the advanced <b>Gage R&amp;R</b> - box-plot report options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#advdatalog">adv_datalog</a></b></td>
+          <td width="499">Define the advanced datalog report options</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#adv_what_if">adv_what_if</a></b></td>
+          <td width="499">Define the options for the what-if wizard (which bin# 
+          to use when passing a fail part, or when failing a good part).</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#advpearson">adv_pearson</a></b></td>
+          <td width="499">Define the options for the pearson's correlation 
+          report (tests that highly correlate). Report typically used for 
+          optimizing test time by removing some tests that strongly correlate 
+          with other.</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#toolbox">toolbox</a></b></td>
+          <td width="499">Define the options for the toobox functions.</td>
+        </tr>
+        <tr>
+          <td width="123"><b><a href="#preferences">preference</a></b></td>
+          <td width="499">Define miscellaneous preferences (eg: editors, log-out 
+          timeout, etc)</td>
+        </tr>
+      </table>
+      <h1>Section: <a name="reset">reset</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>all</b></td>
+          <td width="507">Resets all options of all sections to either one of 
+          the following stage:<br>
+    <b>default</b> resets all options to default value (as when first
+    installing GEX). This mode
+    is convenient if you do not want to specify each section options
+    individually.<br>
+    <b>clear</b> resets all options to a cleared value. This option must only
+    be used when followed by other functions that specifically set options. This
+    command allows starting from a 'blank page'; if not followed by any other
+    options selection, the report will be totally empty!</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Reset all options to default, and change report format to CSV
+gexOptions('reset','all','default');
+gexOptions('output','format','CSV');	// Default was HTML, switch to CSV</pre>
+      <pre>&nbsp;</pre>
+      <h1>Section: <a name="databases">databases</a> (Examinator Pro only)<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>local_path</b></td>
+          <td width="507"><b>&lt;path&gt;</b> where <b>&lt;path&gt;</b> is the
+            path to the local databases folders. If value is <b>(default)</b> or 
+          empty, then the default local ExamintorDB path is used: <br>
+          &lt;Examinator application path&gt;/databases</td>
+        </tr>
+        <tr>
+          <td width="116"><b>server_path</b></td>
+          <td width="507"><b>&lt;path&gt;</b> where <b>&lt;path&gt;</b> is the
+            path to the server databases folders. If value is <b>(default)</b> 
+          or empty<b>,</b> then the default server ExamintorDB path is used: <br>
+          &lt;Examinator server application path&gt;/databases</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Sets paths to Local and Server databases
+gexOptions('databases','local_path','/export/home/my_local_databases');
+gexOptions('databases','server_path','/mnt/srv/server-databases');</pre>
+      <pre>&nbsp;</pre>
+      <h1>Section: <a name="output">output</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>format</b></td>
+          <td width="507"><b>html</b> to have report generated in 
+          <span style="font-weight: 700; background-color: #CCFFFF">HTML</span> format.<br>
+          <b>word</b> to have report generated in 
+          <span style="background-color: #CCFFFF"><b>MS-Word</b> </span>document (PC versions 
+          only)<br>
+          <b>ppt</b> to have report generated in 
+          <span style="font-weight: 700; background-color: #CCFFFF">PowerPoint</span> 
+          slides (PC versions 
+          only)<br>
+          <b>pdf</b> to have report generated in 
+          <span style="font-weight: 700; background-color: #CCFFFF">PDF</span> format.<br>
+            <b>csv</b> to have the report generated in 
+          <span style="font-weight: 700; background-color: #CCFFFF">Excel/.CSV</span> ASCII format<p>
+          Note: If the script is launched under the Examinator user interface, 
+          all formats are accepted. If the script is executed by launching 
+          Examinator in command line mode, then only HTML mode will be accepted. 
+          For background script executions supporting other output modes than 
+		  HTML you need the Quantix Yield-Man software (accepts all formats like
+          PDF, Word, etc...)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>front_page_text</b></td>
+          <td width="507">Text string to display on the report's first page 
+          (front page) when report format is Word, Power Point or PDF</td>
+        </tr>
+        <tr>
+          <td width="116"><b>front_page_image</b></td>
+          <td width="507">Path to the image / logo to display on the report's 
+          first page (front page) when report format is Word, Power Point or 
+          PDF. Image format can be any of the following: .gif .png .bmp and .jpg</td>
+        </tr>
+        <tr>
+          <td width="116"><b>truncate_names</b></td>
+          <td width="507">Set to <b>'yes'</b> to have test names in Word, PDF 
+          and PowerPoint reports truncated (32 characters max.). Allows to 
+          maintain accurate page formatting.<br>
+          Set to <b>'no' </b>to keep test names to their full length (</td>
+        </tr>
+        <tr>
+          <td width="116"><b>paper_size</b></td>
+          <td width="507"><b>A4</b> to have report page formatting set to A4 
+          (applies to Word &amp; PDF reports only)<br>
+          <b>Letter</b> to have report page formatting set to A4 (applies to Word 
+          &amp; PDF reports only)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>paper_format</b></td>
+          <td width="507"><b>portrait</b> or <b>landscape</b> to define the page 
+          orientation. 'portrait' is the default. Applies to Word, PDF reports only.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>location</b></td>
+          <td width="507"><b>&lt;path&gt;</b> where <b>&lt;path&gt;</b> is the
+            path where the report should be created.<br>
+            or<br>
+            <b>file_path</b> to have the report created in the same
+            directory as the file
+            selected. If multiple files are analyzed, the path of the
+            first file in the first group is used.</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Sets report output format to HTML and specify a path
+gexOptions('output','format','html');
+gexOptions('output','truncate_names','yes');
+gexOptions('output','paper_size','Letter');
+gexOptions('output','paper_format','landscape');
+gexOptions('output','front_page_text','This is my report!');
+gexOptions('output','front_page_image','/export/home/logo.jpg');
+gexOptions('output','location','/export/home/report');</pre>
+      <pre>&nbsp;</pre>
+      <h1>Section: <a name="speed">speed</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>adv_stats</b></td>
+          <td width="507">Applies to Examinator-Pro edition only, let 
+          syou define when advanced statistics must be computed (includes: Skew, 
+          Kurtosis, Quartiles and Median computation). As such computation 
+          require significant CPU time, it can be wise to do disable it when 
+          very large datasets are processed, and when focus is not on these 
+          information. Value can be one of the following:<p><b>always</b> to 
+          always compute advanced statistics, no matter how large are datasets<br>
+          <b>50mb</b> to only compute advanced statistics if total dataset is 
+          50Mbytes or less <br>
+          <b>100mb</b> to only compute advanced statistics if total dataset is 
+          100Mbytes or less<br>
+          <b>200mb</b> to only compute advanced statistics if total dataset is 
+          200Mbytes or less<br>
+          <b>300mb</b> to only compute advanced statistics if total dataset is 
+          300Mbytes or less<br>
+          <b>400mb</b> to only compute advanced statistics if total dataset is 
+          400Mbytes or less<br>
+          <b>500mb</b> to only compute advanced statistics if total dataset is 
+          500Mbytes or less<br>
+          <b>never</b> to disable advanced statistics computation.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>collect_samples</b></td>
+          <td width="507">Applies to Examinator-Pro edition only, lets 
+          you define when data samples are collected and available under the 
+          Interactive Charting mode. Value can be one of the following:<p><b>
+          always</b> to always collect data samples, no matter how large are 
+          datasets<br>
+          <b>50mb</b> to only collect data samples if total dataset is 50Mbytes 
+          or less <br>
+          <b>100mb</b> to only collect data samples if total dataset is 
+          100Mbytes or less<br>
+          <b>200mb</b> to only collect data samples if total dataset is 
+          200Mbytes or less<br>
+          <b>300mb</b> to only collect data samples if total dataset is 
+          300Mbytes or less<br>
+          <b>400mb</b> to only collect data samples if total dataset is 
+          400Mbytes or less<br>
+          <b>500mb</b> to only collect data samples if total dataset is 
+          500Mbytes or less<br>
+          <b>never</b> to disable data samples collection for Interactive 
+          Charting.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>db_summary</b></td>
+          <td width="507">Applies to Examinator Pro edition only, lets 
+          you define when to query the database summary records instead of the 
+          database samples. Queries over the summary records are typically 50 to 
+          100 times faster as much fewer information is processed. This is ideal 
+          when running queries over very large datasets and when only looking at 
+          test statistics, or binning information. When the database summary 
+          records are used instead of the data samples, no histogram, wafermap 
+          or trend chart on data is available. Trending on binning per lot is 
+          however possible.:<p><b>
+          always</b> to always use the database summary record (ignore data 
+          samples)<br>
+          <b>50mb</b> to only use the database summary record if dataset is 
+          50Mbytes or more<br>
+          <b>100mb</b> to only use the database summary record if dataset is 
+          100Mbytes or more<b><br>
+          200mb</b> to only use the database summary record if dataset is 
+          200Mbytes or more<b><br>
+          300mb</b> to only use the database summary record if dataset is 
+          300Mbytes or more<b><br>
+          400mb</b> to only use the database summary record if dataset is 
+          400Mbytes or more<b><br>
+          500mb</b> to only use the database summary record if dataset is 
+          500Mbytes or more<b><br>
+          never</b> to never use database summary records, only data samples.</td>
+        </tr>
+        </table>
+      <p>Example:</p>
+      <pre>// Optimize Speed Vs. Datasets size processed
+gexOptions('speed','adv_stats','50mb');
+gexOptions('speed','collect_samples','100mb');
+gexOptions('speed','db_summary','200mb');</pre>
+      <pre>&nbsp;</pre>
+      <h1>Section: <a name="duplicatetest">duplicate_test</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>merge</b></td>
+          <td width="507">Means all tests with same test number ID will be 
+          merged, even if the test name string is sometimes different.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>no_merge</b></td>
+          <td width="507">Means not to merge tests with same test number ID if 
+          test names are different (default)</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Sets to sort data by testing date.
+gexOptions('duplicate_test','no_merge','');
+</pre>
+      <h1>&nbsp;
+      </h1>
+      <h1>Section: <a name="partid">part_id</a></h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>show</b></td>
+          <td width="507">Have the PartID displayed in the tables (under 
+          interactive mode), and also use it as the X axis scale in trend 
+          charts. Usually used when conducting characterization analysis where 
+          individual PartIDs are required (eg: parts tested at different 
+          temperature, etc....). This mode should not be used on large data 
+          files unless you have enough computer memory !</td>
+        </tr>
+        <tr>
+          <td width="116"><b>hide</b></td>
+          <td width="507">This is the default: test results do not display their 
+          PartID and the trend chart uses the test result sample index as the X 
+          axis scale.</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Characterization mission:  need to know each individual PartID
+gexOptions('part_id','show','');
+</pre>
+      <p>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"></p>
+      <h1>Section: <a name="sorting">sorting</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>none</b></td>
+          <td width="507">Means data are not sorted but processed in the order of
+            data files listed (from first file to last file in each group).
+            Select this mode when you want to maintain data in the order of the
+            files selected. This is the default mode.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>date</b></td>
+          <td width="507">Means to sort data sets based on the date of test. Under this
+            mode files order doesn't matter. Select this mode when you want data
+            to be organized according to the testing date.</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Sets to sort data by testing date.
+gexOptions('sorting','date','');
+</pre>
+      <h1>&nbsp;
+      </h1>
+      <h1>Section: <a name="failcount">fail_count</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>all</b></td>
+          <td width="507">Means all test failures found in the data file flow are 
+          counted. This is the default mode.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>first</b></td>
+          <td width="507">Means only the first failure in each test program 
+          execution is counted.</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Sets to count all failures detected.
+gexOptions('fail_count','all','');
+</pre>
+      <h1>&nbsp;
+      </h1>
+      <h1>Section: <a name="multiparametric">multi_parametric</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>merge</b></td>
+          <td width="507">Means all pins results for a multi-results parametric 
+          test are <b>merged</b> under a same test number and test name. This is the default mode.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>no_merge</b></td>
+          <td width="507">Means each pin result in a multi-results parametric 
+          test is assigned a <b>unique individual test number</b> (test#.Pinmap#) 
+          and name.</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Sets to have each pin parametric test result have a unique test name
+gexOptions('multi_paramteric','no_merge','');
+</pre>
+      <h1>&nbsp;
+      </h1>
+      <h1>Section: <a name="stdfcompliancy">stdf_compliancy</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>stringent</b></td>
+          <td width="507">Examinator expects the file to be 100% compliant with 
+          the STDF specifications.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>flexible</b></td>
+          <td width="507">Examinator does its best to extract all data found, 
+          even if not all STDF records and sequences are compliant. This is the 
+          default mode.</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Sets to quietly handle any type of STDF file, do best to extrat data no matter what
+gexOptions('stdf_compliancy','flexible','');
+</pre>
+      <h1>&nbsp;
+      </h1>
+      <h1>Section: <a name="outlier">outlier</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>removal</b></td>
+          <td width="507">Value must be one of the following outlier removal
+            strategy:<br>
+            <b>none</b> for no outlier removal: all parts are processed!<br>
+            <b>100%</b> for only processing good parts<br>
+            <b>150%</b> for removing parts over 150% of the limits range<br>
+            <b>200%</b> for removing parts over 200% of the limits range<br>
+            <b>250%</b> for removing parts over 250% of the limits range<br>
+            <b>300%</b> for removing parts over 300% of the limits range<br>
+          <b>1sigma </b>&nbsp;for removing parts outside the 1sigma&nbsp; space 
+          centered on the mean<br>
+          <b>2sigma </b>&nbsp;for removing parts outside the 2sigma&nbsp; space 
+          centered on the mean<br>
+          <b>3sigma </b>&nbsp;for removing parts outside the 3sigma&nbsp; space 
+          centered on the mean<br>
+          <b>4sigma </b>&nbsp;for removing parts outside the 4sigma&nbsp; space 
+          centered on the mean<br>
+          <b>5sigma </b>&nbsp;for removing parts outside the 5sigma&nbsp; space 
+          centered on the mean<br>
+          <b>6sigma </b>&nbsp;for removing parts outside the 6sigma&nbsp; space 
+          centered on the mean<br>
+          <b>7sigma </b>&nbsp;for removing parts outside the 7sigma&nbsp; space 
+          centered on the mean<br>
+          <b>8sigma </b>&nbsp;for removing parts outside the 8sigma&nbsp; space 
+          centered on the mean<br>
+          <b>9sigma </b>&nbsp;for removing parts outside the 9sigma&nbsp; space 
+          centered on the mean<br>
+          <b>n_sigma </b>&nbsp;for removing parts outside the +/-N*sigma, where 
+          N is specified in the following argument.<br>
+          <b>iqr</b> for removing samples outside of Q1-1.5*IQR, Q3+1.5*IQR 
+          space (parts are not removed)<br>
+          <b>n_iqr</b> for removing samples outside of Q1-N*IQR, Q3+N*IQR 
+          space (parts are not removed), where N is specified in the following 
+          argument.</td>
+        </tr>
+      </table>
+      <p>Example1:<br>
+      // Set outlier removal to only process good parts<br>
+      gexOptions('outlier','removal','100%');<br>
+      <br>
+      Example2:<br>
+      // Set outlier removal to parts 200% outside test limits (+/- 100% from
+      the center of the limits)<br>
+      gexOptions('outlier','removal','200%');</p>
+      <p>Example3:<br>
+      // Set outlier removal to remove parts outside the + or - 3sigma space 
+      from the mean<br>
+      gexOptions('outlier','removal','6sigma');</p>
+      <p>Example4:<br>
+      // Set outlier removal to remove parts outside the + or - 6.23 sigma space 
+      from the mean<br>
+      gexOptions('outlier','removal','n_sigma','6.23');</p>
+      <p>Example5:<br>
+      // Outlier rule: Q1-N*IQR, Q3+N*IQR, where N= 1.6<br>
+      gexOptions('outlier','removal','n_iqr','1.6');</p>
+      <pre>&nbsp;</pre>
+      <h1>Section: <a name="statistics">statistics</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>computation</b></td>
+          <td width="507">Defines <b>how the test statistics</b> percentages and values 
+          must be <b>computed</b>; can be one
+            of the following:<br>
+            <br>
+            <b>samples_only </b>makes the statistics computed from the data samples 
+          only, and all summary records are ignored. This selection is very 
+          convenient when the summary is corrupted or was not reset prior to 
+          start a production lot.<b><br>
+          <br>
+          samples_then_summary </b>: statistics are computed 
+          reading the data files samples records (if any), and summary records otherwise. <b>
+          <br>
+          <br>
+          summary_only </b>: statistics are computed 
+          reading the data files summary records only. <b><br>
+          <br>
+          summary_then_samples </b>&nbsp;this is the default mode: statistics are computed 
+          reading the data files summary records (if any), and sampled data 
+          otherwise. <br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cp_cpk_computation</b></td>
+          <td width="507">Defines <b>how the test Cp and Cpk statistics</b> are 
+          computed for non-normal distributions<b> </b>; can be one
+            of the following:<br>
+            <br>
+            <b>standard </b>makes the Cp and Cpk standard formulas used<b>:<br>
+          </b><font face="Courier New">Cp = (High_Limit - Low_Limit)/6*Sigma <br>
+          Cpk Low = (Mean - Low_Limit)/3*Sigma<br>
+          Cpk High = (High_Limit - Mean)/3*Sigma<br>
+          Cpk = min(Cpk Low, Cpk High)</font><b><br>
+          <br>
+          percentile </b>makes the percentile formula used instead of the 
+          classic sigma one:<br>
+&nbsp;<font face="Courier New">Cp = (High_Limit - Low_Limit)/(P99.5 - P0.5) <br>
+          Where P99.5 represents the 99.5% percentile<br>
+          and P0.5 represents the 0.5% percentile<br>
+          <br>
+          Cpk Low = (Median - Low_Limit)/(Median - P0.5)<br>
+          Cpk High = (High_Limit - Median)/ (P99.5 - Median) <br>
+          Cpk = min(Cpk Low, Cpk High)<br>
+          </font> <br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>field</b></td>
+          <td width="507">Defines which fields to include in the test
+            statistics tables. Value can be one<br>
+            of the following field names:<br>
+            <b>test_name</b> to include test name<br>
+            <b>test_type</b> to include test type (digital, parametric,...)<br>
+            <b>limits</b> to include the test limits<br>
+          <b>shape</b> to tell the distribution shape/type (gaussian, lognormal, 
+          bi-modal,...)<br>
+          <b>test_flow_id</b> to display the test order in the testing sequece<br>
+            <b>exec_count</b> to include the execution count<br>
+            <b>fail_count</b> to include the failures count<br>
+            <b>fail_percent</b> to include the failure percentage over parts
+            produced<br>
+            <b>outlier_count</b> to include the outlier count<br>
+            <b>mean</b> to include the mean value<br>
+            <b>mean_shift</b> to include the mean shift (only used when
+            comparing files)<br>
+            <b>sigma</b> to include the sigma value<br>
+            <b>sigma_shift</b> to include the sigma shift (only used when
+            comparing files)<br>
+            <b>2sigma</b> to include the computed 2xSigma value<br>
+            <b>3sigma</b> to include the computed 3xSigma value<br>
+            <b>6sigma</b> to include the computed 6xSigma value<br>
+            <b>min</b> to include the minimum value found<br>
+            <b>max</b> to include the maximum value found<br>
+            <b>range</b> to include the range value (max-min)<br>
+          <b>max_range</b> to include the max of all ranges in same test (only used when comparing
+            files)<br>
+            <b>cp</b> to include the Cp value<br>
+            <b>cp_shift</b> to include the Cp shift (only used when comparing
+            files)<br>
+            <b>cpk</b> to include the Cpk value (min of CpkH and CpkL)<br>
+            <b>cpkL</b> to include the Cpk_Low value (the Cpk computed with the 
+          Low limit)<br>
+            <b>cpkH</b> to include the Cpk_High value (the Cpk computed with the 
+          High limit)<br>
+            <b>cpk_shift</b> to include the Cpk shift (only used when comparing
+            files)<br>
+            <b>yield</b> to include the computed yield value for the test<br>
+          <b>ev</b> to include Gage EV (Repeatability / equipment variation). 
+          Note 1<br>
+          <b>av</b> to include Gage AV (Reproducibility / appraiser variation). 
+          Note 1<br>
+          <b>r&amp;r</b> to include the Gage R&amp;R value. Note 1<br>
+          <b>pv</b> to include Gage PV (Part Variation)<br>
+          <b>tv</b> to include Gage PV (Total Variation)<br>
+          <br>
+          <u>Note1</u>: implies advanced report box-plot selected<p><b>
+          <span style="background-color: #FFFF00">Advance statistics fields:</span></b><br>
+          <b>Skew</b> to include the
+          <span style="font-size: 10.0pt; font-family: Arial">degree of 
+          asymmetry of a distribution around its mean<br>
+          </span><span style="font-weight: 700">Kurtosis</span> to show
+          <span style="font-size: 10.0pt; font-family: Arial">relative peaked 
+          ness or flatness of a distribution compared with the normal 
+          distribution<br>
+          </span>
+          <span style="font-weight:700">P0.5%</span> to include the percentile
+          <b>0.5%<br>
+          </b>
+          <span style="font-weight:700">P2.5%</span> to include the percentile
+          <b>2.5%</b><span style="font-size: 10.0pt; font-family: Arial"><br>
+          </span>
+          <span style="font-weight:700">P10%</span> to include the percentile <b>
+          10%<br>
+          </b><span style="font-weight: 700">P25%</span> or <span style="font-weight: 700">Quartile1</span> to include the
+          <span style="font-size: 10.0pt; font-family: Arial">first quartile 
+          (percentile 25%)<br>
+          </span><span style="font-weight: 700">P50%</span> or <span style="font-weight: 700">Quartile2</span> to include the
+          <span style="font-size: 10.0pt; font-family: Arial">second quartile 
+          also called <b>Median</b> (percentile 50%)<br>
+          </span><span style="font-weight: 700">P75%</span> or <span style="font-weight: 700">Quartile3</span> to include the
+          <span style="font-size: 10.0pt; font-family: Arial">third quartile 
+          (percentile 75%)<br>
+          </span>
+          <span style="font-weight:700">P90%</span> to include the percentile <b>
+          90%<br>
+          </b>
+          <span style="font-weight:700">P97.5%</span> to include the percentile
+          <b>97.5%<br>
+          </b>
+          <span style="font-weight:700">P99.5%</span> to include the percentile
+          <b>99.5%</b><span style="font-size: 10.0pt; font-family: Arial"><br>
+          </span><span style="font-weight: 700">InterQuartiles</span> to include
+          <span style="font-size: 10.0pt; font-family: Arial">range between 3rd 
+          and 1st quartiles<br>
+          </span><span style="font-weight: 700">SigmaInterQuartiles</span> to 
+          include the <span style="font-size: 10.0pt; font-family: Arial">
+          standard deviation of the population between 1st and 3rd quartiles</span></td>
+        </tr>
+        <tr>
+          <td width="116"><b>smart_scaling</b></td>
+          <td width="507">Specifies if statistics computed (mean, sigma, etc...) 
+          must be rescaled for easier reading purpose ; eg: 1mV instead of 
+          0.001V (applies to parameters with units in Amps, Volts, Ohms, Watts, 
+          and Hertz only). Field value can be either yes or no:<br>
+            <b>yes</b> to enable smart scaling (then a mean of 0.01V will show 
+          10mV)<br>
+            <b>no</b> to disable the smart scaling, in which case no rescaling 
+          take place.<br>
+            <b>normalized</b> to normalize all test results and test units (e.g: 
+          A, V, etc...).<br>
+            <b>to_limits </b> to normalize all test results to the same scale as 
+          the test limits (High limit in case low and high limits not sharing 
+          the same scaling).</td>
+        </tr>
+        <tr>
+          <td width="116"><b>sorting</b></td>
+          <td width="507">Specifies which field type to sort the generated table. Can be one of the&nbsp;following:<br>
+            <b>test_number</b> to sort by ascending test number<br>
+            <b>test_name</b> to sort by ascending test name<br>
+          <b>test_flow_id</b> to sort test by execution order<br>
+            <b>mean</b> to sort by descending mean<br>
+            <b>mean_shift</b> to sort by descending mean-shift<br>
+            <b>sigma</b> to sort by descending sigma<br>
+            <b>cp</b> to sort by ascending Cp<br>
+            <b>cpk</b> to sort by ascending Cpk<br>
+          <b>r&amp;r</b> to sort by descending gage R&amp;R value<br>
+            <p><b>Note</b>: Only one sorting mode can be selected at a time.
+            Also when comparing files or groups of files, sorting is done on the
+            Reference group (group #1).</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116"><b>alarm_test_cpk</b></td>
+          <td width="507">Allows setting an alarm level for tests with a Cpk 
+          value lower than a specified value. If the alarm 
+          level is reached, the cpk will appear on a <b>
+          <span style="color:red">red </span></b>background in the statistics 
+          report table (except under CSV report ), or with *F* for .CSV report. <p>
+            <b>Note</b>: Any negative number disables the alarm</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116"><b>warning_test_cpk</b></td>
+          <td width="507">Allows setting an alarm warning level for tests with a 
+          Cpk value lower than a specified value and higher than the alarm (alarm_test_cpk) 
+          level, if defined.. If the alarm 
+          level is reached, the cpk will appear on a
+          <span style="background-color: #FFFF00"><b>yellow</b></span><b><span style="color:red"> </span></b>background in the statistics 
+          report table (except under CSV report ), or with *F* for .CSV report. <p>
+            <b>Note</b>: Any negative number disables the alarm</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116"><b>alarm_test_yield</b></td>
+          <td width="507">Allows setting an alarm level for tests with a Test 
+          yield value lower than a specified value. If the alarm 
+          level is reached, the Yield will appear on a <b>
+          <span style="color:red">red </span></b>background in the statistics 
+          report table (except under CSV report ), or with *F* for .CSV report. <p>
+            <b>Note</b>: Any negative number disables the alarm</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116"><b>warning_test_yield</b></td>
+          <td width="507">Allows setting an alarm warning level for tests with a 
+          Test yield value lower than a specified value and higher than the 
+          alarm (alarm_test_yield) level, if defined.. If the alarm 
+          level is reached, the Test yield will appear on a
+          <span style="background-color: #FFFF00"><b>yellow</b></span><b><span style="color:red"> </span></b>background in the statistics 
+          report table (except under CSV report ), or with *F* for .CSV report. <p>
+            <b>Note</b>: Any negative number disables the alarm</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116"><b>mean_drift_formula</b></td>
+          <td width="507">Used to define how the Mean drift must be computed. 
+          Can be either:<ul>
+            <li>Drift of the absolute value (field value <b>value</b>)</li>
+            <li>Drift as a percentage of the test limits (field value <b>limits</b>)</li>
+          </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="116"><b>alarm_mean</b></td>
+          <td width="507">Allows setting an alarm drift level when you compare data 
+          samples and the mean drift exceeds a specified value (a percentage of 
+          value drift or a percentage of 
+          the limit space, depending of the value defined for the field <b>
+          mean_drift_formula</b> above). If the alarm level is reached, the mean shift will 
+          appear on a <b><span style="color:red">red </span></b>background in 
+          the statistics report table for HTML reports, or an *F* for .CSV 
+          reports. The value specified must be the maximum percentage of drift 
+          allowed, for example: 5%.<p>If 'mean_drift_formula' is set to '<b>value</b>', 
+          formula used is:<br>
+          <b>MeanDrift = 100*((Mean / ReferenceMean) -1)</b></p>
+          <p>If 'mean_drift_formula' is set to '<b>limits</b>', formula used is:<br>
+          <b>MeanDrift = 100*(Mean - ReferenceMean)/LimitSpace</b></p>
+          <p>
+            <b>Note</b>: Any negative number disables the alarm</td>
+        </tr>
+        <tr>
+          <td width="116"><b>alarm_sigma</b></td>
+          <td width="507">Allows setting an alarm drift level when you compare data 
+          samples and the sigma drift exceeds a specified value (percentage of 
+          value drift). If the alarm level is reached, the sigma shift will 
+          appear on a <b><span style="color:red">red </span></b>background in 
+          the statistics report table for HTML reports, or an *F* for .CSV 
+          reports. The value specified must be the maximum percentage of drift 
+          allowed, for example: 1%.<p>Formula: <b>SigmaDrift = 100*((Sigma/ReferenceSigma)-1)<br>
+            Note</b>: Any negative number disables the alarm</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116"><b>alarm_cpk</b></td>
+          <td width="507">Allows setting an alarm drift level when you compare data 
+          samples and the cpk drift exceeds a specified value. If the alarm 
+          level is reached, the cpk shift will appear on a <b>
+          <span style="color:red">red </span></b>background in the statistics 
+          report table (HTML report only), or with *F* for .CSV report. The 
+          value specified must be the maximum percentage of drift allowed, for 
+          example: 5%.<p>Formula: <b>CpkDrift = 100*((Cpk/ReferenceCpk)-1)</b><br>
+            <b>Note</b>: Any negative number disables the alarm</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116"><b>section_name</b></td>
+          <td width="507">Lets you define the section name in the <b>value</b> 
+          field. </td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Generates a table with pareto of Cpk values
+gexOptions('statistics','section_name','Tests Statistics');
+gexOptions('statistics','field','test_name');
+gexOptions('statistics','smart_scaling','yes');
+gexOptions('statistics','field','limits');
+gexOptions('statistics','field','exec_count');
+gexOptions('statistics','field','fail_count');
+gexOptions('statistics','field','mean');
+gexOptions('statistics','field','range');
+gexOptions('statistics','sorting','Cpk');
+gexOptions('statistics','alarm_mean','5%');
+gexOptions('statistics','alarm_sigma','1%');
+
+// Highlight tests with Cpk &lt; 1.33
+gexOptions('statistics','alarm_test_cpk','1.33');
+
+// Highlight in RED tests failing over 85% of the time, and in Yellow if in 85-90%
+gexOptions('statistics','alarm_test_yield','85.0');
+gexOptions('statistics','warning_test_yield','90.0');
+
+// Mean drift to be computed as a percentage of test limits
+gexOptions('statistics','mean_drift_formula','limits');</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="histograms">histograms</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8"> 
+      </h1>
+      <p>
+     <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>section_name</b></td>
+          <td width="507">Lets you define the section name in the <b>value</b> 
+          field. </td>
+        </tr>
+      </table>  
+      </p>
+      <p>Example:</p>
+      <pre>// Defines the section name for 'Histograms charts'
+gexOptions('histogram','section_name','Histogram of tests');</pre>
+      <h1>&nbsp;</h1>
+      <h1>Section: <a name="wafer">wafer</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_view</b></td>
+          <td width="507">Defines the chart orientation view; can be one
+            of the following:<br>
+            <b>mirror_x</b> to mirror X values (left becomes right)<br>
+            <b>no_mirror_x</b> to disable mirror X<b><br>
+          mirror_y</b> to mirror Y values (top becomes bottom)<br>
+            <b>no_mirror_y</b> to disable mirror Y<br>
+          <b>shape_round</b> to resize die size so wafer always looks round<br>
+          <b>shape_default</b> to disable die resize (wafer my not look round if 
+          die count in X and Y highly differs) </td>
+        </tr>
+        <tr>
+          <td width="116"><b>low_yield_pattern</b></td>
+          <td width="507">Defines the low-yield threshold used to detect failing 
+          patterns in stacked wafers (any die location on the stacked wafermap 
+          that has a yield lower than this limit is considered a failing 
+          pattern). The <b>value</b> can be any number from 0 to 100% (eg: <b>
+          33.5</b>)<br>
+            &nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_show</b></td>
+          <td width="507">Defines the types of wafermaps to create and display. 
+          the parameter is an integer number with the following valid data bits:<b><br>
+          bit0: </b>set to '1' to show STACKED wafer (one stacked wafermap per 
+          group/query)<br>
+            <b>bit1: </b>set to '1' to show all individual wafers.<br>
+            <b>bit2: </b>set to '1' to show the dies not matching (when 
+          comparing multiple wafers)<p>Examples:<br>
+          gexOptions('wafer','chart_show',2); // Only Show individual wafers<br>
+          gexOptions('wafer','chart_show',4); // Show dies not matching</td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_size</b></td>
+          <td width="507">Defines the size of the wafer map image
+            created in the HTML report. Can<br>
+            be one of the following:<br>
+    <b>small</b> for small image or mosaic if multiple wafer maps reported<br>
+    <b>medium</b> for medium image<br>
+    <b>large</b> for large image<br>
+    <b>auto</b> to let GEX determine the size depending on the number of charts 
+          in the report</td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_view</b></td>
+          <td width="507">Lets you force to mirror dies over the X or Y axis (to 
+          compensate wrong probing directions). Can
+            be one of the following for the X probing direction:<br>
+          <b>mirror_x</b> to swap left dies with right dies<br>
+          <b>no_mirror_x</b> to disable X mirroring<br>
+          <b>mirror_y</b> to swap top dies with bottom dies<br>
+          <b>no_mirror_y</b> to disable Y mirroring<br>
+          <b>all_parts</b> to display a full wafer with all dies no matter the 
+          part filtering enabled (filter then only applies to samples and 
+          statistics but doesn't prevent from having a complete wafer image)<br>
+          <b>filtered_parts</b> to only report dies matching the filtering 
+          criteria (eg: list of parts, or bin list, etc)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>retest_policy</b></td>
+          <td width="507">Lets you define how to handle the binning for a dies 
+          tested multiple times. Can
+            be one of the following :<br>
+          <b>last_bin</b> to keep the bin of the last retest (default mode)dies<br>
+          <b>highest_bin</b> to promote the highest bin value found in the 
+          retests<br>
+          &nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>marker</b></td>
+          <td width="507">Define which markers to display on the wafer map 
+          chart. Markers support include:<br>
+            <b>bin</b> to have the  value displayed in each wafer map
+            die (measurement for parametric wafer map, or Bin# or bin count for 
+          stacked wafer).<br>
+            <b>retest</b> to have the dies retested show a black outline border (this only
+            applies to wafer maps of software or hardware binnings; wafermap for
+            parametric tests ignore this option).</td>
+        </tr>
+        <tr>
+          <td width="116"><b>section_name</b></td>
+          <td width="507">Lets you define the section name in the <b>value</b> 
+          field. </td>
+        </tr>
+        <tr>
+          <td width="116"><b>gross_die</b></td>
+          <td width="507">Lets you define the gross die count per wafer to use (instead of 
+          the physical dies tested in each wafer) when computing Yield related results. The 
+          Gross die count is specified as an integer in the <b>value</b> field; 
+          a negative value disables the gross die count support.</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Define wafer map options: adaptive size, show binning in wafer map
+// Mirror in X and in Y !
+gexOptions('wafer','section_name','Wafer maps');
+gexOptions('wafer','chart_view','mirror_x');
+gexOptions('wafer','chart_view','mirror_y');
+gexOptions('wafer','chart_size','auto');
+gexOptions('wafer','marker','bin');
+gexOptions('wafer','marker','retest');</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="pareto">pareto</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>section</b></td>
+          <td width="507">Defines if the pareto section is to be included in the 
+          report generated. Value must be one of:<br>
+          <b>disabled</b> : section is not included in the report<br>
+          <b>enabled</b> : all pareto sections are included in the report<br>
+          <b><i>&lt;integer value&gt;</i></b>: When the value specified is an integer number  then 
+          bits are decoded as following:<b><br>
+          bit0 (0x1): </b>set to display the 'Pareto of Cp' paragraph<br>
+          <b>bit1 (0x2): </b>set to display the 'Pareto of Cpk' paragraph<br>
+          <b>bit2 (0x4): </b>set to display the 'Pareto of test failures' 
+          paragraph<br>
+          <b>bit3 (0x8): </b>set to display the 'Pareto of Failure signatures' 
+          paragraph<br>
+          <b>bit4 (0x10): </b>set to display the 'Pareto of Soft Bin' paragraph<br>
+          <b>bit5 (0x20): </b>set to display the 'Pareto of Hard Bin' paragraph</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cutoff_cp</b></td>
+          <td width="507">Defines the highest Cp value to be listed in the 
+          Pareto reports. Parameters with a higher Cp value will not be listed. 
+          E.g: if this value is set to 1.67, then only parameters with a Cp 
+          lower or equal to 1.67 (including negative values) will be listed. 
+          Specify a negative number (typically -1) to disable the cutoff limit 
+          and have all parameter's Cp listed.<br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cutoff_cpk</b></td>
+          <td width="507">Same as above, but for Cpk values.<br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cutoff_failure</b></td>
+          <td width="507">Defines the maximum number of failing parameters to 
+          report (Top N tests). Specify a negative number 
+          (typically -1) to disable the cutoff limit 
+          and have all  failures listed.<br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>cutoff_signature_failure</b></td>
+          <td width="507">Defines the percentage of signature failures to report 
+          (value can range from 0% to 100%). Specify a negative number 
+          (typically -1) to disable the cutoff limit 
+          and have all signature failures listed.<br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>section_name</b></td>
+          <td width="507">Lets you define the section name in the <b>value</b> 
+          field. </td>
+        </tr>
+        </table>
+      <p>Example:</p>
+      <pre>// Makes Pareto report ALL Cp, and only Cpk &lt;= 1.33
+// report first 20% of signature failures detected (failing patterns)
+gexOptions('pareto','section_name','Pareto reports');
+gexOptions('pareto','cutoff_cp','-1');
+gexOptions('pareto','cutoff_cpk','1.33');
+gexOptions('pareto','cutoff_signature_failure','20.0');
+gexOptions('pareto','cutoff_failure','10');	// Display top 10 failing tests.
+gexOptions('pareto','section','3');		// Report Cp and Cpk pareto
+</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="binning">binning</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>section</b></td>
+          <td width="507">Defines if the binning section is to be included in 
+          the report generated. Value must be one of:<br>
+          <b>enabled</b> : section is included in the report<br>
+          <b>disabled</b> : section is not included in the report<br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>computation</b></td>
+          <td width="507">Defines <b>how the binning</b> percentages and values 
+          must be <b>computed</b>; can be one
+            of the following:<br>
+            <br>
+            <b>samples </b>makes the binning computed from the data samples 
+          only, and all summary records are ignored. This selection is very 
+          convenient when the summary is corrupted or was not reset prior to 
+          start a production lot.<b><br>
+          <br>
+          summary </b>&nbsp;this is the default mode: binning counts are 
+          computed reading the data files summary records (if any), and sampled 
+          data otherwise. Use this mode unless you process wafer map data that 
+          include <b>retests</b>. In such situation, this mode may count retested dies, and the binning/yield values 
+          wouldn't be totally accurate<b><br>
+          <br>
+          wafer_map</b> makes the binning computed from the wafer map data only. 
+          Under this mode, only the last bin of each die retested is counted, making 
+          the binning chart and yield information always accurate. If you select 
+          this mode, you must activate the wafer map report generation 
+          otherwise no binning chart will be created (as no wafermap data would 
+          be found).<br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="116"><b>section_name</b></td>
+          <td width="507">Lets you define the section name in the <b>value</b> 
+          field. </td>
+        </tr>
+        </table>
+      <p>Example:</p>
+      <pre>// Makes Binning computed from summary data (default)
+gexOptions('binning','section_name','Binning Summary');
+gexOptions('binning','computation','summary');
+</pre>
+      <h1><br>
+      Section: <a name="advhistogram">adv_histogram</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_size</b></td>
+          <td width="507">Defines the size of the histogram image
+            created in the  report (HTML, Word, PDF, etc). Can<br>
+            be one of the following:<br>
+    <b>small</b> for small image or mosaic if multiple histograms are reported<br>
+    <b>medium</b> for medium image<br>
+    <b>large</b> for large image<br>
+    <b>auto</b> to let GEX determine the size depending on the number of charts 
+          in the report<br>
+          <b>banner </b>for banner-type images - using all screen width, but not 
+          very tall, allowinng 4 charts per report page (mostly used for 
+          comparing tests to each other, or MyReports reports)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_type</b></td>
+          <td width="507">Defines the type of the histogram image
+            created in the  report (HTML, Word, PDF, etc). Can<br>
+            be one of the following:<br>
+            <b>bars</b> for drawing histogram bars for each class of results
+            (default)<br>
+            <b>curve</b> for drawing the fitting curve that envelops the
+            histogram<br>
+            <b>bars_curve</b> for drawing the histogram bars and its fitting
+            curve on the same chart<br>
+          <b>gaussian</b> for drawing the Gaussian curve centered on the mean.<br>
+          <b>bars_gaussian</b> for drawing the Gaussian curve + plain bars centered on the mean.<br>
+          <b>bars_outline_gaussian</b> for drawing the Gaussian curve + bars outline 
+          centered on the mean.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>y_axis</b></td>
+          <td width="507">Defines if the Y axis scale displays the percentage of 
+          each bar (default) or the total count / hits per bar. Valid value can 
+          be any of:<br>
+          <b>percentage</b> to display the percentage of the distribution in 
+          bars<br>
+          <b>hits</b> to display the number of results in each bar (hit count)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>total_bars</b></td>
+          <td width="507">Defines the number of bars/bins used when drawing the 
+          histograms. Default is 40, any value between 2 and 10,000 is accepted.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>marker</b></td>
+          <td width="507">Defines which markers to display on the advanced 
+          histogram chart. Markers supported include:<br>
+            <b>title</b> to display the chart title<br>
+            <b>mean</b> to draw a line showing the mean value<br>
+            <b>median</b> to draw a line showing the mean value (Examinator-Pro only)<br>
+            <b>limits</b> to show the test limits lines<br>
+            <b>2sigma</b> to draw 2 lines +/-1sigma from the mean<br>
+            <b>3sigma</b> to draw 2 lines +/-1.5sigma from the mean<br>
+            <b>6sigma</b> to draw 2 lines +/-3sigma from the mean</td>
+        </tr>
+        <tr>
+          <td width="116"><b>field</b></td>
+          <td width="507">Defines statistical information to display by the 
+          histogram chart. Statistical fields available include:<b><br>
+          exec_count</b> to include the execution count<br>
+            <b>mean</b> to include the mean value<b><br>
+          quartile2</b> to include the median value<b><br>
+          sigma</b> to include the sigma value<b><br>
+          fail_count</b> to include the failures count<br>
+            <b>outlier_count</b> to include the outlier count<br>
+            <b>cp</b> to include the Cp value<br>
+            <b>cpk</b> to include the Cpk value (min of CpkH and CpkL)<p>Note: 
+          an option additional field can be specified after the 'value' field to 
+          enable/disable the field<br>
+          eg: following two lines have similar effect<br>
+          gexOptions('adv_histogram','field','mean');<br>
+          gexOptions('adv_histogram','field','mean','1');</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Set Advanced Histogram options: mosaic, show test name + mean
+gexOptions('adv_histogram','chart_size','small');
+gexOptions('adv_histogram','marker','test_name');
+gexOptions('adv_histogram','marker','mean');
+gexOptions('adv_histogram','field','mean');
+</pre>
+      <pre>// Disable limits field in histogram statistics
+gexOptions('adv_histogram','field','limits','0');</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advtrend">adv_trend</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_size</b></td>
+          <td width="507">Defines the size of the trend chart image
+            created in the  report (HTML, Word, PDF, etc). Can<br>
+            be one of the following:<br>
+    <b>small</b> for small image or mosaic if multiple trend charts are reported<br>
+    <b>medium</b> for medium image<br>
+    <b>large</b> for large image<br>
+    <b>auto</b> to let GEX determine the size depending on the number of charts 
+          in the report<br>
+          <b>banner </b>for banner-type images - using all screen width, but not 
+          very tall, allowinng 4 charts per report page (mostly used for 
+          comparing tests to each other, or MyReports reports)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_type</b></td>
+          <td width="507">Defines the type of the trend image
+            created in the  report (HTML, Word, PDF, etc). Can<br>
+            be one of the following:<br>
+            <b>lines</b> for drawing a trend chart with all points connected
+            with a line (default)<br>
+            <b>spots</b> for drawing a spot at each point.<br>
+            <b>lines_spots</b> for drawing the trend chart line and also
+            highlight each line data point</td>
+        </tr>
+        <tr>
+          <td width="116"><b>marker</b></td>
+          <td width="507">Defines which markers to display on the advanced trend 
+          chart. Markers supported include:<br>
+            <b>title</b> to display the chart title<br>
+            <b>mean</b> to draw a line showing the mean value<br>
+            <b>median</b> to draw a line showing the mean value (Examinator-Pro only)<br>
+            <b>limits</b> to show the test limits lines<br>
+            <b>2sigma</b> to draw 2 lines +/-1sigma from the mean<br>
+            <b>3sigma</b> to draw 2 lines +/-1.5sigma from the mean<br>
+            <b>6sigma</b> to draw 2 lines +/-3sigma from the mean</td>
+        </tr>
+        <tr>
+          <td width="116"><b>rolling_yield</b></td>
+          <td width="507">Defines <span lang="en-us">the number of parts or 
+          devices to use to compute the rolling yield while plotting the trend 
+          chart of software or hardware binning with rolling yield charting 
+          activated (see the trend chart script function in
+          <a href="gex6.htm#advtrend">gexReportType</a> ). Default value is 200 
+          (so rolling yield is computed over 200 consecutive parts tested).</span></td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Set Advanced trend report options (size, show test name, limits, mean)
+gexOptions('adv_trend','chart_size','large');
+gexOptions('adv_trend','marker','title');
+gexOptions('adv_trend','marker','limits');
+gexOptions('adv_trend','marker','mean');
+gexOptions('adv_trend','sorting','none');
+gexOptions('adv_trend','<span lang="en-us">rolling_yield</span>','<span lang="en-us">50</span>');</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advcorrelation">adv_correlation</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_size</b></td>
+          <td width="507">Defines the size of the correlation/BiVariate chart image
+            created in the  report (HTML, Word, PDF, etc). Can
+            be one of the following:<br>
+    <b>small</b> for small image or mosaic if multiple correlation charts are 
+          reported<br>
+    <b>medium</b> for medium image<br>
+    <b>large</b> for large image<br>
+    <b>auto</b> to let GEX determine the size depending on the number of charts 
+          in the report</td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_type</b></td>
+          <td width="507">Defines the type of the BiVariate image
+            created in the  report (HTML, Word, PDF, etc). Can<br>
+            be one of the following:<br>
+            <b>lines</b> for drawing a  chart with all points connected
+            with a line (default)<br>
+            <b>spots</b> for drawing a spot at each point.<br>
+            <b>lines_spots</b> for drawing the  chart line and also
+            highlight each line data point</td>
+        </tr>
+        <tr>
+          <td width="116"><b>marker</b></td>
+          <td width="507">Defines which markers to display on the correlation/BiVariate 
+          chart. Markers supported include:<br>
+          <br>
+            <b>title</b> to display the chart title<br>
+            <b>mean</b> to draw a line showing the mean value<br>
+            <b>median</b> to draw a line showing the mean value (Examinator-Pro only)<br>
+            <b>limits</b> to show the test limits lines<br>
+            <b>2sigma</b> to draw 2 lines +/-1sigma from the mean<br>
+            <b>3sigma</b> to draw 2 lines +/-1.5sigma from the mean<br>
+            <b>6sigma</b> to draw 2 lines +/-3sigma from the mean</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Set Advanced correlation XY-Scatter report options
+gexOptions('adv_correlation','chart_size','large');
+gexOptions('adv_correlation','chart_type','lines');
+gexOptions('adv_correlation','marker','title');
+gexOptions('adv_correlation','marker','limits');
+gexOptions('adv_correlation','marker','3sigma');</pre>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advproyield">adv_production_yield</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_type</b></td>
+          <td width="507">Defines the type of Production plot created in the  report (HTML, Word, PDF, etc). Can
+            be one of the following:<br>
+            <b>yield</b> for drawing the yield trend chart<b><br>
+          volume</b> for drawing the volume trend chart (volume of parts tested)<br>
+            <b>yield_volume </b>for drawing 2 axis scale and chart showing the 
+          yield trend as well as the volume of parts tested (default)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>marker</b></td>
+          <td width="507">Defines which markers to display on the production 
+          Yield/Volume chart.<br>
+          Markers supported include:<br>
+          <br>
+            <b>title</b> to display the chart title<br>
+            <b>yield</b> to display the yield percentage value for each data 
+          point plotted<br>
+          <b>volume</b> to display the volume count for each bar plotted</td>
+        </tr>
+      </table>      
+      <p>Example:</p>
+      <pre>// Defines the Production Yield/Volume report style, display title + yield levels
+gexOptions('adv_production_yield','chart_type','yield');
+gexOptions('adv_production_yield','marker','title');
+gexOptions('adv_production_yield','marker','yield');
+</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advboxplot">adv_boxplot</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>field</b></td>
+          <td width="507">Defines which fields to include in the
+            advanced report Gage R&amp;R - box
+            plot table. Value
+            can be one of the following field names:<br>
+            <b>limits</b> to include test mean value<b><br>
+          mean</b> to include test mean value<br>
+          <b>median</b> to include test median value<br>
+            <b>sigma</b> to include test sigma value<br>
+            <b>cp</b> to include test Cp value<br>
+            <b>cpk</b> to include test Cpk value<br>
+          <br>
+          values specific to Gage R&amp;R analysis:<br>
+          <b>repeatability</b> to show the dataset repeatability<br>
+          <b>ev</b> to show the Equipment Variation / repeatability (EV)
+          <br>
+          <b>av</b> to show the Appraiser 
+          Variation / reproducibility (AV) <br>
+          <b>r&amp;r</b> to show the Gage R&amp;R value<br>
+          <b>pv</b> to show the Gage: Parts Variation (PV)<br>
+          <b>tv</b> to show the Gage: Total Variation (TV)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>chart_type</b></td>
+          <td width="507">Defines the type of the Boxplot image
+            created in the  report. Can<br>
+            be one of the following:<br>
+            <b>limits</b> for drawing the boxplot normalized on the limits space<b><br>
+          range</b> for drawing the boxplot normalized over the data range<br>
+            <b>adaptive</b> for drawing the  boxplot normalized over limits if 
+          analyzing one data set, or over the range if comparing multiple 
+          datasets.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>sorting</b></td>
+          <td width="507">Specifies which field type to sort the generated table. Can be one of the&nbsp;following:<br>
+            <b>test_number</b> to sort by ascending test number<br>
+            <b>test_name</b> to sort by ascending test name<br>
+          <b>test_flow_id</b> to sort test by execution order<br>
+            <b>mean</b> to sort by descending mean<br>
+            <b>sigma</b> to sort by descending sigma<br>
+            <b>cp</b> to sort by ascending Cp<br>
+            <b>cpk</b> to sort by ascending Cpk <br>
+          <b>r&amp;r</b> to sort by descending gage R&amp;R<p><b>Note</b>: Only one sorting mode can be selected at a time. Also
+            when comparing files or groups of files, sorting is done on the
+            Reference group (group #1).</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="116"><b>r&amp;r_sigma</b></td>
+          <td width="507">The value specifies the number of sigma factor to use 
+          in R&amp;R computations. A ratio of 5.15 total standard deviations (or 
+          99.0 percent of gauge R&amp;R) to part tolerance range is used as a gauge 
+          capability index to assess gauge performance. However you can specify 
+          a different value than the default 5.15 if you want otherwise.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>direction</b></td>
+          <td width="507">This option applikes to Interactive Box-plot only. It 
+          allows to define if boxes are painted horizontally or vertically. 
+          Valid values is one of:<p><b>horizontal</b> : this makes box-plots 
+          painted vertically (default)<br>
+          <b>vertical</b> : this makes box-plots painted horizontally</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Set Advanced Gage R&amp;R - box-plot report: no field in table, sort on test_name
+gexOptions('adv_boxplot','sorting','test_name');
+gexOptions('adv_boxplot','field','limits');
+gexOptions('adv_boxplot','field','R&amp;R');
+gexOptions('adv_boxplot','r&amp;r_sigma','5.15');</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="advdatalog">adv_datalog</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>field</b></td>
+          <td width="507">Defines which fields to include in the
+            advanced report datalog
+            page. Value can be one of the following field names:<br>
+            <b>comment</b> to include datalog comments<br>
+            <b>test_name</b> to include test name in the report<br>
+            <b>limits</b> to include test limits in the report<br>
+            <b>die_loc</b> to include die location in the report</td>
+        </tr>
+        <tr>
+          <td width="116"><b>format</b></td>
+          <td width="507">Defines how should the data be organized:<br>
+            <b>1row</b> to see datalog data organized in a single row<br>
+          <b>2rows</b> to see datalog data organized in two rows</td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Set Advanced datalog report options: show comments + die location + single row
+gexOptions('adv_datalog','field','comments');
+gexOptions('adv_datalog','field','die_loc');
+gexOptions('adv_datalog','format','1row');</pre>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="adv_what_if">adv_what_if</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>pass_bin</b></td>
+          <td width="507">Defines the new part binning# when
+          a failing part becomes PASS using the new 
+          what-if limits. The bin# assigned is used for soft-bin and hard-bin 
+          records. Must be a value between 0 and 65535.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>fail_bin</b></td>
+          <td width="507">Defines the new part binning# when
+          a failing part becomes PASS using the new 
+          what-if limits. The bin# assigned is used for soft-bin and hard-bin 
+          records. Must be a value between 0 and 65535.</td>
+        </tr>
+        </table>
+      <p>Example:</p>
+      <pre>// Set Advanced datalog report options: show comments + die location + single row
+gexOptions('adv_what_if','pass_bin','1');
+gexOptions('adv_what_if','fail_bin','0');
+</pre>
+      <p>&nbsp;</p>
+      
+      <h1>Section: <a name="advpearson">adv_pearson</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>cutoff</b></td>
+          <td width="507">Defines the lowest Pearson's absolute correlation 
+          value a test must have to be part of the report. Any correlation value 
+          higher means test strongly correlates. Default value is 0.8; and in no 
+          event should it be lower than 0 or higher than 1.0<p>It is usually 
+          considered that tests with a correlation value of 0.7 or higher 
+          strongly correlate; therefore favor any value from 0.7 and higher.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>sorting</b></td>
+          <td width="507">Specifies which field type to sort the generated table. Can be one of the&nbsp;following:<br>
+            <b>test_name</b> to sort by ascending test name<br>
+            <b>pearson</b> to sort by descending Pearson's correlation ratio 
+          (first show tests with the highest correlation value)<br>
+            <p><b>Note</b>: Only one sorting mode can be selected at a time. 
+            Also when comparing files or groups of files, pearson report is done 
+            on the first group only.</p>
+          </td>
+        </tr>
+      </table>
+      <p>Example:</p>
+      <pre>// Set 'pearson's correlation' Advanced report options: show all tests with a correlation
+// value of 0.8 and higher, sorting on test name
+gexOptions('adv_pearson','cutoff','0.8');
+gexOptions('adv_pearson','sorting','test_name');
+</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="toolbox">toolbox</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>csv_sorting</b></td>
+          <td width="507">Defines how the CSV export parser (and CSV editor) 
+          displays tests. Two options are valid:<p><b>test_id</b> : This is the 
+          default mode, where tests are sorted in increasing order (first column 
+          show test with lowest test#)<br>
+          <b>flow_id</b> : This mode makes tests appear sorted by execution 
+          order (testing sequence).</td>
+        </tr>
+        <tr>
+          <td width="116"><b>csv_split_export</b></td>
+          <td width="507">Defines if the CSV export parser generates multiple 
+          CSV files (split) or not if more than 250 rows available (this option 
+          is to address Excel limitation to read files with 250 rows or less). Two options are valid:<p>
+          <b>on</b> : This makes CSV split enabled; as many CSV files are 
+          multiple of 250 rows are created.<br>
+          <b>off</b> : This makes the parser create one single .CSV file, no 
+          matter the number of rows in it (250 or more).</td>
+        </tr>
+        </table>
+      <p>Example:</p>
+      <pre>// Makes .CSV created with tests sorted in ascending order (test# increasing)
+gexOptions('toolbox','csv_sorting','test_id');
+
+// Enables CSV split
+gexOptions('toolbox','csv_split_export','on');
+</pre>
+      <p>&nbsp;</p>
+      <h1>Section: <a name="preferences">preferences</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#ffffff"><b>Field</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Value /
+            Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>text_editor</b></td>
+          <td width="507">Defines the text editor application to launch for 
+          editing data files (eg: editig script files, or text files). Leave to 
+          string '(default)' to let Examinator find the most appropriate editor 
+          on your system. Otherwise, specify the path to the relevant editor to 
+          call.</td>
+        </tr>
+        <tr>
+          <td width="116"><b>ssheet_editor</b></td>
+          <td width="507">Same as above, but for editing .CSV files. </td>
+        </tr>
+        <tr>
+          <td width="116"><b>auto_close</b></td>
+          <td width="507">Applies to floating licenses only; allows forcing 
+          Examinator to release its license if the application remains idle long 
+          enough. Valid timeout values include:<br>
+          15min , 30min, 1hour, 2hours, 4hours, never</td>
+        </tr>
+        </table>
+      <p>Example:</p>
+      <pre>// Set preferences
+gexOptions('preferences','text_editor','(default)');
+gexOptions('preferences','ssheet_editor','excel.exe');
+gexOptions('preferences','auto_close','30min');
+</pre>
+      <p>&nbsp;</p>
+                </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

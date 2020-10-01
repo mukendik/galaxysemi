@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/pat_prod_recipe/images">
+        <file>images/copy.png</file>
+        <file>images/file_remove.png</file>
+        <file>images/gex_application.png</file>
+        <file>images/properties.png</file>
+        <file>images/save.png</file>
+        <file>images/script_new.png</file>
+        <file>images/file_open.png</file>
+        <file>images/new_task.png</file>
+        <file>images/arrow_up.png</file>
+        <file>images/arrow_down.png</file>
+    </qresource>
+</RCC>

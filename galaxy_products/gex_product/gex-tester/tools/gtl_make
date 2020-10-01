@@ -1,0 +1,393 @@
+#!/bin/sh
+# ##############################################################################
+# 
+# script : gtester_make
+# ------------------------------------------------------------------------------
+#
+# USAGE :
+# 
+# This script is used to compile and transfer one or all Galaxy tester applications.
+#
+# Script usage :
+#
+#     > gtester_make -project <project_list> [ -make ] [ -transfer ] | -help
+#
+#     project_list is one of the following or a combination :
+#
+#     all           : All projects
+#     gol           : Galaxy Optimizer Library
+#     gol_simulator : Galaxy Optimizer Library / simulator
+#     simultester   : Galaxy Optimizer Library / simultester and simultester app
+#     gts           : Galaxy Tester Status
+#     gos           : Galaxy Optimizer Spool
+#
+#     task is one of the following :
+#
+#     make     : make the projects
+#     transfer : transfer the projects for packaging (gorel account)
+#
+# ------------------------------------------------------------------------------
+#
+# DEVELOPEMENT NOTE :
+#
+# To add a new project to compile in this script :
+#        * Add a variable 'ProjectXXX' initialized to 0 in the beginning of this
+#          script.
+#        * Add it to banner() function, so the project name can be displayed
+#          before to confirm script execution.
+#        * Add the project name in the display_help function.
+#        * In 'Check script argument' part, add the argument that will specify
+#          this new project.
+#        * In 'Check if at least one project is selected' part, add the project
+#          associated variable testing.
+#        * Add the project to treat inside the loop
+# ------------------------------------------------------------------------------ 
+# Created July, 24 2001 - [BG]
+#
+# History :
+# Jan 29 2002 [BG] : added option to make/transfer only simulator library (gol_simulator)
+# Jul 24 2003 [BG] : added option to make simultester library and application (simultester)
+# ##############################################################################
+
+#
+# Global variables
+#
+GALAXY_VERSION_HOME=${HOME}/galaxy_optimizer
+
+ProjectAll=0
+ProjectGol=0
+ProjectGol_Simulator=0
+Project_Simultester=0
+ProjectGos=0
+ProjectGts=0
+TaskMake=0
+TaskTransfer=0
+Loop=0
+
+#
+# Called when a project name argument is specified without '-project' option
+#
+project_error()
+{
+    echo ""
+    echo "*** Project name must be specified after '-project' argument !"
+    echo ""
+    exit 1
+}
+
+#
+# echo without carriage return
+#
+echon() 
+{ 
+	echo "$@" | tr -d '\012'; 
+}
+
+#
+# Display information about current gtester_make configuration (switch specified arguments),
+# and ask user confirmation.
+#
+banner()
+{
+	clear
+
+	echo ""
+	echo ""
+	echo "****************************************************************************"
+	echo ""
+	echo "* gtester_make will treat the following project(s) :"
+	echo ""
+
+	if [ ${ProjectGol} -eq 1 ] || [ ${ProjectAll} -eq 1 ]; then
+		echo "        > Galaxy Optimizer Library"
+	fi
+	if [ ${ProjectGol_Simulator} -eq 1 ] || [ ${ProjectAll} -eq 1 ]; then
+		echo "        > Galaxy Optimizer Library / Simulator"
+	fi
+	if [ ${Project_Simultester} -eq 1 ] || [ ${ProjectAll} -eq 1 ]; then
+		echo "        > Galaxy Optimizer Library / Simultester and Simultester application"
+	fi
+	if [ ${ProjectGts} -eq 1 ] || [ ${ProjectAll} -eq 1 ]; then
+		echo "        > Galaxy Tester Status"
+	fi
+	if [ ${ProjectGos} -eq 1 ] || [ ${ProjectAll} -eq 1 ]; then
+		echo "        > Galaxy Optimizer Spool"
+	fi
+	echo ""
+	echo "* for each project, the following action(s) will be performed :"
+	if [ ${TaskMake} -eq 1 ]; then
+		echo "        > Make"
+	else
+		echo "        # No Make"
+	fi
+	
+	if [ ${TaskTransfer} -eq 1 ]; then
+		echo "        > Transfer"
+	else
+		echo "        # No Transfer"
+	fi
+	echo ""
+
+	echon "Is it correct y/[n] ? " 
+	read Answer
+	if [ "${Answer}" = "n" ] || [ "${Answer}" = "N" ] ||  [ "${Answer}" = "" ]; then
+		echo ""
+	echo "Abort gtester_make."
+		echo ""
+		exit 2
+	else
+		echo "****************************************************************************"
+	fi
+}
+
+#
+# Display the associated help
+#
+display_help()
+{
+  echo ""
+  echo "Usage : gtester_make -project <project_list> [ -make ] [ -transfer ] | -help"
+  echo ""
+  echo "    -project_list : This argument must be followed by the list of project(s) to treat"
+  echo "                    Available values are :"
+  echo "                    all           : treat all projects"
+  echo "                    gol           : produce Galaxy Optimizer library"
+  echo "                    gol_simulator : produce Galaxy Optimizer library in simulator mode"
+  echo "                    simultester   : produce Galaxy Optimizer library in simultester mode, and simultester app"
+  echo "                    gts           : treat the tester status"
+  echo "                    gos           : treat the gospool"
+  echo ""
+  echo "    -make         : make the specified projects"
+  echo "    -transfer     : transfer the specified projects"
+  echo ""
+  echo "    -help         : Display this help message"
+  echo ""
+  echo ""
+  echo "Example :"
+  echo "         gtester_make -project gol -make"
+  echo ""
+  echo ""
+}
+
+# ###########################################################################
+#
+# Begin the script
+#
+# ###########################################################################
+
+# Check the target OS
+if [ `uname -r | cut -d"." -f1` = 4 ]; then 
+	# For Sunos =========================================
+	TARGETOS=sunos4
+elif [ `uname -r | cut -d"." -f1` = 5 ]; then
+	# For Solaris =======================================
+	TARGETOS=sunos5
+else
+    echo "Working on unsupported OS ! Abort..."
+    exit
+fi
+
+#
+# Check script argument
+#
+
+Project=0
+
+if [ $# -eq 0 ]; then
+	display_help
+	exit 5
+elif [ $# -gt 0 ]; then
+  for CurArg in $@; do
+    if [ ${CurArg} = "-project" ]; then
+      Project=1
+    elif [ ${CurArg} = "gol" ]; then
+	if [ ${Project} -eq 1 ]; then
+	    ProjectGol=1
+	else
+	    project_error
+	fi
+    elif [ ${CurArg} = "gol_simulator" ]; then
+	if [ ${Project} -eq 1 ]; then
+	    ProjectGol_Simulator=1
+	else
+	    project_error
+	fi
+    elif [ ${CurArg} = "simultester" ]; then
+	if [ ${Project} -eq 1 ]; then
+	    Project_Simultester=1
+	else
+	    project_error
+	fi
+    elif [ ${CurArg} = "gts" ]; then
+	if [ ${Project} -eq 1 ]; then
+	    ProjectGts=1
+        else
+	    project_error
+	fi
+    elif [ ${CurArg} = "gos" ]; then
+	if [ ${Project} -eq 1 ]; then
+	    ProjectGos=1
+	else
+	    project_error
+	fi
+    elif [ ${CurArg} = "all" ]; then
+	if [ ${Project} -eq 1 ]; then
+	    ProjectAll=1
+	else
+	    project_error
+	fi
+    elif [ ${CurArg} = "-make" ]; then
+      TaskMake=1
+      Project=0
+    elif [ ${CurArg} = "-transfer" ]; then
+      TaskTransfer=1
+      Project=0
+    elif [ ${CurArg} = "-help" ]; then
+      display_help
+      exit 1
+    else
+      echo ""
+      echo "gtester_make : Invalid argument ${CurArg}"
+	  display_help
+      echo ""
+      exit 6
+    fi
+
+  done
+fi
+
+#
+# Check if at least one project is selected
+#
+if [ ${ProjectGol} -eq 0 ] && [ ${ProjectGol_Simulator} -eq 0 ] && [ ${Project_Simultester} -eq 0 ] && [ ${ProjectGts} -eq 0 ] && [ ${ProjectGos} -eq 0 ] &&
+   [ ${ProjectAll} -eq 0 ]; then
+    echo ""
+    echo "*** No project specified !"
+    echo ""
+    display_help
+    exit 7
+fi
+
+#
+# Check if at least one task is selected
+#
+if [ ${TaskMake} -eq 0 ] && [ ${TaskTransfer} -eq 0 ]; then
+    echo ""
+    echo "*** No task specified !"
+    echo ""
+    display_help
+    exit 7
+fi
+
+banner
+
+
+# ---------------------------------------------------------------------------
+#
+# Make specified projects
+#
+# ---------------------------------------------------------------------------
+
+# -------------------------------- GOL --------------------------------------
+if [ ${ProjectAll} -eq 1 ] || [ ${ProjectGol} -eq 1 ]; then
+
+echo ""
+echo "############################################################"
+echo "# Galaxy Optimizer Library                                 #"
+echo "############################################################"
+
+	cd ${GALAXY_VERSION_HOME}/testerlib
+	chmod +x gol_transfer
+	chmod +x gk_makelib
+	if [ ${TaskMake} -eq 1 ]; then
+		gk_makelib teradyne
+	fi
+	if [ ${TaskTransfer} -eq 1 ]; then
+		echo ""
+		gol_transfer
+	fi
+fi
+
+# -------------------------------- GOL / SIMULATOR --------------------------
+if [ ${ProjectAll} -eq 1 ] || [ ${ProjectGol_Simulator} -eq 1 ]; then
+
+echo ""
+echo "############################################################"
+echo "# Galaxy Optimizer Library / Simulator                     #"
+echo "############################################################"
+
+	cd ${GALAXY_VERSION_HOME}/testerlib
+	chmod +x gol_transfer_simulator
+	chmod +x gk_makelib
+	if [ ${TaskMake} -eq 1 ]; then
+		gk_makelib teradyne_simulator
+	fi
+	if [ ${TaskTransfer} -eq 1 ]; then
+		echo ""
+		gol_transfer_simulator
+	fi
+fi
+
+# -------------------------------- SIMULTESTER -------------------------------
+if [ ${ProjectAll} -eq 1 ] || [ ${Project_Simultester} -eq 1 ]; then
+
+echo ""
+echo "############################################################"
+echo "# Galaxy Optimizer Library / Simultester                   #"
+echo "############################################################"
+
+	cd ${GALAXY_VERSION_HOME}/testerlib
+	chmod +x gk_makelib
+	if [ ${TaskMake} -eq 1 ]; then
+		gk_makelib simultester
+	fi
+
+	cd ${GALAXY_VERSION_HOME}/simultester
+	make
+fi
+
+# -------------------------------- GTS --------------------------------------
+if [ ${ProjectAll} -eq 1 ] || [ ${ProjectGts} -eq 1 ]; then
+
+echo ""
+echo "############################################################"
+echo "# Galaxy Tester Status                                     #"
+echo "############################################################"
+
+	cd ${GALAXY_VERSION_HOME}/gts
+	chmod +x gts_transfer
+	if [ ${TaskMake} -eq 1 ]; then
+		echo ""
+		make gotesterstatus
+	fi
+	if [ ${TaskTransfer} -eq 1 ]; then
+		echo ""
+		gts_transfer
+	fi
+fi
+
+# -------------------------------- GOS --------------------------------------
+if [ ${ProjectAll} -eq 1 ] || [ ${ProjectGos} -eq 1 ]; then
+
+echo ""
+echo "############################################################"
+echo "# Galaxy Optimizer Spool                                   #"
+echo "############################################################"
+
+	cd ${GALAXY_VERSION_HOME}/gospool
+	chmod +x gos_transfer
+	if [ ${TaskMake} -eq 1 ]; then
+		echo ""
+		make gospool
+	fi
+	if [ ${TaskTransfer} -eq 1 ]; then
+		echo ""
+		gos_transfer
+	fi
+fi
+
+echo ""
+echo "############################################################"
+echo "# Done                                                     #"
+echo "############################################################"
+echo ""

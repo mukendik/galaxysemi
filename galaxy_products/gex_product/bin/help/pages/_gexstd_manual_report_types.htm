@@ -1,0 +1,552 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      All types of reports you can generate!&nbsp;<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+  <p>The Quantix Examinator solutions let you create powerful instant reports 
+  from your data.</p>
+      <ul>
+        <li><b>Examinator </b>: The  solution for data files analysis and correlation missions.</li>
+        <li><b>Examinator Pro</b>: The solution for production and manufacturing data analysis</li>
+      </ul>
+  <p><br>
+  Since a <b>picture</b>
+  is worth a 1000 words, let's use the screen shots of reports generated using
+  the Quantix Examinator to help with the following report descriptions!</p>
+      <table border="1" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td width="73%" bgcolor="#FFFF99"><b>Reports links</b></td>
+        </tr>
+        <tr>
+          <td width="73%">
+  This module is the ideal companion for generating instant HTML and Excel
+  reports for any engineering or production data you may have. It includes a
+  rich list of predefined reports so creating the exact report you want is a
+            snap:<br>
+            Basic reports include:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+            <a href="#Statistics">Statistics table<br>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+          <a href="#Wafermap">Wafermap, Packaged map</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9"> <a href="#Histogram">Basic
+          Histograms</a>
+  <p>Advanced reports include:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+            <a href="#adv_Histogram">Histograms<br>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+            <a href="#adv_Trend">Trend chart<br>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9"> <a href="#adv_Correlation">Scatter
+          plot</a>&nbsp;&nbsp; (<i>also, read file format: </i><a href="#Appendix1">
+  'Import test list'</a>)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+  <a href="#adv_production_yield">Production reports (yield)</a><a href="#adv_Trend"><br>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+            <a href="#adv_Boxplot&nbsp;">Gage R&amp;R - Box plot</a><a href="#adv_Trend"><br>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+            <a href="#adv_Datalog">Datalog</a><a href="#adv_Trend"><br>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+          <a href="#adv_Guardbanding">Guard Banding / Virtual retest</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+  <a href="#adv_Pearson">Pearson's correlation: Test list reduction &amp; Test Time Optimization</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; 
+  <img border="0" src="../images/rarrow.png" width="6" height="9">
+  <a href="#adv_Pat">PAT-Man History</a><a href="#adv_go_diags"><br>
+  </a></td>
+        </tr>
+        </table>
+      <p>&nbsp;</p>
+  <p>&nbsp;</p>
+      <table border="1" width="620">
+        <tr>
+          <td bgcolor="#0034AA" width="190"><font color="#ffffff"><b><a name="standard">Report type</a></b></font></td>
+          <td bgColor="#0034aa" width="414"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="Statistics">Statistics</a><br>
+            </b>
+          <img border="0" src="../images/eg_statistics.png" width="303" height="101"><b><br>
+            </b></td>
+          <td width="414">Lets you define how to create the table with test statistics. Tables
+            can be
+            one of the following:
+            <ul>
+              <li><b>Disabled</b> (no test statistics table created !)</li>
+              <li><b>All tests</b> (it's the default): Have ALL tests listed in
+                the table.</li>
+              <li><b>Failing tests</b>: Only include tests that failed at least
+                once.</li>
+              <li><b>Tests with outliers</b>: Only include tests that have one
+                or more outliers (outlier removal definition is set in the <a href="_gexstd_manual_options.htm">Options</a>
+                page).</li>
+              <li><b>List of tests</b> : Specify the list of tests to report
+                (e.g.: <b>1 to 10, 15, 19 to 23</b>)</li>
+              <li><b>Tests with Cp lower or equal to...</b> : Report all tests
+                with a Cp lower or equal to the value specified.</li>
+              <li><b>Tests with Cpk lower or equal to...</b> : Report all tests
+                with a Cpk lower or equal to the value specified.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="Wafermap">Wafermap</a>, Packaged map<br>
+            </b>
+          <img border="0" src="../images/eg_wafmap.png" width="176" height="180"></td>
+          <td width="414">Lets you create a wafer map chart (wafer sort data) or 
+          packaged map chart (packaged devices). The chart can be
+            one of the following:
+            <ul>
+              <li><b>Disabled</b> (no  map is created !)</li>
+              <li><b>Software binning</b> (it's the default ; it uses the SOFT 
+              bin results)</li>
+              <li><b>Hardware binning </b> (it uses the HARD bin results)</li>
+              <li><b>Parametric over test limits</b>: shows how a specific test 
+              result behaves over the whole wafer; in this mode you need to 
+              enter the test number to monitor. Die color covers the whole 
+              spectrum: from blue if value is very close to the lower limit, to 
+              red if the value is very close to the upper limit. If your test is
+                missing a limit, Examinator uses its Min or Max value
+                instead.&nbsp;</li>
+              <li><b>Parametric over test results</b>: same as above except 
+              color spectrum covers the range of test values instead of the 
+              limits; can provide a more detailed view.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="Histogram">Histogram</a></b>
+            <p>
+            <img border="0" src="../images/eg_histo.png" width="162" height="87"></p>
+          </td>
+          <td width="414">Lets you create test results histogram charts (18 bars) for the list of tests
+            selected. Charts can be one of the following:
+            <ul>
+              <li><b>Disabled</b> (no chart created !)</li>
+              <li><b>Chart over test limits</b>: for each test, a histogram that 
+              covers the test limits space is created.</li>
+              <li><b>Cumulate over test limits</b>: same as above except each 
+              column includes the cumuli of the previous columns (this causes 
+              the last column to always be100%).</li>
+              <li><b>Chart over test results</b>: is the default. For each test, 
+              a histogram that covers the test values space is created.</li>
+              <li><b>Cumulate over test limits</b>: same as above except each 
+              column includes the cumuli of the previous columns (this causes 
+              the last column to always be100%).</li>
+            </ul>
+            <p>About <b>Fitting curve</b>: More advanced histogram charts
+            (such as to draw the histogram fitting curve), use the Advanced
+            histogram report instead (in <a href="#advanced">More reports</a>).</p>
+            <p><b>Note</b>: In all cases, you specify if you want the charts 
+            created for all tests or a specific list. You can reduce the
+            histogram generation to your own list of test. E.g.: <b>1 to 10, 15,
+            19 to 23</b></td>
+        </tr>
+        <tr>
+          <td width="190" bgcolor="#FFFF99"><b><a name="advanced">More reports... (Advanced
+            reports)</a></b></td>
+          <td width="414" bgcolor="#FFFF99">
+          <p class="MsoNormal">This section includes all types of advanced 
+          reports you may use at some point when doing detailed analysis work! 
+          All reports created from this menu are stored in the same location 
+          visible from the 'more reports' link of the report home page. As only 
+          one such report can be generated at a time, there are no page 
+          conflicts.</td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="adv_Histogram">Histogram (Bar chart)</a></b>
+            <p>
+            <img border="0" src="../images/eg_adv_histo.png" width="264" height="132">&nbsp;<br>
+            <img border="0" src="../images/eg_adv_histo_curve.png" width="275" height="137"><br>
+            Define bars / fitting curve rendering from the <a href="_gexstd_manual_options.htm">
+          Options</a> page.</p>
+            <p>
+            &nbsp;</p>
+          </td>
+          <td width="414">
+          <p class="MsoNormal">Lets you create a more advanced histogram than in 
+          the option presented above. This histogram provides sharper (30 bars) and more 
+          accurate data as it is intended for investigation work--it also allows 
+          you to display additional markers and information as seen in the <a href="_gexstd_manual_options.htm">
+          Options</a> page. The default Examinator Options settings is to adapt 
+          the size of the image chart created depending on the number of charts 
+          to create: as number of tests to chart increases, the chart size 
+          decreases. This is a convenient feature as when you do a first pass 
+          with all tests, the result is a mosaic of small histogram images, then 
+          focusing on a subset of tests makes the Examinator increase the chart 
+          size created. If&nbsp;multiple files are compared, plots appear on the same 
+          chart with one different color per chart plotted. </p>
+          <p class="MsoNormal"><b>Fitting curve</b>: You can have the histogram
+          draw bars, the fitting curve or both (simply select your chart type
+          from the Options page!). The &quot;fitting curve&quot; drawing mode is
+          the most convenient rendering type when comparing multiple
+          distributions. </p>
+          <p>As with the standard histogram, you can select one of the following 
+          modes: <b>Chart over test limits</b>, <b>Cumulate over test limits</b>,
+          <b>Chart over test results</b> (this is the default), <b>Cumulate over 
+          test limits</b>.
+          <p>As for other reports, you can specify to create the report for all
+          tests, or a specific list of tests. E.g.: <b>1 - 10, 15, 19 - 23</b></td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="adv_Trend">Trend</a> (Control chart)</b>
+            <p>
+            <img border="0" src="../images/eg_adv_trend.png" width="264" height="132"><br>
+            (Test result trend chart)</p>
+            <p>
+            <img border="0" src="../images/yield_trend.png" width="277" height="193"><br>
+            (Software binning trend chart)</p>
+            <p>
+            Define Lines / spots drawing mode from the <a href="_gexstd_manual_options.htm">
+          Options</a> page.</p>
+          </td>
+          <td width="414">
+          <p class="MsoNormal">Lets you create a trend chart of test results for the selected 
+          tests/binnings - the more tests you want the longer it takes!&nbsp; </p>
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="100%" bgcolor="#FFFF99">Test charts can be one 
+          of the following:</td>
+            </tr>
+          </table>
+          <ul type="disc">
+            <li class="MsoNormal"><b>Chart over test limits</b>: for each test 
+            selected, a test results trend chart that covers the test limits space in Y-axis 
+            is created.</li>
+            <li class="MsoNormal"><b>Chart over test results</b>: is the 
+            default. For each test, a test results trend chart that covers the test values 
+            space is created.</li>
+          </ul>
+          <p><b>Note</b>: In both cases, you specify if you want the charts 
+          created for all tests or a specific list. As for other reports, you
+          can specify to create the report for all tests, or a specific list of
+          tests. E.g.: <b>1 - 10, 15, 19 - 23</b> </p>
+          <ul type="disc">
+            <li class="MsoNormal"><b>Chart difference between 2 tests</b>:
+              Specify the 2 tests to analyze, and have the difference of the two
+              tests plotted (Test1-Test2). Chart is plotted over test results.</li>
+          </ul>
+          <p><b>Note1</b>: The test#1 is <b>ALWAYS read 
+          from the first file/group</b> of files, and the test#2 
+          is <b>ALWAYS read from the second file/group</b> of files. If only one 
+          file/group exist, then both test results are extracted from the same 
+          file/group. If more than two files/groups of files exist, only data 
+          from the first two files/groups of files are listed.</p>
+          <p><b>Note2</b>: If the number of samples found for the test#1doesn't match the number of samples found for the test#2, the 
+          minimum of the two sample set is used. Extra samples are simply 
+          ignored. </p>
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="100%" bgcolor="#FFFF99">Binning charts can be one 
+          of the following:</td>
+            </tr>
+          </table>
+          <ul type="disc">
+            <li class="MsoNormal"><b>Software binning (Sub-Lots)</b>:
+              Specify the binning # or binning list to chart. Draws one plot per
+              sub-lot. Useful report to
+              trend yield in production.&nbsp;</li>
+            <li class="MsoNormal"><b>Software binning (all parts)</b>:
+              Specify the binning # or binning list to chart. Draws one plot per
+              part tested, each plot being the current binning yield level.&nbsp;
+              Useful to see how a binning yield evolves over the parts tested.</li>
+            <li class="MsoNormal"><b>Hardware binning (Sub-lots)</b>: Same as <b>Software binning
+              (Sub-Lots) </b>but for
+              hardware binning instead.&nbsp;</li>
+            <li class="MsoNormal"><b>Hardware binning (all parts)</b>: Same as <b>Software binning
+              (all parts) </b> but for
+              hardware binning instead.&nbsp;</li>
+            <li class="MsoNormal"><b>Soft bin + rolling yield</b>: Specify the 
+            binning # or binning list to chart. Two charts are plotted: one 
+            shows the current binning yield level, while the other one is the 
+            rolling yield every 200 parts.&nbsp; Useful to spot sudden yield 
+            drops as the rolling yield is much more reactive to yield changes. </li>
+            <li class="MsoNormal"><b>Hard bin + rolling yield</b>: Same as <b>
+            Hard bin + rolling yield </b>but for
+              hardware binning instead.&nbsp;</li>
+          </ul>
+          <p>You can enter any list of binning to trend. E.g.: 1-5 to trend the
+          combined yield of bin 1 to bin5. </p>
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="adv_Correlation">Correlation</a> (Scatter diagram)</b>
+            <p>
+            <img border="0" src="../images/eg_adv_scatter.png" width="263" height="133"></p>
+          </td>
+          <td width="414">
+          <p class="MsoNormal">Lets you create a XY-Scatter diagam of test
+          results for the given 
+          tests. Convenient report when performing correlation analysis. Charts 
+          can be one of the following: </p>
+          <ul type="disc">
+            <li class="MsoNormal"><b>Chart over test limits</b>: for each test 
+            selected, a test results scatter diagram that covers the tests limits space is 
+            created. This lets you see if the process is well centered or not.</li>
+            <li class="MsoNormal"><b>Chart over test results</b>: is the 
+            default. For each test, a test results scatter diagram that covers the tests values 
+            space is created. This is like zooming over the data.</li>
+          </ul>
+          <p><b>Note1</b>: In all cases, you specify the test to chart on the 
+          X-axis, and the test to chart on the Y-axis. For the two tests 
+          entered, ensure the format is: <b>XXX or XXX.YYY </b>where XXX is the 
+          test number and YYY the pinmap index (if any). </p>
+          <p><b>Note2</b>: The test shown on the <b>X</b>-axis is <b>ALWAYS read 
+          from the first file/group</b> of files, and the test shown on the <b>Y</b>-axis 
+          is <b>ALWAYS read from the second file/group</b> of files. If only one 
+          file/group exist, then X and Y results are extracted from the same 
+          file/group. If more than two files/groups of files exist, only data 
+          from the first two files/groups of files are listed.</p>
+          <p><b>Note3</b>: If the number of samples found for the test in X 
+          doesn't match the number of samples found for the test in Y, the 
+          minimum of the two sample set is used. Extra samples are simply 
+          ignored. </p>
+            <p><span style="background-color: #FFFF00">Multi-scatter plots:</span> 
+            If you want to chart more that one scatter plot, then Examinator 
+            offers the possibility to enter the test pairs instead of only two 
+            tests. To have multiple scatter plots created from your pair of 
+            tests, simply enter the list of pairs into the 'Test in X' field and 
+            leave the 'Test in Y' field empty. Let's suppose you want to create 
+            three scatter plots as following: <br>
+            plot#1 with test 1000 in X, test 2000 in Y<br>
+            plot#2 with test 1001 in X, test 2001 in Y<br>
+            plot#3 with test 1002 in X, test 2002 in Y</p>
+            <p>Then the 'Test in X' field should include the following string:<br>
+            <b>1000,2000 ; 1001,2001 ; 1002,2002</b></p>
+            <p>You can also import your list of pairs from an ASCII file by 
+            clicking the 'file open' icon. The file format is very simple and 
+            detailed below in <a href="#Appendix1">Appendix 1</a>.</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="adv_production_yield">Production</a> Yield 
+          reports</b>
+            <p>
+            <img border="0" src="../images/eg_adv_prodyield.png" width="227" height="123"></p>
+          </td>
+          <td width="414">
+          <p class="MsoNormal">The Production reports allows to easily generate 
+          Yield/Volume yield charts. From the 'options' tab you can define which 
+          plots to overlay (Yield, Volume, both) and select markers (yield 
+          level, volume count). The X axis of your Yield/Volume chart can be one 
+          of:</p>
+          <ul type="disc">
+            <li class="MsoNormal"><b>Sublots</b>: each chart cell represents one 
+            sublot (or wafer).</li>
+            <li class="MsoNormal"><b>Lots</b>: each chart cell represents one 
+            lot (merging all sublots and/or wafers).</li>
+            <li class="MsoNormal"><b>daily</b>: each chart cell represents one 
+            day (merging all lots tested the same day).</li>
+            <li class="MsoNormal"><b>weekly</b>: each chart cell represents one 
+            week (merging all lots tested the same week).</li>
+            <li class="MsoNormal"><b>monthly</b>: each chart cell represents one 
+            month (merging all lots tested the same month).</li>
+          </ul>
+ </td>
+        </tr>
+        <tr>
+          <td width="190"><b>Gage R&amp;R - <a name="adv_Boxplot&nbsp;">Boxplot</a></b>
+            <p>
+            <img border="0" src="../images/eg_adv_boxplot.png" width="262" height="127"></p>
+          </td>
+          <td width="414">
+          <p class="MsoNormal">Lets you create a Gage R&amp;R boxplot in only one 
+          click!. Convenient report when performing correlation 
+          analysis, and focusing on repeatability and reproducibility. The Gage 
+          R&amp;R Boxplot chart shows candle-style graphics where extreme values are 
+          the min. and max. samples values, and the candle showing the 1st and 
+          3rd quartiles position. If the analysis is conducted over only one 
+          dataset or file, then the viewport is normalized over the test limits 
+          space. If comparing multiple datasets or file, then the viewport space 
+          is the range of values measured for all datasets/Appraiser compared. Charting can be one of the following: </p>
+          <ul type="disc">
+            <li class="MsoNormal"><b>All tests</b>: is the default. All tests 
+            are shown on the boxplot chart.</li>
+            <li class="MsoNormal"><b>Test list</b>: Lets you generate 
+            a boxplot chart for the list of tests specified. Test number, 
+            and range syntax is the same as for the other report types
+              supporting a test list.</li>
+          </ul>
+          <p>For this report, both limits must exist but since this is not 
+          always the case, a simple algorithm is used to create artificial 
+          limits for the purpose of charting:</p>
+            <ul>
+              <li>If no low limit exist, we compute <b>LowLimit = Minimum/2</b>, 
+              where <b>Minimum</b> is the minimum test result value found in the 
+              data samples.</li>
+              <li>If no high limit exist, we compute <b>HighLimit = Maximum*2</b>, 
+              where <b>Maximum</b> is the maximum test result value found in the 
+              data samples.</li>
+            </ul>
+ </td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="adv_Datalog">Datalog</a></b>
+            <p>
+            <img border="0" src="../images/eg_adv_datalog.png" width="178" height="118"></p>
+          </td>
+          <td width="414">
+          <p class="MsoNormal">Lets you extract test results for the specified 
+          tests (all tests, failing tests, specific range of tests, etc.). As 
+          this output report may be huge, be careful to only extract the 
+          information you need, and activate a filter such as good parts only, 
+          or a range of parts to reduce the amount of data listed in the datalog 
+          output--you can quickly consume megabytes of pages! Datalog type can 
+          be one of the following: </p>
+            <ul>
+              <li><b>All tests</b>: all tests are listed in the datalog page; 
+              you should be very cautious when using this option as it will 
+              probably create huge page that will consume megabytes of space!</li>
+              <li><b>Failing tests</b>: is the default. Only failing tests are 
+              listed in the datalog page.</li>
+              <li><b>Outliers</b>: lets you define the&nbsp; which tests
+                outliers to be dataloged.</li>
+              <li><b>Test list</b>: lets you define the list of tests to report in the datalog page.
+                E.g.: <b>1 - 10, 15, 19 - 23</b> </li>
+              <li><b>Test list: values only</b>: Same as above except 
+              that only test results are listed; any other information such as 
+              part number, and binning result are not listed. This mode is 
+              convenient if you only want test result values to be listed.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="adv_Guardbanding">Guard banding</a>. What-if</b>
+            <p>
+            <img border="0" src="../images/eg_drill_whatif.png" width="292" height="121"></p>
+          </td>
+          <td width="414">
+          <p class="MsoNormal">Yield is the number of good parts you test...and
+          yield will vary if test limits are changed. In the same way, yield
+          will be affected if test distributions change. Such scenarios can be
+          easily simulated using this drilling selection. You can play on test
+          limits and see the impact on Cp, Cpk and yield.&nbsp;This function is
+          present in both GEX-Instant Report (kept for historical reason) and
+          GEX-Data Mining <a href="_gexstd_manual_drill.htm">[more]</a>. </p>
+          </td>
+        </tr>
+        <tr>
+          <td width="190"><b><a name="adv_Pearson">Pearson's</a> correlation: 
+          Test Time Optimization</b><p>
+            <img border="0" src="../images/eg_adv_pearson.png" width="226" height="125"></p>
+          </td>
+          <td width="414">
+          <p class="MsoNormal">This report lists all test pairs that highly 
+          correlate (includes: correlation ratio, test number, test names, 
+          and scatter plot for the two correlating tests). When two tests strongly correlate, 
+          you may consider removing one of them from your test flow and 
+          therefore reduce the tests in your program as well as its overall execution time. The higher the 
+          correlation ratio is (1.0 is the maximum), the more tests  correlate. 
+          Tests that with a low correlation value are not listed in the report ; 
+          the threshold used to classify tests with a high correlation can be 
+          customized under the <b><i>Options</i></b> tab. Default level is 0.8<br>
+          Note: if comparing groups or dataset, this report will only process 
+          data from the first group / dataset.</p>
+          </td>
+        </tr>
+        <tr>
+		  <td width="190"><b><a name="adv_Pat">PAT-Man History</a></b><p>
+            &nbsp;</p>
+          </td>
+          <td width="414">
+		  <p class="MsoNormal">This report extract the PAT-Man report found in
+		  the data file (report created by the PAT-Man solution when identifying
+          outlier parts). This report provides full details about parts 
+          identified as outliers, the faulty tests, their value and the recipe 
+          settings used. This is a precious report for any company that wants to 
+          remain ISO while using PAT, or any engineer looking after historical 
+          PAT information.</p>
+          </td>
+        </tr>
+        </table>
+      <p align="left">&nbsp;</p>
+      <h1 align="left"><a name="Appendix1">Appendix</a> 1: <i>Test list</i> file 
+      format</h1>
+      <p align="left">This section details the structure of the ASCII 
+      file you may create to define a list of parameters you can have Examinator 
+      import for you (saves valuable time when your list includes many 
+      parameters or when you use the same list periodically under Examinator). 
+       
+      </p>
+      <p align="left">Any line of the file starting with a <b>#</b> character is ignored and is 
+      considered a comment line. Other lines must include the parameter lists as 
+      detailed hereafter. When Examinator reads your file, it is not case 
+      sensitive , spaces are ignored, semicolon or coma have the same effect.</p>
+      <p align="left"><b>Note to scripting language users</b>: if you're using 
+      the Examinator scripting language and specify a file path to the test list 
+      to import, remember that the backslash character needs to be doubled in 
+      the string.</p>
+      <p align="left">A such, the following line is <b>NOT</b> correct:<br>
+      <font face="Courier New">
+      gexReportType('histogram','test_over_limits','c:\temp\tests.txt');</font><br>
+&nbsp;</p>
+      <p align="left">While this line is correct:<br>
+      <font face="Courier New">
+      gexReportType('histogram','test_over_limits','c:\\temp\\tests.txt');</font></p>
+      <p align="left">&nbsp;</p>
+      <p align="left">Following cases studies show typical content of test lists 
+      file. Cases cover the histogram, trend and scatter plots types:</p>
+      <p align="left"><b>Case#1:</b><br>
+      If your file is to hold tests for <b>Histograms</b> or <b>Trend</b> 
+      charts, then each line of the file can include list of tests in the usual 
+      format supported by Examinator. Example:</p>
+      <p align="left"><font face="Courier New">#List of parameters for 
+      Histograms<br>
+      1000-2500, 2600, 2900-3100</font></p>
+      <p align="left"><br>
+      <b>Case#2:</b><br>
+      If your file is to hold tests&nbsp; for <b>Scatter</b> / <b>Correlation</b> plots, then each 
+      line must specify test pairs and must comply with the following format:<br>
+      <font face="Courier New"><b>X=</b><i>&lt;List of tests in X&gt;</i><b> , Y=<i>&lt;</i></b><i>list 
+      of tests in Y&gt;</i></font></p>
+      <p align="left">Where the <i>&lt;List of tests...&gt;</i> includes one or more 
+      tests coma-separated. Test numbers can include pinmap number as well (eg: 
+      1000.16). </p>
+      <p align="left">Example1: Two scatter plots </p>
+      <p align="left"><font face="Courier New">#Scatter plot#1<br>
+      X=1000 , Y=2000<br>
+      #Scatter plot#2<br>
+      X=1000 , Y=2010</font></p>
+      <p align="left">Example2: Same effect as Example1, but using a more 
+      compact definition</p>
+      <p align="left"><font face="Courier New">#Scatter plot#1<br>
+      X=1000 , Y=2000,2010</font><br>
+&nbsp;</p>
+      <p align="left">Example3: Same effect as Example1, but using a more 
+      compact definition</p>
+      <p align="left"><font face="Courier New">#First 7 scatter pots with same 
+      parameter in X<br>
+      X= 6001 , Y = 6004, 6006, 6008, 6019, 6033, 6047, 6053<br>
+      <br>
+      #Next 7 scatter pots with same parameter in X<br>
+      X= 7001, Y = 7004, 7006, 7008, 7019, 7033, 7047, 7053</font><br>
+&nbsp;</p>
+      <p align="left">Example4: All the scatter combinations for 4 tests!</p>
+      <p align="left"><font face="Courier New">#Build 4 scatter plots!<br>
+      X= 6001 , 6002 , Y = 6004, 6006<br>
+&nbsp;</font></p>
+      <p align="left">&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

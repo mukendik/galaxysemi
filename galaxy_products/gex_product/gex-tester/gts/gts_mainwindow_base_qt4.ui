@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0" stdsetdef="1">
+  <author></author>
+  <comment></comment>
+  <exportmacro></exportmacro>
+  <class>Gts_MainWindow_base</class>
+  <widget class="Q3MainWindow" name="Gts_MainWindow_base">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>522</width>
+        <height>239</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>GTS - Galaxy Tester Simulator</string>
+    </property>
+    <property name="windowIcon">
+      <pixmap>galaxy_logo_32.png</pixmap>
+    </property>
+    <widget class="QWidget">
+      <layout class="QVBoxLayout">
+        <item>
+          <layout class="QHBoxLayout">
+            <item>
+              <widget class="QPushButton" name="buttonNewStation">
+                <property name="sizePolicy">
+                  <sizepolicy>
+                    <hsizetype>0</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                  </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                  <size>
+                    <width>100</width>
+                    <height>50</height>
+                  </size>
+                </property>
+                <property name="maximumSize">
+                  <size>
+                    <width>100</width>
+                    <height>50</height>
+                  </size>
+                </property>
+                <property name="text">
+                  <string>New Station</string>
+                </property>
+                <property name="icon">
+                  <iconset>new_station.png</iconset>
+                </property>
+                <property name="toolTip" stdset="0">
+                  <string>Open a new station window</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="buttonExit">
+                <property name="sizePolicy">
+                  <sizepolicy>
+                    <hsizetype>0</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                  </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                  <size>
+                    <width>100</width>
+                    <height>50</height>
+                  </size>
+                </property>
+                <property name="maximumSize">
+                  <size>
+                    <width>100</width>
+                    <height>50</height>
+                  </size>
+                </property>
+                <property name="text">
+                  <string>Exit</string>
+                </property>
+                <property name="icon">
+                  <iconset>exit.png</iconset>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <spacer name="spacer1">
+                <property name="sizeHint">
+                  <size>
+                    <width>265</width>
+                    <height>16</height>
+                  </size>
+                </property>
+                <property name="sizeType">
+                  <enum>QSizePolicy::Expanding</enum>
+                </property>
+                <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                </property>
+              </spacer>
+            </item>
+          </layout>
+        </item>
+        <item>
+          <widget class="Q3ListView" name="listViewStations">
+            <property name="minimumSize">
+              <size>
+                <width>500</width>
+                <height>80</height>
+              </size>
+            </property>
+            <column>
+              <property name="text">
+                <string>Station</string>
+              </property>
+              <property name="clickable">
+                <bool>true</bool>
+              </property>
+              <property name="resizable">
+                <bool>true</bool>
+              </property>
+            </column>
+            <column>
+              <property name="text">
+                <string>Test Program</string>
+              </property>
+              <property name="clickable">
+                <bool>true</bool>
+              </property>
+              <property name="resizable">
+                <bool>true</bool>
+              </property>
+            </column>
+            <column>
+              <property name="text">
+                <string>Parts tested</string>
+              </property>
+              <property name="clickable">
+                <bool>true</bool>
+              </property>
+              <property name="resizable">
+                <bool>true</bool>
+              </property>
+            </column>
+            <column>
+              <property name="text">
+                <string>Yield</string>
+              </property>
+              <property name="clickable">
+                <bool>true</bool>
+              </property>
+              <property name="resizable">
+                <bool>true</bool>
+              </property>
+            </column>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+    <widget class="QMenuBar" name="MenuBar">
+      <widget class="QMenu" name="File">
+        <property name="title">
+          <string>&amp;File</string>
+        </property>
+        <addaction name="NewStationAction"/>
+        <addaction name="separator"/>
+        <addaction name="ExitAction"/>
+      </widget>
+      <widget class="QMenu" name="Help">
+        <property name="title">
+          <string>&amp;Help</string>
+        </property>
+        <addaction name="AboutAction"/>
+      </widget>
+      <addaction name="File"/>
+      <addaction name="Help"/>
+    </widget>
+    <action name="NewStationAction">
+      <property name="name">
+        <cstring>NewStationAction</cstring>
+      </property>
+      <property name="icon">
+        <iconset>new_station.png</iconset>
+      </property>
+      <property name="iconText">
+        <string>New Station</string>
+      </property>
+      <property name="text">
+        <string>&amp;New Station</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+N</string>
+      </property>
+    </action>
+    <action name="ExitAction">
+      <property name="name">
+        <cstring>ExitAction</cstring>
+      </property>
+      <property name="icon">
+        <iconset>exit.png</iconset>
+      </property>
+      <property name="iconText">
+        <string>Exit</string>
+      </property>
+      <property name="text">
+        <string>E&amp;xit</string>
+      </property>
+      <property name="shortcut">
+        <string>Alt+X</string>
+      </property>
+    </action>
+    <action name="AboutAction">
+      <property name="name">
+        <cstring>AboutAction</cstring>
+      </property>
+      <property name="icon">
+        <iconset>galaxy_logo_22.png</iconset>
+      </property>
+      <property name="iconText">
+        <string>About</string>
+      </property>
+      <property name="text">
+        <string>&amp;About</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+A</string>
+      </property>
+    </action>
+  </widget>
+  <layoutdefault spacing="6" margin="11"/>
+  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <connections>
+    <connection>
+      <sender>buttonNewStation</sender>
+      <signal>clicked()</signal>
+      <receiver>Gts_MainWindow_base</receiver>
+      <slot>OnNewStation()</slot>
+    </connection>
+    <connection>
+      <sender>buttonExit</sender>
+      <signal>clicked()</signal>
+      <receiver>Gts_MainWindow_base</receiver>
+      <slot>OnExit()</slot>
+    </connection>
+    <connection>
+      <sender>AboutAction</sender>
+      <signal>activated()</signal>
+      <receiver>Gts_MainWindow_base</receiver>
+      <slot>OnAbout()</slot>
+    </connection>
+    <connection>
+      <sender>ExitAction</sender>
+      <signal>activated()</signal>
+      <receiver>Gts_MainWindow_base</receiver>
+      <slot>OnExit()</slot>
+    </connection>
+    <connection>
+      <sender>NewStationAction</sender>
+      <signal>activated()</signal>
+      <receiver>Gts_MainWindow_base</receiver>
+      <slot>OnNewStation()</slot>
+    </connection>
+  </connections>
+</ui>

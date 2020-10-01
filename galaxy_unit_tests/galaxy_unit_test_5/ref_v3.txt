@@ -1,0 +1,3535 @@
+
+** Master Information Record (MIR) **
+MIR.rec_len   = 100
+MIR.rec_typ   = 1
+MIR.rec_sub   = 10
+MIR.cpu_type  = 1
+MIR.stdf_ver  = 3
+MIR.mode_cod  = P
+MIR.stat_num  = 0
+MIR.test_cod  = <not valid> (   )
+MIR.rtst_cod  = <not valid> ( )
+MIR.prot_cod  = <not valid> ( )
+MIR.cmod_cod  = <not valid> ( )
+MIR.setup_t   = Thu 25 Jul 2013 15:49:45 (0x51f14919)
+MIR.start_t   = Thu 25 Jul 2013 15:49:45 (0x51f14919)
+MIR.lot_id    = D06J002x1
+MIR.part_typ  = 
+MIR.job_nam   = 9606drwp
+MIR.oper_nam  = gdixon
+MIR.node_nam  = axiom9
+MIR.tstr_typ  = STS 3500
+MIR.exec_typ  = STS 3500
+MIR.supr_nam  = <not valid> ()
+MIR.hand_id   = 5836-F-002
+MIR.sblot_id  = w36
+MIR.job_rev   = <not valid> ()
+MIR.proc_id   = <not valid> ()
+MIR.prb_card  = dst-1082sn1
+
+** Generic Data Record (GDR) **
+GDR.rec_len   = 28
+GDR.rec_typ   = 50
+GDR.rec_sub   = 10
+GDR.fld_cnt   = 2
+GDR.gen_data  = Test Number Scaling
+GDR.gen_data  = 1
+
+** Wafer Information Record (WIR) **
+WIR.rec_len   = 10
+WIR.rec_typ   = 2
+WIR.rec_sub   = 10
+WIR.head_num  = 2
+WIR.pad_byte  = 0x00
+WIR.start_t   = Thu 25 Jul 2013 15:49:45 (0x51f14919)
+WIR.wafer_id  = w36
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 1
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Contact SD   to GND
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 2
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Contact CDEL to GND
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 3
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Contact INV2 to GND
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 4
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Contact IN2  to GND
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 5
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Contact IN1  to GND
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 6
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Contact CDEL to VCC
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 49
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 7
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Contact LS2 to GND
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 49
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 10
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Contact LS1 to GND
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 11
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Cont LS2Load to GND
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 14
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Cont LS1Load to GND
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 46
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 15
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Cont TP1 to GND
+
+** Part Information Record (PIR) **
+PIR.rec_len   = 8
+PIR.rec_typ   = 5
+PIR.rec_sub   = 10
+PIR.head_num  = 2
+PIR.site_num  = 1
+PIR.x_coord   = <not valid> (-32768)
+PIR.y_coord   = <not valid> (-32768)
+PIR.part_id   = 1
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 1
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.275791
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 2
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.276767
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 3
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.277011
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 4
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.277011
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 5
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.277500
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 6
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = 5.278653
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 7
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.277500
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 10
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.277744
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 11
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.277011
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 14
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.277256
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 15
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x81
+PTR.parm_flg  = 0x00
+PTR.result    = -5.277256
+
+** Part Results Record (PRR) **
+PRR.rec_len   = 18
+PRR.rec_typ   = 5
+PRR.rec_sub   = 20
+PRR.head_num  = 2
+PRR.site_num  = 1
+PRR.num_test  = 11
+PRR.hard_bin  = 6
+PRR.soft_bin  = <not valid> (65535)
+PRR.part_flg  = 0x08
+PRR.pad_byte  = 0x00
+PRR.x_coord   = <not valid> (-32768)
+PRR.y_coord   = <not valid> (-32768)
+PRR.part_id   = 1
+PRR.part_txt  = <not valid> ()
+PRR.part_fix  = <not valid> ( (""))
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 61
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = KelvinCont mp=T#-60
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 66
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = KelvinCont mp=T#-60
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 69
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = KelvinCont mp=T#-60
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 78
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = KelvinCont mp=T#-60
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 82
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = KelvinCont mp=T#-60
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 85
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = KelvinCont mp=T#-60
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 50
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 110
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Vccvalue=vccabsmax=
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 43
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 111
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (3)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = ICCA_LS_ON12
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 42
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 112
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (3)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = ICCC_LS_ON1
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 43
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 113
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (3)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = ICCG_HS_ON12
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 42
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 114
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (3)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = ICCJ_HS_ON1
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 40
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 121
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (6)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = IB_IN1_0V
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 40
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 122
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (6)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = IB_IN2_0V
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 41
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 123
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (6)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = IB_INV2_0V
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 40
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 124
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (6)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = IB_IN1_9V
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 40
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 125
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (6)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = IB_IN2_9V
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 42
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 126
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (6)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = IB_INV2_18V
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 47
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 130
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Vccvalue=vccnom=
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 43
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 181
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = LS1_ON_@10mA
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 44
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 182
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = LS1_OFF_@10mA
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 43
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 183
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = LS2_ON_@10mA
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 45
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 184
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = LS2_OFFa_@10mA
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 45
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 185
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = LS2_OFFb_@10mA
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 48
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 251
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = LS2_DIS [LS2-VCC]
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 37
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 252
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (6)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = I_CDEL
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 40
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 253
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = VCDEL_MAX
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 47
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 269
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Vth_UVLO @VCC _/
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 47
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 270
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Vth_UVLO @VCC \_
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 45
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 271
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = HYST_UVLO @VCC
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 43
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 281
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (6)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = LS1_lkg_@VCC
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 43
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 282
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (6)
+PDR.units     = A
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = LS2_lkg_@VCC
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 45
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 425
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = VCLAMP_LS1-HS1
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 45
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 426
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = VCLAMP_LS2-HS2
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 46
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 431
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = SD_OFF_Start-up
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 37
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 432
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = SD_OFF
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 36
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 433
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = SD_ON
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 48
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 451
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = V
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = TSD_Funct_LS1_Off
+
+** Parametric Test Description Record (PDR) **
+PDR.rec_len   = 39
+PDR.rec_typ   = 10
+PDR.rec_sub   = 10
+PDR.test_num  = 2599
+PDR.desc_flg  = 0x00
+PDR.opt_flag  = 0x03
+PDR.res_scal  = <not valid> (0)
+PDR.units     = s
+PDR.res_ldig  = 3
+PDR.res_rdig  = 3
+PDR.llm_scal  = 0
+PDR.hlm_scal  = 0
+PDR.llm_ldig  = 0
+PDR.llm_rdig  = 0
+PDR.hlm_ldig  = 0
+PDR.hlm_rdig  = 0
+PDR.lo_limit  = 0
+PDR.hi_limit  = 0
+PDR.test_nam  = Testtime
+
+** Part Information Record (PIR) **
+PIR.rec_len   = 8
+PIR.rec_typ   = 5
+PIR.rec_sub   = 10
+PIR.head_num  = 2
+PIR.site_num  = 1
+PIR.x_coord   = <not valid> (-32768)
+PIR.y_coord   = <not valid> (-32768)
+PIR.part_id   = 2
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 1
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.650791
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 2
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.573887
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 3
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.581943
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 4
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.584141
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 5
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.581943
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 6
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.725430
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 7
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.730625
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 10
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.731357
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 11
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -3.224521
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 14
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -3.223789
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 15
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.612461
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 61
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.005825
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 66
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.004605
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 69
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.005215
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 78
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.006314
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 82
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.006802
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 85
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.006069
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 110
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 35.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 111
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.005097
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 112
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.005111
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 113
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.005022
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 114
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.005089
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 121
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 122
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 123
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 124
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 125
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 126
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 130
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 25.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 181
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.804688
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 182
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.003906
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 183
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.802734
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 184
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.003906
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 185
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.001953
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 251
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000061
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 252
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000003
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 253
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 4.572266
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 269
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 8.053233
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 270
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 7.585646
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 271
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.467587
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 281
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 282
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 425
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 55.410156
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 426
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 52.757812
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 431
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 17.502930
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 432
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 17.501953
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 433
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x80
+PTR.parm_flg  = 0x00
+PTR.result    = 17.501953
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 451
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 25.009766
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 2599
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.697307
+
+** Part Results Record (PRR) **
+PRR.rec_len   = 18
+PRR.rec_typ   = 5
+PRR.rec_sub   = 20
+PRR.head_num  = 2
+PRR.site_num  = 1
+PRR.num_test  = 49
+PRR.hard_bin  = 9
+PRR.soft_bin  = <not valid> (65535)
+PRR.part_flg  = 0x08
+PRR.pad_byte  = 0x00
+PRR.x_coord   = <not valid> (-32768)
+PRR.y_coord   = <not valid> (-32768)
+PRR.part_id   = 2
+PRR.part_txt  = <not valid> ()
+PRR.part_fix  = <not valid> ( (""))
+
+** Part Information Record (PIR) **
+PIR.rec_len   = 8
+PIR.rec_typ   = 5
+PIR.rec_sub   = 10
+PIR.head_num  = 2
+PIR.site_num  = 1
+PIR.x_coord   = <not valid> (-32768)
+PIR.y_coord   = <not valid> (-32768)
+PIR.part_id   = 3
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 1
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.626133
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 2
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.508457
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 3
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.580234
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 4
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.582676
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 5
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.581699
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 6
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 1.060147
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 7
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.730869
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 10
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.732090
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 11
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -3.120762
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 14
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -3.173496
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 15
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.611484
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 61
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.005093
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 66
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.004360
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 69
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.004360
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 78
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.007046
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 82
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.006802
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 85
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.006314
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 110
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 35.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 111
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.004987
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 112
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.005042
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 113
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.004944
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 114
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.005010
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 121
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 122
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 123
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 124
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 125
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 126
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 130
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 25.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 181
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.806641
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 182
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.005859
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 183
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.802734
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 184
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.003906
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 185
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.003906
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 251
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000061
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 252
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = -0.000003
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 253
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 4.596191
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 269
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 8.053233
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 270
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 7.552084
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 271
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.501149
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 281
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 282
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.000000
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 425
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 55.386719
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 426
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 52.710938
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 431
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 17.503906
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 432
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 17.503906
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 433
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 0.216797
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 451
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 25.009766
+
+** Parametric Test Record (PTR) **
+PTR.rec_len   = 12
+PTR.rec_typ   = 15
+PTR.rec_sub   = 10
+PTR.test_num  = 2599
+PTR.head_num  = 2
+PTR.site_num  = 1
+PTR.test_flg  = 0x00
+PTR.parm_flg  = 0x00
+PTR.result    = 2.718578
+
+** Part Results Record (PRR) **
+PRR.rec_len   = 18
+PRR.rec_typ   = 5
+PRR.rec_sub   = 20
+PRR.head_num  = 2
+PRR.site_num  = 1
+PRR.num_test  = 49
+PRR.hard_bin  = 1
+PRR.soft_bin  = <not valid> (65535)
+PRR.part_flg  = 0x08
+PRR.pad_byte  = 0x00
+PRR.x_coord   = <not valid> (-32768)
+PRR.y_coord   = <not valid> (-32768)
+PRR.part_id   = 3
+PRR.part_txt  = <not valid> ()
+PRR.part_fix  = <not valid> ( (""))
+
+** Wafer Results Record (WRR) **
+WRR.rec_len   = 112
+WRR.rec_typ   = 2
+WRR.rec_sub   = 20
+WRR.finish_t  = Thu 25 Jul 2013 15:50:51 (0x51f1495b)
+WRR.head_num  = 2
+WRR.pad_byte  = 0x00
+WRR.part_cnt  = 3
+WRR.rtst_cnt  = 0
+WRR.abrt_cnt  = 0
+WRR.good_cnt  = 1
+WRR.func_cnt  = 1
+WRR.wafer_id  = w36
+WRR.hand_id   = 5836-F-002
+WRR.prb_card  = dst-1082sn1
+WRR.usr_desc  = $Program: 9696drwp BFAA-V1.2 PRD1066 IES01 DIESORT TEST $
+WRR.exc_desc  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 1
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Contact SD   to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 2
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Contact CDEL to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 3
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Contact INV2 to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 4
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Contact IN2  to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 5
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Contact IN1  to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 6
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Contact CDEL to VCC
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 62
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 7
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Contact LS2 to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 62
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 10
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Contact LS1 to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 11
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Cont LS2Load to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 14
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Cont LS1Load to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 59
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 15
+TSR.exec_cnt  = 3
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Cont TP1 to GND
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 61
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = KelvinCont mp=T#-60
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 66
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = KelvinCont mp=T#-60
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 69
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = KelvinCont mp=T#-60
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 78
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = KelvinCont mp=T#-60
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 82
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = KelvinCont mp=T#-60
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 63
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 85
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = KelvinCont mp=T#-60
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 56
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 111
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = ICCA_LS_ON12
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 55
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 112
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = ICCC_LS_ON1
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 56
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 113
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = ICCG_HS_ON12
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 55
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 114
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = ICCJ_HS_ON1
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 53
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 121
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = IB_IN1_0V
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 53
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 122
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = IB_IN2_0V
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 54
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 123
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = IB_INV2_0V
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 53
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 124
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = IB_IN1_9V
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 53
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 125
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = IB_IN2_9V
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 55
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 126
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = IB_INV2_18V
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 56
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 181
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = LS1_ON_@10mA
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 57
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 182
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = LS1_OFF_@10mA
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 56
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 183
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = LS2_ON_@10mA
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 58
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 184
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = LS2_OFFa_@10mA
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 58
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 185
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = LS2_OFFb_@10mA
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 61
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 251
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = LS2_DIS [LS2-VCC]
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 50
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 252
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = I_CDEL
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 53
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 253
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = VCDEL_MAX
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 60
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 269
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Vth_UVLO @VCC _/
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 60
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 270
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Vth_UVLO @VCC \_
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 58
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 271
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = HYST_UVLO @VCC
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 56
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 281
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = LS1_lkg_@VCC
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 56
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 282
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = LS2_lkg_@VCC
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 58
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 425
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = VCLAMP_LS1-HS1
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 58
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 426
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = VCLAMP_LS2-HS2
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 59
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 431
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = SD_OFF_Start-up
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 50
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 432
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = SD_OFF
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 49
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 433
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 1
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = SD_ON
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 61
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 451
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = TSD_Funct_LS1_Off
+TSR.seq_name  = <not valid> ()
+
+** Test Synopsis Record (TSR) **
+TSR.rec_len   = 52
+TSR.rec_typ   = 10
+TSR.rec_sub   = 30
+TSR.test_num  = 2599
+TSR.exec_cnt  = 2
+TSR.fail_cnt  = 0
+TSR.alrm_cnt  = 0
+TSR.opt_flag  = 0x3f
+TSR.pad_byte  = 0x00
+TSR.test_min  = <not valid> (0)
+TSR.test_max  = <not valid> (0)
+TSR.tst_mean  = <not valid> (0)
+TSR.tst_sdev  = <not valid> (0)
+TSR.tst_sums  = <not valid> (0)
+TSR.tst_sqrs  = <not valid> (0)
+TSR.test_nam  = Testtime
+TSR.seq_name  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 0
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 1
+HBR.hbin_cnt  = 1
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 2
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 3
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 4
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 5
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 6
+HBR.hbin_cnt  = 1
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 7
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 8
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 9
+HBR.hbin_cnt  = 1
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 10
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 11
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 12
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 13
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 14
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 15
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 16
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 17
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 18
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 19
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 20
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 21
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 22
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 23
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 24
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 25
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 26
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 27
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 28
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 29
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 30
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Hardware Bin Record (HBR) **
+HBR.rec_len   = 7
+HBR.rec_typ   = 1
+HBR.rec_sub   = 40
+HBR.hbin_num  = 31
+HBR.hbin_cnt  = 0
+HBR.hbin_nam  = <not valid> ()
+
+** Master Results Record (MRR) **
+MRR.rec_len   = 84
+MRR.rec_typ   = 1
+MRR.rec_sub   = 20
+MRR.finish_t  = Thu 25 Jul 2013 15:50:51 (0x51f1495b)
+MRR.part_cnt  = 3
+MRR.rtst_cnt  = 0
+MRR.abrt_cnt  = <not valid> (-1)
+MRR.good_cnt  = 1
+MRR.func_cnt  = 1
+MRR.disp_cod  = <not valid> ( )
+MRR.usr_desc  = $Program: 9696drwp BFAA-V1.2 PRD1066 IES01 DIESORT TEST $
+MRR.exc_desc  = <not valid> ()

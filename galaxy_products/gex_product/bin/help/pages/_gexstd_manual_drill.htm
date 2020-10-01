@@ -1,0 +1,142 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      Interactive 2D/3D Data Mining - Yield Analysis<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p>At the very beginning, Quantix Examinator only allowed one to create
+      reports based on user settings (GEX-Instant Report module). It was not then possible to interact with
+      the data and drill into different direction. The interactive 2D/3D Data
+      Mining feature was added to fill this gap and complete the solution to
+      become a powerful tool for engineering and production data analysis. </p>
+      <p>Using the Data Mining and Yield Analysis features, you can interact with your data and view
+      it under many different angles and conditions. This flexibility lets you
+      manipulate your data with powerful yet easy-to-use tools. Then as you drill down
+      and focus on specific information you can take screen snapshots at any
+      time so they get added to the report <b>Snapshot Gallery</b>  section (to
+      take a snapshot, all you need is to click the camera icon <img border="0" src="../images/snapshot.png" width="34" height="23">. This
+      way, you can build your own gallery of charts/tables focused on specific data
+      analysis. This electronic binder includes all custom charts snapshots you
+      take, and can be shared easily with anyone thanks to the HTML report
+      format!</p>
+      <p>Current Data Mining functions:</p>
+      <ul>
+        <li><a href="#whatif">Guard banding: Play with test limits and
+          see impact on Cp,Cpk and Yield</a></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h1><b><a name="whatif"> Guard Banding</a><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p>This data mining option is the only one available <b>in both GEX-Instant
+      Report and GEX-Data Mining</b> modules. It is maintained in GEX-Instant
+      report for historical reasons (and lets users continue to benefit from it).
+      When you select this option, GEX first processes your
+      data so test statistics are computed (Cp, Cpk and Yield information). Then
+      it will display a table like the following one:</p>
+      <p><img border="0" src="../images/eg_drill_whatif.png" width="392" height="156"></p>
+      <p>Double click any test Low or High limit cell to change it. Multiple
+      limits can be changed at once as described <a href="#multiple">below</a>.</p>
+      <p>The table lists all tests found in your data. For each test listed,
+      the following information appear in individual cells:</p>
+      <ul>
+        <li><b>Test</b>: This is the test number. This cell is read-only. Click
+          on its header to sort all tests by ascending or descending order.</li>
+        <li><b>Name</b>: This row includes the test names. It is a read-only
+          row, and supports sorting as well.</li>
+        <li><b>Low limit</b>: This row lists all tests low limits. You can
+          change any of them to see the impact on the tests Cp anc Cpk. Once a
+          cell is changed, its background color is turned to yellow so you can
+          easily remember what you have changed. Sorting is not supported as it
+          makes no sense.</li>
+        <li><b>High limit</b>: Same as above but for the test high limits</li>
+        <li><b>Cp</b>: This row lists all tests Cp values. You can change values
+          as for the test limits. Sorting mode is supported.</li>
+        <li><b>Cpk</b>: Same as above but for test Cpk values.</li>
+        <li><b>Yield</b>: Read only row, lists current tests yield values.
+          Sorting supported.</li>
+        <li><b>Low limit (Ref)</b>: The original Low limit value, read-only.</li>
+        <li><b>High limit (Ref)</b>: The original High limit value, read-only</li>
+        <li><b>Cp (Ref)</b>: The original Cp value, read-only, supports sorting.</li>
+        <li><b>Cpk (Ref)</b>: The original Cpk value, read-only, supports
+          sorting.</li>
+        <li><b>Yield (Ref)</b>: The original Yield value, read-only, supports
+          sorting.</li>
+      </ul>
+      <p><br>
+      <b>About Colors</b>: When you edit a test parameter (e.g.: Low Limit), then its
+      cell turns to yellow to
+      highlight your change. If you then change another test parameter for the
+      same test (e.g.: Test limits), then it is the the last edited cell that
+      turns to yellow while the other one returns to the default color. You will
+      notice that only the color is turned back to the default value, while the
+      cell text remains unchanged. At processing time (when 'Compute' button
+      is clicked), only cells in yellow background are considered. All cells
+      with the default background color use the test statistics information and
+      ignore whatever string was placed in the table. This avoids complex and lengthy
+      processing time if you modify many parameters for a same test: only the
+      last edit is considered.&nbsp;<br>
+      After processing your entry, the table will be updated and display in yellow
+      (your <b>If</b> conditions - the parameters edited), and in green
+      the affected data (the Then result - the new values computed).</p>
+      <table border="1" width="100%">
+        <tr>
+          <td width="39%" bgcolor="#FFFF99"><b>Cell shape/color</b></td>
+          <td width="61%" bgcolor="#FFFF99"><b>Description</b></td>
+        </tr>
+        <tr>
+          <td width="39%">1.245 mV</td>
+          <td width="61%">Cell with default test information.</td>
+        </tr>
+        <tr>
+          <td width="39%" bgcolor="#FFFF00">5.5 mA</td>
+          <td width="61%">Cell edited (yellow background highlights a <b>If</b>
+            condition)</td>
+        </tr>
+        <tr>
+          <td width="39%" bgcolor="#66FF66">18.257 Mhz</td>
+          <td width="61%">Resulting value from applying the <b>If</b> condition.
+            Green background.</td>
+        </tr>
+      </table>
+      <p><b><a name="multiple">Multiple selections</a></b>: You can change multiple cells at once! All
+      you need to do is highlight the group of cells to edit (Click and drag the
+      mouse), then type the value and press <b>return</b>. All selected cells
+      are then highlighted to yellow and set to the same value you entered. This is
+      quite convenient when forcing a group of cells to the same
+      value.</p>
+      <p>'<b>Compute</b>' button : Click it to have Examinator update all table
+      rows based on your edits. Changing a limit affects the Cp, Cpk and yield
+      of the test.</p>
+      <p>'<b>Reset</b>' button : Click it to reset the table to its default
+      value.</p>
+      <p><img border="0" src="../images/snapshot.png" width="34" height="23">:
+      Click this icon at any time to capture the table into the report Snapshot
+      Gallery. Only tests that you have edited are listed in the report. You can
+      take as many snapshots as you want, they are always appended to the
+      Gallery. Note: When you click this icon, a dialog box prompts you to enter
+      the <b>Title</b> and <b>Notes</b> to be inserted in your snapshot page: <b>Title</b>
+      is added to the snapshot home page and appears as an hyperlink to your
+      snapshot page, the snapshot page includes the report table followed by
+      your <b>Notes</b>. </p>
+      <p><b>Reflect changes in all reports</b>: when you check this item, you 
+      will have ALL the Examinator report sections show the new test limited 
+      edited from this page and also show all the new test statistics values 
+      updated (Mean, Sigma, Cp, Cpk, etc). Check this item when you want a 
+      global simulation of your production behavior when some test limits are 
+      changed. All HTML or CSV data are then fully updated.</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

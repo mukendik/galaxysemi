@@ -1,0 +1,669 @@
+<html>
+<head>
+<title>Processing CSV / Excel ASCII test data</title>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../../html/images/assistant.png" width="120" height="114" ></a>Processing 
+      CSV / Excel test data<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p align="left">The Examinator product line lets you import raw data in CSV / Excel 
+      format (comma delimited fields, ASCII file). This format is the most common format for non-standard data files 
+      or files created manually or by shell processes. </p>
+      <p align="left">Examinator offers built-in support for two CSV types:</p>
+      <ul>
+        <li>
+      <p align="left"><a href="#Wizard CSV Import">Wizard CSV import</a></p>
+        </li>
+        <li>
+      <p align="left"><a href="#Examinator Advanced CSV format">Advanced CSV 
+      format</a></p>
+        </li>
+        <li>
+      <p align="left"><a href="#advcsvbin">Advanced CSV 
+      format with Binning, Die location, etc...</a> </p>
+        </li>
+        <li>
+      <p align="left"><a href="#mxlots">Multiple lots in a single CSV file</a></p>
+        </li>
+      </ul>
+      <p align="left">&nbsp;</p>
+      <h1 align="left"><a name="Wizard CSV Import">Wizard CSV Import</a></h1>
+      <p align="left">If you launch Examinator and select a CSV file to work 
+      with, it is quite likely that Examinator's CSV Import Wizard will pop-up! 
+      This wizard is launched each time Examinator is not able to parse the CSV 
+      file without some precisions from your side. It lets you quickly define 
+      how parameters and results must be extracted from the CSV file. The most 
+      popular representations are the following:</p>
+      <ol>
+        <li>
+      <p align="left">One parameter per column, with parameter labels listed in 
+      first line.</p>
+        </li>
+        <li>
+      <p align="left">One parameter per line, with parameter labels listed in 
+      first column.</p>
+        </li>
+      </ol>
+      <p align="left">From the Wizard Data Preview, you're able to see how 
+      Examinator is going to parse your file and the cell type each line and 
+      column. Each line or column can be marked (simply right click the cell) to 
+      one of the following types:</p>
+      <ul>
+        <li>
+      <p align="left"><b>Label</b></p>
+        </li>
+        <li>
+      <p align="left"><b>Low limit</b></p>
+        </li>
+        <li>
+      <p align="left"><b>High limit</b></p>
+        </li>
+        <li>
+      <p align="left"><b>Data</b></p>
+        </li>
+        <li>
+      <p align="left"><b>Ignore</b></p>
+        </li>
+        <li>
+      <p align="left"><b>Soft Bin</b></p>
+        </li>
+        <li>
+      <p align="left"><b>Hard Bin</b></p>
+        </li>
+        <li>
+      <p align="left"><b>Die X</b></p>
+        </li>
+        <li>
+      <p align="left"><b>Die Y</b></p>
+        </li>
+        <li>
+      <p align="left"><b>Device Pass/Fail flag</b></p>
+        </li>
+      </ul>
+      <p align="left">To let Examinator extract the parameter names from the 
+      right line or column, right click on the relevant cell to display the 
+      contextual menu and select <b>Label</b>. Only one line or column can be 
+      marked <b>Label</b>.</p>
+      <p align="left">Apply the same process as above to define which line or 
+      column holds the parameter specification limits <b>Low Limit</b> and <b>
+      High Limit</b> (if exist). Mark as Data lines and columns to be parsed as 
+      Data (The Wizard defaults all lines and columns as Data when first 
+      executed). Last, mark <b>Ignore</b> any line or column that must be 
+      ignored.</p>
+      <p align="left">The <b>Soft Bin</b> and <b>Hard Bin</b> type lets you 
+      define which line (or column) holds the pass/Fail bin result for each test 
+      sequence. If you don't have such information, simply ignore it. The <b>
+      DieX</b> and <b>DieY</b> types only apply to wafer sort data and can be 
+      totally ignored if the data in your file is from bench measurements or any 
+      other measurement type than wafer test.</p>
+      <p align="left">The <b>Device Pass/Fail flag </b>type can be used when your 
+      file doesn't hold test limits and/or binning result but only a Pass/Fail 
+      status ( or 1 / 0 status) for each device tested. In such case, 
+      Examinator will define a Binning depending on the Pass/Fail status. 
+      You can totally ignore this option if you data file includes binning or 
+      test limits fields.</p>
+      <p align="left">When you're done with your selections, click the 'Next &gt;&gt;' 
+      button to let the Wizard process your CSV file. As a result, a STDF file 
+      is created. </p>
+      <p align="left"><b>Note</b>: If the Wizard is launched while using the <b>
+      STDF Converter</b> toolbox function, then the STDF file created holds the 
+      same name as the CSV file, with the extension .std added to it. However, 
+      if the Wizard is launched as a result of building a report based on a CSV 
+      file, then the STDF file created is temporary only, and is erased when 
+      closing the Examinator application (created in the same folder as the CSV 
+      file). As a result, favor first converting the CSV to STDF file using the 
+      STDF converter tool box if you plan multiple analysis sessions with your 
+      data (This doesn't apply to Examinator-Pro if the file is inserted 
+      into the database).</p>
+      <p align="left">&nbsp;</p>
+      <h1 align="left"><a name="Examinator Advanced CSV format">Examinator 
+      Advanced CSV format</a></h1>
+      <p align="left">Quantix Examinator will support your complex CSV / Excel files as 
+      long as they respect the specification outlined below. This is not a 
+      limitation, but rather a need to rationalize the input process. Should 
+      your data be in ASCII format not compliant with the CSV format detailed 
+      hereafter, either use Excel to reorder your data, or build a shell cross 
+      converter, or indeed talk to the Quantix team to have them do it for you.</p>
+      <p align="left">The following is how your data should be presented in your 
+      .CSV file:</p>
+      <ol>
+        <li>
+      <p align="left">HEADER section (optional): can be of multiple lines</p>
+        </li>
+        <li>
+      <p align="left">Parameter labels (mandatory) : one line</p>
+        </li>
+        <li>
+      <p align="left">Parameter units (mandatory): one line</p>
+        </li>
+        <li>
+      <p align="left">Upper Limit Specifications (mandatory): one line</p>
+        </li>
+        <li>
+      <p align="left">Lower Limit Specifications (mandatory): one line</p>
+        </li>
+        <li>
+      <p align="left">Data samples: one line per measurement</p>
+        </li>
+      </ol>
+      <p align="left">E.g:</p>
+      <p align="left"><b>[HEADER]</b></p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="16%"><b>Parameter</b></td>
+          <td width="16%">&lt;Name1&gt;</td>
+          <td width="17%">&lt;Name2&gt;</td>
+          <td width="17%">...</td>
+          <td width="17%">&lt;NameN&gt;</td>
+        </tr>
+        <tr>
+          <td width="16%"><b>Unit</b></td>
+          <td width="16%">&lt;Unit1&gt;</td>
+          <td width="17%">&lt;Unit2&gt;</td>
+          <td width="17%">...</td>
+          <td width="17%">&lt;UnitN&gt;</td>
+        </tr>
+        <tr>
+          <td width="16%"><b>USL</b></td>
+          <td width="16%">&lt;UpperSpecLimit1&gt;</td>
+          <td width="17%">&lt;UpperSpecLimit2&gt;</td>
+          <td width="17%">...</td>
+          <td width="17%">&lt;UpperSpecLimitN&gt;</td>
+        </tr>
+        <tr>
+          <td width="16%"><b>LSL</b></td>
+          <td width="16%">&lt;LowerSpecLimit1&gt;</td>
+          <td width="17%">&lt;LowerSpecLimit2&gt;</td>
+          <td width="17%">...</td>
+          <td width="17%">&lt;LowerSpecLimitN&gt;</td>
+        </tr>
+        <tr>
+          <td width="16%">&lt;Record#&gt;</td>
+          <td width="16%">&lt;Result1&gt;</td>
+          <td width="17%">&lt;Result2&gt;</td>
+          <td width="17%">...</td>
+          <td width="17%">&lt;ResultN&gt;</td>
+        </tr>
+        <tr>
+          <td width="16%">&lt;Record#&gt;</td>
+          <td width="16%">&lt;Result1&gt;</td>
+          <td width="17%">&lt;Result2&gt;</td>
+          <td width="17%">...</td>
+          <td width="17%">&lt;ResultN&gt;</td>
+        </tr>
+      </table>
+      <p align="left"><b>Note1</b>: Columns with parameter name in <b>brackets 
+      [</b> and<b> ]</b> are <b>optional</b>.<br>
+      <b>Note2</b>: Examinator is NOT case sensitive; therefore <b>Unit</b> and
+      <b>unit</b> are identical strings.<br>
+      <b>Note3</b>: Any line before the <b>Parameter</b> string field is ignored 
+      unless it is a valid header line (see <a href="#header">below</a>)<br>
+      <b>Note4</b>: The Parameter, Unit, USL and LSL lines are mandatory. Even 
+      if you do not have any Units to declare, you must at least have the 
+      keyword alone on the line.<br>
+      <b>Note5</b>: Any line starting with the <b># </b>character is ignored</p>
+      <p align="left">&nbsp;</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="16%" bgcolor="#FFFF99"><b>Fields</b></td>
+          <td width="84%" bgcolor="#FFFF99"><b>Notes / Comments</b></td>
+        </tr>
+        <tr>
+          <td width="16%">&lt;nameX&gt;</td>
+          <td width="84%">This is the parameter name. Can be any string.</td>
+        </tr>
+        <tr>
+          <td width="16%">&lt;UnitX&gt;</td>
+          <td width="84%">This is the unit of the parameter. Can be any string</td>
+        </tr>
+        <tr>
+          <td width="16%">&lt;UpperSpecLimitX&gt;</td>
+          <td width="84%">Upper specification limit. This is a floating point 
+          number that must be in the same unit/scaling as the LowerSpecLimitN 
+          and ResultN. If this field is empty, no upper limit is defined.</td>
+        </tr>
+        <tr>
+          <td width="16%">&lt;LowerSpecLimitX&gt;</td>
+          <td width="84%">Lower specification limit. This is a floating point 
+          number that must be in the same unit/scaling as the LowerSpecLimitN 
+          and ResultN. If this field is empty, no lower limit is defined.</td>
+        </tr>
+        <tr>
+          <td width="16%">&lt;Record#&gt;</td>
+          <td width="84%">This is the record tag name for the data listed on the 
+          same line. For semiconductor chips or dies, this string represents the 
+          part#.</td>
+        </tr>
+        </table>
+      <p align="left"><br>
+      <b>
+      <a name="header">Valid lines for the HEADER section:</a></b></p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="21%" bgcolor="#FFFF99"><b>Field name</b></td>
+          <td width="17%" bgcolor="#FFFF99" align="center"><b>String<br>
+          type</b></td>
+          <td width="83%" bgcolor="#FFFF99"><b>Description</b></td>
+        </tr>
+        <tr>
+          <td width="21%">Date</td>
+          <td width="17%" align="center">date</td>
+          <td width="83%">Date in format YYYY_MM_DD<br>
+          or Date / Time in format YYYY_MM_DD HH:MM:SS</td>
+        </tr>
+        <tr>
+          <td width="21%">BurninTime</td>
+          <td width="17%" align="center">integer</td>
+          <td width="83%">Burn-in time (in minutes)</td>
+        </tr>
+        <tr>
+          <td width="21%">ExecType</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Executive software type used to collect the data</td>
+        </tr>
+        <tr>
+          <td width="21%">ExecRevision</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Executive software revision used to collect the data</td>
+        </tr>
+        <tr>
+          <td width="21%">Facility</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Test facility ID (Data origin)</td>
+        </tr>
+        <tr>
+          <td width="21%">Family</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Product Family ID string</td>
+        </tr>
+        <tr>
+          <td width="21%">FinishTime</td>
+          <td width="17%" align="center">date</td>
+          <td width="83%">Date and Time of last part tested in format&nbsp;<br>
+ YYYY_MM_DD HH:MM:SS</td>
+        </tr>
+        <tr>
+          <td width="21%">Floor</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Test floor ID </td>
+        </tr>
+        <tr>
+          <td width="21%">FreqStep</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Operation Frequency or Step</td>
+        </tr>
+        <tr>
+          <td width="21%">LoadBoardName</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Load board ID</td>
+        </tr>
+        <tr>
+          <td width="21%">LoadBoardType</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Load board Type / Family brand</td>
+        </tr>
+        <tr>
+          <td width="21%">Lot</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Lot tracking number / string. E.g.: LT110831FS</td>
+        </tr>
+        <tr>
+          <td width="21%">Operator</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Name of the operator that performed the data 
+          collection process</td>
+        </tr>
+        <tr>
+          <td width="21%">PackageType</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Package Type Processed</td>
+        </tr>
+        <tr>
+          <td width="21%">ProberName</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Prober ID</td>
+        </tr>
+        <tr>
+          <td width="21%">ProberType</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Prober Type / Family brand</td>
+        </tr>
+        <tr>
+          <td width="21%">Process</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Process ID string</td>
+        </tr>
+        <tr>
+          <td width="21%">Product</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Product ID / Device description string. E.g.: WIFI88</td>
+        </tr>
+        <tr>
+          <td width="21%">ProgramName</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Program used to test and collect the data</td>
+        </tr>
+        <tr>
+          <td width="21%">ProgramRevision</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Program revision used</td>
+        </tr>
+        <tr>
+          <td width="21%">SetupTime</td>
+          <td width="17%" align="center">date</td>
+          <td width="83%">Date and Time of job setup in format&nbsp;<br>
+ YYYY_MM_DD HH:MM:SS</td>
+        </tr>
+        <tr>
+          <td width="21%">StartTime</td>
+          <td width="17%" align="center">date</td>
+          <td width="83%">Date and Time of first part tested in format&nbsp;<br>
+ YYYY_MM_DD HH:MM:SS</td>
+        </tr>
+        <tr>
+          <td width="21%">SubLot</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">SubLot ID string.</td>
+        </tr>
+        <tr>
+          <td width="21%">Temperature</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Test Temperature</td>
+        </tr>
+        <tr>
+          <td width="21%">TesterName</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Name of the tester used to produce the data results</td>
+        </tr>
+        <tr>
+          <td width="21%">TesterType</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Type of tester used (family / brand)</td>
+        </tr>
+        <tr>
+          <td width="21%">TestCode</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Test phase or step code. E.g: WAFER or COLD or ROOM, 
+          etc. </td>
+        </tr>
+        <tr>
+          <td width="21%">SoftBinName</td>
+          <td width="17%" align="center">integer,string</td>
+          <td width="83%">Allows defining the binning name for a given Soft Bin#<br>
+          Example: 
+          <p>SoftBinName, 1, Good Parts<br>
+          SoftBinName, 2, Continuity<br>
+          SoftBinName, 3, Frequency test<br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="21%">HardBinName</td>
+          <td width="17%" align="center">integer,string</td>
+          <td width="83%">Allows defining the binning name for a given Hard Bin#<br>
+          Example: 
+          <p>HardBinName, 0, Rejects<br>
+          HardBinName, 1, Good parts<br>
+&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="21%">Wafer</td>
+          <td width="17%" align="center">string</td>
+          <td width="83%">Wafer ID string.</td>
+        </tr>
+        <tr>
+          <td width="21%">Wafer_Diameter</td>
+          <td width="17%" align="center">float</td>
+          <td width="83%">Wafer diameter in millimeters (eg: 152.40)</td>
+        </tr>
+        <tr>
+          <td width="21%">Die_Width</td>
+          <td width="17%" align="center">float</td>
+          <td width="83%">Die width (X size) in millimeters (eg: 3.25)</td>
+        </tr>
+        <tr>
+          <td width="21%">Die_Height</td>
+          <td width="17%" align="center">float</td>
+          <td width="83%">Die height (Y size) in millimeters (eg: 2.89)</td>
+        </tr>
+        <tr>
+          <td width="21%">Wafer_Flat</td>
+          <td width="17%" align="center">char.</td>
+          <td width="83%">Wafer flat orientation. Should be one of:<br>
+          U, D, R or L (stands for Up, Down, Right, Left). Any other character 
+          stands for 'unknown'</td>
+        </tr>
+        <tr>
+          <td width="21%">Wafer_Center_X</td>
+          <td width="17%" align="center">integer</td>
+          <td width="83%">X coordinate of center die on wafer </td>
+        </tr>
+        <tr>
+          <td width="21%">Wafer_Center_Y</td>
+          <td width="17%" align="center">integer</td>
+          <td width="83%">Y coordinate of center die on wafer </td>
+        </tr>
+        <tr>
+          <td width="21%">Wafer_Pos_X</td>
+          <td width="17%" align="center">char</td>
+          <td width="83%">Positive X direction of wafer: <b>L</b> for Left, or
+          <b>R</b> for right. Any other character stands for 'unknown'</td>
+        </tr>
+        <tr>
+          <td width="21%">Wafer_Pos_Y</td>
+          <td width="17%" align="center">char</td>
+          <td width="83%">Positive Y direction of wafer: <b>U</b> for Left, or
+          <b>D</b> for right. Any other character stands for 'unknown'</td>
+        </tr>
+      </table>
+      <p align="left">&nbsp;</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" bgcolor="#FFFF99">
+        <tr>
+          <td width="100%" bordercolor="#FFFF99">Example1: <b>Parameters without 
+          units</b></td>
+        </tr>
+      </table>
+      <p align="left"><b># Exemple of CSV file. This line is ignored as it 
+      starts with a '#' !<br>
+      Lot, FORD200<br>
+      Date, 2003_05_02<br>
+      Product, Ford cars<br>
+      Parameter , Car name,&nbsp; Price<br>
+      Unit<br>
+      USL, , 100000<br>
+      LSL, , 0<br>
+      Car 1, Ford Voyager, 35000<br>
+      Car 2, Ford Explorer, 25000<br>
+&nbsp;</b></p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" bgcolor="#FFFF99">
+        <tr>
+          <td width="100%" bordercolor="#FFFF99">Example2: <b>Tester related 
+          data</b></td>
+        </tr>
+      </table>
+      <p align="left"><b># Exemple of CSV file. This line is ignored as it 
+      starts with a '#' !<br>
+      Date, 2003_05_03 23:05:00<br>
+      Lot, FS2005TY<br>
+      Product, XU4830<br>
+      Tester, NI_114<br>
+      Facility, Taiwan FAB8<br>
+      Operator, Batman<br>
+      Parameter , Idd_Low,&nbsp; Idd_Total, gex_bin, gex_time<br>
+      Unit, A, A, , seconds<br>
+      USL, 0.0065 , 0.027<br>
+      LSL, 0.0035 , 0.0021 , 0 , 0<br>
+      Part1, 0.004568 , 0.024256, 1 , 1.544<br>
+      Part2, 0.004268 , 0.023756, 1 , 1.592<br>
+&nbsp;</b></p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" bgcolor="#FFFF99">
+        <tr>
+          <td width="100%" bordercolor="#FFFF99">Example3: <b>Excel sheet with 
+          test data (no units, no limits)</b></td>
+        </tr>
+      </table>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="16%"><b>Lot</b></td>
+          <td width="27%"><b>FS2005T</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="11%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="16%"><b>Date</b></td>
+          <td width="27%"><b>2003_05_01 7:05:00</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="11%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="16%"><b>Product</b></td>
+          <td width="27%"><b>XU4830</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="11%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="16%"><b>Parameter</b></td>
+          <td width="27%"><b>Idd_Low</b></td>
+          <td width="12%"><b>Idd_Total</b></td>
+          <td width="11%"><b>Vcc</b></td>
+          <td width="17%"><b>TestTime</b></td>
+        </tr>
+        <tr>
+          <td width="16%"><b>Unit</b></td>
+          <td width="27%">&nbsp;</td>
+          <td width="12%">&nbsp;</td>
+          <td width="11%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="16%"><b>USL</b></td>
+          <td width="27%">&nbsp;</td>
+          <td width="12%">&nbsp;</td>
+          <td width="11%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="16%"><b>LSL</b></td>
+          <td width="27%">&nbsp;</td>
+          <td width="12%">&nbsp;</td>
+          <td width="11%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="16%"><b>Record1</b></td>
+          <td width="27%"><b>4.568e-3</b></td>
+          <td width="12%"><b>24.256e-3</b></td>
+          <td width="11%"><b>3.450</b></td>
+          <td width="17%"><b>3.507</b></td>
+        </tr>
+        <tr>
+          <td width="16%"><b>Record2</b></td>
+          <td width="27%"><b>4.268e-3</b></td>
+          <td width="12%"><b>23.756e-3</b></td>
+          <td width="11%"><b>3.722</b></td>
+          <td width="17%"><b>3.497</b></td>
+        </tr>
+      </table>
+      <p align="left">&nbsp;</p>
+      <h1 align="left"><a name="advcsvbin">Advanced CSV, with Bin &amp; Die location 
+      info, ... </a></h1>
+      <p align="left">This is the most advanced CSV format supported by 
+      Examinator. It is very similar to the 
+      <a href="#Examinator Advanced CSV format">advanced CSV </a>format 
+      described above 
+      with the two major differences</p>
+      <p align="left">a) The 'Parameter' line must have its first 6 parameters 
+      in capital names as follows: <b>SBIN, HBIN, DIE_X, DIE_Y, SITE, TIME</b>. 
+      These are reserved parameters for specifying the binning info, doe 
+      location, testing site and testing time for each device tested</p>
+      <p align="left">b) The line after the 'Parameter' one starts with '<b>Test#</b>' 
+      and is used to assign a test number to each parameter. If you do not 
+      specify any test number after this keyword, Examinator will assign test 
+      numbers automatically based on internal algorithms.</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" bgcolor="#FFFF99">
+        <tr>
+          <td width="100%" bordercolor="#FFFF99">Example1: Specifying binning 
+          results</td>
+        </tr>
+      </table>
+      <p align="left"><b># Exemple of CSV file. This line is ignored as it 
+      starts with a '#' !<br>
+      Lot, FORD200<br>
+      Date, 2003_05_02<br>
+      Product, RF devices<br>
+      Parameter , SBIN, HBIN, DIE_X, DIE_Y, SITE, TIME, Vref,&nbsp; Vos<br>
+      Test#,,,,,,,1000,1010<br>
+      Unit,,,,,,sec.,Volts,Volts<br>
+      USL<br>
+      LSL<br>
+      Device1, 1,1,,,1,30000, 4.45, 3.78<br>
+      Device2, 5,0,,,1,7000, 2.07, 3.17<br>
+      <br>
+      Hint</b>: To <b><span style="background-color: #FFFF00">have a template 
+      example created for you</span></b>, use the Examinator toolbox function:<br>
+      a) Launch Examinator (Pro edition only)<br>
+      b) Click the 'Toolbox' link from the home page<br>
+      c) Click the 'Data Editor' link from the new page<br>
+      d) Click the 'open file' folder to select a STDF file (eg: use the STDF 
+      template file given with the Examinator package)<br>
+      e) After the file is fully loaded and displaied in ASCII form, click the 
+      save icon to save it in CSV format. <br>
+      <br>
+      You now have a fully documented template!</p>
+
+      <p align="left">Examinator supports
+      <a href="#_gex_wizard_assistant.htm">many other test data formats</a> so 
+      you are never let down!</p>
+
+      <p align="left">&nbsp;</p>
+      <h1 align="left"><a name="mxlots">Multiple lots in a CSV file</a></h1>
+      <p align="left">To include multiple lots (datasets) within a single CSV 
+      file; simply separate each dataset with the line <b><font color="#FF0000">&lt;end_dataset&gt;</font></b></p>
+      <p align="left">Example: The following CSV file includes two lots of data 
+      results.</p>
+      <p align="left"><b># Lot#1<br>
+      Date, 2003_05_03 23:05:00<br>
+      Lot, FS2005TY-1<br>
+      Product, XU4830<br>
+      Tester, NI_114<br>
+      Facility, Taiwan FAB8<br>
+      Operator, Batman<br>
+      Parameter , Idd_Low,&nbsp; Idd_Total, gex_bin, gex_time<br>
+      Unit, A, A, , seconds<br>
+      USL, 0.0065 , 0.027<br>
+      LSL, 0.0035 , 0.0021 , 0 , 0<br>
+      Part1, 0.004568 , 0.024256, 1 , 1.544<br>
+      Part2, 0.004268 , 0.023756, 1 , 1.592<br>
+      <font color="#FF0000">&lt;end_dataset&gt;</font><br>
+      # Lot#2<br>
+      Date, 2003_05_03 23:33:20<br>
+      Lot, FS2005TY-2<br>
+      Product, XU4830<br>
+      Tester, NI_114<br>
+      Facility, Taiwan FAB8<br>
+      Operator, Batman<br>
+      Parameter , Idd_Low,&nbsp; Idd_Total, gex_bin, gex_time<br>
+      Unit, A, A, , seconds<br>
+      USL, 0.0065 , 0.027<br>
+      LSL, 0.0035 , 0.0021 , 0 , 0<br>
+      Part1, 0.004574 , 0.024216, 1 , 1.517<br>
+      Part2, 0.004295 , 0.023784, 1 , 1.585</b></p>
+
+      <p align="left">&nbsp;</p>
+      <p align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">&nbsp;
+      You have other questions? <a href="#_gex_wizard_assistant.htm">Click here!</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

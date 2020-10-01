@@ -1,0 +1,47 @@
+# gcore-1645 unit test output file. this file should contain a dump of all DTR records with a status
+DTR#;DTR.TEXT_DAT;Status
+1;{"TYPE":"ML","TNAME":"Before first PTR: should be rejected at insertion","TNUM":1,"HL":10e-6,"HBIN":1};OK: valid GS Json DTR found with type "ML" (TNUM=1, TNAME=Before first PTR: should be rejected at insertion, HL=1e-05, HBIN=1)
+2;This is not a ML DTR, it should be processed at insertion as a standard non-GS DTR;OK: not a GS Json DTR
+3;{"TYPE:"ML","TNAME":"Wrong syntax, missing double quotes: this DTR should be processed at insertion as a standard non-GS DTR","TNUM":1,"HL":10e-6,"HBIN":1};OK: not a GS Json DTR
+4;"TYPE":"ML","TNAME":"Wrong syntax, missing curly brackets: this DTR should be processed at insertion as a standard non-GS DTR","TNUM":1,"HL":10e-6,"HBIN":1};OK: not a GS Json DTR
+5;{"TYP":"ML","TNAME":"No TYPE: this DTR should be processed at insertion as a standard non-GS DTR","TNUM":1,"HL":10e-6,"HBIN":1};OK: not a GS Json DTR
+6;{"TYPE":"ML","TNAME":"Error, NO TNUM: this DTR should generate an error at insertion","TNUMBER":1,"HL":10e-6,"HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": missing "TNUM" key)
+7;{"TYPE":"ML","TNAME":"Error, NO TNUM: this DTR should generate an error at insertion","HL":10e-6,"HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": missing "TNUM" key)
+8;{"TYPE":"ML","TNAME":"Error, TNUM is not a positive integer: this DTR should generate an error at insertion","TNUM":"1","LL":10e-6,"HL":19e-6,"HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "TNUM" key is not a positive integer)
+9;{"TYPE":"ML","TNAME":"Error, TNUM is not a positive integer: this DTR should generate an error at insertion","TNUM":-1,"LL":10e-6,"HL":19e-6,"HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "TNUM" key is not a positive integer)
+10;{"TYPE":"ML","TNAME":"Error, TNUM is not a positive integer: this DTR should generate an error at insertion","TNUM":1.45,"LL":10e-6,"HL":19e-6,"HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "TNUM" key is not a positive integer)
+11;{"TYPE":"ML","TNAME":"Error, TNUM is not a positive integer: this DTR should generate an error at insertion","TNUM":-1.45,"LL":10e-6,"HL":19e-6,"HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "TNUM" key is not a positive integer)
+12;{"TYPE":"ML","TNAME":"Error, LL is not a valid double: this DTR should generate an error at insertion","TNUM":1,"LL":"10e-6","HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "LL" key is not a valid double)
+13;{"TYPE":"ML","TNAME":"Error, HL is not a valid double: this DTR should generate an error at insertion","TNUM":1,"HL":"19e-6","HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "HL" key is not a valid double)
+14;{"TYPE":"ML","TNAME":99,"TNUM":1,"LL":10e-6,"HL":19e-6};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "TNAME" key is not a string)
+15;{"TYPE":"ML","TNAME":"Error, SITE is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"SITE":"1"};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "SITE" key is not a positive integer)
+16;{"TYPE":"ML","TNAME":"Error, SITE is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"SITE":-1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "SITE" key is not a positive integer)
+17;{"TYPE":"ML","TNAME":"Error, SITE is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"SITE":1.45};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "SITE" key is not a positive integer)
+18;{"TYPE":"ML","TNAME":"Error, SITE is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"SITE":-1.45};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "SITE" key is not a positive integer)
+19;{"TYPE":"ML","TNAME":"Error, HBIN is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"HBIN":"1"};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "HBIN" key is not a positive integer)
+20;{"TYPE":"ML","TNAME":"Error, HBIN is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"HBIN":-1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "HBIN" key is not a positive integer)
+21;{"TYPE":"ML","TNAME":"Error, HBIN is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"HBIN":1.45};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "HBIN" key is not a positive integer)
+22;{"TYPE":"ML","TNAME":"Error, HBIN is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"HBIN":-1.45};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "HBIN" key is not a positive integer)
+23;{"TYPE":"ML","TNAME":"Error, SBIN is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"SBIN":"1"};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "SBIN" key is not a positive integer)
+24;{"TYPE":"ML","TNAME":"Error, SBIN is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"SBIN":-1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "SBIN" key is not a positive integer)
+25;{"TYPE":"ML","TNAME":"Error, SBIN is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"SBIN":1.45};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "SBIN" key is not a positive integer)
+26;{"TYPE":"ML","TNAME":"Error, SBIN is not a positive integer: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":19e-6,"SBIN":-1.45};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "SBIN" key is not a positive integer)
+27;{"TYPE":"ML","TNAME":"Error, LL>HL: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":9e-6,"HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "LL" > "HL")
+28;{"TYPE":"ML","TNAME":"Error, LL>HL: this DTR should generate an error at insertion","TNUM":1,"LL":10e-6,"HL":-11e-6,"HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "LL" > "HL")
+29;{"TYPE":"ML","TNAME":"Error, LL>HL: this DTR should generate an error at insertion","TNUM":1,"LL":-10e-6,"HL":-11e-6,"HBIN":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": "LL" > "HL")
+30;{"TYPE":"ML","TNAME":"Error, the 'ML' JSON should have at least one of (LL, HL, HBIN, SBIN fields): this DTR should generate an error at insertion","TNUM":1};NOK: invalid GS Json DTR (error: invalid GS JSON DTR of type "ML": at least one of the following keys must be defined ["LL", "HL", "HBIN", "SBIN"])
+31;{"TYPE":"ML","TNAM":"Wrong syntax: TNAM should be ignored at insertion","TNUM":1,"HL":10e-6,"HBIN":1};OK: valid GS Json DTR found with type "ML" (TNUM=1, HL=1e-05, HBIN=1)
+32;{"TYPE":"MLF","TNAME":"Not a ML type: this DTR should be processed at insertion as a standard non-GS DTR","TNUM":1,"HL":10e-6,"HBIN":1};OK: valid GS Json DTR found with type "MLF"
+33;{"TYPE":"ML","TNAME":"LKC_Hi_VCC_PRE","TNUM":1,"HL":10e-6,"HBIN":1};OK: valid GS Json DTR found with type "ML" (TNUM=1, TNAME=LKC_Hi_VCC_PRE, HL=1e-05, HBIN=1)
+34;{"TYPE":"ML","TNAME":"LKC_Hi_VCC_PRE","TNUM":1,"LL":10e-6,"HBIN":1};OK: valid GS Json DTR found with type "ML" (TNUM=1, TNAME=LKC_Hi_VCC_PRE, LL=1e-05, HBIN=1)
+35;{"TYPE":"ML","TNUM":1,"HL":20e-6,"HBIN":2};OK: valid GS Json DTR found with type "ML" (TNUM=1, HL=2e-05, HBIN=2)
+36;{"TYPE":"ML","TNUM":1,"HL":21e-6,"HBIN":4};OK: valid GS Json DTR found with type "ML" (TNUM=1, HL=2.1e-05, HBIN=4)
+37;{"TYPE":"ML","TNUM":1,"HBIN":7,"SBIN":5};OK: valid GS Json DTR found with type "ML" (TNUM=1, HBIN=7, SBIN=5)
+38;{"TYPE":"ML","TNAME":"IQB_B7_HPM_3P3_ET","TNUM":3,"LL":1e-3,"HL":5e-3,"HBIN":1};OK: valid GS Json DTR found with type "ML" (TNUM=3, TNAME=IQB_B7_HPM_3P3_ET, LL=0.001, HL=0.005, HBIN=1)
+39;{"TYPE":"ML","TNUM":3,"LL":0.9e-3,"HL":5.5e-3,"HBIN":4};OK: valid GS Json DTR found with type "ML" (TNUM=3, LL=0.0009, HL=0.0055, HBIN=4)
+40;{"TYPE":"ML","TNUM":3,"HBIN":7,"SBIN":5};OK: valid GS Json DTR found with type "ML" (TNUM=3, HBIN=7, SBIN=5)
+41;{"TYPE":"ML","TNUM":4,"LL":8e-3,"HL":16e-3,"HBIN":1};OK: valid GS Json DTR found with type "ML" (TNUM=4, LL=0.008, HL=0.016, HBIN=1)
+42;{"TYPE":"ML","TNUM":4,"LL":8e-3,"HL":18e-3,"HBIN":2};OK: valid GS Json DTR found with type "ML" (TNUM=4, LL=0.008, HL=0.018, HBIN=2)
+43;{"TYPE":"ML","TNUM":4,"LL":7.2e-3,"HL":19.8e-3,"HBIN":4};OK: valid GS Json DTR found with type "ML" (TNUM=4, LL=0.0072, HL=0.0198, HBIN=4)
+44;{"TYPE":"ML","TNUM":4,"HBIN":7,"SBIN":5};OK: valid GS Json DTR found with type "ML" (TNUM=4, HBIN=7, SBIN=5)
+# 15742 records read, 44 DTR processed

@@ -1,0 +1,4 @@
+<lp_config>
+    <fnp_lp connectionStatus="1" last_choice="Floating|Server name / IP|192.168.1.80|Port|27000"/>
+    <last_lp_used use_lp="fnp_lp"/>
+</lp_config>

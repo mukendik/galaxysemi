@@ -1,0 +1,6 @@
+## Versions from settings when configure was run
+: ${JAVA_HOME=/home/gexprod/install/jre1.7.0_65}
+: ${JAVA_CPPFLAGS=~autodetect~}
+: ${JAVA_LD_LIBRARY_PATH=~autodetect~}
+: ${JAVA_LIBS=~autodetect~}
+

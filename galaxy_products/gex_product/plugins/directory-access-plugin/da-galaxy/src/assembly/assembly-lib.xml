@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <includes>
+                <include>galaxy_products/gex_product/plugins/lib/${distName}/*dagalaxy*</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>  
+    </fileSets>
+</assembly>

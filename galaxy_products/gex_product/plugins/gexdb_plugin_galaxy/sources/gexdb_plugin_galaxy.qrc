@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/consolidation_tree.xsd</file>
+        <file>resources/galaxy_tables_dependencies.xml</file>
+    </qresource>
+</RCC>

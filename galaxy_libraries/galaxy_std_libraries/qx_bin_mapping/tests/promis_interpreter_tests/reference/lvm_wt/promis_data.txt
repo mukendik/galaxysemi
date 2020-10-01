@@ -1,0 +1,1 @@
+geometry name:PBJB20FBQA|wafer count:22|fab site:SCFAB|equipment id:3301516|part id:DSPEAAV20FBQ6AI.01|gross die per wafer:5765|die width:1.6|die height:1.6|flat orientation:90|test site:SM|

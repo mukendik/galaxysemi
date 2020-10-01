@@ -1,0 +1,461 @@
+-------------------------------------------------------------------------------------------
+--          ==========================================================
+--          L T X ' S  S H A R E W A R E  L I C E N S E  N O T I C E
+--          ==========================================================
+--          This software and accompanying libraries are covered under the LSL.
+--          See procedure LTX_LSL_NOTICE() for more details.
+-------------------------------------------------------------------------------------------
+
+const
+   CCC_LIB_VERSION      = 0 --This is library version..libMyLib.so.0<---------
+   MAXSTRLEN            =256
+end_const
+
+static
+     integer:       handle=-1
+     string[256]:   LogFileName="/tmp/MyLog.txt"
+     boolean:       R14_3=false
+end_static
+
+procedure on_start
+--------------------------------------------------------------------------------
+local 
+    float:              ramp_array[8192], sig[8192], f_domain[8192], t_domain[8192]
+    integer:            sts
+    string[MAXSTRLEN]:  MyString
+    integer:            MyIntegerString[MAXSTRLEN]
+end_local
+
+static boolean:         debug=false
+
+body
+    -- Following are debugger commands to display  arrays in status display
+    -- Copy and paste them to the command line starting with the "a"
+    -- a -g ramp_array
+    -- a -g sig       
+    -- a -g t_domain       
+     
+
+    if handle=-1 then
+        open_ccc_library
+    endif
+    
+    sts=call_c_library("MyMakeRamp", 0.0, 2*3.14159265, ramp_array)
+    if sts >0 then 
+        println(stdout,"Error calling MyMakeRamp library function")
+    endif
+    
+    sts=call_c_library("MyGenSin",ramp_array,sig)
+    if sts >0 then 
+        println(stdout,"Error calling MyGenSin library function")
+    endif
+    
+
+   sts=call_c_library("MyForwardFFT",sig,f_domain)
+    if sts >0 then 
+        println(stdout,"Error calling MyForwardFFT library function")
+    endif
+
+   f_domain[64]=-0.5  --add a higher frequency sin wave to original sig
+ 
+   sts=call_c_library("MyInverseFFT",f_domain, t_domain)
+    if sts >0 then 
+        println(stdout,"Error calling MyInverseFFT library function")
+    endif
+
+ 
+   -------------------------------------------------------------
+   -------------------------------------------------------------
+   -- Following demonstrates use of strings in a library
+   -- We put "The quick brown fox " into a string and pass
+   -- it down to a library function and it completes the sentence 
+   -- by adding "over the lazy dog.
+   --
+   -- If OS is prior to R14.3.0, library functions cannot accept strings.
+   -- We call the tx_atoi Cadence procedure to copy the string into an integer array (one character 
+   -- per integer array element). Then we call the MyQuickFoxOld function which checks to see if
+   -- the array contains "The quickbrown fox ". If it does, it fills in the remainder 
+   -- of the sentence into the integer array. We then call the ltx_itoa Cadence 
+   -- procedure to convert the integer array back into a string.
+   --
+   -- If the OS is R14.3.0 or later, then we can pass a string to a library function. In this 
+   -- case we call MyQuickFoxNew library function which should complete the sentence in the 
+   -- string variable directly.
+   -------------------------------------------------------------
+   -------------------------------------------------------------
+   
+    MyString="The quick brown fox " 
+    
+    if R14_3 then       -------Just pass it the string
+        --If running on an OS prior to R14_3, this syntax will show ERROR
+        --because we cannot pass a string variable to a library until R14_3
+        --however it should never get executed
+        sts=call_c_library("MyQuickFoxNew",MyString)
+        if sts >0 then 
+            println(stdout,"Error calling MyQuickFoxNew library function")
+        else
+            println(stdout,"The following should have been written to your Log file: " , LogFileName)
+            println(stdout," >>> From MyQuickFoxNew: maxlen=255, original len=20, new len=45 text=The quick brown fox jumped over the lazy dog.")
+
+        endif
+    else               -------Need to pass string as integer array and then convert back to string
+        ltx_atoi(MyString, MyIntegerString,false) --Copy string to integer with final 0
+        sts=call_c_library("MyQuickFoxOld",MyIntegerString)
+        if sts >0 then 
+            println(stdout,"Error calling MyQuickFoxOld library function")
+        endif
+        ltx_itoa(MyIntegerString,MyString,MAXSTRLEN)   --Copy resultant integer array back into string
+    endif
+    
+   if debug       then
+       close_ccc_library
+   endif
+
+end_body
+
+
+
+function Get_array_binary (file_pathname, f_ary) : boolean
+--------------------------------------------------------------------------
+in  string[128]  : file_pathname  --> full pathname
+out float        :  f_ary[?]
+---------------------------------------------------------------------------
+--
+--  Read binary float data from a file
+--
+---------------------------------------------------------------------------
+
+local
+    lword:      error_num
+
+    integer:    file_num
+end_local
+
+body    
+        
+  
+    open (file_num, file_pathname, "r")
+    error_num = io_errnum
+    
+    if (error_num > 0) then
+        println (stdout, "@nERROR: Failed to open BINARY file.")
+        println (stdout, "       File name: ", file_pathname, "@n")
+      --print   (stdout, errnum_text(io_errnum), "@n")
+    
+        return (FALSE)
+    end_if
+    
+    println (stdout, "O'K -- Read data from BINARY file ", file_pathname)
+
+    f_ary = 0.0
+    
+    read (file_num, f_ary)
+    
+    close (file_num)
+    
+    return (TRUE)
+    
+end_body
+
+
+procedure Eat_leading_spaces(string_in)
+-------------------------------------------------------------------------------
+-------------
+in_out string   :   string_in
+
+local integer   :   l
+
+body
+    if string_in <> "" then
+        while string_in[1] = " " do
+            l = len(string_in)
+            string_in = string_in[2:l]        
+        end_while
+    end_if
+end_body
+
+
+
+procedure open_ccc_library
+--------------------------------------------------------------------------------
+--  
+
+local
+string[MAXSTRLEN]:lib_name,os_name,WS_type
+integer:MyIntegerString[MAXSTRLEN]
+integer:lib=0,sts
+end_local
+
+body
+    println(stdout, "open_ccc_library")
+    if handle = -1 then
+        R14_3=false
+        os_name=tester_os
+        if os_name[1:3] = "R11" then
+            lib_name="libMyLib.R11.so." + chr(0x30+CCC_LIB_VERSION)
+        elseif os_name[1:4] >= "R14." then
+            get_expr("WS_type",WS_type)
+            if WS_type[1:3] = "sun" then
+                if os_name[5] >="3" then
+                    lib_name="libMyLib.R14.3.so." + chr(0x30+CCC_LIB_VERSION)
+                    R14_3=true
+                else
+                    lib_name="libMyLib.R12.so." +chr(0x30+CCC_LIB_VERSION)
+                endif 
+            elseif os_name[5] >="3" then
+                lib_name="libMyLib.LinuxR14.3.so." + chr(0x30+CCC_LIB_VERSION)
+                R14_3=true
+            else
+                lib_name="libMyLib.Linux.so." + chr(0x30+CCC_LIB_VERSION)
+            endif
+        else
+            lib_name="libMyLib.R12.so." +chr(0x30+CCC_LIB_VERSION)
+        endif
+
+        --Hack...
+        lib_name="libMyLib.Linux.so."+chr(0x30+CCC_LIB_VERSION)
+       
+        println(stdout, program_load_path,lib_name)
+        handle=open_c_library(program_load_path  +lib_name)
+        println(stdout, "Lib successfully opened: ", handle)
+
+        if R14_3 then
+            --If running on an OS prior to R14_3, this syntax will show ERROR
+            --because we cannot pass a string variable to a library until R14_3
+            --however it should never get executed
+            sts=call_c_library("MyOpenLogNew", LogFileName) 
+            if sts >0 then
+                println(stdout,"Error opening Log File (New): ", LogFileName, ". STS=",sts)
+            endif
+        else
+            ltx_atoi(LogFileName, MyIntegerString,false) --Copy string to integer with final 0
+            sts=call_c_library("MyOpenLogOld",MyIntegerString)
+            if sts >0 then 
+                println(stdout,"Error calling MyOpenLogOld library function")
+        endif
+    endif
+    endif
+
+end_body
+
+procedure close_ccc_library
+--------------------------------------------------------------------------------
+--  
+
+local
+integer:sts
+end_local
+
+body
+
+    if handle>-1 then
+        sts=call_c_library("MyCloseLog")
+        if sts >0 then
+            println(stdout,"Error Closing Log File. STS=",sts)
+        endif
+
+        close_c_library(handle)
+        handle=-1
+    endif
+    
+end_body
+
+procedure ltx_itoa(in_int, out_string, length)
+--------------------------------------------------------------------------------
+--  
+in integer: in_int[MAXSTRLEN], length
+out string: out_string
+
+local
+    integer: i
+end_local
+
+body
+    for i = 1 to length do
+        if in_int[i] = 0 then
+            if i = 1 then
+                out_string[i]=" b"
+            endif
+            return
+        endif
+        out_string[i] = chr(in_int[i])
+    end_for
+    
+
+end_body
+
+procedure ltx_atoi(in_string, out_int, flag)
+--------------------------------------------------------------------------------
+--  
+in string[MAXSTRLEN]: in_string
+out integer: out_int[MAXSTRLEN]
+in boolean: flag
+
+
+local
+integer: i
+end_local
+
+body
+
+    out_int = 0
+    for i = 1 to len(in_string) do
+        out_int[i] = asc(in_string[i])
+    end_for
+    
+    if flag then
+        out_int[i] = 10
+    else
+        out_int[i] = 0
+    end_if
+    
+end_body
+procedure LTX_LSL_Notice
+-------------------------------------------------------------------------------------------
+--          ==========================================================
+--          L T X ' S  S H A R E W A R E  L I C E N S E  N O T I C E
+--          ==========================================================
+
+body
+
+println(stdout,"==========================================================================")
+println(stdout,"==========================================================================")
+println(stdout,"==========================================================================")
+println(stdout,"==================  P L E A S E  R E A D  ! ! ! ==========================")
+println(stdout,"==========================================================================")
+println(stdout,"                        LTX SHAREWARE LICENSE")
+println(stdout,"   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION")
+println(stdout," ")
+println(stdout,"    Version 1.0")
+println(stdout,"    April 16, 2003")
+println(stdout," ")
+println(stdout,"  0. This License Agreement applies to any program or other work which")
+println(stdout,"contains a notice placed by the copyright holder saying it may be")
+println(stdout,"distributed under the terms of this LTX Shareware License.  The")
+println(stdout,"'Program', below, refers to any such program or work, and a 'work based")
+println(stdout,"on the Program' means either the Program or any work containing the")
+println(stdout,"Program or a portion of it, either verbatim or with modifications.  Each")
+println(stdout,"licensee is addressed as 'you'.")
+println(stdout," ")
+println(stdout,"  1. You may copy and distribute verbatim copies of the Program's source")
+println(stdout,"code as you receive it, in any medium, provided that you conspicuously and")
+println(stdout,"appropriately publish on each copy an appropriate copyright notice and")
+println(stdout,"disclaimer of warranty; keep intact all the notices that refer to this")
+println(stdout,"LTX Shareware License and to the absence of any warranty; and give any")
+println(stdout,"other recipients of the Program a copy of this LTX Shareware License")
+println(stdout,"along with the Program.   LTX Shareware Programs may only be distributed")
+println(stdout,"to customers of LTX Corporation.")
+println(stdout," ")
+println(stdout,"  2. You may modify your copy or copies of the Program or any portion of")
+println(stdout,"it, and copy and distribute such modifications under the terms of Paragraph")
+println(stdout,"1 above, provided that you also do the following:")
+println(stdout," ")
+println(stdout,"    a) cause the modified files to carry prominent notices stating that")
+println(stdout,"    you changed the files and the date of any change; and")
+println(stdout," ")
+println(stdout,"    b) cause the whole of any work that you distribute or publish, that")
+println(stdout,"    in whole or in part contains the Program or any part thereof, either")
+println(stdout,"    with or without modifications, to be licensed at no charge to all")
+println(stdout,"    LTX Customers under the terms of this LTX Shareware License.")
+println(stdout," ")
+println(stdout,"    c) If the modified program normally reads commands interactively when")
+println(stdout,"    run, you must cause it, when started running for such interactive use")
+println(stdout,"    in the simplest and most usual way, to print or display an")
+println(stdout,"    announcement including an appropriate copyright notice and a notice")
+println(stdout,"    that there is no warranty (or else, saying that you provide a")
+println(stdout,"    warranty) and that users may redistribute the program under these")
+println(stdout,"    conditions, and telling the user how to view a copy of this LTX Shareware")
+println(stdout,"    License.")
+println(stdout," ")
+println(stdout,"Mere aggregation of another independent work with the Program (or its")
+println(stdout,"derivative) on a volume of a storage or distribution medium does not bring")
+println(stdout,"the other work under the scope of these terms.")
+println(stdout," ")
+println(stdout,"  3. You may copy and distribute the Program (or a portion or derivative of")
+println(stdout,"it, under Paragraph 2) in object code or executable form under the terms of")
+println(stdout,"Paragraphs 1 and 2 above provided that you also do one of the following:")
+println(stdout," ")
+println(stdout,"    a) accompany it with the complete corresponding machine-readable")
+println(stdout,"    source code, which must be distributed under the terms of")
+println(stdout,"    Paragraphs 1 and 2 above; or,")
+println(stdout," ")
+println(stdout,"    b) accompany it with a written offer to give any LTX Customer free")
+println(stdout,"    (except for a nominal charge for the cost of distribution) a complete")
+println(stdout,"    machine-readable copy of the corresponding source code, to be distributed")
+println(stdout,"    under the terms of Paragraphs 1 and 2 above; or,")
+println(stdout," ")
+println(stdout,"    c) accompany it with the information you received as to where the")
+println(stdout,"    corresponding source code may be obtained.  (This alternative is")
+println(stdout,"    allowed only for noncommercial distribution and only if you")
+println(stdout,"    received the program in object code or executable form alone.)")
+println(stdout," ")
+println(stdout,"Source code for a work means the preferred form of the work for making")
+println(stdout,"modifications to it.  For an executable file, complete source code means")
+println(stdout,"all the source code for all modules it contains; but, as a special")
+println(stdout,"exception, it need not include source code for modules which are standard")
+println(stdout,"libraries that accompany the operating system on which the executable")
+println(stdout,"file runs, or for standard header files or definitions files that")
+println(stdout,"accompany that operating system.")
+println(stdout," ")
+println(stdout,"  4. You may not copy, modify, sublicense, distribute or transfer the")
+println(stdout,"Program except as expressly provided under this LTX Shareware License.")
+println(stdout,"Any attempt otherwise to copy, modify, sublicense, distribute or transfer")
+println(stdout,"the Program is void, and will automatically terminate your rights to use")
+println(stdout,"the Program under this License.  However, parties who have received")
+println(stdout,"copies, or rights to use copies, from you under this LTX Shareware")
+println(stdout,"License will not have their licenses terminated so long as such parties")
+println(stdout,"remain in full compliance.")
+println(stdout," ")
+println(stdout,"  5. By copying, distributing or modifying the Program (or any work based")
+println(stdout,"on the Program) you indicate your acceptance of this license to do so,")
+println(stdout,"and all its terms and conditions.")
+println(stdout," ")
+println(stdout,"  6. Each time you redistribute the Program (or any work based on the")
+println(stdout,"Program), the recipient automatically receives a license from the original")
+println(stdout,"licensor to copy, distribute or modify the Program subject to these")
+println(stdout,"terms and conditions.  You may not impose any further restrictions on the")
+println(stdout,"recipients' exercise of the rights granted herein.")
+println(stdout," ")
+println(stdout,"  7. LTX Corporation may publish revised and/or new versions")
+println(stdout,"of the LTX Shareware License from time to time.  Such new versions will")
+println(stdout,"be similar in spirit to the present version, but may differ in detail to")
+println(stdout,"address new problems or concerns.")
+println(stdout," ")
+println(stdout,"Each version is given a distinguishing version number.  If the Program")
+println(stdout,"specifies a version number of the license which applies to it and 'any")
+println(stdout,"later version', you have the option of following the terms and conditions")
+println(stdout,"either of that version or of any later version published by LTX Corporation.")
+println(stdout,"If the Program does not specify a version number of")
+println(stdout,"the license, you may choose any version ever published by LTX")
+println(stdout,"Corporation.")
+println(stdout," ")
+println(stdout,"                            NO WARRANTY")
+println(stdout," ")
+println(stdout,"  9. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY")
+println(stdout,"FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN")
+println(stdout,"OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES")
+println(stdout,"PROVIDE THE PROGRAM 'AS IS' WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED")
+println(stdout,"OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF")
+println(stdout,"MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS")
+println(stdout,"TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE")
+println(stdout,"PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,")
+println(stdout,"REPAIR OR CORRECTION.")
+println(stdout," ")
+println(stdout,"  10. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING")
+println(stdout,"WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR")
+println(stdout,"REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,")
+println(stdout,"INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING")
+println(stdout,"OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED")
+println(stdout,"TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY")
+println(stdout,"YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER")
+println(stdout,"PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE")
+println(stdout,"POSSIBILITY OF SUCH DAMAGES.")
+println(stdout,"==========================================================================")
+println(stdout,"==========================================================================")
+println(stdout,"==========================================================================")
+println(stdout,"==========================================================================")
+
+    
+
+
+end_body

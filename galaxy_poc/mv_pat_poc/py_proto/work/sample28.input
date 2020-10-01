@@ -1,0 +1,10 @@
+{
+"version": "1.0.0",
+"descriptor":	{
+				"name": "../data/sct60_1_DDHACB3FHRT_403_P3N_C_249028000_24_sep01_040610.stdf.gextb_patman_gexmo.csv",
+				"ignoredRows1":40,
+				"ignoredRows2":5,
+				"ignoredCols":10,
+				"delimiter":","
+				}
+}

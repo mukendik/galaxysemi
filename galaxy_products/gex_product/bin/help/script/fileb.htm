@@ -1,0 +1,103 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>fileOpen<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library<br>
+      </a>
+      <br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>fileOpen(
+  const filename,  // name of file
+  const mode)      // open mode
+</pre>
+      <p>Opens a file for reading/writing. <b>Mode</b> is the sum of any of the
+      following constants:</p>
+      <p>&nbsp;
+      <table cellSpacing="0" cellPadding="3" border="0">
+        <tbody>
+          <tr vAlign="top" bgColor="#0044aa">
+            <td><font color="#ffffff"><b>Constant</b></font></td>
+            <td bgColor="#0034aa"><font color="#ffffff"><b>Description</b></font></td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>fileOpenRead</td>
+            <td bgColor="#b0d0ff">Open file for reading</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>fileOpenWrite</td>
+            <td bgColor="#d0e0ff">Open file for writing</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>fileOpenAppend</td>
+            <td bgColor="#b0d0ff">Open and set write position to EOF</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>fileOpenTrunc</td>
+            <td bgColor="#d0e0ff">Truncate file if opened file existed before</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>fileOpenBinary</td>
+            <td bgColor="#b0d0ff">Open in binary mode. By default files are
+              opened in text mode where EOL is<br>
+              represented by a LF only. In
+              Binary mode EOL may also be represented as CR LF,<br>
+              depending on the
+              operating system.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Returns a file handle that must be used in subsequent calls to <a href="filec.htm">fileRead</a>,
+      <a href="fileh.htm">fileWrite</a>, <a href="file2.htm">fileClose</a> etc.</p>
+      <p>Examples:</p>
+      <pre>// open a file in text mode to append text
+var fh = fileOpen('logfile.log',
+                  fileOpenWrite+fileOpenAppend);
+&nbsp;
+// open a file in binary mode for random access
+var fh = fileOpen('address.dbf',
+                  fileOpenRead+
+                  fileOpenWrite+
+                  fileOpenBinary);
+</pre>
+      <pre></pre>
+      <pre></pre>
+      <pre></pre>
+      <pre></pre>
+      <pre></pre>
+      <p>&nbsp;
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.galaxysemi</groupId>
+        <artifactId>R</artifactId>
+        <relativePath>../pom.xml</relativePath>
+        <version>3.0.1-8-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>unit_test_1</artifactId>
+    <packaging>pom</packaging>
+    <name>libR - Unit Test 1</name>
+
+    <properties>
+        <basepath>other_libraries/R/${project.artifactId}</basepath>
+        <libraryPath01>${project.build.directory}${fs}other_libraries${fs}R${fs}lib${fs}${distName}</libraryPath01>
+        <libraryPath02>${project.build.directory}${fs}other_libraries${fs}R${fs}r_home${fs}${distName}${fs}etc</libraryPath02>
+        <libraryPath>${libraryPath01}${ps}${libraryPath02}</libraryPath>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>galaxy_dev-common</artifactId>
+            <classifier>src</classifier>
+            <version>RELEASE</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>libR</artifactId>
+            <classifier>inc</classifier>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>libR</artifactId>
+            <classifier>${distNameLong}-lib</classifier>
+            <version>${project.version}</version>
+            <type>${archiveExt}</type>
+        </dependency>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>libR</artifactId>
+            <classifier>${distNameLong}-home</classifier>
+            <version>${project.version}</version>
+            <type>${archiveExt}</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>${project.basedir}/src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/${basepath}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}</directory>
+                                    <excludes>
+                                        <exclude>target/**/*</exclude>
+                                        <exclude>pom.xml</exclude>
+                                        <exclude>src/assembly/*</exclude>
+                                    </excludes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-dependencies</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <excludeArtifactIds>libR</excludeArtifactIds>
+                            <excludeTransitive>true</excludeTransitive>
+                        </configuration>
+                    </execution>
+                    <!-- for libR -->
+                    <execution>
+                        <id>unpack</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.galaxysemi</groupId>
+                                    <artifactId>libR</artifactId>
+                                    <classifier>inc</classifier>
+                                    <type>zip</type>
+                                    <outputDirectory>${project.build.directory}/other_libraries/R/include</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.galaxysemi</groupId>
+                                    <artifactId>libR</artifactId>
+                                    <classifier>${distNameLong}-lib</classifier>
+                                    <type>${archiveExt}</type>
+                                    <outputDirectory>${project.build.directory}/other_libraries/R/lib/${distName}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.galaxysemi</groupId>
+                                    <artifactId>libR</artifactId>
+                                    <classifier>${distNameLong}-home</classifier>
+                                    <type>${archiveExt}</type>
+                                    <outputDirectory>${project.build.directory}/other_libraries/R/r_home/${distName}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>qmake</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${project.build.directory}/${basepath}</workingDirectory>
+                            <environmentVariables>
+                                <DEVDIR>${project.build.directory}</DEVDIR>
+                            </environmentVariables>
+                            <executable>${env.QTDIR}${fs}bin${fs}qmake${exeExt}</executable>
+                            <commandlineArgs>-spec ${makespec} -o Makefile_${makeDist} ${project.artifactId}.pro</commandlineArgs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>make</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${project.build.directory}/${basepath}</workingDirectory>
+                            <environmentVariables>
+                                <DEVDIR>${project.build.directory}</DEVDIR>
+                            </environmentVariables>
+                            <executable>${makeCmd}</executable>
+                            <commandlineArgs>-f Makefile_${makeDist} ${buildMode}</commandlineArgs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <exec executable="bash${exeExt}" dir="${project.build.directory}/${basepath}" failonerror="true">
+                                    <env key="DEVDIR" path="${project.build.directory}" />
+                                    <env key="PATH" path="${env.PATH}${ps}${libraryPath}" />
+                                    <env key="LD_LIBRARY_PATH" path="${env.LD_LIBRARY_PATH}${ps}${libraryPath}" />
+                                    <env key="DYLD_LIBRARY_PATH" path="${env.DYLD_LIBRARY_PATH}${ps}${libraryPath}" />
+                                    <env key="R_HOME" path="${project.build.directory}/other_libraries/R/r_home/${distName}" />
+                                    <env key="GALAXY_R_HOME" path="${project.build.directory}/other_libraries/R/r_home/${distName}" />
+                                    <arg value="--login" />
+                                    <arg value="-c" />
+                                    <arg value="${project.build.directory}/${basepath}/${destDir}${project.artifactId}${exeExt}" />
+                                </exec>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>mac</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <properties>
+                <destDir>${project.artifactId}.app/Contents/MacOS/</destDir>
+            </properties>
+        </profile>
+    </profiles>
+</project>

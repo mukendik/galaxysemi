@@ -1,0 +1,23 @@
+18:08:25: 5: Default OS Local is: 'French_France.1252'  Num:'French_France.1252' Test:1.200000   in gtl_init   in gtl_init.c   at line 315
+18:08:25: 5: Trying to force Local to C   in gtl_init   in gtl_init.c   at line 320
+18:08:25: 5: Local is now: 'C'  Num:'C' Test:1.200000   in gtl_init   in gtl_init.c   at line 324
+18:08:25: 5: InitSTDFOutput 0   in gtl_InitOutput   in gtl_output.c   at line 38
+18:08:25: 5: Insert a new splitlot: RetestIndex will be 0...   in gtl_SQLiteNewSplitlot   in gtl_output_sqlite.c   at line 187
+18:08:25: 5: SQLite mem used = 388520   in gtl_InitSQLiteOutput   in gtl_output_sqlite.c   at line 402
+18:08:25: 5: gtl_init : Max Message Stack Size=10 max num of message=0 size of message=1032 octet   in gtl_init   in gtl_init.c   at line 357
+18:08:25: 5: [GTL-INFO]  : Initializing Galaxy Tester Library 4.0   in gtl_msg_Info   in gtl_message.c   at line 312
+18:08:25: 3: RingBufferPushBack failed: -2 : [GTL-INFO]  : Initializing Galaxy Tester Library 4.0    in gtl_push_back_new_message   in gtl_message.c   at line 78
+18:08:25: 3: gtl_push_back_new_message failed: -2   in gtl_msg_Info   in gtl_message.c   at line 320
+18:08:25: 4: GTL error: Code=2 Info=C:\workspace\galaxy_dev_master_lp\galaxy_products\gex_product\gex-tester\gtm_qa\gtm\s0\gtl_tester.conf   in gtl_err_Display   in gtl_error.c   at line 70
+18:08:25: 3: RingBufferPushBack failed: -2 : [GTL-ERROR] : Error reading Configuration file (C:\workspace\galaxy_dev_master_lp\galaxy_products\gex_product\gex-tester\gtm_qa\gtm\s0\gtl_tester.conf).    in gtl_push_back_new_message   in gtl_message.c   at line 78
+18:08:25: 3: gtl_push_back_new_message failed !   in gtl_msg_Error   in gtl_message.c   at line 507
+18:08:25: 4: [GTL-ERROR] : Error reading Configuration file (C:\workspace\galaxy_dev_master_lp\galaxy_products\gex_product\gex-tester\gtm_qa\gtm\s0\gtl_tester.conf).    in gtl_msg_Error   in gtl_message.c   at line 508
+18:08:25: 4: C:\workspace\galaxy_dev_master_lp\galaxy_products\gex_product\gex-tester\gtm_qa\gtm\s0\gtl_tester.conf   in gtl_msg_Error   in gtl_message.c   at line 510
+18:09:06: 3: stat on '' failed   in gtl_set   in gtl_getset.c   at line 78
+18:09:07: 3: stat on '' failed   in gtl_set   in gtl_getset.c   at line 78
+18:09:08: 3: stat on '' failed   in gtl_set   in gtl_getset.c   at line 78
+18:09:08: 3: stat on '' failed   in gtl_set   in gtl_getset.c   at line 78
+18:09:08: 3: stat on '' failed   in gtl_set   in gtl_getset.c   at line 78
+18:09:47: 5: gtl_set_prod_info lot TNA0KA031E_R   in gtl_set_prod_info   in gtl_main.c   at line 207
+18:09:47: 5: gtl_set_node_info 1   in gtl_set_node_info   in gtl_main.c   at line 175
+18:09:47: 5: Log file opened: C:\workspace\galaxy_dev_master_lp\galaxy_scripts\gtlgtm_qa\scenario1_ptr\in-cur\gtl_180947dec182013_4350.log   in gtl_InitLog   in gtl_log.c   at line 66

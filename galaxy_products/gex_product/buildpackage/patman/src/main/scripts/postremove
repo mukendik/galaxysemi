@@ -1,0 +1,3 @@
+#!/bin/sh
+rm -rf __RPM_PREFIX__
+/usr/sbin/userdel quantixUser

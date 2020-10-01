@@ -1,0 +1,10 @@
+--- qt-everywhere-enterprise-src-5.4.2/qtbase/src/sql/drivers/mysql/qsql_mysql.cpp	2014-02-01 20:35:33.000000000 +0100
++++ qt-everywhere-enterprise-src-5.4.2/qtbase/src/sql/drivers/mysql/qsql_mysql.cpp	2016-01-18 14:43:37.000000000 +0100
+@@ -1271,6 +1271,7 @@
+     }
+ 
+     if ((d->mysql = mysql_init((MYSQL*) 0)) &&
++        (mysql_options(d->mysql, MYSQL_OPT_LOCAL_INFILE, "1") == 0) &&
+             mysql_real_connect(d->mysql,
+                                host.isNull() ? static_cast<const char *>(0)
+                                              : host.toLocal8Bit().constData(),

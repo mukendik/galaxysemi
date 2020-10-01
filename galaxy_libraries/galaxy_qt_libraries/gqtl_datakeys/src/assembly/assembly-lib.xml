@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/${distPath}</directory>
+            <outputDirectory>${distPath}</outputDirectory>
+            <includes>
+                <include>*gqtl_datakeys*</include>
+            </includes>
+        </fileSet>  
+    </fileSets>
+</assembly>

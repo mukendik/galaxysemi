@@ -1,0 +1,144 @@
+ Lot Id : EJ23V002.3    Device:SIRA10BDP            Handler:
+============================================================================
+PowerTech Tester        Update Time:11/7/2018 10:30:03 AM
+ Station <A>             Counter file name:       Log data file name: 
+ FileName: <\\MWCIFAPP01\SharedFiles\SE\Internal\tcc_server\Test Program\DD1\SO8-FL\XDLF\Consolidated\SIRA10BDP\rev13\FR32B-0003.13.ptf>
+ Comment : SIRA10BDP-T1-GE3
+ Pass    :          249  90.88 %
+ Fail    :           25   9.12 %
+ Total   :          274
+
+============================================================================
+ M#  TID   ItemName                                       Fail     Percent
+----------------------------------------------------------------------------
+  1  19    KEL                                              1       0.36 %
+  2  7     IGSS                                             0       0.00 %
+  3  27    IDSS                                             0       0.00 %
+  4  79    BVDSS                                            0       0.00 %
+  5  80    VDSP                                             0       0.00 %
+  6  12    IGSS                                             0       0.00 %
+  7  13    IGSO                                             0       0.00 %
+  8  9     IGSS                                             0       0.00 %
+  9  3     IGSS                                             0       0.00 %
+ 10  31    VGSTH                                            0       0.00 %
+ 11  36    VDSP                                             0       0.00 %
+ 12  1     IGSS                                             0       0.00 %
+ 13  23    BVDSS                                            0       0.00 %
+ 14  21    IDSS                                             0       0.00 %
+ 15  41    BVDSS                                            0       0.00 %
+ 16  46    BVDSS                                            0       0.00 %
+ 17  48    D-BV#1                                           0       0.00 %
+ 18  56    RDSON                                            0       0.00 %
+ 19  59    RDSON                                            0       0.00 %
+ 20  19    KEL                                              0       0.00 %
+ 21  0     VFSD                                             0       0.00 %
+ 22  0     VTH                                              0       0.00 %
+ 23  40    BVDSS                                            0       0.00 %
+ 24  42    BVDSS                                            0       0.00 %
+ 25  47    BVDSS1                                           0       0.00 %
+ 26  45    BVDSS                                            0       0.00 %
+ 27  60    BVDSS                                           12       4.38 %
+ 28  17    D-BV#2                                           3       1.09 %
+ 29  49    D-BV#3                                           0       0.00 %
+ 30  16    D-BV#4                                           9       3.28 %
+ 31  29    IDSS                                             0       0.00 %
+ 32  71    VSPD                                             0       0.00 %
+ 33  0     DELAY                                            0       0.00 %
+ 34        TR                                               0       0.00 %
+ 36  0     CONT_RF                                          0       0.00 %
+ 37  92    RG                                               0       0.00 %
+ 38  0     CONT                                             0       0.00 %
+ 39  0     VFSE                                             0       0.00 %
+ 40  98    UIS                                              0       0.00 %
+ 41  98    EASIDT                                           0       0.00 %
+ 42  98    EASIHT                                           0       0.00 %
+ 43  98    EASILT                                           0       0.00 %
+ 44  98    COLL%                                            0       0.00 %
+ 45  98    COLLEND                                          0       0.00 %
+ 46  98    COLLMAX                                          0       0.00 %
+ 47  98    VFSE                                             0       0.00 %
+ 48        DELAY                                            0       0.00 %
+ 49  96    UIS_LOW                                          0       0.00 %
+ 50  96    EASIDT                                           0       0.00 %
+ 51  96    EASIHT                                           0       0.00 %
+ 52  96    EASILT                                           0       0.00 %
+ 53  96    COLL%                                            0       0.00 %
+ 54  96    COLLEND                                          0       0.00 %
+ 55  96    COLLMAX                                          0       0.00 %
+ 56  96    VFSE                                             0       0.00 %
+ 57  19    KEL                                              0       0.00 %
+ 58  8     IGSS                                             0       0.00 %
+ 59  26    IDSS                                             0       0.00 %
+ 60  4     IGSS                                             0       0.00 %
+ 61  22    IDSS                                             0       0.00 %
+ 62  15    IBEV                                             0       0.00 %
+ 63  1     IGSS_1Q                                          0       0.00 %
+ 64  21    IDSS_21Q                                         0       0.00 %
+ 65  31    VGSTH_31Q                                        0       0.00 %
+ 66  41    BVDSS_41Q                                        0       0.00 %
+ 67  56    RDSON_56Q                                        0       0.00 %
+ 68  59    RDSON_59Q                                        0       0.00 %
+ 69  71    VSDP_71Q                                         0       0.00 %
+ 70  4     IGSS_4Q                                          0       0.00 %
+ 71  22    IDSS_22Q                                         0       0.00 %
+
+============================================================================
+ Sbin Bin# SortComment     Pass/Fail         Counter    Percent    
+----------------------------------------------------------------------------
+ 1       1 DC3 PASS           Pass               245     89.41 %
+ 3       2 S-OPEN_1007        Fail                 0      0.00 %
+ 4       2 G-OPEN_1003        Fail                 3      1.09 %
+ 5       3 GDS-SH_1000        Fail                 0      0.00 %
+ 6      12 SPU_1009           Fail                 0      0.00 %
+ 7       3 GS_SH_1001         Fail                 1      0.36 %
+ 8       3 DS_SH_1002         Fail                 1      0.36 %
+ 9       3 IGSO_13            Fail                 0      0.00 %
+ 10      3 IGSS_12            Fail                 0      0.00 %
+ 11      3 DC2 OPEN/SHORT_0   Fail                 0      0.00 %
+ 12      4 IGSS_9             Fail                 0      0.00 %
+ 13      4 IGSS_3             Fail                 0      0.00 %
+ 14      4 IGSS_1             Fail                 0      0.00 %
+ 15      4 IGSS_4             Fail                 0      0.00 %
+ 16      4 IDSS_21            Fail                 0      0.00 %
+ 17      4 IDSS_22            Fail                 0      0.00 %
+ 18      4 IDSS_29            Fail                 0      0.00 %
+ 19      4 BVDSS_23           Fail                 0      0.00 %
+ 20      4 BVDSS_41           Fail                 0      0.00 %
+ 21      4 BVDSS_46           Fail                 0      0.00 %
+ 22      4 BVDSS_40           Fail                 0      0.00 %
+ 23      4 BVDSS_42           Fail                 0      0.00 %
+ 24      4 BVDSS_47           Fail                 0      0.00 %
+ 25      4 BVDSS_45           Fail                 0      0.00 %
+ 26      4 BVDSS_60           Fail                12      4.38 %
+ 27      4 D_BVDSS1_48        Fail                 0      0.00 %
+ 28      4 D_BVDSS2_17        Fail                 3      1.09 %
+ 29      4 D_BVDSS3_49        Fail                 0      0.00 %
+ 30      4 D_BVDSS4_16        Fail                 9      3.28 %
+ 31      5 RDSON_56           Fail                 0      0.00 %
+ 32      4 RDSON_59           Fail                 0      0.00 %
+ 33      6 TR_201             Fail                 0      0.00 %
+ 34      4 IBEV_15            Fail                 0      0.00 %
+ 35      6 VTH_31             Fail                 0      0.00 %
+ 36      5 VDSP_36            Fail                 0      0.00 %
+ 37      5 VSD_71             Fail                 0      0.00 %
+ 38     10 RG_1006            Fail                 0      0.00 %
+ 39      9 UIS_1010           Fail                 0      0.00 %
+ 40      9 UIS_Low_1019       Fail                 0      0.00 %
+ 41      9 VCOLL_1018         Fail                 0      0.00 %
+ 42      9 VDRP_1017          Fail                 0      0.00 %
+ 43      9 UIS VFSE_0         Fail                 0      0.00 %
+ 44      7 IGSS_1Q            Fail                 0      0.00 %
+ 45      7 IGSS_4Q            Fail                 0      0.00 %
+ 46      7 IDSS_21Q           Fail                 0      0.00 %
+ 47      7 IDSS_22Q           Fail                 0      0.00 %
+ 48      7 VGSTH_31Q          Fail                 0      0.00 %
+ 49      7 BVDSS_41Q          Fail                 0      0.00 %
+ 50      7 RDSON_56Q          Fail                 0      0.00 %
+ 51      7 RDSON_59Q          Fail                 0      0.00 %
+ 52      7 VSDP_71Q           Fail                 0      0.00 %
+ 53     23 UIS PASS           Pass                 0      0.00 %
+ 54     23 RG PASS            Pass                 0      0.00 %
+ 55     23 DC2 PASS           Pass                 0      0.00 %
+ 56     23 DC1 PASS           Pass                 0      0.00 %
+ 57     13 Reject             Fail                 0      0.00 %
+ 58     4  Ignore_0           Fail                 10     2.00 %

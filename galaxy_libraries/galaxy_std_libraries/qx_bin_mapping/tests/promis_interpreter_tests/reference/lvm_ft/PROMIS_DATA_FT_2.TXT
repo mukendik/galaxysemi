@@ -1,0 +1,1 @@
+package type:2P|geometry name:NSWA30DXFN8UTJ|date code:T63KAF|equipment id:3301960|product id:SIZ340DT-T1-GE3|site id:KS|package:PPR3X3BWL|lot id product 2:G49D774.7|geometry name product 2:NSGZ30DXFN8UIZ|lot id product 3:|geometry name product 3:|lot id product 4:|geometry name product 4:|

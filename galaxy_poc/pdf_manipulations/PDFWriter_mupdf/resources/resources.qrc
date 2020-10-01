@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fonts/Arial.ttf</file>
+        <file>images/ski_slope.jpg</file>
+    </qresource>
+</RCC>

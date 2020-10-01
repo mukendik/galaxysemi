@@ -1,0 +1,1430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>monitor_datapump_basedialog</class>
+ <widget class="QDialog" name="monitor_datapump_basedialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>615</width>
+    <height>549</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Schedule: Automatic Data Insertion</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gex.qrc">
+    <normaloff>:/gex/icons/gex_application_48x48.png</normaloff>:/gex/icons/gex_application_48x48.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QLabel" name="pixmapLabel">
+       <property name="minimumSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../gex.qrc">:/gex/icons/file_open.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelDataPump">
+       <property name="font">
+        <font>
+         <family>Ms Sans Serif</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Task: Automatic Data Insertion</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>153</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox_OkCancel">
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_General">
+      <attribute name="title">
+       <string>General</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="labelGeneral">
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Specify general DataPump settings:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="TextLabel2_2_3">
+           <property name="text">
+            <string>Title:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="LineEditTitle">
+           <property name="toolTip">
+            <string>Enter task title!</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="TextLabel2_2">
+           <property name="text">
+            <string>Data source:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLineEdit" name="LineEditPath">
+             <property name="toolTip">
+              <string>Import file from this path...e.g.: \\server\prod_files</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButtonBrowse">
+             <property name="toolTip">
+              <string>Pick the folder to read...</string>
+             </property>
+             <property name="text">
+              <string>Browse...</string>
+             </property>
+             <property name="autoDefault">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLineEdit" name="lineEditInputFileExtensions">
+             <property name="toolTip">
+              <string>List of files and/or extensions to import.E.g:  *.atd;*.atdf;*.csv;*.pcm;*.gdf;*.std;*.stdf;*.wat;*.zip;*.gz;*.tar;*.Z;*.txt;*.sqlite
+Wildcard OR RegularExpression allowed!</string>
+             </property>
+             <property name="text">
+              <string>*.atd;*.atdf;*.csv;*.pcm;*.gdf;*.std;*.stdf;*.wat;*.zip;*.gz;*.tar;*.Z;*.txt;*.sqlite</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkBoxReadSubFolders">
+             <property name="toolTip">
+              <string>Import data files found in sub-folders as well</string>
+             </property>
+             <property name="text">
+              <string>scan sub-folders</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_14">
+             <item>
+              <widget class="QComboBox" name="comboBoxTaskPriority">
+               <property name="toolTip">
+                <string>Priority in the Runnable Queue of the Task Schedulers</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="TextLabelFileOrder">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Specify the order of file loads into the database target...</string>
+               </property>
+               <property name="text">
+                <string>Sort files by:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="wordWrap">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBoxTaskFileOrder">
+               <property name="toolTip">
+                <string>Specify the order of file loads into the database target...</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Date/Time - oldest to newest</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Date/Time - newest to oldest</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>FileName - alphabetical order</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="6" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QComboBox" name="comboDataType">
+             <item>
+              <property name="text">
+               <string>Test Data (E-Test, Wafer Sort, Final Test)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Weekly Yield Report</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboTestingStage"/>
+           </item>
+          </layout>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="TextLabelFrequency">
+           <property name="text">
+            <string>Task frequency:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayoutFrequency_1">
+           <item>
+            <widget class="QComboBox" name="comboBoxTaskFrequency">
+             <property name="toolTip">
+              <string>How often will this task be executed (frequency)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayoutFrequency_2">
+             <item>
+              <widget class="QLabel" name="TextLabelDayOfWeek">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Day of week:</string>
+               </property>
+               <property name="wordWrap">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBoxTaskFrequencyDayOfWeek">
+               <property name="toolTip">
+                <string>Specify which Day of the week...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="8" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+           </item>
+          </layout>
+         </item>
+         <item row="9" column="1">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="checkBoxExecutionWindow">
+             <property name="toolTip">
+              <string>Check if you want the task to be triggered at a given time</string>
+             </property>
+             <property name="text">
+              <string>Specify Task start time</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="TextLabelStartWindow">
+             <property name="text">
+              <string>Do not execute before:</string>
+             </property>
+             <property name="wordWrap">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QTimeEdit" name="timeEditStart"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="TextLabelStopWindow">
+             <property name="text">
+              <string>Do not execute after:</string>
+             </property>
+             <property name="wordWrap">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QTimeEdit" name="timeEditStop"/>
+           </item>
+          </layout>
+         </item>
+         <item row="5" column="1">
+          <widget class="QComboBox" name="comboBoxDatabaseTarget">
+           <property name="toolTip">
+            <string>Select the database to work with...</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="labelDatabaseTarget">
+           <property name="text">
+            <string>Database target:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="TextLabelFileType">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>File type:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="TextLabelPriority">
+           <property name="text">
+            <string>Priority level:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="labelDataType">
+           <property name="text">
+            <string>Data Type:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="TextLabelDummy">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>17</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>44</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_Housekeeping">
+      <attribute name="title">
+       <string>Housekeeping</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="labelHousekeeping">
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Specify what to do with the files after processing by the DataPump:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="TextLabel2_2_2_2_2_2">
+           <property name="text">
+            <string>On success:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBoxTaskPostImport">
+           <property name="toolTip">
+            <string>What to do with successfully processed files...</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Rename processed file to '.read'</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Delete data files processed</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Move files to folder...</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>FTP files...</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLineEdit" name="lineEditPostInsertion">
+           <property name="toolTip">
+            <string>Target Folder</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QPushButton" name="pushButtonBrowsePostInsertion">
+           <property name="toolTip">
+            <string>Pick target folder...</string>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="text">
+            <string>Browse...</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="TextLabel2_2_2_2_2_2_2">
+           <property name="text">
+            <string>On exception:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="comboBoxTaskPostImportFailure">
+           <property name="toolTip">
+            <string>What to do with rejected files...</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Rename rejected files to '.bad'</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Move rejected files to folder...</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="lineEditPostInsertionFailure">
+           <property name="toolTip">
+            <string>Target Folder</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QPushButton" name="pushButtonBrowsePostInsertionFailure">
+           <property name="toolTip">
+            <string>Pick target folder...</string>
+           </property>
+           <property name="text">
+            <string>Browse...</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="TextLabel2_2_2_2_2_2_3">
+           <property name="text">
+            <string>On delay:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="comboBoxTaskPostImportDelay">
+           <property name="toolTip">
+            <string>What to do with delayed files...</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Leave delayed files unchanged</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rename delayed files to '.delay'</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Move delayed files to folder...</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLineEdit" name="lineEditPostInsertionDelay">
+           <property name="toolTip">
+            <string>Target Folder</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QPushButton" name="pushButtonBrowsePostInsertionDelay">
+           <property name="toolTip">
+            <string>Pick target folder...</string>
+           </property>
+           <property name="text">
+            <string>Browse...</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>204</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_Yield">
+      <attribute name="title">
+       <string>Yield</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="labelYield">
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Activate yield alarm:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxYieldMonitoring">
+         <property name="title">
+          <string>Check Yield level for each incoming data file</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="TextLabelYieldBins">
+            <property name="text">
+             <string>Bins list to monitor:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="6">
+           <widget class="QLineEdit" name="lineEditYieldBins">
+            <property name="toolTip">
+             <string>List of bins to monitor (softbin).E.g: 1-99,120-150</string>
+            </property>
+            <property name="text">
+             <string>1-10000</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="TextLabelYieldLevel">
+            <property name="text">
+             <string>Yield alarm level:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="comboBoxYieldLevel">
+            <property name="toolTip">
+             <string>Yield under this level will trigger an email alarm notification</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>100 %</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>99 %</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>98 %</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>97 %</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>96 %</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>95 %</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>94 %</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="2" colspan="2">
+           <widget class="QLabel" name="TextLabelYieldMinimumParts">
+            <property name="text">
+             <string>Minimum parts required:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="TextLabelEmailFrom">
+            <property name="text">
+             <string>Email notification from:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="6">
+           <widget class="QLineEdit" name="lineEditEmailFrom">
+            <property name="toolTip">
+             <string>Enter 'From' email address</string>
+            </property>
+            <property name="text">
+             <string>no-reply@mentor.com</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="TextLabelEmailList">
+            <property name="text">
+             <string>Email notification to:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" colspan="4">
+           <widget class="QLineEdit" name="lineEditEmailList">
+            <property name="toolTip">
+             <string>Enter email addresses to notify (comma separated), or path to a mailing list file.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="5">
+           <widget class="QComboBox" name="comboBoxMailFormat">
+            <property name="toolTip">
+             <string>Email format: HTML or Plain TEXT</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>Html</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Text</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="6">
+           <widget class="QPushButton" name="pushButtonMailingList">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>30</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Pick a mailing list file</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../gex.qrc">
+              <normaloff>:/gex/icons/email.png</normaloff>:/gex/icons/email.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4" colspan="3">
+           <widget class="QLineEdit" name="lineEditYieldMinimumParts">
+            <property name="toolTip">
+             <string>Do not check the yield for test data files with few parts tested...</string>
+            </property>
+            <property name="text">
+             <string>100</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>228</width>
+           <height>63</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_Other">
+      <attribute name="title">
+       <string>Other</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="labelOther">
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Other datapump options:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QGroupBox" name="groupBoxRejectSmallSplitlots">
+           <property name="title">
+            <string>Reject files with few parts</string>
+           </property>
+           <layout class="QFormLayout" name="formLayout">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="spinBoxRejectSmallSplitlots_NbParts">
+              <property name="minimumSize">
+               <size>
+                <width>70</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Files with less parts will be rejected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="minimum">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <number>9999</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="comboBoxRejectSmallSplitlots_GdpwPercent">
+              <property name="toolTip">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Files with less parts than the specified percentage of the GDPW (Gross Die Per Wafer) will be rejected.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="currentIndex">
+               <number>17</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>5%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>15%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>20%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>25%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>30%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>35%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>40%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>45%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>50%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>55%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>60%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>65%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>70%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>75%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>80%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>85%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>90%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>95%</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>100%</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="checkBoxRejectSmallSplitlots_NbParts">
+              <property name="text">
+               <string>Minimum parts (nb. of parts):</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="checkBoxRejectSmallSplitlots_GdpwPercent">
+              <property name="text">
+               <string>Minimum parts (% of GDPW, Wafer Sort only):</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLabel" name="labelTestResultInsertion">
+           <property name="text">
+            <string>Don't insert raw test results for files with too many parts (RDB only):</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>8</width>
+             <height>17</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBoxMaxPartForTestResultInsertion">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;For files with more parts, raw test results will not be inserted, only test statistics. -1 disables this option.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="minimum">
+            <number>-1</number>
+           </property>
+           <property name="maximum">
+            <number>999999</number>
+           </property>
+           <property name="value">
+            <number>-1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QCheckBox" name="checkBoxRejectFilesOnPassBinlist">
+           <property name="text">
+            <string>Reject files with PASS hard bins not in list:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditPassBinlistForRejectTest">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>List of PASS bins (hard bin).E.g: 1-99,120-150</string>
+           </property>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxExecuteBatch">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="title">
+          <string>Execute batch on insertion:</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLineEdit" name="lineEditInsertionBatch">
+            <property name="toolTip">
+             <string>Batch file to launch after each file insertion</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;The batch file will be called with following arguments:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Date/Time&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;FileName&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Insertion Status (0=PassedInsertion, 1=FailedInsertion, 2=FailedValidationStep, 3=DelayInsertion)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;ProductID&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;LotID&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;SublotID&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;WaferID&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;TesterName&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Operator&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;NbParts&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;NbPartsGood&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonSelectInsertionBatch">
+            <property name="minimumSize">
+             <size>
+              <width>26</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>26</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Select batch file...</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../gex.qrc">
+              <normaloff>:/gex/icons/file_open.png</normaloff>:/gex/icons/file_open.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>153</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="PreinsertionScript">
+      <attribute name="title">
+       <string>Pre script</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QGroupBox" name="groupBoxPreInsertionScript">
+         <property name="title">
+          <string>Execute this script before each incoming data file process</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QPlainTextEdit" name="mPreInsertionScript">
+            <property name="minimumSize">
+             <size>
+              <width>431</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="plainText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="PostinsertionScript">
+      <attribute name="title">
+       <string>Post script</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QGroupBox" name="groupBoxPostInsertionScript">
+         <property name="title">
+          <string>Execute this Script after each incoming data file process</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QPlainTextEdit" name="mPostInsertionScript">
+            <property name="plainText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>LineEditTitle</tabstop>
+  <tabstop>LineEditPath</tabstop>
+  <tabstop>pushButtonBrowse</tabstop>
+  <tabstop>lineEditInputFileExtensions</tabstop>
+  <tabstop>checkBoxReadSubFolders</tabstop>
+  <tabstop>comboBoxTaskPriority</tabstop>
+  <tabstop>comboBoxTaskFileOrder</tabstop>
+  <tabstop>comboBoxDatabaseTarget</tabstop>
+  <tabstop>comboDataType</tabstop>
+  <tabstop>comboTestingStage</tabstop>
+  <tabstop>comboBoxTaskFrequency</tabstop>
+  <tabstop>comboBoxTaskFrequencyDayOfWeek</tabstop>
+  <tabstop>checkBoxExecutionWindow</tabstop>
+  <tabstop>timeEditStart</tabstop>
+  <tabstop>timeEditStop</tabstop>
+  <tabstop>buttonBox_OkCancel</tabstop>
+  <tabstop>comboBoxTaskPostImport</tabstop>
+  <tabstop>lineEditPostInsertion</tabstop>
+  <tabstop>pushButtonBrowsePostInsertion</tabstop>
+  <tabstop>comboBoxTaskPostImportFailure</tabstop>
+  <tabstop>lineEditPostInsertionFailure</tabstop>
+  <tabstop>pushButtonBrowsePostInsertionFailure</tabstop>
+  <tabstop>comboBoxTaskPostImportDelay</tabstop>
+  <tabstop>lineEditPostInsertionDelay</tabstop>
+  <tabstop>pushButtonBrowsePostInsertionDelay</tabstop>
+  <tabstop>groupBoxYieldMonitoring</tabstop>
+  <tabstop>lineEditYieldBins</tabstop>
+  <tabstop>comboBoxYieldLevel</tabstop>
+  <tabstop>lineEditYieldMinimumParts</tabstop>
+  <tabstop>lineEditEmailFrom</tabstop>
+  <tabstop>lineEditEmailList</tabstop>
+  <tabstop>comboBoxMailFormat</tabstop>
+  <tabstop>pushButtonMailingList</tabstop>
+  <tabstop>checkBoxRejectSmallSplitlots_NbParts</tabstop>
+  <tabstop>spinBoxRejectSmallSplitlots_NbParts</tabstop>
+  <tabstop>checkBoxRejectSmallSplitlots_GdpwPercent</tabstop>
+  <tabstop>comboBoxRejectSmallSplitlots_GdpwPercent</tabstop>
+  <tabstop>spinBoxMaxPartForTestResultInsertion</tabstop>
+  <tabstop>checkBoxRejectFilesOnPassBinlist</tabstop>
+  <tabstop>lineEditPassBinlistForRejectTest</tabstop>
+  <tabstop>groupBoxExecuteBatch</tabstop>
+  <tabstop>lineEditInsertionBatch</tabstop>
+  <tabstop>buttonSelectInsertionBatch</tabstop>
+  <tabstop>groupBoxPreInsertionScript</tabstop>
+  <tabstop>mPreInsertionScript</tabstop>
+  <tabstop>groupBoxPostInsertionScript</tabstop>
+  <tabstop>mPostInsertionScript</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../gex.qrc"/>
+ </resources>
+ <connections/>
+</ui>

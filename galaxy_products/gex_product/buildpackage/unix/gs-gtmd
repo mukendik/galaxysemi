@@ -1,0 +1,144 @@
+#!/bin/bash
+# ---------------------------------------------------------------------------- #
+# gs-gtmd
+# ---------------------------------------------------------------------------- #
+# chkconfig: 2345 85 15
+# description: Quantix Tester Monitor
+# processname: gs-gtmd / GS-GTM
+#
+################################################################################
+#
+### Go through following steps for install the daemon on Linux:
+### You need to be root to perform this action
+#
+#     o prompt> cd <install_dir>
+#     o prompt> cp gs-gtmd /etc/init.d/
+#
+#     REDHAT / CENTOS / FEDORA :
+#     o prompt> /sbin/chkconfig gs-gtmd on
+#
+#     DEBIAN / UBUNTU :
+#     o prompt> update-rc.d gs-gtmd defaults 25 15
+#
+################################################################################
+#
+### Go through following steps for uninstall the daemon on Linux:
+### You need to be root to perform this action
+#
+#     REDHAT / CENTOS / FEDORA :
+#     o prompt> /sbin/chkconfig --del gs-gtmd
+#
+#     DEBIAN / UBUNTU :
+#     o prompt> update-rc.d -f gs-gtmd remove
+#
+################################################################################
+#
+### Go through following steps to start the daemon on Linux:
+### You need to be root to perform this action
+#
+#     REDHAT / CENTOS / FEDORA / DEBIAN / UBUNTU :
+#     o prompt> service gs-gtmd start
+#
+################################################################################
+#
+### Go through following steps to stop the daemon on Linux:
+### You need to be root to perform this action
+#
+#     REDHAT / CENTOS / FEDORA / DEBIAN / UBUNTU :
+#     o prompt> service gs-gtmd stop
+#
+################################################################################
+#
+### BEGIN INIT INFO
+# Provides:          gs-gtmd
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Quantix Tester Monitor
+# Description:       Quantix Tester Monitor
+### END INIT INFO
+
+## Edit these variables to ensure proper settings for this env
+export LANG=C
+export GEX_PATH=@@INSTALL_PATH@@
+export HOME=/root
+export GTM_SERVER_PROFILE=$HOME
+
+procname=./gs-gtmd
+
+
+# ---------------------------------------------------------------------------- #
+# Check if process is running
+# ---------------------------------------------------------------------------- #
+checkproc()
+{
+    pid=`pgrep -f "$procname -platform minimal"`
+    return $?
+}
+
+
+# ---------------------------------------------------------------------------- #
+# killproc
+# ---------------------------------------------------------------------------- #
+killproc()
+{
+    checkproc
+    if [ -n "$pid" ]; then
+        kill $pid >/dev/null 2>&1
+        ret=$?
+        sleep 1
+        return $ret
+    else
+	return 1
+    fi
+}
+
+
+# ---------------------------------------------------------------------------- #
+# main
+# ---------------------------------------------------------------------------- #
+common=`dirname $0`/bin/common.sh
+if [ -f $common ]; then
+    source $common
+else
+    source $GEX_PATH/bin/common.sh
+fi
+
+sanitycheck $procname
+
+setenvironment $procname
+
+case "$1" in
+    start)
+        if checkproc; then
+            echo "[QX-INFO] Quantix Tester Monitor daemon is already running"
+            exit 1
+        fi
+        echo "[QX-INFO] Starting Quantix Tester Monitor daemon"
+        cd $GEX_PATH/bin
+        eval $procname -platform minimal
+        ;;
+    stop)
+        if ! checkproc; then
+            echo "[QX-INFO] Quantix Tester Monitor daemon is not running"
+            exit 1
+        fi
+        echo "[QX-INFO] Stopping Quantix Tester Monitor daemon"
+        cd $GEX_PATH/bin
+        eval $procname -t
+        #killproc
+        ;;
+    status)
+        if checkproc; then
+            echo "[QX-INFO] Quantix Tester Monitor daemon is running"
+        else
+            echo "[QX-INFO] Quantix Tester Monitor daemon is not running"
+        fi
+        ;;
+    *)
+        echo "[QX-INFO] Usage: $0 {start|stop|status}"
+        ;;
+esac
+
+exit 0

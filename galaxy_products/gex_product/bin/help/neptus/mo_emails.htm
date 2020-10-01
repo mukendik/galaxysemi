@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Data Pump</title>
+</head>
+<body>
+<table border="0" width="656" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="656">
+      <h1><b><br>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../../html/images/assistant.png" width="120" height="114" ></a>Email
+      service<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+	  <p align="left">Yield-Man is designed to very easily integrate
+      into your environment. As such, the mailing mechanism relies on robust
+      technologies very simple to interact with. As a result, IT people will
+      always find a simple way to have Monitoring emails smoothly travel through
+      any custom mailing setup and firewall protections. Full details and
+      ready-to-use applications can be found in Quantix's web site customer
+      section:<br>
+      <a href="http://support.galaxysemi.com">support.galaxysemi.com</a>&nbsp; 
+      (password required, ask Quantix if you don't remember it).</p>
+	  <p align="left">To achieve this, Yield-Man doesn't send emails but rather
+      creates email events files! Such files are in ASCII and can then be
+      processed by any third-party application or shell to &quot;push&quot; them into the
+      company mailing system. The email events files are created in a dedicated
+      folder under the Status Web root path defined in the Web Status task.<br>
+      <br>
+	  Yield-Man creates at least two files per email event in the folder:<br>
+&nbsp;<b>&lt;StatusWebRootPath&gt;/examinator_monitoring/.emails</b>.<br>
+      <br>
+      These files are:</p>
+      <ol>
+        <li>
+      <p align="left"><b>&lt;file_name&gt;.email</b> : ASCII file that includes email
+      fields 'From', 'To', 'Subject', etc.</p>
+        </li>
+        <li>
+      <p align="left"><b>&lt;file_name&gt;.body</b> : ASCII file that includes the email body
+      to send</p>
+        </li>
+      </ol>
+      <p align="left">Other files may be created in the case email notification
+      event is supposed to also attach documents or report files.</p>
+      <p align="left">To have the email files sent as emails, you must install a
+      small application or shell that polls the &lt;StatusWebRootPath&gt;/examinator_monitoring/.emails
+      folder and looks for any .email file to process. Quantix has <b>ready-to-use
+      mailing scripts and applications</b> available on request. Simply contact us
+      to receive it!</p>
+      <p align="left">Note: If you create your own shell or application to
+      process the email event files, make sure that files are erased after being
+      processed, including the .email , .body and attachment files!</p>
+      <p align="left">&nbsp;</p>
+      <p align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">&nbsp;
+      You have other questions? <a href="#_gex_wizard_assistant.htm">Click here!</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

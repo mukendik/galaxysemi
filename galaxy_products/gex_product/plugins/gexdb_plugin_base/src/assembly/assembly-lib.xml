@@ -1,0 +1,17 @@
+<assembly>
+    <id>assembly-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/galaxy_products/gex_product/plugins/lib/${distName}</directory>
+            <outputDirectory>galaxy_products/gex_product/plugins/lib/${distName}</outputDirectory>
+            <includes>
+                <include>*gexdb_plugin_base*</include>
+            </includes>
+        </fileSet>  
+    </fileSets>
+</assembly>

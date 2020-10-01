@@ -1,0 +1,157 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>strParseRecord<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9"> <a href="sys1.htm">System
+      library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9"> <a href="str1.htm">String
+      library</a> <a href="sys1.htm" href="sys1.htm"><br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>strParseRecord(
+  const rec,                  // record to parse
+  const mode,                 // file mode (1)
+  const &amp;fmts[],              // field formats (2)
+  var &amp;vals[],                // fiels values returned
+ [const nullind]);            // null indicators in vals (default=false)
+</pre>
+      <p>Parses an ASCII record. Typically used by database import scripts
+      reading files generates by external<br>
+      applications. These file modes
+      are supported:</p>
+      <p>&nbsp;
+      <table cellSpacing="0" cellPadding="3" border="0">
+        <tbody>
+          <tr vAlign="top" bgColor="#0044aa">
+            <td><font color="#ffffff"><b>Mode</b></font></td>
+            <td bgColor="#0034aa"><font color="#ffffff"><b>Description</b></font></td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>A,a</td>
+            <td bgColor="#b0d0ff">ASCII fix</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>C,c</td>
+            <td bgColor="#d0e0ff">Comma separated</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>S, s</td>
+            <td bgColor="#b0d0ff">Semicolon separated</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>T,t</td>
+            <td bgColor="#d0e0ff">Tab separated, text in quotes</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>U,u</td>
+            <td bgColor="#b0d0ff">Tab separated, text unquoted</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The field formats are records of 2 ... n words. The 1st word is a field
+      type from this list:</p>
+      <p>&nbsp;
+      <table cellSpacing="0" cellPadding="3" border="0">
+        <tbody>
+          <tr vAlign="top" bgColor="#0044aa">
+            <td><font color="#ffffff"><b>Format</b></font></td>
+            <td bgColor="#0034aa"><font color="#ffffff"><b>Description</b></font></td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>T,t</td>
+            <td bgColor="#b0d0ff">text</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>F,f</td>
+            <td bgColor="#d0e0ff">fixtext (ignored)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>n</td>
+            <td bgColor="#b0d0ff">number with decimal point (leading sign)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>N</td>
+            <td bgColor="#d0e0ff">number with decimal point (trailing sign)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#c0e0ff">
+            <td>x</td>
+            <td bgColor="#b0d0ff">number with fixed fraction digits (no decimal
+              point, leading sign)</td>
+          </tr>
+          <tr vAlign="top" bgColor="#e0f0ff">
+            <td>X</td>
+            <td bgColor="#d0e0ff">number with fixed fraction digits (no decimal
+              point, trailing sign)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The next words are used as:</p>
+      <ul>
+        <li>2nd word = (maximum) width in chars<br>
+          <br>
+        <li>3rd word (numbers only) = # of fractional digits</li>
+      </ul>
+      <p>The data extracted from the record are stored in <i>vals</i>. If <i>nullind</i>
+      is true, the data is arranged in 2 columns (for example data[totFields][2]),
+      where the first (index 0) holds the value and the second (index 1) is the
+      NULL value indicator (true/1 = value is null, false/0 = value is not
+      null).</p>
+      <p>Example:</p>
+      <pre>  ...
+  const dataLayout = {
+    't 20',        // article #
+    't 30',        // name
+    'n  6',        // actual stock
+    'f  3',        // currency, ignore
+    'n  8 2'       // price
+  };
+  ...
+  var fvals[4];
+  strParseRecord(
+    &quot;'1122.344.102.00';'Leather football champion';112;'USD';12.95&quot;,
+    's', dataLayout, fvals)
+  );
+  // The result will be:
+  //   fvals[0] = '1122.344.102.00';
+  //   fvals[1] = 'Leather football champion';
+  //   fvals[2] = 112;
+  //   fvals[3] = 12.95;
+  ...</pre>
+      <pre>
+</pre>
+      <pre>
+</pre>
+      <pre>
+</pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

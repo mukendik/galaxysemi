@@ -1,0 +1,15 @@
+<assembly>
+    <id>assembly-lib</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/ChartDirector/lib</directory>
+            <outputDirectory>other_libraries/chartdirector/lib/${distName}</outputDirectory>
+            <excludes/>
+        </fileSet>          
+    </fileSets>
+</assembly>

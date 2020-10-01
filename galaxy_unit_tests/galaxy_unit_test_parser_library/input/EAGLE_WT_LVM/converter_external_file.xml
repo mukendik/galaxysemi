@@ -1,0 +1,8 @@
+<external_files>
+  <promis format="vishay-lvm" type="wafer">./input/EAGLE_WT_LVM/PROMIS_DATA.TXT</promis> 
+  <binmap format="vishay-lvm" type="wafer" category="final_tests">
+	<bin_filepath>./input/EAGLE_WT_LVM/Vishay_Test_Binning_Mapping.csv</bin_filepath>
+    <default_bin_name> test name</default_bin_name>
+    <default_bin_number>9999</default_bin_number>
+  </binmap>
+</external_files>

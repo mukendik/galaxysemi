@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gex_options version="0.1">
+        <option cslname="messages" desc="customers messages that could appear" hideif="Debug==false" icon="" label="Messages : customers messages that could appear" tooltip="customers messages that could appear" type="Group" write_csl="false">
+                <option cslname="upgrade" defaultvalue="'This function is not supported by this version of the product.\nIf you would like to upgrade your license, please contact quantix_sales@mentor.com for more information.'" desc="Upgrade software" hideif="Debug==false" label="Upgrade" tooltip="Upgrade software" type="String" write_csl="false" />
+        </option>
+
+        <!-- Quantix Tester Monitor (GTM) options -->
+        <option cslname="gtm" desc="" hideif="(GexProduct!='PRODUCT_GTM')" icon=":/gex/icons/asl3000RF-01.png" label="Tester server options" tooltip="Testers server options (used by GTM)" type="Group">
+                <!-- Max GTL connections -->
+                <option cslname="max_gtl_connections" defaultvalue="10" desc="Maximum number of GTL connections this GTM node accepts to serve" label="Maximum GTL connections" maximum="100" minimum="1" singleStep="1" tooltip="Maximum number of GTL connections this GTM node accepts to serve" type="Int" write_csl="(GexProduct=='PRODUCT_GTM')" />
+        </option>
+
+        <!-- FT Simulator options -->
+        <option cslname="ft_simulator" desc="" hideif="(GexProduct!='PRODUCT_GEXPAT')" icon=":/gex/icons/report-chip-48.png" label="FT Simulator options" tooltip="FT Simulator options (used by Examinator-PAT)" type="Group">
+                <!-- Default socket -->
+                <option cslname="server_port" defaultvalue="5050" desc="Default communication port used by GTL and FT Simulator" label="Default communication port" maximum="65535" minimum="1024" singleStep="1" tooltip="Default communication port used by GTL and FT Simulator" type="Int" write_csl="(GexProduct=='PRODUCT_GEXPAT')" />
+        </option>
+
+        <!-- Database options -->
+        <option cslname="databases" desc="" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_gexapplication.png" label="Databases options : choose here all database related options (local folder, extraction params,...)" type="Group">
+
+                <!-- Server databases path -->
+                <!-- Comment : no reset -->
+                <option cslname="server_path" defaultvalue="" desc="Path on local HDD where to store server file-based databases configuration and cache" label="Server DataBases path" tooltip="Path on local HDD where to store server file-based databases configuration and cache" type="Path" write_csl="true" />
+
+                <!-- Local databases path -->
+                <!-- Comment : no reset -->
+                <option cslname="local_path" defaultvalue="" desc="Path on local HDD where to store local file-based databases configuration and cache" label="Local DataBases path" tooltip="Path on local HDD where to store local file-based databases configuration and cache" type="Path" write_csl="true"/>
+
+                <!-- YieldMan databases path -->
+                <!-- Comment : no reset -->
+                <option cslname="yieldman_path" defaultvalue="" desc="Path on local HDD where to store Yield-Man databases configuration and cache" hideif="true" label="Yield-Man DataBases path" tooltip="Path on local HDD where to store Yield-Man databases configuration and cache" type="Path" write_csl="false" />
+
+                <!-- Database Popup -->
+                <!-- Comment : no reset -->
+                <option codingvalues="always|onerror|never" cslname="database_popup" defaultvalue="'onerror'" displayvalues="Always|On Error|Never" enumicons="" label="Database Pop-up Windows at startup" type="Enum" write_csl="true" />
+
+                <!-- Database TimeOut -->
+                <!-- Comment : no reset -->
+                <option cslname="database_timeout" defaultvalue="0" desc="Maximum seconds for database connection before the timeout...(disable:0, default: 0)" hideif="true" label="Database connection timeout" maximum="100" minimum="0" singleStep="5" tooltip="Maximum seconds for database connection before the timeout...(disable:0, default: 0)" type="Int" write_csl="true" />
+
+                <!-- RDB: default parameters to extract -->
+                <option codingvalues="none|all" cslname="rdb_default_parameters" defaultvalue="'none'" displayvalues="Extract no parameter|Extract all parameters" enumicons="" label="RDB : default parameters to extract" type="Enum" write_csl="true" />
+        </option>
+
+      <!-- Manufacturing status options -->
+        <option cslname="monitoring" desc="" hideif="(GexProduct!='PRODUCT_YIELDMAN') &amp;&amp; (GexProduct!='PRODUCT_PATSERVER')" icon=":/gex/icons/options_output.png" label="Monitoring options" tooltip="Monitoring options (Yield-Man or PAT-Man only) : manufacturing status web pages,..." type="Group">
+                <!-- PRODUCTS -->
+                <option codingvalues="total_parts|total_good|total_fail|yield|alarm_limit|yield_chart" cslname="product_page" defaultvalue="'yield|alarm_limit|yield_chart'" displayvalues="Total parts tested|Total good parts|Total failing parts|Yield level|Alarm level|Yield chart" label="PRODUCTS pages fields" type="Flag" write_csl="(GexProduct=='PRODUCT_YIELDMAN') || (GexProduct=='PRODUCT_PATSERVER')" />
+                <!-- TESTERS -->
+                <option codingvalues="product|operator|program_name|total_parts|total_good|total_fail|yield|alarm_limit|yield_chart" cslname="tester_page" defaultvalue="'product|program_name|yield|total_parts|total_good|total_fail|yield_chart'" displayvalues="Product tested|Operator name|Program name|Total parts tested|Total good parts|Total failing parts|Yield level|Alarm level|Yield chart" label="TESTERS pages fields" type="Flag" write_csl="(GexProduct=='PRODUCT_YIELDMAN') || (GexProduct=='PRODUCT_PATSERVER')" />
+                <!-- History size -->
+                <option codingvalues="none|1week|2week|3week|1month|2month|3month|4month|5month|6month|1year|all" cslname="history" defaultvalue="'1week'" displayvalues="No history(only keep pages of the day)|Keep 1 week of history pages|Keep 2 weeks of history pages|Keep 3 weeks of history pages|Keep 1 month of history pages|Keep 2 months of history pages|Keep 3 months of history pages|Keep 4 months of history pages|Keep 5 months of history pages|Keep 6 months of history pages|Keep 1 year of history pages|Keep ALL history pages (never purge)" label="History size" type="Enum" write_csl="(GexProduct=='PRODUCT_YIELDMAN') || (GexProduct=='PRODUCT_PATSERVER')" />
+
+                <!-- Home page(hidden) -->
+                <option codingvalues="show_testers|show_products" cslname="home_page" defaultvalue="'show_testers|show_products'" displayvalues="Show total testers under test|Show total products under test" hideif="true" label="HOME page fields" type="Flag" write_csl="(GexProduct=='PRODUCT_YIELDMAN') || (GexProduct=='PRODUCT_PATSERVER')" />
+        </option>
+
+        <!-- Report output options -->
+        <option cslname="output" desc="" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_output.png" label="Report output options : paper format, paper size, fonts, test names, page break, output folder mode..." type="Group">
+
+                <!-- About fonts in PDF -->
+                <option cslname="embed_fonts_in_pdf" defaultvalue="true" desc="Specify if the fonts will be embeded in the PDF file. The file size will be higher if the fonts are embeded but it can fix some problems on some OS (Mac,...)." label="Embed fonts in PDF file" tooltip="Specify if the fonts will be embeded in the PDF file. The file size will be higher if the fonts are embeded but it can fix some problems on some OS (Mac,...)." type="Bool" write_csl="true" />
+                <!-- PDF printer -->
+                <option codingvalues="HTMLDOC|QTPRINTER" cslname="pdf_printer" defaultvalue="'HTMLDOC'" desc="Specify here the printer to use in order to print PDF reports. HtmlDoc is HTML4 only but daemon compatible, so to be used if YM or PM run as daemon. Qt printer is HTML5/CSS compatible but not daemon compatible: to be used for some characterization reports if high number of conditions and some tables cut." displayvalues="HtmlDoc|Qt printer" hideif="false" label="PDF printer" tooltip="Specify here the printer to use in order to print PDF reports. HtmlDoc is HTML4 only but daemon compatible, so to be used if YM or PM run as daemon. Qt printer is HTML5/CSS compatible but not daemon compatible: to be used for some characterization reports if high number of conditions and some tables cut." type="Enum" write_csl="true" />
+                <!-- Output format -->
+                <option codingvalues="HTML|DOC|CSV|PPT|PDF|INTERACTIVE|ODT" cslname="format" defaultvalue="'HTML'" desc="specify here the default output format for the generated reports." displayvalues="Web (HTML pages)|Document DOC (Word, OpenOfficeWriter,...)|Spreadsheet CSV (Excel,OpenOfficeCalc,...)|Presentation PPT (PowerPoint,OpenOfficeImpress,...)|Document PDF (AdobeAcrobat,...)|Interactive only (no document created)|OpenFormat text document (OpenOffice,MS Word,...)" label="Output format" tooltip="specify here the default output format for the generated reports." type="Enum" write_csl="true" />
+                <!-- Home page text -->
+                <!-- Comment : no reset -->
+                <option cslname="front_page_text" defaultvalue="" desc="Custom text (HTML) to be displayed on the reports home page" label="Home Page custom text (in HTML)" tooltip="Custom text (HTML) to be displayed on the reports home page" type="HTML" write_csl="true" />
+                <!-- Home page image -->
+                <!-- Comment : no reset -->
+                <option cslname="front_page_image" defaultvalue="" desc="Custom logo to be displayed on the reports home page" filter="Image Files (*.png *.jpg *.bmp)" label="Home Page custom logo" tooltip="Custom logo to be displayed on the reports home page" type="Path" write_csl="true" />
+                <!-- Paper size -->
+                <!-- Canada (38), Mexico (139), US (255) => Letter -->
+                <!-- Other countries                     => A4     -->
+                <option codingvalues="letter|A4" cslname="paper_size" defaultvalue="(LocaleCountry==38 || LocaleCountry==139 || LocaleCountry==255) ? 'letter' : 'A4'" desc="Letter or A4" displayvalues="US Letter (8.5x11 inches)|A4 (21x29.7 cm)" label="Paper size" tooltip="Letter or A4" type="Enum" write_csl="true" />
+                <!-- Paper orientation -->
+                <option codingvalues="landscape|portrait" cslname="paper_format" defaultvalue="'landscape'" desc="Paper orientation (for DOC and PDF reports only)" displayvalues="Landscape|Portrait" label="Paper orientation" tooltip="Paper orientation (for DOC and PDF reports only)" type="Enum" write_csl="true" />
+                <!-- Truncate test names -->
+                <option cslname="truncate_names" defaultvalue="-1" desc="Maximum number of characters allowed in a test name...(disable:-1, default: -1)" label="Truncate labels" maximum="100" minimum="-1" singleStep="1" tooltip="Maximum number of characters allowed in a test name...(disable:-1, default: -1)" type="Int" write_csl="true" />
+                <!-- Output location -->
+                <option codingvalues="same|default|specified" cslname="location" defaultvalue="'same'" desc="Select report output location mode." displayvalues="Same as the first Data file selected|Default location|Specified location..." hideif="GexProduct=='PRODUCT_YIELDMAN'||GexProduct=='PRODUCT_PATSERVER'" label="Output location mode" tooltip="Select report output location mode." type="Enum" write_csl="true" />
+                <!-- Output location path (usedf if location='specified') -->
+                <!-- Comment : no reset -->
+                <option cslname="location_path" desc="Base directory to be used to generate reports." disableif="GexOptionsCenter.GetOption('output','location')=='default'||GexOptionsCenter.GetOption('output','location')=='same'" hideif="(GexProduct=='PRODUCT_YIELDMAN') || (GexProduct=='PRODUCT_PATSERVER')" label="Specified output location" tooltip="Base directory to be used to generate reports." type="Path" write_csl="true" />
+                <!-- Report generation mode -->
+                <option codingvalues="legacy|normalized" cslname="generation_mode" defaultvalue="'normalized'" desc="Normalized mode allows dynamic customization of report names and folders" displayvalues="Legacy|Normalized" label="Report generation mode" tooltip="Normalized mode allows dynamic customization of report names and folders" type="Enum" write_csl="true" />
+                <!-- For normalized mode -->
+                <!-- Dynamic sub-folders -->
+                <option cslname="sub_folders" defaultvalue="" desc="Enables to specify a dynamic sub-folder for reports using a JavaScript expression" label="Sub folders expression (JavaScript)" tooltip="Enables to specify a dynamic sub-folder for reports using a JavaScript expression" type="String" write_csl="true" />
+                <!-- Dynamic file names -->
+                <option cslname="file_name" defaultvalue="" desc="Enables to specify a dynamic file name for reports using a JavaScript expression" label="Report file name expression (JavaScript)" tooltip="Enables to specify a dynamic file name for reports using a JavaScript expression" type="String" write_csl="true" />
+                <!-- Generate Html page breaks -->
+                <option cslname="html_page_breaks" defaultvalue="true" desc="Include page breaks in Html pages" hideif="true" label="Include page breaks in Html pages" tooltip="Include page breaks in Html pages" type="Bool" write_csl="false" />
+                <!-- Turn on sientific notaion -->
+                <option cslname="output" label="Displaying of measurements" type="Group">
+                        <option codingvalues="turn_on|turn_off" cslname="scientific_notation" defaultvalue="'turn_off'" displayvalues="Yes|No" label="Turn on scientific notation?" type="Enum" />
+                        <option cslname="precision" defaultvalue="-1" label="Number of significant figures" maximum="10000" minimum="-1" singleStep="1" tooltip="Number of significant figures : -1 set to the maximum number of digits" type="Int" />
+                </option>
+
+        </option>
+
+        <option cslname="speed" desc="Speed optimization" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_stopwatch.png" label="Speed optimization : optimize analysis Speed vs. Datasets size" tooltip="Speed optimization" type="Group">
+                <option codingvalues="always|50mb|100mb|200mb|300mb|400mb|500mb|never" cslname="adv_stats" defaultvalue="'always'" displayvalues="Always compute Skew, Kurtosis, Quartiles, Median and distribution Shape|Only if processing 50Mb of data or less|Only if processing 100Mb of data or less|Only if processing 200Mb of data or less|Only if processing 300Mb of data or less|Only if processing 400Mb of data or less|Only if processing 500Mb of data or less|Never compute advanced statistics" label="Computing advanced statistics, distribution shape (heavy data crunching)" type="Enum" />
+        </option>
+
+        <option cslname="dataprocessing" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_tasks.png" label="Data Processing options : Test number handling, Sorting, Fail count, Data Cleaning,..." type="Group">
+                <option codingvalues="merge|merge_name|no_merge" cslname="duplicate_test" defaultvalue="'no_merge'" displayvalues="Ignore test name: always merge tests with identical test number|Ignore test#: always merge tests with identical name|Never merge tests with identical test number if test name not matching" label="Handling duplicated test numbers and name" type="Enum" />
+                <option codingvalues="hide|show" cslname="part_id" defaultvalue="'show'" displayvalues="Hide PartID|Show PartID in report &amp; charts" label="PartID display" type="Enum" />
+                <option codingvalues="xy|part_id|auto" cslname="part_identification" defaultvalue="'auto'" displayvalues="Using X,Y coordinates|Using Part ID|Auto-detect" label="Part identification" type="Enum" />
+                <option codingvalues="spec_limits_if_any|standard_limits_only|spec_limits_only" cslname="used_limits" defaultvalue="'standard_limits_only'" displayvalues="Use spec limits if any|Use standard limits only|Use spec limits only" label="Used limits" type="Enum" />
+                <option codingvalues="none|smart|to_limits|normalized" cslname="scaling" defaultvalue="(GSProductInfo.isExaminatorTer() || GSProductInfo.isExaminatorTerProPlus()) ? 'none' : 'smart'" displayvalues="No smart scaling on data computation (leave results in default units)|Re-scale to most appropriate units (eg: mV, uV, etc.)|Re-scale all units to limits units|Normalize all units (eg: V, A, etc.)" label="Normalize / Scale" type="Enum" />
+                <option codingvalues="none|date" cslname="sorting" defaultvalue="'none'" displayvalues="None: process data files using import order|By date: sort data by testing date" label="Sorting mode" type="Enum" />
+
+                <option codingvalues="none|xy|partid" cslname="sublot_sorting" defaultvalue="'none'" displayvalues="None: process data files using import order|By XY : sort data by XY coordinates|By PartID: sort data by PartID" hideif="Debug==false" label="Sublot sorting mode" type="Enum" />
+
+                <option cslname="clean_samples" defaultvalue="false" desc="Remove all filtered samples" hideif="Debug==false" label="Clean samples results" tooltip="Remove all filtered samples" type="Bool" />
+
+                <option codingvalues="first|all" cslname="fail_count" defaultvalue="'all'" displayvalues="Stop on first fail|Continue on fail" label="Failure count mode" type="Enum" />
+                <option codingvalues="limits_only|passfail_flag" cslname="param_passfail_rule" defaultvalue="'passfail_flag'" displayvalues="Use limits only (ignore pass/fail flag)|Use pass/fail flag if valid (otherwise use limits)" label="Parameter pass/fail rule" type="Enum" />
+
+                <option cslname="dataprocessing" label="MPR or looped PTR tests" type="Group">
+                        <option codingvalues="merge|no_merge" cslname="multi_parametric_merge_mode" defaultvalue="'merge'" displayvalues="Merge: merge ALL pins/results under same test name|Do NOT merge: show each pin/result as a different test" label="Merge or Split tests?" type="Enum" />
+
+                        <option codingvalues="min|max|mean|median|first|last" cslname="multi_parametric_merge_criteria" defaultvalue="'first'" displayvalues="Min (of test values)|Max (of test values)|Mean (of test values)|Median (of test values)|First test value in run|Last test value in run" label="Merge criteria" type="Enum" />
+
+                        <option codingvalues="keep_all|keep_one" cslname="multi_parametric_merge_option" defaultvalue="'keep_all'" displayvalues="Keep all results per run|Keep only one result per run" label="Merge option" type="Enum" />
+
+                        <option cslname="test_name" defaultvalue="'GSCurrentTest.GetTestName() + ((GSCurrentTest.GetPinPhysicName() == \'\') ? \'\' : \' - \' + GSCurrentTest.GetPinPhysicName())'" desc="Test name build instructions" hideif="false" label="Test name" tooltip="Specify here how to build the test name:&#10;GSCurrentTest.GetTestName(),&#10;GSCurrentTest.GetPinChannelName(),&#10;GSCurrentTest.GetPinLogicName(),&#10;GSCurrentTest.GetPinPhysicName(), ...&#10;Default: GSCurrentTest.GetTestName() + ((GSCurrentTest.GetPinPhysicName() == '') ? '' : ' - ' + GSCurrentTest.GetPinPhysicName())" type="String" write_csl="true" />
+                        <option cslname="test_number" defaultvalue="'GSCurrentTest.GetTestNumber() + \'.\' + GSCurrentTest.GetPinIndex()'" desc="Test number build instructions" hideif="false" label="Test number" tooltip="Specify here how to build the test number:&#10; GSCurrentTest.GetTestNumber(),&#10; GSCurrentTest.GetPinIndex(), ...&#10;Default: GSCurrentTest.GetTestNumber() + '.' + GSCurrentTest.GetPinIndex()" type="String" write_csl="true" />
+                        <option cslname="pin_name" defaultvalue="'GSCurrentTest.GetPinPhysicName()'" desc="Pin name build instructions" hideif="false" label="Pin name" tooltip="Specify here how to build the pin name:&#10;GSCurrentTest.GetPinChannelName(),&#10;GSCurrentTest.GetPinLogicName(),&#10;GSCurrentTest.GetPinPhysicName()&#10;Default: GSCurrentTest.GetPinPhysicName()" type="String" write_csl="true" />
+                </option>
+
+                <option cslname="dataprocessing" label="Intermediate file (STDF and Zip) storage" type="Group">
+                        <option codingvalues="same|custom" cslname="stdf_intermediate" displayvalues="Same folder as Data files|User defined location" label="Storage folder" type="Enum" />
+                        <option cslname="stdf_intermediate_path" label="Custom storage folder path" type="Path" />
+                </option>
+
+                <option codingvalues="stringent|flexible" cslname="stdf_compliancy" defaultvalue="'flexible'" displayvalues="Stringent: Ignore records not in line with STDF specs|Flexible: Examinator does its best to recover any data" label="Handling STDF compliancy issues" type="Enum" />
+
+                <option codingvalues="none|n_sigma|exclude_n_sigma|n_pourcent|n_iqr" cslname="data_cleaning_mode" defaultvalue="'none'" displayvalues="None|N*sigma|Exclude N*sigma (Inliner filtering)|N % (percent of limits space)|Q1-N*IQR and Q3+N*IQR" label="Data Cleaning mode" type="Enum" />
+                <option cslname="data_cleaning_value" defaultvalue="6" label="Data Cleaning value" maximum="300" minimum="0.01" singleStep="1" type="Float" />
+                <option codingvalues="remove_sequencer_name|remove_pin_name" cslname="format_test_name" defaultvalue="''" displayvalues="Remove sequencer name|Remove pin name" label="Format test name" type="Flag" />
+
+                <option cslname="dataprocessing" label="Handling multiple limits per test/site" type="Group">
+                            <option codingvalues="largest|first|last" cslname="limit_selection_criteria" defaultvalue="'largest'" displayvalues="Use largest|Use first|Use last" label="Limit selection criterion" type="Enum" />
+
+                            <option codingvalues="per_site|over_all_site" cslname="scope" defaultvalue="'per_site'" displayvalues="Per site: use limit selection criterion for each individual site|Over all sites: use limit selection criterion and apply to all sites" label="Scope" type="Enum" />
+                </option>
+
+                <!-- Functional tests (no GUI, read only) -->
+                <option codingvalues="enabled|disabled" cslname="functional_tests" defaultvalue="'enabled'" displayvalues="Enable support for functional tests|Disable support for functional tests" hideif="true" label="Enable/Disable support for functional tests" type="Enum" write_csl="false" />
+
+                <!-- New option to allocate test results tables differenty -->
+                <option cslname="test_results_allocation" defaultvalue="'test by test'" hideif="true" label="Algo to allocate mem for test results" type="String" write_csl="true" />
+
+        </option>
+
+
+        <option cslname="statistics" desc="" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_teststatistics.png" label="Test statistics : tables options..." type="Group">
+                <option codingvalues="summary_then_samples|samples_then_summary|summary_only|samples_only" cslname="computation" defaultvalue="(GexProduct=='PRODUCT_PATSERVER' || GexProduct=='PRODUCT_GEXPAT' || GexProduct=='PRODUCT_GTM') ? 'samples_only' : 'samples_then_summary'" displayvalues="From summary data (if any), otherwise from samples|From samples (if any)|From summary data only|From samples data only" label="How are stats computed" type="Enum" />
+
+                <!-- options for gex,gex-pro and YM -->
+                <option cslname="statistics" desc="" label="Fields to include in report table" type="Group">
+                        <option codingvalues="test_name|test_type|limits|spec_limits|drift_limits|stats_source|exec_count|fail_count|fail_percent|fail_bin|test_flow_id|removed_count|mean|sigma|2sigma|3sigma|6sigma|min|max|range|cp|cr|cpk|yield|multi_limits" cslname="fields" defaultvalue="'stats_source|test_name|test_type|limits|exec_count|fail_count|mean|sigma|cp|cpk|yield|multi_limits'" displayvalues="Test name|Test type(parametric, functional, ...)|Test limits|Spec limits|(Test Vs Spec) Limits variation|Statistics computation mode(eg: Samples, Summary, ...)|Executions count|Failures count|Failures '%' (over production)|Failing bin associated with test/parameter|Test flow ID (test order in testing sequence)|Nb. of removed data points (through data cleaning)|Mean|Sigma|2*Sigma|3*Sigma|6*Sigma|Min. : Minimum result found (P0.0%)|Max. : Maximum result found(P100.0%)|Range|Cp|Cr|Cpk|Yield|Multi limits" label="Standard fields" type="Flag" />
+                        <option codingvalues="ev|av|r&amp;r|gb|pv|tv|p_t" cslname="gage_fields" defaultvalue="''" displayvalues="EV: Repeatability|AV: Reproducibility|R&amp;R|GB GuardBand|PV Part Variation|TV Total Variation|P/T Ratio" label="Gage study fields" type="Flag" />
+                        <option codingvalues="shape|cpk_l|cpk_h|skew|kurtosis|P0.5|P2.5|P10|quartile1|quartile2|quartile3|P90|P97.5|P99.5|inter_quartiles|sigma_inter_quartiles" cslname="adv_fields" defaultvalue="''" displayvalues="Distribution shape|CpkL (Cpl)|CpkH (Cpu)|Skew|Kurtosis|Percentile 0.5% (P0.5%)|Percentile 2.5% (P2.5%)|Percentile 10.0% (P10.0%)|Q1: 1st quartile (P25.0%)|Median/2nd Quartile (P50.0%)|Q3: 3rd Quartile (P75.0%)|Percentile 90.0% (P90.0%)|Percentile 97.5% (P97.5%)|Percentile 99.5% (P99.5%)|IQR Interquartile range|IQR SD Interquartile Standard Deviation" label="Advanced fields" type="Flag" />
+                        <option codingvalues="mean_shift|t_test|sigma_shift|max_range|cp_shift|cr_shift|cpk_shift" cslname="compare_fields" defaultvalue="'mean_shift|sigma_shift'" displayvalues="Mean shift|Student's T-Test p-value (alpha=0.05)|Sigma shift|Max. range|Cp shift|Cr shift|Cpk shift" label="Compare study fields" type="Flag" />
+                </option>
+                <!-- Comment: Max flag count = 31 -->
+                <option codingvalues="shift_to_reference|shift_to_all" cslname="shift_with" defaultvalue="'shift_to_reference'" displayvalues="Reference group only|All group combinations" label="Compare calculations to include" type="Enum" />
+                <option codingvalues="percentile|standard" cslname="cp_cpk_computation" defaultvalue="'standard'" displayvalues="Use percentile formula|Use standard Sigma formula" label="Cp, Cpk formulas" type="Enum" />
+                <option codingvalues="test_number|test_name|test_flow_id|fail_count|mean|mean_shift|sigma|cp|cpk|r&amp;r" cslname="sorting" defaultvalue="'test_number'" displayvalues="Sort by Test Number|Sort by Test Name|Sort by Test Flow ID (test execution order)|Sort by fail count|Sort by Mean|Sort by mean shift|Sort by sigma|Sort by Cp|Sort by Cpk|Sort by gage R&amp;R% value (by decreasing R&amp;R% value)" label="Sorting mode" type="Enum" />
+
+                <option cslname="statistics" label="Stats warnings and alarms criteria" type="Group">
+                        <option cslname="alarm_test_cp" defaultvalue="2" label="Show 'Cp' alarm (red) if under: " maximum="99999" minimum="-1" singleStep="0.5" type="Float" />
+                        <option cslname="warning_test_cp" defaultvalue="2.5" label="Show 'Cp' warning (yellow) if under: " maximum="99999" minimum="-1" singleStep="0.5" type="Float" />
+                        <option cslname="alarm_test_cpk" defaultvalue="1.33" label="Show 'Cpk' alarm (red) if under: " maximum="99999" minimum="-1" singleStep="0.5" type="Float" />
+                        <option cslname="warning_test_cpk" defaultvalue="1.67" label="Show 'Cpk' warning (yellow) if under: " maximum="99999" minimum="-1" singleStep="0.5" type="Float" />
+                        <option cslname="alarm_test_yield" defaultvalue="-1" label="Show 'Test yield' alarm (red) if under: " maximum="100" minimum="-1" type="Float" />
+                        <option cslname="warning_test_yield" defaultvalue="-1" label="Show 'Test yield' warning (yellow) if under: " maximum="100" minimum="-1" singleStep="0.5" type="Float" />
+                </option>
+
+                <option codingvalues="limits|value" cslname="mean_drift_formula" defaultvalue="'value'" displayvalues="Percentage of limits|Percentage of value" label="Correlation ALARM formula for the Mean" type="Enum" />
+
+                <option cslname="statistics" label="Correlation ALARM criteria (when comparing files/groups)" type="Group">
+                        <option cslname="alarm_mean" defaultvalue="5" label="Mean alarm limit (shift %)" maximum="100" minimum="-1" singleStep="0.5" type="Float" />
+                        <option cslname="alarm_sigma" defaultvalue="1" label="Sigma alarm limit (shift %)" maximum="100" minimum="-1" singleStep="0.5" type="Float" />
+                        <option cslname="alarm_cp" defaultvalue="10" label="Cp alarm limit (shift %)" maximum="100" minimum="-1" singleStep="0.5" type="Float" />
+                        <option cslname="alarm_cr" defaultvalue="10" label="Cr alarm limit (shift %)" maximum="100" minimum="-1" singleStep="0.5" type="Float" />
+                        <option cslname="alarm_cpk" defaultvalue="33" label="Cpk alarm limit (shift %)" maximum="100" minimum="-1" singleStep="0.5" type="Float" />
+                </option>
+                <option codingvalues="show|hide" cslname="generic_galaxy_tests" defaultvalue="'show'" displayvalues="Show|Hide" label="Generic Quantix Parameters (Soft_bin, Hard_bin, Die_X, Die_Y, ...)" type="Enum" />
+
+                <!-- section_name (no GUI, read only) -->
+                <option cslname="section_name" defaultvalue="'Tests Statistics'" desc="Title of the 'Statistics' section in the report" hideif="true" label="Title of the 'Statistics' section in the report" tooltip="Title of the 'Statistics' section in the report" type="String" write_csl="false" />
+
+                <!-- hack : cf. case 5878 -->
+                <option cslname="generic_galaxy_tests_adv_stats" defaultvalue="false" hideif="Debug==false" label="Compute adv. stats on Generic Quantix Parameters" type="Bool" write_csl="false" />
+        </option>
+
+        <option cslname="wafer" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_wafermap.png" label="Wafer map, Strip map" type="Group">
+
+                <!-- section_name (no GUI, read only) -->
+                <option cslname="section_name" defaultvalue="'Wafer maps &amp; Strip maps'" desc="Title of the 'Wafer map' section in the report" hideif="true" label="Title of the 'Wafer map' section in the report" tooltip="Title of the 'Wafer map' section in the report" type="String" write_csl="false" />
+
+                <option cslname="gross_die" defaultvalue="-1" desc="If &gt; 0, used to replace effective die count when computing yield related results." hideif="true" label="Gross Die" maximum="1000000" minimum="-1" tooltip="If &gt; 0, used to replace effective die count when computing yield related results." type="Int" write_csl="false" />
+
+                <option codingvalues="mean|median" cslname="parametric_stacked" defaultvalue="'mean'" displayvalues="Use mean|Use median" label="Parametric stacked wafermap" type="Enum" />
+
+                <!-- HIDE NOT ALREADY IMPLEMENTED OPTIONS
+        <option cslname="bin_stacked" label="Bin stacked wafermap" type="Enum"
+            displayvalues="Bin count|Highest Bin|Highest failing bin|Pass/Fail (PASS if all dies are PASS)|Pass/Fail (PASS if at least one die is PASS)"
+            codingvalues="bin_count|highest_bin|highest_fail_bin|pf_pass_if_all_pass|pf_pass_if_one_pass"
+        />
+        -->
+                <option codingvalues="bin_count|pf_pass_if_all_pass" cslname="bin_stacked" defaultvalue="'bin_count'" displayvalues="Bin count|Pass/Fail (PASS if all dies are PASS)" label="Bin stacked wafermap" type="Enum" />
+
+                <option codingvalues="all_individual|stacked|bin_mismatch|bin_to_bin" cslname="chart_show" defaultvalue="'all_individual|stacked|bin_mismatch|bin_to_bin'" displayvalues="All individual wafers|One combined wafer per group / query (wafer stacking)|Bin mismatch (when comparing two wafers)|Bin to bin color correlation (when comparing two wafers)" label="Wafermaps to include in report" type="Flag" />
+
+                <option cslname="low_yield_pattern" defaultvalue="33" label="Low-Yield Patterns detection (Wafer Stacking)" maximum="100" minimum="0" singleStep="1" type="Float" />
+
+                <option codingvalues="any_size|diemismatch_table|deltayield_section" cslname="compare" defaultvalue="'any_size|diemismatch_table|deltayield_section'" displayvalues="Accept comparing wafers with different size|Include die mismatch table (may be big if a lot of mismatching dies)|Include delta yield section" label="Comparing wafers" type="Flag" />
+                <option codingvalues="small|medium|large|auto" cslname="chart_size" defaultvalue="'medium'" displayvalues="Small|Medium|Large|Adaptive" label="Chart size (HTML reports)" type="Enum" />
+                <option codingvalues="highest_bin|last_bin" cslname="retest_policy" defaultvalue="'last_bin'" displayvalues="Highest bin: promote the highest bin value for each die|Last bin: use last bin value found for each die" label="Retest policy" type="Enum" />
+
+                <!-- Visual options -->
+                <option codingvalues="mirror_x|mirror_y|swap_notch|all_parts|shape_round" cslname="visual_options" defaultvalue="'shape_round'" displayvalues="X-axis swap: Swap Left dies with Right dies|Y-axis swap: Swap Top dies with Bottom dies|When swaping on X/Y axis, also swap the notch|Full wafer: Display full wafermap (device filtering restricted to samples only)|Always round: Resize dies to always make the wafer look round" label="Visual options: Mirrors axis, Force round shape, Full wafer, etc..." type="Flag" write_csl="true" />
+
+                <!-- Wafer orientation options -->
+                <option cslname="wafer" label="Wafer orientation options" type="Group">
+                        <!-- Positive X -->
+                        <option codingvalues="right|left|auto" cslname="positive_x" defaultvalue="'auto'" displayvalues="Right: Positive X increases going Right (default)|Left: Positive X increases going Left|Auto: from data file" label="Define 'Positive X' Probing direction" type="Enum" write_csl="true" />
+                        <!-- Positive Y -->
+                        <option codingvalues="down|up|auto" cslname="positive_y" defaultvalue="'auto'" displayvalues="Down: Positive Y increases going Down (default)|Up: Positive Y increases going Up|Auto: from data file" label="Define 'Positive Y' Probing direction" type="Enum" write_csl="true" />
+                        <!-- Notch location -->
+                        <option codingvalues="file_or_detected|file_or_default|detected|default" cslname="notch_location" defaultvalue="'detected'" displayvalues="From data file if specified, else detect flat|From data file if specified, else use default (set in below option)|Detect flat (ignore data file flat/notch location)|Use default (set in below option)" label="Define flat/notch location" type="Enum" write_csl="true" />
+                        <!-- Default notch location -->
+                        <option codingvalues="down|left|up|right" cslname="default_notch" defaultvalue="'down'" displayvalues="Down|Left|Up|Right" label="Default flat/notch location" type="Enum" write_csl="true" />
+                        <!-- Alarms -->
+                        <option codingvalues="flat_differs|no_flat" cslname="alarms" defaultvalue="''" displayvalues="Active flat/notch location differs from the one specified in data file|No flat/notch location specified in data file" label="Alarms" type="Flag" write_csl="true" />
+                </option>
+                <!-- Markers to draw on chart -->
+                <option codingvalues="retest|bin|percent" cslname="marker" defaultvalue="'retest'" displayvalues="Black outline border for dies re-tested (soft/hard bin wafermaps only)|Write value in die (Measurement, bin# or count)|Write % in die (Wafer Stacking only)" label="Markers to draw on chart" type="Flag" write_csl="true" />
+
+                <!-- This option is not used anymore. It is hidden for now, but should be removed later -->
+                <option codingvalues="error|warning" cslname="wafermap_orien_check" defaultvalue="'warning'" displayvalues="Consider check result as an error |Consider check result as a warning" hideif="true" label="Wafer map orientation check policy" type="Enum" />
+
+                <option cslname="wafer_file_name" defaultvalue="" desc="Enables to specify a dynamic file name for wafermap using a JavaScript expression" label="Wafer map file name expression (JavaScript)" tooltip="Enables to specify a dynamic file name for wafermap using a JavaScript expression" type="String" write_csl="true" />
+
+        </option>
+
+        <!-- Histogram -->
+        <option cslname="histogram" hideif="true" icon="" label="Histogram" type="Group">
+                <!-- section_name (no GUI, read only) -->
+                <option cslname="section_name" defaultvalue="'Histogram of Tests'" desc="Title of the 'Histograms' section in the report" hideif="true" label="Title of the 'Histograms' section in the report" tooltip="Title of the 'Histograms' section in the report" type="String" write_csl="false" />
+        </option>
+
+        <option cslname="adv_histogram" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_advhisto.png" label="Histogram" type="Group">
+                <option codingvalues="test_type|limits|exec_count|mean|quartile2|sigma|range|fail_count|removed_count|min|max|cp|cpk|shape" cslname="field" defaultvalue="'test_type|limits|exec_count|mean|sigma|range|fail_count|cp|cpk|shape'" displayvalues="Test Type|Test limits|Executions count|Mean|Median - 2nd Quartile|Sigma|Range|Fails count|Nb. of removed data points (through data cleaning)|Min. : Minimum result found (P0.0%)|Max. : Maximum result found (P100.0%)|Cp|Cpk|Shape" label="Fields to include in chart" type="Flag" />
+                <option codingvalues="banner|small|medium|large|auto" cslname="chart_size" defaultvalue="'auto'" displayvalues="Banner, maximize number of charts per page(900*120)|Small, mosaic display(200*100)|Medium(400*200)|Large(800*400)|Adaptive: large, then smaller as number of charts increase" label="Chart size" type="Enum" />
+                <option codingvalues="bars|3d_bars|stack|bars_outline|curve|bars_curve|gaussian|bars_gaussian|bars_outline_gaussian" cslname="chart_type" defaultvalue="'bars'" displayvalues="Bars|3D-Bars|Stack|Bars outline|Fitting curve|Bars + Fitting curve|Gaussian|Gaussian + bars|Gaussian + bars outline" label="Chart type" type="Enum" />
+                <option cslname="total_bars" defaultvalue="40" label="Total bars/bins to plot" maximum="10000" minimum="2" singleStep="1" type="Int" />
+                <option codingvalues="percentage|hits" cslname="y_axis" defaultvalue="'percentage'" displayvalues="Percentage|Frequency" label="Y-axis scale type" type="Enum" />
+                <option codingvalues="test_name|mean|median|limits|speclimits|patlimits|minimum|maximum|2sigma|3sigma|6sigma|12sigma|quartile_q1|quartile_q3" cslname="marker" defaultvalue="'test_name|mean|limits'" displayvalues="Title|Mean|Median|Test Limits|Test Spec Limits|PAT Limits (N, M, F)|Minimum value|Maximum value|+/-1 Sigma range, 2 sigma space(centered on Mean)|+/-1.5 Sigma range, 3 sigma space(centered on Mean)|+/-3 Sigma range, 6 sigma space(centered on Mean)|+/-6 Sigma range, 12 sigma space(centered on Mean)|Quartile Q1|Quartile Q3" label="Markers to draw on chart" type="Flag" />
+  <option
+    codingvalues="0|45"
+    cslname="marker_rotation"
+    defaultvalue="0"
+    displayvalues="0, no text rotation|45, text rotation with 45 degrees"
+    label="Marker text rotation"
+    type="Enum" />
+</option>
+
+        <option cslname="adv_trend" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_trend.png" label="Trend (Control chart)" type="Group">
+                <option codingvalues="banner|small|medium|large|auto" cslname="chart_size" defaultvalue="'auto'" displayvalues="Banner, maximize number of charts per page(900*120)|Small, mosaic display(200*100)|Medium(400*200)|Large(800*400)|Adaptive: large, then smaller as number of charts increase" label="Chart size" type="Enum" />
+                <option codingvalues="lines|spots|lines_spots" cslname="chart_type" defaultvalue="'spots'" displayvalues="Lines|Spots|Lines + Spots" label="Chart type" type="Enum" />
+                <option codingvalues="run_id|part_id" cslname="x_axis" defaultvalue="'part_id'" displayvalues="Run ID|Part ID" label="X-Axis scale type" type="Enum" />
+                <option codingvalues="test_name|mean|median|limits|speclimits|rolling_limits|minimum|maximum|lot|sublot|group_name|2sigma|3sigma|6sigma|12sigma|quartile_q1|quartile_q3" cslname="marker" defaultvalue="'test_name|mean|limits|sublot'" displayvalues="Title|Mean|Median|Test limits|Test spec limits|Test rolling limits|Minimum value|Maximum value|Lot ID (works only if x-axis scale type is RunID)|SubLot/Wafer ID (works only if x-axis scale type is RunID)|Dataset/Group name (works only if x-axis scale type is RunID)|+/-1 sigma range, 2 sigma space (centered on mean)|+/-1.5 sigma range, 3 sigma space (centered on mean)|+/-3 sigma range, 6 sigma space (centered on mean)|+/-6 sigma range, 12 sigma space (centered on mean)|Quartile Q1|Quartile Q3" label="Markers to draw on chart" type="Flag" />
+                <option cslname="rolling_yield" defaultvalue="200" label="Total parts per Rolling Yield" maximum="400000" minimum="2" singleStep="1" type="Int" />
+        </option>
+
+
+        <option cslname="adv_correlation" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_scatter.png" label="Correlation (BiVariate / Scatter chart)" type="Group">
+                <option codingvalues="small|medium|large|auto" cslname="chart_size" defaultvalue="'auto'" displayvalues="Small, mosaic display(200*100)|Medium(400*200)|Large(800*400)|Adaptive: large, then smaller as number of charts increase" label="Chart size" type="Enum" />
+                <option codingvalues="test_name|mean|median|limits|speclimits|minimum|maximum|2sigma|3sigma|6sigma|12sigma|quartile_q1|quartile_q3" cslname="marker" defaultvalue="'test_name|mean|limits'" displayvalues="Title|Mean|Median|Test limits|Test spec limits|Minimum value|Maximum value|+/-1 sigma range, 2 sigma space (centered on mean)|+/-1.5 sigma range, 3 sigma space (centered on mean)|+/-3 sigma range, 6 sigma space (centered on mean)|+/-6 sigma range, 12 sigma space (centered on mean)|Quartile Q1|Quartile Q3" label="Markers to draw on chart" type="Flag" />
+                <option codingvalues="scatter|boxwhisker" cslname="chart_type" displayvalues="Scatter|Box-Whisker" hideif="true" label="Chart type" type="Enum" write_csl="false" />
+                <option codingvalues="horizontal|vertical" cslname="boxwhisker_orientation" displayvalues="Horizontal|Vertical" hideif="true" label="Box-whisker orientation" type="Enum" write_csl="false" />
+                <option cslname="linear_regression" defaultvalue="true" label="Compute and draw linear regression" type="Bool" />
+        </option>
+
+
+        <option cslname="adv_probabilityplot" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_probabilityplot.png" label="Probability plot" type="Group">
+                <option codingvalues="small|medium|large|auto" cslname="chart_size" defaultvalue="'auto'" displayvalues="Small, mosaic display(200*100)|Medium(400*200)|Large(800*400)|Adaptive: large, then smaller as number of charts increase" label="Chart size" type="Enum" />
+                <option codingvalues="test_name|mean|median|limits|speclimits|minimum|maximum|2sigma|3sigma|6sigma|12sigma|quartile_q1|quartile_q3" cslname="marker" defaultvalue="'test_name|mean|limits'" displayvalues="Title|Mean|Median|Test limits|Test spec limits|Minimum value|Maximum value|+/-1 sigma range, 2 sigma space (centered on mean)|+/-1.5 sigma range, 3 sigma space (centered on mean)|+/-3 sigma range, 6 sigma space (centered on mean)|+/-6 sigma range, 12 sigma space (centered on mean)|Quartile Q1|Quartile Q3" label="Markers to draw on chart" type="Flag" />
+                <option codingvalues="percentage|sigma" cslname="y_axis" defaultvalue="'sigma'" displayvalues="Percentage|Z" label="Y-axis scale type" type="Enum" />
+        </option>
+
+
+        <option cslname="adv_boxplot_ex" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_candlemeanrange.png" label="Box plot" type="Group">
+                <option codingvalues="small|medium|large|auto" cslname="chart_size" defaultvalue="'auto'" displayvalues="Small|Medium|Large|Adaptive" label="Chart size" type="Enum" />
+                <option codingvalues="test_name|mean|median|limits|speclimits|minimum|maximum|2sigma|3sigma|6sigma|12sigma|quartile_q1|quartile_q3" cslname="marker" defaultvalue="'test_name|mean|limits'" displayvalues="Title|Mean|Median|Test limits|Test spec limits|Minimum value|Maximum value|+/-1 sigma range, 2 sigma space (centered on mean)|+/-1.5 sigma range, 3 sigma space (centered on mean)|+/-3 sigma range, 6 sigma space (centered on mean)|+/-6 sigma range, 12 sigma space (centered on mean)|Quartile Q1|Quartile Q3" label="Markers to draw on chart" type="Flag" />
+                <option codingvalues="horizontal|vertical" cslname="orientation" defaultvalue="'vertical'" displayvalues="Horizontal|Vertical" label="Orientation" type="Enum" />
+        </option>
+
+
+        <option cslname="adv_production_yield" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_trend.png" label="Production reports" type="Group">
+                <option codingvalues="yield|volume|yield_volume" cslname="chart_type" defaultvalue="'yield_volume'" displayvalues="Yield trend chart|Volume trend chart|Yield/Volume dual chart" label="Chart type" type="Enum" />
+                <option codingvalues="title|yield|volume" cslname="marker" defaultvalue="'title|yield|volume'" displayvalues="Title|Yield value for each data point|Volume count for each bar" label="Markers to draw on chart" type="Flag" />
+        </option>
+
+        <option cslname="adv_shift" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/shift.png" label="Shift analysis" type="Group">
+                <option codingvalues="cmp_to_ref|cmp_all_to_all|measuring_value_of_baseline" cslname="calc_method" defaultvalue="'cmp_all_to_all'" displayvalues="Limit % Shift Report (Compare to reference only)|Limit % Shift Report (Compare all results to each others)|Actual Value Shift Report (Compare to reference only)" label="Calculation method" tooltip="Calculation method : when searching for alerts between groups, this option set the type of comparison to perform." type="Enum" />
+                <option codingvalues="nbr_limit_threshold|percent_limit_delta" cslname="sort_column" defaultvalue="'nbr_limit_threshold'" displayvalues="# of parts over limit space threshold|Max % of limit space delta" label="Sort Column" tooltip="When writting the shift analysis table, this option set the column used to sort the output table." type="Enum" />
+                <option cslname="limit_space_percent" defaultvalue="10" label="Limit space percent" maximum="100" minimum="0" singleStep="0.1" tooltip="Max percent allowed before the delta between 2 groups is considered as an alert." type="Float" />
+                <option cslname="max_lines_per_slide" defaultvalue="35" label="Max number of lines per slide (for PPT or ODP pres only)" maximum="1000" minimum="1" singleStep="1" tooltip="Set with this option the maximum number of lines in table inside the presentation outputs (PPT, ODP,...). The tables will be cut and spread over multiple pages if the number of lines us upper than this." type="Int" />
+                 <option cslname="extra_queries" defaultvalue="'select min_group, count(*) as n from shift_alerts group by min_group order by n desc;'" label="Extra queries to report" tooltip="Addtionnal SQL querie(s) (separated by ;) that will be reported at the bottom of the report as usual table(s) after the default ones.&#10;Contact the support team in order to get the correct query(ies) for any custom additionnal table(s)." type="String" />
+        </option>
+
+        <option cslname="adv_charac" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/shift.png" label="Advanced characterization report" type="Group">
+            <option cslname="adv_charac1" icon=":/gex/icons/shift.png" label="Box-whisker template" type="Group">
+
+                      <option cslname="report_title" defaultvalue="'Characterization Box-whisker'" label="Report title" tooltip="Enter here the report title of your choice" type="String" />
+
+                      <option codingvalues="limits" cslname="marker" defaultvalue="'limits'" displayvalues="Test limits" label="Markers to draw on chart" type="Flag" />
+
+                      <option codingvalues="mean|min|max|sigma|cp|cpk|cpl|cph|6sigma|3sigma|ul|ll" cslname="field" defaultvalue="'mean|min|max|sigma|ul|ll'" displayvalues="Mean|Min|Max|Sigma|Cp|Cpk|Cpl|Cph|6 sigma|3 sigma|UL|LL" label="Fields to include" type="Flag" />
+
+                      <option codingvalues="pinmapindex|testID|testFlowID|samplesValidExecs|samplesExecs|execs|sampleFails|failCount|removed_count|cpkShift|cpShift|maxRange|samplesMin|samplesMax|samplesSkew|lowSpecsLimit|highSpecsLimit|lowLimitOutlier|highLimitOutlier" cslname="extra_fields" defaultvalue="''" displayvalues="Pinmap Index|Test Number|Test Flow ID|Samples valid execs|Samples execs|Execs|Samples fails|Fail count|removed_count|Cpk shift|Cp shift|Max range|Samples min|Samples max|Samples skew|Low specs limits|High specs limits|Low limit outlier|High limit outlier" hideif="Debug==false" label="Other fields to include" type="Flag" />
+              </option>
+
+              <option cslname="adv_charac2" icon=":/gex/icons/shift.png" label="Line Chart Template" type="Group">
+
+                      <option cslname="report_title" defaultvalue="'Characterization Line Chart'" label="Report title" tooltip="Enter here the report title of your choice" type="String" />
+
+                      <option codingvalues="limits" cslname="marker" defaultvalue="'limits'" displayvalues="Test limits" label="Markers to draw on chart" type="Flag" />
+
+                      <option codingvalues="mean|median|min|max|sigma|cp|cpk|cpl|cph|6sigma|3sigma|ul|ll" cslname="field" defaultvalue="'mean|min|max|sigma|ul|ll'" displayvalues="Mean|Median|Min|Max|Sigma|Cp|Cpk|Cpl|Cph|6 sigma|3 sigma|UL|LL" label="Fields to include" type="Flag" />
+
+                      <option codingvalues="mean|median" cslname="variable" defaultvalue="'mean'" displayvalues="Use mean|Use median" label="Variable to draw on chart" type="Enum" />
+              </option>
+        </option>
+
+        <option cslname="adv_boxplot" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_boxmeanrange.png" label="Gage R&amp;R" type="Group">
+
+                <option codingvalues="limits|tolerance|global_min|global_max|global_mean|mean|sigma|median|cp|cpk|repeatability|parts_in_control|ev|local_ev|av|r&amp;r|#r&amp;r|avwc|r&amp;rwc|max_xdiff|gb|pv|tv|p_t|boxplot_chart" cslname="field" defaultvalue="'ev|av|r&amp;r|p_t|boxplot_chart'" displayvalues="Test limits|Tolerance|Min|Max|Mean|Mean(of reference when comparing files/groups)|Sigma(of reference when comparing files/groups)|Median|Cp (of reference when comparing files/groups)|Cpk (of reference when comparing files/groups)|Repeatability|Parts in control|Equipment variation: EV (gage study)|Local EV|Reproducibility / Appraiser variation: AV (gage study)|R&amp;R (gage study)|#R&amp;R|AV Worst Case|R&amp;R Worst Case|Max XDiff|GB (gage study)|Part variation: PV (gage study)|Total variation: TV (gage study)|P/T ration (gage study)|Box-Plot Charts" label="Fields to include in chart" type="Flag" />
+
+                <option codingvalues="limits|range|adaptive" cslname="chart_type" defaultvalue="'limits'" displayvalues="Chart over test limits|Chart over data range|Adaptive('over limits' if one data set, 'over range' otherwise)" label="Chart type" type="Enum" write_csl="true" />
+
+                <option codingvalues="test_number|test_name|test_flow_id|mean|sigma|cp|cpk|r&amp;r" cslname="sorting" defaultvalue="'r&amp;r'" displayvalues="Sort by Test Number|Sort by Test Name|Sort by Test Flow ID (test execution order)|Sort by Mean|Sort by sigma|Sort by Cp|Sort by Cpk|Sort by gage R&amp;R% value (by decreasing R&amp;R% value)" label="Sorting mode" type="Enum" />
+
+                <option cslname="r&amp;r_sigma" defaultvalue="5.15" label="R and R N*Sigma space (default N value is 5.15)" maximum="100.0" minimum="0.0" singleStep="0.01" type="Float" />
+
+                <option codingvalues="over_limits|over_tv" cslname="delta" defaultvalue="'over_limits'" displayvalues="EV%, AV%, R&amp;R%, PV%, TV%: variation computed over limit space|EV%, AV%, R&amp;R%, PV%, TV%: variation computed over TV" label="R&amp;R % variation options" type="Enum" />
+
+                <!-- R&amp;R WARNINGS &amp; ALARMS criteria -->
+                <option codingvalues="dont_check|use_specified_file" cslname="r&amp;r_alarms" defaultvalue="'dont_check'" displayvalues="Do NOT check for warnings and alarms|Check for warnings and alarms using specified file..." label="R&amp;R WARNINGS &amp; ALARMS mode" type="Enum" />
+                <option cslname="r&amp;r_file" defaultvalue="" filter="Text Files (*.txt)" label="R&amp;R WARNINGS &amp; ALARMS criteria file" type="Path" />
+
+                <option codingvalues="xbar|range" cslname="control_charts" defaultvalue="''" displayvalues="X-bar chart|R chart" label="Control charts to include in report" type="Flag" />
+        </option>
+
+
+        <option cslname="pareto" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_pareto.png" label="Pareto" type="Group">
+                <option codingvalues="cp|cpk|failures|failure_signature|soft_bin|hard_bin" cslname="section" defaultvalue="'cp|cpk|failures|failure_signature|soft_bin|hard_bin'" displayvalues="Cp|Cpk|Failures|Failure signature|Soft bin|Hard bin" label="Pareto tables to include in report" type="Flag" />
+
+                <option codingvalues="pass|fail" cslname="excludebinnings" defaultvalue="''" displayvalues="PASS|FAIL" label="Exclude binnings" type="Flag" />
+                <option codingvalues="enabled|disabled" cslname="siteRatio" defaultvalue="'disabled'" displayvalues="Yes|No" label="Display site ratio" type="Enum" />
+
+                <option cslname="cutoff_cp" defaultvalue="1.67" label="Define Cp cut-off limit" maximum="99999" minimum="-1" singleStep="0.5" type="Float" />
+                <option cslname="cutoff_cpk" defaultvalue="1.33" label="Define Cpk cut-off limit" maximum="99999" minimum="-1" singleStep="0.5" type="Float" />
+                <option cslname="cutoff_failure" defaultvalue="-1" label="Define test failures cut-off limit" maximum="99999" minimum="-1" singleStep="0.5" type="Float" />
+                <option cslname="cutoff_signature_failure" defaultvalue="25" label="Define failure signature cut-off limit (%)" maximum="100" minimum="0" singleStep="0.5" type="Float" />
+                <option cslname="min_fail_in_signature" defaultvalue="2" label="Minimum concurrent failures in signature" maximum="100" minimum="1" singleStep="1" type="Int" />
+
+                <!-- section_name (no GUI, read only) -->
+                <option cslname="section_name" defaultvalue="'Pareto Reports'" desc="Title of the 'Pareto' section in the report" hideif="true" label="Title of the 'Pareto' section in the report" tooltip="Title of the 'Pareto' section in the report" type="String" write_csl="false" />
+
+        </option>
+
+        <option cslname="binning" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_binning.png" label="Binning" type="Group">
+                <option codingvalues="enabled|disabled" cslname="section" defaultvalue="'enabled'" displayvalues="Yes|No" label="Include section in report ?" type="Enum" />
+                <option codingvalues="summary|samples|wafer_map" cslname="computation" defaultvalue="'summary'" displayvalues="From summary data (if any), otherwise from samples|From samples data only|From wafermap / strip map report only (handles retests properly)" label="How is binning computed ?" type="Enum" />
+                <option codingvalues="enabled|disabled" cslname="siteRatio" defaultvalue="'disabled'" displayvalues="Yes|No" label="Display site ratio" type="Enum" />
+
+                <!-- section_name (no GUI, read only) -->
+                <option cslname="section_name" defaultvalue="'Binning Summary'" desc="Title of the 'Binning' section in the report" hideif="true" label="Title of the 'Binning' section in the report" tooltip="Title of the 'Binning' section in the report" type="String" write_csl="false" />
+                <!-- Total parts used for percentage computation -->
+                <option codingvalues="gross_die_if_available|total_physical_parts_tested" cslname="total_parts_used_for_percentage_computation" defaultvalue="'gross_die_if_available'" desc="Total parts used for percentage computation" displayvalues="Gross Die if available|Total physical parts tested" label="Total parts used for percentage computation" tooltip="Total parts used for percentage computation" type="Enum" write_csl="true" />
+        </option>
+
+        <option cslname="global_info" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_global_info.png" label="Global Info" type="Group">
+                <option codingvalues="summarized|detailed" cslname="detail_level" defaultvalue="'detailed'" displayvalues="Summarized|Detailed" label="Select a detail level when comparing/merging" type="Enum" />
+        </option>
+
+        <option cslname="adv_datalog" hideif=" (GexProduct=='PRODUCT_YIELDMAN') || (GexProduct=='PRODUCT_PATSERVER') || (GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_datalog.png" label="Datalog" type="Group">
+
+                <option codingvalues="1row|2rows|advanced" cslname="format" defaultvalue="'1row'" displayvalues="1 column, 1 row per test|2 columns, multiple rows per test|Advanced" label="Output format" type="Enum" />
+                <option codingvalues="comment|test_number|test_name|limits|die_loc" cslname="field" defaultvalue="'test_number|test_name|limits|die_loc'" displayvalues="Comments section|Test number|Test name|Test limits|Die XY location(if it exists)" label="Fields to include" type="Flag" />
+                <option codingvalues="site|test_time|pattern|cycle_count|rel_vector_addr|pins_failed_count|pin_nb|pin_name" cslname="advanced_field" defaultvalue="'site|test_time|pattern|cycle_count|rel_vector_addr|pins_failed_count|pin_nb|pin_name'" displayvalues="Site nb|Test Time|Pattern|Cycle count|Relative vector address|Nb failing pins|Pin nb|Pin name" label="Fields to include (Advanced mode)" type="Flag" />
+        </option>
+
+        <option cslname="adv_what_if" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_guardbanding.png" label="What-if / virtual retest" type="Group">
+                <option cslname="pass_bin" defaultvalue="1" label="What-if passing binning" maximum="65535" minimum="0" singleStep="1" type="Int" />
+                <option cslname="fail_bin" defaultvalue="0" label="What-if failing binning" maximum="65535" minimum="0" singleStep="1" type="Int" />
+                <option cslname="unknown_fail_bin" defaultvalue="99" label="What-if Unknown failing bin" maximum="65535" minimum="0" singleStep="1" type="Int" />
+
+                <option cslname="fail_bin_is_pass" defaultvalue="false" label="Force What-if failing bin to pass type" type="Bool" />
+        </option>
+
+        <option cslname="adv_pearson" hideif=" (GexProduct=='PRODUCT_YIELDMAN') || (GexProduct=='PRODUCT_PATSERVER') || (GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_stopwatch.png" label="Pearson's correlation report" type="Group">
+
+                <option cslname="min_samples" defaultvalue="5" label="Ignore tests with a number of samples lower than" maximum="10000" minimum="3" singleStep="1" type="Int" />
+
+                <option codingvalues="all_possible_combinations|only_when_testnumber_match" cslname="test_combination" defaultvalue="'all_possible_combinations'" displayvalues="Every test against every other test|Match test numbers between datasets (when multiple datasets only)" label="Test couple combination" type="Enum" />
+
+                <option cslname="cutoff" defaultvalue="0.8" label="Ignore tests with a Pearson's correlation ratio (r^2) lower than" maximum="1" minimum="0" singleStep="0.1" type="Float" />
+
+                <option codingvalues="test_name|pearson_asc|pearson_dsc" cslname="sorting" defaultvalue="'pearson_dsc'" displayvalues="Sort by test name|Sort by Pearson's correlation ratio ascendant|Sort by Pearson's correlation ratio desc" label="Sorting mode" type="Enum" />
+
+                <option codingvalues="none|full" cslname="test_stats" displayvalues="No stats details|Full stats details" label="Test stats" type="Enum" />
+        </option>
+
+        <option cslname="adv_functional" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/digital_icon.png" label="Functional Reports" type="Group">
+                    <option codingvalues="banner|small|medium|large|auto" cslname="chart_size" defaultvalue="'auto'" displayvalues="Banner, maximize number of charts per page(900*120)|Small, mosaic display(200*100)|Medium(400*200)|Large(800*400)|Adaptive: large, then smaller as number of charts increase" label="Chart size" type="Enum" />
+                    <option cslname="split_image" defaultvalue="0" label="Split histogram if bar count greater than" maximum="1000000" minimum="0" singleStep="1" type="Int" />
+        </option>
+
+        <option cslname="toolbox" hideif="(GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_gexapplication.png" label="Toolbox" type="Group">
+                <option cslname="toolbox" label="CSV converter" type="Group">
+                        <option codingvalues="test_id|flow_id" cslname="csv_sorting" defaultvalue="'test_id'" displayvalues="Sort by increasing test#|Sort by test flow ID/execution order" label="Column ordering" type="Enum" />
+
+                        <option codingvalues="normalized|scaling_factor" cslname="csv_units_mode" defaultvalue="'scaling_factor'" displayvalues="Normalized|Scaling factor" label="Units mode (Quantix Examinator CSV 2.0 and higher)" type="Enum" />
+
+                        <option cslname="csv_split_export" defaultvalue="false" label="Split into multiple files if more than 250 rows" type="Bool" />
+
+                        <option codingvalues="1.0|2.0|2.1" cslname="csv_version" defaultvalue="2.1" displayvalues="1.0|2.0|2.1" label="Quantix Examinator CSV version" type="Enum" />
+                        <option cslname="toolbox" label="Formatting of measurements" type="Group">
+                                <option cslname="precision" defaultvalue="-1" label="Number of significant figures" maximum="24" minimum="-1" singleStep="1" tooltip="Number of significant figures : -1 will use a default precision" type="Int" />
+                        </option>
+                </option>
+        </option>
+
+        <!-- Preferences -->
+        <option cslname="preferences" hideif="(GexProduct=='PRODUCT_YIELDMAN') || (GexProduct=='PRODUCT_PATSERVER') || (GexProduct=='PRODUCT_GTM')" icon=":/gex/icons/options_gexapplication.png" label="Preferences" type="Group">
+                <!-- default value depending on OS. To be removed once we use the QDesktop to launch the default editor associated with document type -->
+                <option cslname="use_os_default" defaultvalue="true" label="Use OS default (if possible)" type="Bool" />
+                <!-- Text editor -->
+                <option cslname="text_editor" defaultvalue="if(SystemOS.toLowerCase().match('^wv.*')) 'wordpad'; else if(SystemOS.toLowerCase().match('^sun-solaris.*')) 'textedit'; else if(SystemOS.toLowerCase().match('^linux.*')) 'gedit'; else '';" filter="*" label="Text editor" type="Path" />
+                <!-- Spreadsheet editor -->
+                <option cslname="ssheet_editor" defaultvalue="if(SystemOS.toLowerCase().match('^wv.*')) 'excel'; else if(SystemOS.toLowerCase().match('^sun-solaris.*')) 'textedit'; else if(SystemOS.toLowerCase().match('^linux.*')) 'oocalc'; else '';" filter="*" label="Spreadsheet editor (CSV/Excel)" type="Path" />
+                <!-- PDF editor -->
+                <option cslname="pdf_editor" defaultvalue="if(SystemOS.toLowerCase().match('^wv.*')) 'AcroRd32.exe'; else if(SystemOS.toLowerCase().match('^sun-solaris.*')) 'gpdf'; else if(SystemOS.toLowerCase().match('^linux.*')) 'evince'; else '';" filter="*" label="PDF editor" type="Path" />
+                <option codingvalues="15min|30min|1hour|2hours|4hours|never" cslname="auto_close" defaultvalue="'2hours'" displayvalues="15 min|30 min|1h|2h|4h|Never" label="Close application (and release license) if idle too long..." type="Enum" />
+
+        </option>
+
+        <!-- Samples (no GUI, read only) -->
+        <option cslname="samples" hideif="true" icon="" label="Samples" type="Group">
+                <option cslname="hbin_list" defaultvalue="''" desc="List of Hard bins to keep, parts with other hard bins will be discarded" hideif="true" label="List of Hard bins to keep" tooltip="List of Hard bins to keep, parts with other hard bins will be discarded" type="String" write_csl="false" />
+        </option>
+
+        <!-- Build report? (no GUI, read only) -->
+        <option cslname="report" hideif="true" icon="" label="Report" type="Group">
+                <option cslname="build" defaultvalue="true" desc="Flag to tell if report should be built or not (interactive only)." hideif="true" label="Build report" tooltip="Flag to tell if report should be built or not (interactive only)." type="Bool" write_csl="false" />
+        </option>
+
+        <option cslname="webservice" hideif="!((GexProduct=='PRODUCT_YIELDMAN')||(GexProduct=='PRODUCT_PATSERVER')||(GexProduct=='PRODUCT_GTM'))" icon=":/gex/icons/WebServiceSettings.png" label="Web Service settings" tooltip="Settings of the WebService feature" type="Group">
+                <option cslname="port" defaultvalue="8282" label="Port" maximum="65535" minimum="1025" singleStep="1" tooltip="Enter the TCP port for the webservice server.&#10;A change to this port requires a restart of the software." type="Int" />
+        </option>
+
+</gex_options>

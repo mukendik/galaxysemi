@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>Yield Monitoring</title>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      <a href="#_gex_wizard_assistant.htm">
+      <img border="0" src="../../html/images/assistant.png" width="120" height="114" ></a>Yield 
+      Monitoring<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p align="left">This task lets you define the yield level you expect on a 
+      per-product basis. Create as many tasks of this type as products you want 
+      to monitor. This task is executed each time a DataPump task is executed. 
+      As such, each time a data file is imported in the database, its yield 
+      level is checked (you can define which software bins to monitor). You can 
+      setup the task to look for a low yield (e.g: for good bins) or a high 
+      yield (e.g: for continuity bins) and trigger an email notification in case 
+      of an alarm condition. Multiple emails can be entered if separated with 
+      the semicolon character.</p>
+      <p align="left">This task allows to monitor multiple products at once. All 
+      you need is to enter the regular expression for the Product's name that 
+      matches your needs.</p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="35%" bgcolor="#FFFF99"><b>Product name string</b></td>
+          <td width="65%" bgcolor="#FFFF99"><b>Comment</b></td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">RFIC03</font></td>
+          <td width="65%">Monitor yield for one specific product (<b>RFIC03</b> 
+          in this example)</td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">RFIC03,RFIC04<br>
+          or<br>
+          RFIC03 | RFIC04</font></td>
+          <td width="65%">Using the <b>|</b> (pipe character) or comma ',' you can list 
+          multiple products. In this case, Monitoring will check this yield rule 
+          on all the products listed (<b>RFIC03</b> and <b>RFIC04</b> in this 
+          example)</td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">RFIC??</font></td>
+          <td width="65%">Use the <b>?</b> character for wildcard selection. In 
+          this example, the current yield rule will apply to any product name 
+          starting with the string <b>RFIC</b> and followed by two characters.</td>
+        </tr>
+        <tr>
+          <td width="35%"><font face="Courier">RFIC*</font></td>
+          <td width="65%">Use the <b>*</b> character for wildcard selection. In 
+          this example, the current yield rule will apply to any product name 
+          starting with the string <b>RFIC</b>.</td>
+        </tr>
+        </table>
+      <h1 align="left"><br>
+      Bin list, Bin type<b><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p align="left">The bin list lets you define which software bins to 
+      monitor. Can be any list you want.<br>
+      The Bin type is very important and should always be set to the correct 
+      value:</p>
+      <ul>
+        <li>
+      <p align="left"><b>Good bins</b>: This means the bin list is the list of 
+      good binning (this information is used in the Web pages created when 
+      showing the yield level in percents)</li>
+      <li>
+      <p align="left"><b>Failing bins</b>: This means the bin list includes 
+      failing bins.</li>
+  </ul>
+      <h1 align="left"><br>
+      Mailing list<b><br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p align="left">The email notification is sent to the email addresses or 
+      mailing list file you define. If you specify email addresses, use the 
+      semi-colon separator (e.g: <a href="mailto:user1@galaxysemi.com">
+      user1@galaxysemi.com</a> ; <a href="mailto:user2@galaxysemi.com">
+      user2@galaxysemi.com</a>)</p>
+      <p align="left">If you click the Mailing list icon to specify a mailing 
+      list file, make sure the file selected complies with the following format:</p>
+      <ul>
+        <li>
+      <p align="left">File is in ASCII format</p>
+        </li>
+        <li>
+      <p align="left">Each line includes one email address in format <b>
+      name@domain</b></p>
+        </li>
+        <li>
+      <p align="left">If multiple addresses appear on one line, use the 
+      semi-colon separator <b>;</b></p>
+        </li>
+      </ul>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="100%" bgcolor="#FFFF99"><b>Example of mailing list ASCII 
+          file:</b></td>
+        </tr>
+      </table>
+      <blockquote>
+      <p align="left"><b><font face="Courier">
+      <a href="mailto:user1@galaxysemi.com">user1@galaxysemi.com</a><br>
+      <a href="mailto:user2@galaxysemi.com">user2@galaxysemi.com</a><br>
+      <a href="mailto:user3@galaxysemi.com">user3@galaxysemi.com</a> ;
+      <a href="mailto:user4@galaxysemi.com">user4@galaxysemi.com</a><br>
+      <a href="mailto:user5@galaxysemi.com">user5@galaxysemi.com</a></font><br>
+&nbsp;</b></p>
+      </blockquote>
+      <h1 align="left">Automatic Report<b> Generation &amp; Email<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8"></h1>
+      <p align="left">Using the 'Messages Contents' combo box, you can select 
+      the type of message to be send when a yield alarm condition is triggered. 
+      Your choices include:</p>
+      <ul>
+        <li>
+      <p align="left"><b>Summary ASCII Report</b>: you'll receive a text email with a 
+      summary (Yield level per bin, etc)</p>
+        </li>
+        <li>
+      <p align="left"><b>Word report</b>: you'll receive the ASCII summary in the 
+      body of the email as well as a full Word report as an attachment. The 
+      report document is similar to the report created using Examinator with sections for test 
+      statistics, histograms, wafermap, binning and pareto. This report format 
+      is only available if Monitoring is running under Windows; this format is 
+      not supported under Unix.</p>
+        </li>
+        <li>
+      <p align="left"><b>Excel/CSV report</b>: same as above except file format is 
+      CSV</p>
+        </li>
+        <li>
+      <p align="left"><b>PowerPoint report</b>: same as above except file format 
+      is PowerPoint (not available under Unix)</p>
+        </li>
+        <li>
+      <p align="left"><b>PDF report</b>: same as above except file format is PDF</p>
+        </li>
+      </ul>
+      <p align="left"><b>Hint</b>: To have a report generated for each data file 
+      processed, simply create a Yield monitoring task triggered if Yield level 
+      is greater than 0%!</p>
+      <p align="left"><b>Note:</b> Have your system administrator check that the
+      <a href="mo_emails.htm">Monitoring email service </a>is correctly setup 
+      otherwise emails notification won't go!</p>
+      <p align="left">&nbsp;</p>
+      <p align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">&nbsp;
+      You have other questions? <a href="#_gex_wizard_assistant.htm">Click here!</a><br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

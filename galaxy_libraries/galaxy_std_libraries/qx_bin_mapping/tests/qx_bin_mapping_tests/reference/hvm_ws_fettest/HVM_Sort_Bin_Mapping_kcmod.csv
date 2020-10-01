@@ -1,0 +1,71 @@
+test name:PASS|test number:0|test number alias:0|binning name:PASS|hard bin number:1|soft bin number:1|
+test name:IGSS@5V|test number:63|test number alias:0|binning name:IGSS@5V|hard bin number:2|soft bin number:2|
+test name:IGSS@5V|test number:42|test number alias:0|binning name:IGSS@5V|hard bin number:2|soft bin number:2|
+test name:IGSS@50V|test number:44|test number alias:0|binning name:IGSS@50V|hard bin number:20|soft bin number:20|
+test name:IGSS@-50V|test number:45|test number alias:0|binning name:IGSS@-50V|hard bin number:21|soft bin number:21|
+test name:IGSS@+63V|test number:46|test number alias:0|binning name:IGSS@+63V|hard bin number:22|soft bin number:22|
+test name:IGSS@-63V|test number:47|test number alias:0|binning name:IGSS@-63V|hard bin number:23|soft bin number:23|
+test name:IDSS@%80VDS|test number:43|test number alias:0|binning name:IDSS@%80VDS|hard bin number:3|soft bin number:3|
+test name:IDSS@V|test number:51|test number alias:0|binning name:IDSS@V|hard bin number:3|soft bin number:3|
+test name:DS_SHORT|test number:53|test number alias:0|binning name:DS_SHORT|hard bin number:3|soft bin number:3|
+test name:IDSS@5V|test number:54|test number alias:0|binning name:IDSS@5V|hard bin number:3|soft bin number:3|
+test name:IDSS@V|test number:57|test number alias:0|binning name:IDSS@V|hard bin number:3|soft bin number:3|
+test name:IDSS@V|test number:61|test number alias:0|binning name:IDSS@V|hard bin number:3|soft bin number:3|
+test name:BVDSS|test number:76|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:77|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:78|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:79|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:82|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:86|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:87|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:88|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:89|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:90|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:91|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:92|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:93|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:94|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:95|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BVDSS|test number:96|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BV_NEG_RES|test number:80|test number alias:0|binning name:BV_NEG_RES|hard bin number:5|soft bin number:5|
+test name:BV_NEG_RES|test number:81|test number alias:0|binning name:BV_NEG_RES|hard bin number:5|soft bin number:5|
+test name:RDSON|test number:126|test number alias:0|binning name:RDSON|hard bin number:6|soft bin number:6|
+test name:RDSON|test number:41|test number alias:0|binning name:RDSON|hard bin number:6|soft bin number:6|
+test name:RDSON|test number:127|test number alias:0|binning name:RDSON|hard bin number:6|soft bin number:6|
+test name:RDSON|test number:128|test number alias:0|binning name:RDSON|hard bin number:6|soft bin number:6|
+test name:VP|test number:27|test number alias:0|binning name:VP|hard bin number:7|soft bin number:7|
+test name:VP|test number:28|test number alias:0|binning name:VP|hard bin number:7|soft bin number:7|
+test name:VP|test number:29|test number alias:0|binning name:VP|hard bin number:7|soft bin number:7|
+test name:VP|test number:20|test number alias:0|binning name:VP|hard bin number:7|soft bin number:7|
+test name:VF|test number:30|test number alias:0|binning name:VF|hard bin number:8|soft bin number:8|
+test name:VF|test number:34|test number alias:0|binning name:VF|hard bin number:8|soft bin number:8|
+test name:VF|test number:201|test number alias:0|binning name:VF|hard bin number:8|soft bin number:8|
+test name:IGSS@+/-V|test number:1|test number alias:0|binning name:IGSS@+/-V|hard bin number:9|soft bin number:9|
+test name:IGSS@+/-V|test number:2|test number alias:0|binning name:IGSS@+/-V|hard bin number:9|soft bin number:9|
+test name:IGSS@ VGS= + 150% (VGS= +30V)|test number:3|test number alias:0|binning name:IGSS@ VGS= + 150% (VGS= +30V)|hard bin number:24|soft bin number:24|
+test name:IGSS@ VGS= - 150%   (VGS= -30V)|test number:4|test number alias:0|binning name:IGSS@ VGS= - 150%   (VGS= -30V)|hard bin number:24|soft bin number:24|
+test name:IGSS@+/-V|test number:6|test number alias:0|binning name:IGSS@+/-V|hard bin number:9|soft bin number:9|
+test name:IGSS@+/-V|test number:7|test number alias:0|binning name:IGSS@+/-V|hard bin number:9|soft bin number:9|
+test name:IGSS@+/-V|test number:8|test number alias:0|binning name:IGSS@+/-V|hard bin number:9|soft bin number:9|
+test name:IGSS@VGS= +HV (VGS= +35V)|test number:31|test number alias:0|binning name:IGSS@VGS= +HV (VGS= +35V)|hard bin number:25|soft bin number:25|
+test name:IGSS@VGS= -HV (VGS= -35V)|test number:32|test number alias:0|binning name:IGSS@VGS= -HV (VGS= -35V)|hard bin number:25|soft bin number:25|
+test name:CONT|test number:120|test number alias:0|binning name:CONT|hard bin number:10|soft bin number:10|
+test name:NO_SORT|test number:500|test number alias:0|binning name:NO_SORT|hard bin number:12|soft bin number:12|
+test name:UNKNOWN|test number:40|test number alias:0|binning name:UNKNOWN|hard bin number:13|soft bin number:13|
+test name:IDSS@V|test number:60|test number alias:0|binning name:IDSS@V|hard bin number:3|soft bin number:3|
+test name:IR#1|test number:33|test number alias:0|binning name:IR#1|hard bin number:14|soft bin number:14|
+test name:IBEV|test number:50|test number alias:0|binning name:IBEV|hard bin number:15|soft bin number:15|
+test name:IR#2|test number:21|test number alias:0|binning name:IR#2|hard bin number:16|soft bin number:16|
+test name:G-S_SHORT|test number:5|test number alias:0|binning name:G-S_SHORT|hard bin number:17|soft bin number:17|
+test name:UIS|test number:97|test number alias:0|binning name:UIS|hard bin number:18|soft bin number:18|
+test name:UIS|test number:100|test number alias:0|binning name:UIS|hard bin number:18|soft bin number:18|
+test name:UIS|test number:103|test number alias:0|binning name:UIS|hard bin number:18|soft bin number:18|
+test name:IDSX(100%VDS after UIS)|test number:104|test number alias:0|binning name:IDSX(100%VDS after UIS)|hard bin number:3|soft bin number:3|
+test name:OSC|test number:501|test number alias:0|binning name:OSC|hard bin number:24|soft bin number:24|
+test name:V-Droop|test number:83|test number alias:0|binning name:V-Droop|hard bin number:19|soft bin number:19|
+test name:V-Collapse|test number:84|test number alias:0|binning name:V-Collapse|hard bin number:20|soft bin number:20|
+test name:UIS0|test number:110|test number alias:0|binning name:UIS0|hard bin number:21|soft bin number:21|
+test name:ISGS@ + 60% VGS|test number:35|test number alias:0|binning name:ISGS@ + 60% VGS|hard bin number:26|soft bin number:26|
+test name:ISGS@ - 60% VGS|test number:36|test number alias:0|binning name:ISGS@ - 60% VGS|hard bin number:26|soft bin number:26|
+test name:DIVID (T77/T86)|test number:98|test number alias:0|binning name:DIVID (T77/T86)|hard bin number:27|soft bin number:27|
+test name:DIVID (T78/T87)|test number:99|test number alias:0|binning name:DIVID (T78/T87)|hard bin number:28|soft bin number:28|

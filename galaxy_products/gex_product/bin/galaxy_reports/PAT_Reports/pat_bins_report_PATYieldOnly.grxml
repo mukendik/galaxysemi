@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport GRT="pat_bins_report_PATYieldOnly.grt" 
+	Type="AER" Version="0.66" 
+	Title="PAT Bins Report (Yield only)" Description="PAT Bins Table One Row per Series, PAT Yield Only">
+
+	<dataset ID="DS1" label="Main dataset"  
+		stage="Wafer Sort" 
+		binning="H" binning_visible="true" binning_readonly="false" 
+		time_period_visible="true" time_period_readonly="false" time_period_mandatory="false" 
+		time_period_label="Select here the time period"
+		time_period_from="new Date(new Date().getFullYear(),00,01)" 
+		time_period_to="new Date()"
+		time_period_defaultValueExpression="all_dates" 
+		>
+		<!-- time_period_defaultValueExpression can be : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+		<!-- Date objects in javascript example : new Date() returns today. new Date(2006, 00, 01) returns the 1st jan 2006 -->
+
+		<multifield 
+			label="Select here your split params"	
+			role="SPLIT" 
+			time="N" consolidated="Y"  facts="false" binning="N"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="true"  multivalue="true"
+			field_mandatory="false" 
+			value_mandatory="false" value_editable="true"
+			>
+		</multifield>
+
+		<multifield 
+			label="Select here your aggregate " 
+			role="AGGREGATE" 
+			time="*" facts="false"
+			filterable="true" visible="true"  autorepeat="false" orderable="false"  
+			allow_full_range_choice="false" full_range="false"  
+			multivalue="true"
+			field_mandatory="true" field_readonly="true"
+			value_readonly="true" value_mandatory="true" value_editable="false"
+			default_field="Hbin#" value="80|81|87"
+			>
+		</multifield>
+	
+		<multifield 
+			label="Select here your serie params"	
+			role="SERIE" 
+			time="*" facts="true" binning="N"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  
+			multivalue="true"
+			field_mandatory="false" field_readonly="false"
+			value_readonly="false" value_mandatory="false" value_editable="true"
+			>
+		</multifield>
+		
+		<multifield 
+			label="Select here any other filters "
+			role="FILTER" 
+			time="*"  facts="false"
+			filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+			indent="false"
+			>
+		</multifield>
+		
+		<multifield 
+			label="Order by "
+			role="ORDER" 
+			time="*"  facts="false"
+			filterable="false" visible="true"  autorepeat="true" orderable="true"  full_range="false"  multivalue="true"
+			field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+			indent="false" extra_fields="start_time|bin_volume|good_volume|gross_volume|volume|bin_yield|gross_yield|yield"
+			>
+		</multifield>
+		
+	</dataset>
+	
+	<options>
+		<option ID="P_TITLE" 		type="String" visible="true" label="Report title" rawReplace="true" defaultvalue="'PAT Bins Report'" />
+	</options>
+	
+</GalaxyReport>

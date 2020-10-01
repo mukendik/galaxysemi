@@ -1,0 +1,72 @@
+<html>
+<head>
+<style>
+<!--
+span.msoDel
+	{mso-style-name:"";
+	text-decoration:line-through;
+	display:none;
+	color:red}
+ins
+	{text-decoration:none}
+-->
+</style>
+</head>
+<body>
+<table border="0" width="620" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="620">
+      <h1><b><br>
+      Smart Import: Query over Time Period<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <p align="left">The <b>Merge files</b> and <b>Compare groups of files</b> assistants include the Smart Import icon <img border="0" src="../images/file_opendate.png" width="26" height="25">&nbsp;
+      that makes an automatic selection of all files that match a given time
+      period (i.e.: data tested during this period). This function also lets you
+      filter files based on information such as: tester name, program name, lot
+      name, etc...</p>
+      <p align="left">Following is a screenshot of the Smart Import assistant:</p>
+      <p align="left">&nbsp;</p>
+      <p><img border="0" src="../images/smart_import.png" width="432" height="357"></p>
+      <ul>
+        <li><b>From</b>: Lets you define the starting date (data tested prior to this
+          date are ignored). You can enter the date using the date editor or
+          click the calendar icon to browse and pick your date.</li>
+        <li><b>To</b>: Same as above, but for the ending date (data tested after this
+          date are ignored).</li>
+        <li><b>File location path</b>: The software will look for data file starting
+          from this directory. Sub directories will only be analyzed if the
+          'Look in subfolders' option is checked. Enter your folder path, or
+          click the browse button <b>'...'</b> to browse your disk and select a
+          specific directory.</li>
+        <li><b>Look in subfolders</b>: Instructs the software to look for data files in
+          all subfolders too.</li>
+      </ul>
+      <p>Filters are used to make a final decision if data matching the time
+      period must be imported. To simplify entries and reduce typical case
+      problems, filter strings entered <b>are not</b> case sensitive (the
+      software makes no difference between uppercase and lowercase). Multiple filters conditions can be activated at
+      once and include:</p>
+      <ul>
+        <li><b>Tester name</b>: lets you define a filter on the tester name. Keep it to
+          * if you don't want to activate this filter, otherwise any string is
+          valid, including wild characters such as * and ?. E.g.: <b>test??_*</b>
+          will instruct the software to import test data matching the date
+          period selected AND if data have been tested on a tester which name
+          starts with the string <b>test</b> then includes <b>2</b> characters
+          to ignore, then followed by a <b>underscore</b> character, then
+          followed by <b>any type</b> of string.</li>
+        <li><b>Device name</b>: Same as above except filter checks the device name (STDF
+          part_type field)</li>
+        <li><b>Program name</b>: Same as above except filter checks the test program
+          name.</li>
+        <li><b>Lot name</b>: Same as above except filter checks the lot name string.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

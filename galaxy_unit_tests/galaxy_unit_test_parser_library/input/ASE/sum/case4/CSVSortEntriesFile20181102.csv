@@ -1,0 +1,25 @@
+OTI ,,STD Bin Name/ Bin name,Std_Test # ,SUBCON,SUBCON,,
+Enabled,Family,Tests name,Test#,ASE,AMKOR,BIN #
+1,G-D-S (Short),GDS sh,1000,1000_GDS sh,1000 GDS sh,1000
+1,GS Short,GS sh,1001,1001_GS sh,1001 GS sh,1001
+1,DS Short,DS sh,1002,1002_DS sh,1002 DS sh,1002
+1,Gate (Open),G-open,1003,1003_G-open,1003 G-open,1003
+1,L2/4 open,L2/4 open,1004,1004_L2/4 open,1004 L2/4 open,1004
+1,ISO (Short),ISO sh,1005,1005_ISO sh,1005 ISO sh,1005
+1,Real Rg,Rg,1006,1006_Rg,1006 Rg,1006
+1,S-open,Ass'y Rejects,1007,1007_Ass'y Rejects,1007 Ass'y Rejects,1007
+1,TR,TR,1008,1008_TR,1008 TR,1008
+0,SPU,SPU,1009,1009_SPU,1009 SPU,1009
+1,UIS,UIS,1010,1010_UIS,1010 UIS,1010
+1,Vision Rej,Vision Rej,1011,1011_Vision Rej,1011 Vision Rej,1011
+1,Unknown,Unknown,1013,1013_Unknown,1013 Unknown,1013
+1,Purge units,Purge units,1015,1015_Purge units,1015 Purge units,1015
+1,Reject units,Handler Loss,1016,1016_Handler Loss,1016 Handler Loss,1016
+1,Delta Rds1,D_RDSON,1014,1014_D_RDSON,1014 D_RDSON,1014
+1,V_Droop,VDRP(VD),1017,1017_VDRP(VD),1017 VDRP(VD),1017
+1,V_Collapse,VCOL(VC),1018,1018_VCOL(VC),1018_VCOL(VC),1018
+1,UIS_Low,UIS_LOW,1019,1019_UIS_LOW,1019_UIS_LOW,1019
+1,Real Rg,Rg_Stat,2006,2006_Rg_Stat,2006_Rg_Stat,2006
+1,G-D-S (Short)2,GDS sh2,1020,1020_GDS sh2,1020_GDS sh2,1020
+1,S-Open2,S-Open2,1021,1021_S-Open2,1021_S-Open2,1021
+

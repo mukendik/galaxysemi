@@ -1,0 +1,471 @@
+# Outlier Configuration file
+# Date: Fri 02 Aug 2013 13:24:49
+# Examinator PAT - V7.1 RC1
+# www.mentor.com
+ 
+<Outlier_Options TestingStage="Final Test">
+Product, 
+GoodBinList,1,
+GoodHardBinList,1,
+TestKey,0,
+PatLimitsFromBin,goodbins,,
+MinimumSamples,50,
+MinimumOutliersToFail,1,
+ScanGoodPartsOnly,1,
+StickWithinSpecLimits,0,
+StopOnFirstFail,0,
+IgnoreHighCpk,-1,
+AssumeIntegerCategory,1,
+CategoryValueCount,5,
+RecipeVersion,-1,0,
+StaticFailColor,255 0 0,
+DynamicFailColor,255 0 0,
+EWS_Flow_Names,EWS1,
+EWS_Flow_Comments,EWS flow 1,
+EWS_Flow_Kill_STDF_SBIN,,
+EWS_Flow_Kill_STDF_HBIN,,
+EWS_Flow_Kill_MAP_BIN,,
+EWS_Rules_Precedence,NNR,IDDQ-Delta,GDBN,Clustering,Reticle,
+GPAT_IgnorePPatBins,1,
+BadClusterBin,143,
+BadClusterColor,0 0 0,
+BadClusterCustomLib,0,
+NNR_Enabled,0,
+NRR_ClusterBin,142,
+NNR_Color,0 0 0,
+IDDQ_Delta_Enabled,0,
+IDDQ_Delta_Bin,10,
+IDDQ_Delta_Color,0 0 0,
+ReticleEnabled,0,
+ReticleWafermapSource,0,
+ReticleYieldThreshold,5,
+ReticleSizeX,6,
+ReticleSizeY,3,
+BadBinReticle,0;2-65535,
+ReticleBin,144,
+ReticleColor,0 0 0,
+StaticPatRule,0,
+StaticPatBin,11,
+DynamicPatRule,1,
+DynamicPatBin,10,
+CustomAlgorithmLibEnabled,0,
+BadClusterRule,0,
+BadBinZPAT,0;2-65535,
+ZPAT_OnSoftBin,1,
+CompositeExclusionZoneYield,0,
+CompositeZoneBin,148,
+3DNeighbourhoodEnabled,0,
+3DNeighbourhoodBin,147,
+MergeEtestStdf,0,
+MergeEtestStdfBin,146,
+ZPAT_GDBN_Enabled,0,
+ZPAT_Reticle_Enabled,0,
+ZPAT_Clustering_Enabled,0,
+ZPAT_Color,0 0 0,
+ClusteringPotatoEnabled,0,
+BadBinClusteringPotato,145,
+BadClusteringPotatoColor,0 0 0,
+FT_BaseLineAlgo,1,
+FT_BaseLine,200,
+FT_SubsequentBaseLine,100,
+FT_MinSamplesPerSite,10,
+FT_BaseLineMaxOutliers,5,
+FT_Tuning,200,
+FT_TuningType,0,
+FT_TuningSamples,200,
+# Recipe version 2013 April 22th : 0=Critical 1=Warning 2=Notice 3=Ignore (case 7103)
+FT_Alarm_Severity_Outliers,0,
+FT_RunsPerPacket,1,
+FT_Traceability,1,
+Report_Stats,1,
+Report_Histo,1,
+Report_Wafermap,1,
+Report_WafermapType,0,
+Report_Pareto,1,
+Report_Binning,1,
+Report_SPAT_Limits,1,
+Report_DPAT_Limits_Outliers,1,
+Report_DPAT_Limits_NoOutliers,1,
+GaussianShape,6,6,9,9,12,12,
+GaussianTailedShape,6,7,9,10,12,14,
+GaussianDoubleTailedShape,7,7,10,10,14,14,
+LogNormalShape,3,7,4,10,6,14,
+MultiModalShape,6,6,9,9,12,12,
+ClampedShape,3,6,4,9,6,12,
+DoubleClampedShape,3,3,4,4,6,6,
+CategoryShape,6,6,9,9,12,12,
+UnknownShape,6,6,9,9,12,12,
+GaussianAlgo,0
+GaussianTailedAlgo,0
+GaussianDoubleTailedAlgo,0
+LogNormalAlgo,0
+MultiModalAlgo,0
+ClampedAlgo,0
+DoubleClampedAlgo,0
+CategoryAlgo,0
+UnknownAlgo,0
+GaussianPAT,1
+GaussianTailedPAT,1
+GaussianDoubleTailedPAT,1
+LogNormalPAT,1
+MultiModalPAT,1
+ClampedPAT,1
+DoubleClampedPAT,1
+CategoryPAT,1
+UnknownPAT,1
+IgnoreIQR0,1,
+IgnoreH_Category,1,
+IgnoreH_Cpk,-1,
+</Outlier_Options>
+ 
+<Outlier_Rules>
+# Static Bin ,Dynamic Bin ,Test#,TestName,Low Limit,High Limit,Shape,Cpk,Robust Mean,Robust Sigma,Mean,Sigma,Range,Samples to Ignore,Outliers to Keep,Outlier Limits set,Outlier Rule,N factor (or Head),T factor (Tail),PAT-Median Drift alarm,Drift units,Test Mean drift alarm, Drift  units,Cpk alarm,LL scale,HL scale,SPAT Rule,N factor (or Head),T factor (Tail),DPAT Notes,SPAT Notes,NNR Rule
+-1,10,11000001,VDDIO Sleep @ 3.6V/hs41__vddio,-9.99999997475243e-07 A,0.000129899999592453 A,Gaussian,5.1,9.11E-06,6.52E-07,9.08E-06,6.65E-07,4.57E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,11000002,VDDA Sleep @ 3.6V/hs41__vdda,-9.99999997475243e-07 A,0.000129899999592453 A,Gaussian,25,7.51E-05,7.12E-07,7.51E-05,7.30E-07,6.03E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,11000003,VDDO Sleep @ 3.6V/hs41__vddo,-9.99999997475243e-07 A,0.000129899999592453 A,Gaussian,6.3,1.88E-05,9.92E-07,1.89E-05,1.05E-06,8.91E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,11000004,VDD Sleep Total @3.6V/,-9.99999997475243e-07 A,0.000129899999592453 A,Gaussian,5.1,0.000102972,1.63E-06,0.000103095,1.74E-06,1.30E-05,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,11000005,VDDIO PWRDN @ 3.6V/hs41__vddio,-9.99999997475243e-07 A,6.99000011081807e-05 A,Gaussian,4.6,8.95E-06,7.13E-07,8.95E-06,7.22E-07,4.51E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,11000006,VDDA PWRDN @ 3.6V/hs41__vdda,-9.99999997475243e-07 A,6.99000011081807e-05 A,Gaussian,17,1.43E-05,2.81E-07,1.43E-05,2.95E-07,3.89E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,11000007,VDDO PWRDN @ 3.6V/hs41__vddo,-9.99999997475243e-07 A,6.99000011081807e-05 A,Gaussian,6.1,1.77E-05,1.00E-06,1.78E-05,1.03E-06,7.94E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,11000008,VDD PWRDN Total @3.6V/,-9.99999997475243e-07 A,6.99000011081807e-05 A,Gaussian,6.7,4.10E-05,1.51E-06,4.10E-05,1.45E-06,9.82E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,58000001,VDDA/hs41__vdda,0.00100000004749745 A,0.200000002980232 A,Gaussian,25,0.091922402,0.001170006,0.091764417,0.001192575,0.007219658,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,58000002,VDDIO/hs41__vddio,0.00100000004749745 A,0.100000001490116 A,Clamp_R,9.9,0.027608659,0.001437112,0.0274059,0.000890164,0.002777843,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,58000003,VDD0/hs41__vddo,0.00100000004749745 A,0.0399999991059303 A,Gaussian,25,0.015028861,0.000179878,0.015028537,0.000187573,0.001112827,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,58000004,ICC__16__SS__OFF__3.6V/,0.00100000004749745 A,0.140959993004799 A,Gaussian,8.8,0.106941756,0.001269485,0.106792954,0.001292737,0.007672891,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,58000005,Lock/hs41__lock,2.29999995231628 V,5 V,Gaussian_L,2.80E+02,3.659190655,0.001257084,3.65906609,0.001614166,0.01079011,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,0,0,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,58000006,VDDA/hs41__vdda,0.00100000004749745 A,0.200000002980232 A,Gaussian,26,0.10063576,0.001293377,0.100543939,0.001279349,0.007381536,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,58000007,VDDIO/hs41__vddio,0.00100000004749745 A,0.100000001490116 A,B_Modal,9.7,0.02274687,0.001208824,0.022572815,0.000738996,0.002263405,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,58000008,VDD0/hs41__vddo,0.00100000004749745 A,0.0399999991059303 A,Gaussian,26,0.015413291,0.000189841,0.015409062,0.000184572,0.001109108,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,58000009,ICC__16__SS__ON__3.6V/,0.00100000004749745 A,0.150999993085861 A,Gaussian,8.5,0.116012413,0.001372402,0.115953001,0.001375768,0.00783477,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,63000001,VDDA/hs41__vdda,0.00100000004749745 A,0.200000002980232 A,Gaussian,25,0.093742728,0.001110975,0.093568228,0.001230115,0.007478655,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,63000002,VDDIO/hs41__vddio,0.00100000004749745 A,0.200000002980232 A,B_Modal,10,0.05460779,0.002668379,0.054191793,0.001700369,0.005348832,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,63000003,VDD0/hs41__vddo,0.00100000004749745 A,0.0399999991059303 A,Gaussian,25,0.017935801,0.000229205,0.017927481,0.000223598,0.001405124,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,63000004,ICC__33__SS__OFF__3.6V/,0.00100000004749745 A,0.144930005073547 A,Gaussian,8.3,0.111664835,0.001287057,0.111495709,0.001338934,0.007988401,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,63000006,VDDA/hs41__vdda,0.00100000004749745 A,0.200000002980232 A,Gaussian,23,0.103873275,0.00141465,0.103723115,0.00139037,0.007770032,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,63000007,VDDIO/hs41__vddio,0.00100000004749745 A,0.200000002980232 A,B_Modal,10,0.045548657,0.002258219,0.04520318,0.001420045,0.004319664,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,63000008,VDD0/hs41__vddo,0.00100000004749745 A,0.0399999991059303 A,Gaussian,26,0.018726194,0.000247533,0.018716249,0.000231389,0.001412364,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,63000009,ICC__33__SS__ON__3.6V/,0.00100000004749745 A,0.159999996423721 A,Gaussian,8.3,0.122521445,0.001463631,0.122439364,0.001500089,0.008275569,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,162000001,VDDA/hs41__vdda,0.00100000004749745 A,0.200000002980232 A,Gaussian,33,0.097825922,0.001000359,0.097781381,0.000971442,0.006167479,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,162000002,VDDIO/hs41__vddio,0.00100000004749745 A,0.25 A,B_Modal,10,0.109189466,0.005440591,0.108312075,0.003453103,0.01068429,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,162000003,VDD0/hs41__vddo,0.00100000004749745 A,0.0399999991059303 A,Gaussian,17,0.023752278,0.000333453,0.023741696,0.00031304,0.001927173,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,162000004,ICC__66__SS__OFF__3.6V/,0.00100000004749745 A,0.158490002155304 A,Gaussian,10,0.121567734,0.001169879,0.121523077,0.001175492,0.007702574,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,162000005,Lock/hs41__lock,2.29999995231628 V,5 V,Gaussian_L,1.60E+02,3.65374732,0.002526884,3.65319041,0.002771688,0.017999649,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,0,0,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,162000006,VDDA/hs41__vdda,0.00100000004749745 A,0.200000002980232 A,Gaussian,27,0.113488697,0.001075792,0.113453854,0.001074423,0.00695733,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,162000007,VDDIO/hs41__vddio,0.00100000004749745 A,0.25 A,B_Modal,12,0.091168441,0.003879457,0.090252071,0.002503913,0.00798025,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,162000008,VDD0/hs41__vddo,0.00100000004749745 A,0.0399999991059303 A,Gaussian,14,0.025382161,0.00037056,0.025360595,0.000339791,0.002110006,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,162000009,ICC__66__SS__ON__3.6V/,0.00100000004749745 A,0.180999994277954 A,Gaussian,11,0.138838097,0.001255528,0.13881445,0.001313182,0.008909837,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,170000001,Input Impedance (Ri)/hs41__inp,89.0500030517578 Ohm,111.849998474121 Ohm,Gaussian,6.2,101.5046158,0.594753689,101.4762134,0.561250166,3.876914978,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,0,0,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,171000001,VDDA/hs41__vdda,0.00100000004749745 A,0.200000002980232 A,Gaussian,29,0.106471516,0.001060356,0.106469055,0.001076765,0.006967016,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,171000002,VDDIO/hs41__vddio,0.00100000004749745 A,0.25 A,Unknown,8.3,0.165865175,0.005269062,0.16459948,0.003427767,0.013791055,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,171000003,VDD0/hs41__vddo,0.00100000004749745 A,0.0399999991059303 A,Gaussian,7.7,0.0303661,0.000445817,0.030336357,0.000417138,0.002560288,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,171000004,ICC__104__SS__OFF__3.6V/,0.00100000004749745 A,0.173649996519089 A,Gaussian,8.9,0.136801064,0.001327925,0.136805411,0.001374382,0.00933002,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,171000005,Lock/hs41__lock,2.29999995231628 V,5 V,Log_L,1.20E+02,3.651546836,0.003436936,3.650069673,0.003684765,0.021519184,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,0,0,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,171000006,VDDA/hs41__vdda,0.00100000004749745 A,0.200000002980232 A,Gaussian,18,0.129279107,0.001239898,0.129317652,0.001281755,0.008742117,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,171000007,VDDIO/hs41__vddio,0.00100000004749745 A,0.25 A,M_Modal,18,0.131209299,0.003051857,0.130464599,0.002262101,0.01002878,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,171000008,VDD0/hs41__vddo,0.00100000004749745 A,0.0399999991059303 A,Gaussian,5.2,0.032881707,0.000504379,0.032851038,0.000460361,0.002848899,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,171000009,ICC__104__SS__ON__3.6V/,0.00100000004749745 A,0.206000000238419 A,Gaussian,8.9,0.162128299,0.001634525,0.16216869,0.001634991,0.011389807,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010012,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010013,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010014,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010015,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010016,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010017,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010018,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010019,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010020,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010021,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010022,I__In__0V__3V6,-9.66999959928216e-06 A,9.66999959928216e-06 A,Gaussian,58,-1.65E-07,4.50E-08,-1.68E-07,5.45E-08,4.08E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010023,I__In__0V__3V6,-7.97999964561313e-05 A,9.99999997475243e-07 A,Gaussian,20,-5.95E-05,3.43E-07,-5.95E-05,3.37E-07,2.46E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010024,I__In__0V__3V6,-7.97999964561313e-05 A,9.99999997475243e-07 A,Gaussian,20,-5.95E-05,3.43E-07,-5.95E-05,3.37E-07,2.46E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010025,I__In__0V__3V6,-7.97999964561313e-05 A,9.99999997475243e-07 A,Gaussian,20,-5.95E-05,3.43E-07,-5.95E-05,3.37E-07,2.46E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010026,I__In__0V__3V6,-7.97999964561313e-05 A,9.99999997475243e-07 A,Gaussian,20,-5.95E-05,3.43E-07,-5.95E-05,3.37E-07,2.46E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010027,I__In__0V__3V6,-0.000109749998955522 A,6.34000002719404e-07 A,Gaussian,14,-8.90E-05,5.20E-07,-8.91E-05,5.07E-07,3.37E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,9,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010028,I__In__0V__3V6,-0.000109749998955522 A,6.34000002719404e-07 A,Gaussian,14,-8.90E-05,5.20E-07,-8.91E-05,5.07E-07,3.37E-06,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,9,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010040,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010041,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010042,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010043,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010044,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010045,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010046,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010047,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010048,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010049,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010050,I__In__3V6,-9.89999989542412e-06 A,6.62000002193963e-06 A,Gaussian,10,3.97E-06,8.58E-08,3.96E-06,8.45E-08,5.80E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010051,I__In__3V6,-7.97999964561313e-05 A,9.99999997475243e-07 A,Gaussian,5.9,-1.90E-07,7.72E-08,-1.98E-07,6.74E-08,3.19E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010052,I__In__3V6,-7.97999964561313e-05 A,9.99999997475243e-07 A,Gaussian,5.9,-1.90E-07,7.72E-08,-1.98E-07,6.74E-08,3.19E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010053,I__In__3V6,-7.97999964561313e-05 A,9.99999997475243e-07 A,Gaussian,5.9,-1.90E-07,7.72E-08,-1.98E-07,6.74E-08,3.19E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010054,I__In__3V6,-7.97999964561313e-05 A,9.99999997475243e-07 A,Gaussian,5.9,-1.90E-07,7.72E-08,-1.98E-07,6.74E-08,3.19E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,6,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010055,I__In__3V6,-0.000109749998955522 A,6.34000002719404e-07 A,Gaussian,6,-1.28E-07,4.52E-08,-1.33E-07,4.26E-08,2.43E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,9,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,173010056,I__In__3V6,-0.000109749998955522 A,6.34000002719404e-07 A,Gaussian,6,-1.28E-07,4.52E-08,-1.33E-07,4.26E-08,2.43E-07,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,6,9,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001001,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001002,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001003,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001004,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001005,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001006,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001007,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001008,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001009,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001010,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001011,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001012,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001013,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001014,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001015,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001016,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001017,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001018,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001019,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001020,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001021,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001022,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001023,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001024,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001025,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001026,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001027,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001028,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001029,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001030,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001031,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001032,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001033,IOS__DOUT__1V7__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,5.3,-0.004912109,0.000121189,-0.004919677,0.000112854,0.000749366,Negative values,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001034,IOS__PCLK__1V7__DCS__L/hs41__clkout__to__dp,-0.0153299998492002 A,-0.00510000018402934 A,Gaussian,3.9,-0.006297526,0.000107846,-0.006302004,0.000103317,0.000695575,None,None,Near outliers,Mean +/-N*Sigma,6,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001035,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001036,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001037,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001038,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001039,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001040,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001041,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001042,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001043,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001044,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001045,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001046,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001047,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001048,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001049,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001050,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001051,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001052,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001053,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001054,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001055,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001056,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001057,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001058,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001059,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001060,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001061,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001062,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001063,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001064,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001065,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001066,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001067,IOS__DOUT__1V7__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,3.8,-0.007697791,0.000245012,-0.007703536,0.000217521,0.001372566,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176001068,IOS__PCLK__1V7__DCS__H/hs41__clkout__to__dp,-0.0285000000149012 A,-0.00910000037401915 A,Gaussian,4.1,-0.011421896,0.000188953,-0.011422947,0.00018988,0.001327865,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002002,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002003,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002004,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002005,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002006,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002007,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002008,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002009,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002010,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002011,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002012,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002013,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002014,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002015,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002016,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002017,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002018,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002019,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002020,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002021,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002022,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002023,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002024,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002025,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002026,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002027,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002028,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002029,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002030,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002031,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002032,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002033,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002034,IOS__DOUT__1V9__DCS__L,-0.0115000000223517 A,-0.00312500004656613 A,Gaussian,7.6,-0.006461038,0.000159235,-0.006469379,0.000146753,0.00094494,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002035,IOS__PCLK__1V9__DCS__L/hs41__clkout__to__dp,-0.0153299998492002 A,-0.00510000018402934 A,Gaussian,8.4,-0.008266565,0.000128818,-0.008269385,0.000126453,0.000842837,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002036,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002037,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002038,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002039,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002040,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002041,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002042,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002043,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002044,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002045,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002046,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002047,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002048,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002049,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002050,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002051,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002052,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002053,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002054,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002055,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002056,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002057,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002058,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002059,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002060,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002061,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002062,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002063,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002064,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002065,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002066,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002067,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002068,IOS__DOUT__1V9__DCS__H,-0.0188999995589256 A,-0.00524999992921948 A,Gaussian,5.5,-0.010074918,0.000336485,-0.010079116,0.000291292,0.001750331,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176002069,IOS__PCLK__1V9__DCS__H/hs41__clkout__to__dp,-0.0285000000149012 A,-0.00910000037401915 A,Gaussian,8.1,-0.014870851,0.00022915,-0.014867268,0.000237342,0.001612966,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003001,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003002,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003003,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003004,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003005,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003006,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003007,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003008,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003009,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003010,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003011,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003012,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003013,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003014,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003015,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003016,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003017,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003018,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003019,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003020,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003021,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003022,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003023,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003024,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003025,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003026,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.6,-0.017526971,0.000240066,-0.017524317,0.00022702,0.001535989,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003027,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.4,-0.017572099,0.000268138,-0.017560624,0.000238311,0.001361448,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003028,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.4,-0.017572099,0.000268138,-0.017560624,0.000238311,0.001361448,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003029,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.4,-0.017572099,0.000268138,-0.017560624,0.000238311,0.001361448,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003030,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.4,-0.017572099,0.000268138,-0.017560624,0.000238311,0.001361448,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003031,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.4,-0.017572099,0.000268138,-0.017560624,0.000238311,0.001361448,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003032,IOS__DOUT__3V0__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,3.4,-0.017572099,0.000268138,-0.017560624,0.000238311,0.001361448,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003033,IOS__PCLK__3V0__DCS__L/hs41__clkout__to__dp,-0.0428000018000603 A,-0.017000000923872 A,Gaussian,7,-0.022629943,0.000296612,-0.022640918,0.000268506,0.001738297,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003034,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003035,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003036,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003037,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003038,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003039,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003040,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003041,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003042,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003043,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003044,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003045,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003046,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003047,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003048,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003049,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003050,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003051,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003052,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003053,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003054,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003055,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003056,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003057,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003058,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003059,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003060,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003061,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003062,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003063,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003064,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003065,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003066,IOS__DOUT__3V0__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,7.2,-0.027733313,0.000382471,-0.027726254,0.000347686,0.002225757,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176003067,IOS__PCLK__3V0__DCS__H/hs41__clkout__to__dp,-0.0829999968409538 A,-0.0313199982047081 A,Gaussian,7.5,-0.041359015,0.000477306,-0.04134941,0.000447393,0.002871845,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004001,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004002,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004003,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004004,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004005,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004006,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004007,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004008,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004009,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004010,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004011,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004012,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004013,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004014,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004015,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004016,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004017,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004018,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004019,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004020,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004021,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004022,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004023,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004024,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004025,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004026,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,10,-0.024073536,0.000317969,-0.024076223,0.000285631,0.001944525,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004027,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,9.9,-0.024158308,0.000339324,-0.024146307,0.000304682,0.001790704,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004028,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,9.9,-0.024158308,0.000339324,-0.024146307,0.000304682,0.001790704,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004029,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,9.9,-0.024158308,0.000339324,-0.024146307,0.000304682,0.001790704,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004030,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,9.9,-0.024158308,0.000339324,-0.024146307,0.000304682,0.001790704,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004031,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,9.9,-0.024158308,0.000339324,-0.024146307,0.000304682,0.001790704,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004032,IOS__DOUT__3V6__DCS__L,-0.034400001168251 A,-0.0151000004261732 A,Gaussian,9.9,-0.024158308,0.000339324,-0.024146307,0.000304682,0.001790704,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004033,IOS__PCLK__3V6__DCS__L/hs41__clkout__to__dp,-0.0428000018000603 A,-0.017000000923872 A,Gaussian,12,-0.031109706,0.000369209,-0.031109012,0.000332937,0.00203467,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004034,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004035,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004036,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004037,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004038,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004039,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004040,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004041,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004042,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004043,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004044,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004045,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004046,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004047,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004048,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004049,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004050,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004051,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004052,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004053,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004054,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004055,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004056,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004057,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004058,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004059,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004060,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004061,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004062,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004063,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004064,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004065,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004066,IOS__DOUT__3V6__DCS__H,-0.0551000013947487 A,-0.0201699994504452 A,Gaussian,13,-0.037944473,0.000480695,-0.037942134,0.000448934,0.002986442,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+-1,10,176004067,IOS__PCLK__3V6__DCS__H/hs41__clkout__to__dp,-0.0829999968409538 A,-0.0313199982047081 A,Gaussian,14,-0.056397941,0.000596124,-0.056376563,0.000582806,0.003756475,None,None,Near outliers,Smart & Adaptive,,,,None,,None,,3,3,AEC (Median +/-6*RobustSigma),6,6,,,Enabled
+</Outlier_Rules>

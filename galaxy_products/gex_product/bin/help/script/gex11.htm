@@ -1,0 +1,239 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="170" valign="top" align="left">
+      <p align="left"><img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>gexFileInfo<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library
+      </a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>gexFileInfo(
+  const group_id,      // Group#
+  const file_id,       // File#
+  const info_type)     // Information type to extract from file
+
+</pre>
+      <p>This scripting function allows you to read/extract information from a 
+      given data file already loaded in Quantix memory (meaning calls to <a href="gex4.htm">gexGroup</a> 
+      and <a href="gex3.htm">gexFile</a> have been executed earlier in the 
+      script file). Alternatively, if you don't have the file already loaded in 
+      memory, you can use one Quantix script template <b>get_file_info.csl</b> to 
+      do the work for you (this file is located in the folder 
+      'samples/monitoring' in the Quantix software package folder). In fact we 
+      strongly recommend you to use this template script so to avoid debugging 
+      low-level codes! Your script would then be:<br>
+      <br>
+      <font face="Courier New" size="2">#include 'c:/program files/Quantix 
+      examinator/samples/monitoring/get_file_info.csl</font></p>
+      <p><font face="Courier New">main()<br>
+      {<br>
+&nbsp; </font><font SIZE="2"><font face="Courier New">var file = 'C:/data_files/wafer_test.std';<br>
+&nbsp; var file_info;<br>
+&nbsp; var message;</font></p>
+      <p><font face="Courier New">&nbsp; // Get file name<br>
+&nbsp; file_info = GetFileInfo(file,'file_name');<br>
+&nbsp; message = 'File name: ' + file_info ;<br>
+&nbsp; sysLog(message);</font></p>
+      </font>
+      <p><font face="Courier New" SIZE="2">&nbsp; // Get Lot ID<br>
+&nbsp; file_info = GetFileInfo(file,'lot_id');<br>
+&nbsp; message = 'Lot ID: ' + file_info ;<br>
+&nbsp; sysLog(message);</font><font face="Courier New"><br>
+      }</font></p>
+      <p>Note: This example doesn't include custom settings, but you can of 
+      course add a 'SetOptions' function in your script (can be copy/paste from 
+      any Examinator script created analyzing data files). Also, The data file 
+      can be in any format supported by Examinator (STDF, ATDF, SPR, GDF, PCM, 
+      WAT, DL4, etc...).</p>
+      <p><br>
+      </p>
+      <pre>&nbsp;</pre>
+      <h1>File Info fields available<br>
+      <img border="0" src="../../html/images/ruler.png" width="616" height="8">
+      </h1>
+      <table border="1" width="647" cellpadding="3">
+        <tr>
+          <td bgcolor="#0034AA" width="116"><font color="#FFFFFF"><b>info_type</b></font></td>
+          <td bgColor="#0034aa" width="507"><font color="#ffffff"><b>Description</b></font></td>
+        </tr>
+        <tr>
+          <td width="116"><b>aux_file</b></td>
+          <td width="507">Returns the auxiliary file (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>bad_parts</b></td>
+          <td width="507">Returns the total of bad parts tested</td>
+        </tr>
+        <tr>
+          <td width="116"><b>exec_type</b></td>
+          <td width="507">Returns the tester Executable (tester environment. eg: 
+          Teradyne Image)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>exec_version</b></td>
+          <td width="507">Returns the tester Executable version (tester 
+          environment. eg: 10.3.6)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>facility_id</b></td>
+          <td width="507">Returns the Facility ID where the file was created (if 
+          available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>family_id</b></td>
+          <td width="507">Returns the device family ID (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>file_name</b></td>
+          <td width="507">Returns the full path to the file analyzed</td>
+        </tr>
+        <tr>
+          <td width="116"><b>floor_id</b></td>
+          <td width="507">Returns the floor ID where the file created (if 
+          available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>flow_id</b></td>
+          <td width="507">Returns the testing flow ID (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>good_parts</b></td>
+          <td width="507">Returns the total of good parts tested</td>
+        </tr>
+        <tr>
+          <td width="116"><b>handler_id</b></td>
+          <td width="507">Returns the handler/prober ID used (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>lot_id</b></td>
+          <td width="507">Returns the Lot ID string</td>
+        </tr>
+        <tr>
+          <td width="116"><b>operator</b></td>
+          <td width="507">Returns the operator name (who tested the parts)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>package_id</b></td>
+          <td width="507">Returns the package ID (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>probecard_id</b></td>
+          <td width="507">Returns the probe card ID used for testing (if 
+          available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>product</b></td>
+          <td width="507">Returns the product tested (eg: AVT567-5)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>program_name</b></td>
+          <td width="507">Returns the program name</td>
+        </tr>
+        <tr>
+          <td width="116"><b>program_version</b></td>
+          <td width="507">Returns the program version (or empty string if not 
+          available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>serial_id</b></td>
+          <td width="507">Returns the serial# (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>setup_id</b></td>
+          <td width="507">Returns the setup ID # (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>spec_name</b></td>
+          <td width="507">Returns the specification name (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>spec_version</b></td>
+          <td width="507">Returns the specification version # (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>stdf_file_name</b></td>
+          <td width="507">Returns the full path to the STDF file created for the 
+          analysis in case the 'file-name' is of different format. Examinator 
+          always converts the file to STDF prior to extract ints details</td>
+        </tr>
+        <tr>
+          <td width="116"><b>sublot_id</b></td>
+          <td width="507">Returns the Sub-lot ID (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>temperature</b></td>
+          <td width="507">Returns the testing temperature (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>user_text</b></td>
+          <td width="507">Returns the user text info (if available)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>tester_name</b></td>
+          <td width="507">Returns the tester name that created the data file (eg: 
+          t-123)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>tester_type</b></td>
+          <td width="507">Returns the tester type that created the data file (eg: 
+          hp93K)</td>
+        </tr>
+        <tr>
+          <td width="116"><b>total_parts</b></td>
+          <td width="507">Returns the total number of parts tested</td>
+        </tr>
+        <tr>
+          <td width="116"><b>wafer_id</b></td>
+          <td width="507">Returns the wafer ID string (or empty string if not 
+          wafer sort data)</td>
+        </tr>
+        </table>
+      <p>&nbsp;</p>
+      
+      <pre>Example:
+// Extract File details
+<font face="Courier New" SIZE="2">var message;
+message = 'Lot ID: ' + GetFileInfo(file,'lot_id');
+sysLog(message);	// Display Lot ID
+message = 'Product: ' + GetFileInfo(file,'product');
+sysLog(message);	// Display Product name</font>
+</pre>
+      <pre>&nbsp;</pre>
+      
+      <pre></pre>
+      <pre>&nbsp;</pre>
+      <pre></pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

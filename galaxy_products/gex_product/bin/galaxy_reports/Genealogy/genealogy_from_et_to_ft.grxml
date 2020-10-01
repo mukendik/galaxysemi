@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GalaxyReport
+  Version="0.66"
+  Type="CompareDS"
+  ID="Genealogy"
+  Title="Genealogy"
+  Description="Genealogy from ET to FT report"
+  EnableIf="GSProductInfo.isGenealogyAllowed()"
+  RunnableIf=""
+  SetReportType="gexOptions('dataprocessing','sorting','none');
+    gexOptions('dataprocessing', 'sublot_sorting', 'xy');
+    gexOptions('statistics','generic_galaxy_tests','show');
+    gexOptions('adv_pearson','test_stats','$O{PEARSON_STATS}');
+    gexOptions('adv_pearson','cutoff','$O{PEARSON_THRESHOLD}');
+    gexOptions('adv_correlation','chart_type','$O{PEARSON_CHART_TYPE}');
+    gexOptions('adv_correlation','boxwhisker_orientation','$O{PEARSON_WHISKER_ORIENTATION}');
+    gexOptions('wafer','notch_location','file_or_detected');
+    gexOptions('binning','computation','wafer_map');
+    gexReportType('stats','all'); gexReportType('wafer','soft_bin'); gexReportType('histogram','test_over_range','all');
+    gexReportType('adv_my_report','disabled'); gexReportType('adv_pearson','test_over_range');"
+  >
+
+  <dataset ID="ETest" label="ETest"
+    stage="E-Test" binning="N" binning_visible="false" binning_readonly="false"
+    time_period_visible="true" time_period_readonly="false" time_period_mandatory="false"
+    time_period_label="Select here the time period"
+    time_period_from="new Date(new Date().getFullYear(),00,01)"
+    time_period_to="new Date()"
+    time_period_defaultValueExpression="all_dates"
+    export="gexQuery('db_granularity','die'); gexQuery('db_testlist','*'); gexQuery('db_exclude_wafers_not_available_at','Final Test'); gexQuery('db_mapping','$O{ET_XML_FILE}');"
+    consolidated="false"
+    >
+    <!-- time_period_defaultValueExpression can be : today, last_2days, last_3days, last_7days, last_14days, last_31days, this_week, this_month, all_dates, OR calendar -->
+    <!-- Date objects in javascript example : new Date() returns today. new Date(2006, 00, 01) returns the 1st jan 2006 -->
+
+    <multifield label="Select here any filters "	role="FILTER"
+      time="*"  facts="false"
+      filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  multivalue="true"
+      field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+      indent="false"
+      >
+      <field default_field="Lot ID" 	field_readonly="true" value_mandatory="false" value_editable="false" multivalue="false" />
+      <field default_field="Tracking Lot ID" 	field_readonly="true" value_mandatory="true" value_editable="false" multivalue="false" />
+      <field default_field="Wafer Nb" field_readonly="true" value_mandatory="false" value_readonly="false" multivalue="true" />
+      <field default_field="Test#" multivalue="true" value_readonly="false" value_editable="true" value="*" />
+    </multifield>
+  </dataset>
+
+  <dataset ID="FinalTest" hideif="true"	label="Final Test"
+    stage="Final Test"	binning="N"	binning_visible="false"
+    time_period_visible="true" time_period_defaultValueExpression="all_dates" time_period_label="Select here the time period"
+    export="gexQuery('db_consolidated','true');
+      gexQuery('db_extraction_mode', 'last_test_instance_only' );
+      gexQuery('db_exclude_wafers_not_available_at','etest');
+      gexQuery('db_testlist','*');
+      gexQuery('db_plugin_options','ExtractPartsIfNoResults=true;ExtractRawData=true');
+      gexQuery('db_mapping','$O{FT_XML_FILE}');"
+    consolidated="false"
+    >
+    <multifield	label="Select here any filters"	role="FILTER"
+      time="*"  facts="false"
+      filterable="true" visible="true"  autorepeat="true" orderable="false"  full_range="false"  multivalue="true"
+      field_mandatory="false" value_readonly="false" value_editable="true" value_mandatory="false"
+      indent="false"
+      >
+      <field default_field="Lot ID" 	field_readonly="true" value_mandatory="false" value_editable="false" multivalue="false" />
+      <field default_field="Tracking Lot ID" 	field_readonly="true" value_mandatory="true" value_editable="false" multivalue="false"/>
+      <field default_field="Wafer Nb" field_readonly="true" value_mandatory="false" value_readonly="false" multivalue="true"/>
+      <field default_field="Test#" multivalue="true" value_readonly="false" value_editable="true" value="*"/>
+    </multifield>
+  </dataset>
+
+
+
+  <options>
+    <option ID="PEARSON_THRESHOLD" label="Pearson's threshold" type="Float" defaultValueExpression="0.1"	defaultvalue="'0.1'"
+      />
+
+    <option ID="PEARSON_STATS" label="Test stats" type="Enum"
+      displayvalues="No stats details|Full stats details"
+      codingvalues="none|full"
+      rawReplace="true"
+    />
+
+    <option ID="PEARSON_CHART_TYPE" label="Pearson's chart type" type="Enum" rawReplace="true"
+        displayvalues="Scatter|Box-Whisker"
+        codingvalues="scatter|boxwhisker"
+        defaultvalue="'scatter'"
+      />
+
+    <option ID="PEARSON_WHISKER_ORIENTATION" label="Box-whisker orientation" type="Enum" rawReplace="true"
+        displayvalues="Horizontal|Vertical"
+        codingvalues="horizontal|vertical"
+        defaultvalue="'vertical'"
+      />
+
+    <!-- option ID="db_granularity" type="Enum"  codingvalues="die|zone" displayvalues="die|zone" defaultValueExpression="die"
+      hideif="true" label="Granularity"
+      export="gexQuery" rawReplace="false"
+    / -->
+
+    <!-- option ID="SVGFILE" label="Waferzone svg file" type="Path" filter="svg files (*.svg)" defaultvalue="'samples/waferzones/waferzones1.svg'" /-->
+
+    <option ID="ET_XML_FILE" label="ET xml map file" type="Path" filter="xml files (*.xml)" defaultvalue="''"
+      tooltip="A template XML file can be found in your install directory,
+for example on Windows C:/Program Files/Galaxy Examinator 7.2/samples/gex_dataset_config.xml " />
+    <option ID="FT_XML_FILE" label="FT xml map file" type="Path" filter="xml files (*.xml)" defaultvalue="''"
+      tooltip="A template XML file can be found in your install directory,
+for example on Windows C:/Program Files/Galaxy Examinator 7.2/samples/gex_dataset_config.xml " />
+
+    <!-- option ID="ET_NOTCH"	label="E-Test notch"	type="Enum"
+      displayvalues="From database|Up|Right|Down|Left"	codingvalues="from_db|U|R|D|L"
+      rawReplace="true" defaultvalue="'from_db'"	/ -->
+
+    <!-- option ID="WS_NOTCH"	label="WaferSort notch"	type="Enum"
+      displayvalues="From database|Up|Right|Down|Left"	codingvalues="from_db|U|R|D|L"
+      rawReplace="true" defaultvalue="'from_db'"	/ -->
+
+    <!-- option ID="P_TITLE" 		type="String" 	hideif="false" label="Report title" rawReplace="true" defaultvalue="'My Report'" / -->
+  </options>
+
+</GalaxyReport>

@@ -1,0 +1,15 @@
+To build r11 library:
+    You must be on workstation running sol 7 
+    type "make r11"
+To build r12 or r14_3 libraries:
+    You must be on workstation running sol 8 
+    type either "make r12" or "make r14_3"
+To build LINUX library:
+    you must be on Linux workstation
+    type either "/usr/bin/make linux" or "/usr/bin/make linux_r14_3"
+
+-----------------------------------------------
+
+NOTICE: that the functions have #ifdef R14_3 around most of the code. This
+is necessary when compiling file for OS's prior to R14.3 since there is no STRING definition
+in the c_library.h file and a Compile error would occur otherwise.

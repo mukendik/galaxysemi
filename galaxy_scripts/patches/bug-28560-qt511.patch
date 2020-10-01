@@ -1,0 +1,414 @@
+--- qt-everywhere-enterprise-src-5.1.1/qtbase/src/corelib/json/qjson.cpp	2013-08-25 22:04:45.000000000 +0200
++++ qt-everywhere-enterprise-new-5.1.1/qtbase/src/corelib/json/qjson.cpp	2014-01-30 10:56:25.141425769 +0100
+@@ -274,7 +274,7 @@
+ {
+     int s = 0;
+     switch (type) {
+-    case QJsonValue::Double:
++    case QJsonValue::Number:
+         if (latinOrIntValue)
+             break;
+         s = sizeof(double);
+@@ -303,7 +303,7 @@
+ {
+     int offset = 0;
+     switch (type) {
+-    case QJsonValue::Double:
++    case QJsonValue::Number:
+         if (latinOrIntValue)
+             break;
+         // fall through
+@@ -342,11 +342,19 @@
+ {
+     *compressed = false;
+     switch (v.t) {
+-    case QJsonValue::Double:
+-        if (QJsonPrivate::compressedNumber(v.dbl) != INT_MAX) {
+-            *compressed = true;
+-            return 0;
++    case QJsonValue::Number:
++        if(v.isDouble()){
++            if(QJsonPrivate::compressedNumber(v.dbl) != INT_MAX){
++                *compressed = true;
++                return 0;
++            }
+         }
++        else{
++            if (QJsonPrivate::compressedNumber(v.ll) != INT_MAX) {
++                *compressed = true;
++                return 0;
++            }
++    }
+         return sizeof(double);
+     case QJsonValue::String: {
+         QString s = v.toString();
+@@ -380,8 +388,8 @@
+         break;
+     case QJsonValue::Bool:
+         return v.b;
+-    case QJsonValue::Double: {
+-        int c = QJsonPrivate::compressedNumber(v.dbl);
++    case QJsonValue::Number: {
++        int c = v.isDouble()?QJsonPrivate::compressedNumber(v.dbl):QJsonPrivate::compressedNumber(v.ll);
+         if (c != INT_MAX)
+             return c;
+     }
+@@ -400,7 +408,7 @@
+ void Value::copyData(const QJsonValue &v, char *dest, bool compressed)
+ {
+     switch (v.t) {
+-    case QJsonValue::Double:
++    case QJsonValue::Number:
+         if (!compressed) {
+             qToLittleEndian(v.ui, (uchar *)dest);
+         }
+--- qt-everywhere-enterprise-src-5.1.1/qtbase/src/corelib/json/qjsonparser.cpp	2013-08-25 22:04:45.000000000 +0200
++++ qt-everywhere-enterprise-new-5.1.1/qtbase/src/corelib/json/qjsonparser.cpp	2014-01-30 10:56:25.142425769 +0100
+@@ -656,7 +656,7 @@
+ bool Parser::parseNumber(QJsonPrivate::Value *val, int baseOffset)
+ {
+     BEGIN << "parseNumber" << json;
+-    val->type = QJsonValue::Double;
++    val->type = QJsonValue::Number;
+ 
+     const char *start = json;
+     bool isInt = true;
+@@ -714,12 +714,19 @@
+     union {
+         quint64 ui;
+         double d;
++        quint64 ll;
+     };
+     d = number.toDouble(&ok);
+ 
+     if (!ok) {
+         lastError = QJsonParseError::IllegalNumber;
+         return false;
++    }
++
++    ll = number.toLongLong(&ok);
++    if (!ok) {
++        lastError = QJsonParseError::IllegalNumber;
++        return false;
+     }
+ 
+     int pos = reserveSpace(sizeof(double));
+--- qt-everywhere-enterprise-src-5.1.1/qtbase/src/corelib/json/qjson_p.h	2013-08-25 22:04:45.000000000 +0200
++++ qt-everywhere-enterprise-new-5.1.1/qtbase/src/corelib/json/qjson_p.h	2014-01-30 10:56:25.148425769 +0100
+@@ -291,6 +291,30 @@
+     return neg ? -res : res;
+ }
+ 
++// returns INT_MAX if it can't compress it into 28 bits
++static inline int compressedNumber(quint64 d)
++{
++    // this relies on details of how ieee floats are represented
++    const int exponent_off = 52;
++    const quint64 fraction_mask = 0x000fffffffffffffull;
++    const quint64 exponent_mask = 0x7ff0000000000000ull;
++
++    quint64 val = d;
++    int exp = (int)((val & exponent_mask) >> exponent_off) - 1023;
++    if (exp < 0 || exp > 25)
++        return INT_MAX;
++
++    quint64 non_int = val & (fraction_mask >> exp);
++    if (non_int)
++        return INT_MAX;
++
++    bool neg = (val >> 63);
++    val &= fraction_mask;
++    val |= ((quint64)1 << 52);
++    int res = (int)(val >> (52 - exp));
++    return neg ? -res : res;
++}
++
+ class Latin1String;
+ 
+ class String
+@@ -560,6 +584,7 @@
+ 
+     bool toBoolean() const;
+     double toDouble(const Base *b) const;
++    quint64 toLongLong(const Base *b) const;
+     QString toString(const Base *b) const;
+     String asString(const Base *b) const;
+     Latin1String asLatin1String(const Base *b) const;
+@@ -657,7 +682,7 @@
+ 
+ inline double Value::toDouble(const Base *b) const
+ {
+-    Q_ASSERT(type == QJsonValue::Double);
++    Q_ASSERT(type == QJsonValue::Number);
+     if (latinOrIntValue)
+         return int_value;
+ 
+@@ -667,6 +692,15 @@
+     return d;
+ }
+ 
++inline quint64 Value::toLongLong(const Base *b) const
++{
++    Q_ASSERT(type == QJsonValue::Number);
++    if (latinOrIntValue)
++        return int_value;
++
++    return qFromLittleEndian<quint64>((const uchar *)b + value);
++}
++
+ inline String Value::asString(const Base *b) const
+ {
+     Q_ASSERT(type == QJsonValue::String && !latinOrIntValue);
+--- qt-everywhere-enterprise-src-5.1.1/qtbase/src/corelib/json/qjsonvalue.cpp	2013-08-25 22:04:45.000000000 +0200
++++ qt-everywhere-enterprise-new-5.1.1/qtbase/src/corelib/json/qjsonvalue.cpp	2014-01-30 10:56:25.149425769 +0100
+@@ -65,7 +65,8 @@
+ 
+     \list
+     \li bool QJsonValue::Bool
+-    \li double QJsonValue::Double
++    \li double QJsonValue::Number
++    \li quint64 QJsonValue::Number
+     \li string QJsonValue::String
+     \li array QJsonValue::Array
+     \li object QJsonValue::Object
+@@ -104,12 +105,15 @@
+     case Undefined:
+     case Null:
+         dbl = 0;
++        ll = 0;
+         break;
+     case Bool:
+         b = v.toBoolean();
+         break;
+-    case Double:
++    case Number:
++        _int = v.latinOrIntValue?true:false;
+         dbl = v.toDouble(base);
++        ll = v.toLongLong(base);
+         break;
+     case String: {
+         QString s = v.toString(base);
+@@ -137,24 +141,39 @@
+ }
+ 
+ /*!
+-    Creates a value of type Double, with value \a n.
++    Creates a value of type Number, with value of type double \a n.
+  */
+ QJsonValue::QJsonValue(double n)
+-    : d(0), t(Double)
++    : d(0), t(Number)
++{
++    this->_int = false;
++    this->dbl = n;
++}
++
++/*!
++    Creates a value of type Number, with value of type quint64 \a n.
++ */
++QJsonValue::QJsonValue(quint64 n)
++    : d(0), t(Number)
+ {
++    this->_int = true;
++    this->ll = n;
+     this->dbl = n;
+ }
+ 
+ /*!
+     \overload
+     Creates a value of type Double, with value \a n.
+- */
++*/
+ QJsonValue::QJsonValue(int n)
+-    : d(0), t(Double)
++    : d(0), t(Number)
+ {
++    this->_int = true;
++    this->ll = n;
+     this->dbl = n;
+ }
+ 
++
+ /*!
+     Creates a value of type String, with value \a s.
+  */
+@@ -237,6 +256,8 @@
+ 
+     t = other.t;
+     dbl = other.dbl;
++    ll = other.ll;
++    _int = other.isDouble();
+ 
+     if (d != other.d) {
+ 
+@@ -337,10 +358,11 @@
+     case QVariant::Bool:
+         return QJsonValue(variant.toBool());
+     case QVariant::Int:
+-    case QVariant::Double:
+     case QVariant::LongLong:
+     case QVariant::ULongLong:
+     case QVariant::UInt:
++        return QJsonValue((quint64)variant.toLongLong());
++    case QVariant::Double:
+         return QJsonValue(variant.toDouble());
+     case QVariant::String:
+         return QJsonValue(variant.toString());
+@@ -366,7 +388,8 @@
+ 
+     \value Null     QVariant()
+     \value Bool     QVariant::Bool
+-    \value Double   QVariant::Double
++    \value Number(toDouble == true)   QVariant::Double
++    \value Number(toDouble == false)   QVariant::LongLong
+     \value String   QVariant::String
+     \value Array    QVariantList
+     \value Object   QVariantMap
+@@ -379,8 +402,8 @@
+     switch (t) {
+     case Bool:
+         return b;
+-    case Double:
+-        return dbl;
++    case Number:
++        return _int?ll:dbl;
+     case String:
+         return toString();
+     case Array:
+@@ -435,16 +458,28 @@
+ /*!
+     Converts the value to a double and returns it.
+ 
+-    If type() is not Double, the \a defaultValue will be returned.
++    If type() is not Number, the \a defaultValue will be returned.
+  */
+ double QJsonValue::toDouble(double defaultValue) const
+ {
+-    if (t != Double)
++    if (t != Number)
+         return defaultValue;
+     return dbl;
+ }
+ 
+ /*!
++    Converts the value to a quint64 and returns it.
++
++    If type() is not Number, the \a defaultValue will be returned.
++ */
++quint64 QJsonValue::toLongLong(quint64 defaultValue) const
++{
++    if (t != Number)
++        return defaultValue;
++    return ll;
++}
++
++/*!
+     Converts the value to a QString and returns it.
+ 
+     If type() is not String, the \a defaultValue will be returned.
+@@ -522,8 +557,8 @@
+         break;
+     case Bool:
+         return b == other.b;
+-    case Double:
+-        return dbl == other.dbl;
++    case Number:
++        return other.isDouble()?dbl == other.dbl:ll == other.ll;
+     case String:
+         return toString() == other.toString();
+     case Array:
+@@ -643,8 +678,10 @@
+     case QJsonValue::Bool:
+         dbg.nospace() << "QJsonValue(bool, " << o.toBool() << ")";
+         break;
+-    case QJsonValue::Double:
+-        dbg.nospace() << "QJsonValue(double, " << o.toDouble() << ")";
++    case QJsonValue::Number:
++        if(o.isDouble())
++            dbg.nospace() << "QJsonValue(double, " << o.toDouble() << ")";
++        else dbg.nospace() << "QJsonValue(quint64, " << o.toLongLong() << ")";
+         break;
+     case QJsonValue::String:
+         dbg.nospace() << "QJsonValue(string, " << o.toString() << ")";
+--- qt-everywhere-enterprise-src-5.1.1/qtbase/src/corelib/json/qjsonvalue.h	2013-08-25 22:04:45.000000000 +0200
++++ qt-everywhere-enterprise-new-5.1.1/qtbase/src/corelib/json/qjsonvalue.h	2014-01-30 10:56:25.150425769 +0100
+@@ -68,7 +68,7 @@
+     enum Type {
+         Null =  0x0,
+         Bool = 0x1,
+-        Double = 0x2,
++        Number = 0x2,
+         String = 0x3,
+         Array = 0x4,
+         Object = 0x5,
+@@ -78,6 +78,7 @@
+     QJsonValue(Type = Null);
+     QJsonValue(bool b);
+     QJsonValue(double n);
++    QJsonValue(quint64 n);
+     QJsonValue(int n);
+     QJsonValue(const QString &s);
+     QJsonValue(QLatin1String s);
+@@ -93,9 +94,10 @@
+     QVariant toVariant() const;
+ 
+     Type type() const;
++    inline bool isDouble() const {return _int == false; }
+     inline bool isNull() const { return type() == Null; }
+     inline bool isBool() const { return type() == Bool; }
+-    inline bool isDouble() const { return type() == Double; }
++    inline bool isNumber() const { return type() == Number; }
+     inline bool isString() const { return type() == String; }
+     inline bool isArray() const { return type() == Array; }
+     inline bool isObject() const { return type() == Object; }
+@@ -103,6 +105,7 @@
+ 
+     bool toBool(bool defaultValue = false) const;
+     double toDouble(double defaultValue = 0) const;
++    quint64 toLongLong(quint64 defaultValue = 0) const;
+     QString toString(const QString &defaultValue = QString()) const;
+     QJsonArray toArray() const;
+     QJsonArray toArray(const QJsonArray &defaultValue) const;
+@@ -127,7 +130,9 @@
+     union {
+         quint64 ui;
+         bool b;
++        bool _int;
+         double dbl;
++        quint64 ll;
+         QStringData *stringData;
+         QJsonPrivate::Base *base;
+     };
+@@ -150,7 +155,7 @@
+     inline QJsonValue::Type type() const { return toValue().type(); }
+     inline bool isNull() const { return type() == QJsonValue::Null; }
+     inline bool isBool() const { return type() == QJsonValue::Bool; }
+-    inline bool isDouble() const { return type() == QJsonValue::Double; }
++    inline bool isNumber() const { return type() == QJsonValue::Number; }
+     inline bool isString() const { return type() == QJsonValue::String; }
+     inline bool isArray() const { return type() == QJsonValue::Array; }
+     inline bool isObject() const { return type() == QJsonValue::Object; }
+@@ -158,6 +163,7 @@
+ 
+     inline bool toBool() const { return toValue().toBool(); }
+     inline double toDouble() const { return toValue().toDouble(); }
++    inline quint64 toLongLong() const { return toValue().toLongLong(); }
+     inline QString toString() const { return toValue().toString(); }
+     QJsonArray toArray() const;
+     QJsonObject toObject() const;
+--- qt-everywhere-enterprise-src-5.1.1/qtbase/src/corelib/json/qjsonwriter.cpp	2013-08-25 22:04:45.000000000 +0200
++++ qt-everywhere-enterprise-new-5.1.1/qtbase/src/corelib/json/qjsonwriter.cpp	2014-01-30 10:58:52.106415720 +0100
+@@ -169,9 +169,11 @@
+     case QJsonValue::Bool:
+         json += v.toBoolean() ? "true" : "false";
+         break;
+-    case QJsonValue::Double:
+-        json += QByteArray::number(v.toDouble(b), 'g', 17);
++    case QJsonValue::Number:
++        if(v.latinOrIntValue)json += QByteArray::number(v.toLongLong(b));
++        else json += QByteArray::number(v.toDouble(b));
+         break;
++
+     case QJsonValue::String:
+         json += '"';
+         json += escapedString(v.toString(b));

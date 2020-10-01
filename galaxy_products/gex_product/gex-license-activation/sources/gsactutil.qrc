@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/gsacutil">
+        <file>icons/activate_license.png</file>
+        <file>icons/borrow.png</file>
+        <file>icons/floating_license.png</file>
+        <file>icons/gex_application.png</file>
+        <file>icons/local_license.png</file>
+        <file>icons/node_locked_license.png</file>
+        <file>icons/offline.png</file>
+        <file>icons/repair.png</file>
+        <file>icons/warning_reset.png</file>
+        <file>icons/online.png</file>
+        <file>icons/process_act.png</file>
+        <file>icons/gen_act.png</file>
+        <file>icons/copy.png</file>
+        <file>icons/proxy.png</file>
+        <file>icons/rborrow.png</file>
+        <file>icons/server_license.png</file>
+        <file>icons/terminal.png</file>
+        <file>icons/user.png</file>
+        <file>icons/view_licenses.png</file>
+        <file>icons/add.png</file>
+        <file>icons/remove.png</file>
+        <file>icons/related_gexapplication.png</file>
+    </qresource>
+</RCC>

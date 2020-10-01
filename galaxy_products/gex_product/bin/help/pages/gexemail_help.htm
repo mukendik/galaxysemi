@@ -1,0 +1,160 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-gb">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Quantix Examinator Email Dispatcher Help</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p align="center"><b><font size="5">Quantix Examinator<br>
+    Email Dispatcher</font></b></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<hr>
+<ul>
+  <li><span lang="en-us"><a href="#Introduction">Introduction</a></span></li>
+  <li><span lang="en-us"><a href="#Setup">Setup</a></span></li>
+  <li><span lang="en-us"><a href="#WindowsService">Installing the application as
+    a Windows service</a></span></li>
+</ul>
+
+<hr>
+<h1><span lang="en-us"><a name="Introduction">Introduction</a></span></h1>
+<p><span lang="en-us">This application is a companion to Examinator-Monitoring 
+and is designed to send email messages files created by Examinator-Monitoring 
+using the SMTP protocol. Prior to install and run this application, we assume 
+that your Examinator-Monitoring module is already installed and works properly 
+(it must have at least one&nbsp; <b><i>DataPump</i></b> task and the <b><i>
+Create Web Status</i></b> task created).</span></p>
+<p><span lang="en-us">The Examinator Email Dispatcher application includes the following 
+menus in its toolbar:</span></p>
+<ul>
+  <li><span lang="en-us">Help</span></li>
+  <li><span lang="en-us">General</span></li>
+  <li><span lang="en-us">SMTP</span></li>
+  <li><span lang="en-us">Activity log</span></li>
+</ul>
+<p><span lang="en-us">These menus have the following purpose:</span></p>
+<p><span lang="en-us"><b>Help</b>: Includes the HTML on-line help documentation, 
+details how to setup the application to have the Examinator-Monitoring email 
+messages processed properly and sent to the relevant user.</span></p>
+<p><span lang="en-us"><b>General</b>: Lets you define where and how often to 
+look for Examinator-Monitoring incoming email files. The spooling folder is read
+from the Examinator Monitoring configuration file. It has the same path as the Web Site created by the Examinator-Monitoring, 
+sub-folder <b>examinator_monitoring/.emails</b></span></p>
+<p><span lang="en-us"><b>SMTP</b>: Lets you define the SMTP server name and port 
+to use when sending email files found in the email spooling folder. To test that 
+your SMTP details are accurate, click the <i><b>Test...</b></i> button so the 
+application performs a live connection and transaction handshake with your SMTP server.</span></p>
+<p><span lang="en-us"><b>Activity log</b>: Logs exceptions such as errors while 
+sending emails or connecting to the SMTP server. The log file doesn't require 
+any purge admin as it automatically removes any exception older than 1 week.<br>
+&nbsp;</span></p>
+<p><span lang="en-us">When all settings have been set, click the <b><i>Save 
+Settings</i></b> button to save information on disk.</span></p>
+<p>&nbsp;</p>
+
+<hr>
+<h1><span lang="en-us"><a name="Setup">Setup</a></span></h1>
+<p><span lang="en-us">To have Email dispatcher correctly process and send 
+Examinator-Monitoring emails, you need to:</span></p>
+<ol>
+  <li><span lang="en-us">Have your Examinator-Monitoring module installed and
+    configured properly 
+(it must have at least one&nbsp; <b><i>DataPump</i></b> task and the <b><i>
+Create Web Status</i></b> task created)</span></li>
+  <li><span lang="en-us">Start the gex-email application using the Windows Start
+    menu &quot;Start-&gt;Quantix Examinator Monitoring-&gt;Email service&quot;</span></li>
+  <li><span lang="en-us">Enter all setup information (spooling frequency, SMTP server and port)</span></li>
+  <li><span lang="en-us">Save your settings using the <b><i>Save Settings</i></b>
+    button</span></li>
+  <li><span lang="en-us">Start the spooler using the <b><i>Start</i></b> button</span></li>
+  <li><span lang="en-us">Have Examinator Monitoring create a few email files to
+    make sure your SMTP settings are correct, and the emails are correctly sent.</span></li>
+</ol>
+<p><span lang="en-us"> When running the Email 
+dispatcher in manual mode (started from the Windows Start menu &quot;Start-&gt;Quantix
+Examinator Monitoring-&gt;Email service&quot;, user interface visible), you must click the <b><i>
+Start</i></b> button in order to start the email spooling process. Unless you 
+click the <b><i>Start</i></b> button, the application doesn't scan the email 
+spooling folder! Once started, you can stop it at any time clicking again the 
+same button (toggle Start/Stop function).</span></p>
+
+<hr>
+<h1><span lang="en-us"><a name="WindowsService">Installing the application as a
+Windows service</a></span></h1>
+<p><span lang="en-us"> Once you have entered all the 
+appropriate setup information, it is recommended that you first start the
+spooling process in Manual running mode (using the Windows Start menu
+&quot;Start-&gt;Quantix
+Examinator Monitoring-&gt;Email service&quot;), and have it send out a few emails, so
+to make sure all SMTP settings are working, and the emails are correctly sent .
+Then you may install the application as a Windows service, using the following
+procedure:</span></p>
+<ul>
+  <li><span lang="en-us">exit the application if it is running (clicking the <b><i>Exit</i></b>
+    button)</span></li>
+  <li><span lang="en-us">install the application as a Windows service using
+    command line &quot;gex-email.exe -i&quot;</span></li>
+  <li><span lang="en-us">start the installed service using command line &quot;gex-email.exe
+    -e&quot;</span></li>
+</ul>
+<p><span lang="en-us">Once the application is installed as a Windows service, it
+will automatically be started on system boot. You don't need to be logged to the
+system for the service to start, and when you logout, the service doesn't stop.
+The application runs in background with no visible user interface. You may use
+the <b><i>Pause</i></b> function from the Windows Services control panel, or the
+command line &quot;gex-email.exe -p&quot;. This
+brings up the application's GUI, enabling you to eventually stop the spooler,
+change/save some settings, and restart the spooler. Using the <b><i>Resume</i></b>
+function from the Windows Services control panel, or the command line &quot;gex-email.exe
+-r&quot; will hide the GUI, and the application will continue in the background.</span></p>
+<p><span lang="en-us"><b>Command line arguments summary:</b></span></p>
+<blockquote>
+  <table border="1" cellpadding="2" style="border-collapse: collapse" width="601">
+    <tr>
+      <td width="150" bgcolor="#FFFF99"><b><span lang="en-us">Command line</span></b></td>
+      <td width="451" bgcolor="#FFFF99"><b><span lang="en-us">Description</span></b></td>
+    </tr>
+    <tr>
+      <td width="150">gex_email.exe<span lang="en-us">&nbsp; -i</span></td>
+      <td width="451"><span lang="en-us">Install application as a service 
+      (doesn't start it)</span></td>
+    </tr>
+    <tr>
+      <td width="150">gex_email.exe<span lang="en-us">&nbsp; -e</span></td>
+      <td width="451"><span lang="en-us">Execute the service</span></td>
+    </tr>
+    <tr>
+      <td width="150">gex_email.exe<span lang="en-us">&nbsp; -t</span></td>
+      <td width="451"><span lang="en-us">Terminate the service</span></td>
+    </tr>
+    <tr>
+      <td width="150">gex_email.exe<span lang="en-us">&nbsp; -u</span></td>
+      <td width="451"><span lang="en-us">Uninstall application from the service 
+      list (you should stop it first)</span></td>
+    </tr>
+    <tr>
+      <td width="150">gex_email.exe<span lang="en-us">&nbsp; -p</span></td>
+      <td width="451"><span lang="en-us">Pause the service</span></td>
+    </tr>
+    <tr>
+      <td width="150">gex_email.exe<span lang="en-us">&nbsp; -r</span></td>
+      <td width="451"><span lang="en-us">Resume the service</span></td>
+    </tr>
+  </table>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n# \n# http://www.rstudio.com/shiny/\n#\n\nlibrary(shiny)\nlibrary(DBI)\nlibrary(RMySQL)\nrequire(rCharts)\n# library(knitr)\n\n#con <- dbConnect(MySQL(), user=\"root\", password=\"root\", dbname=\"gexdb_3390\")\n\ncat(\"Server: current DB exception: \", length( dbGetException(con) ), \"\\n\")\n\n#res <- dbSendQuery(con, \"select * from wt_ptest_results where splitlot_id=1011000012 and ptest_info_id=1\")\n\n# \n\nbins <- 40\n\nshinyServer(function(input, output) \n{\n  \n  # output\n  #output$uppercase <- renderText({\"qsdfqs\"})\n\n  output$chart <- renderChart({\n    p1 <- rPlot(input$x, input$y, data = iris, color = \"Species\", facet = \"Species\", type = 'point')\n    p1$addParams(dom = 'myChart')\n    return(p1)\n  })\n  \n})\n\n#dbDisconnect(con)\n#print(\"Server: disconnected.\")\n",
+    "created" : 1412254936516.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3603410524",
+    "id" : "D803A396",
+    "lastKnownWriteTime" : 1412255052,
+    "path" : "G:/shiny_poc/shiny_poc3/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

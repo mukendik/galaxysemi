@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.galaxysemi</groupId>
+        <artifactId>galaxy_dev</artifactId>
+        <version>7.7.33-SNAPSHOT</version>
+        <relativePath>../../../../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>unit_test_threads</artifactId>
+    <packaging>pom</packaging>
+    <name>GalaxySemi Unit Test - Unit Test Threads</name>
+
+    <properties>
+        <basepath>galaxy_libraries/galaxy_qt_libraries/gqtl_statsengine/${project.artifactId}</basepath>
+        <libraryPath01>${project.build.directory}${fs}other_libraries${fs}R${fs}lib${fs}${distName}</libraryPath01>
+        <libraryPath02>${project.build.directory}${fs}other_libraries${fs}R${fs}r_home${fs}${distName}${fs}etc</libraryPath02>
+        <libraryPath03>${project.build.directory}${fs}galaxy_libraries${fs}galaxy_qt_libraries${fs}lib${fs}${distName}</libraryPath03>
+        <libraryPath04>${env.QTDIR}${fs}lib</libraryPath04>
+        <libraryPath05>${env.QTDIR}${fs}bin</libraryPath05>
+        <libraryPath>${libraryPath01}${ps}${libraryPath02}${ps}${libraryPath03}${ps}${libraryPath04}${ps}${libraryPath05}</libraryPath>
+
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>galaxy_scripts</artifactId>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>galaxy_dev-common</artifactId>
+            <classifier>src</classifier>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>libR</artifactId>
+            <classifier>inc</classifier>
+            <version>${libRVersion}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>libR</artifactId>
+            <classifier>${distNameLong}-lib</classifier>
+            <version>${libRVersion}</version>
+            <type>${archiveExt}</type>
+        </dependency>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>libR</artifactId>
+            <classifier>${distNameLong}-home</classifier>
+            <version>${libRVersion}</version>
+            <type>${archiveExt}</type>
+        </dependency>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>gqtl</artifactId>
+            <version>${project.version}</version>
+            <classifier>inc</classifier>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.galaxysemi</groupId>
+            <artifactId>gqtl_statsengine</artifactId>
+            <version>${project.version}</version>
+            <classifier>${distName}-lib</classifier>
+            <type>${archiveExt}</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>${project.basedir}/src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/${basepath}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}</directory>
+                                    <excludes>
+                                        <exclude>target/**/*</exclude>
+                                        <exclude>pom.xml</exclude>
+                                        <exclude>src/assembly/*</exclude>
+                                    </excludes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-dependencies</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <excludeArtifactIds>libR</excludeArtifactIds>
+                            <excludeTransitive>true</excludeTransitive>
+                        </configuration>
+                    </execution>
+                    <!-- for libR -->
+                    <execution>
+                        <id>unpack</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.galaxysemi</groupId>
+                                    <artifactId>libR</artifactId>
+                                    <classifier>inc</classifier>
+                                    <type>zip</type>
+                                    <outputDirectory>${project.build.directory}/other_libraries/R/include</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.galaxysemi</groupId>
+                                    <artifactId>libR</artifactId>
+                                    <classifier>${distNameLong}-lib</classifier>
+                                    <type>${archiveExt}</type>
+                                    <outputDirectory>${project.build.directory}/other_libraries/R/lib/${distName}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.galaxysemi</groupId>
+                                    <artifactId>libR</artifactId>
+                                    <classifier>${distNameLong}-home</classifier>
+                                    <type>${archiveExt}</type>
+                                    <outputDirectory>${project.build.directory}/other_libraries/R/r_home/${distName}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>qmake</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${project.build.directory}/${basepath}</workingDirectory>
+                            <environmentVariables>
+                                <DEVDIR>${project.build.directory}</DEVDIR>
+                                <PATH>${env.QTDIR}${fs}bin${ps}${env.PATH}</PATH>
+                            </environmentVariables>
+                            <executable>${env.QTDIR}${fs}bin${fs}qmake${exeExt}</executable>
+                            <commandlineArgs>-spec ${makespec} -o Makefile_${makeDist} ${project.artifactId}.pro</commandlineArgs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>make</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${project.build.directory}/${basepath}</workingDirectory>
+                            <environmentVariables>
+                                <DEVDIR>${project.build.directory}</DEVDIR>
+                            </environmentVariables>
+                            <executable>${makeCmd}</executable>
+                            <commandlineArgs>-f Makefile_${makeDist} ${buildMode}</commandlineArgs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>TARGETX-property</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>regex-property</goal>
+                        </goals>
+                        <configuration>
+                            <name>TARGETX</name>
+                            <value>${project.build.directory}</value>
+                            <regex>\\</regex>
+                            <replacement>/</replacement>
+                            <failIfNoMatch>false</failIfNoMatch>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>SITE_BASEDIRX-property</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>regex-property</goal>
+                        </goals>
+                        <configuration>
+                            <name>SITE_BASEDIRX</name>
+                            <value>${SITE_BASEDIR}</value>
+                            <regex>\\</regex>
+                            <replacement>/</replacement>
+                            <failIfNoMatch>false</failIfNoMatch>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>initialize-test</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <exec executable="bash${exeExt}" dir="${TARGETX}" failonerror="true">
+                                    <env key="DEVDIR" path="${project.build.directory}"/>
+                                    <env key="PATH" path="${env.PATH}${ps}${libraryPath}"/>
+                                    <env key="LD_LIBRARY_PATH" path="${env.LD_LIBRARY_PATH}${ps}${libraryPath}"/>
+                                    <env key="DYLD_LIBRARY_PATH" path="${env.DYLD_LIBRARY_PATH}${ps}${libraryPath}"/>
+                                    <env key="R_HOME" path="${project.build.directory}/other_libraries/R/r_home/${distName}"/>
+                                    <env key="GALAXY_R_HOME" path="${project.build.directory}/other_libraries/R/r_home/${distName}"/>
+                                    <arg value="--login"/>
+                                    <arg value="-c"/>
+                                    <arg
+                                        value="${sourcescript} ${TARGETX}/galaxy_scripts/junit.sh
+                                        --debug
+                                        --dryrun
+                                        --pwd=${TARGETX}/${basepath}
+                                        --output=${SITE_BASEDIRX}/surefire-reports/TEST-${project.artifactId}.xml
+                                        --package=${project.artifactId}
+                                        --classname=${distName}
+                                        --testname='${project.name}'
+                                        '${timeoutCmd} -s 9 120 ${TARGETX}/${basepath}/${destDir}${project.artifactId}${exeExt}'"/>
+                                </exec>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <exec executable="bash${exeExt}" dir="${TARGETX}" failonerror="true">
+                                    <env key="DEVDIR" path="${project.build.directory}"/>
+                                    <env key="PATH" path="${libraryPath}${ps}${env.PATH}"/>
+                                    <env key="LD_LIBRARY_PATH" path="${env.LD_LIBRARY_PATH}${ps}${libraryPath}"/>
+                                    <env key="DYLD_LIBRARY_PATH" path="${env.DYLD_LIBRARY_PATH}${ps}${libraryPath}"/>
+                                    <env key="R_HOME" path="${project.build.directory}/other_libraries/R/r_home/${distName}"/>
+                                    <env key="GALAXY_R_HOME" path="${project.build.directory}/other_libraries/R/r_home/${distName}"/>
+                                    <arg value="--login"/>
+                                    <arg value="-c"/>
+                                    <arg
+                                        value="${sourcescript} ${TARGETX}/galaxy_scripts/junit.sh
+                                        --debug
+                                        --pwd=${TARGETX}/${basepath}
+                                        --output=${SITE_BASEDIRX}/surefire-reports/TEST-${project.artifactId}.xml
+                                        --package=${project.artifactId}
+                                        --classname=${distName}
+                                        --testname='${project.name}'
+                                        '${timeoutCmd} -s 9 120 ${TARGETX}/${basepath}/${destDir}${project.artifactId}${exeExt}'"/>
+                                </exec>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>${SITE_BASEDIRX}</outputDirectory>
+                    <reportsDirectories>
+                        <reportsDirectory>${SITE_BASEDIRX}/surefire-reports</reportsDirectory>
+                    </reportsDirectories>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

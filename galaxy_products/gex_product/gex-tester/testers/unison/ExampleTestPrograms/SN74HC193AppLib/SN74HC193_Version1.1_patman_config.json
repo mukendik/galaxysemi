@@ -1,0 +1,337 @@
+{
+    "outlier_options": {
+        "final_test": {
+            "alarms": [
+                {
+                    "type": ""
+                }
+            ],
+            "misc": {
+                "execution_log": "disabled",
+                "runs_per_packet": 1
+            },
+            "pat_limits": {
+                "baseline": {
+                    "algorithm": "merged_sites",
+                    "max_outliers": {
+                        "enabled": true,
+                        "threshold": 5
+                    },
+                    "min_parts_per_site": 10,
+                    "nb_parts": 59
+                },
+                "buffer_size": 500,
+                "tuning": {
+                    "enabled": true,
+                    "frequency": 1,
+                    "type": "outliers"
+                }
+            }
+        },
+        "settings": {
+            "dynamic_pat": {
+                "color": [
+                    255,
+                    0,
+                    0
+                ],
+                "default_rule": "smart_adaptive",
+                "enabled": true,
+                "hard_bin": 141,
+                "limits": {
+                    "assume_integer_category": true,
+                    "bin_filter": "good_softbins",
+                    "bins": "",
+                    "category_value_count": 5,
+                    "ignore_high_cpk": -1,
+                    "ignore_high_cpk_enabled": false,
+                    "minimum_outliers_to_fail": 1,
+                    "minimum_samples": 50,
+                    "stop_on_first_fail": false,
+                    "within_original_limits": true
+                },
+                "soft_bin": 141
+            },
+            "general": {
+                "all_sites_merged": false,
+                "bin_outliers": "good_parts",
+                "good_hard_bins": [
+                    "1"
+                ],
+                "good_soft_bins": [
+                    "1"
+                ],
+                "test_key": "number"
+            },
+            "geographic_pat": {
+                "ignore_ppat_bins": true
+            },
+            "multi_variate_pat": {
+                "auto_group_creation": true,
+                "correlation_threshold": 0.80000000000000004,
+                "enabled": false,
+                "fail_color": [
+                    255,
+                    0,
+                    0
+                ],
+                "hard_bin": 150,
+                "ignore_ppat_bins": true,
+                "normal_shape_only": false,
+                "outlier_distance": {
+                    "far": 12,
+                    "medium": 9,
+                    "near": 6
+                },
+                "soft_bin": 150
+            },
+            "recipe_versioning": {
+                "major": 1,
+                "minor": 0,
+                "product": "SN74HC193"
+            },
+            "report": {
+                "binning": true,
+                "dpat_limits_no_outliers": true,
+                "dpat_limits_outliers": true,
+                "histo": true,
+                "histo_no_outliers": false,
+                "mvpat_correlation_charts": {
+                    "charts": "consecutive_pairs",
+                    "dataset": "tests",
+                    "enabled": false,
+                    "max_charts": 20
+                },
+                "mvpat_standard_charts": true,
+                "pareto": true,
+                "spat_limits": true,
+                "stats": true,
+                "wafermap": true,
+                "wafermap_type": "soft_bin"
+            },
+            "static_pat": {
+                "color": [
+                    255,
+                    0,
+                    0
+                ],
+                "enabled": true,
+                "hard_bin": 140,
+                "ignore_when_categories": false,
+                "ignore_when_cpk_greater": -1,
+                "ignore_when_iqr_null": true,
+                "soft_bin": 140
+            }
+        },
+        "smart_rules": {
+            "shapes": {
+                "category": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            12
+                        ],
+                        "medium": [
+                            9,
+                            9
+                        ],
+                        "near": [
+                            6,
+                            6
+                        ]
+                    }
+                },
+                "clamped": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            6,
+                            12
+                        ],
+                        "medium": [
+                            4,
+                            9
+                        ],
+                        "near": [
+                            3,
+                            6
+                        ]
+                    }
+                },
+                "double_clamped": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            6,
+                            6
+                        ],
+                        "medium": [
+                            4,
+                            4
+                        ],
+                        "near": [
+                            3,
+                            3
+                        ]
+                    }
+                },
+                "gaussian": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            12
+                        ],
+                        "medium": [
+                            9,
+                            9
+                        ],
+                        "near": [
+                            6,
+                            6
+                        ]
+                    }
+                },
+                "gaussian_double_tailed": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            14,
+                            14
+                        ],
+                        "medium": [
+                            10,
+                            10
+                        ],
+                        "near": [
+                            7,
+                            7
+                        ]
+                    }
+                },
+                "gaussian_tailed": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            14
+                        ],
+                        "medium": [
+                            9,
+                            10
+                        ],
+                        "near": [
+                            6,
+                            7
+                        ]
+                    }
+                },
+                "log_normal": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            6,
+                            14
+                        ],
+                        "medium": [
+                            4,
+                            10
+                        ],
+                        "near": [
+                            3,
+                            7
+                        ]
+                    }
+                },
+                "multi_modal": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            12
+                        ],
+                        "medium": [
+                            9,
+                            9
+                        ],
+                        "near": [
+                            6,
+                            6
+                        ]
+                    }
+                },
+                "unknown": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            12
+                        ],
+                        "medium": [
+                            9,
+                            9
+                        ],
+                        "near": [
+                            6,
+                            6
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "testing_stage": "final_test",
+    "univariate_rules": [
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 0,
+                "outlier_limits_set": "near",
+                "outlier_rule": "smart",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_R",
+                "tail_factor": 0,
+                "tail_management": "liberal"
+            },
+            "dynamic_bin": 141,
+            "high_limit": "1 V",
+            "historical_stats": {
+                "cpk": 0.62900406455238012,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.044591155849397185,
+                "range": 2.0204222202301025,
+                "robust_mean": 0.089455887675285339,
+                "robust_sigma": 0.59834809214980511,
+                "sigma": 0.5063077214667937
+            },
+            "low_limit": "-1 V",
+            "nnr_settings": {
+                "enabled": false
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": 140,
+            "test_name": "SingleDatalog/Block1",
+            "test_number": 6000,
+            "test_type": "P"
+        }
+    ],
+    "version": "2.12"
+}

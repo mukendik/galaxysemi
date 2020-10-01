@@ -1,0 +1,231 @@
+DON'T REMOVE THIS FILE!!!!!
+
+The file <QTDIR>/src/sql/drivers/oci/qsql_oci.cpp has to be modified to allow connection as SYSDBA.
+See <ADDED> and <CHANGED> tags in the NEW VERSION of QOCIDriver::open.
+
+ORIGINAL VERSION FOR QT4.7.2
+============================
+
+bool QOCIDriver::open(const QString & db,
+                       const QString & user,
+                       const QString & password,
+                       const QString & hostname,
+                       int port,
+                       const QString &opts)
+{
+    int r;
+
+    if (isOpen())
+        close();
+
+    qParseOpts(opts, d);
+
+    // Connect without tnsnames.ora if a hostname is given
+    QString connectionString = db;
+    if (!hostname.isEmpty())
+        connectionString = 
+        QString::fromLatin1("(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=%1)(Port=%2))"
+                "(CONNECT_DATA=(SID=%3)))").arg(hostname).arg((port > -1 ? port : 1521)).arg(db);
+
+    r = OCIHandleAlloc(d->env, reinterpret_cast<void **>(&d->srvhp), OCI_HTYPE_SERVER, 0, 0);
+    if (r == OCI_SUCCESS)
+        r = OCIServerAttach(d->srvhp, d->err, reinterpret_cast<const OraText *>(connectionString.utf16()),
+                            connectionString.length() * sizeof(QChar), OCI_DEFAULT);
+    if (r == OCI_SUCCESS || r == OCI_SUCCESS_WITH_INFO)
+        r = OCIHandleAlloc(d->env, reinterpret_cast<void **>(&d->svc), OCI_HTYPE_SVCCTX, 0, 0);
+    if (r == OCI_SUCCESS)
+        r = OCIAttrSet(d->svc, OCI_HTYPE_SVCCTX, d->srvhp, 0, OCI_ATTR_SERVER, d->err);
+    if (r == OCI_SUCCESS)
+        r = OCIHandleAlloc(d->env, reinterpret_cast<void **>(&d->authp), OCI_HTYPE_SESSION, 0, 0);
+    if (r == OCI_SUCCESS)
+        r = OCIAttrSet(d->authp, OCI_HTYPE_SESSION, const_cast<ushort *>(user.utf16()),
+                       user.length() * sizeof(QChar), OCI_ATTR_USERNAME, d->err);
+    if (r == OCI_SUCCESS)
+        r = OCIAttrSet(d->authp, OCI_HTYPE_SESSION, const_cast<ushort *>(password.utf16()),
+                       password.length() * sizeof(QChar), OCI_ATTR_PASSWORD, d->err);
+
+    OCITrans* trans;
+    if (r == OCI_SUCCESS)
+        r = OCIHandleAlloc(d->env, reinterpret_cast<void **>(&trans), OCI_HTYPE_TRANS, 0, 0);
+    if (r == OCI_SUCCESS)
+        r = OCIAttrSet(d->svc, OCI_HTYPE_SVCCTX, trans, 0, OCI_ATTR_TRANS, d->err);
+
+    if (r == OCI_SUCCESS) {
+        if (user.isEmpty() && password.isEmpty())
+            r = OCISessionBegin(d->svc, d->err, d->authp, OCI_CRED_EXT, OCI_DEFAULT);
+        else
+            r = OCISessionBegin(d->svc, d->err, d->authp, OCI_CRED_RDBMS, OCI_DEFAULT);
+    }
+    if (r == OCI_SUCCESS || r == OCI_SUCCESS_WITH_INFO)
+        r = OCIAttrSet(d->svc, OCI_HTYPE_SVCCTX, d->authp, 0, OCI_ATTR_SESSION, d->err);
+
+    if (r != OCI_SUCCESS) {
+        setLastError(qMakeError(tr("Unable to logon"), QSqlError::ConnectionError, d->err));
+        setOpenError(true);
+        if (d->authp)
+            OCIHandleFree(d->authp, OCI_HTYPE_SESSION);
+        d->authp = 0;
+        if (d->srvhp)
+            OCIHandleFree(d->srvhp, OCI_HTYPE_SERVER);
+        d->srvhp = 0;
+        return false;
+    }
+
+    // get server version
+    char vertxt[512];
+    r = OCIServerVersion(d->svc,
+                          d->err,
+                          reinterpret_cast<OraText *>(vertxt),
+                          sizeof(vertxt),
+                          OCI_HTYPE_SVCCTX);
+    if (r != 0) {
+        qWarning("QOCIDriver::open: could not get Oracle server version.");
+    } else {
+        QString versionStr;
+        versionStr = QString(reinterpret_cast<const QChar *>(vertxt));
+        QRegExp vers(QLatin1String("([0-9]+)\\.[0-9\\.]+[0-9]"));
+        if (vers.indexIn(versionStr) >= 0)
+            d->serverVersion = vers.cap(1).toInt();
+        if (d->serverVersion == 0)
+            d->serverVersion = -1;
+    }
+
+    setOpen(true);
+    setOpenError(false);
+    d->user = user;
+
+    return true;
+}
+
+NEW VERSION FOR QT 4.7.2
+========================
+bool QOCIDriver::open(const QString & db,
+                       const QString & user,
+                       const QString & password,
+                       const QString & hostname,
+                       int port,
+                       const QString &opts)
+{
+    int r;
+	
+///////////////////////////////////////////////////////////////
+// <ADDED>                                                   //
+///////////////////////////////////////////////////////////////
+	// ENABLED CONECTION
+	// SYS AS SYSDBA
+	// OR
+	// STANDARD USER
+
+	int		nSessionUserType = OCI_DEFAULT;
+	QString strUser = user.simplified().toUpper();
+	if(strUser.endsWith(QLatin1String(" SYSDBA")))
+	{
+		strUser = strUser.section(QLatin1String(" "),0,0);
+		nSessionUserType = OCI_SYSDBA;
+	}
+///////////////////////////////////////////////////////////////
+// </ADDED>                                                  //
+///////////////////////////////////////////////////////////////
+
+    if (isOpen())
+        close();
+
+    qParseOpts(opts, d);
+
+    // Connect without tnsnames.ora if a hostname is given
+    QString connectionString = db;
+    if (!hostname.isEmpty())
+        connectionString = 
+        QString::fromLatin1("(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=%1)(Port=%2))"
+                "(CONNECT_DATA=(SID=%3)))").arg(hostname).arg((port > -1 ? port : 1521)).arg(db);
+
+    r = OCIHandleAlloc(d->env, reinterpret_cast<void **>(&d->srvhp), OCI_HTYPE_SERVER, 0, 0);
+    if (r == OCI_SUCCESS)
+        r = OCIServerAttach(d->srvhp, d->err, reinterpret_cast<const OraText *>(connectionString.utf16()),
+                            connectionString.length() * sizeof(QChar), OCI_DEFAULT);
+    if (r == OCI_SUCCESS || r == OCI_SUCCESS_WITH_INFO)
+        r = OCIHandleAlloc(d->env, reinterpret_cast<void **>(&d->svc), OCI_HTYPE_SVCCTX, 0, 0);
+    if (r == OCI_SUCCESS)
+        r = OCIAttrSet(d->svc, OCI_HTYPE_SVCCTX, d->srvhp, 0, OCI_ATTR_SERVER, d->err);
+    if (r == OCI_SUCCESS)
+        r = OCIHandleAlloc(d->env, reinterpret_cast<void **>(&d->authp), OCI_HTYPE_SESSION, 0, 0);
+    if (r == OCI_SUCCESS)
+///////////////////////////////////////////////////////////////
+// <CHANGED>                                                 //
+///////////////////////////////////////////////////////////////
+		r = OCIAttrSet(d->authp, OCI_HTYPE_SESSION, const_cast<ushort *>(strUser.utf16()),
+					   strUser.length() * sizeof(QChar), OCI_ATTR_USERNAME, d->err);
+///////////////////////////////////////////////////////////////
+// </CHANGED>                                                //
+///////////////////////////////////////////////////////////////
+    if (r == OCI_SUCCESS)
+        r = OCIAttrSet(d->authp, OCI_HTYPE_SESSION, const_cast<ushort *>(password.utf16()),
+                       password.length() * sizeof(QChar), OCI_ATTR_PASSWORD, d->err);
+
+    OCITrans* trans;
+    if (r == OCI_SUCCESS)
+        r = OCIHandleAlloc(d->env, reinterpret_cast<void **>(&trans), OCI_HTYPE_TRANS, 0, 0);
+    if (r == OCI_SUCCESS)
+        r = OCIAttrSet(d->svc, OCI_HTYPE_SVCCTX, trans, 0, OCI_ATTR_TRANS, d->err);
+
+///////////////////////////////////////////////////////////////
+// <CHANGED>                                                 //
+///////////////////////////////////////////////////////////////
+    if (r == OCI_SUCCESS) {
+		if (strUser.isEmpty() && password.isEmpty())
+            r = OCISessionBegin(d->svc, d->err, d->authp, OCI_CRED_EXT, OCI_DEFAULT);
+        else
+			r = OCISessionBegin(d->svc, d->err, d->authp, OCI_CRED_RDBMS, nSessionUserType);
+    }
+///////////////////////////////////////////////////////////////
+// </CHANGED>                                                //
+///////////////////////////////////////////////////////////////
+
+    if (r == OCI_SUCCESS || r == OCI_SUCCESS_WITH_INFO)
+        r = OCIAttrSet(d->svc, OCI_HTYPE_SVCCTX, d->authp, 0, OCI_ATTR_SESSION, d->err);
+
+    if (r != OCI_SUCCESS) {
+        setLastError(qMakeError(tr("Unable to logon"), QSqlError::ConnectionError, d->err));
+        setOpenError(true);
+        if (d->authp)
+            OCIHandleFree(d->authp, OCI_HTYPE_SESSION);
+        d->authp = 0;
+        if (d->srvhp)
+            OCIHandleFree(d->srvhp, OCI_HTYPE_SERVER);
+        d->srvhp = 0;
+        return false;
+    }
+
+    // get server version
+    char vertxt[512];
+    r = OCIServerVersion(d->svc,
+                          d->err,
+                          reinterpret_cast<OraText *>(vertxt),
+                          sizeof(vertxt),
+                          OCI_HTYPE_SVCCTX);
+    if (r != 0) {
+        qWarning("QOCIDriver::open: could not get Oracle server version.");
+    } else {
+        QString versionStr;
+        versionStr = QString(reinterpret_cast<const QChar *>(vertxt));
+        QRegExp vers(QLatin1String("([0-9]+)\\.[0-9\\.]+[0-9]"));
+        if (vers.indexIn(versionStr) >= 0)
+            d->serverVersion = vers.cap(1).toInt();
+        if (d->serverVersion == 0)
+            d->serverVersion = -1;
+    }
+
+    setOpen(true);
+    setOpenError(false);
+	
+///////////////////////////////////////////////////////////////
+// <CHANGED>                                                 //
+///////////////////////////////////////////////////////////////
+	d->user = strUser;
+///////////////////////////////////////////////////////////////
+// </CHANGED>                                                //
+///////////////////////////////////////////////////////////////
+
+    return true;
+}
+

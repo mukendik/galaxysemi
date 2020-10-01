@@ -1,0 +1,36 @@
+diff -ur qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/JavaScriptCore/parser/JSParser.cpp qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/JavaScriptCore/parser/JSParser.cpp
+--- qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/JavaScriptCore/parser/JSParser.cpp	2012-09-12 12:20:50.000000000 +0200
++++ qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/JavaScriptCore/parser/JSParser.cpp	2012-10-15 17:12:16.004094939 +0200
+@@ -181,7 +181,9 @@
+         return result;
+     }
+ 
++public:
+     enum SourceElementsMode { CheckForStrictMode, DontCheckForStrictMode };
++private:
+     template <SourceElementsMode mode, class TreeBuilder> TreeSourceElements parseSourceElements(TreeBuilder&);
+     template <class TreeBuilder> TreeStatement parseStatement(TreeBuilder&, const Identifier*& directive);
+     template <class TreeBuilder> TreeStatement parseFunctionDeclaration(TreeBuilder&);
+@@ -224,7 +226,9 @@
+     template <class TreeBuilder> ALWAYS_INLINE TreeFormalParameterList parseFormalParameters(TreeBuilder&);
+     template <class TreeBuilder> ALWAYS_INLINE TreeExpression parseVarDeclarationList(TreeBuilder&, int& declarations, const Identifier*& lastIdent, TreeExpression& lastInitializer, int& identStart, int& initStart, int& initEnd);
+     template <class TreeBuilder> ALWAYS_INLINE TreeConstDeclList parseConstDeclarationList(TreeBuilder& context);
++public:
+     enum FunctionRequirements { FunctionNoRequirements, FunctionNeedsName };
++private:
+ #if COMPILER(WINSCW)
+     template <FunctionRequirements, bool nameIsInContainingScope, class TreeBuilder> bool parseFunctionInfo(FunctionRequirements, bool, TreeBuilder&, const Identifier*&, TreeFormalParameterList&, TreeFunctionBody&, int& openBrace, int& closeBrace, int& bodyStartLine);
+ #else
+diff -ur qt-everywhere-commercial-src-4.8.3/src/corelib/thread/qthread_unix.cpp qt-everywhere-commercial-new-4.8.3/src/corelib/thread/qthread_unix.cpp
+--- qt-everywhere-commercial-src-4.8.3/src/corelib/thread/qthread_unix.cpp	2012-09-12 12:20:51.000000000 +0200
++++ qt-everywhere-commercial-new-4.8.3/src/corelib/thread/qthread_unix.cpp	2012-10-15 17:16:21.209476581 +0200
+@@ -265,7 +265,8 @@
+ {
+ #  if defined(Q_OS_LINUX) && !defined(QT_LINUXBASE)
+     Q_UNUSED(threadId);
+-    prctl(PR_SET_NAME, (unsigned long)name, 0, 0, 0);
++    Q_UNUSED(name);
++    //prctl(PR_SET_NAME, (unsigned long)name, 0, 0, 0);
+ #  elif (defined(Q_OS_MAC) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6)
+     Q_UNUSED(threadId);
+     if (QSysInfo::MacintoshVersion >= QSysInfo::MV_10_6)

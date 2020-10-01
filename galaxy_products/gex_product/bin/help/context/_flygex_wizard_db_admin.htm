@@ -1,0 +1,90 @@
+<html>
+<head>
+<title></title>
+</head>
+<body text="#00659C">
+      <p align="left"><img border="0" src="../images/rarrow.png" width="6" height="9" align="center"> 
+      Functions to administrate your databases:</p>
+      <ol>
+        <li>
+          <p align="left">
+      <img border="0" src="../images/group.png" width="16" height="15"> : 
+          Create a new Database&nbsp; <a href="#create">
+          <img border="0" src="../images/more_s.png" align="center" width="13" height="13"></a><a href="#open"><br>
+          <br>
+          </a></li>
+        <li>
+          <p align="left"><img border="0" src="../images/file_open.png" width="26" height="25">: 
+          Import files to a database <a href="#import">
+          <img border="0" src="../images/more_s.png" align="center" width="13" height="13"></a><a href="#properties"><br>
+          </a><br>
+&nbsp;</li>
+        <li>
+          <p align="left">
+      <img border="0" src="../images/file_remove.png" width="26" height="25"> : 
+          Delete a database&nbsp; <a href="#delete">
+          <img border="0" src="../images/more_s.png" align="center" width="13" height="13"></a></li>
+      </ol>
+      <hr>
+      More details:
+      <hr>
+      <p align="left"><a name="create">
+      <img border="0" src="../images/group.png" width="16" height="15"></a>:
+      Create a new database collection.</p>
+      <p align="left"><b>Database location</b>: </p>
+      <ul>
+        <li>
+      <p align="left"> <b>local:</b> all data remain on your 
+      machine</p>
+        </li>
+        <li>
+      <p align="left"> <b>server:</b> remote data repository (assuming you have the <b>write</b> 
+      permission to the server).</p>
+        </li>
+      </ul>
+      <p align="left"><b>Data storage</b>:</p>
+      <p align="left">Select <b>Copy</b> if you want the database 
+      to make a complete copy of all the data files imported (the database 
+      repository folders keep their own copy of the files imported). Otherwise, 
+      select or <b>Link</b> if you want the 
+      database to only maintain a structure of links. <br>
+      If <b>Link</b> is 
+      selected, make sure not to move or delete your original test data files as 
+      long as the database  exists! The benefit of the <b>Link</b> mode is a 
+      significant disk space saving as test data are not duplicated in an 
+      internal data structure!<br>
+	  <u>Note</u>: If using <b>Yield-Man </b> to import files
+      automatically into the database, then the <b>Copy</b> mode is <b>mandatory</b> 
+      and Link should not be used as it wouldn't work properly. To avoid 
+      problems, this field is hidden when creating a database from the 
+	  Yield-Man interface.</p>
+      <p align="left">From the New database dialog box, click the <b>More</b> 
+      button to review advanced fields:</p>
+      <ul>
+        <li>
+      <p align="left"><b>Description</b>: enter any string to detail the purpose 
+      if the database</p>
+        </li>
+        <li>
+      <p align="left"><b>Import</b> password: password protects the database so 
+      importing file can't be done without first entering the relevant password.</p>
+        </li>
+        <li>
+      <p align="left"><b>Delete</b> password: password protects the database for 
+      delete.</p>
+        </li>
+      </ul>
+      <hr>
+      <p align="left"><a name="import"><img border="0" src="../images/file_open.png" width="26" height="25"></a>: 
+      Lets you import files into a selected database. Import all types of files to 
+      be stored into the same data collection group (database). If the database 
+      was created with its data storage mode set to <b>Link</b>, then data files 
+      are not imported ; only the reference to the files are stored in the 
+      database structure, saving significant disk space!</p>
+      <hr>
+      <p align="left"><a name="delete">
+      <img border="0" src="../images/file_remove.png" width="26" height="25"></a>: 
+      Lets you delete a database. The database and all its data will be 
+      permanently erased from your disk.</p>
+      </body>
+</html>

@@ -1,0 +1,12 @@
+diff -ur qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/WebCore/page/qt/EventHandlerQt.cpp qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/WebCore/page/qt/EventHandlerQt.cpp
+--- qt-everywhere-commercial-src-4.8.3/src/3rdparty/webkit/Source/WebCore/page/qt/EventHandlerQt.cpp	2012-09-12 12:20:50.000000000 +0200
++++ qt-everywhere-commercial-new-4.8.3/src/3rdparty/webkit/Source/WebCore/page/qt/EventHandlerQt.cpp	2012-10-08 16:27:31.538253662 +0200
+@@ -106,6 +106,8 @@
+ 
+ bool EventHandler::passMousePressEventToSubframe(MouseEventWithHitTestResults& mev, Frame* subframe)
+ {
++    if (subframe->page())
++        subframe->page()->focusController()->setFocusedFrame(subframe);
+     subframe->eventHandler()->handleMousePressEvent(mev.event());
+     return true;
+ }

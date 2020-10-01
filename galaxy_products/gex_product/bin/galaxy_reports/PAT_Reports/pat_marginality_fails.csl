@@ -1,0 +1,261 @@
+//////////////////////////////////////////
+// Welcome to Galaxy Examinator Script
+// Find more on www.mentor.com
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+// Setup the GEX 'Options' section
+//////////////////////////////////////////
+SetOptions()
+{
+
+  // Sets all data analysis global options
+  gexResetOptions('clear');
+
+  gexCslVersion('2.10');
+
+  // ReportOptions dynamic options :
+  // Section adv_boxplot 
+  gexOptions('adv_boxplot','chart_type','limits');
+  gexOptions('adv_boxplot','delta','over_limits');
+  gexOptions('adv_boxplot','field','ev|av|r&r|p_t');
+  gexOptions('adv_boxplot','r&r_alarms','dont_check');
+  gexOptions('adv_boxplot','r&r_file','');
+  gexOptions('adv_boxplot','r&r_sigma','5.15');
+  gexOptions('adv_boxplot','sorting','r&r');
+  // Section adv_boxplot_ex 
+  gexOptions('adv_boxplot_ex','chart_size','auto');
+  gexOptions('adv_boxplot_ex','marker','test_name|mean|limits');
+  gexOptions('adv_boxplot_ex','orientation','vertical');
+  // Section adv_correlation 
+  gexOptions('adv_correlation','chart_size','auto');
+  gexOptions('adv_correlation','marker','test_name|mean|limits');
+  // Section adv_datalog 
+  gexOptions('adv_datalog','field','test_number|test_name|limits|die_loc');
+  gexOptions('adv_datalog','format','2rows');
+  // Section adv_histogram 
+  gexOptions('adv_histogram','chart_size','auto');
+  gexOptions('adv_histogram','chart_type','bars');
+  gexOptions('adv_histogram','field','limits|exec_count|mean|sigma|fail_count|cp|cpk');
+  gexOptions('adv_histogram','marker','test_name|mean|limits');
+  gexOptions('adv_histogram','total_bars','40');
+  gexOptions('adv_histogram','y_axis','percentage');
+  // Section adv_pearson 
+  gexOptions('adv_pearson','cutoff','0.8');
+  gexOptions('adv_pearson','sorting','pearson');
+  // Section adv_probabilityplot 
+  gexOptions('adv_probabilityplot','chart_size','auto');
+  gexOptions('adv_probabilityplot','marker','test_name|mean|limits');
+  gexOptions('adv_probabilityplot','y_axis','sigma');
+  // Section adv_production_yield 
+  gexOptions('adv_production_yield','chart_type','yield_volume');
+  gexOptions('adv_production_yield','marker','title|yield|volume');
+  // Section adv_trend 
+  gexOptions('adv_trend','chart_size','auto');
+  gexOptions('adv_trend','chart_type','spots');
+  gexOptions('adv_trend','marker','test_name|mean|limits|sublot');
+  gexOptions('adv_trend','rolling_yield','200');
+  gexOptions('adv_trend','x_axis','part_id');
+  // Section adv_what_if 
+  gexOptions('adv_what_if','fail_bin','0');
+  gexOptions('adv_what_if','fail_bin_is_pass','false');
+  gexOptions('adv_what_if','pass_bin','1');
+  // Section binning 
+  gexOptions('binning','computation','summary');
+  gexOptions('binning','section','enabled');
+  // Section databases 
+  gexOptions('databases','rdb_default_parameters','none');
+  // Section dataprocessing 
+  gexOptions('dataprocessing','duplicate_test','no_merge');
+  gexOptions('dataprocessing','fail_count','all');
+  gexOptions('dataprocessing','multi_parametric_merge_criteria','first');
+  gexOptions('dataprocessing','multi_parametric_merge_mode','merge');
+  gexOptions('dataprocessing','multi_parametric_merge_option','keep_all');
+  gexOptions('dataprocessing','outlier_removal_mode','none');
+  gexOptions('dataprocessing','outlier_removal_value','6');
+  gexOptions('dataprocessing','param_passfail_rule','passfail_flag');
+  gexOptions('dataprocessing','part_id','show');
+  gexOptions('dataprocessing','scaling','smart');
+  gexOptions('dataprocessing','sorting','none');
+  gexOptions('dataprocessing','stdf_compliancy','flexible');
+  gexOptions('dataprocessing','stdf_intermediate','same');
+  gexOptions('dataprocessing','stdf_intermediate_path','');
+  // Section global_info 
+  gexOptions('global_info','detail_level','detailed');
+  // Section histogram 
+  // Section monitoring 
+  // Section output 
+  gexOptions('output','embed_fonts_in_pdf','false');
+  gexOptions('output','format','HTML');
+  gexOptions('output','front_page_image','');
+  gexOptions('output','front_page_text','');
+  gexOptions('output','generation_mode','legacy');
+  gexOptions('output','location','same');
+  gexOptions('output','paper_format','landscape');
+  gexOptions('output','paper_size','A4');
+  gexOptions('output','truncate_names','-1');
+  // Section pareto 
+  gexOptions('pareto','cutoff_cp',' 1.7');
+  gexOptions('pareto','cutoff_cpk',' 1.3');
+  gexOptions('pareto','cutoff_failure','-1');
+  gexOptions('pareto','cutoff_signature_failure','100');
+  gexOptions('pareto','excludebinnings','');
+  gexOptions('pareto','section','failure_signature');
+  // Section preferences 
+  gexOptions('preferences','auto_close','2hours');
+  gexOptions('preferences','pdf_editor','AcroRd32.exe');
+  gexOptions('preferences','ssheet_editor','excel');
+  gexOptions('preferences','text_editor','wordpad');
+  // Section report 
+  // Section samples 
+  // Section speed 
+  gexOptions('speed','adv_stats','always');
+  gexOptions('speed','db_summary','never');
+  // Section statistics 
+  gexOptions('statistics','adv_fields','');
+  gexOptions('statistics','alarm_cpk','33');
+  gexOptions('statistics','alarm_mean','5');
+  gexOptions('statistics','alarm_sigma','1');
+  gexOptions('statistics','alarm_test_cpk','1.33');
+  gexOptions('statistics','alarm_test_yield','-1');
+  gexOptions('statistics','compare_fields','mean_shift|sigma_shift');
+  gexOptions('statistics','computation','samples_then_summary');
+  gexOptions('statistics','cp_cpk_computation','standard');
+  gexOptions('statistics','fields','test_name|limits|stats_source|exec_count|fail_count|outlier_count|mean|sigma|cp|cpk|yield');
+  gexOptions('statistics','gage_fields','');
+  gexOptions('statistics','generic_galaxy_tests','show');
+  gexOptions('statistics','mean_drift_formula','value');
+  gexOptions('statistics','sorting','test_number');
+  gexOptions('statistics','warning_test_cpk','1.67');
+  gexOptions('statistics','warning_test_yield','-1');
+  // Section toolbox 
+  gexOptions('toolbox','csv_sorting','test_id');
+  gexOptions('toolbox','csv_split_export','false');
+  gexOptions('toolbox','csv_units_mode','normalized');
+  // Section wafer 
+  gexOptions('wafer','alarms','');
+  gexOptions('wafer','bin_stacked','bin_count');
+  gexOptions('wafer','chart_show','all_individual|stacked|bin_mismatch|bin_to_bin');
+  gexOptions('wafer','chart_size','medium');
+  gexOptions('wafer','compare','any_size|diemismatch_table|deltayield_section');
+  gexOptions('wafer','low_yield_pattern','33');
+  gexOptions('wafer','marker','retest');
+  gexOptions('wafer','parametric_stacked','mean');
+  gexOptions('wafer','positive_x','auto');
+  gexOptions('wafer','positive_y','auto');
+  gexOptions('wafer','retest_policy','last_bin');
+  gexOptions('wafer','visual_options','shape_round');
+  // end of ReportOptions dynamic options.
+
+
+  gexCslVersion('1.0');
+  gexOptions('chart_style','bkg_color','235 235 235');
+  gexOptions('chart_style','show_legend','0');
+  gexOptions('chart_style','box_bars','1');
+  gexOptions('chart_style','box_3d_bars','0');
+  gexOptions('chart_style','fitting_curve','0');
+  gexOptions('chart_style','bell_curve','0');
+  gexOptions('chart_style','lines','1');
+  gexOptions('chart_style','spots','0');
+  gexOptions('chart_style','box_whisker','range');
+  gexOptions('chart_style','line_width','1');
+  gexOptions('chart_style','line_style','0');
+  gexOptions('chart_style','spot_style','0');
+  gexOptions('chart_style','rgb_color','121 182 91');
+  gexOptions('chart_style','marker_mean','1 255 0 0');
+  gexOptions('chart_style','marker_median','0 255 0 0');
+  gexOptions('chart_style','marker_min','0 255 0 0');
+  gexOptions('chart_style','marker_max','0 255 0 0');
+  gexOptions('chart_style','marker_limits','1 255 0 0');
+  gexOptions('chart_style','marker_2sigma','0 255 0 0');
+  gexOptions('chart_style','marker_3sigma','0 255 0 0');
+  gexOptions('chart_style','marker_6sigma','0 255 0 0');
+  gexOptions('chart_style','marker_12sigma','0 255 0 0');
+  gexOptions('chart_style','chart_layer','0');
+  gexOptions('bin_style','custom_colors','0');
+  gexOptions('bin_style','clear','');
+
+
+  sysLog('* Galaxy Examinator Options loaded! *');
+}
+
+//////////////////////////////////////////
+// Setup the GEX 'Settings' section
+//////////////////////////////////////////
+SetReportType()
+{
+
+  // Update output format
+  gexOptions('output','format','html');
+
+  // Section: Test Statistics
+  gexReportType('stats','disabled');
+
+  // Section: Wafer map
+  gexReportType('wafer','disabled');
+
+  // Section: Histogram
+  gexReportType('histogram','disabled');
+
+  // Section: Advanced Report
+  gexReportType('adv_my_report','disabled');
+  gexReportType('adv_histogram','disabled');
+  gexReportType('adv_trend','disabled');
+  gexReportType('adv_correlation','disabled');
+  gexReportType('adv_boxplot','disabled');
+  gexReportType('adv_multichart','disabled');
+  gexReportType('adv_datalog','disabled');
+  gexReportType('adv_optimizer','disabled');
+
+  sysLog('* Galaxy Examinator Settings loaded! *');
+}
+
+//////////////////////////////////////////
+// GEX 'DataMining - Yield Analysis' section
+//////////////////////////////////////////
+SetDataMining()
+{
+
+  gexReportType('drill_disabled');
+
+  sysLog('* Galaxy Examinator Drill info loaded! *');
+}
+
+//////////////////////////////////////////
+// GEX to analyze data + create report
+//////////////////////////////////////////
+BuildReport()
+{
+
+  // Have Galaxy Examinator build report, then show it!
+  gexBuildReport('pareto','0');
+
+
+  sysLog('* Data analysis and report completed ! *');
+
+}
+
+//////////////////////////////////////////
+// Script entry point
+//////////////////////////////////////////
+main()
+{
+  gexCslVersion('2.10');
+
+  // Setup the GEX Options
+  SetOptions();
+
+  // Setup the list of data Queries or files to process
+  SetProcessData();
+
+  // Setup the GEX DataMining Settings
+  SetDataMining();
+
+  // Setup the GEX Report type (Settings)
+  SetReportType();
+
+  // Analyze data and build the report, do not show report page
+  BuildReport();
+
+}
+

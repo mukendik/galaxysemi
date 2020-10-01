@@ -1,0 +1,2889 @@
+{
+    "multivariate_rules": [
+    ],
+    "outlier_options": {
+        "settings": {
+            "dynamic_pat": {
+                "color": [
+                    255,
+                    0,
+                    0
+                ],
+                "default_rule": "smart_adaptive",
+                "enabled": true,
+                "hard_bin": 141,
+                "limits": {
+                    "assume_integer_category": false,
+                    "bin_filter": "good",
+                    "bins": "",
+                    "category_value_count": 5,
+                    "ignore_high_cpk": 20,
+                    "minimum_outliers_to_fail": 1,
+                    "minimum_samples": 50,
+                    "stop_on_first_fail": false,
+                    "within_original_limits": true
+                },
+                "soft_bin": 141
+            },
+            "general": {
+                "bin_outliers": "good_parts",
+                "good_hard_bins": [
+                    "1"
+                ],
+                "good_soft_bins": [
+                    "1"
+                ],
+                "test_key": "number"
+            },
+            "multi_variate_pat": {
+                "auto_group_creation": true,
+                "correlation_threshold": 0.80000000000000004,
+                "enabled": false,
+                "fail_color": [
+                    255,
+                    0,
+                    0
+                ],
+                "hard_bin": 150,
+                "ignore_ppat_bins": true,
+                "normal_shape_only": false,
+                "outlier_distance": {
+                    "far": 12,
+                    "medium": 9,
+                    "near": 6
+                },
+                "soft_bin": 150
+            },
+            "recipe_versioning": {
+                "major": 1,
+                "minor": 2,
+                "product": ""
+            },
+            "report": {
+                "binning": true,
+                "dpat_limits_no_outliers": false,
+                "dpat_limits_outliers": true,
+                "histo": true,
+                "mvpat_correlation_charts": {
+                    "charts": "consecutive_pairs",
+                    "dataset": "tests",
+                    "enabled": false,
+                    "max_charts": 20
+                },
+                "mvpat_standard_charts": true,
+                "pareto": true,
+                "spat_limits": true,
+                "stats": true,
+                "wafermap": true,
+                "wafermap_type": "soft_bin"
+            },
+            "static_pat": {
+                "color": [
+                    255,
+                    0,
+                    0
+                ],
+                "enabled": false,
+                "hard_bin": 140,
+                "ignore_when_categories": false,
+                "ignore_when_cpk_greater": -1,
+                "ignore_when_iqr_null": true,
+                "soft_bin": 140
+            }
+        },
+        "smart_rules": {
+            "shapes": {
+                "category": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            12
+                        ],
+                        "medium": [
+                            9,
+                            9
+                        ],
+                        "near": [
+                            6,
+                            6
+                        ]
+                    }
+                },
+                "clamped": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            6,
+                            12
+                        ],
+                        "medium": [
+                            4,
+                            9
+                        ],
+                        "near": [
+                            3,
+                            6
+                        ]
+                    }
+                },
+                "double_clamped": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            6,
+                            6
+                        ],
+                        "medium": [
+                            4,
+                            4
+                        ],
+                        "near": [
+                            3,
+                            3
+                        ]
+                    }
+                },
+                "gaussian": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            12
+                        ],
+                        "medium": [
+                            9,
+                            9
+                        ],
+                        "near": [
+                            6,
+                            6
+                        ]
+                    }
+                },
+                "gaussian_double_tailed": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            14,
+                            14
+                        ],
+                        "medium": [
+                            10,
+                            10
+                        ],
+                        "near": [
+                            7,
+                            7
+                        ]
+                    }
+                },
+                "gaussian_tailed": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            14
+                        ],
+                        "medium": [
+                            9,
+                            10
+                        ],
+                        "near": [
+                            6,
+                            7
+                        ]
+                    }
+                },
+                "log_normal": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            6,
+                            14
+                        ],
+                        "medium": [
+                            4,
+                            10
+                        ],
+                        "near": [
+                            3,
+                            7
+                        ]
+                    }
+                },
+                "multi_modal": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            12
+                        ],
+                        "medium": [
+                            9,
+                            9
+                        ],
+                        "near": [
+                            6,
+                            6
+                        ]
+                    }
+                },
+                "unknown": {
+                    "apply_pat": true,
+                    "formula": "mean_n_sigma",
+                    "limit_factors": {
+                        "far": [
+                            12,
+                            12
+                        ],
+                        "medium": [
+                            9,
+                            9
+                        ],
+                        "near": [
+                            6,
+                            6
+                        ]
+                    }
+                }
+            }
+        },
+        "wafer_sort": {
+            "clustering": {
+                "color": [
+                    255,
+                    0,
+                    255
+                ],
+                "enabled": false,
+                "hard_bin": 145,
+                "rules": [
+                ],
+                "soft_bin": 145
+            },
+            "gdbn": {
+                "color": [
+                    255,
+                    202,
+                    181
+                ],
+                "enabled": true,
+                "hard_bin": 143,
+                "rules": [
+                    {
+                        "adjacent_weight": [
+                            2
+                        ],
+                        "algorithm": "squeeze",
+                        "bad_bins": [
+                            "0",
+                            "2-65535"
+                        ],
+                        "cluster_size": 3,
+                        "diag_weight": [
+                            1
+                        ],
+                        "edge_die_type": "all",
+                        "edge_die_weight": "scaled",
+                        "enabled": true,
+                        "fail_wafer_edge": false,
+                        "fail_weight": 8,
+                        "map_source": "stdf_soft_bin",
+                        "mask": "-None-",
+                        "name": "Rule...",
+                        "squeeze_count": "A",
+                        "weight_scale": 1.1000000000000001,
+                        "yield_threshold": 50
+                    }
+                ],
+                "soft_bin": 143
+            },
+            "iddq_delta": {
+                "color": [
+                    255,
+                    202,
+                    181
+                ],
+                "enabled": false,
+                "hard_bin": 143,
+                "rules": [
+                ],
+                "soft_bin": 143
+            },
+            "mask": [
+            ],
+            "nnr": {
+                "color": [
+                    255,
+                    202,
+                    181
+                ],
+                "enabled": false,
+                "hard_bin": 142,
+                "rules": [
+                ],
+                "soft_bin": 142
+            },
+            "precedence": [
+                "NNR",
+                "IDDQ-Delta",
+                "GDBN",
+                "Clustering",
+                "Reticle"
+            ],
+            "reticle": {
+                "bad_bins_list": [
+                    "0;2-65535"
+                ],
+                "bad_bins_percent": 50,
+                "color": [
+                    255,
+                    0,
+                    255
+                ],
+                "enabled": false,
+                "hard_bin": 144,
+                "map_source": "stdf_soft_bin",
+                "soft_bin": 144,
+                "x_size": 3,
+                "y_size": 3
+            },
+            "z_pat": {
+                "3d_neighbourhood": {
+                    "enabled": false,
+                    "hard_bin": 147,
+                    "soft_bin": 147
+                },
+                "color": [
+                    255,
+                    0,
+                    255
+                ],
+                "compare_to_etest": {
+                    "enabled": false,
+                    "hard_bin": 146,
+                    "soft_bin": 146
+                },
+                "exclusion_zones": {
+                    "apply_clustering": false,
+                    "apply_gdbn": false,
+                    "apply_reticle": false,
+                    "enabled": false,
+                    "hard_bin": 148,
+                    "map_source": "stdf_soft_bin",
+                    "soft_bin": 148,
+                    "yield_threshold": 0
+                }
+            }
+        }
+    },
+    "testing_stage": "wafer_sort",
+    "univariate_rules": [
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.36 ohm",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 0.15267659736056768,
+                "range": 0.010833337903022766,
+                "robust_mean": 0.15244792401790619,
+                "robust_sigma": 0.0012345777617560492,
+                "sigma": 0.0011876135405866329
+            },
+            "low_limit": "0.05 ohm",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Rds on          <> RDS_ON",
+            "test_number": 1460,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Log_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.0075 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 3,
+                "ll_scale": 3,
+                "mean": 0.0035218770790572491,
+                "range": 0.0059781251911772415,
+                "robust_mean": 0.0032515625935047865,
+                "robust_sigma": 0.00038888891813931641,
+                "sigma": 0.00073279190783692781
+            },
+            "low_limit": "-0.0075 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Line 8/55v      <> LN_REG",
+            "test_number": 1210,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.79749551891091464,
+                "range": 0.020624995231628418,
+                "robust_mean": -0.79757809638977051,
+                "robust_sigma": 0.003240770763821072,
+                "sigma": 0.0028904677412515426
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_PT        <> glxy_PT",
+            "test_number": 1090,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.4 ",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 2,
+                "ll_scale": 2,
+                "mean": -0.016599724795592453,
+                "range": 0.080000001937150955,
+                "robust_mean": -0.019999999552965164,
+                "robust_sigma": 0.017777778277242626,
+                "sigma": 0.016899415454937009
+            },
+            "low_limit": "-0.4 ",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Imax precision   <> IMAX_TGT",
+            "test_number": 1510,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.5062289334894197,
+                "range": 0.18257808685302734,
+                "robust_mean": 3.5078907012939453,
+                "robust_sigma": 0.010648303561740451,
+                "sigma": 0.019259783585694589
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim5 ref <> Simule_5",
+            "test_number": 1140,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "1.2e-05 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": 1.0012516656085305e-05,
+                "range": 9.4999995781108737e-07,
+                "robust_mean": 1.0006249794969335e-05,
+                "robust_sigma": 1.4814792882168182e-07,
+                "sigma": 1.5489047948276875e-07
+            },
+            "low_limit": "8e-06 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Iss discharge    <> SS_IDCH",
+            "test_number": 1390,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.0009 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 3,
+                "ll_scale": 3,
+                "mean": 0.0006384294848441925,
+                "range": 0.0044073437456972897,
+                "robust_mean": 0.00061921874294057488,
+                "robust_sigma": 6.9444326476918323e-06,
+                "sigma": 0.0002813021599777519
+            },
+            "low_limit": "0 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Lkg boot         <> LKG_BOOT",
+            "test_number": 1440,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.4771164697683279,
+                "range": 0.15632820129394531,
+                "robust_mean": 3.4784374237060547,
+                "robust_sigma": 0.009780106721100983,
+                "sigma": 0.017626530209365318
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim6 ref <> Simule_6",
+            "test_number": 1142,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.65753467176620506,
+                "range": 0.01445317268371582,
+                "robust_mean": -0.65765625238418579,
+                "robust_sigma": 0.00098378569991500273,
+                "sigma": 0.0010555682126781338
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_COMP      <> glxy_pin7",
+            "test_number": 1070,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.4500365199112313,
+                "range": 0.15007805824279785,
+                "robust_mean": 3.4506250619888306,
+                "robust_sigma": 0.010648126955385561,
+                "sigma": 0.016368982526589422
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim7 ref <> Simule_7",
+            "test_number": 1144,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "2.5e-07 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": -2.0245119927966173e-06,
+                "range": 4.596873850459815e-07,
+                "robust_mean": -2.0237500848452328e-06,
+                "robust_sigma": 4.9999976504801047e-08,
+                "sigma": 5.3152159527098326e-08
+            },
+            "low_limit": "-4e-06 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Abs fb         <> ABS_FB",
+            "test_number": 1120,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3652738636425195,
+                "range": 0.14882802963256836,
+                "robust_mean": 3.3640625476837158,
+                "robust_sigma": 0.01018524169921875,
+                "sigma": 0.012460543021100123
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim8 ref <> Simule_8",
+            "test_number": 1146,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.5785183555764748,
+                "range": 0.026953160762786865,
+                "robust_mean": -0.57867187261581421,
+                "robust_sigma": 0.0027777530528880932,
+                "sigma": 0.0028206152371363382
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_VCCF      <> glxy_pin5F",
+            "test_number": 1050,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.392760100080392,
+                "range": 0.14945316314697266,
+                "robust_mean": 3.3921875953674316,
+                "robust_sigma": 0.0097221798366970476,
+                "sigma": 0.011627546693752464
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim9 ref <> Simule_9",
+            "test_number": 1148,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "1e-05 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": -0.00021131020251973916,
+                "range": 0.010578750458080322,
+                "robust_mean": -0.00027203126228414476,
+                "robust_sigma": 5.5555547415106379e-06,
+                "sigma": 0.00066927243683473055
+            },
+            "low_limit": "-0.00055 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Abs comp       <> ABS_COM",
+            "test_number": 1100,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "2e-06 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": -0.00018443020737322514,
+                "range": 0.0099678122169279959,
+                "robust_mean": -2.8593749448191375e-05,
+                "robust_sigma": 8.1018461733711529e-07,
+                "sigma": 0.0011765566924244733
+            },
+            "low_limit": "-6e-05 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Lkg Mos          <> LK_PWR",
+            "test_number": 1400,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.00038 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": 0.00030193749933799836,
+                "range": 3.1023431802168489e-05,
+                "robust_mean": 0.00030185157083906233,
+                "robust_sigma": 4.6875060501473915e-06,
+                "sigma": 4.7596637985788366e-06
+            },
+            "low_limit": "0.00022 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Sink out I      <> EA_SNK",
+            "test_number": 1650,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Log_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.70010501376708545,
+                "range": 0.19265627861022949,
+                "robust_mean": -0.69765627384185791,
+                "robust_sigma": 0.01116898324754503,
+                "sigma": 0.014334243659338122
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_OUTF      <> glxy_pin4F",
+            "test_number": 1030,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "480000 hz",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": -3,
+                "ll_scale": -3,
+                "mean": 428874.74829394143,
+                "range": 43112,
+                "robust_mean": 429010.3125,
+                "robust_sigma": 541.55092592592587,
+                "sigma": 1648.7046643381543
+            },
+            "low_limit": "220000 hz",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Freq max        <> FQ_MAX",
+            "test_number": 1330,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "88 db",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 58.75580744940612,
+                "range": 1.4479179382324219,
+                "robust_mean": 58.752017974853516,
+                "robust_sigma": 0.18555252640335648,
+                "sigma": 0.20974774362249096
+            },
+            "low_limit": "52 db",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Gain op_loop     <> EA_OLG",
+            "test_number": 1580,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.6 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 0.12170180975965698,
+                "range": 0.0090000033378601074,
+                "robust_mean": 0.12159375101327896,
+                "robust_sigma": 0.0012962961638415301,
+                "sigma": 0.0012127311920533056
+            },
+            "low_limit": "-0.05 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "EA swing low  <> EA_SWL",
+            "test_number": 1630,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Log_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.65468155832361996,
+                "range": 0.056328117847442627,
+                "robust_mean": -0.65265625715255737,
+                "robust_sigma": 0.0046296031386763963,
+                "sigma": 0.0070524598831495618
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_OSC       <> glxy_pin3",
+            "test_number": 1010,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.005 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 3,
+                "ll_scale": 3,
+                "mean": 0.0031651735334308662,
+                "range": 0.00026250001974403858,
+                "robust_mean": 0.0031656250357627869,
+                "robust_sigma": 3.7036974121023105e-05,
+                "sigma": 3.4523843422024368e-05
+            },
+            "low_limit": "0.0017 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Iq tot          <> IQ_TOT",
+            "test_number": 1260,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "107000 hz",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": -3,
+                "ll_scale": -3,
+                "mean": 99517.939216461382,
+                "range": 500.078125,
+                "robust_mean": 99520.8984375,
+                "robust_sigma": 55.717592592592588,
+                "sigma": 65.759862508131249
+            },
+            "low_limit": "93000 hz",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Freq at 55v     <> FQ_2",
+            "test_number": 1310,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.385 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3730091868823466,
+                "range": 0.081953048706054688,
+                "robust_mean": 3.3728125095367432,
+                "robust_sigma": 0.006018567968297887,
+                "sigma": 0.006716890695984243
+            },
+            "low_limit": "3.34 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Ref aft zap     <> REF",
+            "test_number": 1190,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.00028 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": 0.00014238696596603791,
+                "range": 0.00095625003450550139,
+                "robust_mean": 0.0001390624966006726,
+                "robust_sigma": 4.6296325443243535e-06,
+                "sigma": 3.4785248940110164e-05
+            },
+            "low_limit": "5e-05 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Iq st_by 55v    <> IQ_SBY_55",
+            "test_number": 1240,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.385 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3732674948891326,
+                "range": 0.051249980926513672,
+                "robust_mean": 3.3728125095367432,
+                "robust_sigma": 0.006018567968297887,
+                "sigma": 0.0063066361469589155
+            },
+            "low_limit": "3.34 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Ref best     <> REF_BEST_SIM",
+            "test_number": 1170,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.18 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 3,
+                "ll_scale": 3,
+                "mean": -0.023825534797565079,
+                "range": 0.13257812708616257,
+                "robust_mean": -0.027499999850988388,
+                "robust_sigma": 0.014351852652099397,
+                "sigma": 0.012944526554163321
+            },
+            "low_limit": "-0.18 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Ref recovery    <> VREF_REC",
+            "test_number": 1195,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.0034 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 3,
+                "ll_scale": 3,
+                "mean": 0.0031462039965864477,
+                "range": 0.0072078125085681677,
+                "robust_mean": 0.0031306250020861626,
+                "robust_sigma": 2.9629682777104553e-05,
+                "sigma": 0.00026656040622447089
+            },
+            "low_limit": "0.0006 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Iq dut_cycle=0  <> IQ",
+            "test_number": 1220,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.31 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 2.4585007270067889,
+                "range": 0.20000004768371582,
+                "robust_mean": 2.4500000476837158,
+                "robust_sigma": 0.044444402058919266,
+                "sigma": 0.04224849941369032
+            },
+            "low_limit": "1.87 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Imax bef zap  <> IMAX",
+            "test_number": 1470,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.995 ",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 2,
+                "ll_scale": 2,
+                "mean": 0.97714270438173945,
+                "range": 0.94164998456835747,
+                "robust_mean": 0.98198902606964111,
+                "robust_sigma": 0.00058187378777397995,
+                "sigma": 0.069296685861038002
+            },
+            "low_limit": "0.955 ",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Max duty cycle  <> MAX_DUT",
+            "test_number": 1520,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "17 ",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 5.4708333333333332,
+                "range": 14,
+                "robust_mean": 1,
+                "robust_sigma": 5.1851851851851851,
+                "sigma": 5.0217035908248224
+            },
+            "low_limit": "-1 ",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "indice        <> REF_FLAG",
+            "test_number": 1175,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3416932359297422,
+                "range": 0.12195301055908203,
+                "robust_mean": 3.340937614440918,
+                "robust_sigma": 0.0093170448585792823,
+                "sigma": 0.012978202985315615
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim10 ref <> Simule_10",
+            "test_number": 1150,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.035 ",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 2,
+                "ll_scale": 2,
+                "mean": 0.0038315615136969485,
+                "range": 0.010067894356325269,
+                "robust_mean": 0.0036272320430725813,
+                "robust_sigma": 0.0017912258152608517,
+                "sigma": 0.0017352025949100112
+            },
+            "low_limit": "-0.035 ",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Ref precision   <> VREF_TGT",
+            "test_number": 1200,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.54 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 0.22901489744488113,
+                "range": 0.016249999403953552,
+                "robust_mean": 0.22867187857627869,
+                "robust_sigma": 0.0018518500857883028,
+                "sigma": 0.0017814118129747074
+            },
+            "low_limit": "0.075 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Drop of the Mos <> DROP_10V",
+            "test_number": 1450,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3152148962666996,
+                "range": 0.12007808685302734,
+                "robust_mean": 3.313359260559082,
+                "robust_sigma": 0.010185065092863859,
+                "sigma": 0.014270685338824564
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim11 ref <> Simule_11",
+            "test_number": 1152,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.69255250855871564,
+                "range": 0.012578129768371582,
+                "robust_mean": -0.69257813692092896,
+                "robust_sigma": 0.00092594711868851268,
+                "sigma": 0.0010450106047637615
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_FB        <> glxy_pin8",
+            "test_number": 1080,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "2.885 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 2.4585007270067889,
+                "range": 0.20000004768371582,
+                "robust_mean": 2.4500000476837158,
+                "robust_sigma": 0.044444402058919266,
+                "sigma": 0.04224849941369032
+            },
+            "low_limit": "2.115 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Imax aft zap   <> IMAX_AFT",
+            "test_number": 1500,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3974062117134651,
+                "range": 0.13882827758789062,
+                "robust_mean": 3.3968750238418579,
+                "robust_sigma": 0.0097223564430519386,
+                "sigma": 0.012279874316337177
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim12 ref <> Simule_12",
+            "test_number": 1154,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-3.4e-05 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": -4.0493970809620803e-05,
+                "range": 7.1499998739454895e-06,
+                "robust_mean": -4.047499896842055e-05,
+                "robust_sigma": 9.2592489198540094e-07,
+                "sigma": 9.2886195905729234e-07
+            },
+            "low_limit": "-4.6e-05 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Iss charge      <> SS_ICH",
+            "test_number": 1380,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.564 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3964783188045553,
+                "range": 0.13757824897766113,
+                "robust_mean": 3.3971874713897705,
+                "robust_sigma": 0.01018524169921875,
+                "sigma": 0.013013857099991106
+            },
+            "low_limit": "3.178 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Ref bef zap    <> REF_BE",
+            "test_number": 1130,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.478636836941003,
+                "range": 0.15257811546325684,
+                "robust_mean": 3.479062557220459,
+                "robust_sigma": 0.010648126955385561,
+                "sigma": 0.017186776000363734
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim13 ref <> Simule_13",
+            "test_number": 1156,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Clamp_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.0001 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": 4.1639134527127921e-05,
+                "range": 0.0018646874741534702,
+                "robust_mean": 4.8124999011633918e-05,
+                "robust_sigma": 0,
+                "sigma": 0.00010346483864828566
+            },
+            "low_limit": "1e-05 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Lkg boot Mos off <> IBOOT_OFF",
+            "test_number": 1430,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3720318886645764,
+                "range": 0.13632822036743164,
+                "robust_mean": 3.3715624809265137,
+                "robust_sigma": 0.01018524169921875,
+                "sigma": 0.011754069365457637
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim1 ref <> Simule_1",
+            "test_number": 1132,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3923902236995334,
+                "range": 0.14945316314697266,
+                "robust_mean": 3.3909375667572021,
+                "robust_sigma": 0.0097223564430519386,
+                "sigma": 0.011753788064706986
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim14 ref <> Simule_14",
+            "test_number": 1158,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.68774490091866092,
+                "range": 0.11382812261581421,
+                "robust_mean": -0.68796873092651367,
+                "robust_sigma": 0.0013888765264440466,
+                "sigma": 0.0049392648640591346
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_BOOT      <> glxy_pin6",
+            "test_number": 1060,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.2911800265635254,
+                "range": 0.13382816314697266,
+                "robust_mean": 3.2889842987060547,
+                "robust_sigma": 0.01018524169921875,
+                "sigma": 0.014852026658975054
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim2 ref <> Simule_2",
+            "test_number": 1134,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.3171625147020913,
+                "range": 0.111328125,
+                "robust_mean": 3.315859317779541,
+                "robust_sigma": 0.0092592945805302362,
+                "sigma": 0.012834259596851201
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim3 ref <> Simule_3",
+            "test_number": 1136,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "M_Modal",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.005 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 3,
+                "ll_scale": 3,
+                "mean": -0.018272545556626624,
+                "range": 0.011840623803436756,
+                "robust_mean": -0.01965781208127737,
+                "robust_sigma": 0.0041030092095887217,
+                "sigma": 0.0033514505250998379
+            },
+            "low_limit": "-0.03 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Abs out          <> OUT_MAX",
+            "test_number": 1410,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.423854796544,
+                "range": 0.16320323944091797,
+                "robust_mean": 3.4240624904632568,
+                "robust_sigma": 0.01018524169921875,
+                "sigma": 0.013374076467373309
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim4 ref <> Simule_4",
+            "test_number": 1138,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.55955443247000769,
+                "range": 0.064453125,
+                "robust_mean": -0.55804687738418579,
+                "robust_sigma": 0.0051505035824245876,
+                "sigma": 0.0076688900972517174
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_VCCS      <> glxy_pin5S",
+            "test_number": 1040,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-2e-06 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": -6.6518458687171273e-06,
+                "range": 3.7198437894403469e-06,
+                "robust_mean": -6.6465627241996117e-06,
+                "robust_sigma": 7.8240797544519098e-08,
+                "sigma": 1.4656685920239414e-07
+            },
+            "low_limit": "-1.2e-05 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "I inh low       <> I_IH_LO",
+            "test_number": 1340,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "98 db",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 82.319719333621478,
+                "range": 2.7371139526367188,
+                "robust_mean": 82.342338562011719,
+                "robust_sigma": 0.44679429796006942,
+                "sigma": 0.4496680687322393
+            },
+            "low_limit": "62 db",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Svrr             <> EA_SVRR",
+            "test_number": 1590,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.000215 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": -0.00024035566414758888,
+                "range": 2.7515605324879289e-05,
+                "robust_mean": -0.00024042968288995326,
+                "robust_sigma": 4.0277761096755658e-06,
+                "sigma": 4.2239764079639313e-06
+            },
+            "low_limit": "-0.00038 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Src out I       <> EA_SRC",
+            "test_number": 1640,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "107000 hz",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": -3,
+                "ll_scale": -3,
+                "mean": 96371.145451897464,
+                "range": 1517.21875,
+                "robust_mean": 96369.15625,
+                "robust_sigma": 206.9560185185185,
+                "sigma": 208.92893834153324
+            },
+            "low_limit": "93000 hz",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Freq at 8v      <> FQ_1",
+            "test_number": 1270,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Log_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.69443724480947655,
+                "range": 0.1876562237739563,
+                "robust_mean": -0.69195312261581421,
+                "robust_sigma": 0.010243036128856516,
+                "sigma": 0.01397453145120984
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_OUTS      <> glxy_pin4S",
+            "test_number": 1020,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.05 ",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 2,
+                "ll_scale": 2,
+                "mean": 0.031620918548654779,
+                "range": 0.011032138019800186,
+                "robust_mean": 0.031663581728935242,
+                "robust_sigma": 0.0017443947769977426,
+                "sigma": 0.0017104510499636077
+            },
+            "low_limit": "-0.05 ",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Freq stability  <> FQ_STAB",
+            "test_number": 1320,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "13.9 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 11.111497390627351,
+                "range": 0.16031265258789062,
+                "robust_mean": 11.110312461853027,
+                "robust_sigma": 0.020601484510633677,
+                "sigma": 0.022584194388484868
+            },
+            "low_limit": "10.4 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "EA swing high   <> EA_SWH",
+            "test_number": 1620,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.00038 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": 0.00015798726202575949,
+                "range": 5.6249991757795215e-05,
+                "robust_mean": 0.00015781249385327101,
+                "robust_sigma": 0,
+                "sigma": 3.7528647928499225e-06
+            },
+            "low_limit": "5e-05 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Abs supply      <> ABS_VCC",
+            "test_number": 1250,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Log_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "-0.4 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": -0.65949204470703271,
+                "range": 0.71234376425854862,
+                "robust_mean": -0.66296875476837158,
+                "robust_sigma": 0.0041666295793321394,
+                "sigma": 0.061329499233335937
+            },
+            "low_limit": "-0.9 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "glxy_SS_IH     <> glxy_pin2",
+            "test_number": 1000,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "1.5 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 3,
+                "ll_scale": 3,
+                "mean": 0.8150126080546114,
+                "range": 0.033874988555908203,
+                "robust_mean": 0.8152499794960022,
+                "robust_sigma": 0.0070833276819299764,
+                "sigma": 0.0073218806157623207
+            },
+            "low_limit": "0.3 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Zap current   <> ZAP_REF",
+            "test_number": 1180,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_L",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "2.95e-06 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": 1.9970595583594884e-06,
+                "range": 7.3453111326671205e-07,
+                "robust_mean": 2.0200000108161476e-06,
+                "robust_sigma": 1.2222227707281018e-07,
+                "sigma": 1.3792604596514522e-07
+            },
+            "low_limit": "1.05e-06 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Bias EA         <> EA_BIAS",
+            "test_number": 1600,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian_R",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "0.00018 a",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 6,
+                "ll_scale": 6,
+                "mean": 0.00011604056021013171,
+                "range": 5.6250006309710443e-05,
+                "robust_mean": 0.00011406250268919393,
+                "robust_sigma": 4.6296271547261213e-06,
+                "sigma": 3.6680698498338475e-06
+            },
+            "low_limit": "5e-05 a",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "Iq st_by 24v    <> IQ_SBY_24",
+            "test_number": 1230,
+            "test_type": "P"
+        },
+        {
+            "dpat_settings": {
+                "dpat_notes": "",
+                "head_factor": 6.5,
+                "outlier_limits_set": "near",
+                "outlier_rule": "median_n_robust",
+                "outliers_to_keep": "none",
+                "samples_to_ignore": "none",
+                "shape": "Gaussian",
+                "tail_factor": 0
+            },
+            "dynamic_bin": 141,
+            "high_limit": "3.598 v",
+            "historical_stats": {
+                "cpk": 0,
+                "hl_scale": 0,
+                "ll_scale": 0,
+                "mean": 3.4201703294505919,
+                "range": 0.14945316314697266,
+                "robust_mean": 3.4196875095367432,
+                "robust_sigma": 0.0097221798366970476,
+                "sigma": 0.012022572895658749
+            },
+            "low_limit": "3.158 v",
+            "nnr_settings": {
+                "Enabled": 0
+            },
+            "pin_index": -1,
+            "spat_settings": {
+                "head_factor": 6,
+                "outlier_limits_set": "aec",
+                "spat_notes": "",
+                "tail_factor": 6
+            },
+            "static_bin": -1,
+            "test_name": "sim15 ref <> Simule_15",
+            "test_number": 1160,
+            "test_type": "P"
+        }
+    ],
+    "version": 2
+}

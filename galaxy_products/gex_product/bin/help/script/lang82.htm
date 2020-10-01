@@ -1,0 +1,103 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="150" valign="top" align="left">
+      <p align="left"> <img border="0" src="../images/index.png" width="170" height="40">
+    </td>
+    <td width="650"><b>switch (...) statement<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="170" valign="top" align="left"><img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="scripting.htm">Introduction<br>
+      </a><img border="0" src="../images/rarrow.png" width="6" height="9">  <a href="run1.htm">Running a
+      Script</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="lang1.htm">Language<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang2.htm">Comments</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; <a href="lang3.htm">Numbers</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang4.htm">Literals</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang5.htm">Var
+      and const</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang6.htm">Operators</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang7.htm">Statements
+      and&nbsp; blocks</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang8.htm">Program
+      flow<br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang81.htm">if</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang82.htm">switch</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang83.htm">while</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang84.htm">do</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="lang85.htm">for</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang9.htm">Trace
+      facility</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang10.htm">Exception
+      handling</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang11.htm">Functions</a><br>
+      &nbsp; &nbsp;&nbsp;&nbsp;<a href="lang12.htm">Predefined
+      identifiers</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="direct1.htm">Directives</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="gex1.htm">Gex Report library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="sys1.htm">System library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="str1.htm">String library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="math1.htm">Math library</a><br>
+      <img border="0" src="../images/rarrow.png" width="6" height="9">
+      <a href="file1.htm">File library</a><br>
+    </td>
+    <td width="650" valign="top" align="left">
+      <pre>switch (expression-0)
+{
+  case expression-1: [statements]
+  [case expression-2: [statements]]
+  ...
+  [case expression-N: [statements]]
+  [default: statements]
+}
+</pre>
+      <p><b>expression-0</b> is compared with <b>expression-1</b> ... <i>expression-N</i>.
+      As soon as a match is found, all<br>
+      subsequent <b>statements</b> within the
+      switch block are executed. The statements after <b>default</b> are
+      executed if<br>
+      none of the previous expressions were matched.</p>
+      <p>Within the statements, <b>break</b> is used to leave the switch block
+      premature.</p>
+      <p>Note that unlike C, <b>expression-1</b> ... <b>expression-N</b> don't
+      have to be constants.</p>
+      <p>Example:</p>
+      <pre>switch(MonthOfBirth)
+{
+   case 1: sysLog(&quot;You're from January!&quot;);
+      break;   
+   case 2: sysLog(&quot;You're from February!&quot;);
+      break;
+   case 3: sysLog(&quot;You're from March!&quot;);
+      break;   
+   case 4: sysLog(&quot;You're from April!&quot;);
+      break;
+   case 5: sysLog(&quot;You're from May!&quot;);
+      break;   
+   case 6: sysLog(&quot;You're from June!&quot;);
+      break;
+   default: sysLog(&quot;You're from the second half of the year!&quot;);
+      SpecialMessage();	// Display extra message...
+      break;   
+}</pre>
+      <pre>&nbsp;</pre>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

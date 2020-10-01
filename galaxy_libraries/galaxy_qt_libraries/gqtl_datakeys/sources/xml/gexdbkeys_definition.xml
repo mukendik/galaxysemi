@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexdbkeys_definition version="1.0" >
+    <key name="AuxiliaryFile">
+        <description>Name of auxiliary data file</description>
+        <stdf_field>MIR.AUX_FILE</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="BurninTime">
+        <description>Populates xx_splitlot.burn_tim in seconds. (i.e. 3600)</description>
+        <stdf_field>MIR.BURN_TIM</stdf_field>
+        <type>static</type>
+        <datatype>NUMBER</datatype>
+    </key>
+    <key name="Cable">
+        <description>Interface cable type</description>
+        <stdf_field>SDR.CABL_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="CableType">
+        <description>Interface cable type</description>
+        <stdf_field>SDR.CABL_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Card">
+        <description>Probe card ID</description>
+        <stdf_field>SDR.CARD_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="CardType">
+        <description>Probe card type</description>
+        <stdf_field>SDR.CARD_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="CommandModeCode">
+        <description>Command mode code</description>
+        <stdf_field>MIR.CMOD_COD</stdf_field>
+        <type>static</type>
+        <datatype>CHAR</datatype>
+    </key>
+        <key name="Contactor">
+        <description>Handler contactor ID</description>
+        <stdf_field>SDR.CONT_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ContactorType">
+        <description>Handler contactor type</description>
+        <stdf_field>SDR.CONT_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="DataOrigin">
+        <description>Read Only. Contains the source file path for the file.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="DataPumpName">
+        <description>Read Only. Contains the name of the datapump that inserted the data.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="DatabaseName">
+        <description>Read Only. Contains the name of the Database that inserted the data.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+
+    <key name="SplitlotId">
+        <description>Read Only. Contains the name of the SplitlotId.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="TestingStage">
+        <description>Read Only. Contains the TestingStage.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="TimeUncompress">
+        <description>Read Only. Contains the TimeUncompress.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="TimeConvertion">
+        <description>Read Only. Contains the TimeConvertion.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="TimeInsertion">
+        <description>Read Only. Contains the TimeInsertion.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="InsertionStatus">
+        <description>Read Only. Contains the InsertionStatus.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="ConsolidationProcess">
+        <description>Read Only. Contains the Consolidation policy.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="ConsolidationProcessStatus">
+        <description>Read Only. Contains the Consolidation Status.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="DataType">
+        <description>Populates xx_splitlot.data_type as a string. (i.e. production, characterization, QA, etc...)</description>
+        <stdf_field>MIR.MODE_COD</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+
+    <key name="DateCode">
+        <description>Populates xx_splitlot.date_cod as a string.</description>
+        <stdf_field>MIR.DATE_COD</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="DesignRevision">
+        <description>Populates xx_splitlot.dsgn_rev as a string.</description>
+        <stdf_field>MIR.DSGN_REV</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="DibName">
+        <description>Populates xx_splitlot.dib_id as a string.</description>
+        <stdf_field>SDR.DIB_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="DibType">
+        <description>Populates xx_splitlot.dib_typ as a string.</description>
+        <stdf_field>SDR.DIB_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Engineering">
+        <description>Populates xx_splitlot.eng_id as a string. Engineering lot ID</description>
+        <stdf_field>MIR.ENG_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="EtestSiteConfig">
+        <description>Populates xx_wafer_info.site_config as a string. Valid values are file names for the svg configuration of etest measurement locations.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ExecType">
+        <description>Populates xx_splitlot.exec_typ as a string. Tester executive software type</description>
+        <stdf_field>MIR.EXEC_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ExecVersion">
+        <description>Populates xx_splitlot.exec_ver as a string. Tester exec software version number</description>
+        <stdf_field>MIR.EXEC_VER</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ExtraName">
+        <description>Populates xx_splitlot.extra_id as a string. This is an extra field for customization. Use metadata to allow querying.</description>
+        <stdf_field>SDR.EXTR_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ExtraType">
+        <description>Populates xx_splitlot.extra_typ as a string. This is an extra field for customization. Use metadata to allow querying.</description>
+        <stdf_field>SDR.EXTR_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Facility">
+        <description>Populates xx_splitlot.facil_id as a string.</description>
+        <stdf_field>MIR.FACIL_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Family">
+        <description>Populates xx_splitlot.famly_id as a string.</description>
+        <stdf_field>MIR.FAMLY_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="FileName">
+        <description>Populates xx_splitlot.file_name as a string.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="FinishTime">
+        <description>Populates xx_splitlot.finish_t as a unix time.</description>
+        <stdf_field>MRR.FINISH_T</stdf_field>
+        <type>static</type>
+        <datatype>TIMESTAMP</datatype>
+        <default>-1</default>
+    </key>
+    <key name="Floor">
+        <description>Populates xx_splitlot.floor_id as a string.</description>
+        <stdf_field>MIR.FLOOR_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Flow">
+        <description>Populates xx_splitlot.flow_id as a string. Test flow ID</description>
+        <stdf_field>MIR.FLOW_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="FrequencyStep">
+        <description>Populates xx_splitlot.oper_frq as a string. Operation frequency or step</description>
+        <stdf_field>MIR.OPER_FRQ</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="FtpServer">
+        <description>For use when YM is to FTP a file after insertion: Holds the FTP server name (i.e. ftp.galaxysemi.com). If this path is not a FTP path but a server path (i.e. \\server\folder), then no FTP takes place. For this case, a file copy is executed instead, and all other FTP details are ignored.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="FtpPort">
+        <description>For use when YM is to FTP a file after insertion: Holds the FTP port.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>NUMBER</datatype>
+        <default>21</default>
+    </key>
+    <key name="FtpUser">
+        <description>For use when YM is to FTP a file after insertion: Holds the FTP user login name.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="FtpPassword">
+        <description>For use when YM is to FTP a file after insertion: Holds the FTP user login password.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="FtpPath">
+        <description>For use when YM is to FTP a file after insertion: Holds the FTP sub-path from the login folder (i.e. data_files). If this path remains empty, the files are stored at the FTP root location.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="GrossDie">
+        <description>Populaltes xx_wafer_info.gross_die.</description>
+        <stdf_field>Custom Galaxy DTR record</stdf_field>
+        <type>static</type>
+        <datatype>NUMBER</datatype>
+    </key>
+    <key name="HeadNumber">
+        <description>Populates xx_splitlot.head_num as a string. Test head number</description>
+        <stdf_field>SDR.HEAD_NUM</stdf_field>
+        <type>static</type>
+        <datatype>NUMBER</datatype>
+        <default>1</default>
+    </key>
+    <key name="LaserType">
+        <description>Populates xx_splitlot.laser_typ as a string. Laser type</description>
+        <stdf_field>SDR.LASR_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Laser">
+        <description>Populates xx_splitlot.laser_id as a string. Laser ID</description>
+        <stdf_field>SDR.LASR_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="LoadBoard">
+        <description>Populates xx_splitlot.loadboard_id as a string.</description>
+        <stdf_field>SDR.LOAD_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="LoadBoardType">
+        <description>Populates xx_splitlot.loadboard_typ as a string.</description>
+        <stdf_field>SDR.LOAD_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Lot">
+        <description>Populates xx_splitlot.lot_id as a string.</description>
+        <stdf_field>MIR.LOT_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="MovePath">
+        <description>Post-insert move folder. Available in the datapump task. Populates xx_splitlot.file_path.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="MoveFile">
+        <description>Read Only.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+        <default>FALSE</default>
+    </key>
+    <key name="Operator">
+        <description>Populates xx_splitlot.oper_nam as a string.</description>
+        <stdf_field>MIR.OPER_NAM</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="PackageType">
+        <description>Populates xx_splitlot.pkg_typ as a string.</description>
+        <stdf_field>MIR.PKG_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ProberName">
+        <description>Populates xx_splitlot.handler_id as a string.</description>
+        <stdf_field>SDR.HAND_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ProberType">
+        <description>Populates xx_splitlot.handler_typ as a string.</description>
+        <stdf_field>SDR.HAND_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Process">
+        <description>Populates xx_splitlot.proc_id as a string.</description>
+        <stdf_field>MIR.PROC_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ProdData">
+        <description>Populates xx_splitlot.prod_data. Must be Y or N. If Y, data inserted are subject to binning consolidation. YM updates the binning statistics so all tests and retests are properly combined</description>
+        <stdf_field>MIR.MODE_COD</stdf_field>
+        <type>static</type>
+        <datatype>BOOLEAN</datatype>
+        <default>TRUE</default>
+    </key>
+    <key name="Product">
+        <description>Populates xx_splitlot.part_typ as a string.</description>
+        <stdf_field>MIR.PART_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ProgramName">
+        <description>Populates xx_splitlot.job_nam as a string.</description>
+        <stdf_field>MIR.JOB_NAM</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ProgramRevision">
+        <description>Populates xx_splitlot.job_rev as a string.</description>
+        <stdf_field>MIR.JOB_REV</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ProtectionCode">
+        <description>Populates xx_splitlot.prot_cod as a char. Data protection code</description>
+        <stdf_field>MIR.PROT_COD</stdf_field>
+        <type>static</type>
+        <datatype>CHAR</datatype>
+    </key>
+
+    <key name="RetestBinList">
+        <description>Populates xx_splitlot.retest_hbins as a string. When (test and retest), it is important to populate this with the bins to be retested so that test and retest data at final test is combined properly. (i.e. all, all_fail, 1, or ѳ,6,8,9ҩ).</description>
+        <stdf_field>RDR.RTST_BIN</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+     <key name="RetestCode">
+        <description>Populates xx_splitlot.rtst_cod as a char. Lot retest code</description>
+        <stdf_field>MIR.RTST_COD</stdf_field>
+        <type>static</type>
+        <datatype>CHAR</datatype>
+    </key>
+    <key name="RetestIndex">
+        <description>Populates xx_splitlot.retest_index as an integer. When (test and retest), it is important to fill in 0 for initial test and increment this field for every retest.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>NUMBER</datatype>
+    </key>
+    <key name="RetestPhase">
+        <description>(Replaced by TestInsertion) Populates xx_splitlot.test_insertion as a string.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>DEPRECATED</datatype>
+    </key>
+    <key name="TestInsertion">
+        <description>Populates xx_splitlot.test_insertion as a string. To generate Intermediate Consolidation per test insertion, it is necessary to fill this key with the Insertion Name. This will activate the consolidation process for each Intermediate Phase in addition to the test_flow consolidation.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+        <default>default</default>
+    </key>
+    <key name="TestFlow">
+        <description>Populates xx_splitlot.test_flow as a string. Initialized with MODE_COD value. To disable the consolidation process, overwrite this key with an empty string</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ConsolidationAlgo">
+        <description>Populates (xx_wafer_info|ft_sublot_info).consolidation_algo as a string. When multi test insertion, it is important to populate it with the Algo to aggregate the Consolidation result of each Intermediate Phase. (i.e. last_bin, first_fail, highest_bin, first_bin...)</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="RomCode">
+        <description>Populates xx_splitlot.rom_cod as a string. ROM code ID</description>
+        <stdf_field>MIR.ROM_COD</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="SerialNumber">
+        <description>Populates xx_splitlot.serl_num as a string. Tester serial number</description>
+        <stdf_field>MIR.SERL_NUM</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Setup">
+        <description>Populates xx_splitlot.setup_id as a string. Test setup ID</description>
+        <stdf_field>MIR.SETUP_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="SetupTime">
+        <description>Populates xx_splitlot.setup_t. Holds tester setup time for this data file in UnixTime. This is the number of seconds elapsed since Jan 1st, 1970. Favor using the SetupTime.Date() syntax only as it allows returning a date/time string in the format of your choice.</description>
+        <stdf_field>MIR.SETUP_T</stdf_field>
+        <type>static</type>
+        <datatype>TIMESTAMP</datatype>
+        <default>-1</default>
+    </key>
+    <key name="SiteNumbers">
+        <description>SiteNumbers</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="SourceArchive">
+        <description>Read Only. Holds the test data original file name inserted prior to any decompression task. (i.e. for inserted file1.std.gz, SourceArchive = Ҧile1.std.gzҬ while FileName = Ҧile1.stdҩ</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="SpecName">
+        <description>Populates xx_splitlot.spec_nam as a string.</description>
+        <stdf_field>MIR.SPEC_NAM</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="SpecVersion">
+        <description>Populates xx_splitlot.spec_ver as a string. Test specification version number</description>
+        <stdf_field>MIR.SPEC_VER</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="StartTime">
+        <description>Populates xx_splitlot.start_t only if the inserted file does not have a valid start time. Holds test starting date and time for the data file. Favor using StartTime.Date() syntax only as it allows returning a date/time string in the format of your choice.</description>
+        <stdf_field>MIR.START_T</stdf_field>
+        <type>static</type>
+        <datatype>TIMESTAMP</datatype>
+        <default>-1</default>
+    </key>
+    <key name="Station">
+        <description>Populates xx_splitlot.stat_num as an integer number. Represents the testing Station.</description>
+        <stdf_field>MIR.STAT_NUM</stdf_field>
+        <type>static</type>
+        <datatype>NUMBER</datatype>
+        <default>1</default>
+    </key>
+    <key name="StdfFileName">
+        <description>Read Only. Holds the STDF file name inserted: applies to data files not in STDF format that are first converted to STDF by the Yield-MAN parser. (i.e. For file Ҧile1.watҬ YM will first parse to STDF, then insert the file.)</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="StdfFileSize">
+        <description>Read Only. Holds the STDF file size</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="FileSize">
+        <description>Read Only. Holds the STDF file size</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="FullDestinationName">
+        <description>Read Only. Holds the STDF file Full Destination Name</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="ConfigFileName">
+        <description>Read Only. Indicates the gexdbkeys.config file used</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+    </key>
+    <key name="SubconLot">
+        <description>Populates xx_splitlot.subcon_lot_id as a string.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="SubLot">
+        <description>Populates xx_splitlot.sublot_id as a string.</description>
+        <stdf_field>MIR.SBLOT_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="SupervisorName">
+        <description>Supervisor name or ID</description>
+        <stdf_field>MIR.SUPR_NAM</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Temperature">
+        <description>Populates xx_splitlot.tst_temp as a string.</description>
+        <stdf_field>MIR.TST_TEMP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="TesterName">
+        <description>Populates xx_splitlot.tester_name as a string.</description>
+        <stdf_field>MIR.NODE_NAM</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="TesterType">
+        <description>Populates xx_splitlot.tester_type as a string.</description>
+        <stdf_field>MIR.TSTR_TYP</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="TestingCode">
+        <description>Populates xx_splitlot.test_cod as a string.</description>
+        <stdf_field>MIR.TEST_COD</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="TrackingLot">
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="UploadFile">
+        <description>Read Only.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>READONLY</datatype>
+        <default>FALSE</default>
+    </key>
+    <key name="User1">
+        <description>User key for generic usage. Use as a variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="User1Label">
+        <description>User key for generic llabel usage. Use as a label variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="User2">
+        <description>User key for generic usage. Use as a variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="User2Label">
+        <description>User key for generic llabel usage. Use as a label variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="User3">
+        <description>User key for generic usage. Use as a variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="User3Label">
+        <description>User key for generic llabel usage. Use as a label variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="User4">
+        <description>User key for generic usage. Use as a variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="User4Label">
+        <description>User key for generic llabel usage. Use as a label variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="User5">
+        <description>User key for generic usage. Use as a variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="User5Label">
+        <description>User key for generic llabel usage. Use as a label variable.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="UserText">
+        <description>Populates xx_splitlot.user_txt as a string. User text has a 256 character limit.</description>
+        <stdf_field>MIR.USER_TXT</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="Validation">
+        <description>Used to reject file on some critere </description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>BOOLEAN</datatype>
+    </key>
+    <key name="Wafer">
+        <description>Populates xx_splitlot.wafer_id as a string. Cannot be used in files that have more than one wafer such as etest files.</description>
+        <stdf_field>WIR.WAFER_ID or WRR.WAFER_ID</stdf_field>
+        <type>static</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="WaferNb">
+        <description>Populates wt_splitlot.wafer_nb as an integer. Used for v6.4 and later.</description>
+        <stdf_field>WIR.WAFER_ID or WRR.WAFER_ID</stdf_field>
+        <type>static</type>
+        <datatype>NUMBER</datatype>
+    </key>
+    <key name="WaferNotch">
+        <description>Populates et_wafer_info.wafer_flat as an character. Used for v6.4 and later.</description>
+        <stdf_field></stdf_field>
+        <type>static</type>
+        <datatype>CHAR</datatype>
+    </key>
+    <key name="WeekNb">
+        <description>Used for WYR data insertion.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>NUMBER</datatype>
+    </key>
+    <key name="Year">
+        <description>Used for WYR data insertion.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>static</type>
+        <datatype>NUMBER</datatype>
+    </key>
+    <!-- Options section -->
+    <key name="AllowBinPRRMismatch">
+        <description>Option: Allow Bin category and PRR Pass/Fail flags Mismatch</description>
+        <stdf_field></stdf_field>
+        <type>option</type>
+        <datatype>ERROR|WARNING|IGNORE</datatype>
+        <default>ERROR</default>
+    </key>
+    <key name="ForceTestingStage">
+        <description>Option: Forces data in a particular testing stage. Values are W for wafer test, F for final test, and E for Etest (fab or PCM test).</description>
+        <stdf_field></stdf_field>
+        <type>option</type>
+        <datatype>CHAR</datatype>
+    </key>
+    <key name="IgnoreResults">
+        <description>Option: Raw test results will not be inserted but read from the file to keep the test definition and the statistics.</description>
+        <stdf_field></stdf_field>
+        <type>option</type>
+        <datatype>BOOLEAN</datatype>
+        <default>FALSE</default>
+    </key>
+    <key name="IgnoreResultsIfNbPartsMoreThan">
+        <description>Option: For any file with more parts than the integer specified, Raw test results will not be inserted but read from the file to keep the test definition and the statistics.</description>
+        <stdf_field></stdf_field>
+        <type>option</type>
+        <datatype>NUMBER</datatype>
+        <default>-1</default>
+    </key>
+    <key name="IgnoreSummary">
+        <description>Option: Allows the customer  to ignore summary records in the STDF file. (PCR, TSR, HBR, SBR)</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>option</type>
+        <datatype>BOOLEAN</datatype>
+        <default>FALSE</default>
+    </key>
+    <key name="RejectIfNbPartsLessThan">
+        <description>Option: If the number of parts in the file is less than the integer specified in this field, the file will be rejected.</description>
+        <stdf_field></stdf_field>
+        <type>option</type>
+        <datatype>NUMBER</datatype>
+        <default>-1</default>
+    </key>
+    <key name="RejectIfNbPartsPercentOfGDPWLessThan">
+        <description>Option: The gross die per wafer is used to calculate the percent yield for the file. If this yield is below the specified integer in this field, the file will be rejected.</description>
+        <stdf_field></stdf_field>
+        <type>option</type>
+        <datatype>NUMBER</datatype>
+        <default>-1</default>
+    </key>
+    <key name="RejectIfPassHardBinNotInList">
+        <description>Option: For any file, if the bin or bin list is not in the list of pass hard bins, the file will be rejected. Value is a list (i.e. 2,3 or 2-5,6,9). </description>
+        <stdf_field></stdf_field>
+        <type>option</type>
+        <datatype>STRING</datatype>
+    </key>
+    <key name="ReplaceExistingData">
+        <description>Option: Allow the customer to override existing data</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>option</type>
+        <datatype>BOOLEAN</datatype>
+        <default>FALSE</default>
+    </key>
+    <key name="TestMergeBy">
+        <description>Option: Allow the customer to merge test with identical number or name.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>option</type>
+        <datatype>NEVER|NAME|NUMBER</datatype>
+        <default>NEVER</default>
+    </key>
+    <key name="TestRemoveSequencerName">
+        <description>Option: Allow the customer to remove the sequencer name when it appears into the test name and matchs the GEX syntax.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>option</type>
+        <datatype>BOOLEAN</datatype>
+        <default>TRUE</default>
+    </key>
+    <key name="TestRemovePinName">
+        <description>Option: Allow the customer to remove the pin name when it appears into the test name and matchs the GEX syntax.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>option</type>
+        <datatype>BOOLEAN</datatype>
+        <default>FALSE</default>
+    </key>
+    <key name="TestIgnoreDtrTestConditions">
+        <description>Option: Specify if DTR have to be ignored or not when they store test conditions.</description>
+        <stdf_field>not applicable</stdf_field>
+        <type>option</type>
+        <datatype>BOOLEAN</datatype>
+        <default>FALSE</default>
+    </key>
+    <key name="Wt_YieldConsolidation_Rule">
+        <description>Option: This option was replaced by the Consolidation Tree tool.</description>
+        <stdf_field></stdf_field>
+        <type>option</type>
+        <datatype>DEPRECATED</datatype>
+    </key>
+</gexdbkeys_definition>

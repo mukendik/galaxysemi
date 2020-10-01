@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<galaxy_dir_file version="0.1">
+	<users>
+		<user uid="admin">
+			<name>Administration User</name>
+			<email></email>
+      <password>10a6b2ee4f61684d2b5237e44e06bd04</password>
+		</user>
+		<user uid="anonymous">
+			<name>Anonymous User</name>
+			<email></email>
+			<password>d41d8cd98f00b204e9800998ecf8427e</password>
+		</user>
+	</users>
+	<groups>
+		<group uid="public">
+			<name>Public Group</name>
+			<description>Contains all users</description>
+			<users>
+				<user uid="admin"/>
+			</users>
+		</group>
+	</groups>
+	<application_entries>
+		<entry uid="galaxy">
+      <name>Galaxy</name>
+      <description>Galaxy privileges</description>
+			<users_access>
+				<user uid="admin">
+					<access></access>
+				</user>
+				<user uid="anonymous">
+					<access></access>
+				</user>
+			</users_access>
+			<groups_access>
+				<group uid="public">
+					<access></access>
+				</group>
+			</groups_access>
+			<entry uid="users_groups_administrator">
+        <name>Users/Groups Manager</name>
+        <description>Access to users/groups administration</description>
+				<users_access>
+					<user uid="admin">
+						<access>3</access>
+					</user>
+					<user uid="anonymous">
+            <access></access>
+					</user>
+				</users_access>
+				<groups_access>
+					<group uid="public">
+            <access></access>
+					</group>
+				</groups_access>
+			</entry>
+			<entry uid="examinator">
+        <name>Examinator</name>
+        <description>Examinator privileges</description>
+				<users_access>
+					<user uid="admin">
+						<access></access>
+					</user>
+					<user uid="anonymous">
+						<access></access>
+					</user>
+				</users_access>
+				<groups_access>
+					<group uid="public">
+						<access></access>
+					</group>
+				</groups_access>
+				<entry uid="administrator">
+          <name>Administrator</name>
+          <description>Access to monitoring administration</description>
+					<users_access>
+						<user uid="admin">
+							<access>3</access>
+						</user>
+						<user uid="anonymous">
+              <access></access>
+						</user>
+					</users_access>
+					<groups_access>
+						<group uid="public">
+              <access></access>
+						</group>
+					</groups_access>
+				</entry>
+				<entry uid="databases">
+          <name>Databases List</name>
+          <description>Restricted databases privileges</description>
+					<users_access>
+						<user uid="admin">
+							<access></access>
+						</user>
+						<user uid="anonymous">
+							<access></access>
+						</user>
+					</users_access>
+					<groups_access>
+						<group uid="public">
+							<access></access>
+						</group>
+					</groups_access>
+				</entry>
+			</entry>
+			<entry uid="yieldman">
+        <name>Yield-Man</name>
+        <description>Yield-Man privileges</description>
+				<users_access></users_access>
+				<groups_access></groups_access>
+				<entry uid="administrator">
+          <name>Administrator</name>
+          <description>Access to monitoring administration</description>
+					<users_access>
+						<user uid="admin">
+							<access>3</access>
+						</user>
+						<user uid="anonymous">
+              <access></access>
+						</user>
+					</users_access>
+					<groups_access>
+						<group uid="public">
+              <access></access>
+						</group>
+					</groups_access>
+				</entry>
+			</entry>
+			<entry uid="patman">
+        <name>PAT-Man</name>
+        <description>PAT-Man privileges</description>
+				<users_access></users_access>
+				<groups_access></groups_access>
+				<entry uid="administrator">
+          <name>Administrator</name>
+          <description>Access to monitoring administration</description>
+					<users_access>
+						<user uid="admin">
+							<access>3</access>
+						</user>
+						<user uid="anonymous">
+              <access></access>
+						</user>
+					</users_access>
+					<groups_access>
+						<group uid="public">
+              <access></access>
+						</group>
+					</groups_access>
+				</entry>
+			</entry>
+		</entry>
+	</application_entries>
+</galaxy_dir_file>

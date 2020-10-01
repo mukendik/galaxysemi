@@ -1,0 +1,254 @@
+SRCDIR = $(FNP_PROVIDER_DIR_M)/sources
+INCFLAGS =\
+ -I$(FNP_TOOLKITDIR_M)/machind\
+ -I$(FNP_PROVIDER_DIR_M)/sources\
+ -I$(DEVDIR)/galaxy_libraries/galaxy_std_libraries/include
+FNP_DIR = $(FNP_TOOLKITDIR_M)/$(FNP_PLATFORM)
+FNP_DEST_DIR = $(FNP_TOOLKITDIR_M)/$(FNP_PLATFORM)
+FNP_SRC_DIR = $(FNP_TOOLKITDIR_M)/machind
+FNP_OBJ_DIR = $(FNP_PROVIDER_DIR_M)/../release/mac/
+
+PREPXMLDIR = $(MAINSRCDIR)/machind/activation/prep_xml
+EXAMPLESDIR=$(MAINSRCDIR)/examples
+EZCALCSRC=$(EXAMPLESDIR)/ezcalc
+ACTIVATIONSRC=$(EXAMPLESDIR)/activation
+AAINCDIR = $(MAINSRCDIR)/machind/activation/include
+AALIBDIR = ./activation/lib
+AALIB = $(AALIBDIR)/libact.a
+ACT_LIBRARY = libFNPload.a
+ACT_LIBRARY_PIC = libFNPload_pic.a
+SDTINCLUDES=$(SRCDIR)/sdt
+
+LINKFLAGS = -Wl,-no_function_starts
+
+MAJORVER = 11
+RELEASE:=-DRELEASE_VERSION
+BUILDKIT?=universal
+
+# Change to 1 to build a shared object version of lmflex
+LMFLEX_SO ?= 0
+
+# On Leopard architectures are whatever is in the kit images, on Tiger its
+# whatever in the kit after removing the 64 bit architectures
+LEOPARD_ARCHITECTURES=$(strip $(subst ppc7400,,$(subst ppc,,$(subst ppc64,,$(shell lipo -info $(FNP_DIR)/lmrand1 | sed -e "s/.*: //" -e "s/(.*)//")))))
+TIGER_ARCHITECTURES=$(strip $(subst x86_64,,$(LEOPARD_ARCHITECTURES)))
+
+# Make sure consistent naming
+BUILD = $(subst powerpc,ppc,$(subst i686,i386,$(BUILDKIT)))
+
+# Figure out what version of Mac OS X is present and adjust
+# to suit
+PLAT := $(subst powerpc,ppc,$(shell uname -p))
+OSVER := $(shell uname -r | sed -e "s/\..*//")
+ifeq ($(OSVER),12)
+    GCC_VER ?= llvm-gcc-4.2
+    G++_VER ?= llvm-g++-4.2
+    SDK_VER_x86_64 ?= `xcode-select -print-path`/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+    SDK_VER_i386 ?= `xcode-select -print-path`/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+    CFLAGS_MINVER_i386 ?= -DMAC_OS_X_VERSION_MIN_REQUIRED=MAC_OS_X_VERSION_10_8
+    CFLAGS_MINVER_x86_64 ?= -DMAC_OS_X_VERSION_MIN_REQUIRED=MAC_OS_X_VERSION_10_8
+else
+    ifeq ($(OSVER),11)
+    GCC_VER ?= gcc-4.2
+    G++_VER ?= g++-4.2
+    SDK_VER_x86_64 ?= /Developer/SDKs/MacOSX10.7.sdk 
+    SDK_VER_i386 ?= /Developer/SDKs/MacOSX10.7.sdk 
+    CFLAGS_MINVER_i386 ?= -DMAC_OS_X_VERSION_MIN_REQUIRED=MAC_OS_X_VERSION_10_7
+    CFLAGS_MINVER_x86_64 ?= -DMAC_OS_X_VERSION_MIN_REQUIRED=MAC_OS_X_VERSION_10_7	
+else
+    GCC_VER ?= gcc-4.0
+    G++_VER ?= g++-4.0
+    SDK_VER_i386 ?= /Developer/SDKs/MacOSX10.4u.sdk
+    SDK_VER_x86_64 ?= /Developer/SDKs/MacOSX10.5.sdk
+    CFLAGS_MINVER_i386 ?= -DMAC_OS_X_VERSION_MIN_REQUIRED=MAC_OS_X_VERSION_10_4
+    CFLAGS_MINVER_x86_64 ?= -DMAC_OS_X_VERSION_MIN_REQUIRED=MAC_OS_X_VERSION_10_5
+endif
+endif
+ifeq ($(OSVER),7)
+    $(error Unable to build on OS X 10.3 Panther)
+else
+    ifeq ($(OSVER),8)
+        OSDESCRIPTION = OS X 10.4 Tiger
+        LINKROOTOPTION=-isysroot
+        ARCHITECTURES = $(TIGER_ARCHITECTURES)
+        ifeq ($(PLAT),i386)
+            RUNTIMEARCH=i386 
+        endif
+        Is64BIT=0
+    else
+        ifeq ($(subst 12,9,$(subst 11,9,$(subst 10,9,$(OSVER)))),9)
+            ifeq ($(OSVER),12)
+                OSDESCRIPTION = OS X 10.8 Mountain Lion
+            endif
+            ifeq ($(OSVER),11)
+                OSDESCRIPTION = OS X 10.7 Lion
+            endif
+            ifeq ($(OSVER),10)
+                OSDESCRIPTION = OS X 10.6 Snow Leopard
+            endif
+            ifeq ($(OSVER),9)
+                OSDESCRIPTION = OS X 10.5 Leopard
+            endif
+            LINKROOTOPTION=-isysroot
+            ARCHITECTURES = $(LEOPARD_ARCHITECTURES)
+            Is64BIT=$(lastword $(shell sysctl hw.cpu64bit_capable))
+            ifeq ($(PLAT),i386)
+                 RUNTIMEARCH=i386 
+                 ifeq ($(Is64BIT),1)
+                     PLAT=x86_64
+                     RUNTIMEARCH=i386 x86_64
+                 endif
+            endif
+        else
+            $(error You are building on a new and unsupported OS X version)
+        endif
+    endif
+endif
+
+# Validate its possible to build the requested platform on this system and
+# report what is going to  be built
+ifneq ($(PLAT),$(findstring $(PLAT),$(ARCHITECTURES)))
+        $(error This kit does not support $(PLAT))
+endif
+
+# Validate its possible to build the requested target on this system and
+# report what is going to be built
+ifneq ($(BUILD),universal)
+    ifneq ($(BUILD),$(findstring $(BUILD),$(ARCHITECTURES)))
+        $(error This kit does not contain $(BUILD)) 
+    endif
+    ifneq ($(BUILD),$(findstring $(BUILD),$(RUNTIMEARCH)))
+        $(error Cannot build for $(BUILD) on $(PLAT))
+    else
+        ARCHITECTURES=$(BUILD)
+        $(info Building for $(BUILD) on $(PLAT) $(OSDESCRIPTION) system)
+    endif
+else
+    $(info Building Universal Binary ($(ARCHITECTURES)) on $(PLAT) $(OSDESCRIPTION) system)
+endif
+
+# SDKs to use for each architecture
+SDKROOT_i386 ?= SDK_VER_i386
+SDKROOT_x86_64 ?= SDK_VER_x86_64
+
+# CC for each architecture
+CC_i386 ?= GCC_VER
+CC_x86_64 ?= GCC_VER
+
+# CPP for each architecture
+CPP_i386 ?= G++_VER
+CPP_x86_64 ?= G++_VER
+
+XTRACFLAG = $(RELEASE) -fno-common -DMAC10  -DLM_INTERNAL -fPIC -DLIB_GEX_LP_DLL_MAC -fvisibility=default
+XTRACFLAGCOM = -DLIB_GEX_LP_DLL_MAC
+# -DLIB_GEX_LP_DLL_BUILD -DLIB_GEX_LP_DLL
+
+XTRALIB = -framework IOKit -framework CoreFoundation
+
+ifdef DONGLE
+DONGLELIB = liblmgr_dongle.a
+ifdef USE_WIBU
+XTRALIB += -framework WkMacLibX
+endif
+else
+DONGLELIB = liblmgr_dongle_stub.a
+endif
+
+CFLAGS = $(INCFLAGS) $(DEBUGFLAGS) $(XTRACFLAG)
+
+# Per architecture flags
+CFLAGS_i386     = CFLAGS_MINVER_i386
+CFLAGS_x86_64   = CFLAGS_MINVER_x86_64
+
+
+# Per architecture flags for link environment
+LINK_TARGET_i386   = MACOSX_DEPLOYMENT_TARGET=10.4
+LINK_TARGET_x86_64 = MACOSX_DEPLOYMENT_TARGET=10.5
+
+# This expands to the compile commands needed to build the required architectures. Compiler is taken from CC_<architecture> and SDK from
+# SDKROOT_<architecture>. Then lipo the resulting object files together and remove the architecture specific intermediate object files.
+define CC_ARCH
+	$(foreach arch,$(ARCHITECTURES),$($(value CC_$(arch))) -c $($(value CFLAGS_$(arch))) $(CFLAGS) $(2) -arch $(arch) $(subst $(GCC_VER),-isysroot,$(subst gcc-4.0,-isysroot,$(subst gcc-3.3,-isystem,$($(value CC_$(arch)))))) $($(value SDKROOT_$(arch))) $(1) -o $(notdir $(basename $(1)))_$(arch).o
+	)
+	lipo -create -o $(notdir $(basename $(1))).o $(foreach arch,$(ARCHITECTURES),$(notdir $(basename $(1)))_$(arch).o)
+	rm $(foreach arch,$(ARCHITECTURES),$(notdir $(basename $(1)))_$(arch).o)
+endef
+
+# This expands to the compile commands needed to build the required architectures. Compiler is taken from CPP_<architecture> and SDK from
+# SDKROOT_<architecture>. Then lipo the resulting object files together and remove the architecture specific intermediate object files.
+define CPP_ARCH
+	$(foreach arch,$(ARCHITECTURES),$($(value CPP_$(arch))) -c $($(value CFLAGS_$(arch))) $(CFLAGS) $(2) -arch $(arch) $(subst $(G++_VER),-isysroot,$(subst g++-4.0,-isysroot,$(subst g++-3.3,-isystem,$($(value CPP_$(arch)))))) $($(value SDKROOT_$(arch))) $(1) -o $(notdir $(basename $(1)))_$(arch).o
+	)
+	lipo -create -o $(notdir $(basename $(1))).o $(foreach arch,$(ARCHITECTURES),$(notdir $(basename $(1)))_$(arch).o)
+	rm $(foreach arch,$(ARCHITECTURES),$(notdir $(basename $(1)))_$(arch).o)
+endef
+
+# This expands to the compile commands needed to link the required architectures. Compiler is taken from CPP_<architecture> and SDK from
+# SDKROOT_<architecture>. Then lipo the resulting images together and remove the architecture specific intermediate flat binary files.
+define LD_ARCH
+	$(foreach arch,$(ARCHITECTURES),$(value LINK_TARGET_$(arch)) $($(value CPP_$(arch))) -o $(1)_$(arch) -arch $(arch) $(subst $(G++_VER),$(LINKROOTOPTION),$(subst g++-4.0,$(LINKROOTOPTION),$(subst g++-3.3,-isystem,$($(value CPP_$(arch)))))) $($(value SDKROOT_$(arch))) $(2)
+    )
+	lipo -create -o $(1) $(foreach arch,$(ARCHITECTURES),$(1)_$(arch))
+	rm $(foreach arch,$(ARCHITECTURES),$(1)_$(arch))
+endef
+
+define LD_ARCH_SD
+	rm -rf .archs
+	mkdir .archs
+	mkdir $(foreach arch,$(ARCHITECTURES),.archs/$(arch))
+	echo $(foreach lib,$(3), $(lib))
+	$(foreach arch,$(ARCHITECTURES), cd .archs/$(arch); $(value LINK_TARGET_$(arch)) $($(value CPP_$(arch))) -o $(1) -arch $(arch) $(subst $(G++_VER),$(LINKROOTOPTION), $(subst g++-4.0,$(LINKROOTOPTION),$(subst g++-3.3,-isystem,$($(value CPP_$(arch)))))) $($(value SDKROOT_$(arch))) $(2)
+	)
+	lipo -create -o $(1) $(foreach arch,$(ARCHITECTURES),.archs/$(arch)/$(1))
+	rm -rf .archs
+endef
+ 
+THREADLIB =  
+
+LDSHAREFLAGS =  -fvisibility=default -dynamiclib -DLIB_GEX_LP_DLL_MAC
+
+#
+#	Use XTRAOBJS to define your object files for vendor daemon
+#	initialization routines, checkout filter, checkin callback, etc.
+#
+XTRAOBJS = 
+
+LDFLAGS =
+
+LINTFLAGS = -a -b -h
+
+
+SRCS	= $(SRCDIR)/lsvendor.c
+
+STRIP = strip
+
+OBJS =  lmcrypt.o \
+	lsvendor.o 
+    
+#
+# Activation Stub
+#
+ACTSTUB		= ls_getActivationsStub.o
+PREPTOOL	= ./preptool
+
+ACT_LIBRARY = libFNPload.a
+
+DAEMON = galaxylm
+
+EXECS = Activation_binaries lmcrypt lmflex appactutil serveractutil comptranutil ezcalc ezcalcsdt liblmsign.a asrgen
+
+
+CLIENTLIB	= liblmgr.a libcrvs.a libsb.a $(BORROWOBJ) $(DONGLELIB) 
+LIBS		= liblmgr_as.a liblmgr_s.a $(CLIENTLIB)
+
+LINTLIB =	llib-llmgr.a.ln
+
+UTILS = lmhostid lmdown lminstall lmremove \
+	lmreread  lmswitchr lmstat lmdiag lmver lmpath lmborrow lmswitch lmnewlog
+
+
+fnp.dylib:$(SRCDIR)/fnp_proxy.cpp
+	$(call CPP_ARCH,$(SRCDIR)/fnp_proxy.cpp)
+	$(call LD_ARCH_SD,fnp.dylib,$(LDSHAREFLAGS) $(XTRALIB) $(FNP_DIR)/$(ACT_LIBRARY_PIC) $(FNP_PROVIDER_DIR_M)/fnp_proxy.o $(FNP_DIR)/lm_new.o $(FNP_DIR)/liblmgr.a $(FNP_DIR)/libcrvs.a $(FNP_DIR)/libsb.a $(FNP_DIR)/$(ACT_LIBRARY) $(THREADLIB)  $(FNP_DIR)/liblmgr_as.a $(FNP_DIR)/liblmgr_s.a $(FNP_DIR)/liblmgr_dongle_stub.a $(LINKFLAGS) -lc)
+
+

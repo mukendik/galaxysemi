@@ -1,0 +1,17 @@
+Lot, Lot.RegExp(ABCD([\d]+), \1)
+User1, Sublot.RegExp(.+_([\w\d]+)_[\w\d]+_[\w\d]+_[\w\d]+, \1)
+User2, Sublot.RegExp(.+_[\w\d]+_([\w\d]+)_[\w\d]+_[\w\d]+, \1)
+User3, Sublot.RegExp(.+_[\w\d]+_[\w\d]+_([\w\d]+)_[\w\d]+, \1)
+User4, Sublot.RegExp(.+_[\w\d]+_[\w\d]+_[\w\d]+_([\w\d]+), \1)
+
+testCondition[Temperature], ROOM
+testCondition[Temp], test[name].RegExp(.+_(\d\dV)$, \1)
+testCondition[Temp], test[name].RegExp(.+_(\d\dV)_\d$, \1)
+testCondition[Vcc], test[name].RegExp(.+_(\d\dV).*, \1)
+
+testCondition[Vdd], test[number].RegExp(1\d\d\d$, 0.5V)
+testCondition[Vdd], test[number].RegExp(10\d\d\d$, 1.0V)
+testCondition[Vdd], test[number].RegExp(20\d\d\d$, 2.0V)
+
+test[name], test[name].RegExp((.+)_\d\dV(.*)?, \1\2)
+test[name], test[name].RegExp((.+)_\d\dV(.*)?, \1\2)

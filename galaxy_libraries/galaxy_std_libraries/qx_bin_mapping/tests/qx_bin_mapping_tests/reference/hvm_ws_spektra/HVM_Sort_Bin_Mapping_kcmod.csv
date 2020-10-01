@@ -1,0 +1,28 @@
+test name:PASS|test number:1|test number alias:0|binning name:PASS|hard bin number:1|soft bin number:1|
+test name:IGSS@5V|test number:2|test number alias:0|binning name:IGSS@5V|hard bin number:2|soft bin number:2|
+test name:IGSS@+63V|test number:22|test number alias:0|binning name:IGSS@+63V|hard bin number:22|soft bin number:22|
+test name:IGSS@-63V|test number:23|test number alias:0|binning name:IGSS@-63V|hard bin number:23|soft bin number:23|
+test name:BVDSS|test number:4|test number alias:0|binning name:BVDSS|hard bin number:4|soft bin number:4|
+test name:BV_NEG_RES|test number:5|test number alias:0|binning name:BV_NEG_RES|hard bin number:5|soft bin number:5|
+test name:RDSON|test number:6|test number alias:0|binning name:RDSON|hard bin number:6|soft bin number:6|
+test name:VP|test number:7|test number alias:0|binning name:VP|hard bin number:7|soft bin number:7|
+test name:VF|test number:8|test number alias:0|binning name:VF|hard bin number:8|soft bin number:8|
+test name:IGSS@+/-V|test number:9|test number alias:0|binning name:IGSS@+/-V|hard bin number:9|soft bin number:9|
+test name:IGSS@VGS= -HV (VGS= -35V)|test number:25|test number alias:0|binning name:IGSS@VGS= -HV (VGS= -35V)|hard bin number:25|soft bin number:25|
+test name:CONT|test number:10|test number alias:0|binning name:CONT|hard bin number:10|soft bin number:10|
+test name:DIVID (T82/T88)|test number:11|test number alias:0|binning name:DIVID (T82/T88)|hard bin number:11|soft bin number:11|
+test name:NO_SORT|test number:12|test number alias:0|binning name:NO_SORT|hard bin number:12|soft bin number:12|
+test name:UNKNOWN|test number:13|test number alias:0|binning name:UNKNOWN|hard bin number:13|soft bin number:13|
+test name:IR#1|test number:14|test number alias:0|binning name:IR#1|hard bin number:14|soft bin number:14|
+test name:IBEV|test number:15|test number alias:0|binning name:IBEV|hard bin number:15|soft bin number:15|
+test name:IR#2|test number:16|test number alias:0|binning name:IR#2|hard bin number:16|soft bin number:16|
+test name:G-S_SHORT|test number:17|test number alias:0|binning name:G-S_SHORT|hard bin number:17|soft bin number:17|
+test name:UIS|test number:18|test number alias:0|binning name:UIS|hard bin number:18|soft bin number:18|
+test name:IDSX(100%VDS after UIS)|test number:3|test number alias:0|binning name:IDSX(100%VDS after UIS)|hard bin number:3|soft bin number:3|
+test name:OSC|test number:24|test number alias:0|binning name:OSC|hard bin number:24|soft bin number:24|
+test name:V-Droop|test number:19|test number alias:0|binning name:V-Droop|hard bin number:19|soft bin number:19|
+test name:V-Collapse|test number:20|test number alias:0|binning name:V-Collapse|hard bin number:20|soft bin number:20|
+test name:UIS0|test number:21|test number alias:0|binning name:UIS0|hard bin number:21|soft bin number:21|
+test name:ISGS@ - 60% VGS|test number:26|test number alias:0|binning name:ISGS@ - 60% VGS|hard bin number:26|soft bin number:26|
+test name:DIVID (T77/T86)|test number:27|test number alias:0|binning name:DIVID (T77/T86)|hard bin number:27|soft bin number:27|
+test name:DIVID (T78/T87)|test number:28|test number alias:0|binning name:DIVID (T78/T87)|hard bin number:28|soft bin number:28|

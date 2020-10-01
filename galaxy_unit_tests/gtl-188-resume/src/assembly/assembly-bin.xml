@@ -1,0 +1,25 @@
+<assembly>
+    <id>assembly-bin</id>
+    <formats>
+        <format>${archiveExt}</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>${basepath}/${destDir}${project.artifactId}${exeExt}</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>${basepath}/gtl_tester.conf</include>
+                <include>${basepath}/unit_test_recipe.json</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

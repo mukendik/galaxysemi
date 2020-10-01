@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------------- #
+# Makefile for gs_gtl_traceability
+# ---------------------------------------------------------------------------- #
+# export MINGWDIR=/cygdrive/c/TDM-GCC-64-4.8.1
+# export PATH=$MINGWDIR/bin:$PATH
+# mingw32-make -f Makefile.noqt dep
+# mingw32-make -f Makefile.noqt
+# ---------------------------------------------------------------------------- #
+PROJECT = gs_gtl_traceability
+OBJECTS = gs_json.o gs_buffer.o
+INCPATH = -I../include
+CFLAGS  = $(INCPATH)
+ifneq "$(MINGWDIR)" ""
+  SQLITEOBJ = sqlite3.o
+  SQLITEPATH = ../../../other_libraries/sqlite/3.7.17
+  CFLAGS += -I$(SQLITEPATH)
+  LIBEXT = dll
+else
+  SQLITELIB = -lsqlite3
+  ifeq "$(shell uname)" "Darwin"
+    LIBEXT = dylib
+  else
+    LIBEXT = so
+  endif
+endif
+
+.PHONY: all
+all: lib$(PROJECT).$(LIBEXT)
+
+lib$(PROJECT).$(LIBEXT): $(PROJECT).o $(OBJECTS) $(SQLITEOBJ)
+	$(CC) -shared $^ $(LDFLAGS) $(SQLITELIB) -o $@
+
+$(SQLITEOBJ): $(SQLITEPATH)/sqlite3.c
+	$(CC) $(CFLAGS) -Wno-error $^ -c -o $@
+
+gs_buffer.o: ../gs_data/gs_buffer.c
+	$(CC) $(CFLAGS) $^ -c -o $@
+
+include ../include/gs_common.mk

@@ -1,0 +1,106 @@
+<html>
+<head>
+</head>
+<body>
+<table border="0" width="820" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="650"><b>
+      Script: menu_wafermap.csl<br>
+      </b><img border="0" src="../../html/images/ruler.png" width="616" height="8">
+    </td>
+  </tr>
+  <tr>
+    <td width="650" valign="top" align="left">
+      <p align="left">This script generates the wafer map
+      report of your choice. Follow the instructions displayed by the script to generate the wafer map of your choice! 
+      For more information, see the scripting language <a href="scripting.htm">documentation</a>,
+          and <a href="samples.htm">review</a> the other sample scripts.</p>
+          <p align="left"><b>Important note</b>: this script doesn't overwrite
+          your options and assumes your report type output is set to HTML. If
+          you want the script to have  full control of the options, merge it with the <a href="options_csl.htm">options.csl</a>
+          script. </p>
+      <p align="left">The source code follows:</p>
+      <div align="left">
+        <pre align="left">//////////////////////////////////////////
+// Welcome to Quantix Examinator Script
+// Find more on www.mentor.com
+// File: menu_wafermap.csl
+//////////////////////////////////////////
+
+// Function to setup the wafer map report section
+SetWafermapReport()
+{
+  var vFile;		// STDF file to process
+  var vWaferType;	// Wafermap type: soft bin, hard bin,...
+  var vTestNumber;	// Parametric test to process
+
+
+  sysLog('*** This script creates the wafermap you want! ***');
+
+  // Select type of wafer map analysis to perform
+  sysLog('What wafermap do you want to generate?');
+  sysLog('1. Wafer map of SOFTWARE binning');
+  sysLog('2. Wafer map of HARDWARE binning');
+  sysLog('3. Wafer map of Parametric test (over limits)');
+  sysLog('4. Wafer map of Parametric test (over results)');
+  var vChoice = sysPrompt('Your choice (1,2,3 or 4)?: ');
+
+  switch(vChoice)
+  {
+    case 1:
+	  // Software binning
+	  vWaferType = 'soft_bin';
+	  break;
+    case 2:
+	  // Hardware binning
+	  vWaferType = 'hard_bin';
+	  break;
+    case 3:
+	  // Parametric, over limits
+	  vWaferType = 'param_over_limits';
+	  break;
+    case 4:
+	  // Parametric, over results
+	  vWaferType = 'param_over_range';
+	  break;
+
+   }
+
+  // Select file name to process
+  vFile = sysPrompt('Select the STDF file to process...');
+
+  // If Parametric test, request test #
+  if((vChoice == 3) || (vChoice == 4))
+  {
+	  vTestNumber = sysPrompt('Test# to process:');
+  }
+
+  // Creates a group to hold the file to process!
+  var group_id = gexGroup('insert','Group1');
+
+  // Add selected file into that group.
+  gexFile(group_id,'insert',vFile,'all','all');
+
+  // Set options to all defaults
+  gexOptions('reset','all','default');
+
+  // Set wafer map report section
+  gexReportType('wafer',vWaferType,vTestNumber);
+
+  // Get report created+show it!
+  gexBuildReport('wafer');
+}
+
+// Script entry point
+main()
+{
+  // Call function to setup the wafer map report
+  SetWafermapReport();
+}
+</pre>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
